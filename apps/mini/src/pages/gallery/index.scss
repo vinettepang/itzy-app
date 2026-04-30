@@ -1,0 +1,510 @@
+/**
+ * 首页：淡蓝 → 浅黄 → 粉 → 淡紫 渐变背景 + 浅色上的内容对比
+ */
+
+.page {
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding: 36rpx 28rpx 56rpx;
+  background-color: #e8f2ff;
+  background-image: linear-gradient(
+    168deg,
+    #cfe8ff 0%,
+    #d4e9ff 18%,
+    #faf6d8 38%,
+    #fde8f2 62%,
+    #f5e6ff 82%,
+    #ebe4ff 100%
+  );
+}
+
+.page--center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 56rpx 40rpx;
+}
+
+.muted--splash {
+  font-size: 30rpx;
+  color: #64748b;
+  letter-spacing: 0.08em;
+}
+
+.muted--empty {
+  max-width: 520rpx;
+  line-height: 1.6;
+  margin-bottom: 40rpx;
+  color: #57534e;
+  font-size: 28rpx;
+}
+
+.page-scroll {
+  position: relative;
+  max-height: 100vh;
+  box-sizing: border-box;
+  height: 100vh;
+}
+
+.home-schedule-block {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 8rpx;
+}
+
+/* 无「行程精选」时，在其余区块上方提供「全部行程」入口 */
+.home-schedule-floating-more {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4rpx;
+  margin-bottom: 8rpx;
+  padding: 4rpx 0 12rpx;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.home-schedule-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 20rpx;
+  margin-bottom: 6rpx;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.1);
+}
+
+.home-schedule-title {
+  flex: 1;
+  padding-right: 16rpx;
+  color: #1e1b4b;
+  font-size: 34rpx;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 1.25;
+}
+
+.home-schedule-more {
+  display: flex;
+  align-items: center;
+  gap: 4rpx;
+  padding: 8rpx 20rpx;
+  border-radius: 999rpx;
+  border: 1px solid rgba(99, 102, 241, 0.35);
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 4rpx 16rpx rgba(99, 102, 241, 0.12);
+}
+
+.home-schedule-more-text {
+  color: #4338ca;
+  font-size: 26rpx;
+  font-weight: 600;
+}
+
+.home-schedule-more-arrow {
+  color: #6366f1;
+  font-size: 26rpx;
+  font-weight: 500;
+}
+
+.home-schedule-sub {
+  display: block;
+  color: #64748b;
+  font-size: 22rpx;
+  line-height: 1.45;
+  margin-bottom: 20rpx;
+  margin-top: 14rpx;
+}
+
+.home-schedule-section {
+  margin-top: 0;
+}
+
+.home-schedule-section ~ .home-schedule-section {
+  margin-top: 28rpx;
+}
+
+.home-schedule-tier--second {
+  margin-top: 40rpx;
+  padding-top: 32rpx;
+  border-top: 1px solid rgba(15, 23, 42, 0.1);
+}
+
+.home-schedule-block-title {
+  display: block;
+  color: #1e1b4b;
+  font-size: 34rpx;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 1.25;
+  margin-bottom: 6rpx;
+}
+
+.home-schedule-tier-empty {
+  display: block;
+  color: #64748b;
+  font-size: 26rpx;
+  line-height: 1.5;
+  margin-bottom: 8rpx;
+}
+
+.home-schedule-sub--tight {
+  margin-top: 0;
+  margin-bottom: 16rpx;
+}
+
+.home-schedule-section-label {
+  display: block;
+  color: #4c1d95;
+  font-size: 26rpx;
+  font-weight: 600;
+  margin-bottom: 14rpx;
+  letter-spacing: 0.04em;
+}
+
+.home-schedule-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.home-schedule-card {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 22rpx;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 124rpx;
+  padding: 36rpx 32rpx;
+  border-radius: 20rpx;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  background: linear-gradient(125deg, rgba(255, 255, 255, 0.95) 0%, rgba(245, 243, 255, 0.88) 55%, rgba(252, 231, 243, 0.75) 100%);
+  box-shadow: 0 12rpx 40rpx rgba(91, 33, 182, 0.12), 0 0 0 1rpx rgba(167, 139, 250, 0.15);
+}
+
+.home-schedule-card-cover {
+  flex-shrink: 0;
+  width: 148rpx;
+  height: 148rpx;
+  border-radius: 14rpx;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.home-schedule-card-body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 回归日程：有封面时海报顶栏铺满卡片宽度 */
+.home-schedule-card--comeback-poster {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  padding: 0 0 32rpx;
+}
+
+.home-schedule-card--comeback-poster .home-schedule-card-cover {
+  width: 100%;
+  height: 360rpx;
+  border-radius: 20rpx 20rpx 0 0;
+}
+
+.home-schedule-card--comeback-poster .home-schedule-card-body {
+  padding: 24rpx 32rpx 0;
+  box-sizing: border-box;
+}
+
+.home-schedule-badge {
+  position: absolute;
+  top: 16rpx;
+  right: 16rpx;
+  font-size: 20rpx;
+  font-weight: 700;
+  color: #5b21b6;
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  padding: 6rpx 12rpx;
+  border-radius: 999rpx;
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  box-shadow: 0 2rpx 8rpx rgba(245, 158, 11, 0.2);
+}
+
+.home-schedule-badge--comeback {
+  color: #9d174d;
+  background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%);
+  border: 1px solid rgba(236, 72, 153, 0.35);
+  box-shadow: 0 2rpx 8rpx rgba(236, 72, 153, 0.18);
+}
+
+.home-schedule-badge--tour {
+  color: #1e3a8a;
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  box-shadow: 0 2rpx 8rpx rgba(37, 99, 235, 0.15);
+}
+
+.home-schedule-card-title {
+  color: #1e1b4b;
+  font-size: 29rpx;
+  font-weight: 700;
+  margin-bottom: 14rpx;
+  padding-right: 80rpx;
+  white-space: normal;
+  line-height: 1.38;
+}
+
+.home-schedule-card-time {
+  color: #5b21b6;
+  font-size: 24rpx;
+  font-weight: 600;
+  margin-bottom: 10rpx;
+}
+
+.home-schedule-card-loc {
+  color: #64748b;
+  font-size: 22rpx;
+  margin-bottom: 12rpx;
+  white-space: normal;
+  line-height: 1.35;
+}
+
+.home-schedule-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10rpx;
+}
+
+.home-schedule-chip {
+  font-size: 20rpx;
+  font-weight: 600;
+  color: #5b21b6;
+  background: rgba(237, 233, 254, 0.9);
+  padding: 6rpx 12rpx;
+  border-radius: 999rpx;
+  border: 1px solid rgba(139, 92, 246, 0.25);
+}
+
+/* 门票 icon：票形描边 + 两侧圆口 + 中间虚线 */
+.poster-ticket-icon {
+  position: relative;
+  flex-shrink: 0;
+  width: 56rpx;
+  height: 50rpx;
+  box-sizing: border-box;
+  border: 3rpx solid #5b21b6;
+  border-radius: 12rpx;
+  background: rgba(124, 58, 237, 0.06);
+}
+
+.poster-ticket-icon--btn {
+  width: 48rpx;
+  height: 44rpx;
+  border-width: 2rpx;
+  border-radius: 10rpx;
+}
+
+.poster-ticket-icon__hole {
+  position: absolute;
+  top: 50%;
+  width: 14rpx;
+  height: 14rpx;
+  margin-top: -7rpx;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+.poster-ticket-icon--card .poster-ticket-icon__hole {
+  background: linear-gradient(145deg, #ffffff 0%, #f5f3ff 100%);
+  border: 1rpx solid rgba(167, 139, 250, 0.35);
+}
+
+.poster-ticket-icon--btn .poster-ticket-icon__hole {
+  width: 12rpx;
+  height: 12rpx;
+  margin-top: -6rpx;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1rpx solid rgba(167, 139, 250, 0.4);
+}
+
+.poster-ticket-icon__hole--l {
+  left: -9rpx;
+}
+
+.poster-ticket-icon__hole--r {
+  right: -9rpx;
+}
+
+.poster-ticket-icon--btn .poster-ticket-icon__hole--l {
+  left: -8rpx;
+}
+
+.poster-ticket-icon--btn .poster-ticket-icon__hole--r {
+  right: -8rpx;
+}
+
+.poster-ticket-icon__dash {
+  position: absolute;
+  left: 50%;
+  top: 10rpx;
+  bottom: 10rpx;
+  width: 0;
+  border-left: 2rpx dashed #7c3aed;
+  transform: translateX(-50%);
+  opacity: 0.88;
+}
+
+.poster-ticket-icon--btn .poster-ticket-icon__dash {
+  top: 8rpx;
+  bottom: 8rpx;
+}
+
+/* 门票卡上方的区块标题（与回归日程等 .home-schedule-block-title 同系） */
+.poster-entry-section-title {
+  display: block;
+  width: 100%;
+  margin-bottom: 14rpx;
+}
+
+/* 与 .home-schedule-tier--second 一致：横线 + 上边距，与上一块分隔 */
+.poster-entry-section-title--in-scroll {
+  margin-top: 40rpx;
+  padding-top: 32rpx;
+  border-top: 1px solid rgba(15, 23, 42, 0.1);
+}
+
+.poster-entry-section-title--center {
+  text-align: center;
+  max-width: 560rpx;
+  margin-top: 28rpx;
+  padding-top: 28rpx;
+  border-top: 1px solid rgba(15, 23, 42, 0.1);
+  margin-bottom: 16rpx;
+}
+
+.poster-entry {
+  display: flex;
+  align-items: center;
+  gap: 18rpx;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 124rpx;
+  padding: 36rpx 32rpx;
+  margin-bottom: 24rpx;
+  border-radius: 20rpx;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  background: linear-gradient(125deg, rgba(255, 255, 255, 0.95) 0%, rgba(245, 243, 255, 0.88) 55%, rgba(252, 231, 243, 0.75) 100%);
+  box-shadow: 0 12rpx 40rpx rgba(91, 33, 182, 0.12), 0 0 0 1rpx rgba(167, 139, 250, 0.15);
+}
+
+.poster-entry-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 9rpx;
+  min-width: 0;
+}
+
+.poster-entry-text {
+  color: #4c1d95;
+  font-size: 30rpx;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.poster-entry-hint {
+  color: #64748b;
+  font-size: 26rpx;
+  line-height: 1.4;
+}
+
+.poster-entry-arrow {
+  color: #7c3aed;
+  font-size: 34rpx;
+  font-weight: 400;
+}
+
+.poster-entry--after-schedules {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.poster-cta {
+  margin-top: 24rpx;
+}
+
+.poster-cta--ticket {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 32rpx 40rpx;
+  gap: 20rpx;
+}
+
+.poster-cta-texts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8rpx;
+  min-width: 0;
+}
+
+.poster-cta-sub {
+  font-size: 24rpx;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  opacity: 0.92;
+}
+
+.muted {
+  color: #64748b;
+  font-size: 28rpx;
+}
+
+.error {
+  color: #b91c1c;
+  font-size: 26rpx;
+  margin-bottom: 32rpx;
+  white-space: pre-wrap;
+  word-break: break-word;
+  line-height: 1.45;
+  max-width: 560rpx;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18rpx 40rpx;
+  border-radius: 999rpx;
+  font-size: 28rpx;
+  font-weight: 600;
+}
+
+.btn--primary {
+  background: linear-gradient(135deg, #6366f1, #7c3aed);
+  color: #ffffff;
+  border: 1px solid rgba(99, 102, 241, 0.5);
+  box-shadow: 0 8rpx 24rpx rgba(91, 33, 182, 0.28);
+}
+
+.btn.ghost {
+  margin-top: 24rpx;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  color: #334155;
+}
+
+.btn--ghost-accent {
+  margin-top: 24rpx;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(167, 139, 250, 0.45);
+  color: #5b21b6;
+  box-shadow: 0 4rpx 16rpx rgba(139, 92, 246, 0.12);
+}

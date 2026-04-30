@@ -1,0 +1,121 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  name         String?
+  /// ADMIN | SUPER_ADMIN
+  role         String   @default("ADMIN")
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Album {
+  id          String   @id @default(cuid())
+  title       String
+  description String?
+  coverUrl    String?
+  published   Boolean  @default(false)
+  sortOrder   Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  photos      Photo[]
+}
+
+model Photo {
+  id        String   @id @default(cuid())
+  albumId   String
+  album     Album    @relation(fields: [albumId], references: [id], onDelete: Cascade)
+  url       String
+  caption   String?
+  sortOrder Int      @default(0)
+  createdAt DateTime @default(now())
+}
+
+/// 演唱会巡回轮次：行程可归属某轮次；勾选「首页展示」后小程序首页显示该轮次下最近一场
+model TourCycle {
+  id               String     @id @default(cuid())
+  title            String
+  remark           String?
+  sortOrder        Int        @default(0)
+  /// 仅宜一条为 true：首页「演唱会周期行程」数据源
+  featuredOnHome   Boolean    @default(false)
+  createdAt        DateTime   @default(now())
+  updatedAt        DateTime   @updatedAt
+  schedules        Schedule[]
+
+  @@index([featuredOnHome])
+  @@index([sortOrder])
+}
+
+/// 行程分类标签，如：演唱会、回归、签售
+model Tag {
+  id           String        @id @default(cuid())
+  name         String        @unique
+  sortOrder    Int           @default(0)
+  scheduleTags ScheduleTag[]
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+}
+
+model Schedule {
+  id           String        @id @default(cuid())
+  title        String
+  description  String?
+  location     String?
+  coverUrl     String?
+  startsAt     DateTime
+  endsAt       DateTime?
+  published    Boolean       @default(false)
+  /// 首页「精选」展示（可突破时间窗）
+  highlighted  Boolean       @default(false)
+  /// 首页「回归日程」横条（与 highlighted / 今日无关联，单独勾选）
+  comebackOnHome Boolean     @default(false)
+  sortOrder    Int           @default(0)
+  venueId      String?
+  venue        Venue?        @relation(fields: [venueId], references: [id], onDelete: SetNull)
+  tourCycleId  String?
+  tourCycle    TourCycle?    @relation(fields: [tourCycleId], references: [id], onDelete: SetNull)
+  tags         ScheduleTag[]
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+
+  @@index([venueId])
+  @@index([tourCycleId])
+}
+
+model ScheduleTag {
+  scheduleId String
+  tagId      String
+  schedule   Schedule @relation(fields: [scheduleId], references: [id], onDelete: Cascade)
+  tag        Tag      @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([scheduleId, tagId])
+}
+
+/// 场馆主数据：国家/城市可与 admin/data/countries-cities.json 联动选择
+model Venue {
+  id                String   @id @default(cuid())
+  countryCode       String
+  countryName       String
+  city              String
+  venueName         String
+  /// 可容纳人数等（可选）
+  peopleCount       Int?
+  remark            String?
+  posterDisplayName String
+  sortOrder         Int      @default(0)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  schedules         Schedule[]
+
+  @@index([countryCode, city])
+}

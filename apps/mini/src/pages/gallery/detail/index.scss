@@ -1,0 +1,66 @@
+.page.detail {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 16rpx 0 32rpx;
+  box-sizing: border-box;
+}
+
+.intro {
+  display: block;
+  padding: 0 24rpx 16rpx;
+  font-size: 26rpx;
+  color: #a3a3a3;
+  line-height: 1.5;
+}
+
+.swiper {
+  flex: 1;
+  width: 100%;
+  height: 70vh;
+}
+
+.slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  background: #000;
+}
+
+.footer {
+  padding: 20rpx 24rpx 0;
+}
+
+.caption {
+  display: block;
+  font-size: 26rpx;
+  color: #e5e5e5;
+  min-height: 36rpx;
+}
+
+.pager {
+  display: block;
+  margin-top: 8rpx;
+  font-size: 22rpx;
+  color: #737373;
+}
+
+.muted {
+  color: #9ca3af;
+  font-size: 28rpx;
+  padding: 24rpx;
+}
+
+.error {
+  color: #fca5a5;
+  font-size: 24rpx;
+  padding: 24rpx;
+  white-space: pre-wrap;
+  word-break: break-word;
+  line-height: 1.45;
+}

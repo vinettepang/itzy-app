@@ -1,0 +1,46 @@
+{
+  "libVersion": "3.15.2",
+  "projectname": "mini",
+  "condition": {
+    "miniprogram": {
+      "current": 0,
+      "list": [
+        {
+          "name": "pages/poster/index",
+          "pathName": "pages/poster/index",
+          "query": "",
+          "scene": null,
+          "launchMode": "default",
+          "partialCompile": {
+            "enabled": true,
+            "pages": []
+          }
+        },
+        {
+          "name": "首页",
+          "pathName": "pages/gallery/index",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  },
+  "setting": {
+    "urlCheck": false,
+    "coverView": true,
+    "lazyloadPlaceholderEnable": false,
+    "skylineRenderEnable": false,
+    "preloadBackgroundData": false,
+    "autoAudits": false,
+    "useApiHook": true,
+    "showShadowRootInWxmlPanel": true,
+    "useStaticServer": true,
+    "useLanDebug": true,
+    "showES6CompileOption": false,
+    "compileHotReLoad": true,
+    "checkInvalidKey": true,
+    "ignoreDevUnusedFiles": true,
+    "bigPackageSizeSupport": false,
+    "useIsolateContext": true
+  }
+}

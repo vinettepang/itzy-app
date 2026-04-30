@@ -1,0 +1,18 @@
+{
+  "name": "itzy-app",
+  "private": true,
+  "packageManager": "pnpm@9.15.9",
+  "scripts": {
+    "clean": "node scripts/rm-node-modules.cjs",
+    "build:services": "node packages/services/build.cjs",
+    "db:generate": "pnpm --filter @itzy-app/db generate",
+    "db:push": "pnpm --filter @itzy-app/db push",
+    "db:sync": "pnpm run db:generate && pnpm run db:push",
+    "dev:server": "pnpm --filter @itzy-app/server start:dev",
+    "dev:admin": "pnpm --filter @itzy-app/admin dev",
+    "dev:mini": "pnpm --filter @itzy-app/mini dev:weapp"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  }
+}

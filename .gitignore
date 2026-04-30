@@ -1,0 +1,12 @@
+node_modules
+package-lock.json
+dist
+.next
+.taro
+*.local
+.env
+.env.*
+!.env.example
+uploads
+*.db
+.DS_Store

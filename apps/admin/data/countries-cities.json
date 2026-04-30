@@ -1,0 +1,70 @@
+[
+  {
+    "code": "KR",
+    "name": "韩国",
+    "nameEn": "South Korea",
+    "cities": [
+      { "name": "首尔", "nameEn": "Seoul" },
+      { "name": "釜山", "nameEn": "Busan" },
+      { "name": "高阳", "nameEn": "Goyang" },
+      { "name": "仁川", "nameEn": "Incheon" }
+    ]
+  },
+  {
+    "code": "JP",
+    "name": "日本",
+    "nameEn": "Japan",
+    "cities": [
+      { "name": "东京", "nameEn": "Tokyo" },
+      { "name": "大阪", "nameEn": "Osaka" },
+      { "name": "名古屋", "nameEn": "Nagoya" },
+      { "name": "横滨", "nameEn": "Yokohama" }
+    ]
+  },
+  {
+    "code": "CN",
+    "name": "中国",
+    "nameEn": "China",
+    "cities": [
+      { "name": "北京", "nameEn": "Beijing" },
+      { "name": "上海", "nameEn": "Shanghai" },
+      { "name": "香港", "nameEn": "Hong Kong" },
+      { "name": "澳门", "nameEn": "Macau" }
+    ]
+  },
+  {
+    "code": "TW",
+    "name": "中国台湾",
+    "nameEn": "Taiwan",
+    "cities": [
+      { "name": "台北", "nameEn": "Taipei" },
+      { "name": "高雄", "nameEn": "Kaohsiung" },
+      { "name": "台中", "nameEn": "Taichung" }
+    ]
+  },
+  {
+    "code": "US",
+    "name": "美国",
+    "nameEn": "United States",
+    "cities": [
+      { "name": "纽约", "nameEn": "New York" },
+      { "name": "洛杉矶", "nameEn": "Los Angeles" },
+      { "name": "芝加哥", "nameEn": "Chicago" }
+    ]
+  },
+  {
+    "code": "SG",
+    "name": "新加坡",
+    "nameEn": "Singapore",
+    "cities": [{ "name": "新加坡", "nameEn": "Singapore" }]
+  },
+  {
+    "code": "TH",
+    "name": "泰国",
+    "nameEn": "Thailand",
+    "cities": [
+      { "name": "曼谷", "nameEn": "Bangkok" },
+      { "name": "清迈", "nameEn": "Chiang Mai" }
+    ]
+  }
+]

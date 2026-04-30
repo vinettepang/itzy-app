@@ -1,0 +1,21 @@
+{
+  "id": "local-demo-album",
+  "title": "本地演示相册",
+  "description": "USE_LIVE_API 为 false 时从本地 JSON 加载，不请求服务器。",
+  "photos": [
+    {
+      "id": "mock-photo-1",
+      "url": "https://picsum.photos/seed/itzy1/800/600",
+      "caption": "演示图 1",
+      "sortOrder": 0,
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "mock-photo-2",
+      "url": "https://picsum.photos/seed/itzy2/800/600",
+      "caption": "演示图 2",
+      "sortOrder": 1,
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    }
+  ]
+}
