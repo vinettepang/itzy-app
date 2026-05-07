@@ -2,6 +2,7 @@ export default {
   pages: [
     'pages/gallery/index',
     'pages/gallery/detail/index',
+    'pages/lab-style/index',
     'pages/schedules/index',
     'pages/poster/index',
     'pages/poster/preview/index',

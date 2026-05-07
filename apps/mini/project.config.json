@@ -2,7 +2,7 @@
   "miniprogramRoot": "dist/",
   "projectname": "itzy-mini",
   "description": "",
-  "appid": "wxf7b9464b1648e16f",
+  "appid": "wx2e820a7857c0c448",
   "setting": {
     "urlCheck": false,
     "es6": true,
@@ -46,7 +46,7 @@
     "condition": false,
     "swc": false,
     "disableSWC": true,
-    "useLanDebug": true
+    "useLanDebug": false
   },
   "compileType": "miniprogram",
   "libVersion": "3.8.1",

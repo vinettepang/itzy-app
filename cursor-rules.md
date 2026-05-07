@@ -107,3 +107,4 @@ admin@itzy.local
 密码
 Admin123456
 在管理端 /login 用上述邮箱、密码登录即可。
+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

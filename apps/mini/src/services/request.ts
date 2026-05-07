@@ -5,7 +5,8 @@ import { tryMockApiResponse } from '@/mock-data/mockApi';
 const FALLBACK_BASE = 'http://10.0.112.146:3000';
 
 export function getApiBase(): string {
-  return typeof TARO_APP_API !== 'undefined' ? FALLBACK_BASE : FALLBACK_BASE;
+  return FALLBACK_BASE;
+  // return typeof TARO_APP_API !== 'undefined' ? FALLBACK_BASE : FALLBACK_BASE;
 }
 
 /**

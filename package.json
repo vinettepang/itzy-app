@@ -10,7 +10,9 @@
     "db:sync": "pnpm run db:generate && pnpm run db:push",
     "dev:server": "pnpm --filter @itzy-app/server start:dev",
     "dev:admin": "pnpm --filter @itzy-app/admin dev",
-    "dev:mini": "pnpm --filter @itzy-app/mini dev:weapp"
+    "dev:mini": "pnpm --filter @itzy-app/mini dev:weapp",
+    "dev:h5": "pnpm --filter @itzy-app/h5 dev",
+    "build:h5": "pnpm --filter @itzy-app/h5 build"
   },
   "devDependencies": {
     "typescript": "^5.6.3"

@@ -1,0 +1,138 @@
+.schedules-page {
+  min-height: 60vh;
+  padding: 4px 0 0;
+}
+
+.schedules-header {
+  margin-bottom: 14px;
+}
+
+.schedules-header-title {
+  display: block;
+  color: rgba(8, 10, 20, 0.9);
+  font-size: 20px;
+  font-weight: 750;
+  margin-bottom: 6px;
+}
+
+.schedules-header-sub {
+  display: block;
+  color: rgba(8, 10, 20, 0.6);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.schedules-muted,
+.schedules-err {
+  display: block;
+  padding: 14px 0;
+  color: rgba(8, 10, 20, 0.62);
+  font-size: 14px;
+}
+
+.schedules-err {
+  color: rgba(185, 28, 28, 0.92);
+  white-space: pre-wrap;
+  word-break: break-word;
+  border: 1px solid rgba(185, 28, 28, 0.25);
+  border-radius: 12px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.62);
+}
+
+.schedules-list {
+  display: grid;
+  gap: 12px;
+}
+
+.schedules-card {
+  position: relative;
+  /* 玻璃卡片见 `src/styles/lab-global.css` */
+}
+
+.schedules-cover {
+  display: block;
+  width: 100%;
+  height: 160px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  object-fit: cover;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 640px) {
+  .schedules-cover {
+    height: 140px;
+  }
+  .schedules-card {
+    padding: 12px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .schedules-cover {
+    height: 200px;
+  }
+  .schedules-card {
+    padding: 16px;
+  }
+}
+
+.schedules-pick {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 12px;
+  color: #fde68a;
+  background: rgba(234, 179, 8, 0.18);
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(234, 179, 8, 0.25);
+}
+
+.schedules-title {
+  display: block;
+  color: rgba(8, 10, 20, 0.9);
+  font-size: 16px;
+  font-weight: 720;
+  margin-bottom: 8px;
+}
+
+.schedules-time {
+  display: block;
+  color: rgba(79, 70, 229, 0.92);
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.schedules-loc {
+  display: block;
+  color: rgba(15, 23, 42, 0.68);
+  font-size: 13px;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.schedules-desc {
+  display: block;
+  color: rgba(15, 23, 42, 0.72);
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 10px 0 10px;
+}
+
+.schedules-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.schedules-tag {
+  background: rgba(129, 140, 248, 0.16);
+  border: 1px solid rgba(99, 102, 241, 0.22);
+  color: rgba(8, 10, 20, 0.78);
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+

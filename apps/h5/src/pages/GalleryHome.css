@@ -1,0 +1,180 @@
+.home {
+  display: grid;
+  gap: 16px;
+}
+
+.hero {
+  /* 玻璃面与阴影见 `src/styles/lab-global.css` */
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-kicker {
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(10, 20, 40, 0.62);
+}
+
+.hero-title {
+  margin: 10px 0 8px;
+  font-size: 30px;
+  line-height: 1.05;
+}
+
+.hero-sub {
+  margin: 0;
+  color: rgba(12, 18, 34, 0.76);
+  max-width: 56ch;
+  line-height: 1.55;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(40, 120, 170, 0.22);
+  background: rgba(255, 255, 255, 0.5);
+  color: rgba(8, 10, 20, 0.82);
+  text-decoration: none;
+  font-weight: 650;
+  font-size: 13px;
+}
+
+.pill.primary {
+  appearance: none;
+  border-color: rgba(40, 120, 170, 0.28);
+  background:
+    radial-gradient(circle at 26% 26%, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.18) 40%),
+    linear-gradient(135deg, rgba(167, 243, 208, 0.78), rgba(255, 240, 155, 0.46) 38%, rgba(255, 91, 214, 0.22) 66%, rgba(255, 255, 255, 0.72));
+  box-shadow:
+    0 22px 80px rgba(20, 85, 140, 0.18),
+    inset 0 2px 0 rgba(255, 255, 255, 0.75);
+  color: rgba(8, 10, 20, 0.86);
+  min-height: 42px;
+  padding: 0 16px;
+  letter-spacing: 0.02em;
+  font-weight: 750;
+}
+
+.section {
+  display: grid;
+  gap: 10px;
+}
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.section-title {
+  margin: 0;
+  font-size: 16px;
+}
+
+.muted {
+  color: rgba(8, 10, 20, 0.6);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+@media (max-width: 640px) {
+  .hero-title {
+    font-size: 24px;
+  }
+  .home .hero {
+    padding: 14px 12px;
+  }
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-title {
+    font-size: 36px;
+  }
+  .cards {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 14px;
+  }
+}
+
+.card {
+  text-decoration: none;
+  color: inherit;
+  /* 卡片玻璃面见 `src/styles/lab-global.css` */
+  display: grid;
+  gap: 8px;
+  /* enter animation */
+  opacity: 0;
+  transform: translate3d(0, 10px, 0);
+  transition:
+    transform 520ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 520ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 240ms ease,
+    background 160ms ease,
+    border-color 160ms ease;
+  will-change: transform, opacity;
+}
+
+.card.is-in {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    opacity: 1;
+    transform: none;
+    transition: background 160ms ease, border-color 160ms ease;
+  }
+}
+
+.card:hover {
+  border-color: rgba(40, 120, 170, 0.28);
+  box-shadow: 0 34px 120px rgba(18, 80, 130, 0.18);
+}
+
+.card-title {
+  font-weight: 750;
+  line-height: 1.2;
+}
+
+.card-sub {
+  color: rgba(8, 10, 20, 0.7);
+  font-size: 13px;
+  line-height: 1.4;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.err {
+  border: 1px solid rgba(185, 28, 28, 0.25);
+  border-radius: 12px;
+  padding: 10px 12px;
+  color: rgba(185, 28, 28, 0.92);
+  background: rgba(255, 255, 255, 0.62);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
