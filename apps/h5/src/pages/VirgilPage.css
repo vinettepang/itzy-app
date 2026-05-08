@@ -1,0 +1,67 @@
+/* Virgil.css */
+:root {
+  --v-bg: #f0f0f0;
+  --v-border: #000;
+}
+
+.v-container {
+  background-color: var(--v-bg);
+  min-height: 300vh; /* 必须足够长才能看到错位效果 */
+  position: relative;
+  overflow-x: hidden;
+  cursor: crosshair; /* 标志性的十字准星光标 */
+}
+
+/* 标志性的网格背景 */
+.v-grid-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, #ddd 1px, transparent 1px),
+    linear-gradient(to bottom, #ddd 1px, transparent 1px);
+}
+
+.v-nav {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 900;
+  font-size: 24px;
+  z-index: 100;
+}
+
+.v-item {
+  position: absolute;
+  width: 300px;
+  z-index: 1;
+}
+
+.v-frame {
+  background: #fff;
+  border: 1.5px solid var(--v-border);
+  padding: 8px;
+  box-shadow: 10px 10px 0px rgba(0,0,0,0.05);
+}
+
+.v-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: grayscale(100%); /* 原网站很多图片是黑白的 */
+  transition: filter 0.3s ease;
+}
+
+.v-frame:hover img {
+  filter: grayscale(0%);
+}
+
+.v-caption {
+  font-family: "Courier New", monospace;
+  font-size: 12px;
+  margin-top: 10px;
+  text-align: center;
+  font-weight: bold;
+}

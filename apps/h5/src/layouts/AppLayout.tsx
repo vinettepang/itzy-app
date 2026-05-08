@@ -39,6 +39,8 @@ export default function AppLayout() {
           <NavLinkLike to="/schedules" label="行程" />
           <NavLinkLike to="/poster" label="海报" />
           <NavLinkLike to="/lab-style" label="LAB" />
+          <NavLinkLike to="/virgil" label="Virgil" />
+          <NavLinkLike to="/portfolio" label="Portfolio" />
         </nav>
       </header>
       <main className="h5-main">

@@ -35,6 +35,21 @@ function fmtTime(iso: string): string {
   return d.toLocaleString('zh-CN', { month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' });
 }
 
+function fmtMonthDay(iso: string) {
+  const d = new Date(iso);
+  const month = d.toLocaleString('zh-CN', { month: 'numeric' }).replace(/\D/g, '');
+  const day = d.toLocaleString('zh-CN', { day: '2-digit' });
+  return { month: month || String(d.getMonth() + 1), day };
+}
+
+function diffDays(fromIso: string) {
+  const now = Date.now();
+  const t = new Date(fromIso).getTime();
+  if (!Number.isFinite(t)) return null;
+  const ms = t - now;
+  return Math.max(0, Math.ceil(ms / (1000 * 60 * 60 * 24)));
+}
+
 function Section({
   title,
   list,
@@ -137,6 +152,96 @@ export default function GalleryHome() {
     );
   }, [data]);
 
+  // 恢复：实验 TicketCard（用于对齐票根样式图例）
+  const TicketCard = ({
+    data: card,
+  }: {
+    data: {
+      title: string;
+      artist: string;
+      location: string;
+      date: { year: string; month: string; day: string };
+      countdown: string;
+      posterUrl: string;
+    };
+  }) => {
+    const { title, artist, location, date, countdown, posterUrl } = card;
+
+    return (
+      <Link to="/schedules" className="ticket-card">
+        <div className="ticket-poster" aria-hidden="true">
+          <div className="ticket-thumb" aria-hidden="true" />
+          {/* <img src={posterUrl} alt={`${artist} poster`} /> */}
+        </div>
+
+        <div className="ticket-info">
+          <h2 className="title">{title}</h2>
+          <p className="artist">{artist}</p>
+          <div className="location">
+            <span className="geo-icon" aria-hidden="true">
+              📍
+            </span>
+            {location}
+          </div>
+        </div>
+
+        <div className="ticket-divider" aria-hidden="true">
+          {/* <div className="punch-hole top" /> */}
+          <div className="dotted-line" />
+          {/* <div className="punch-hole bottom" /> */}
+        </div>
+
+        <div className="ticket-date-section">
+          <div className="month">{date.month}月</div>
+          <div className="day">{date.day}</div>
+          <div className="year-vertical">{date.year}年</div>
+          <div className="countdown-badge">{countdown}天</div>
+        </div>
+      </Link>
+    );
+  };
+
+  const eventData = {
+    title: '2026-27 aespa LIVE TOUR - SYNK : CO...',
+    artist: 'aespa',
+    location: 'Gocheok Sky Dome',
+    date: {
+      year: '2026',
+      month: '8',
+      day: '07',
+    },
+    countdown: '92',
+    posterUrl: 'https://images.unsplash.com/photo-1526481280695-3c687fd643ed?auto=format&fit=crop&w=240&q=60',
+  };
+
+  const ticket = useMemo(() => {
+    const spotlight = data?.tourSpotlight ?? null;
+    const pick = spotlight ?? data?.featured?.[0] ?? data?.today?.[0] ?? null;
+    if (!pick) return null;
+    const { month, day } = fmtMonthDay(pick.startsAt);
+    const daysLeft = diffDays(pick.startsAt);
+    const venueLine = pick.venue?.posterDisplayName
+      ? `${pick.venue.posterDisplayName}`
+      : pick.location
+        ? `${pick.location}`
+        : '';
+    const count =
+      (data?.today?.length ?? 0) +
+      (data?.featured?.length ?? 0) +
+      (data?.comeback?.length ?? 0) +
+      (data?.tourSpotlight ? 1 : 0);
+     
+    return {
+      title: pick.title,
+      artist: 'ITZY',
+      venueLine,
+      month,
+      day,
+      daysLeft,
+      count,
+    };
+  }, [data]);
+
   return (
     <div className="home">
       <div className="hero">
@@ -157,6 +262,40 @@ export default function GalleryHome() {
           </Link>
         </div>
       </div>
+
+      {ticket ? (
+        <section className="section">
+          <div className="section-head">
+            <h2 className="section-title">即将到来</h2>
+            {ticket.count ? <span className="concert-pill">{ticket.count} 场</span> : null}
+          </div>
+          <div className="cards">
+            <TicketCard data={eventData} />
+            <Link to="/schedules" className="concert-card">
+              <div className="concert-left">
+                <div className="concert-thumb" aria-hidden="true" />
+                <div className="concert-main">
+                  <div className="concert-title">{ticket.title}</div>
+                  <div className="concert-sub">{ticket.artist}</div>
+                  {ticket.venueLine ? <div className="concert-sub concert-sub--muted">⌁ {ticket.venueLine}</div> : null}
+                </div>
+              </div>
+              <div className="concert-right">
+                <div className="concert-rightInner">
+                  <div className="concert-month">{ticket.month}月</div>
+                  <div className="concert-day">{ticket.day}</div>
+                  {ticket.daysLeft !== null ? <div className="concert-badge">{ticket.daysLeft}天</div> : null}
+                </div>
+                <div className="concert-serial" aria-hidden="true">
+                  2026
+                </div>
+              </div>
+              <span className="concert-notch concert-notch--a" aria-hidden="true" />
+              <span className="concert-notch concert-notch--b" aria-hidden="true" />
+            </Link>
+          </div>
+        </section>
+      ) : null}
 
       {loading ? <div className="muted">加载中…</div> : null}
       {err ? <div className="err">{err}</div> : null}
