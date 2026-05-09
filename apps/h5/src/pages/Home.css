@@ -1,0 +1,135 @@
+:root {
+    --bg-gray: #6b6f76; /* 还原图中的灰色 */
+    --text-black: #000000;
+    --text-white: #ffffff;
+  }
+  
+  body, html {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-gray);
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    overflow-x: hidden;
+  }
+  
+  /* 加载界面样式 */
+  .loader-wrapper {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-gray);
+    z-index: 100;
+  }
+  
+  .main-logo {
+    font-size: 80px;
+    font-weight: 900;
+    letter-spacing: -2px;
+    margin-bottom: 10px;
+  }
+  
+  /* 跳动特效 */
+  .jumping-text {
+    display: inline-block;
+    animation: jump 0.6s infinite alternate ease-in-out;
+  }
+  
+  @keyframes jump {
+    from { transform: translateY(0); }
+    to { transform: translateY(-15px); }
+  }
+  
+  .sub-tags {
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: lowercase;
+  }
+  
+  /* 主内容样式 */
+  .main-content {
+    padding: 20px;
+    color: var(--text-black);
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px 40px;
+  }
+  
+  .mini-logo {
+    font-size: 60px;
+    font-weight: 900;
+    line-height: 0.8;
+  }
+  
+  .nav-links span {
+    margin-left: 20px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  /* 布局设计 */
+  .hero {
+    position: relative;
+    max-width: 1200px;
+    margin: 40px auto;
+  }
+  
+  .image-grid {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+  }
+  
+  .laptop-box {
+    position: relative;
+    width: 70%;
+  }
+  
+  .full-img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .text-overlay {
+    position: absolute;
+    right: -50px;
+    top: 50px;
+    color: var(--text-white);
+    width: 300px;
+  }
+  
+  .text-overlay h2 {
+    font-size: 32px;
+    line-height: 0.9;
+    margin-bottom: 20px;
+  }
+  
+  .service-list {
+    list-style: none;
+    padding: 0;
+    color: var(--text-black);
+    font-weight: bold;
+  }
+  
+  .floating-img-box {
+    width: 30%;
+    margin-top: 200px;
+  }
+  
+  .floating-img {
+    width: 100%;
+    border: 1px solid #000;
+  }
+  
+  .footer-logo {
+    font-size: 180px;
+    font-weight: 900;
+    text-align: right;
+    margin-top: -50px;
+  }

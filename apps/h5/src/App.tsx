@@ -8,10 +8,13 @@ import PosterPage from '@/pages/PosterPage';
 import PosterPreviewPage from '@/pages/PosterPreviewPage';
 import VirgilPage from '@/pages/VirgilPage';
 import PortfolioPage from '@/pages/PortfolioPage';
+import Home from '@/pages/Home';
 
 export default function App() {
   return (
     <Routes>
+      
+      <Route path="/home" element={<Home />} />
       <Route element={<AppLayout />}>
         <Route path="/" element={<GalleryHome />} />
         <Route path="/schedules" element={<SchedulesPage />} />
