@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ITZY — MIDZY Archive</title>
+    <meta
+      name="description"
+      content="ITZY fan archive — schedules, WDZY, Twinzy, cheer, board."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:ital@0;1&family=Syne:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="grid-overlay" aria-hidden="true"></div>
+
+    <!-- Corner metadata (Virgil) -->
+    <div class="corners" aria-hidden="true">
+      <span class="corners__tl" id="corner-date">22/06/26</span>
+      <span class="corners__tr">PAGE 01 / HOME</span>
+      <span class="corners__bl">MIDZY ARCHIVE</span>
+      <span class="corners__br" id="corner-time">KST 18:00</span>
+    </div>
+
+    <!-- Loader (Oh Ira) -->
+    <div class="loader" id="loader">
+      <div class="loader__content">
+        <p class="loader__pre">schedules · wdzy · twinzy · cheer · board</p>
+        <h1 class="loader__title">
+          <span class="loader__line">Oh</span>
+          <span class="loader__line loader__line--accent">
+            IT<span class="loader__bounce">Z</span>Y
+          </span>
+        </h1>
+        <p class="loader__sub">fan hub · archive · v.002</p>
+      </div>
+      <div class="loader__bar"><span></span></div>
+    </div>
+
+    <div class="site" id="site" hidden>
+      <!-- Nav -->
+      <header class="header">
+        <a href="#" class="header__logo">ITZY</a>
+        <div class="header__marquee" aria-hidden="true">
+          <div class="header__marquee-track">
+            <span>SCHEDULES — DOLLS — CHEER — BOARD — </span>
+            <span>SCHEDULES — DOLLS — CHEER — BOARD — </span>
+          </div>
+        </div>
+        <button
+          type="button"
+          class="header__menu"
+          id="menu-btn"
+          aria-expanded="false"
+          aria-controls="menu-panel"
+        >
+          MENU
+        </button>
+      </header>
+
+      <!-- Fullscreen menu (Fácil / Fluoro) -->
+      <div class="menu-panel" id="menu-panel" hidden>
+        <nav class="menu-panel__nav" aria-label="Primary">
+          <a href="#schedules" class="menu-panel__link" data-index="01">
+            <span class="menu-panel__idx">01</span>
+            <span class="menu-panel__text">Schedules</span>
+            <span class="menu-panel__hint">演唱会 · Tour & FM</span>
+          </a>
+          <a href="#dolls" class="menu-panel__link" data-index="02">
+            <span class="menu-panel__idx">02</span>
+            <span class="menu-panel__text">Dolls</span>
+            <span class="menu-panel__hint">WDZY · Twinzy</span>
+          </a>
+          <a href="#cheer" class="menu-panel__link" data-index="03">
+            <span class="menu-panel__idx">03</span>
+            <span class="menu-panel__text">Cheer</span>
+            <span class="menu-panel__hint">韩中歌词应援</span>
+          </a>
+          <a href="#board" class="menu-panel__link" data-index="04">
+            <span class="menu-panel__idx">04</span>
+            <span class="menu-panel__text">Board</span>
+            <span class="menu-panel__hint">leave a message</span>
+          </a>
+        </nav>
+        <p class="menu-panel__statement">
+          We believe in ITZY.<br />Cause we are MIDZY.
+        </p>
+      </div>
+
+      <main>
+        <!-- HERO -->
+        <section class="hero" id="hero">
+          <!-- Comeback -->
+          <article class="hero-cb" id="hero-comeback" hidden>
+            <div class="hero-cb__frame">
+              <div class="hero-cb__img-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?w=1400&q=85"
+                  alt="ITZY Comeback — GOLD"
+                  class="hero-cb__img"
+                  width="1400"
+                  height="1750"
+                />
+              </div>
+              <div class="hero-cb__badge">[ COMEBACK ]</div>
+            </div>
+            <div class="hero-cb__panel">
+              <p class="hero-cb__tag">V.002 · S-26</p>
+              <h1 class="hero-cb__title" id="comeback-title">GOLD</h1>
+              <p class="hero-cb__desc">
+                The next chapter. Countdown to official release.
+              </p>
+              <div class="countdown" id="countdown" role="timer" aria-live="polite">
+                <div class="countdown__block">
+                  <span class="countdown__val" id="cd-days">12</span>
+                  <span class="countdown__unit">DAYS</span>
+                </div>
+                <span class="countdown__dot">:</span>
+                <div class="countdown__block">
+                  <span class="countdown__val" id="cd-hours">04</span>
+                  <span class="countdown__unit">HRS</span>
+                </div>
+                <span class="countdown__dot">:</span>
+                <div class="countdown__block">
+                  <span class="countdown__val" id="cd-mins">33</span>
+                  <span class="countdown__unit">MIN</span>
+                </div>
+                <span class="countdown__dot">:</span>
+                <div class="countdown__block">
+                  <span class="countdown__val countdown__val--tick" id="cd-secs">21</span>
+                  <span class="countdown__unit">SEC</span>
+                </div>
+              </div>
+              <div class="hero-cb__cta">
+                <a href="#" class="pill pill--fill">Watch Teaser ↗</a>
+                <a href="#cheer" class="pill pill--line">Cheer Guide</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Next show -->
+          <article class="hero-show" id="hero-show">
+            <div class="hero-show__left">
+              <p class="hero-show__code">TOUR-03 · SEOUL · KR</p>
+              <p class="hero-show__label">Next Show</p>
+              <h1 class="hero-show__display">
+                <span class="hero-show__word">DAY</span>
+                <span class="hero-show__num" id="show-day">01</span>
+              </h1>
+              <div class="hero-show__info">
+                <p class="hero-show__venue">KSPO DOME</p>
+                <p class="hero-show__time">
+                  <time datetime="2026-03-15T18:00:00+09:00">15.03.2026 — 18:00 KST</time>
+                </p>
+                <p class="hero-show__local" id="show-local"></p>
+              </div>
+              <div class="hero-show__cta">
+                <a href="#schedules" class="pill pill--fill">View Detail</a>
+                <a href="#schedules" class="pill pill--ghost">All Schedules →</a>
+              </div>
+            </div>
+            <div class="hero-show__right">
+              <figure class="hero-show__frame">
+                <img
+                  src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=1000&q=85"
+                  alt="TOUR 03 Seoul Day 1"
+                  class="hero-show__photo"
+                  width="1000"
+                  height="1250"
+                />
+                <figcaption class="hero-show__cap">
+                  <span>TOUR 03</span>
+                  <span>DAY 01</span>
+                </figcaption>
+              </figure>
+            </div>
+          </article>
+        </section>
+
+        <!-- Index modules (Fluoro / Studio Product) -->
+        <section class="index" aria-label="Modules">
+          <div class="index__head">
+            <h2 class="index__title">Index.</h2>
+            <p class="index__count">04 modules</p>
+          </div>
+          <div class="index__list">
+            <a href="#schedules" class="index__row" id="schedules">
+              <span class="index__n">01</span>
+              <span class="index__name">Schedules</span>
+              <span class="index__meta">Tour · FM · Day 1/2</span>
+              <span class="index__arrow">→</span>
+            </a>
+            <a href="#dolls" class="index__row" id="dolls">
+              <span class="index__n">02</span>
+              <span class="index__name">Dolls</span>
+              <span class="index__meta">WDZY · Twinzy</span>
+              <span class="index__arrow">→</span>
+            </a>
+            <a href="#cheer" class="index__row" id="cheer">
+              <span class="index__n">03</span>
+              <span class="index__name">Cheer</span>
+              <span class="index__meta">KR / CN lyrics</span>
+              <span class="index__arrow">→</span>
+            </a>
+            <a href="#board" class="index__row">
+              <span class="index__n">04</span>
+              <span class="index__name">Board</span>
+              <span class="index__meta">open to all</span>
+              <span class="index__arrow">→</span>
+            </a>
+          </div>
+        </section>
+
+        <!-- Board -->
+        <section class="board" id="board">
+          <div class="board__inner">
+            <p class="board__tag">[ MESSAGE_BOARD ]</p>
+            <h2 class="board__title">Say it.<br />No login required.</h2>
+            <p class="board__sub">无需登录 · 审核后公开展示</p>
+            <form class="board__form" id="board-form" novalidate>
+              <div class="board__fields">
+                <input
+                  type="text"
+                  name="nickname"
+                  class="board__input"
+                  placeholder="Nickname"
+                  required
+                  maxlength="24"
+                  aria-label="Nickname"
+                />
+                <input
+                  type="text"
+                  name="message"
+                  class="board__input board__input--wide"
+                  placeholder="Your message to ITZY & MIDZY…"
+                  required
+                  maxlength="280"
+                  aria-label="Message"
+                />
+              </div>
+              <button type="submit" class="pill pill--fill board__send">Send ↗</button>
+            </form>
+          </div>
+        </section>
+      </main>
+
+      <!-- Marquee band -->
+      <div class="band" aria-hidden="true">
+        <div class="band__track">
+          <span>MIDZY · ITZY · WDZY · TWINZY · CHEER · GOLD · MIDZY · ITZY · </span>
+          <span>MIDZY · ITZY · WDZY · TWINZY · CHEER · GOLD · MIDZY · ITZY · </span>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <span class="footer__copy">© MIDZY 2026</span>
+        <span class="footer__policy">policy</span>
+        <button type="button" class="footer__demo" id="demo-toggle">MODE: SHOW</button>
+      </footer>
+    </div>
+
+    <div class="toast" id="toast" role="status" hidden></div>
+
+    <script src="main.js"></script>
+  </body>
+</html>

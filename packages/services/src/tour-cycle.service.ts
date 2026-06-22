@@ -1,4 +1,4 @@
-import type { PrismaClient } from '@itzy-app/db';
+import type { Prisma, PrismaClient } from '@itzy-app/db';
 
 const scheduleInclude = {
   tags: { include: { tag: true } },
@@ -37,7 +37,7 @@ export async function updateTourCycle(
   id: string,
   input: { title?: string; remark?: string | null; sortOrder?: number; featuredOnHome?: boolean },
 ) {
-  return prisma.$transaction(async (tx) => {
+  return prisma.$transaction(async (tx: Prisma.TransactionClient) => {
     if (input.featuredOnHome === true) {
       await tx.tourCycle.updateMany({ where: { NOT: { id } }, data: { featuredOnHome: false } });
     }

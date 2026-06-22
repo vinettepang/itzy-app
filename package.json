@@ -1,20 +1,38 @@
 {
   "name": "itzy-app",
   "private": true,
-  "packageManager": "pnpm@9.15.9",
+  "packageManager": "pnpm@8.15.9",
+  "engines": {
+    "node": ">=16.14.0 <17",
+    "pnpm": ">=8.15.0 <9"
+  },
   "scripts": {
     "clean": "node scripts/rm-node-modules.cjs",
     "build:services": "node packages/services/build.cjs",
     "db:generate": "pnpm --filter @itzy-app/db generate",
     "db:push": "pnpm --filter @itzy-app/db push",
     "db:sync": "pnpm run db:generate && pnpm run db:push",
+    "dev": "concurrently -k -n server,h5,console -c blue,magenta,yellow \"pnpm:dev:server\" \"pnpm:dev:h5\" \"pnpm:dev:console\"",
     "dev:server": "pnpm --filter @itzy-app/server start:dev",
+    "dev:console": "pnpm --filter @itzy-app/admin dev",
     "dev:admin": "pnpm --filter @itzy-app/admin dev",
     "dev:mini": "pnpm --filter @itzy-app/mini dev:weapp",
     "dev:h5": "pnpm --filter @itzy-app/h5 dev",
     "build:h5": "pnpm --filter @itzy-app/h5 build"
   },
   "devDependencies": {
-    "typescript": "^5.6.3"
+    "concurrently": "^8.2.2",
+    "typescript": "~5.4.5"
+  },
+  "pnpm": {
+    "overrides": {
+      "typescript": "~5.4.5",
+      "@types/node": "^16.18.126",
+      "@angular-devkit/core": "16.2.16",
+      "@angular-devkit/schematics": "16.2.16",
+      "@angular-devkit/schematics-cli": "16.2.16",
+      "less": "4.2.0",
+      "inquirer": "8.2.6"
+    }
   }
 }

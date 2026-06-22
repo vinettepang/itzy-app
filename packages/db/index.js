@@ -1,1 +1,1 @@
-module.exports = require('@prisma/client');
+module.exports = require('./node_modules/.prisma/client');

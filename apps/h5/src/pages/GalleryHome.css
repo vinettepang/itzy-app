@@ -529,3 +529,254 @@
   border-radius: 20px;
   font-weight: bold;
 }
+
+/* 组合票根：左 concert-card · 右 ticket-card */
+.hybrid-ticket-card {
+  --hybrid-stub-w: 104px;
+  --hybrid-tear-r: 9px;
+  --hybrid-tear-x: calc(100% - var(--hybrid-stub-w));
+  --accent-blue: #1b3a57;
+  --accent-text: #63b3ed;
+  grid-column: 1 / -1;
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--hybrid-stub-w);
+  align-items: stretch;
+  width: 100%;
+  min-height: 112px;
+  border-radius: 20px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #f3f4f6;
+  box-sizing: border-box;
+  background:
+    radial-gradient(580px 320px at 18% 16%, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0) 62%),
+    radial-gradient(420px 240px at 92% 14%, rgba(37, 99, 235, 0.14), rgba(37, 99, 235, 0) 72%),
+    linear-gradient(135deg, #171b25, #111827 42%, #0b1220);
+  box-shadow: 0 22px 60px rgba(2, 6, 23, 0.4);
+
+  -webkit-mask-image:
+    radial-gradient(circle at var(--hybrid-tear-x) 0, transparent var(--hybrid-tear-r), #000 calc(var(--hybrid-tear-r) + 0.5px)),
+    radial-gradient(circle at var(--hybrid-tear-x) 100%, transparent var(--hybrid-tear-r), #000 calc(var(--hybrid-tear-r) + 0.5px));
+  mask-image:
+    radial-gradient(circle at var(--hybrid-tear-x) 0, transparent var(--hybrid-tear-r), #000 calc(var(--hybrid-tear-r) + 0.5px)),
+    radial-gradient(circle at var(--hybrid-tear-x) 100%, transparent var(--hybrid-tear-r), #000 calc(var(--hybrid-tear-r) + 0.5px));
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+}
+
+.hybrid-ticket-card:hover {
+  box-shadow: 0 26px 70px rgba(2, 6, 23, 0.46);
+}
+
+.hybrid-ticket-concert {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  padding: 14px 18px 14px 16px;
+}
+
+.hybrid-ticket-copy {
+  position: relative;
+  display: grid;
+  gap: 0;
+  min-width: 0;
+  padding-left: 12px;
+}
+
+.hybrid-ticket-copy::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 2px;
+  bottom: 2px;
+  width: 3px;
+  border-radius: 99px;
+  background: linear-gradient(
+    180deg,
+    rgba(244, 114, 182, 0.9) 0%,
+    rgba(56, 189, 248, 0.75) 52%,
+    rgba(167, 243, 208, 0.55) 100%
+  );
+  opacity: 0.88;
+}
+
+.hybrid-ticket-kicker {
+  margin: 0;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(251, 207, 232, 0.92);
+  line-height: 1;
+}
+
+.hybrid-ticket-title {
+  margin: 8px 0 0;
+  font-size: clamp(15px, 2.4vw, 18px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.28;
+  color: rgba(248, 250, 252, 0.98);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.hybrid-ticket-venue {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  margin: 10px 0 0;
+  font-size: 12px;
+  line-height: 1.45;
+  color: rgba(226, 232, 240, 0.68);
+}
+
+.hybrid-ticket-venue span:last-child {
+  min-width: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.hybrid-ticket-venue-icon {
+  flex-shrink: 0;
+  margin-top: 1px;
+  font-size: 11px;
+  line-height: 1;
+  color: rgba(125, 211, 252, 0.85);
+}
+
+.hybrid-ticket-stub {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  min-width: var(--hybrid-stub-w);
+  box-sizing: border-box;
+}
+
+.hybrid-ticket-stub .ticket-date-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 6px 14px 6px 6px;
+  position: relative;
+}
+
+.hybrid-ticket-stub .ticket-date-section .month {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  color: rgba(248, 250, 252, 0.72);
+}
+
+.hybrid-ticket-stub .ticket-date-section .day {
+  font-size: clamp(22px, 3vw, 26px);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin: 0;
+  color: rgba(248, 250, 252, 0.98);
+}
+
+.hybrid-ticket-stub .year-vertical {
+  position: absolute;
+  right: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  color: rgba(248, 250, 252, 0.4);
+  writing-mode: vertical-rl;
+}
+
+.hybrid-ticket-stub .countdown-badge {
+  margin-top: 2px;
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1.2;
+  padding: 3px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(14, 165, 233, 0.22);
+  background: linear-gradient(180deg, rgba(2, 132, 199, 0.42), rgba(2, 132, 199, 0.26));
+  color: rgba(224, 242, 254, 0.95);
+}
+
+.hybrid-ticket-tear {
+  position: absolute;
+  left: var(--hybrid-tear-x);
+  top: 0;
+  bottom: 0;
+  width: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hybrid-ticket-tear::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: var(--hybrid-tear-r);
+  bottom: var(--hybrid-tear-r);
+  transform: translateX(-50%);
+  border-left: 2px dotted rgba(255, 255, 255, 0.28);
+}
+
+@media (max-width: 640px) {
+  .hybrid-ticket-card {
+    --hybrid-stub-w: 92px;
+    min-height: 98px;
+  }
+
+  .hybrid-ticket-concert {
+    padding: 12px 14px 12px 12px;
+  }
+
+  .hybrid-ticket-copy {
+    padding-left: 10px;
+  }
+
+  .hybrid-ticket-title {
+    margin-top: 6px;
+    font-size: 15px;
+  }
+
+  .hybrid-ticket-venue {
+    margin-top: 8px;
+    font-size: 11px;
+  }
+
+  .hybrid-ticket-stub .ticket-date-section {
+    gap: 4px;
+    padding: 4px 12px 4px 4px;
+  }
+
+  .hybrid-ticket-stub .ticket-date-section .month {
+    font-size: 10px;
+    letter-spacing: 0.08em;
+  }
+
+  .hybrid-ticket-stub .ticket-date-section .day {
+    font-size: 21px;
+  }
+
+  .hybrid-ticket-stub .year-vertical {
+    font-size: 8px;
+    right: 0;
+  }
+
+  .hybrid-ticket-stub .countdown-badge {
+    font-size: 9px;
+    padding: 2px 7px;
+  }
+}

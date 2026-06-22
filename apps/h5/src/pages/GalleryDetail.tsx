@@ -53,7 +53,7 @@ export default function GalleryDetail() {
     void load();
   }, [load]);
 
-  const photos = album?.photos ?? [];
+  const photos = useMemo(() => album?.photos ?? [], [album]);
   const current = photos[index];
 
   const images = useMemo(() => photos.map((p) => resolveMediaUrl(p.url)), [photos]);

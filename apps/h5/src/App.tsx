@@ -8,13 +8,16 @@ import PosterPage from '@/pages/PosterPage';
 import PosterPreviewPage from '@/pages/PosterPreviewPage';
 import VirgilPage from '@/pages/VirgilPage';
 import PortfolioPage from '@/pages/PortfolioPage';
+import GamePage from '@/pages/GamePage';
 import Home from '@/pages/Home';
+import XkmPage from '@/pages/XkmPage';
 
 export default function App() {
   return (
     <Routes>
       
       <Route path="/home" element={<Home />} />
+      <Route path="/xkm" element={<XkmPage />} />
       <Route element={<AppLayout />}>
         <Route path="/" element={<GalleryHome />} />
         <Route path="/schedules" element={<SchedulesPage />} />
@@ -22,6 +25,7 @@ export default function App() {
         <Route path="/lab-style" element={<LabStylePage />} />
         <Route path="/poster" element={<PosterPage />} />
         <Route path="/poster/preview" element={<PosterPreviewPage />} />
+        <Route path="/game" element={<GamePage />} />
         <Route path="/virgil" element={<VirgilPage />} />
         <Route path="/portfolio" element={<PortfolioPage />} />
       </Route>

@@ -1,4 +1,4 @@
-import React, { useRef ,useEffect} from 'react';
+import { useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import heroImg from '@/assets/hero.png';
 import ticketBg from '@/assets/ticket-bg.png';
@@ -14,7 +14,7 @@ const images = [
   { src: reactLogo, label: 'ARCHIVE_2016', x: '15%', y: 1600, speed: 0.8 },
 ];
 
-const VirgilItem = ({ item }) => {
+const VirgilItem = ({ item }: { item: (typeof images)[number] }) => {
   const { scrollYProgress } = useScroll();
   
   // 核心：基于 speed 计算位移。speed > 1 追赶滚动，speed < 1 滞后滚动
@@ -47,7 +47,7 @@ export default function VirgilCanvas() {
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     });
 
-    function raf(time) {
+    function raf(time: number) {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }

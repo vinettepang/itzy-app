@@ -1,0 +1,168 @@
+/* XKM 页 PC 自适应：仅 min-width 生效 */
+@media (min-width: 1024px) {
+  body:has(.xkm) {
+    background: #e6e6e6;
+  }
+
+  .xkm {
+    --xkm-fixed-h: min(66.666vh, 620px);
+    width: min(var(--h5-pc-shell-w, 480px), 100%);
+    max-width: var(--h5-pc-shell-w, 480px);
+    margin-inline: auto;
+    margin-left: auto;
+    box-shadow: var(--h5-pc-shell-shadow);
+  }
+
+  .xkm-fixed {
+    width: min(var(--h5-pc-shell-w, 480px), 100%);
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+  }
+
+  .xkm-loadingOverlay {
+    width: min(var(--h5-pc-shell-w, 480px), 100%);
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+  }
+
+  .xkm-fixedLogo {
+    max-width: 180px;
+    max-height: 42px;
+  }
+
+  .xkm-coverNav {
+    padding: 12px 14px;
+    height: 64px;
+  }
+
+  .xkm-coverNav__cell {
+    font-size: 13px;
+  }
+
+  .xkm-infoMarquee__item {
+    font-size: 13px;
+  }
+
+  .xkm-ticketBlock__title {
+    font-size: 16px;
+  }
+
+  .xkm-objectBtn__text {
+    font-size: 28px;
+  }
+
+  .xkm-projectsPanel__line {
+    font-size: 13px;
+  }
+
+  .xkm-contactBtn,
+  .xkm-siteFooter {
+    font-size: 12px;
+  }
+
+  .xkm-flat-ticket {
+    height: 96px;
+    min-height: 96px;
+    max-height: 96px;
+  }
+
+  .xkm-hybrid-ticket {
+    height: 96px;
+    min-height: 96px;
+    max-height: 96px;
+  }
+
+  .xkm-loadingOverlay__text {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 1280px) {
+  body:has(.xkm) {
+    background: var(--xkm-fixed-bg, #f4f4f4);
+  }
+
+  .xkm {
+    --xkm-fixed-h: min(58vh, 720px);
+    width: 100vw;
+    max-width: none;
+    margin-left: calc(50% - 50vw);
+    margin-right: 0;
+    box-shadow: none;
+  }
+
+  .xkm-fixed {
+    width: 100vw;
+    left: 0;
+    right: 0;
+    margin-inline: 0;
+  }
+
+  .xkm-loadingOverlay {
+    width: auto;
+    inset: 0;
+    left: 0;
+    right: 0;
+    margin-inline: 0;
+  }
+
+  .xkm-coverNav {
+    width: 100%;
+    max-width: none;
+    margin-inline: 0;
+    padding-inline: 32px;
+    box-sizing: border-box;
+  }
+
+  .xkm-section-container {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto auto;
+    gap: 16px;
+    width: 100%;
+    max-width: none;
+    margin-inline: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .xkm-imageScroller {
+    grid-column: 1;
+    width: 100%;
+    margin-inline: 0;
+  }
+
+  .xkm-ticketBlock {
+    width: 100%;
+    padding: 18px 32px 0;
+    box-sizing: border-box;
+  }
+
+  .xkm-btnBlock {
+    width: 100%;
+    padding: 10px 32px 24px;
+    min-height: 0;
+    box-sizing: border-box;
+  }
+
+  .xkm-ticketBlock__title {
+    font-size: 18px;
+  }
+
+  .xkm-objectBtn__text {
+    font-size: 32px;
+  }
+
+  .xkm-flat-ticket,
+  .xkm-hybrid-ticket {
+    height: 104px;
+    min-height: 104px;
+    max-height: 104px;
+  }
+
+  .xkm-imageScroller__img {
+    height: 160px;
+  }
+}

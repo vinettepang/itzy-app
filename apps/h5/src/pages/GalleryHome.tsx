@@ -57,10 +57,10 @@ function Section({
   title: string;
   list: HomeSchedule[];
 }) {
-  if (!list.length) return null;
   const rootRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
+    if (!list.length) return;
     const root = rootRef.current;
     if (!root) return;
     const prefersReduce =
@@ -89,6 +89,7 @@ function Section({
     return () => io.disconnect();
   }, [list]);
 
+  if (!list.length) return null;
   return (
     <section ref={(n) => (rootRef.current = n)} className="section">
       <div className="section-head">
@@ -165,13 +166,13 @@ export default function GalleryHome() {
       posterUrl: string;
     };
   }) => {
-    const { title, artist, location, date, countdown, posterUrl } = card;
+    const { title, artist, location, date, countdown } = card;
 
     return (
       <Link to="/schedules" className="ticket-card">
         <div className="ticket-poster" aria-hidden="true">
           <div className="ticket-thumb" aria-hidden="true" />
-          {/* <img src={posterUrl} alt={`${artist} poster`} /> */}
+          {/* <img src={card.posterUrl} alt={`${artist} poster`} /> */}
         </div>
 
         <div className="ticket-info">
@@ -231,16 +232,49 @@ export default function GalleryHome() {
       (data?.comeback?.length ?? 0) +
       (data?.tourSpotlight ? 1 : 0);
      
+    const year = String(new Date(pick.startsAt).getFullYear());
     return {
       title: pick.title,
       artist: 'ITZY',
       venueLine,
       month,
       day,
+      year,
       daysLeft,
       count,
     };
   }, [data]);
+
+  const HybridTicketCard = () => {
+    if (!ticket) return null;
+    return (
+      <Link to="/schedules" className="hybrid-ticket-card">
+        <div className="hybrid-ticket-concert">
+          <div className="hybrid-ticket-copy">
+            <p className="hybrid-ticket-kicker">{ticket.artist}</p>
+            <h3 className="hybrid-ticket-title">{ticket.title}</h3>
+            {ticket.venueLine ? (
+              <p className="hybrid-ticket-venue">
+                <span className="hybrid-ticket-venue-icon" aria-hidden="true">
+                  ⌁
+                </span>
+                <span>{ticket.venueLine}</span>
+              </p>
+            ) : null}
+          </div>
+        </div>
+        <div className="hybrid-ticket-stub">
+          <div className="ticket-date-section">
+            <div className="month">{ticket.month}月</div>
+            <div className="day">{ticket.day}</div>
+            <div className="year-vertical">{ticket.year}年</div>
+            {ticket.daysLeft !== null ? <div className="countdown-badge">{ticket.daysLeft}天</div> : null}
+          </div>
+        </div>
+        <span className="hybrid-ticket-tear" aria-hidden="true" />
+      </Link>
+    );
+  };
 
   return (
     <div className="home">
@@ -293,6 +327,7 @@ export default function GalleryHome() {
               <span className="concert-notch concert-notch--a" aria-hidden="true" />
               <span className="concert-notch concert-notch--b" aria-hidden="true" />
             </Link>
+            <HybridTicketCard />
           </div>
         </section>
       ) : null}

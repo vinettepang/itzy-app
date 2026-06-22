@@ -1,0 +1,55 @@
+.game-page {
+  min-height: calc(100vh - 52px);
+  padding: 22px 14px;
+  background: #ffffff;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.game-hero {
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 18px;
+  padding: 18px 16px;
+  background: #f4f4f4;
+}
+
+.game-kicker {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.game-title {
+  margin: 10px 0 0;
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+}
+
+.game-sub {
+  margin: 10px 0 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.66);
+}
+
+.game-actions {
+  margin-top: 14px;
+}
+
+.game-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: rgba(255, 255, 255, 0.92);
+  color: rgba(0, 0, 0, 0.84);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 750;
+}
+

@@ -6,6 +6,7 @@
     "prebuild": "pnpm --filter @itzy-app/services build",
     "build": "nest build",
     "start": "nest start",
+    "prestart:dev": "pnpm --filter @itzy-app/db generate",
     "start:dev": "pnpm --filter @itzy-app/services build && nest start --watch",
     "start:prod": "node dist/main"
   },
@@ -25,12 +26,12 @@
     "rxjs": "^7.8.1"
   },
   "devDependencies": {
-    "@nestjs/cli": "^10.4.9",
-    "@nestjs/schematics": "^10.2.3",
+    "@nestjs/cli": "~10.2.1",
+    "@nestjs/schematics": "~10.0.3",
     "@types/express": "^4.17.21",
     "@types/multer": "^1.4.12",
     "@types/passport-jwt": "^4.0.1",
-    "@types/node": "^22.9.0",
-    "typescript": "^5.6.3"
+    "@types/node": "^16.18.126",
+    "typescript": "~5.4.5"
   }
 }

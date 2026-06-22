@@ -1,5 +1,7 @@
 generator client {
   provider = "prisma-client-js"
+  // 固定到本包 node_modules，避免 pnpm hoist 后 require('@prisma/client') 读到未 generate 的占位包
+  output   = "../node_modules/.prisma/client"
 }
 
 datasource db {

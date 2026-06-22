@@ -41,6 +41,7 @@ export default function AppLayout() {
           <NavLinkLike to="/lab-style" label="LAB" />
           <NavLinkLike to="/virgil" label="Virgil" />
           <NavLinkLike to="/portfolio" label="Portfolio" />
+          <NavLinkLike to="/xkm" label="XKM" />
         </nav>
       </header>
       <main className="h5-main">
