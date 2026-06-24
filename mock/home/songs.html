@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ITZY — Songs</title>
+    <meta name="description" content="ITZY discography scroll — lyrics archive." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="songs.css" />
+  </head>
+  <body class="songs-body">
+    <!-- Fixed background watermark — does not scroll -->
+    <div class="songs-watermark" aria-hidden="true">ITZY</div>
+
+  <header class="songs-header">
+      <a href="index.html" class="songs-header__back">← Home</a>
+      <span class="songs-header__label">Filosofía · Cheer</span>
+      <span class="songs-header__idx" id="song-index">01 / 12</span>
+    </header>
+
+    <!-- Fixed viewport stage -->
+    <div class="songs-stage" aria-live="polite">
+      <div class="songs-list" id="songs-list" role="list"></div>
+    </div>
+
+    <!-- Floating lyric blocks -->
+    <div class="lyrics-layer" id="lyrics-layer" aria-hidden="true"></div>
+
+    <p class="songs-hint" id="songs-hint">Scroll ↓</p>
+
+    <script src="songs.js"></script>
+  </body>
+</html>

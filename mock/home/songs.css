@@ -1,0 +1,296 @@
+/* Songs page — Fácil Filosofía inspired
+   https://facilagencia.com/filosofia/ */
+
+:root {
+  --songs-bg: #ecece8;
+  --songs-ink: #1a1a1a;
+  --songs-muted: rgba(26, 26, 26, 0.28);
+  --songs-active: #1a1a1a;
+  --songs-line: rgba(26, 26, 26, 0.1);
+  --songs-serif: "Times New Roman", Times, Georgia, serif;
+  --songs-mono: "DM Mono", ui-monospace, monospace;
+  --header-h: 56px;
+  --line-h: clamp(44px, 8vh, 72px);
+  /* Fácil Filosofía — smooth editorial scroll feel */
+  --ease-facil: cubic-bezier(0.16, 1, 0.3, 1);
+  --scroll-duration: 0.95s;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+.songs-body {
+  height: 100%;
+  overflow: hidden;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+.songs-body {
+  margin: 0;
+  font-family: var(--songs-serif);
+  background: var(--songs-bg);
+  color: var(--songs-ink);
+}
+
+/* ── Fixed ITZY watermark (one screen, no scroll) ─────────── */
+.songs-watermark {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--songs-serif);
+  font-size: clamp(120px, 28vw, 320px);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  color: rgba(26, 26, 26, 0.06);
+  user-select: none;
+  pointer-events: none;
+  line-height: 0.85;
+}
+
+/* ── Header ──────────────────────────────────────────────── */
+.songs-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-h);
+  padding: 0 clamp(16px, 4vw, 40px);
+  font-family: var(--songs-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  background: linear-gradient(to bottom, var(--songs-bg) 60%, transparent);
+}
+
+.songs-header__back {
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.55;
+  transition: opacity 0.2s;
+}
+
+.songs-header__back:hover {
+  opacity: 1;
+}
+
+.songs-header__label {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.4;
+  text-transform: lowercase;
+}
+
+.songs-header__idx {
+  opacity: 0.55;
+}
+
+/* ── Fixed song list stage (5 lines) ─────────────────────── */
+.songs-stage {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  padding: var(--header-h) clamp(20px, 6vw, 80px) 60px;
+}
+
+.songs-list {
+  position: relative;
+  width: min(720px, 100%);
+  height: calc(var(--line-h) * 5);
+  overflow: hidden;
+  /* 轻遮罩，保证 5 行都可见 */
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #000 6%,
+    #000 94%,
+    transparent 100%
+  );
+}
+
+.songs-list__track {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  will-change: transform;
+  transition: transform var(--scroll-duration) var(--ease-facil);
+}
+
+.songs-list__track.is-sliding .songs-list__item {
+  transition-duration: var(--scroll-duration);
+}
+
+.songs-list__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--line-h);
+  margin: 0;
+  font-family: var(--songs-serif);
+  font-size: clamp(22px, 4.5vw, 42px);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--songs-muted);
+  opacity: 0.5;
+  transition:
+    color var(--scroll-duration) var(--ease-facil),
+    font-weight var(--scroll-duration) var(--ease-facil),
+    transform var(--scroll-duration) var(--ease-facil),
+    opacity var(--scroll-duration) var(--ease-facil);
+  transform: scale(0.9);
+}
+
+.songs-list__item.is-active {
+  color: var(--songs-active);
+  font-weight: 700;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.songs-list__item.is-near {
+  color: rgba(26, 26, 26, 0.62);
+  opacity: 0.72;
+  transform: scale(0.96);
+}
+
+.songs-list__item.is-far {
+  color: rgba(26, 26, 26, 0.38);
+  opacity: 0.48;
+  transform: scale(0.92);
+}
+
+.songs-list__item.is-leaving {
+  opacity: 0.35;
+  transform: scale(0.88);
+}
+
+/* ── Floating lyric blocks (Fácil scattered text) ────────── */
+.lyrics-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 15;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.lyric-block {
+  position: absolute;
+  max-width: min(280px, 42vw);
+  padding: 16px 20px;
+  font-family: var(--songs-serif);
+  font-size: 15px;
+  line-height: 1.55;
+  background: var(--songs-bg);
+  border: 1px solid var(--songs-line);
+  box-shadow: 8px 8px 0 rgba(26, 26, 26, 0.06);
+  opacity: 0;
+  transform: translateY(12px) rotate(var(--rot, 0deg));
+  animation: lyricIn 0.95s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.lyric-block.is-exit {
+  animation: lyricOut 0.45s ease forwards;
+}
+
+.lyric-block__ko {
+  margin: 0 0 8px;
+  font-style: italic;
+  color: var(--songs-ink);
+}
+
+.lyric-block__zh {
+  margin: 0 0 10px;
+  font-size: 13px;
+  color: rgba(26, 26, 26, 0.55);
+}
+
+.lyric-block__cheer {
+  margin: 0;
+  padding-top: 8px;
+  border-top: 1px solid var(--songs-line);
+  font-family: var(--songs-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #c42d56;
+}
+
+@keyframes lyricIn {
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(var(--rot, 0deg));
+  }
+}
+
+@keyframes lyricOut {
+  to {
+    opacity: 0;
+    transform: translateY(-8px) rotate(var(--rot, 0deg));
+  }
+}
+
+/* ── Hint ────────────────────────────────────────────────── */
+.songs-hint {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  margin: 0;
+  font-family: var(--songs-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: rgba(26, 26, 26, 0.35);
+  pointer-events: none;
+  transition: opacity 0.4s;
+}
+
+.songs-hint.is-hidden {
+  opacity: 0;
+}
+
+@media (max-width: 640px) {
+  .lyric-block {
+    max-width: 58vw;
+    font-size: 13px;
+    padding: 12px 14px;
+  }
+
+  .songs-header__label {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --scroll-duration: 0.01s;
+  }
+
+  .songs-list__track {
+    transition: none;
+  }
+
+  .lyric-block {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
