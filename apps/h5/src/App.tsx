@@ -11,6 +11,7 @@ import PortfolioPage from '@/pages/PortfolioPage';
 import GamePage from '@/pages/GamePage';
 import Home from '@/pages/Home';
 import XkmPage from '@/pages/XkmPage';
+import SongsPage from '@/pages/SongsPage';
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
       
       <Route path="/home" element={<Home />} />
       <Route path="/xkm" element={<XkmPage />} />
+      <Route path="/songs" element={<SongsPage />} />
       <Route element={<AppLayout />}>
         <Route path="/" element={<GalleryHome />} />
         <Route path="/schedules" element={<SchedulesPage />} />
