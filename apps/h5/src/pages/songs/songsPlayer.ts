@@ -15,6 +15,10 @@ const VISIBLE = 5;
 const CENTER = Math.floor(VISIBLE / 2);
 /** 滚轮灵敏度：越小越慢 */
 const SCROLL_FACTOR = 0.32;
+/** 每帧向目标插值比例（0~1，越大跟手越快，无回弹） */
+const SMOOTHING = 0.16;
+/** 位移低于此值时停止动画 */
+const STOP_THRESHOLD = 0.0006;
 
 function pad(num: number) {
   return String(num).padStart(2, '0');
@@ -65,6 +69,8 @@ export function initSongsPlayer(targets: SongsPlayerTargets): () => void {
   const lineH = () => getLineHeight(rootEl);
 
   let virtualIndex = 0;
+  let targetIndex = 0;
+  let rafId = 0;
   let currentLyricEl: HTMLElement | null = null;
   let lastLyricIndex = -1;
   let touchY = 0;
@@ -87,15 +93,6 @@ export function initSongsPlayer(targets: SongsPlayerTargets): () => void {
       trackEl.appendChild(item);
       slotEls.push(item);
     }
-  }
-
-  function logicalIndex() {
-    return mod(Math.round(virtualIndex));
-  }
-
-  function updateCounter() {
-    const idx = logicalIndex();
-    indexLabel.textContent = `${pad(idx + 1)} / ${pad(N)}`;
   }
 
   function placeLyricBlock(index: number) {
@@ -165,9 +162,8 @@ export function initSongsPlayer(targets: SongsPlayerTargets): () => void {
   }
 
   function applyFrame(vi: number) {
-    virtualIndex = vi;
-    const base = Math.floor(virtualIndex);
-    const frac = virtualIndex - base;
+    const base = Math.floor(vi);
+    const frac = vi - base;
     const focal = CENTER + frac;
     const h = lineH();
 
@@ -189,16 +185,40 @@ export function initSongsPlayer(targets: SongsPlayerTargets): () => void {
     });
 
     gsap.set(trackEl, { y: -frac * h });
-    updateCounter();
-    placeLyricBlock(logicalIndex());
+
+    const idx = mod(Math.round(vi));
+    indexLabel.textContent = `${pad(idx + 1)} / ${pad(N)}`;
+    placeLyricBlock(idx);
   }
 
-  function shiftBy(delta: number) {
+  function tick() {
+    const diff = targetIndex - virtualIndex;
+    virtualIndex += diff * SMOOTHING;
+    applyFrame(virtualIndex);
+
+    if (Math.abs(diff) < STOP_THRESHOLD) {
+      virtualIndex = targetIndex;
+      applyFrame(virtualIndex);
+      rafId = 0;
+      return;
+    }
+
+    rafId = requestAnimationFrame(tick);
+  }
+
+  function startLoop() {
+    if (!rafId) {
+      rafId = requestAnimationFrame(tick);
+    }
+  }
+
+  function addScrollDelta(delta: number) {
     if (Math.abs(delta) < 0.0001) return;
-    applyFrame(virtualIndex + delta);
-    if (Math.abs(virtualIndex) > 0.05) {
+    targetIndex += delta;
+    if (Math.abs(targetIndex) > 0.05) {
       hint?.classList.add('is-hidden');
     }
+    startLoop();
   }
 
   function onWheel(e: WheelEvent) {
@@ -206,7 +226,7 @@ export function initSongsPlayer(targets: SongsPlayerTargets): () => void {
     e.stopPropagation();
     const step = (e.deltaY / lineH()) * SCROLL_FACTOR;
     if (Math.abs(step) < 0.0001) return;
-    shiftBy(step);
+    addScrollDelta(step);
   }
 
   function onTouchStart(e: TouchEvent) {
@@ -219,16 +239,16 @@ export function initSongsPlayer(targets: SongsPlayerTargets): () => void {
     const dy = touchY - y;
     touchY = y;
     if (Math.abs(dy) < 0.5) return;
-    shiftBy((dy / lineH()) * SCROLL_FACTOR);
+    addScrollDelta((dy / lineH()) * SCROLL_FACTOR);
   }
 
   function onKeyDown(e: KeyboardEvent) {
     if (e.key === 'ArrowDown' || e.key === 'PageDown') {
       e.preventDefault();
-      shiftBy(1);
+      addScrollDelta(1);
     } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
       e.preventDefault();
-      shiftBy(-1);
+      addScrollDelta(-1);
     }
   }
 
@@ -246,6 +266,7 @@ export function initSongsPlayer(targets: SongsPlayerTargets): () => void {
   window.addEventListener('resize', onResize);
 
   return () => {
+    if (rafId) cancelAnimationFrame(rafId);
     listEl.removeEventListener('wheel', onWheel);
     listEl.removeEventListener('touchstart', onTouchStart);
     listEl.removeEventListener('touchmove', onTouchMove);
