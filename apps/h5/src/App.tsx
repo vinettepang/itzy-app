@@ -12,6 +12,7 @@ import GamePage from '@/pages/GamePage';
 import Home from '@/pages/Home';
 import XkmPage from '@/pages/XkmPage';
 import SongsPage from '@/pages/SongsPage';
+import UnseenPage from '@/pages/UnseenPage';
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
       <Route path="/home" element={<Home />} />
       <Route path="/xkm" element={<XkmPage />} />
       <Route path="/songs" element={<SongsPage />} />
+      <Route path="/unseen" element={<UnseenPage />} />
       <Route element={<AppLayout />}>
         <Route path="/" element={<GalleryHome />} />
         <Route path="/schedules" element={<SchedulesPage />} />

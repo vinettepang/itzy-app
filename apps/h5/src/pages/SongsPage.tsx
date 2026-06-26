@@ -60,7 +60,11 @@ export default function SongsPage() {
       </header>
 
       <div className="songs-watermark" aria-hidden="true">
-        ITZY
+        {['I', 'T', 'Z', 'Y'].map((ch) => (
+          <span key={ch} className="songs-watermark__char">
+            {ch}
+          </span>
+        ))}
       </div>
 
       <div className="songs-list" ref={listRef} role="list" aria-label="Album list">

@@ -13,6 +13,10 @@ export type AlbumType = '正规' | '迷你' | '精选' | '单曲';
 export type AlbumEntry = {
   /** 专辑名 */
   name: string;
+  /** 主打曲 */
+  titleTrack: string;
+  /** 专辑曲目 */
+  tracks: string[];
   /** 发行时间 YYYY-MM-DD */
   releaseDate: string;
   /** 正规 / 迷你 / 精选 / 单曲 */
@@ -27,6 +31,16 @@ export type AlbumEntry = {
 export const ALBUMS: AlbumEntry[] = [
   {
     name: "IT'z ICY",
+    titleTrack: 'ICY',
+    tracks: [
+      'ICY',
+      'CHERRY',
+      "IT'z SUMMER",
+      "DON'T GIVE WHAT THEY WANT",
+      'SHOOT!',
+      'TOUCH',
+      "THAT'S A NO NO",
+    ],
     releaseDate: '2019-07-29',
     albumType: '迷你',
     market: '韩语',
@@ -37,6 +51,15 @@ export const ALBUMS: AlbumEntry[] = [
   },
   {
     name: "IT'z ME",
+    titleTrack: 'WANNABE',
+    tracks: [
+      'WANNABE',
+      'ICY (Remix)',
+      'LAZY',
+      '24HOURS',
+      'WANT IT?',
+      'HONEY',
+    ],
     releaseDate: '2020-03-09',
     albumType: '迷你',
     market: '韩语',
@@ -47,6 +70,15 @@ export const ALBUMS: AlbumEntry[] = [
   },
   {
     name: 'Not Shy',
+    titleTrack: 'Not Shy',
+    tracks: [
+      'Not Shy',
+      'YOU MAKE ME',
+      'SHOOT TO KILL',
+      'TALK',
+      'BE IN LOVE',
+      'LOCO',
+    ],
     releaseDate: '2020-08-17',
     albumType: '迷你',
     market: '韩语',
@@ -57,6 +89,15 @@ export const ALBUMS: AlbumEntry[] = [
   },
   {
     name: 'GUESS WHO',
+    titleTrack: 'LOCO',
+    tracks: [
+      'In the morning',
+      'Kidding Me',
+      'WHAT I WANT',
+      'Sorry Not Sorry',
+      'LOCO',
+      'DALLA DALLA (English Ver.)',
+    ],
     releaseDate: '2021-04-30',
     albumType: '迷你',
     market: '韩语',
@@ -67,6 +108,17 @@ export const ALBUMS: AlbumEntry[] = [
   },
   {
     name: 'CRAZY IN LOVE',
+    titleTrack: 'LOCO',
+    tracks: [
+      'LOCO',
+      'SWIPE',
+      'Sooo LUCKY',
+      '#Twenty',
+      'B[OO]M-BOXX',
+      'GAS ME UP',
+      'LOVE is',
+      "Chillin' Chillin'",
+    ],
     releaseDate: '2021-09-24',
     albumType: '正规',
     market: '韩语',
@@ -77,6 +129,15 @@ export const ALBUMS: AlbumEntry[] = [
   },
   {
     name: "IT'z ITZY",
+    titleTrack: 'DALLA DALLA',
+    tracks: [
+      'DALLA DALLA (Japanese Ver.)',
+      'WANNABE (Japanese Ver.)',
+      'ICY (Japanese Ver.)',
+      'Not Shy (Japanese Ver.)',
+      'In the morning (Japanese Ver.)',
+      'LOCO (Japanese Ver.)',
+    ],
     releaseDate: '2021-12-22',
     albumType: '精选',
     market: '日语',
@@ -87,6 +148,8 @@ export const ALBUMS: AlbumEntry[] = [
   },
   {
     name: 'Voltage',
+    titleTrack: 'Voltage',
+    tracks: ['Voltage', 'Voltage (Instrumental)'],
     releaseDate: '2022-04-06',
     albumType: '单曲',
     market: '日语',
@@ -97,6 +160,16 @@ export const ALBUMS: AlbumEntry[] = [
   },
   {
     name: 'CHECKMATE',
+    titleTrack: 'Sneakers',
+    tracks: [
+      'Sneakers',
+      'RACER',
+      'WHAT I WANT',
+      'Free Fall',
+      '365',
+      'Domino',
+      'LOVE is',
+    ],
     releaseDate: '2022-07-15',
     albumType: '迷你',
     market: '韩语',
@@ -107,6 +180,8 @@ export const ALBUMS: AlbumEntry[] = [
   },
   {
     name: 'Blah Blah Blah',
+    titleTrack: 'Blah Blah Blah',
+    tracks: ['Blah Blah Blah', 'Blah Blah Blah (Instrumental)'],
     releaseDate: '2022-10-05',
     albumType: '单曲',
     market: '日语',
@@ -117,6 +192,8 @@ export const ALBUMS: AlbumEntry[] = [
   },
   {
     name: 'CHESHIRE',
+    titleTrack: 'Cheshire',
+    tracks: ['Cheshire', 'Nobody', 'Freak', 'VEHICLE', 'Shoot'],
     releaseDate: '2022-11-30',
     albumType: '迷你',
     market: '韩语',
@@ -127,6 +204,16 @@ export const ALBUMS: AlbumEntry[] = [
   },
   {
     name: 'KILL MY DOUBT',
+    titleTrack: 'CAKE',
+    tracks: [
+      'CAKE',
+      'Bet On Me',
+      'None of My Business',
+      'Psychic Lover',
+      'Kill Shot',
+      'Bricks',
+      'Highway with you',
+    ],
     releaseDate: '2023-07-31',
     albumType: '迷你',
     market: '韩语',
@@ -137,6 +224,14 @@ export const ALBUMS: AlbumEntry[] = [
   },
   {
     name: 'RINGO',
+    titleTrack: 'RINGO',
+    tracks: [
+      'RINGO',
+      'Mine',
+      'Blah Blah Blah',
+      'Buzz Buzz',
+      'What is Love?',
+    ],
     releaseDate: '2023-10-18',
     albumType: '正规',
     market: '日语',
@@ -147,6 +242,17 @@ export const ALBUMS: AlbumEntry[] = [
   },
   {
     name: 'BORN TO BE',
+    titleTrack: 'UNTOUCHABLE',
+    tracks: [
+      'BORN TO BE',
+      'UNTOUCHABLE',
+      'Run Away',
+      'MISFIT',
+      'Yet, but',
+      'You Want More',
+      'BORN TO BE (OT5 Ver.)',
+      'Dynamite',
+    ],
     releaseDate: '2024-01-08',
     albumType: '迷你',
     market: '韩语',
@@ -157,6 +263,8 @@ export const ALBUMS: AlbumEntry[] = [
   },
   {
     name: 'Algorhythm',
+    titleTrack: 'Algorhythm',
+    tracks: ['Algorhythm', 'Algorhythm (Instrumental)'],
     releaseDate: '2024-05-15',
     albumType: '单曲',
     market: '日语',
@@ -167,6 +275,15 @@ export const ALBUMS: AlbumEntry[] = [
   },
   {
     name: 'GOLD',
+    titleTrack: 'GOLD',
+    tracks: [
+      'GOLD',
+      'Imaginary Friend',
+      'Bad Days',
+      'DESIRE',
+      'TREASURE',
+      'Officer',
+    ],
     releaseDate: '2024-10-15',
     albumType: '迷你',
     market: '韩语',
@@ -177,6 +294,8 @@ export const ALBUMS: AlbumEntry[] = [
   },
   {
     name: 'Girls Will Be Girls',
+    titleTrack: 'Girls Will Be Girls',
+    tracks: ['Girls Will Be Girls', 'Like Friends', 'Never Ever'],
     releaseDate: '2025-06-09',
     albumType: '迷你',
     market: '韩语',
@@ -187,6 +306,14 @@ export const ALBUMS: AlbumEntry[] = [
   },
   {
     name: 'Collector',
+    titleTrack: 'Collector',
+    tracks: [
+      'Collector',
+      'Kiss & Tell',
+      'Playlist',
+      'Diamond',
+      'Rewind',
+    ],
     releaseDate: '2025-10-08',
     albumType: '正规',
     market: '日语',
@@ -197,6 +324,8 @@ export const ALBUMS: AlbumEntry[] = [
   },
   {
     name: 'TUNNEL VISION',
+    titleTrack: 'KILL SHOT',
+    tracks: ['KILL SHOT', 'TUNNEL VISION', 'No Limit', 'Fever'],
     releaseDate: '2025-11-10',
     albumType: '迷你',
     market: '韩语',
@@ -207,6 +336,8 @@ export const ALBUMS: AlbumEntry[] = [
   },
   {
     name: 'Motto',
+    titleTrack: 'Imaginary Friend',
+    tracks: ['Imaginary Friend', 'Motto', 'Supernatural', 'On Your Mark'],
     releaseDate: '2026-05-18',
     albumType: '迷你',
     market: '韩语',
@@ -219,3 +350,7 @@ export const ALBUMS: AlbumEntry[] = [
 
 /** @deprecated 使用 ALBUMS */
 export const SONGS = ALBUMS;
+
+export function formatAlbumLine(album: AlbumEntry) {
+  return `${album.name} · ${album.titleTrack}`;
+}

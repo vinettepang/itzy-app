@@ -1,5 +1,5 @@
 import gsap from 'gsap';
-import { ALBUMS } from './songsData';
+import { ALBUMS, formatAlbumLine } from './songsData';
 
 type SongsPlayerTargets = {
   rootEl: HTMLElement;
@@ -172,7 +172,8 @@ export function initSongsPlayer(targets: SongsPlayerTargets): () => void {
       if (!label) return;
 
       const albumIdx = mod(base + s - CENTER);
-      label.textContent = ALBUMS[albumIdx].name;
+      const album = ALBUMS[albumIdx];
+      label.textContent = formatAlbumLine(album);
 
       const dist = Math.abs(s - focal);
       const focus = clamp01(1 - dist);
@@ -181,6 +182,7 @@ export function initSongsPlayer(targets: SongsPlayerTargets): () => void {
       el.style.transform = `scale(${scale})`;
       label.style.background = mixHex('#efefef', '#dcff60', focus);
       label.style.fontWeight = focus > 0.55 ? '700' : '400';
+      label.style.fontSize = focus > 0.55 ? 'clamp(22px, 4.5vw, 42px)' : '16px';
       label.classList.toggle('is-active', focus > 0.92);
     });
 

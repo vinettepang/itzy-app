@@ -43,6 +43,7 @@ export default function AppLayout() {
           <NavLinkLike to="/portfolio" label="Portfolio" />
           <NavLinkLike to="/xkm" label="XKM" />
           <NavLinkLike to="/songs" label="Songs" />
+          <NavLinkLike to="/unseen" label="Unseen" />
         </nav>
       </header>
       <main className="h5-main">
