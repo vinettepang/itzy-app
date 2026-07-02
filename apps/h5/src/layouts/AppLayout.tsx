@@ -44,6 +44,7 @@ export default function AppLayout() {
           <NavLinkLike to="/xkm" label="XKM" />
           <NavLinkLike to="/songs" label="Songs" />
           <NavLinkLike to="/unseen" label="Unseen" />
+          <NavLinkLike to="/balls" label="Balls" />
         </nav>
       </header>
       <main className="h5-main">

@@ -13,6 +13,7 @@ import Home from '@/pages/Home';
 import XkmPage from '@/pages/XkmPage';
 import SongsPage from '@/pages/SongsPage';
 import UnseenPage from '@/pages/UnseenPage';
+import BallsPage from '@/pages/BallsPage';
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
       <Route path="/xkm" element={<XkmPage />} />
       <Route path="/songs" element={<SongsPage />} />
       <Route path="/unseen" element={<UnseenPage />} />
+      <Route path="/balls" element={<BallsPage />} />
       <Route element={<AppLayout />}>
         <Route path="/" element={<GalleryHome />} />
         <Route path="/schedules" element={<SchedulesPage />} />

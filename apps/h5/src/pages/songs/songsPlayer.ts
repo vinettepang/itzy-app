@@ -14,11 +14,10 @@ const N = ALBUMS.length;
 const VISIBLE = 5;
 const CENTER = Math.floor(VISIBLE / 2);
 /** 滚轮灵敏度：越小越慢 */
-const SCROLL_FACTOR = 0.32;
-/** 每帧向目标插值比例（0~1，越大跟手越快，无回弹） */
-const SMOOTHING = 0.16;
-/** 位移低于此值时停止动画 */
-const STOP_THRESHOLD = 0.0006;
+const SCROLL_FACTOR = 0.2;
+/** 轻微滑动跟随（无弹簧回弹） */
+const SLIDE_SMOOTHING = 0.22;
+const SLIDE_STOP = 0.0008;
 
 function pad(num: number) {
   return String(num).padStart(2, '0');
@@ -162,8 +161,9 @@ export function initSongsPlayer(targets: SongsPlayerTargets): () => void {
   }
 
   function applyFrame(vi: number) {
-    const base = Math.floor(vi);
-    const frac = vi - base;
+    virtualIndex = vi;
+    const base = Math.floor(virtualIndex);
+    const frac = virtualIndex - base;
     const focal = CENTER + frac;
     const h = lineH();
 
@@ -188,17 +188,17 @@ export function initSongsPlayer(targets: SongsPlayerTargets): () => void {
 
     gsap.set(trackEl, { y: -frac * h });
 
-    const idx = mod(Math.round(vi));
+    const idx = mod(Math.round(virtualIndex));
     indexLabel.textContent = `${pad(idx + 1)} / ${pad(N)}`;
     placeLyricBlock(idx);
   }
 
   function tick() {
     const diff = targetIndex - virtualIndex;
-    virtualIndex += diff * SMOOTHING;
+    virtualIndex += diff * SLIDE_SMOOTHING;
     applyFrame(virtualIndex);
 
-    if (Math.abs(diff) < STOP_THRESHOLD) {
+    if (Math.abs(diff) < SLIDE_STOP) {
       virtualIndex = targetIndex;
       applyFrame(virtualIndex);
       rafId = 0;
@@ -208,10 +208,8 @@ export function initSongsPlayer(targets: SongsPlayerTargets): () => void {
     rafId = requestAnimationFrame(tick);
   }
 
-  function startLoop() {
-    if (!rafId) {
-      rafId = requestAnimationFrame(tick);
-    }
+  function startSlide() {
+    if (!rafId) rafId = requestAnimationFrame(tick);
   }
 
   function addScrollDelta(delta: number) {
@@ -220,7 +218,7 @@ export function initSongsPlayer(targets: SongsPlayerTargets): () => void {
     if (Math.abs(targetIndex) > 0.05) {
       hint?.classList.add('is-hidden');
     }
-    startLoop();
+    startSlide();
   }
 
   function onWheel(e: WheelEvent) {
@@ -255,6 +253,7 @@ export function initSongsPlayer(targets: SongsPlayerTargets): () => void {
   }
 
   function onResize() {
+    targetIndex = virtualIndex;
     applyFrame(virtualIndex);
   }
 

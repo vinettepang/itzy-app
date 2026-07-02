@@ -1,0 +1,67 @@
+.balls-page {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background: #ecece8;
+}
+
+.balls-page__header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px clamp(16px, 4vw, 40px);
+  font-family: 'DM Mono', ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: rgba(26, 26, 26, 0.55);
+  pointer-events: none;
+}
+
+.balls-page__back {
+  pointer-events: auto;
+  color: inherit;
+  text-decoration: none;
+}
+
+.balls-page__back:hover {
+  color: #1a1a1a;
+}
+
+.balls-page__title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-transform: uppercase;
+}
+
+.balls-page__stage {
+  width: 100%;
+  height: 100%;
+}
+
+.balls-page__stage canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  cursor: default;
+}
+
+.balls-page__hint {
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  margin: 0;
+  font-family: 'DM Mono', ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(26, 26, 26, 0.38);
+  pointer-events: none;
+}
