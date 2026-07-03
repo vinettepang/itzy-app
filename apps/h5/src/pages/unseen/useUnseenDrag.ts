@@ -9,6 +9,7 @@ const STOP = 0.08;
 export function useUnseenDrag(
   targetRef: RefObject<HTMLElement | null>,
   enabled: boolean,
+  sessionId = 0,
 ) {
   const [pan, setPan] = useState<Point>({ x: 0, y: 0 });
   const targetPanRef = useRef<Point>({ x: 0, y: 0 });
@@ -88,7 +89,9 @@ export function useUnseenDrag(
     const onPointerUp = (e: PointerEvent) => {
       draggingRef.current = false;
       lastPointerRef.current = null;
-      el.releasePointerCapture(e.pointerId);
+      if (el.hasPointerCapture(e.pointerId)) {
+        el.releasePointerCapture(e.pointerId);
+      }
       startLoop();
     };
 
@@ -98,13 +101,16 @@ export function useUnseenDrag(
     el.addEventListener('pointercancel', onPointerUp);
 
     return () => {
+      draggingRef.current = false;
+      lastPointerRef.current = null;
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      rafRef.current = 0;
       el.removeEventListener('pointerdown', onPointerDown);
       el.removeEventListener('pointermove', onPointerMove);
       el.removeEventListener('pointerup', onPointerUp);
       el.removeEventListener('pointercancel', onPointerUp);
     };
-  }, [enabled, targetRef]);
+  }, [enabled, targetRef, sessionId]);
 
   return { pan, resetPan };
 }

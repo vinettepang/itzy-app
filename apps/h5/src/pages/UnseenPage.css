@@ -28,6 +28,7 @@
 
 .unseen-gate--hidden {
   pointer-events: none;
+  visibility: hidden;
 }
 
 .unseen-gate__status {

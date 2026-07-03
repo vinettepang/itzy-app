@@ -27,7 +27,13 @@ export default function UnseenPage() {
   const gateRef = useRef<HTMLDivElement>(null);
   const worldRef = useRef<HTMLDivElement>(null);
   const stageRef = useRef<HTMLDivElement>(null);
-  const { pan, resetPan } = useUnseenDrag(stageRef, phase === 'world' && !detailDoll);
+  const transitionRef = useRef<gsap.core.Timeline | null>(null);
+  const [worldSession, setWorldSession] = useState(0);
+  const { pan, resetPan } = useUnseenDrag(
+    stageRef,
+    phase === 'world' && !detailDoll,
+    worldSession,
+  );
 
   const selectedDoll = selectedDollId ? getDollById(selectedDollId) : null;
   const visibleDolls = overviewMode ? UNSEEN_DOLLS : selectedDoll ? [selectedDoll] : [];
@@ -104,12 +110,20 @@ export default function UnseenPage() {
     const doll = getDollById(dollId);
     if (!doll) return;
 
+    transitionRef.current?.kill();
+
     setSelectedDollId(dollId);
     setOverviewMode(false);
     setWorldScale(1);
     setDetailDoll(null);
+    setWorldSession((n) => n + 1);
+    setPhase('world');
+
+    const focus = focusPanForDoll(doll);
+    resetPan(focus.x, focus.y);
 
     const tl = gsap.timeline();
+    transitionRef.current = tl;
     tl.to(gateRef.current, {
       opacity: 0,
       y: -24,
@@ -123,15 +137,15 @@ export default function UnseenPage() {
         ease: 'power2.out',
       },
       0.15,
-    ).call(() => {
-      setPhase('world');
-      const focus = focusPanForDoll(doll);
-      resetPan(focus.x, focus.y);
+    ).eventCallback('onComplete', () => {
+      transitionRef.current = null;
     });
   }
 
   function backToGallery() {
     if (phase !== 'world' || !gateRef.current || !worldRef.current) return;
+
+    transitionRef.current?.kill();
 
     setPhase('gallery');
     setOverviewMode(false);
@@ -139,6 +153,7 @@ export default function UnseenPage() {
     setDetailDoll(null);
 
     const tl = gsap.timeline();
+    transitionRef.current = tl;
     tl.to(worldRef.current, {
       opacity: 0,
       duration: 0.85,
@@ -153,7 +168,15 @@ export default function UnseenPage() {
         ease: 'power2.out',
       },
       0.15,
-    );
+    ).eventCallback('onComplete', () => {
+      transitionRef.current = null;
+      if (worldRef.current) {
+        gsap.set(worldRef.current, { clearProps: 'opacity' });
+      }
+      if (gateRef.current) {
+        gsap.set(gateRef.current, { clearProps: 'opacity,transform' });
+      }
+    });
   }
 
   function toggleOverview() {
