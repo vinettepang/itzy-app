@@ -1,4 +1,4 @@
-import { type RefObject, useEffect, useRef, useState } from 'react';
+import { type RefObject, useCallback, useEffect, useRef, useState } from 'react';
 
 type Point = { x: number; y: number };
 
@@ -17,6 +17,15 @@ export function useUnseenDrag(
   const draggingRef = useRef(false);
   const lastPointerRef = useRef<Point | null>(null);
   const rafRef = useRef(0);
+
+  const resetPan = useCallback((x = 0, y = 0) => {
+    targetPanRef.current = { x, y };
+    panRef.current = { x, y };
+    velocityRef.current = { x: 0, y: 0 };
+    draggingRef.current = false;
+    lastPointerRef.current = null;
+    setPan({ x, y });
+  }, []);
 
   useEffect(() => {
     const el = targetRef.current;
@@ -56,6 +65,9 @@ export function useUnseenDrag(
     };
 
     const onPointerDown = (e: PointerEvent) => {
+      const target = e.target as HTMLElement | null;
+      if (target?.closest('button, a, [data-no-drag]')) return;
+
       draggingRef.current = true;
       lastPointerRef.current = { x: e.clientX, y: e.clientY };
       el.setPointerCapture(e.pointerId);
@@ -94,5 +106,5 @@ export function useUnseenDrag(
     };
   }, [enabled, targetRef]);
 
-  return pan;
+  return { pan, resetPan };
 }

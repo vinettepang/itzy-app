@@ -11,7 +11,6 @@ import {
   type Body as MatterBody,
 } from 'matter-js';
 
-const BALL_COUNT = 20;
 const POINTER_RADIUS = 76;
 const PUSH_SCALE = 0.0009;
 const MAX_MOUSE_SPEED = 34;
@@ -60,11 +59,11 @@ function createWalls(width: number, height: number) {
 function createBalls(width: number, textures: HTMLImageElement[]) {
   const balls: BallBody[] = [];
 
-  for (let i = 0; i < BALL_COUNT; i += 1) {
+  for (let i = 0; i < textures.length; i += 1) {
     const radius = randomBetween(26, 50);
     const x = randomBetween(radius + 16, width - radius - 16);
     const y = randomBetween(-120 - i * 28, -20 - i * 8);
-    const texture = textures[i % textures.length];
+    const texture = textures[i];
 
     const ball = Bodies.circle(x, y, radius, {
       restitution: 0.62,
@@ -131,13 +130,18 @@ function setCanvasCursor(canvas: HTMLCanvasElement, cursor: string) {
 }
 
 export async function initBallsWorld(container: HTMLElement) {
+  const albumHeadModules = import.meta.glob<string>(
+    '@/assets/img/albumhead/*.{jpg,jpeg,png,webp}',
+    {
+      eager: true,
+      import: 'default',
+    },
+  );
+
   const textures = await Promise.all(
-    Object.values(
-      import.meta.glob<string>('@/assets/*.{jpg,jpeg,png,webp}', {
-        eager: true,
-        import: 'default',
-      }),
-    ).map((src) => loadImage(src)),
+    Object.keys(albumHeadModules)
+      .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
+      .map((key) => loadImage(albumHeadModules[key])),
   );
 
   if (!textures.length) return () => undefined;
