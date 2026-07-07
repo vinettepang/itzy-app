@@ -2,12 +2,11 @@ import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { UNSEEN_LETTERS, UNSEEN_MONOLITHS } from '@/pages/unseen/unseenWorldData';
 import {
-  getDollById,
-  UNSEEN_DOLLS,
   UNSEEN_MERCH_LAYOUT,
   UNSEEN_OVERVIEW_SCALE,
-  type UnseenDoll,
-} from '@/pages/unseen/unseenDollData';
+} from '@/pages/unseen/buildDollGallery';
+import { fetchDollGallery, getDollById } from '@/pages/unseen/fetchDollCatalog';
+import type { UnseenDoll } from '@/types/dollCatalog';
 import { useUnseenDrag } from '@/pages/unseen/useUnseenDrag';
 import './UnseenPage.css';
 
@@ -24,6 +23,8 @@ export default function UnseenPage() {
   const [overviewMode, setOverviewMode] = useState(false);
   const [worldScale, setWorldScale] = useState(1);
   const [detailDoll, setDetailDoll] = useState<UnseenDoll | null>(null);
+  const [dolls, setDolls] = useState<UnseenDoll[]>([]);
+  const [loadError, setLoadError] = useState<string | null>(null);
   const gateRef = useRef<HTMLDivElement>(null);
   const worldRef = useRef<HTMLDivElement>(null);
   const stageRef = useRef<HTMLDivElement>(null);
@@ -35,8 +36,8 @@ export default function UnseenPage() {
     worldSession,
   );
 
-  const selectedDoll = selectedDollId ? getDollById(selectedDollId) : null;
-  const visibleDolls = overviewMode ? UNSEEN_DOLLS : selectedDoll ? [selectedDoll] : [];
+  const selectedDoll = selectedDollId ? getDollById(dolls, selectedDollId) : null;
+  const visibleDolls = overviewMode ? dolls : selectedDoll ? [selectedDoll] : [];
 
   useEffect(() => {
     document.documentElement.style.overflow = 'hidden';
@@ -53,31 +54,34 @@ export default function UnseenPage() {
     const start = performance.now();
     const duration = 1600;
 
-    const preload = UNSEEN_DOLLS.map(
-      (doll) =>
-        new Promise<void>((resolve) => {
-          const img = new Image();
-          img.onload = () => resolve();
-          img.onerror = () => resolve();
-          img.src = doll.src;
-        }),
-    );
-
-    Promise.all(preload).then(() => {
-      if (cancelled) return;
-
-      const tick = (now: number) => {
-        const t = Math.min(1, (now - start) / duration);
-        setProgress(Math.round(t * 100));
-        if (t < 1) {
-          frame = requestAnimationFrame(tick);
-        } else {
-          setPhase('gallery');
+    const catalogPromise = fetchDollGallery()
+      .then((res) => {
+        if (cancelled) return;
+        if (res.code !== 0) {
+          setLoadError(res.message || '加载失败');
+          return;
         }
-      };
+        setDolls(res.data.dolls);
+        setLoadError(null);
+      })
+      .catch((err: unknown) => {
+        if (cancelled) return;
+        setLoadError(err instanceof Error ? err.message : '加载失败');
+      });
 
-      frame = requestAnimationFrame(tick);
-    });
+    const tick = (now: number) => {
+      const t = Math.min(1, (now - start) / duration);
+      setProgress(Math.round(t * 100));
+      if (t < 1) {
+        frame = requestAnimationFrame(tick);
+      } else {
+        Promise.resolve(catalogPromise).then(() => {
+          if (!cancelled) setPhase('gallery');
+        });
+      }
+    };
+
+    frame = requestAnimationFrame(tick);
 
     return () => {
       cancelled = true;
@@ -107,7 +111,7 @@ export default function UnseenPage() {
   function enterWorld(dollId: string) {
     if (phase !== 'gallery' || !gateRef.current || !worldRef.current) return;
 
-    const doll = getDollById(dollId);
+    const doll = getDollById(dolls, dollId);
     if (!doll) return;
 
     transitionRef.current?.kill();
@@ -218,9 +222,11 @@ export default function UnseenPage() {
       >
         {phase === 'loading' ? (
           <p className="unseen-gate__status">(Loading) {progress}%</p>
+        ) : loadError ? (
+          <p className="unseen-gate__status">{loadError}</p>
         ) : (
           <div className="unseen-gallery" aria-label="Doll collection">
-            {UNSEEN_DOLLS.map((doll) => (
+            {dolls.map((doll) => (
               <button
                 key={doll.id}
                 type="button"
@@ -230,11 +236,14 @@ export default function UnseenPage() {
                 <img
                   className="unseen-gallery__img"
                   src={doll.src}
-                  alt={`${doll.name} ${doll.series}`}
+                  alt={`${doll.characterName} ${doll.series}`}
                   draggable={false}
                 />
                 <span className="unseen-gallery__label">
-                  {doll.name} · {doll.series}
+                  {doll.characterName} · {doll.series}
+                </span>
+                <span className="unseen-gallery__sub">
+                  {doll.name} · {doll.productName}
                 </span>
               </button>
             ))}
@@ -280,39 +289,48 @@ export default function UnseenPage() {
                 top: `calc(50% + ${doll.worldY}px)`,
               }}
             >
-              <button
-                type="button"
-                className="unseen-doll-hero"
-                data-no-drag
-                onClick={() => {
-                  if (overviewMode) {
-                    focusDollFromOverview(doll);
-                    return;
-                  }
-                  openDollDetail(doll);
-                }}
-              >
-                <img src={doll.src} alt={`${doll.name} ${doll.series}`} draggable={false} />
-                <span className="unseen-doll-hero__label">
-                  {doll.name} · {doll.series}
-                </span>
-              </button>
+              {overviewMode ? (
+                <button
+                  type="button"
+                  className="unseen-doll-cluster__title unseen-doll-cluster__title--btn"
+                  data-no-drag
+                  onClick={() => focusDollFromOverview(doll)}
+                >
+                  {doll.characterName}
+                </button>
+              ) : (
+                <h3
+                  className="unseen-doll-cluster__title unseen-doll-cluster__title--float"
+                  style={{
+                    ['--float-duration' as string]: '7.4s',
+                    ['--float-delay' as string]: `${doll.id.length * 0.06}s`,
+                  }}
+                >
+                  {doll.characterName}
+                </h3>
+              )}
 
               {doll.merch.map((item, index) => {
                 const layout = UNSEEN_MERCH_LAYOUT[index % UNSEEN_MERCH_LAYOUT.length];
+                const floatDuration = 6.2 + (index % 4) * 0.9;
+                const floatDelay = index * 0.55 + doll.id.length * 0.04;
                 return (
-                  <figure
+                  <button
                     key={item.id}
-                    className="unseen-merch"
+                    type="button"
+                    className="unseen-merch unseen-merch--float"
                     data-no-drag
                     style={{
                       left: layout.x,
                       top: layout.y,
+                      ['--float-duration' as string]: `${floatDuration}s`,
+                      ['--float-delay' as string]: `${floatDelay}s`,
                     }}
+                    onClick={() => openDollDetail(doll)}
                   >
                     <img src={item.src} alt={item.label} draggable={false} />
-                    <figcaption>{item.label}</figcaption>
-                  </figure>
+                    <span className="unseen-merch__label">{item.label}</span>
+                  </button>
                 );
               })}
             </div>
@@ -343,7 +361,7 @@ export default function UnseenPage() {
       {phase === 'world' && !overviewMode ? (
         <>
           <p className="unseen-hint">Drag to explore merchandise</p>
-          <p className="unseen-hint unseen-hint--hold">Tap doll for details</p>
+          <p className="unseen-hint unseen-hint--hold">Tap item for details</p>
         </>
       ) : null}
 
@@ -382,7 +400,7 @@ export default function UnseenPage() {
               alt={`${detailDoll.name} ${detailDoll.series}`}
             />
             <h2 id="unseen-modal-title" className="unseen-modal__title">
-              {detailDoll.name} · {detailDoll.series}
+              {detailDoll.characterName} · {detailDoll.series}
             </h2>
             <dl className="unseen-modal__meta">
               <div>
@@ -390,18 +408,27 @@ export default function UnseenPage() {
                 <dd>{detailDoll.name}</dd>
               </div>
               <div>
-                <dt>Series</dt>
-                <dd>{detailDoll.series}</dd>
+                <dt>Character</dt>
+                <dd>{detailDoll.characterName}</dd>
               </div>
               <div>
-                <dt>Tour Cycle</dt>
-                <dd>{detailDoll.tourCycle}</dd>
+                <dt>Collection</dt>
+                <dd>{detailDoll.collection}</dd>
               </div>
               <div>
-                <dt>Size</dt>
-                <dd>{detailDoll.size}</dd>
+                <dt>Year</dt>
+                <dd>{detailDoll.year}</dd>
+              </div>
+              <div>
+                <dt>Product</dt>
+                <dd>{detailDoll.productName}</dd>
+              </div>
+              <div>
+                <dt>Status</dt>
+                <dd>{detailDoll.status}</dd>
               </div>
             </dl>
+            <p className="unseen-modal__source">{detailDoll.officialSource}</p>
             <p className="unseen-modal__desc">{detailDoll.description}</p>
           </div>
         </div>

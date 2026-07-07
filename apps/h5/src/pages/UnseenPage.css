@@ -78,6 +78,12 @@
   color: #1a1a1a;
 }
 
+.unseen-gallery__sub {
+  margin-top: 4px;
+  font-size: clamp(10px, 1vw, 12px);
+  color: rgba(26, 26, 26, 0.45);
+}
+
 .unseen-world {
   position: absolute;
   inset: 0;
@@ -114,47 +120,90 @@
   height: 0;
 }
 
-.unseen-doll-hero {
+.unseen-doll-cluster__title {
   position: absolute;
-  left: -60px;
-  top: -210px;
-  width: 120px;
-  padding: 0;
-  border: 1px solid rgba(244, 244, 239, 0.2);
-  border-radius: 4px;
-  background: rgba(12, 12, 12, 0.6);
-  overflow: hidden;
-  cursor: pointer;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
-}
-
-.unseen-doll-hero img {
-  display: block;
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-}
-
-.unseen-doll-hero__label {
-  display: block;
-  padding: 6px 8px;
-  font-size: 9px;
-  letter-spacing: 0.1em;
+  left: 50%;
+  top: -72px;
+  transform: translateX(-50%);
+  margin: 0;
+  width: max-content;
+  max-width: 200px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   text-align: center;
-  color: var(--unseen-muted);
-  background: rgba(0, 0, 0, 0.35);
+  color: var(--unseen-ink);
+  white-space: nowrap;
 }
 
-.unseen-doll-hero:hover {
-  border-color: rgba(244, 244, 239, 0.45);
+.unseen-doll-cluster__title--btn {
+  padding: 0;
+  border: none;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+  color: var(--unseen-muted);
+}
+
+.unseen-doll-cluster__title--btn:hover {
+  color: var(--unseen-ink);
+}
+
+.unseen-doll-cluster__title--float {
+  animation: unseen-title-float var(--float-duration, 7s) ease-in-out infinite alternate;
+  animation-delay: var(--float-delay, 0s);
+  will-change: transform;
+}
+
+.unseen-merch--float {
+  animation: unseen-merch-float var(--float-duration, 6s) ease-in-out infinite alternate;
+  animation-delay: var(--float-delay, 0s);
+  will-change: transform;
+}
+
+@keyframes unseen-title-float {
+  0% {
+    transform: translateX(-50%) translate(0, 0);
+  }
+  50% {
+    transform: translateX(-50%) translate(2px, -4px);
+  }
+  100% {
+    transform: translateX(-50%) translate(-2px, 3px);
+  }
+}
+
+@keyframes unseen-merch-float {
+  0% {
+    transform: translate(0, 0);
+  }
+  35% {
+    transform: translate(3px, -4px);
+  }
+  70% {
+    transform: translate(-3px, 3px);
+  }
+  100% {
+    transform: translate(2px, -2px);
+  }
 }
 
 .unseen-merch {
   position: absolute;
-  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
   width: 100px;
-  pointer-events: none;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-align: center;
+}
+
+.unseen-merch:hover img {
+  border-color: rgba(244, 244, 239, 0.35);
 }
 
 .unseen-merch img {
@@ -164,15 +213,16 @@
   object-fit: cover;
   border: 1px solid rgba(244, 244, 239, 0.15);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+  transition: border-color 0.2s ease;
 }
 
-.unseen-merch figcaption {
+.unseen-merch__label {
+  display: block;
   margin-top: 6px;
   font-size: 9px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--unseen-muted);
-  text-align: center;
 }
 
 .unseen-overview-btn {
@@ -284,6 +334,14 @@
   color: var(--unseen-muted);
 }
 
+.unseen-modal__source {
+  margin: 12px 0 0;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--unseen-muted);
+}
+
 .unseen-monolith {
   position: absolute;
   display: flex;
@@ -379,6 +437,13 @@
   letter-spacing: 0.08em;
   color: var(--unseen-muted);
   pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .unseen-merch--float,
+  .unseen-doll-cluster__title--float {
+    animation: none;
+  }
 }
 
 @media (max-width: 900px) {

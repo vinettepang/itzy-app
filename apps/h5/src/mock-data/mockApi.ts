@@ -1,5 +1,8 @@
 import albumLocalDemo from './album-local-demo.json';
 import schedulesTemplate from './schedules.json';
+import catalogJson from '@/data/wdzy_twinzy_catalog.json';
+import { buildDollGallery } from '@/pages/unseen/buildDollGallery';
+import type { DollCatalog } from '@/types/dollCatalog';
 
 type JsonSchedule = (typeof schedulesTemplate)[number];
 
@@ -91,6 +94,20 @@ export function tryMockApiResponse(url: string, method: string): { code: number;
   }
   if (path === '/schedules') {
     return { code: 0, data: buildSchedulesList(), message: 'ok' };
+  }
+  if (path === '/dolls/gallery') {
+    const catalog = clone(catalogJson) as DollCatalog;
+    return {
+      code: 0,
+      data: {
+        meta: catalog.meta,
+        dolls: buildDollGallery(catalog),
+      },
+      message: 'ok',
+    };
+  }
+  if (path === '/dolls/catalog') {
+    return { code: 0, data: clone(catalogJson), message: 'ok' };
   }
   const albumMatch = path.match(/^\/albums\/([^/]+)$/);
   if (albumMatch) {
