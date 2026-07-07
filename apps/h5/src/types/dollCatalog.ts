@@ -3,6 +3,7 @@ export type CatalogMember = {
   character?: string;
   twinzyName?: string;
   filename: string;
+  image?: string;
 };
 
 export type CatalogProduct = {

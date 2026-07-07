@@ -1,20 +1,3 @@
-import img0004 from '@/assets/img/albumhead/0004.jpg';
-import img0010 from '@/assets/img/albumhead/0010.jpg';
-import img0011 from '@/assets/img/albumhead/0011.jpg';
-import img0016 from '@/assets/img/albumhead/0016.jpg';
-import img0021 from '@/assets/img/albumhead/0021.jpg';
-import img0023 from '@/assets/img/albumhead/0023.jpg';
-import img0027 from '@/assets/img/albumhead/0027.jpg';
-import img0029 from '@/assets/img/albumhead/0029.jpg';
-import img0036 from '@/assets/img/albumhead/0036.jpg';
-import img0039 from '@/assets/img/albumhead/0039.jpg';
-import img0048 from '@/assets/img/albumhead/0048.jpg';
-import img0050 from '@/assets/img/albumhead/0050.jpg';
-import img0052 from '@/assets/img/albumhead/0052.jpg';
-import img0054 from '@/assets/img/albumhead/0054.jpg';
-import img0055 from '@/assets/img/albumhead/0055.jpg';
-import img0063 from '@/assets/img/albumhead/0063.jpg';
-import img0067 from '@/assets/img/albumhead/0067.jpg';
 import type {
   CatalogMember,
   CatalogProduct,
@@ -23,30 +6,19 @@ import type {
   UnseenDoll,
 } from '@/types/dollCatalog';
 
+const catalogImages = import.meta.glob<string>('../../data/img/*.png', {
+  eager: true,
+  import: 'default',
+});
+
+const IMAGE_BY_FILENAME = Object.fromEntries(
+  Object.entries(catalogImages).map(([path, src]) => {
+    const filename = path.split('/').pop() ?? path;
+    return [filename, src];
+  }),
+);
+
 const MEMBER_ORDER = ['Yeji', 'Lia', 'Ryujin', 'Chaeryeong', 'Yuna'] as const;
-
-const MEMBER_IMAGES: Record<string, string> = {
-  Yeji: img0004,
-  Lia: img0010,
-  Ryujin: img0011,
-  Chaeryeong: img0016,
-  Yuna: img0021,
-};
-
-const MERCH_IMAGES = [
-  img0048,
-  img0050,
-  img0052,
-  img0054,
-  img0055,
-  img0063,
-  img0067,
-  img0023,
-  img0027,
-  img0029,
-  img0036,
-  img0039,
-];
 
 const WDZY_CORE_ID = 'wdzy_plush_doll_2021';
 const TWINZY_CORE_ID = 'twinzy_original_plush_2024';
@@ -61,11 +33,8 @@ function memberCharacter(member: CatalogMember) {
   return member.character ?? member.twinzyName ?? member.member;
 }
 
-function resolveImage(_filename: string, index: number, member?: string) {
-  if (member && MEMBER_IMAGES[member]) {
-    return MEMBER_IMAGES[member];
-  }
-  return MERCH_IMAGES[index % MERCH_IMAGES.length];
+function resolveImage(filename: string) {
+  return IMAGE_BY_FILENAME[filename] ?? '';
 }
 
 function buildDescription(product: CatalogProduct, member: CatalogMember) {
@@ -81,14 +50,14 @@ function buildMerchForMember(
 ): DollMerch[] {
   return catalog[seriesKey]
     .filter((product) => product.id !== coreProductId)
-    .flatMap((product, productIndex) => {
+    .flatMap((product) => {
       const member = product.members.find((m) => m.member === memberName);
       if (!member) return [];
 
       return [
         {
           id: `${product.id}-${memberName}`,
-          src: resolveImage(member.filename, productIndex, memberName),
+          src: resolveImage(member.filename),
           label: product.productName,
           productName: product.productName,
           category: product.category,
@@ -122,7 +91,7 @@ function buildRow(
       name: memberName,
       series: seriesLabel,
       characterName: memberCharacter(member),
-      src: resolveImage(member.filename, globalIndex, memberName),
+      src: resolveImage(member.filename),
       collection: core.collection,
       year: core.year,
       category: core.category,
