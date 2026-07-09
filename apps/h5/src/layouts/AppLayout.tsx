@@ -36,6 +36,7 @@ export default function AppLayout() {
         <div className="h5-brand">ITZY · H5</div>
         <nav className="h5-links" aria-label="Primary">
           <NavLinkLike to="/" label="首页" />
+          <NavLinkLike to="/gallery" label="图鉴" />
           <NavLinkLike to="/schedules" label="行程" />
           <NavLinkLike to="/poster" label="海报" />
           <NavLinkLike to="/lab-style" label="LAB" />

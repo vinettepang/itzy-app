@@ -1,0 +1,611 @@
+@font-face {
+  font-family: 'Business System';
+  src: url('/virgil-static/fonts/AA00BusinessSystem-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Simon Mono';
+  src: url('/virgil-static/fonts/SimonMono-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root {
+  --virgil-bg: #1c4a96;
+  --virgil-text: #ffffff;
+  --virgil-accent: #b9e7fe;
+  --virgil-border: #ffffff;
+  --virgil-graphic-opacity: 0.2;
+  --virgil-blue: var(--virgil-bg);
+  --virgil-light: var(--virgil-accent);
+  --vw: 1;
+  --initial-vh: 100vh;
+}
+
+html.virgil-page {
+  overscroll-behavior-y: none;
+}
+
+html.virgil-inverted {
+  filter: invert(1);
+  -webkit-filter: invert(1);
+}
+
+.virgil {
+  position: relative;
+  width: 100%;
+  min-height: 100dvh;
+  background: var(--virgil-bg);
+  color: var(--virgil-text);
+  font-family: Helvetica, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: clip;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* 触底换肤：整页淡入淡出（对齐生产站 0.5s ease） */
+.virgil__cycleLayer {
+  transition: opacity 0.5s ease;
+}
+
+.virgil--fade-out .virgil__cycleLayer {
+  opacity: 0;
+}
+
+.virgil--fade-in .virgil__cycleLayer {
+  opacity: 1;
+}
+
+.virgil__certificateWrap {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.virgil__certificateWrap .virgil__certificate {
+  position: absolute;
+  inset: 0;
+}
+
+.virgil__scrollTrack {
+  position: relative;
+}
+
+/* 桌面：内容固定视口，仅 300vh 代理层驱动滚动 */
+@media (min-width: 701px) {
+  .virgil__stage {
+    position: fixed;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 12px;
+    box-sizing: border-box;
+    pointer-events: none;
+  }
+
+  .virgil__stage a,
+  .virgil__stage button,
+  .virgil__stage input,
+  .virgil__stage label,
+  .virgil__stage select,
+  .virgil__stage textarea {
+    pointer-events: auto;
+  }
+
+  .virgil__scrollProxy {
+    height: 300vh;
+    height: 300dvh;
+    flex-shrink: 0;
+    pointer-events: none;
+  }
+
+  .virgil__scrollPost {
+    height: 50vh;
+    height: 50dvh;
+    flex-shrink: 0;
+    pointer-events: none;
+  }
+
+  .virgil__scrollProxyMobile {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .virgil__stage {
+    position: relative;
+    z-index: 2;
+    padding: 0 12px 48px;
+  }
+
+  .virgil__scrollProxy {
+    display: block;
+    height: calc(var(--initial-vh, 100vh) * 2.4);
+  }
+
+  .virgil__scrollProxyMobile {
+    position: absolute;
+    height: calc(var(--initial-vh, 100vh) * 1.5);
+    width: 1px;
+    left: 0;
+    bottom: 0;
+    pointer-events: none;
+  }
+}
+
+.virgil ::selection {
+  background: var(--virgil-text);
+  color: var(--virgil-bg);
+}
+
+.virgil__grain {
+  position: fixed;
+  inset: 0;
+  z-index: 6000;
+  pointer-events: none;
+  opacity: 0.03;
+  mix-blend-mode: hard-light;
+  background-image: url('/virgil-static/images/noise.png');
+  background-repeat: repeat;
+  image-rendering: pixelated;
+}
+
+.virgil__watermark {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  --graphic-opacity: var(--virgil-graphic-opacity, 0.2);
+}
+
+.virgil__watermark svg {
+  position: absolute;
+  right: calc(var(--vw) * -8vw);
+  top: calc(var(--initial-vh, 100vh));
+  transform: translateY(-100%);
+  width: calc(var(--vw) * 100vw);
+  height: auto;
+  opacity: 0;
+  color: currentColor;
+  animation: virgilWatermarkIn 0.6s ease-out 1.4s forwards;
+}
+
+@media (min-width: 700px) {
+  .virgil__watermark svg {
+    top: auto;
+    bottom: -2vw;
+    transform: none;
+    width: calc(var(--vw) * 64vw);
+  }
+}
+
+@keyframes virgilWatermarkIn {
+  from { opacity: 0; }
+  to { opacity: var(--virgil-graphic-opacity, 0.2); }
+}
+
+.virgil__header {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: none;
+  padding: 0;
+  font-family: 'Simon Mono', ui-monospace, monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  pointer-events: auto;
+}
+
+@media (min-width: 701px) {
+  .virgil__header {
+    padding-top: 12px;
+    font-size: 12px;
+  }
+}
+
+.virgil__body {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 0;
+  padding-bottom: 0;
+  pointer-events: none;
+}
+
+.virgil__columns {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 3rem;
+  width: 100%;
+  pointer-events: none;
+}
+
+.virgil__intro,
+.virgil__signup {
+  pointer-events: auto;
+}
+
+@media (max-width: 700px) {
+  .virgil__body {
+    justify-content: flex-start;
+    padding-top: 72px;
+  }
+
+  .virgil__columns {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+    margin-top: calc(var(--initial-vh, 100vh) * 0.5);
+  }
+}
+
+.virgil__metaRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  letter-spacing: 0.02em;
+}
+
+.virgil__metaRow--top {
+  margin-bottom: 12px;
+  opacity: 0.9;
+}
+
+.virgil__metaRow--tight {
+  margin: 0 0 12px;
+  font-size: 10px;
+}
+
+.virgil__headerMain {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.virgil__brandRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.virgil__logo {
+  color: currentColor;
+  height: 25px;
+  width: auto;
+}
+
+.virgil__crest {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 9px;
+  line-height: 1.1;
+  border: 1px solid currentColor;
+  padding: 2px 4px;
+}
+
+.virgil__crestMark {
+  font-size: 8px;
+}
+
+.virgil__headerLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  font-size: 10px;
+}
+
+.virgil__headerLinks a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.virgil__headerLinks a:hover {
+  text-decoration: underline;
+}
+
+.virgil__clock {
+  margin-top: 4px;
+  letter-spacing: 0.08em;
+}
+
+.virgil__rule {
+  margin: 12px 0;
+  border-top: 1px dashed var(--virgil-border);
+  opacity: 0.85;
+}
+
+.virgil__main {
+  display: none;
+}
+
+.virgil__announcement {
+  display: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.06em;
+  line-height: 0.8;
+  text-align: center;
+  font-size: calc(var(--vw) * 24.55vw - 0.2rem);
+  margin: 0 0 4rem -0.04em;
+  cursor: default;
+  width: 100%;
+  flex-shrink: 0;
+  align-self: flex-start;
+  color: var(--virgil-text);
+  transition: color 0.5s ease;
+}
+
+.virgil__announcement--enter {
+  transform: translateY(20vw) rotate(-20deg);
+  opacity: 0;
+  animation: virgilTitleIn 1.6s cubic-bezier(0.66, 0, 0.01, 1) forwards;
+}
+
+@media (min-width: 720px) {
+  .virgil__announcement {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: auto;
+  }
+}
+
+@media (max-width: 719px) {
+  .virgil__announcement {
+    display: none;
+  }
+}
+
+@keyframes virgilTitleIn {
+  from {
+    transform: translateY(20vw) rotate(-20deg);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.virgil__title,
+.virgil__joinTitle {
+  font-family: 'Business System', Helvetica, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 0.9;
+  font-size: 85px;
+  margin: calc(var(--vw) * 0.2vw) 0 -4px;
+  text-transform: none;
+  color: var(--virgil-text);
+  transition: color 0.5s ease;
+}
+
+@media (max-width: 700px) {
+  .virgil__title,
+  .virgil__joinTitle {
+    font-size: calc(var(--vw) * 15.3vw);
+  }
+}
+
+.virgil__title span,
+.virgil__joinTitle span {
+  display: block;
+}
+
+.virgil__letterText {
+  font-family: 'Simon Mono', ui-monospace, monospace;
+  font-size: clamp(0.75rem, calc(var(--vw) * 1.5vw), 0.9rem);
+  line-height: 1.6;
+  margin: 0 0 18px;
+  max-width: 100%;
+}
+
+.virgil__word {
+  display: inline;
+  white-space: normal;
+}
+
+.virgil__letter {
+  display: inline-block;
+  opacity: 0;
+  animation: virgilLetterIn 0.12s ease-out forwards;
+}
+
+@keyframes virgilLetterIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.virgil__intro {
+  flex: 1;
+  min-width: 0;
+  margin-bottom: 0;
+}
+
+/* 生产站：固定全屏证书画布，滚动驱动卷曲动画 */
+.virgil__certificate {
+  width: 100%;
+  height: calc(var(--initial-vh, 100vh) * 1.2);
+  min-height: 100dvh;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+@media (min-width: 701px) {
+  .virgil__certificate {
+    height: 100vh;
+    height: 100dvh;
+    min-height: 0;
+  }
+}
+
+.virgil__certificate canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.virgil__signup {
+  flex: 1;
+  min-width: 0;
+  padding-top: 0;
+  border-top: none;
+  z-index: 3;
+}
+
+@media (max-width: 700px) {
+  .virgil__signup {
+    padding-top: 24px;
+    border-top: 1px dashed currentColor;
+  }
+}
+
+.virgil__signupLead,
+.virgil__signupToolkit {
+  font-family: 'Simon Mono', ui-monospace, monospace;
+  font-size: clamp(0.75rem, calc(var(--vw) * 1.5vw), 0.9rem);
+  line-height: 1.6;
+  margin: 0 0 16px;
+  max-width: 52ch;
+}
+
+.virgil__form {
+  display: grid;
+  gap: 12px;
+  max-width: 420px;
+  margin: 24px 0;
+  font-family: 'Simon Mono', ui-monospace, monospace;
+}
+
+.virgil__field input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid currentColor;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+}
+
+.virgil__field input::placeholder {
+  color: inherit;
+  opacity: 0.7;
+}
+
+.virgil__checkbox {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.virgil__submit {
+  justify-self: start;
+  padding: 10px 18px;
+  border: 1px solid currentColor;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.virgil__submit:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.virgil__legalNote {
+  font-family: 'Simon Mono', ui-monospace, monospace;
+  font-size: 11px;
+  line-height: 1.5;
+  max-width: 52ch;
+}
+
+.virgil__legalNote a {
+  color: inherit;
+}
+
+.virgil__srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Legal pages */
+.virgil--legal .virgil__legalMain {
+  max-width: 720px;
+  padding: 24px 12px 96px;
+  font-family: 'Simon Mono', ui-monospace, monospace;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.virgil__legalTitle {
+  font-family: 'Business System', Helvetica, sans-serif;
+  font-size: clamp(36px, 8vw, 64px);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  margin: 16px 0 8px;
+  text-transform: capitalize;
+}
+
+.virgil__legalUpdated {
+  opacity: 0.75;
+  margin-bottom: 24px;
+}
+
+.virgil__legalP {
+  margin: 0 0 16px;
+}
+
+.virgil__legalBack {
+  margin-top: 40px;
+}
+
+.virgil__legalBack a,
+.virgil__homeLink {
+  color: inherit;
+  text-decoration: none;
+}
+
+.virgil__homeLink:hover,
+.virgil__legalBack a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+  .virgil__scrollPost {
+    height: calc(var(--initial-vh, 100vh) * 0.5);
+  }
+
+  .virgil__header {
+    position: sticky;
+    top: 11px;
+    z-index: 50;
+    margin: 0 11px;
+    padding: 10px;
+    background: var(--virgil-bg);
+    transition: background-color 0.5s ease;
+    pointer-events: auto;
+  }
+}

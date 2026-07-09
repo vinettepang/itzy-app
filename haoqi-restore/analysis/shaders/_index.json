@@ -1,0 +1,1318 @@
+{
+  "found": [
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__1.glsl",
+      "len": 1364,
+      "head": "  \t\t\tprecision mediump float; \t\t\tprecision mediump int;  \t\t\tvarying vec3 vOutput"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__2.glsl",
+      "len": 3417,
+      "head": "  \t\t\tprecision highp float; \t\t\tprecision highp int;  \t\t\tvarying vec3 vOutputDire"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__3.glsl",
+      "len": 336,
+      "head": "  \t\t\tprecision mediump float; \t\t\tprecision mediump int;  \t\t\tvarying vec3 vOutput"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__4.glsl",
+      "len": 284,
+      "head": "  \t\t\tprecision mediump float; \t\t\tprecision mediump int;  \t\t\tuniform float flipEn"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__5.glsl",
+      "len": 1012,
+      "head": "  \t\tprecision mediump float; \t\tprecision mediump int;  \t\tattribute float faceInd"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__6.glsl",
+      "len": 325,
+      "head": "  \t\t\t\tvarying vec3 vWorldDirection;  \t\t\t\tvec3 transformDirection( in vec3 dir, i"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__7.glsl",
+      "len": 277,
+      "head": "  \t\t\t\tuniform sampler2D tEquirect;  \t\t\t\tvarying vec3 vWorldDirection;  \t\t\t\t#incl"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__8.glsl",
+      "len": 282,
+      "head": " \t\t\tprecision highp float;  \t\t\tuniform mat4 modelViewMatrix; \t\t\tuniform mat4 pro"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__9.glsl",
+      "len": 1060,
+      "head": " \t\t\tprecision highp float;  \t\t\tuniform sampler2D tDiffuse;  \t\t\tvarying vec2 vUv;"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__10.glsl",
+      "len": 379,
+      "head": " uniform sampler2DArray depthColor; uniform float depthWidth; uniform float dept"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__11.glsl",
+      "len": 967,
+      "head": "#ifdef COLOR_WRITE #include <common> #include <dithering_pars_fragment> #ifdef F"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__12.glsl",
+      "len": 397,
+      "head": "#ifdef FRAMEBUFFER_PRECISION_HIGH uniform mediump sampler2D inputBuffer; #else u"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__13.glsl",
+      "len": 608,
+      "head": "#include <common> #ifdef FRAMEBUFFER_PRECISION_HIGH uniform mediump sampler2D in"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__14.glsl",
+      "len": 1391,
+      "head": "#ifdef FRAMEBUFFER_PRECISION_HIGH uniform mediump sampler2D inputBuffer; #else u"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__15.glsl",
+      "len": 859,
+      "head": "#ifdef FRAMEBUFFER_PRECISION_HIGH uniform mediump sampler2D inputBuffer;uniform "
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__16.glsl",
+      "len": 250,
+      "head": "#ifdef FRAMEBUFFER_PRECISION_HIGH uniform mediump sampler2D map; #else uniform l"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__17.glsl",
+      "len": 648,
+      "head": "#ifdef RADIAL_MODULATION uniform float modulationOffset; #endif varying float vA"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__18.glsl",
+      "len": 1111,
+      "head": "#ifdef FRAMEBUFFER_PRECISION_HIGH uniform mediump sampler2D inputBuffer; #else u"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__19.glsl",
+      "len": 1807,
+      "head": "#include <common> #include <packing> #ifdef GL_FRAGMENT_PRECISION_HIGH uniform h"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__20.glsl",
+      "len": 1009,
+      "head": "#ifdef FRAMEBUFFER_PRECISION_HIGH uniform mediump sampler2D inputBuffer; #else u"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__21.glsl",
+      "len": 943,
+      "head": "#ifdef FRAMEBUFFER_PRECISION_HIGH uniform mediump sampler2D nearColorBuffer;unif"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__22.glsl",
+      "len": 4513,
+      "head": "#define QUALITY(q) ((q) < 5 ? 1.0 : ((q) > 5 ? ((q) < 10 ? 2.0 : ((q) < 11 ? 4.0"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__23.glsl",
+      "len": 703,
+      "head": "#include <common> #include <dithering_pars_fragment> #ifdef FRAMEBUFFER_PRECISIO"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__24.glsl",
+      "len": 216,
+      "head": "#ifdef FRAMEBUFFER_PRECISION_HIGH uniform mediump sampler2D map; #else uniform l"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__25.glsl",
+      "len": 2689,
+      "head": "uniform vec3 scale;uniform vec3 offset; #ifdef CUSTOM_INPUT_DOMAIN uniform vec3 "
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__26.glsl",
+      "len": 1097,
+      "head": "#include <packing> #include <clipping_planes_pars_fragment> #ifdef GL_FRAGMENT_P"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__27.glsl",
+      "len": 401,
+      "head": "#include <common> #include <morphtarget_pars_vertex> #include <skinning_pars_ver"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__28.glsl",
+      "len": 1033,
+      "head": "uniform lowp sampler2D edgeTexture;uniform lowp sampler2D maskTexture;uniform ve"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__29.glsl",
+      "len": 1744,
+      "head": "#include <common> #include <packing> #ifdef GL_FRAGMENT_PRECISION_HIGH uniform h"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__30.glsl",
+      "len": 3502,
+      "head": "varying vec2 vUv;varying vec2 vUv0;varying vec2 vUv1; #if EDGE_DETECTION_MODE !="
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__31.glsl",
+      "len": 501,
+      "head": "uniform vec2 texelSize;varying vec2 vUv;varying vec2 vUv0;varying vec2 vUv1; #if"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__32.glsl",
+      "len": 7732,
+      "head": "#define sampleLevelZeroOffset(t, coord, offset) texture2D(t, coord + offset * te"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__33.glsl",
+      "len": 4328,
+      "head": "#include <common> #include <packing> uniform vec2 cameraNearFar; #define cameraN"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__34.glsl",
+      "len": 1720,
+      "head": "#include <packing> #ifdef GL_FRAGMENT_PRECISION_HIGH uniform highp sampler2D dep"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__35.glsl",
+      "len": 1747,
+      "head": "uniform lowp sampler2D aoBuffer;uniform float luminanceInfluence;uniform float i"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__36.glsl",
+      "len": 360,
+      "head": "#ifdef TEXTURE_PRECISION_HIGH uniform mediump sampler2D map; #else uniform lowp "
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__37.glsl",
+      "len": 246,
+      "head": "#ifdef ASPECT_CORRECTION uniform float scale; #else uniform mat3 uvTransform; #e"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__38.glsl",
+      "len": 686,
+      "head": "#ifdef FRAMEBUFFER_PRECISION_HIGH uniform mediump sampler2D inputBuffer; #else u"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__39.glsl",
+      "len": 427,
+      "head": "#ifdef FRAMEBUFFER_PRECISION_HIGH uniform mediump sampler2D map; #else uniform l"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__40.glsl",
+      "len": 684,
+      "head": "#include <packing> #define packFloatToRGBA(v) packDepthToRGBA(v) #define unpackR"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__41.glsl",
+      "len": 1415,
+      "head": "#include <tonemapping_pars_fragment> uniform float whitePoint; #if TONE_MAPPING_"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__42.glsl",
+      "len": 938,
+      "head": "#include <packing> varying vec2 vUv; #ifdef NORMAL_DEPTH #ifdef GL_FRAGMENT_PREC"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__43.glsl",
+      "len": 212,
+      "head": "varying vec2 vUv; #if DEPTH_COPY_MODE == 1 uniform vec2 texelPosition; #endif vo"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__44.glsl",
+      "len": 2448,
+      "head": "#include <common> #include <packing> #include <dithering_pars_fragment> #define "
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__45.glsl",
+      "len": 83,
+      "head": "#ifdef USE_ALPHAMAP \tdiffuseColor.a *= texture2D( alphaMap, vAlphaMapUv ).g; #en"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__46.glsl",
+      "len": 571,
+      "head": "#ifdef USE_AOMAP \tfloat ambientOcclusion = ( texture2D( aoMap, vAoMapUv ).r - 1."
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__47.glsl",
+      "len": 871,
+      "head": "#ifdef USE_BUMPMAP \tuniform sampler2D bumpMap; \tuniform float bumpScale; \tvec2 d"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__48.glsl",
+      "len": 3319,
+      "head": "#ifdef ENVMAP_TYPE_CUBE_UV \t#define cubeUV_minMipLevel 4.0 \t#define cubeUV_minTi"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__49.glsl",
+      "len": 172,
+      "head": "#ifdef USE_DISPLACEMENTMAP \ttransformed += normalize( objectNormal ) * ( texture"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__50.glsl",
+      "len": 237,
+      "head": "#ifdef USE_EMISSIVEMAP \tvec4 emissiveColor = texture2D( emissiveMap, vEmissiveMa"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__51.glsl",
+      "len": 1065,
+      "head": "#ifdef USE_ENVMAP \t#ifdef ENV_WORLDPOS \t\tvec3 cameraToFrag; \t\tif ( isOrthographi"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__52.glsl",
+      "len": 1397,
+      "head": "#ifdef USE_ENVMAP \tvec3 getIBLIrradiance( const in vec3 normal ) { \t\t#ifdef ENVM"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__53.glsl",
+      "len": 265,
+      "head": "#ifdef USE_FOG \t#ifdef FOG_EXP2 \t\tfloat fogFactor = 1.0 - exp( - fogDensity * fo"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__54.glsl",
+      "len": 435,
+      "head": "#ifdef USE_GRADIENTMAP \tuniform sampler2D gradientMap; #endif vec3 getGradientIr"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__55.glsl",
+      "len": 1022,
+      "head": "varying vec3 vViewPosition; struct LambertMaterial { \tvec3 diffuseColor; \tfloat "
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__56.glsl",
+      "len": 960,
+      "head": "varying vec3 vViewPosition; struct ToonMaterial { \tvec3 diffuseColor; }; void RE"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__57.glsl",
+      "len": 1292,
+      "head": "varying vec3 vViewPosition; struct BlinnPhongMaterial { \tvec3 diffuseColor; \tvec"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__58.glsl",
+      "len": 4021,
+      "head": "PhysicalMaterial material; material.diffuseColor = diffuseColor.rgb; material.di"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__59.glsl",
+      "len": 18001,
+      "head": "uniform sampler2D dfgLUT; struct PhysicalMaterial { \tvec3 diffuseColor; \tvec3 di"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__60.glsl",
+      "len": 6184,
+      "head": " vec3 geometryPosition = - vViewPosition; vec3 geometryNormal = normal; vec3 geo"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__61.glsl",
+      "len": 903,
+      "head": "#if defined( RE_IndirectDiffuse ) \t#ifdef USE_LIGHTMAP \t\tvec4 lightMapTexel = te"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__62.glsl",
+      "len": 145,
+      "head": "#ifdef USE_LOGARITHMIC_DEPTH_BUFFER \tvFragDepth = 1.0 + gl_Position.w; \tvIsPersp"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__63.glsl",
+      "len": 215,
+      "head": "#ifdef USE_MAP \tvec4 sampledDiffuseColor = texture2D( map, vMapUv ); \t#ifdef DEC"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__64.glsl",
+      "len": 338,
+      "head": "#if defined( USE_MAP ) || defined( USE_ALPHAMAP ) \t#if defined( USE_POINTS_UV ) "
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__65.glsl",
+      "len": 249,
+      "head": "#if defined( USE_POINTS_UV ) \tvarying vec2 vUv; #else \t#if defined( USE_MAP ) ||"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__66.glsl",
+      "len": 170,
+      "head": "float metalnessFactor = metalness; #ifdef USE_METALNESSMAP \tvec4 texelMetalness "
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__67.glsl",
+      "len": 1226,
+      "head": "float faceDirection = gl_FrontFacing ? 1.0 : - 1.0; #ifdef FLAT_SHADED \tvec3 fdx"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__68.glsl",
+      "len": 666,
+      "head": "#ifdef USE_NORMALMAP_OBJECTSPACE \tnormal = texture2D( normalMap, vNormalMapUv )."
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__69.glsl",
+      "len": 228,
+      "head": "#ifdef USE_CLEARCOAT_NORMALMAP \tvec3 clearcoatMapN = texture2D( clearcoatNormalM"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__70.glsl",
+      "len": 173,
+      "head": "#ifdef OPAQUE diffuseColor.a = 1.0; #endif #ifdef USE_TRANSMISSION diffuseColor."
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__71.glsl",
+      "len": 70,
+      "head": "#ifdef PREMULTIPLIED_ALPHA \tgl_FragColor.rgb *= gl_FragColor.a; #endif"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__72.glsl",
+      "len": 273,
+      "head": "vec4 mvPosition = vec4( transformed, 1.0 ); #ifdef USE_BATCHING \tmvPosition = ba"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__73.glsl",
+      "len": 74,
+      "head": "#ifdef DITHERING \tgl_FragColor.rgb = dithering( gl_FragColor.rgb ); #endif"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__74.glsl",
+      "len": 170,
+      "head": "float roughnessFactor = roughness; #ifdef USE_ROUGHNESSMAP \tvec4 texelRoughness "
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__75.glsl",
+      "len": 8600,
+      "head": "#if NUM_SPOT_LIGHT_COORDS > 0 \tvarying vec4 vSpotLightCoord[ NUM_SPOT_LIGHT_COOR"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__76.glsl",
+      "len": 185,
+      "head": "float specularStrength; #ifdef USE_SPECULARMAP \tvec4 texelSpecular = texture2D( "
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__77.glsl",
+      "len": 87,
+      "head": "#if defined( TONE_MAPPING ) \tgl_FragColor.rgb = toneMapping( gl_FragColor.rgb );"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__78.glsl",
+      "len": 1088,
+      "head": "#ifdef USE_TRANSMISSION \tmaterial.transmission = transmission; \tmaterial.transmi"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__79.glsl",
+      "len": 1556,
+      "head": "#if defined( USE_UV ) || defined( USE_ANISOTROPY ) \tvarying vec2 vUv; #endif #if"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__80.glsl",
+      "len": 2417,
+      "head": "#if defined( USE_UV ) || defined( USE_ANISOTROPY ) \tvarying vec2 vUv; #endif #if"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__81.glsl",
+      "len": 2679,
+      "head": "#if defined( USE_UV ) || defined( USE_ANISOTROPY ) \tvUv = vec3( uv, 1 ).xy; #end"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__82.glsl",
+      "len": 148,
+      "head": "varying vec2 vUv; uniform mat3 uvTransform; void main() { \tvUv = ( uvTransform *"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__83.glsl",
+      "len": 494,
+      "head": "uniform sampler2D t2D; uniform float backgroundIntensity; varying vec2 vUv; void"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__84.glsl",
+      "len": 211,
+      "head": "varying vec3 vWorldDirection; #include <common> void main() { \tvWorldDirection ="
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__85.glsl",
+      "len": 747,
+      "head": "#ifdef ENVMAP_TYPE_CUBE \tuniform samplerCube envMap; #elif defined( ENVMAP_TYPE_"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__86.glsl",
+      "len": 211,
+      "head": "varying vec3 vWorldDirection; #include <common> void main() { \tvWorldDirection ="
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__87.glsl",
+      "len": 329,
+      "head": "uniform samplerCube tCube; uniform float tFlip; uniform float opacity; varying v"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__88.glsl",
+      "len": 792,
+      "head": "#include <common> #include <batching_pars_vertex> #include <uv_pars_vertex> #inc"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__89.glsl",
+      "len": 1214,
+      "head": "#if DEPTH_PACKING == 3200 \tuniform float opacity; #endif #include <common> #incl"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__90.glsl",
+      "len": 770,
+      "head": "#define DISTANCE varying vec3 vWorldPosition; #include <common> #include <batchi"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__91.glsl",
+      "len": 754,
+      "head": "#define DISTANCE uniform vec3 referencePosition; uniform float nearDistance; uni"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__92.glsl",
+      "len": 179,
+      "head": "varying vec3 vWorldDirection; #include <common> void main() { \tvWorldDirection ="
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__93.glsl",
+      "len": 297,
+      "head": "uniform sampler2D tEquirect; varying vec3 vWorldDirection; #include <common> voi"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__94.glsl",
+      "len": 625,
+      "head": "uniform float scale; attribute float lineDistance; varying float vLineDistance; "
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__95.glsl",
+      "len": 816,
+      "head": "uniform vec3 diffuse; uniform float opacity; uniform float dashSize; uniform flo"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__96.glsl",
+      "len": 932,
+      "head": "#include <common> #include <batching_pars_vertex> #include <uv_pars_vertex> #inc"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__97.glsl",
+      "len": 1619,
+      "head": "uniform vec3 diffuse; uniform float opacity; #ifndef FLAT_SHADED \tvarying vec3 v"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__98.glsl",
+      "len": 1134,
+      "head": "#define LAMBERT varying vec3 vViewPosition; #include <common> #include <batching"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__99.glsl",
+      "len": 1988,
+      "head": "#define LAMBERT uniform vec3 diffuse; uniform vec3 emissive; uniform float opaci"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__100.glsl",
+      "len": 987,
+      "head": "#define MATCAP varying vec3 vViewPosition; #include <common> #include <batching_"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__101.glsl",
+      "len": 1506,
+      "head": "#define MATCAP uniform vec3 diffuse; uniform float opacity; uniform sampler2D ma"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__102.glsl",
+      "len": 1056,
+      "head": "#define NORMAL #if defined( FLAT_SHADED ) || defined( USE_BUMPMAP ) || defined( "
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__103.glsl",
+      "len": 699,
+      "head": "#define NORMAL uniform float opacity; #if defined( FLAT_SHADED ) || defined( USE"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__104.glsl",
+      "len": 1132,
+      "head": "#define PHONG varying vec3 vViewPosition; #include <common> #include <batching_p"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__105.glsl",
+      "len": 2096,
+      "head": "#define PHONG uniform vec3 diffuse; uniform vec3 emissive; uniform vec3 specular"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__106.glsl",
+      "len": 1208,
+      "head": "#define STANDARD varying vec3 vViewPosition; #ifdef USE_TRANSMISSION \tvarying ve"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__107.glsl",
+      "len": 3942,
+      "head": "#define STANDARD #ifdef PHYSICAL \t#define IOR \t#define USE_SPECULAR #endif unifo"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__108.glsl",
+      "len": 1075,
+      "head": "#define TOON varying vec3 vViewPosition; #include <common> #include <batching_pa"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__109.glsl",
+      "len": 1767,
+      "head": "#define TOON uniform vec3 diffuse; uniform vec3 emissive; uniform float opacity;"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__110.glsl",
+      "len": 864,
+      "head": "uniform float size; uniform float scale; #include <common> #include <color_pars_"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__111.glsl",
+      "len": 793,
+      "head": "uniform vec3 diffuse; uniform float opacity; #include <common> #include <color_p"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__112.glsl",
+      "len": 663,
+      "head": "#include <common> #include <batching_pars_vertex> #include <fog_pars_vertex> #in"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__113.glsl",
+      "len": 491,
+      "head": "uniform vec3 color; uniform float opacity; #include <common> #include <fog_pars_"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__114.glsl",
+      "len": 964,
+      "head": "uniform float rotation; uniform vec2 center; #include <common> #include <uv_pars"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__115.glsl",
+      "len": 768,
+      "head": "uniform vec3 diffuse; uniform float opacity; #include <common> #include <uv_pars"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__116.glsl",
+      "len": 1739,
+      "head": ",defines:{n:20,CUBEUV_TEXEL_WIDTH:1/a,CUBEUV_TEXEL_HEIGHT:1/o,CUBEUV_MAX_MIP:`${"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__117.glsl",
+      "len": 1142,
+      "head": ",defines:{GGX_SAMPLES:256,CUBEUV_TEXEL_WIDTH:1/l,CUBEUV_TEXEL_HEIGHT:1/u,CUBEUV_"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__118.glsl",
+      "len": 2996,
+      "head": " \t\t\t// https://jcgt.org/published/0007/04/01/ \t\t\tvec3 importanceSampleGGX_VNDF(v"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__119.glsl",
+      "len": 501,
+      "head": ",uniforms:{envMap:{value:null}},vertexShader:Y(),fragmentShader:`  \t\t\tprecision "
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__120.glsl",
+      "len": 2652,
+      "head": ",uniforms:{envMap:{value:null},flipEnvMap:{value:-1}},vertexShader:Y(),fragmentS"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__121.glsl",
+      "len": 2539,
+      "head": ",new E.Float32BufferAttribute([0,2,0,0,2,0],2));let u=new E.RawShaderMaterial({u"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__122.glsl",
+      "len": 66,
+      "head": "#define attribute in #define varying out #define texture2D texture"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__123.glsl",
+      "len": 360,
+      "head": "#define gl_FragDepthEXT gl_FragDepth #define texture2D texture #define textureCu"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__124.glsl",
+      "len": 1003,
+      "head": "uniform sampler2D shadow_pass; uniform vec2 resolution; uniform float radius; vo"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__125.glsl",
+      "len": 1598,
+      "head": ")))return null;if(n===E.RED_RGTC1_Format)return i.COMPRESSED_RED_RGTC1_EXT;if(n="
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__126.glsl",
+      "len": 1084,
+      "head": ",null,null),this.needsSwap=!1}render(e,t,n,r,i){let a=e.state.buffers.stencil;a."
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__127.glsl",
+      "len": 937,
+      "head": "})}setDepthTexture(e,t=O.BasicDepthPacking){}update(e,t,n){}setSize(e,t){}initia"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__128.glsl",
+      "len": 894,
+      "head": "):null!==e&&e.outputColorSpace===O.SRGBColorSpace&&(this.renderTargetA.texture.c"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__129.glsl",
+      "len": 1461,
+      "head": ")}},em=`#ifdef FRAMEBUFFER_PRECISION_HIGH uniform mediump sampler2D inputBuffer;"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__130.glsl",
+      "len": 1039,
+      "head": "})}set inputBuffer(e){this.uniforms.inputBuffer.value=e}setSize(e,t){this.unifor"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__131.glsl",
+      "len": 760,
+      "head": ";else if(null!==e&&e.outputColorSpace===O.SRGBColorSpace)for(let e of t)e.textur"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__132.glsl",
+      "len": 869,
+      "head": ").value=Math.pow(2,e/3)}getBitDepth(){return this.bitDepth}setBitDepth(e){this.b"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__133.glsl",
+      "len": 222,
+      "head": "uniform vec2 offset;varying float vActive;varying vec2 vUvR;varying vec2 vUvB;vo"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__134.glsl",
+      "len": 1340,
+      "head": "),this.setChanged())}isInverted(){return this.inverted}setInverted(e){this.inver"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__135.glsl",
+      "len": 2652,
+      "head": "),this.generateKernel()}set inputBuffer(e){this.uniforms.inputBuffer.value=e}set"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__136.glsl",
+      "len": 2875,
+      "head": "},uniforms:{depthBuffer:new O.Uniform(null),projectionMatrix:new O.Uniform(null)"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__137.glsl",
+      "len": 1240,
+      "head": ")}},eF=`#ifdef FRAMEBUFFER_PRECISION_HIGH uniform mediump sampler2D nearColorBuf"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__138.glsl",
+      "len": 4598,
+      "head": ").value=e}},ek=`#define QUALITY(q) ((q) < 5 ? 1.0 : ((q) > 5 ? ((q) < 10 ? 2.0 :"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__139.glsl",
+      "len": 516,
+      "head": "varying vec2 vUvDown;varying vec2 vUvUp;varying vec2 vUvLeft;varying vec2 vUvRig"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__140.glsl",
+      "len": 592,
+      "head": "uniform lowp sampler2D perturbationMap;uniform bool active;uniform float columns"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__141.glsl",
+      "len": 854,
+      "head": ").value=u}dispose(){let e=this.perturbationMap;null!==e&&e.name===eX&&e.dispose("
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__142.glsl",
+      "len": 2234,
+      "head": ",e,t),this.needsSwap=!1,this.needsDepthBlit=!0,this.clearPass=new j,this.overrid"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__143.glsl",
+      "len": 2834,
+      "head": ",a}},e6=`uniform vec3 scale;uniform vec3 offset; #ifdef CUSTOM_INPUT_DOMAIN unif"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__144.glsl",
+      "len": 1682,
+      "head": "),this.setChanged())}isPremultiplied(){return this.premultiply}setPremultiplied("
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__145.glsl",
+      "len": 306,
+      "head": "uniform vec2 texelSize;varying vec2 vUv0;varying vec2 vUv1;varying vec2 vUv2;var"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__146.glsl",
+      "len": 2102,
+      "head": ",e=>this.setSize(u.baseWidth,u.baseHeight))}set mainScene(e){this.renderPass.mai"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__147.glsl",
+      "len": 131,
+      "head": "uniform float patternScale;varying vec2 vUvPattern;void mainSupport(const in vec"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__148.glsl",
+      "len": 1855,
+      "head": ").value+e)*2&&(this.active=!1,o.value=!1)}}},tm=`#include <common> #include <pac"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__149.glsl",
+      "len": 4104,
+      "head": ").value}},tE=`varying vec2 vUv;varying vec2 vUv0;varying vec2 vUv1; #if EDGE_DET"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__150.glsl",
+      "len": 8019,
+      "head": "),this.needsUpdate=!0}getPredicationStrength(){return this.predicationStrength}s"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__151.glsl",
+      "len": 1024,
+      "head": "uniform sampler2D weightMap;varying vec2 vOffset0;varying vec2 vOffset1;void mov"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__152.glsl",
+      "len": 6481,
+      "head": ")),i.src=tC,a.src=t_),this.applyPreset(t)}get edgesTexture(){return this.renderT"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__153.glsl",
+      "len": 2048,
+      "head": ":delete this.defines.PERSPECTIVE_CAMERA,this.needsUpdate=!0)}setSize(e,t){let n="
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__154.glsl",
+      "len": 768,
+      "head": "))}catch(e){this.depthDownsamplingPass.enabled=!1}}},tB=`#ifdef TEXTURE_PRECISIO"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__155.glsl",
+      "len": 943,
+      "head": "+a),this.setChanged()}update(e,t,n){this.texture.matrixAutoUpdate&&this.texture."
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__156.glsl",
+      "len": 1854,
+      "head": ",this.kernelSize=e,this.uniforms.aspect=new O.Uniform(1),this.uniforms.rotation="
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__157.glsl",
+      "len": 176,
+      "head": "uniform vec2 rotation;varying vec2 vUv2;void mainSupport(const in vec2 uv){vUv2="
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__158.glsl",
+      "len": 1625,
+      "head": ").value.set(Math.cos(e),Math.sin(e)),this.blurPass.blurMaterial.rotation=e}get o"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__159.glsl",
+      "len": 2191,
+      "head": ",this.copyPass=new X(this.renderTargetPrevious,!1)}get texture(){return this.ren"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__160.glsl",
+      "len": 1348,
+      "head": ").value=e}getDarkness(){return this.darkness}setDarkness(e){this.darkness=e}};O."
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__161.glsl",
+      "len": 3873,
+      "head": "},uniforms:{depthBuffer:new O.Uniform(null),texelPosition:new O.Uniform(new O.Ve"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__162.glsl",
+      "len": 260,
+      "head": "uniform vec2 resolution;uniform vec2 texelSize;uniform float cameraNear;uniform "
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__163.glsl",
+      "len": 167917,
+      "head": "s array buffer does not match the original size. Resizing buffer attributes is n"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__164.glsl",
+      "len": 62310,
+      "head": "\")}a&&((l=t.get(\"EXT_texture_norm16\"))||(0,E.warn)(\"WebGLRenderer: Unable to use"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "name": "1098c2541054fc77__165.glsl",
+      "len": 137786,
+      "head": " are invalid!\");if(void 0!==t.args&&!Array.isArray(t.args))throw Error(\"R3F: The"
+    },
+    {
+      "file": "1ed7a178f7acd3df.js",
+      "name": "1ed7a178f7acd3df__1.glsl",
+      "len": 135951,
+      "head": ");for(let i in e.attributes){if(!t.hasAttribute(i))throw Error(`THREE.BatchedMes"
+    },
+    {
+      "file": "7758f29a8aeb1c60.js",
+      "name": "7758f29a8aeb1c60__1.glsl",
+      "len": 151,
+      "head": "           varying vec2 vUv;            void main() {             vUv = uv;     "
+    },
+    {
+      "file": "7758f29a8aeb1c60.js",
+      "name": "7758f29a8aeb1c60__2.glsl",
+      "len": 1026,
+      "head": "           precision highp float;            varying vec2 vUv;            unifor"
+    },
+    {
+      "file": "7758f29a8aeb1c60.js",
+      "name": "7758f29a8aeb1c60__3.glsl",
+      "len": 230,
+      "head": " attribute vec4 uvRect;  varying vec2 vAtlasUv;  void main() {   vAtlasUv = uvRe"
+    },
+    {
+      "file": "7758f29a8aeb1c60.js",
+      "name": "7758f29a8aeb1c60__4.glsl",
+      "len": 229,
+      "head": " uniform sampler2D map;  varying vec2 vAtlasUv;  void main() {   vec4 color = te"
+    },
+    {
+      "file": "7758f29a8aeb1c60.js",
+      "name": "7758f29a8aeb1c60__5.glsl",
+      "len": 3091,
+      "head": "uniform sampler2D tDiffuse; uniform sampler2D uVelocity; uniform vec2 uSimSize; "
+    },
+    {
+      "file": "7758f29a8aeb1c60.js",
+      "name": "7758f29a8aeb1c60__6.glsl",
+      "len": 1354,
+      "head": ",{ref:o,transparent:!0,depthTest:!1,depthWrite:!1,toneMapped:!1,uniforms:c,verte"
+    },
+    {
+      "file": "7758f29a8aeb1c60.js",
+      "name": "7758f29a8aeb1c60__7.glsl",
+      "len": 852,
+      "head": "];s3.preload(s8);let s5={particleCount:s8.length,spawnWidth:32,clickSpawnWidth:2"
+    },
+    {
+      "file": "7758f29a8aeb1c60.js",
+      "name": "7758f29a8aeb1c60__8.glsl",
+      "len": 438,
+      "head": "varying vec3 worldNormal; varying vec3 eyeVector; varying float modelLocalY;  vo"
+    },
+    {
+      "file": "7758f29a8aeb1c60.js",
+      "name": "7758f29a8aeb1c60__9.glsl",
+      "len": 7973,
+      "head": "uniform float uIorR; uniform float uIorY; uniform float uIorG; uniform float uIo"
+    },
+    {
+      "file": "7758f29a8aeb1c60.js",
+      "name": "7758f29a8aeb1c60__10.glsl",
+      "len": 336,
+      "head": "varying vec3 vWorldNormal; varying vec3 vEyeVector;  void main() {   vec4 worldP"
+    },
+    {
+      "file": "7758f29a8aeb1c60.js",
+      "name": "7758f29a8aeb1c60__11.glsl",
+      "len": 5827,
+      "head": "uniform vec3 iResolution; uniform float iTime; uniform float uScrollDuration;  u"
+    },
+    {
+      "file": "7758f29a8aeb1c60.js",
+      "name": "7758f29a8aeb1c60__12.glsl",
+      "len": 4101,
+      "head": "uniform float uCurlStrength;  vec2 applyCurl(vec2 screenUv) {   float centered ="
+    },
+    {
+      "file": "7758f29a8aeb1c60.js",
+      "name": "7758f29a8aeb1c60__13.glsl",
+      "len": 571,
+      "head": "uniform sampler2D uPressure; uniform sampler2D uDivergence; uniform vec2 uTexelS"
+    },
+    {
+      "file": "7758f29a8aeb1c60.js",
+      "name": "7758f29a8aeb1c60__14.glsl",
+      "len": 538,
+      "head": "uniform sampler2D uVelocity; uniform sampler2D uPressure; uniform vec2 uTexelSiz"
+    },
+    {
+      "file": "7758f29a8aeb1c60.js",
+      "name": "7758f29a8aeb1c60__15.glsl",
+      "len": 424,
+      "head": "uniform sampler2D uVelocity; uniform sampler2D uProjectedVelocity; uniform vec2 "
+    },
+    {
+      "file": "7758f29a8aeb1c60.js",
+      "name": "7758f29a8aeb1c60__16.glsl",
+      "len": 247,
+      "head": "uniform sampler2D tBase; uniform sampler2D tFlare;  varying vec2 vUv;  void main"
+    },
+    {
+      "file": "7758f29a8aeb1c60.js",
+      "name": "7758f29a8aeb1c60__17.glsl",
+      "len": 62385,
+      "head": ",position:\"absolute\",height:2,width:10,borderRadius:1,backgroundColor:\"currentCo"
+    },
+    {
+      "file": "e553ef8ae208a000.js",
+      "name": "e553ef8ae208a000__1.glsl",
+      "len": 714,
+      "head": "precision highp float;  uniform vec3 uColor; uniform float uFeather; uniform flo"
+    }
+  ],
+  "hints": [
+    {
+      "file": "1098c2541054fc77.js",
+      "kw": "matcap"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "kw": "envMap"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "kw": "roughness"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "kw": "metalness"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "kw": "transmission"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "kw": "MeshPhysicalMaterial"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "kw": "MeshStandardMaterial"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "kw": "PMREMGenerator"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "kw": "fov"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "kw": "DirectionalLight"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "kw": "AmbientLight"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "kw": "toneMapping"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "kw": "ACESFilmic"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "kw": "clearcoat"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "kw": "ior"
+    },
+    {
+      "file": "1098c2541054fc77.js",
+      "kw": "thickness"
+    },
+    {
+      "file": "1ed7a178f7acd3df.js",
+      "kw": "matcap"
+    },
+    {
+      "file": "1ed7a178f7acd3df.js",
+      "kw": "envMap"
+    },
+    {
+      "file": "1ed7a178f7acd3df.js",
+      "kw": "roughness"
+    },
+    {
+      "file": "1ed7a178f7acd3df.js",
+      "kw": "metalness"
+    },
+    {
+      "file": "1ed7a178f7acd3df.js",
+      "kw": "transmission"
+    },
+    {
+      "file": "1ed7a178f7acd3df.js",
+      "kw": "MeshPhysicalMaterial"
+    },
+    {
+      "file": "1ed7a178f7acd3df.js",
+      "kw": "MeshStandardMaterial"
+    },
+    {
+      "file": "1ed7a178f7acd3df.js",
+      "kw": "fov"
+    },
+    {
+      "file": "1ed7a178f7acd3df.js",
+      "kw": "DirectionalLight"
+    },
+    {
+      "file": "1ed7a178f7acd3df.js",
+      "kw": "AmbientLight"
+    },
+    {
+      "file": "1ed7a178f7acd3df.js",
+      "kw": "toneMapping"
+    },
+    {
+      "file": "1ed7a178f7acd3df.js",
+      "kw": "ACESFilmic"
+    },
+    {
+      "file": "1ed7a178f7acd3df.js",
+      "kw": "clearcoat"
+    },
+    {
+      "file": "1ed7a178f7acd3df.js",
+      "kw": "ior"
+    },
+    {
+      "file": "1ed7a178f7acd3df.js",
+      "kw": "thickness"
+    },
+    {
+      "file": "7758f29a8aeb1c60.js",
+      "kw": "hello.gltf"
+    },
+    {
+      "file": "7758f29a8aeb1c60.js",
+      "kw": "cnt.gltf"
+    },
+    {
+      "file": "7758f29a8aeb1c60.js",
+      "kw": "cursor.glb"
+    },
+    {
+      "file": "7758f29a8aeb1c60.js",
+      "kw": "envMap"
+    },
+    {
+      "file": "7758f29a8aeb1c60.js",
+      "kw": "roughness"
+    },
+    {
+      "file": "7758f29a8aeb1c60.js",
+      "kw": "metalness"
+    },
+    {
+      "file": "7758f29a8aeb1c60.js",
+      "kw": "transmission"
+    },
+    {
+      "file": "7758f29a8aeb1c60.js",
+      "kw": "MeshPhysicalMaterial"
+    },
+    {
+      "file": "7758f29a8aeb1c60.js",
+      "kw": "MeshStandardMaterial"
+    },
+    {
+      "file": "7758f29a8aeb1c60.js",
+      "kw": "fov"
+    },
+    {
+      "file": "7758f29a8aeb1c60.js",
+      "kw": "DirectionalLight"
+    },
+    {
+      "file": "7758f29a8aeb1c60.js",
+      "kw": "clearcoat"
+    },
+    {
+      "file": "7758f29a8aeb1c60.js",
+      "kw": "ior"
+    },
+    {
+      "file": "7758f29a8aeb1c60.js",
+      "kw": "thickness"
+    },
+    {
+      "file": "7cc1924554447827.js",
+      "kw": "ior"
+    },
+    {
+      "file": "83f95f6c165018c5.js",
+      "kw": "ior"
+    },
+    {
+      "file": "8c2d1abc8462562b.js",
+      "kw": "ior"
+    },
+    {
+      "file": "8c2d1abc8462562b.js",
+      "kw": "thickness"
+    },
+    {
+      "file": "8f06fe72571f37b9.js",
+      "kw": "ior"
+    },
+    {
+      "file": "d59f7a97fb1c563f.js",
+      "kw": "ior"
+    },
+    {
+      "file": "e553ef8ae208a000.js",
+      "kw": "ior"
+    }
+  ]
+}

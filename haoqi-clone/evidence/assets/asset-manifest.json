@@ -1,0 +1,207 @@
+[
+  {
+    "path": "/model/hello.gltf",
+    "status": "fail",
+    "error": "fetch is not defined"
+  },
+  {
+    "path": "/model/cursor.glb",
+    "status": "fail",
+    "error": "fetch is not defined"
+  },
+  {
+    "path": "/model/cnt.gltf",
+    "status": "fail",
+    "error": "fetch is not defined"
+  },
+  {
+    "path": "/fonts/TikTokSans.ttf",
+    "status": "fail",
+    "error": "fetch is not defined"
+  },
+  {
+    "path": "/fonts/GeistMono[wght].ttf",
+    "status": "fail",
+    "error": "fetch is not defined"
+  },
+  {
+    "path": "/fonts/DepartureMono-Regular.otf",
+    "status": "fail",
+    "error": "fetch is not defined"
+  },
+  {
+    "path": "/bgm.mp3",
+    "status": "fail",
+    "error": "fetch is not defined"
+  },
+  {
+    "path": "/sticker_img/s_01.png",
+    "status": "fail",
+    "error": "fetch is not defined"
+  },
+  {
+    "path": "/sticker_img/s_02.png",
+    "status": "fail",
+    "error": "fetch is not defined"
+  },
+  {
+    "path": "/sticker_img/s_03.png",
+    "status": "fail",
+    "error": "fetch is not defined"
+  },
+  {
+    "path": "/sticker_img/s_04.png",
+    "status": "fail",
+    "error": "fetch is not defined"
+  },
+  {
+    "path": "/sticker_img/s_05.png",
+    "status": "fail",
+    "error": "fetch is not defined"
+  },
+  {
+    "path": "/sticker_img/s_06.png",
+    "status": "fail",
+    "error": "fetch is not defined"
+  },
+  {
+    "path": "/sticker_img/s_07.png",
+    "status": "fail",
+    "error": "fetch is not defined"
+  },
+  {
+    "path": "/sticker_img/s_08.png",
+    "status": "fail",
+    "error": "fetch is not defined"
+  },
+  {
+    "path": "/sticker_img/s_09.png",
+    "status": "fail",
+    "error": "fetch is not defined"
+  },
+  {
+    "path": "/sticker_img/s_10.png",
+    "status": "fail",
+    "error": "fetch is not defined"
+  },
+  {
+    "path": "/sticker_img/s_11.png",
+    "status": "fail",
+    "error": "fetch is not defined"
+  },
+  {
+    "path": "/sticker_img/s_12.png",
+    "status": "fail",
+    "error": "fetch is not defined"
+  },
+  {
+    "path": "/work/reunimos01.png",
+    "status": "fail",
+    "error": "fetch is not defined"
+  },
+  {
+    "path": "/work/reunimos02.png",
+    "status": "fail",
+    "error": "fetch is not defined"
+  },
+  {
+    "path": "/work/inspire_mono_01.png",
+    "status": "fail",
+    "error": "fetch is not defined"
+  },
+  {
+    "path": "/work/inspire_mono_02.png",
+    "status": "fail",
+    "error": "fetch is not defined"
+  },
+  {
+    "path": "/work/wasm01.png",
+    "status": "fail",
+    "error": "fetch is not defined"
+  },
+  {
+    "path": "/work/wasm02.png",
+    "status": "fail",
+    "error": "fetch is not defined"
+  },
+  {
+    "path": "/work/vs01.png",
+    "status": "fail",
+    "error": "fetch is not defined"
+  },
+  {
+    "path": "/work/vs02.png",
+    "status": "fail",
+    "error": "fetch is not defined"
+  },
+  {
+    "path": "/work/ds01.png",
+    "status": "fail",
+    "error": "fetch is not defined"
+  },
+  {
+    "path": "/work/ds02.png",
+    "status": "fail",
+    "error": "fetch is not defined"
+  },
+  {
+    "path": "/work/ali01.png",
+    "status": "fail",
+    "error": "fetch is not defined"
+  },
+  {
+    "path": "/work/ali02.png",
+    "status": "fail",
+    "error": "fetch is not defined"
+  },
+  {
+    "path": "/work/si.png",
+    "status": "fail",
+    "error": "fetch is not defined"
+  },
+  {
+    "path": "/work/si02.png",
+    "status": "fail",
+    "error": "fetch is not defined"
+  },
+  {
+    "path": "/work/c4.png",
+    "status": "fail",
+    "error": "fetch is not defined"
+  },
+  {
+    "path": "/work/s01.png",
+    "status": "fail",
+    "error": "fetch is not defined"
+  },
+  {
+    "path": "/work/s02.png",
+    "status": "fail",
+    "error": "fetch is not defined"
+  },
+  {
+    "path": "/work/sd01.png",
+    "status": "fail",
+    "error": "fetch is not defined"
+  },
+  {
+    "path": "/work/sd02.png",
+    "status": "fail",
+    "error": "fetch is not defined"
+  },
+  {
+    "path": "/img/m3.png",
+    "status": "fail",
+    "error": "fetch is not defined"
+  },
+  {
+    "path": "/icon.svg",
+    "status": "fail",
+    "error": "fetch is not defined"
+  },
+  {
+    "path": "/apple-icon.png",
+    "status": "fail",
+    "error": "fetch is not defined"
+  }
+]

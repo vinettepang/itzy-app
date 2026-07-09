@@ -1,0 +1,80 @@
+[
+  {
+    "c": "7cc1924554447827",
+    "bytes": 49235,
+    "sm": "none",
+    "sig": "-"
+  },
+  {
+    "c": "83f95f6c165018c5",
+    "bytes": 114953,
+    "sm": "none",
+    "sig": "-"
+  },
+  {
+    "c": "8c2d1abc8462562b",
+    "bytes": 202004,
+    "sm": "none",
+    "sig": "-"
+  },
+  {
+    "c": "turbopack-425288158aa66df2",
+    "bytes": 10671,
+    "sm": "none",
+    "sig": "-"
+  },
+  {
+    "c": "1552c7742c37f06d",
+    "bytes": 282,
+    "sm": "none",
+    "sig": "-"
+  },
+  {
+    "c": "8f06fe72571f37b9",
+    "bytes": 30678,
+    "sm": "none",
+    "sig": "-"
+  },
+  {
+    "c": "e553ef8ae208a000",
+    "bytes": 19371,
+    "sm": "none",
+    "sig": "three,glsl,lenis"
+  },
+  {
+    "c": "d59f7a97fb1c563f",
+    "bytes": 145026,
+    "sm": "none",
+    "sig": "-"
+  },
+  {
+    "c": "1098c2541054fc77",
+    "bytes": 924980,
+    "sm": "none",
+    "sig": "three,glsl,gsap,lenis,matcap,envmap"
+  },
+  {
+    "c": "1ed7a178f7acd3df",
+    "bytes": 496122,
+    "sm": "none",
+    "sig": "three,glsl,lenis,matcap,envmap"
+  },
+  {
+    "c": "7758f29a8aeb1c60",
+    "bytes": 408170,
+    "sm": "none",
+    "sig": "three,glsl,lenis,envmap"
+  },
+  {
+    "c": "a6dad97d9634a72d",
+    "bytes": 112541,
+    "sm": "none",
+    "sig": "-"
+  },
+  {
+    "c": "56b0d8f9f2c1e441",
+    "bytes": 33817,
+    "sm": "none",
+    "sig": "-"
+  }
+]
