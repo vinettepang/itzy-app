@@ -621,6 +621,8 @@ article.works {
   overflow: hidden;
   background: var(--grey);
 }
+
+.billboard-project__media .media-holder::before {
   content: '';
   display: block;
   padding-top: calc(100% / var(--aspect, 0.56));
