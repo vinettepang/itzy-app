@@ -18,6 +18,14 @@ import HaoqiProjectPage from '@/pages/haoqi/HaoqiProjectPage';
 import VirgilPage from '@/pages/virgil/VirgilPage';
 import VirgilLegalPage from '@/pages/virgil/VirgilLegalPage';
 import WebglRefractionPage from '@/pages/webgl-refraction/WebglRefractionPage';
+import FacilLayout from '@/pages/facil/FacilLayout';
+import FacilHomePage from '@/pages/facil/pages/FacilHomePage';
+import FacilWorksPage from '@/pages/facil/pages/FacilWorksPage';
+import FacilFilosofiaPage from '@/pages/facil/pages/FacilFilosofiaPage';
+import FacilPeoplePage from '@/pages/facil/pages/FacilPeoplePage';
+import FacilContactPage from '@/pages/facil/pages/FacilContactPage';
+import FacilProjectPage from '@/pages/facil/pages/FacilProjectPage';
+import FacilLegalPage from '@/pages/facil/pages/FacilLegalPage';
 
 const HAOQI_PROJECT_SLUGS = [
   'reunimos',
@@ -44,6 +52,30 @@ export default function App() {
       <Route path="/virgil/privacy-policy" element={<VirgilLegalPage kind="privacy" />} />
       <Route path="/virgil/terms" element={<VirgilLegalPage kind="terms" />} />
       <Route path="/labs/webgl-refraction" element={<WebglRefractionPage />} />
+      <Route path="/facil" element={<FacilLayout />}>
+        <Route index element={<FacilHomePage />} />
+        <Route path="trabajos" element={<FacilWorksPage />} />
+        <Route path="filosofia" element={<FacilFilosofiaPage />} />
+        <Route path="people" element={<FacilPeoplePage />} />
+        <Route path="contact" element={<FacilContactPage />} />
+        <Route path="projects/:slug" element={<FacilProjectPage />} />
+        <Route path="politica-de-privacidad" element={<FacilLegalPage kind="privacy" />} />
+        <Route path="aviso-legal" element={<FacilLegalPage kind="legal" />} />
+        <Route path="politica-de-cookies" element={<FacilLegalPage kind="cookies" />} />
+        <Route path="declaracion-de-accesibilidad" element={<FacilLegalPage kind="accessibility" />} />
+        <Route path="en">
+          <Route index element={<FacilHomePage />} />
+          <Route path="works" element={<FacilWorksPage />} />
+          <Route path="philosophy" element={<FacilFilosofiaPage />} />
+          <Route path="people" element={<FacilPeoplePage />} />
+          <Route path="contact" element={<FacilContactPage />} />
+          <Route path="projects/:slug" element={<FacilProjectPage />} />
+          <Route path="privacy-policy" element={<FacilLegalPage kind="privacy" />} />
+          <Route path="legal-notice" element={<FacilLegalPage kind="legal" />} />
+          <Route path="cookie-policy" element={<FacilLegalPage kind="cookies" />} />
+          <Route path="accessibility-statement" element={<FacilLegalPage kind="accessibility" />} />
+        </Route>
+      </Route>
       {HAOQI_PROJECT_SLUGS.map((slug) => (
         <Route key={slug} path={`/${slug}`} element={<HaoqiProjectPage />} />
       ))}
