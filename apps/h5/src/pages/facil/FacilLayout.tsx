@@ -1,12 +1,12 @@
 import { useEffect, useRef } from 'react';
-import { Outlet, useLocation } from 'react-router-dom';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useLocation } from 'react-router-dom';
 import FacilHeader from './components/FacilHeader';
 import FacilFooter from './components/FacilFooter';
 import FacilCookieBanner from './components/FacilCookieBanner';
 import FacilInterfaceCanvas from './components/FacilInterfaceCanvas';
 import FacilSidemenu from './components/FacilSidemenu';
 import FacilIndexBar from './components/FacilIndexBar';
+import FacilPageTransition from './components/FacilPageTransition';
 import { FacilNavProvider } from './context/FacilNavContext';
 import { FacilLocaleProvider } from './context/FacilLocaleContext';
 import { useFacilScroll } from './hooks/useFacilScroll';
@@ -18,12 +18,11 @@ export default function FacilLayout() {
   const rootRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
 
-  useFacilScroll(rootRef);
+  useFacilScroll(rootRef, location.pathname);
   useFacilCursor();
   useFacilAnalytics();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
     document.body.classList.add('facil-body', '__scroll-manual', '__cursor', 'palette-primary');
     document.documentElement.style.background = '#fff';
     document.body.style.background = '#fff';
@@ -34,12 +33,6 @@ export default function FacilLayout() {
     };
   }, []);
 
-  useEffect(() => {
-    rootRef.current?.scrollTo(0, 0);
-    window.scrollTo(0, 0);
-    requestAnimationFrame(() => ScrollTrigger.refresh());
-  }, [location.pathname]);
-
   return (
     <FacilLocaleProvider>
       <FacilNavProvider>
@@ -48,10 +41,8 @@ export default function FacilLayout() {
           <FacilSidemenu />
           <FacilIndexBar />
           <FacilHeader />
-          <main className="facil-main">
-            <div className="wrap">
-              <Outlet />
-            </div>
+          <main className="facil-main" id="Main">
+            <FacilPageTransition />
           </main>
           <FacilFooter />
           <FacilCookieBanner />

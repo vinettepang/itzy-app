@@ -1,0 +1,4 @@
+e)o.AssetLoader.loadGltf(`${o.assetsUrl}models/home/${e[t]}`).then((e=>{this.assets.models[t]=e.scene.children[0]}));for(const e in 
+t)o.AssetLoader.loadKtxTexture(ft(`images/home/${t[e]}.ktx2`)).then((t=>{this.assets.textures[e]=t}));o.AssetLoader.loadTexture
+images/home/blade.jpg
+models/home/objectsData.glb

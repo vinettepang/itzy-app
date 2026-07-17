@@ -10,13 +10,18 @@ export default function FacilProjectCard({ project }: Props) {
   const { t, path } = useFacilLocale();
 
   return (
-    <div className={`card card-project --pos-${project.pos}`} data-scroll-item>
+    <div className={`card card-project --pos-${project.pos}`} data-scroll-item scroll-item="">
       <Link
         to={`${path('projects')}/${project.slug}`}
         className="holder"
         data-scroll-insider
-        data-speed-y={project.speedY}
-        data-speed-x={project.speedX}
+        scroll-insider=""
+        style={
+          {
+            ['--speed-y' as string]: project.speedY,
+            ['--speed-x' as string]: project.speedX,
+          } as React.CSSProperties
+        }
       >
         <div className="media">
           <figure className="media-holder" style={{ ['--aspect' as string]: project.aspect }}>
@@ -36,12 +41,22 @@ export default function FacilProjectCard({ project }: Props) {
           </figure>
         </div>
         <header>
-          <div className="logo" data-scroll-insider data-speed={project.speed}>
+          <div
+            className="logo"
+            data-scroll-insider
+            scroll-insider=""
+            style={{ ['--speed' as string]: project.speed } as React.CSSProperties}
+          >
             <figure className="media-holder">
               <img src={project.logo} alt={project.client} loading="lazy" />
             </figure>
           </div>
-          <div className="name" data-scroll-insider data-speed={project.speed}>
+          <div
+            className="name"
+            data-scroll-insider
+            scroll-insider=""
+            style={{ ['--speed' as string]: project.speed } as React.CSSProperties}
+          >
             <span className="facil-font">{t('brand')}</span> {t('project.for')} {project.client}
           </div>
         </header>

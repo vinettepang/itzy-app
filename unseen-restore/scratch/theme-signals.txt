@@ -1,0 +1,17 @@
+ASScroll: 54
+AssetLoader: 59
+Dom2Webgl: 28
+WebGLRenderer: 0
+KTX2Loader: 13
+DRACOLoader: 7
+gsap: 3
+Howl: 7
+Tone: 0
+barba: 0
+Highway: 52
+pjax: 0
+AudioContext: 0
+GLTFLoader: 28
+BasisTextureLoader: 0
+MeshoptDecoder: 2
+OrbitControls: 0

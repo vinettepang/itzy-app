@@ -26,6 +26,12 @@ import FacilPeoplePage from '@/pages/facil/pages/FacilPeoplePage';
 import FacilContactPage from '@/pages/facil/pages/FacilContactPage';
 import FacilProjectPage from '@/pages/facil/pages/FacilProjectPage';
 import FacilLegalPage from '@/pages/facil/pages/FacilLegalPage';
+import MenuPage from '@/pages/MenuPage';
+import UnseenStudioLayout from '@/pages/unseen-studio/UnseenStudioLayout';
+import UnseenStudioHomePage from '@/pages/unseen-studio/pages/HomePage';
+import UnseenStudioProjectsPage from '@/pages/unseen-studio/pages/ProjectsPage';
+import UnseenStudioContactPage from '@/pages/unseen-studio/pages/ContactPage';
+import UnseenStudioWorldPage from '@/pages/unseen-studio/pages/WorldPage';
 
 const HAOQI_PROJECT_SLUGS = [
   'reunimos',
@@ -41,6 +47,7 @@ export default function App() {
     <Routes>
       
       <Route path="/" element={<XkmPage />} />
+      <Route path="/menu" element={<MenuPage />} />
       <Route path="/home" element={<Home />} />
       <Route path="/xkm" element={<XkmPage />} />
       <Route path="/songs" element={<SongsPage />} />
@@ -52,6 +59,12 @@ export default function App() {
       <Route path="/virgil/privacy-policy" element={<VirgilLegalPage kind="privacy" />} />
       <Route path="/virgil/terms" element={<VirgilLegalPage kind="terms" />} />
       <Route path="/labs/webgl-refraction" element={<WebglRefractionPage />} />
+      <Route path="/unseen-studio" element={<UnseenStudioLayout />}>
+        <Route index element={<UnseenStudioHomePage />} />
+        <Route path="projects" element={<UnseenStudioProjectsPage />} />
+        <Route path="contact" element={<UnseenStudioContactPage />} />
+        <Route path="world" element={<UnseenStudioWorldPage />} />
+      </Route>
       <Route path="/facil" element={<FacilLayout />}>
         <Route index element={<FacilHomePage />} />
         <Route path="trabajos" element={<FacilWorksPage />} />

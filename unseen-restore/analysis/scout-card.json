@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 3,
+  "source": {
+    "url": "https://unseen.co/",
+    "canonicalUrl": "https://unseen.co/",
+    "route": "/",
+    "viewport": { "width": 1440, "height": 900, "dpr": 1 },
+    "browser": "playwright-chromium",
+    "backend": "webgl2",
+    "capturedAt": "2026-07-15T02:35:00.000Z"
+  },
+  "candidates": [
+    {
+      "id": "gl",
+      "selector": "canvas#gl",
+      "role": "primary-fullscreen-webgl",
+      "truth": "SOURCE"
+    }
+  ],
+  "lockStatus": "locked",
+  "allowedLockStatus": ["unlocked", "provisional", "attributed", "locked"],
+  "allowedTruth": ["SOURCE", "PARTIAL", "GUESS"],
+  "targetSet": [
+    {
+      "id": "home-contact-webgl",
+      "surfaces": ["canvas#gl"],
+      "owner": "webpackChunkunseen HomeContact (theme.js)",
+      "truth": "SOURCE"
+    }
+  ],
+  "alternatives": [
+    {
+      "id": "dom-hero-copy",
+      "reasonExcluded": "Typographic overlay only; 3D frame survives without DOM text",
+      "truth": "SOURCE"
+    }
+  ],
+  "effectBoundary": "surface-plus-overlay-ui",
+  "frameworkHypotheses": [
+    {
+      "name": "three.js",
+      "truth": "SOURCE",
+      "boundTo": "canvas#gl via theme AssetLoader GLTF/KTX2 + HomeContact scene"
+    }
+  ],
+  "platformHypotheses": [],
+  "interactions": [
+    { "type": "pointer-move", "effect": "camera yaw/pitch angles", "truth": "SOURCE" },
+    { "type": "enter-gate", "effect": "loader dismiss reveals scene", "truth": "SOURCE" }
+  ],
+  "scopeRisk": "high",
+  "blockingUnknowns": [
+    "grass instancing + water shaders",
+    "fluid sim / composer grain passes",
+    "exact global Gl.camera inherit + mouse orbit wiring"
+  ],
+  "nextProbe": {
+    "type": "baseline-verify",
+    "target": "apps/h5 /unseen-studio after Enter",
+    "resolves": ["camera framing", "texture/material mapping", "object transforms"]
+  },
+  "evidence": [
+    {
+      "id": "E1",
+      "path": "unseen-restore/scratch/webgl/prod-home-entered.png",
+      "notes": "production post-enter screenshot"
+    },
+    {
+      "id": "E2",
+      "path": "unseen-restore/scratch/webgl/build-objects.txt",
+      "notes": "SOURCE buildObjects material/transform map"
+    },
+    {
+      "id": "E3",
+      "path": "unseen-restore/scratch/webgl/apply-fn.txt",
+      "notes": "SOURCE applyObjectTransforms"
+    }
+  ],
+  "gateDecision": {
+    "targetAttributed": true,
+    "targetLocked": true,
+    "requiredEvidence": {
+      "visualAttribution": [
+        {
+          "status": "pass",
+          "evidenceId": "E1",
+          "path": "unseen-restore/scratch/webgl/prod-home-entered.png",
+          "truth": "SOURCE",
+          "notes": "Fullscreen 3D room after Enter; sole canvas#gl"
+        }
+      ],
+      "targetSet": [
+        {
+          "status": "pass",
+          "evidenceId": "E2",
+          "path": "unseen-restore/scratch/webgl/build-objects.txt",
+          "truth": "SOURCE",
+          "notes": "HomeContact builds meshes onto scene rendered to #gl"
+        }
+      ],
+      "contextAndOwner": [
+        {
+          "status": "pass",
+          "evidenceId": "E2",
+          "path": "unseen-restore/scratch/webgl/load-build.txt",
+          "truth": "SOURCE",
+          "notes": "Main thread theme.js HomeContact + AssetLoader"
+        }
+      ],
+      "targetBoundSourceOrFramework": [
+        {
+          "status": "pass",
+          "evidenceId": "E2",
+          "path": "unseen-restore/scratch/theme.js",
+          "truth": "SOURCE",
+          "notes": "Three loaders + MeshBasic/MeshMatcap/ShaderMaterial"
+        }
+      ],
+      "effectBoundary": [
+        {
+          "status": "pass",
+          "evidenceId": "E1",
+          "path": "unseen-restore/scratch/webgl/prod-home-entered.png",
+          "truth": "SOURCE",
+          "notes": "WebGL scene + DOM nav/hero/cta overlay"
+        }
+      ],
+      "primaryTraceRoute": [
+        {
+          "status": "pass",
+          "evidenceId": "E2",
+          "path": "unseen-restore/analysis/03-home-webgl.md",
+          "truth": "SOURCE",
+          "notes": "SOURCE_TRACE of theme HomeContact load/buildObjects"
+        }
+      ],
+      "alternativesExcluded": [
+        {
+          "status": "pass",
+          "evidenceId": "E1",
+          "path": "unseen-restore/scratch/webgl/prod-home-entered.png",
+          "truth": "SOURCE",
+          "notes": "No secondary canvas; CSS alone cannot produce scene"
+        }
+      ]
+    },
+    "blockers": [],
+    "decidedAt": "2026-07-15T02:40:00.000Z"
+  },
+  "truthNotes": {
+    "source": [
+      "asset file maps",
+      "objectsData transform keys",
+      "MeshBasic map materials",
+      "matcap pearl ball",
+      "skymap wrap/repeat/offset",
+      "cameraPathProgress=1"
+    ],
+    "partial": ["mouse orbit implementation detail", "world sphere scale"],
+    "guess": ["scene.background hex", "fog deferred"]
+  }
+}

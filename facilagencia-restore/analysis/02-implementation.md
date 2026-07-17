@@ -53,9 +53,13 @@
 - Works 侧栏图片列表加倍以实现无缝循环动画
 - 路由切换后 `ScrollTrigger.refresh()` 避免视差错位
 
-## 本地验证
+## 滚动 / 页面切换（对照生产站重做）
 
-```bash
-cd apps/h5 && npm run dev
-# http://localhost:3004/facil
-```
+生产站机制：
+
+1. **滚动视差**：Lenis + 在 `[scroll-item]` 上设置 `--y = scrollY - itemTop`；子元素 `[scroll-insider]` 用 CSS  
+   `transform: translate3d(var(--x), calc(var(--y)*var(--speed)*-1px), 0)`  
+   卡片 holder 另用 `--speed-y` / `--speed-x` / `--mod-y` / `--mod-x`。
+2. **菜单切换**：`_hide` → `wrap-out` 淡出 → 换页 → `show__effect` 淡入。
+
+h5 实现：`useFacilScroll.ts` + `FacilPageTransition.tsx` + `facil.css` 中对应规则。

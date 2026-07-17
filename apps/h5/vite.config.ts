@@ -59,5 +59,23 @@ export default defineConfig({
   resolve: {
     alias: { '@': path.resolve(__dirname, 'src') },
   },
-  server: { port: 3002, host: true },
+  server: {
+    port: 3002,
+    host: true,
+    proxy: {
+      // World / project media → production CDN without browser CORS (WebGL textures)
+      '/unseen-proxy': {
+        target: 'https://unseen.co',
+        changeOrigin: true,
+        secure: true,
+        rewrite: (p) => p.replace(/^\/unseen-proxy/, ''),
+        headers: {
+          // Avoid some CDN hotlink edge cases while proxying
+          Referer: 'https://unseen.co/',
+          'User-Agent':
+            'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        },
+      },
+    },
+  },
 });

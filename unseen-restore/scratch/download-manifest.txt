@@ -1,0 +1,46 @@
+# unseen.co download manifest (SOURCE · network + HTML)
+# Format: url<TAB>localRelPath
+
+https://unseen.co/wp-content/themes/unseen/resources/assets/fonts/NeueMontreal-Regular.woff2	resources/assets/fonts/NeueMontreal-Regular.woff2
+https://unseen.co/wp-content/themes/unseen/resources/assets/fonts/NeueMontreal-Regular.woff	resources/assets/fonts/NeueMontreal-Regular.woff
+https://unseen.co/wp-content/themes/unseen/resources/assets/fonts/SaolDisplay-Light.woff2	resources/assets/fonts/SaolDisplay-Light.woff2
+https://unseen.co/wp-content/themes/unseen/resources/assets/fonts/SaolDisplay-Light.woff	resources/assets/fonts/SaolDisplay-Light.woff
+https://unseen.co/wp-content/themes/unseen/resources/assets/fonts/SaolDisplay-LightItalic.woff2	resources/assets/fonts/SaolDisplay-LightItalic.woff2
+https://unseen.co/wp-content/themes/unseen/resources/assets/fonts/SaolDisplay-LightItalic.woff	resources/assets/fonts/SaolDisplay-LightItalic.woff
+https://unseen.co/wp-content/themes/unseen/resources/assets/draco/draco_wasm_wrapper.js	resources/assets/draco/draco_wasm_wrapper.js
+https://unseen.co/wp-content/themes/unseen/resources/assets/draco/draco_decoder.wasm	resources/assets/draco/draco_decoder.wasm
+https://unseen.co/wp-content/themes/unseen/resources/assets/draco/draco_decoder.js	resources/assets/draco/draco_decoder.js
+https://unseen.co/wp-content/themes/unseen/resources/assets/basis/basis_transcoder.js	resources/assets/basis/basis_transcoder.js
+https://unseen.co/wp-content/themes/unseen/resources/assets/basis/basis_transcoder.wasm	resources/assets/basis/basis_transcoder.wasm
+https://unseen.co/wp-content/themes/unseen/resources/assets/audio/audio.webm	resources/assets/audio/audio.webm
+https://unseen.co/wp-content/themes/unseen/resources/assets/models/home/room-1.glb	resources/assets/models/home/room-1.glb
+https://unseen.co/wp-content/themes/unseen/resources/assets/models/home/room-2.glb	resources/assets/models/home/room-2.glb
+https://unseen.co/wp-content/themes/unseen/resources/assets/models/home/chair.glb	resources/assets/models/home/chair.glb
+https://unseen.co/wp-content/themes/unseen/resources/assets/models/home/pillows.glb	resources/assets/models/home/pillows.glb
+https://unseen.co/wp-content/themes/unseen/resources/assets/models/home/rocks.glb	resources/assets/models/home/rocks.glb
+https://unseen.co/wp-content/themes/unseen/resources/assets/models/home/table-3.glb	resources/assets/models/home/table-3.glb
+https://unseen.co/wp-content/themes/unseen/resources/assets/models/home/land-group.glb	resources/assets/models/home/land-group.glb
+https://unseen.co/wp-content/themes/unseen/resources/assets/models/home/grass-simple.glb	resources/assets/models/home/grass-simple.glb
+https://unseen.co/wp-content/themes/unseen/resources/assets/models/home/objectsData.glb	resources/assets/models/home/objectsData.glb
+https://unseen.co/wp-content/themes/unseen/resources/assets/models/project-menu/butterfly.glb	resources/assets/models/project-menu/butterfly.glb
+https://unseen.co/wp-content/themes/unseen/resources/assets/models/project-menu/arch-dc.glb	resources/assets/models/project-menu/arch-dc.glb
+https://unseen.co/wp-content/themes/unseen/resources/assets/models/project-menu/floor-dc.glb	resources/assets/models/project-menu/floor-dc.glb
+https://unseen.co/wp-content/themes/unseen/resources/assets/images/home/room-1.ktx2	resources/assets/images/home/room-1.ktx2
+https://unseen.co/wp-content/themes/unseen/resources/assets/images/home/room-2.ktx2	resources/assets/images/home/room-2.ktx2
+https://unseen.co/wp-content/themes/unseen/resources/assets/images/home/chair.ktx2	resources/assets/images/home/chair.ktx2
+https://unseen.co/wp-content/themes/unseen/resources/assets/images/home/pillows.ktx2	resources/assets/images/home/pillows.ktx2
+https://unseen.co/wp-content/themes/unseen/resources/assets/images/home/rocks.ktx2	resources/assets/images/home/rocks.ktx2
+https://unseen.co/wp-content/themes/unseen/resources/assets/images/home/table.ktx2	resources/assets/images/home/table.ktx2
+https://unseen.co/wp-content/themes/unseen/resources/assets/images/home/pearl-matcap.ktx2	resources/assets/images/home/pearl-matcap.ktx2
+https://unseen.co/wp-content/themes/unseen/resources/assets/images/home/particles.ktx2	resources/assets/images/home/particles.ktx2
+https://unseen.co/wp-content/themes/unseen/resources/assets/images/home/skymap-tile.ktx2	resources/assets/images/home/skymap-tile.ktx2
+https://unseen.co/wp-content/themes/unseen/resources/assets/images/home/ao.ktx2	resources/assets/images/home/ao.ktx2
+https://unseen.co/wp-content/themes/unseen/resources/assets/images/project-menu/arch.ktx2	resources/assets/images/project-menu/arch.ktx2
+https://unseen.co/wp-content/themes/unseen/public/images/svgsprite.svg	public/images/svgsprite.svg
+https://unseen.co/wp-content/themes/unseen/public/favicon/apple-touch-icon.png	public/favicon/apple-touch-icon.png
+https://unseen.co/wp-content/themes/unseen/public/favicon/favicon-32x32.png	public/favicon/favicon-32x32.png
+https://unseen.co/wp-content/themes/unseen/public/favicon/favicon-16x16.png	public/favicon/favicon-16x16.png
+https://unseen.co/wp-content/themes/unseen/public/css/style.css?id=63f2ece398b534f2523b0748e42ffee1	public/css/style.css
+https://unseen.co/wp-content/themes/unseen/public/scripts/manifest.js?id=9660198a1386b5e4e515b7fa518fa84d	public/scripts/manifest.js
+https://unseen.co/wp-content/themes/unseen/public/scripts/vendor.js?id=4d3ac43b9e360f391febd63f910ddf0c	public/scripts/vendor.js
+https://unseen.co/wp-content/themes/unseen/public/scripts/theme.js?id=ddeecb32509137704fa301e3ef34c990	public/scripts/theme.js

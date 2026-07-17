@@ -95,21 +95,38 @@ body.facil-body {
   color: var(--black);
   text-decoration: none;
   position: relative;
+  transition: opacity 0.25s ease;
+}
+
+.facil-header .link-arrow span {
+  display: inline-block;
+  position: relative;
 }
 
 .facil-header .link-arrow span::after {
-  content: ' →';
+  content: '→';
+  display: inline-block;
+  margin-left: 0.15em;
   opacity: 0;
-  transition: opacity 0.25s;
+  transform: translateX(-0.35em);
+  transition: opacity 0.28s ease, transform 0.28s ease;
 }
 
 .facil-header .link-arrow:hover span::after,
 .facil-header .link-arrow.active span::after {
   opacity: 1;
+  transform: translateX(0);
 }
 
 .facil-header .link-arrow.active {
   pointer-events: none;
+}
+
+body.__noScroll {
+  overflow: hidden !important;
+  height: 100vh !important;
+  position: fixed !important;
+  width: 100%;
 }
 
 /* Main */
@@ -120,6 +137,80 @@ body.facil-body {
 
 .facil-main .wrap {
   position: relative;
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: opacity 0.32s ease, transform 0.32s ease;
+  will-change: opacity, transform;
+}
+
+.facil-main .wrap.wrap-out {
+  opacity: 0;
+  transform: translate3d(0, -10px, 0);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.facil-main .wrap.wrap-in {
+  animation: facil-wrap-in 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.facil-main .wrap__page {
+  position: relative;
+}
+
+@keyframes facil-wrap-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Production-style scroll parallax via --y */
+[data-scroll-item],
+[scroll-item] {
+  --y: 0;
+  --progress-inside: 0;
+  --mod-y: 1;
+  --mod-x: 1;
+}
+
+[data-scroll-insider],
+[scroll-insider] {
+  --x: 0;
+  --z: 0;
+  --speed: 0.9;
+  --to: calc((var(--y) * var(--speed)) * -1px);
+  backface-visibility: hidden;
+  transform: translate3d(var(--x), var(--to), var(--z));
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.card {
+  --mod-y: 1;
+  --mod-x: 1;
+}
+
+.card > .holder {
+  --x: calc((var(--y) * (var(--speed-x, 0) * var(--mod-x))) * -1px) !important;
+  --speed-y: 1;
+  position: relative;
+}
+
+.card > .holder[data-scroll-insider],
+.card > .holder[scroll-insider] {
+  --speed: calc(var(--speed-y) * var(--mod-y));
+}
+
+@media (max-width: 480px) {
+  .card {
+    --mod-y: 0.5;
+    --mod-x: 0.8;
+  }
 }
 
 article.default,

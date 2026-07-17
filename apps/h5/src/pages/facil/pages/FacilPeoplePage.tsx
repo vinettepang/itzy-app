@@ -21,8 +21,13 @@ export default function FacilPeoplePage() {
             <div
               className="holder"
               data-scroll-insider
-              data-speed={person.speed}
-              data-speed-x={person.speedX}
+              style={
+                {
+                  ['--speed' as string]: person.speed,
+                  ['--speed-x' as string]: person.speedX,
+                  ['--x' as string]: `calc((var(--y) * (${person.speedX} * var(--mod-x, 1))) * -1px)`,
+                } as React.CSSProperties
+              }
             >
               <div className="media">
                 <figure className="media-holder">
@@ -30,7 +35,11 @@ export default function FacilPeoplePage() {
                 </figure>
               </div>
               <header>
-                <div className="name" data-scroll-insider data-speed={person.speed}>
+                <div
+                  className="name"
+                  data-scroll-insider
+                  style={{ ['--speed' as string]: person.speed } as React.CSSProperties}
+                >
                   {person.name}
                 </div>
               </header>

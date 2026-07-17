@@ -1,0 +1,252 @@
+[
+  {
+    "needle": "room-1",
+    "index": 264202,
+    "snippet": "omeRoom,this.homeRoom.material=new s.vBJ({map:this.assets.textures.homeRoom}),this.applyObjectTransforms(this.homeRoom,\"room-1\"),this.homeRoom.matrixAutoUpdate=!1,this.homeRoom.updateMatrix(),this.container.add(this.homeRoom),this.contactRoom=this.assets.models.contactRoom,this.contactRoom.material=new s.vBJ({map:this.assets.textures.cont"
+  },
+  {
+    "needle": "room-1",
+    "index": 296579,
+    "snippet": "\",this.viewProjectsBtn3D.element,this.onProjectsBtnLeave)}load(){this.assets={models:{},textures:{}};const e={homeRoom:\"room-1.glb\",contactRoom:\"room-2.glb\",chair:\"chair.glb\",pillows:\"pillows.glb\",rocks:\"rocks.glb\",table:\"table-3.glb\",land:\"land-group.glb\",grass:\"grass-simple.glb\"},t={homeRoom:\"room-1\",contactRoom:\"room-2\",chair:\"chair\",p"
+  },
+  {
+    "needle": "room-1",
+    "index": 296755,
+    "snippet": "illows:\"pillows.glb\",rocks:\"rocks.glb\",table:\"table-3.glb\",land:\"land-group.glb\",grass:\"grass-simple.glb\"},t={homeRoom:\"room-1\",contactRoom:\"room-2\",chair:\"chair\",pillows:\"pillows\",rock:\"rocks\",table:\"table\",pearlMatcap:\"pearl-matcap\",particle:\"particles\",skymap:\"skymap-tile\",aoMap:\"ao\"};for(const t in e)o.AssetLoader.loadGltf(`${o.assets"
+  },
+  {
+    "needle": "room-2",
+    "index": 264477,
+    "snippet": "his.contactRoom.material=new s.vBJ({map:this.assets.textures.contactRoom}),this.applyObjectTransforms(this.contactRoom,\"room-2\"),this.contactRoom.matrixAutoUpdate=!1,this.contactRoom.updateMatrix(),this.container.add(this.contactRoom),this.chair=this.assets.models.chair,this.chair.material=new s.vBJ({map:this.assets.textures.chair}),this."
+  },
+  {
+    "needle": "room-2",
+    "index": 296604,
+    "snippet": "element,this.onProjectsBtnLeave)}load(){this.assets={models:{},textures:{}};const e={homeRoom:\"room-1.glb\",contactRoom:\"room-2.glb\",chair:\"chair.glb\",pillows:\"pillows.glb\",rocks:\"rocks.glb\",table:\"table-3.glb\",land:\"land-group.glb\",grass:\"grass-simple.glb\"},t={homeRoom:\"room-1\",contactRoom:\"room-2\",chair:\"chair\",pillows:\"pillows\",rock:\"ro"
+  },
+  {
+    "needle": "room-2",
+    "index": 296776,
+    "snippet": "rocks:\"rocks.glb\",table:\"table-3.glb\",land:\"land-group.glb\",grass:\"grass-simple.glb\"},t={homeRoom:\"room-1\",contactRoom:\"room-2\",chair:\"chair\",pillows:\"pillows\",rock:\"rocks\",table:\"table\",pearlMatcap:\"pearl-matcap\",particle:\"particles\",skymap:\"skymap-tile\",aoMap:\"ao\"};for(const t in e)o.AssetLoader.loadGltf(`${o.assetsUrl}models/home/${e[t"
+  },
+  {
+    "needle": "objectsData",
+    "index": 261647,
+    "snippet": "alLength(o.mq.sm.matches?36:42)})),ys(this,\"updateHtmlScale\",(()=>{if(!this.viewProjectsBtn3D)return;const e=1e3*-(this.objectsData.ho.position.z-this.objectsData.cam.children[3].position.z);this.viewProjectsBtn3D.scale.setScalar(e/o.Gl.cssRenderer.cache.camera.fov),this.contactContent3D.scale.setScalar(100/o.Gl.cssRenderer.cache.camera.f"
+  },
+  {
+    "needle": "objectsData",
+    "index": 261678,
+    "snippet": "})),ys(this,\"updateHtmlScale\",(()=>{if(!this.viewProjectsBtn3D)return;const e=1e3*-(this.objectsData.ho.position.z-this.objectsData.cam.children[3].position.z);this.viewProjectsBtn3D.scale.setScalar(e/o.Gl.cssRenderer.cache.camera.fov),this.contactContent3D.scale.setScalar(100/o.Gl.cssRenderer.cache.camera.fov)})),this.scene=new s.xsS,thi"
+  },
+  {
+    "needle": "objectsData",
+    "index": 263543,
+    "snippet": "play=\"none\"),this.buildPasses(),this.firstLoad&&this.enable(),n.on(o.events.RESIZE,this.onResize)}mapObjectsData(){this.objectsData={};for(let e=0;e<this.assets.objectsData.children.length;e++){const t=this.assets.objectsData.children[e];this.objectsData[t.name]=t}}buildObjects(){this.container=new s.ZAu,this.scene.add(this.container),thi"
+  },
+  {
+    "needle": "pearl-matcap",
+    "index": 296856,
+    "snippet": "glb\"},t={homeRoom:\"room-1\",contactRoom:\"room-2\",chair:\"chair\",pillows:\"pillows\",rock:\"rocks\",table:\"table\",pearlMatcap:\"pearl-matcap\",particle:\"particles\",skymap:\"skymap-tile\",aoMap:\"ao\"};for(const t in e)o.AssetLoader.loadGltf(`${o.assetsUrl}models/home/${e[t]}`).then((e=>{this.assets.models[t]=e.scene.children[0]}));for(const e in t)o.A"
+  },
+  {
+    "needle": "skymap-tile",
+    "index": 296899,
+    "snippet": "m-2\",chair:\"chair\",pillows:\"pillows\",rock:\"rocks\",table:\"table\",pearlMatcap:\"pearl-matcap\",particle:\"particles\",skymap:\"skymap-tile\",aoMap:\"ao\"};for(const t in e)o.AssetLoader.loadGltf(`${o.assetsUrl}models/home/${e[t]}`).then((e=>{this.assets.models[t]=e.scene.children[0]}));for(const e in t)o.AssetLoader.loadKtxTexture(ft(`images/home/$"
+  },
+  {
+    "needle": "land-group",
+    "index": 296700,
+    "snippet": "oom-1.glb\",contactRoom:\"room-2.glb\",chair:\"chair.glb\",pillows:\"pillows.glb\",rocks:\"rocks.glb\",table:\"table-3.glb\",land:\"land-group.glb\",grass:\"grass-simple.glb\"},t={homeRoom:\"room-1\",contactRoom:\"room-2\",chair:\"chair\",pillows:\"pillows\",rock:\"rocks\",table:\"table\",pearlMatcap:\"pearl-matcap\",particle:\"particles\",skymap:\"skymap-tile\",aoMap:\"a"
+  },
+  {
+    "needle": "grass-simple",
+    "index": 296723,
+    "snippet": "\"room-2.glb\",chair:\"chair.glb\",pillows:\"pillows.glb\",rocks:\"rocks.glb\",table:\"table-3.glb\",land:\"land-group.glb\",grass:\"grass-simple.glb\"},t={homeRoom:\"room-1\",contactRoom:\"room-2\",chair:\"chair\",pillows:\"pillows\",rock:\"rocks\",table:\"table\",pearlMatcap:\"pearl-matcap\",particle:\"particles\",skymap:\"skymap-tile\",aoMap:\"ao\"};for(const t in e)o."
+  },
+  {
+    "needle": "home/chair",
+    "index": -1,
+    "snippet": "MISSING"
+  },
+  {
+    "needle": "pillows",
+    "index": 264832,
+    "snippet": "sforms(this.chair,\"chair\"),this.chair.matrixAutoUpdate=!1,this.chair.updateMatrix(),this.container.add(this.chair),this.pillows=this.assets.models.pillows,this.pillows.material=new s.vBJ({map:this.assets.textures.pillows}),this.applyObjectTransforms(this.pillows,\"pillow\"),this.pillows.matrixAutoUpdate=!1,this.pillows.updateMatrix(),this.c"
+  },
+  {
+    "needle": "pillows",
+    "index": 264859,
+    "snippet": "this.chair.matrixAutoUpdate=!1,this.chair.updateMatrix(),this.container.add(this.chair),this.pillows=this.assets.models.pillows,this.pillows.material=new s.vBJ({map:this.assets.textures.pillows}),this.applyObjectTransforms(this.pillows,\"pillow\"),this.pillows.matrixAutoUpdate=!1,this.pillows.updateMatrix(),this.container.add(this.pillows),"
+  },
+  {
+    "needle": "pillows",
+    "index": 264872,
+    "snippet": "trixAutoUpdate=!1,this.chair.updateMatrix(),this.container.add(this.chair),this.pillows=this.assets.models.pillows,this.pillows.material=new s.vBJ({map:this.assets.textures.pillows}),this.applyObjectTransforms(this.pillows,\"pillow\"),this.pillows.matrixAutoUpdate=!1,this.pillows.updateMatrix(),this.container.add(this.pillows),this.rocks=th"
+  },
+  {
+    "needle": "table-3",
+    "index": 265594,
+    "snippet": "p:this.assets.textures.table,envMap:this.assets.textures.skymap,reflectivity:1}),this.applyObjectTransforms(this.table,\"table-3\"),this.table.matrixAutoUpdate=!1,this.table.updateMatrix(),this.container.add(this.table),this.assets.textures.pearlMatcap.flipY=!0,this.assets.textures.pearlMatcap.needsUpdate=!0,this.ballContainer=new s.ZAu,thi"
+  },
+  {
+    "needle": "table-3",
+    "index": 296681,
+    "snippet": "onst e={homeRoom:\"room-1.glb\",contactRoom:\"room-2.glb\",chair:\"chair.glb\",pillows:\"pillows.glb\",rocks:\"rocks.glb\",table:\"table-3.glb\",land:\"land-group.glb\",grass:\"grass-simple.glb\"},t={homeRoom:\"room-1\",contactRoom:\"room-2\",chair:\"chair\",pillows:\"pillows\",rock:\"rocks\",table:\"table\",pearlMatcap:\"pearl-matcap\",particle:\"particles\",skymap:\"sk"
+  },
+  {
+    "needle": "KTX2Loader",
+    "index": 30941,
+    "snippet": "{throw new Error('THREE.GLTFLoader: \"MSFT_texture_dds\" no longer supported. Please update to \"KHR_texture_basisu\".')}setKTX2Loader(e){return this.ktx2Loader=e,this}setMeshoptDecoder(e){return this.meshoptDecoder=e,this}register(e){return-1===this.pluginCallbacks.indexOf(e)&&this.pluginCallbacks.push(e),this}unregister(e){return-1!==this.p"
+  },
+  {
+    "needle": "KTX2Loader",
+    "index": 41452,
+    "snippet": "Loader;if(!n){if(i.extensionsRequired&&i.extensionsRequired.indexOf(this.name)>=0)throw new Error(\"THREE.GLTFLoader: setKTX2Loader must be called before loading KTX2 textures\");return null}return t.loadTextureImage(e,o.source,n)}}class B{constructor(e){this.parser=e,this.name=E.EXT_TEXTURE_WEBP,this.isSupported=null}loadTexture(e){const t"
+  },
+  {
+    "needle": "KTX2Loader",
+    "index": 74919,
+    "snippet": "kerPool=new Le.h,this.workerSourceURL=\"\",this.workerConfig=null,\"undefined\"!=typeof MSC_TRANSCODER&&console.warn('THREE.KTX2Loader: Please update to latest \"basis_transcoder\". \"msc_basis_transcoder\" is no longer supported in three.js r125+.')}setTranscoderPath(e){return this.transcoderPath=e,this}setWorkerLimit(e){return this.workerPool.s"
+  },
+  {
+    "needle": "DRACOLoader",
+    "index": 24998,
+    "snippet": "SON.stringify(t);if(M.has(e)){const t=M.get(e);if(t.key===i)return t.promise;if(0===e.byteLength)throw new Error(\"THREE.DRACOLoader: Unable to re-decode a buffer with different settings. Buffer has already been transferred.\")}let s;const o=this.workerNextTaskID++,n=e.byteLength,r=this._getWorker(o,n).then((i=>(s=i,new Promise(((i,n)=>{s._"
+  },
+  {
+    "needle": "DRACOLoader",
+    "index": 26968,
+    "snippet": "decode\":e._callbacks[i.id].resolve(i);break;case\"error\":e._callbacks[i.id].reject(i);break;default:console.error('THREE.DRACOLoader: Unexpected message, \"'+i.type+'\"')}},this.workerPool.push(e)}else this.workerPool.sort((function(e,t){return e._taskLoad>t._taskLoad?-1:1}));const i=this.workerPool[this.workerPool.length-1];return i._taskCo"
+  },
+  {
+    "needle": "DRACOLoader",
+    "index": 28609,
+    "snippet": "e(s);if(c===e.TRIANGULAR_MESH)a=new e.Mesh,l=t.DecodeBufferToMesh(s,a);else{if(c!==e.POINT_CLOUD)throw new Error(\"THREE.DRACOLoader: Unexpected geometry type.\");a=new e.PointCloud,l=t.DecodeBufferToPointCloud(s,a)}if(!l.ok()||0===a.ptr)throw new Error(\"THREE.DRACOLoader: Decoding failed: \"+l.error_msg());const h={index:null,attributes:[]}"
+  },
+  {
+    "needle": "GLTFLoader",
+    "index": 30845,
+    "snippet": "nd(e)}),a)}catch(e){a(e)}}),i,a)}setDRACOLoader(e){return this.dracoLoader=e,this}setDDSLoader(){throw new Error('THREE.GLTFLoader: \"MSFT_texture_dds\" no longer supported. Please update to \"KHR_texture_basisu\".')}setKTX2Loader(e){return this.ktx2Loader=e,this}setMeshoptDecoder(e){return this.meshoptDecoder=e,this}register(e){return-1===th"
+  },
+  {
+    "needle": "GLTFLoader",
+    "index": 31608,
+    "snippet": "xt(new Uint8Array(e))}const l=JSON.parse(n);if(void 0===l.asset||l.asset.version[0]<2)return void(o&&o(new Error(\"THREE.GLTFLoader: Unsupported asset. glTF versions >=2.0 are supported.\")));const c=new Me(l,{path:t||this.resourcePath||\"\",crossOrigin:this.crossOrigin,requestHeader:this.requestHeader,manager:this.manager,ktx2Loader:this.ktx"
+  },
+  {
+    "needle": "GLTFLoader",
+    "index": 32487,
+    "snippet": "]=new X;break;case E.KHR_MESH_QUANTIZATION:r[t]=new J;break;default:i.indexOf(t)>=0&&void 0===a[t]&&console.warn('THREE.GLTFLoader: Unknown extension \"'+t+'\".')}}c.setExtensions(r),c.setPlugins(a),c.parse(i,o)}parseAsync(e,t){const i=this;return new Promise((function(s,o){i.parse(e,t,s,o)}))}}function L(){let e={};return{get:function(t){r"
+  },
+  {
+    "needle": "MeshStandardMaterial",
+    "index": -1,
+    "snippet": "MISSING"
+  },
+  {
+    "needle": "MeshMatcapMaterial",
+    "index": -1,
+    "snippet": "MISSING"
+  },
+  {
+    "needle": "ShaderMaterial",
+    "index": -1,
+    "snippet": "MISSING"
+  },
+  {
+    "needle": "PerspectiveCamera",
+    "index": 89366,
+    "snippet": ".render=function(e,i){const s=i.projectionMatrix.elements[5]*r;let u,m;t.cache.camera.fov!==s&&(a.style.perspective=i.isPerspectiveCamera?s+\"px\":\"\",t.cache.camera.fov=s,n.emit(\"cssrenderer:cacheUpdated\")),!0===e.autoUpdate&&e.updateMatrixWorld(),null===i.parent&&i.updateMatrixWorld(),i.isOrthographicCamera&&(u=-(i.right+i.left)/2,m=(i.top"
+  },
+  {
+    "needle": "WebGLRenderer",
+    "index": -1,
+    "snippet": "MISSING"
+  },
+  {
+    "needle": "getElementById(\"gl\")",
+    "index": 104095,
+    "snippet": "elRatio(),o.window.fullHeight*this.renderer.getPixelRatio()))})),n.bindAll(this,[\"onResize\"]),this.dom={canvas:document.getElementById(\"gl\")},this.assets={models:{},textures:{}},l.ZP.registerPlugin(_t),this.setup(),this.addEvents()}setup(){this.renderer=new s.CP7({alpha:!0,antialias:!1,canvas:this.dom.canvas,powerPreference:\"high-performa"
+  },
+  {
+    "needle": "getElementById('gl')",
+    "index": -1,
+    "snippet": "MISSING"
+  },
+  {
+    "needle": "#gl",
+    "index": -1,
+    "snippet": "MISSING"
+  },
+  {
+    "needle": "Dom2Webgl",
+    "index": 1053,
+    "snippet": "jectToProjectTransition:!1,currentProjectMenuId:0,projectLightMode:!1,ASScroll:null,AssetLoader:null,TaskScheduler:null,Dom2Webgl:null,Gl:null,HomeContact:null,ProjectMenu:null,World:null,Audio:null,audioMuted:!1,debug:new URLSearchParams(window.location.search).has(\"debug\")};var n=new(i(1613).Z),r=i(1296),a=i.n(r),l=i(990);class c{constr"
+  },
+  {
+    "needle": "Dom2Webgl",
+    "index": 124876,
+    "snippet": "eProps[e].target=t.length>1?this.item[t[0]]:this.item,this.animateProps[e].property=t[1]||t[0]}}}animate(e,t){const i=o.Dom2Webgl.axis;if(this.updatePosition&&(this.position[i]=o.Dom2Webgl.operations[o.Dom2Webgl.operator](this.originalPosition[i],e),this.animateProps)){for(const t in this.animateProps)if(\"uniforms\"!==t)t===\"position.\"+i?t"
+  },
+  {
+    "needle": "Dom2Webgl",
+    "index": 124935,
+    "snippet": "animateProps[e].property=t[1]||t[0]}}}animate(e,t){const i=o.Dom2Webgl.axis;if(this.updatePosition&&(this.position[i]=o.Dom2Webgl.operations[o.Dom2Webgl.operator](this.originalPosition[i],e),this.animateProps)){for(const t in this.animateProps)if(\"uniforms\"!==t)t===\"position.\"+i?this.position[i]=o.Dom2Webgl.operations[o.Dom2Webgl.operator"
+  },
+  {
+    "needle": "ASScroll",
+    "index": 1003,
+    "snippet": "Agent.includes(\"Mac\")&&\"ontouchend\"in document,projectToProjectTransition:!1,currentProjectMenuId:0,projectLightMode:!1,ASScroll:null,AssetLoader:null,TaskScheduler:null,Dom2Webgl:null,Gl:null,HomeContact:null,ProjectMenu:null,World:null,Audio:null,audioMuted:!1,debug:new URLSearchParams(window.location.search).has(\"debug\")};var n=new(i(1"
+  },
+  {
+    "needle": "ASScroll",
+    "index": 2413,
+    "snippet": "indow.innerWidth,o.window.h=window.innerHeight,o.window.fullHeight=document.querySelector(\".height-div\").clientHeight,o.ASScroll.resize({width:o.window.w,height:o.window.h}),n.emit(o.events.RESIZE))}),150))}addMouseEvents(){window.addEventListener(\"mousemove\",this.onPointerMove,{passive:!0}),window.addEventListener(\"mousedown\",this.onPoin"
+  },
+  {
+    "needle": "ASScroll",
+    "index": 119488,
+    "snippet": "s.toAttr].value)continue;let t={uniforms:{}};const s={ease:\"none\",duration:1.5,scrollTrigger:{trigger:e[i],horizontal:o.ASScroll.isHorizontal,once:!0}},n=e[i].getBoundingClientRect();let r,a=e[i],c=!1,h=!1;if(e[i].attributes[this.fromAttr]&&(c=Wt(`{${e[i].attributes[this.fromAttr].value}}`),e[i].hasAttribute(\"dom2webgl\"))){const e=this.pa"
+  },
+  {
+    "needle": "homeContact",
+    "index": 343745,
+    "snippet": "reenFxPass.uniforms.u_vignetteStrength,\"value\",{label:\"vignette strength\",min:0,max:1,step:.001})}initHomeContact(){if(\"homeContact\"!==o.Highway.properties.slug)return;const e=this.addFolder({title:\"Home/Contact\"}),t={skyboxScaleX:6,skyboxScaleY:1,skyboxPosX:0,skyboxPosY:0,transitionProgress:o.HomeContact.transitionPass.uniforms.u_progres"
+  },
+  {
+    "needle": "homeContact",
+    "index": 388689,
+    "snippet": "jects\"===e.dataset.routerView?(this.usingLoader=!0,o.PageLoader.show().then((()=>{e.parentNode.removeChild(e),i()}))):(\"homeContact\"===e.dataset.routerView&&(o.HomeContact.savePass.enabled=!0,o.World.transitionPass.uniforms.u_fromScene.value=o.World.savePass.renderTarget.texture,o.World.transitionPass.uniforms.u_toScene.value=o.HomeContac"
+  },
+  {
+    "needle": "homeContact",
+    "index": 390844,
+    "snippet": "||o.Audio.play({key:\"audio.backing\",fade:{from:0,to:1,duration:1}})})),super.onEnter(),o.AssetLoader.loaded.then((()=>{\"homeContact\"===o.Highway.From.properties.slug&&o.Highway.To&&\"homeContact\"===o.Highway.To.properties.slug||(v.ZP.to(o.Gl.cssRenderer.domElement,{autoAlpha:1,duration:.5,ease:\"power2.out\"}),\"notFound\"===o.Highway.From.pro"
+  },
+  {
+    "needle": "HomeWorld",
+    "index": -1,
+    "snippet": "MISSING"
+  },
+  {
+    "needle": "HomeScene",
+    "index": -1,
+    "snippet": "MISSING"
+  },
+  {
+    "needle": "particles",
+    "index": 286453,
+    "snippet": "is.contactText.rotation.y=-this.objectsData.conta.rotation.z,this.container.add(this.contactText)}buildParticles(){this.particles=new s.SPe(new s._12(.001,.001),new s.jyz({vertexShader:\"#define GLSLIFY 1\\nvarying vec3 vWorldPosition;\\nvarying vec3 vPos;\\nvarying vec2 vUv;\\nvarying float aUv;\\n\\nattribute float a_progress;\\nattribute float"
+  },
+  {
+    "needle": "particles",
+    "index": 290201,
+    "snippet": "instanceDummy.position.set(s.M8C.randFloat(-.2,.05),.09,s.M8C.randFloat(-.1,.3)),this.instanceDummy.updateMatrix(),this.particles.setMatrixAt(i,this.instanceDummy.matrix),e.push(Math.random()),t.push(i%8);this.particles.geometry.setAttribute(\"a_progress\",new s.lb7(new Float32Array(e),1)),this.particles.geometry.setAttribute(\"a_uv\",new s.l"
+  },
+  {
+    "needle": "particles",
+    "index": 290291,
+    "snippet": "anceDummy.updateMatrix(),this.particles.setMatrixAt(i,this.instanceDummy.matrix),e.push(Math.random()),t.push(i%8);this.particles.geometry.setAttribute(\"a_progress\",new s.lb7(new Float32Array(e),1)),this.particles.geometry.setAttribute(\"a_uv\",new s.lb7(new Float32Array(t),1)),this.container.add(this.particles),this.water.ignoreObjects.pus"
+  }
+]

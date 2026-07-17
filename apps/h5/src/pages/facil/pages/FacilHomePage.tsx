@@ -45,7 +45,11 @@ export default function FacilHomePage() {
         ))}
 
         <div className="card card-info --pos-4" data-scroll-item>
-          <div className="holder" data-scroll-insider data-speed-x={-0.1}>
+          <div
+            className="holder"
+            data-scroll-insider
+            style={{ ['--speed' as string]: 0, ['--speed-x' as string]: -0.1 } as React.CSSProperties}
+          >
             <div className="content">
               <div className="title tag">
                 {locale === 'es' ? '¿Cómo es ' : 'What is '}

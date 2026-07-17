@@ -1,0 +1,424 @@
+[
+  {
+    "id": "Hubtown",
+    "title": "Hubtown",
+    "description": "Portfolio Website, Immesive Experience",
+    "link": "https://hubtown.co.in/",
+    "categories": [
+      "digital"
+    ],
+    "image": "https://unseen.co/wp-content/uploads/2026/06/hubtown_unseen-1024x538.jpg",
+    "bg": "#e8e0d8",
+    "light": false
+  },
+  {
+    "id": "Poly",
+    "title": "Poly",
+    "description": "Website Design",
+    "link": "https://poly.app/",
+    "categories": [
+      "digital"
+    ],
+    "image": "https://unseen.co/wp-content/uploads/2026/03/poly-1024x538.jpg",
+    "bg": "#e8e0d8",
+    "light": false
+  },
+  {
+    "id": "OceanX ",
+    "title": "OceanX",
+    "description": "A Year of Discovery",
+    "link": "https://2025.oceanx.org/",
+    "categories": [
+      "digital"
+    ],
+    "image": "https://unseen.co/wp-content/uploads/2026/03/Frame-29-1024x538.jpg",
+    "bg": "#e8e0d8",
+    "light": false
+  },
+  {
+    "id": "The Symphony Of Vines",
+    "title": "The Symphony Of Vines",
+    "description": "Interactive Cinematic Experience",
+    "link": "https://www.symphonyofvines.com",
+    "categories": [
+      "digital",
+      "motion"
+    ],
+    "image": "https://unseen.co/wp-content/uploads/2025/08/sov_1-1024x538.jpg",
+    "bg": "#e8e0d8",
+    "light": false
+  },
+  {
+    "id": "Klook",
+    "title": "Klook",
+    "description": "Interactive Quiz",
+    "link": "https://www.experiencethebestyou.com/en-GB/",
+    "categories": [
+      "digital"
+    ],
+    "image": "https://unseen.co/wp-content/uploads/2025/08/klook2-1024x538.jpg",
+    "bg": "#e8e0d8",
+    "light": false
+  },
+  {
+    "id": "RSPCA Animal Futures",
+    "title": "RSPCA Animal Futures",
+    "description": "Interactive Learning Experience",
+    "link": "https://www.rspca.org.uk/webContent/animalfutures/",
+    "categories": [
+      "digital"
+    ],
+    "image": "https://unseen.co/wp-content/uploads/2025/08/Frame-1000004051-1024x538.jpg",
+    "bg": "#e8e0d8",
+    "light": false
+  },
+  {
+    "id": "BlueYard",
+    "title": "BlueYard",
+    "description": "Portfolio website",
+    "link": "https://blueyard.com/",
+    "categories": [
+      "digital"
+    ],
+    "image": "https://unseen.co/wp-content/uploads/2025/08/desktop-1024x768.png",
+    "bg": "#e8e0d8",
+    "light": false
+  },
+  {
+    "id": "Cosmos",
+    "title": "Cosmos",
+    "description": "Marketing Website",
+    "link": "https://www.cosmos.so/",
+    "categories": [
+      "digital"
+    ],
+    "image": "https://unseen.co/wp-content/uploads/2025/08/cosmos_case_cover-1024x537.jpg",
+    "bg": "#e8e0d8",
+    "light": false
+  },
+  {
+    "id": "25 Residences",
+    "title": "25 Residences",
+    "description": "Portfolio Website",
+    "link": "https://25residences.com/",
+    "categories": [
+      "digital"
+    ],
+    "image": "https://unseen.co/wp-content/uploads/2025/08/25res-1024x538.jpg",
+    "bg": "#e8e0d8",
+    "light": false
+  },
+  {
+    "id": "3185",
+    "title": "Organimo",
+    "description": "Digital",
+    "link": "https://unseen.co/projects/organimo/",
+    "categories": [
+      "branding",
+      "digital",
+      "motion"
+    ],
+    "image": "https://unseen.co/wp-content/uploads/2025/08/organimo-1024x538.jpg",
+    "bg": "#2d2d2d",
+    "light": true
+  },
+  {
+    "id": "2890",
+    "title": "Hiring Calculator",
+    "description": "Gamified Digital Experience",
+    "link": "https://unseen.co/projects/hiring-calculator/",
+    "categories": [
+      "digital"
+    ],
+    "image": "https://unseen.co/wp-content/uploads/2025/08/contra_calc_cover-1024x537.jpg",
+    "bg": "#191919",
+    "light": true
+  },
+  {
+    "id": "2949",
+    "title": "RobCo",
+    "description": "3D Motion",
+    "link": "https://unseen.co/projects/robco-3d-motion/",
+    "categories": [
+      "digital",
+      "motion"
+    ],
+    "image": "https://unseen.co/wp-content/uploads/2025/01/Frame-4-1024x576.jpg",
+    "bg": "#f2f4f4",
+    "light": false
+  },
+  {
+    "id": "3017",
+    "title": "KIKK 2024",
+    "description": "Branding & Website",
+    "link": "https://unseen.co/projects/kikk-2024-brand-identity/",
+    "categories": [],
+    "image": "https://unseen.co/wp-content/uploads/2025/01/phone-1-1024x682.jpg",
+    "bg": "#FFFFFF",
+    "light": false
+  },
+  {
+    "id": "2673",
+    "title": "Nikolas Type",
+    "description": "Website",
+    "link": "https://unseen.co/projects/nikolas-type/",
+    "categories": [
+      "digital",
+      "motion"
+    ],
+    "image": "https://unseen.co/wp-content/uploads/2024/02/mock-up-819x1024.jpg",
+    "bg": "#f3efe5",
+    "light": false
+  },
+  {
+    "id": "2690",
+    "title": "Seascape Survey",
+    "description": "Brand, Promotional Website, WebGL",
+    "link": "https://unseen.co/projects/seascape-survey/",
+    "categories": [],
+    "image": "https://unseen.co/wp-content/uploads/2024/02/worm-1024x1024.jpg",
+    "bg": "#000b33",
+    "light": true
+  },
+  {
+    "id": "2847",
+    "title": "Cult of the North",
+    "description": "Website",
+    "link": "https://unseen.co/projects/cult-of-the-north/",
+    "categories": [
+      "digital"
+    ],
+    "image": "https://unseen.co/wp-content/uploads/2024/05/rune-1024x1024.jpg",
+    "bg": "#0a0a0a",
+    "light": true
+  },
+  {
+    "id": "2414",
+    "title": "Crosswire",
+    "description": "Brand, Promotional Website, WebGL",
+    "link": "https://unseen.co/projects/crosswire/",
+    "categories": [
+      "branding",
+      "digital"
+    ],
+    "image": "https://unseen.co/wp-content/uploads/2023/05/Crosswire_3dLogo.jpg",
+    "bg": "#f8e8ff",
+    "light": false
+  },
+  {
+    "id": "810",
+    "title": "Blue Marine",
+    "description": "Immersive Digital",
+    "link": "https://unseen.co/projects/blue-marine-foundation/",
+    "categories": [
+      "branding",
+      "digital",
+      "motion"
+    ],
+    "image": "https://unseen.co/wp-content/uploads/2022/06/menu_2-819x1024.jpg",
+    "bg": "#000b33",
+    "light": true
+  },
+  {
+    "id": "2461",
+    "title": "Quai Network",
+    "description": "Immersive Digital, Brand",
+    "link": "https://unseen.co/projects/quai-network/",
+    "categories": [
+      "branding",
+      "digital"
+    ],
+    "image": "https://unseen.co/wp-content/uploads/2023/04/Building_Section-1024x768.jpg",
+    "bg": "#111111",
+    "light": true
+  },
+  {
+    "id": "1700",
+    "title": "CLOU Architects",
+    "description": "Digital",
+    "link": "https://unseen.co/projects/clou/",
+    "categories": [
+      "digital"
+    ],
+    "image": "https://unseen.co/wp-content/uploads/2025/08/clou_case-1024x537.jpg",
+    "bg": "#e5e5e5",
+    "light": false
+  },
+  {
+    "id": "1561",
+    "title": "TRUE Staging",
+    "description": "Branding & Website Design",
+    "link": "https://unseen.co/projects/true/",
+    "categories": [
+      "branding",
+      "digital"
+    ],
+    "image": "https://unseen.co/wp-content/uploads/2022/06/Frame-326-1024x768.jpg",
+    "bg": "#e8e2de",
+    "light": false
+  },
+  {
+    "id": "2593",
+    "title": "Blue Marine XR",
+    "description": "WebXR, AR, Instagram Filter",
+    "link": "https://unseen.co/projects/walk-with-whales/",
+    "categories": [
+      "digital"
+    ],
+    "image": "https://unseen.co/wp-content/uploads/2024/03/turtle_cover_image-1024x768.jpg",
+    "bg": "#0b1844",
+    "light": true
+  },
+  {
+    "id": "583",
+    "title": "Allies Of Skin",
+    "description": "Campaign Visuals",
+    "link": "https://unseen.co/projects/allies-of-skin/",
+    "categories": [],
+    "image": "https://unseen.co/wp-content/uploads/2021/05/image-12.jpg",
+    "bg": "#efe5fc",
+    "light": false
+  },
+  {
+    "id": "536",
+    "title": "Lewa House",
+    "description": "Web & CGI",
+    "link": "https://unseen.co/projects/lewa-house/",
+    "categories": [],
+    "image": "https://unseen.co/wp-content/uploads/2022/10/lewa_laptop_compressed-1024x768.jpg",
+    "bg": "#ede8e1",
+    "light": false
+  },
+  {
+    "id": "516",
+    "title": "Superlist",
+    "description": "Website",
+    "link": "https://unseen.co/projects/superlist/",
+    "categories": [],
+    "image": "https://unseen.co/wp-content/uploads/2022/07/projects-mockup-819x1024.jpg",
+    "bg": "#ededed",
+    "light": false
+  },
+  {
+    "id": "900",
+    "title": "Dreamscapes",
+    "description": "CGI",
+    "link": "https://unseen.co/projects/dreamscapes/",
+    "categories": [],
+    "image": "https://unseen.co/wp-content/uploads/2021/12/rw-2-819x1024.ktx2",
+    "bg": "#e5d5d5",
+    "light": false
+  },
+  {
+    "id": "830",
+    "title": "BlueYard",
+    "description": "Website",
+    "link": "https://unseen.co/projects/blue-yard/",
+    "categories": [],
+    "image": "https://unseen.co/wp-content/uploads/2021/11/1.jpg",
+    "bg": "#0a0a0a",
+    "light": true
+  },
+  {
+    "id": "1713",
+    "title": "Contra",
+    "description": "Website",
+    "link": "https://unseen.co/projects/contra/",
+    "categories": [],
+    "image": "https://unseen.co/wp-content/uploads/2022/11/contra_mobile-1024x768.jpg",
+    "bg": "#0a0a0a",
+    "light": true
+  },
+  {
+    "id": "511",
+    "title": "Letter",
+    "description": "Website",
+    "link": "https://unseen.co/projects/letter/",
+    "categories": [],
+    "image": "https://unseen.co/wp-content/uploads/2021/04/still-card-test-2-819x1024.ktx2",
+    "bg": "#ededed",
+    "light": false
+  },
+  {
+    "id": "829",
+    "title": "Dala",
+    "description": "Branding & Digital",
+    "link": "https://unseen.co/projects/dala/",
+    "categories": [],
+    "image": "https://unseen.co/wp-content/uploads/2021/11/4_v2.jpg",
+    "bg": "#0a0a0a",
+    "light": true
+  },
+  {
+    "id": "Blossom ",
+    "title": "Blossom",
+    "description": "Interactive petal particles ",
+    "link": "https://unseen.co/labs/blossom/",
+    "categories": [
+      "experiment"
+    ],
+    "image": "https://unseen.co/wp-content/uploads/2025/08/OG-1-1024x538.jpg",
+    "bg": "#e8e0d8",
+    "light": false
+  },
+  {
+    "id": "Cellular",
+    "title": "Cellular",
+    "description": "Cursor interaction",
+    "link": "https://unseen.co/labs/cellular/",
+    "categories": [
+      "experiment"
+    ],
+    "image": "https://unseen.co/wp-content/uploads/2025/08/Cellular-share-1024x538.jpg",
+    "bg": "#e8e0d8",
+    "light": false
+  },
+  {
+    "id": "Cyber Rain",
+    "title": "Cyber Rain",
+    "description": "WebGL Rain",
+    "link": "https://unseen.co/labs/webgl-rain/",
+    "categories": [
+      "experiment"
+    ],
+    "image": "https://unseen.co/wp-content/uploads/2025/08/webgl_rain-scaled-1024x537.jpg",
+    "bg": "#e8e0d8",
+    "light": false
+  },
+  {
+    "id": "Particle Play",
+    "title": "Particle Play",
+    "description": "WenGL interactive particles",
+    "link": "",
+    "categories": [
+      "experiment"
+    ],
+    "image": "https://unseen.co/wp-content/uploads/2025/08/particles_fire-scaled-1024x537.jpg",
+    "bg": "#e8e0d8",
+    "light": false
+  },
+  {
+    "id": "Pool Life",
+    "title": "Pool Life",
+    "description": "Interactive water simulation",
+    "link": "https://water-scene.unseen.co/",
+    "categories": [
+      "experiment"
+    ],
+    "image": "https://unseen.co/wp-content/uploads/2025/08/water_sim-scaled-1024x537.jpg",
+    "bg": "#e8e0d8",
+    "light": false
+  },
+  {
+    "id": "Optical Flow",
+    "title": "Optical Flow",
+    "description": "Interactive, Web-cam",
+    "link": "https://unseen.co/labs/optical-flow/",
+    "categories": [
+      "experiment"
+    ],
+    "image": "https://unseen.co/wp-content/uploads/2025/08/optical-scaled-1024x537.jpg",
+    "bg": "#e8e0d8",
+    "light": false
+  }
+]

@@ -38,7 +38,17 @@ export default function FacilProjectPage() {
         </header>
 
         <div className="card card-info">
-          <div className="holder" data-scroll-insider data-speed={0.1} data-speed-x={0.15}>
+          <div
+            className="holder"
+            data-scroll-insider
+            style={
+              {
+                ['--speed' as string]: 0.1,
+                ['--speed-x' as string]: 0.15,
+                ['--x' as string]: 'calc((var(--y) * (0.15 * var(--mod-x, 1))) * -1px)',
+              } as React.CSSProperties
+            }
+          >
             <div className="content">
               <h2 className="title tag --l --default --transparent">{project.tagline}</h2>
               <div className="text">
@@ -48,7 +58,11 @@ export default function FacilProjectPage() {
           </div>
         </div>
 
-        <div className="billboard-project__media" data-scroll-insider data-speed={0} data-speed-x={0}>
+        <div
+          className="billboard-project__media"
+          data-scroll-insider
+          style={{ ['--speed' as string]: 0 } as React.CSSProperties}
+        >
           <figure className="media-holder" style={{ ['--aspect' as string]: project.hero.aspect }}>
             <img src={project.hero.image} alt={project.client} loading="lazy" />
           </figure>

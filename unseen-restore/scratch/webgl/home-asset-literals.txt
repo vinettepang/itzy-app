@@ -1,0 +1,2 @@
+images/home/blade.jpg
+models/home/objectsData.glb
