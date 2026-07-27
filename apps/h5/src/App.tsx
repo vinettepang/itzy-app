@@ -26,6 +26,7 @@ import FacilPeoplePage from '@/pages/facil/pages/FacilPeoplePage';
 import FacilContactPage from '@/pages/facil/pages/FacilContactPage';
 import FacilProjectPage from '@/pages/facil/pages/FacilProjectPage';
 import FacilLegalPage from '@/pages/facil/pages/FacilLegalPage';
+import NewHomePage from '@/pages/new-home/NewHomePage';
 import MenuPage from '@/pages/MenuPage';
 import UnseenStudioLayout from '@/pages/unseen-studio/UnseenStudioLayout';
 import UnseenStudioHomePage from '@/pages/unseen-studio/pages/HomePage';
@@ -50,6 +51,7 @@ export default function App() {
       <Route path="/menu" element={<MenuPage />} />
       <Route path="/home" element={<Home />} />
       <Route path="/xkm" element={<XkmPage />} />
+      <Route path="/new_home" element={<NewHomePage />} />
       <Route path="/songs" element={<SongsPage />} />
       <Route path="/unseen" element={<UnseenPage />} />
       <Route path="/balls" element={<BallsPage />} />

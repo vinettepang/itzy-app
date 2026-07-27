@@ -12,6 +12,7 @@ const MENU_GROUPS: MenuGroup[] = [
     links: [
       { to: '/menu', label: 'Menu（本页）', note: '/menu' },
       { to: '/', label: 'XKM', note: '/' },
+      { to: '/new_home', label: 'New Home', note: 'XKM + haoqi 下落' },
       { to: '/home', label: 'Home', note: '/home' },
       { to: '/xkm', label: 'XKM (别名)', note: '/xkm' },
     ],

@@ -14,6 +14,8 @@ type CreateOptions = {
   onProgress?: (percent: number) => void;
   onThemeChange?: (index: SceneIndex) => void;
   onHoldChange?: (holding: boolean) => void;
+  /** Hide sky / viewport / fill planes — letters (+ bubble) only */
+  lettersOnly?: boolean;
 };
 
 function loadTexture(url: string) {
@@ -64,6 +66,7 @@ export async function createRefractionScene({
   onProgress,
   onThemeChange,
   onHoldChange,
+  lettersOnly = false,
 }: CreateOptions): Promise<RefractionSceneHandle> {
   const scene = new THREE.Scene();
   const renderer = new THREE.WebGLRenderer({
@@ -76,10 +79,21 @@ export async function createRefractionScene({
   renderer.autoClear = false;
   renderer.setClearColor(0x000000, 0);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-  renderer.setSize(window.innerWidth, window.innerHeight, false);
 
   const dpr = renderer.getPixelRatio();
-  const size = () => new THREE.Vector2(window.innerWidth * dpr, window.innerHeight * dpr);
+  const viewSize = () => {
+    const w = Math.max(1, canvas.clientWidth || canvas.parentElement?.clientWidth || window.innerWidth);
+    const h = Math.max(1, canvas.clientHeight || canvas.parentElement?.clientHeight || window.innerHeight);
+    return { w, h };
+  };
+  const size = () => {
+    const { w, h } = viewSize();
+    return new THREE.Vector2(w * dpr, h * dpr);
+  };
+  {
+    const { w, h } = viewSize();
+    renderer.setSize(w, h, false);
+  }
 
   const params: RefractionSceneParams = {
     bubbleTransparency: 1,
@@ -107,16 +121,20 @@ export async function createRefractionScene({
   const envFbo = new THREE.WebGLRenderTarget(size().x, size().y, { depthBuffer: true });
   const skyFbo = new THREE.WebGLRenderTarget(size().x, size().y, { depthBuffer: true });
 
-  const camera = new THREE.PerspectiveCamera(10, window.innerWidth / window.innerHeight, 0.1, 1000);
+  const initialAspect = (() => {
+    const { w, h } = viewSize();
+    return w / h;
+  })();
+  const camera = new THREE.PerspectiveCamera(10, initialAspect, 0.1, 1000);
   camera.position.z = SCENE_CONFIG.cameraZOffset;
   scene.add(camera);
 
-  const camera2 = new THREE.PerspectiveCamera(10, window.innerWidth / window.innerHeight, 0.1, 1000);
+  const camera2 = new THREE.PerspectiveCamera(10, initialAspect, 0.1, 1000);
   camera2.position.z = SCENE_CONFIG.cameraZOffset;
   camera2.layers.set(LAYER_BG);
   scene.add(camera2);
 
-  const skyCamera = new THREE.PerspectiveCamera(10, window.innerWidth / window.innerHeight, 0.1, 1000);
+  const skyCamera = new THREE.PerspectiveCamera(10, initialAspect, 0.1, 1000);
   skyCamera.position.z = SCENE_CONFIG.cameraZOffset;
   skyCamera.layers.set(LAYER_BG);
   scene.add(skyCamera);
@@ -286,13 +304,22 @@ export async function createRefractionScene({
   fillBottomRight.layers.set(LAYER_BG);
   scene.add(fillBottomRight);
 
-  const orient = orientation(window.innerWidth, window.innerHeight);
+  if (lettersOnly) {
+    backgroundPlane.visible = false;
+    lightningPlane.visible = false;
+    viewportPlane.visible = false;
+    fillTopLeft.visible = false;
+    fillBottomRight.visible = false;
+  }
+
+  const orient = orientation(viewSize().w, viewSize().h);
   const bubble = new THREE.Mesh(
     new THREE.SphereGeometry(1, 64, 32),
     materials.bubble,
   );
   const bubbleScale = SCENE_CONFIG.bubbleScale[orient];
   bubble.scale.setScalar(bubbleScale);
+  if (lettersOnly) bubble.visible = false;
   scene.add(bubble);
 
   const bubbleTextMesh = firstMesh(bubbleGltf);
@@ -332,6 +359,7 @@ export async function createRefractionScene({
     spriteGroup.add(sp);
   });
   bubbleGltf.add(spriteGroup);
+  if (lettersOnly) spriteGroup.visible = false;
 
   let sceneWidth = 1;
   let sceneHeight = 1;
@@ -346,8 +374,7 @@ export async function createRefractionScene({
     const fovRad = THREE.MathUtils.degToRad(camera.fov);
     sceneHeight = 2 * Math.tan(fovRad / 2) * SCENE_CONFIG.cameraZOffset;
     sceneWidth = sceneHeight * camera.aspect;
-    const w = window.innerWidth;
-    const h = window.innerHeight;
+    const { w, h } = viewSize();
     const aspect = w / h;
     const boxScale = sceneHeight * 1.3;
 
@@ -467,13 +494,15 @@ export async function createRefractionScene({
     if (allowSpriteOpacity) spriteMat.opacity = params.spriteOpacity;
 
     getMouseWorld();
-    const isTouch = 'ontouchstart' in window;
-    if (isTouch) {
-      bubble.position.x = THREE.MathUtils.lerp(bubble.position.x, params.bubbleXPos, 0.08);
-      bubble.position.y = THREE.MathUtils.lerp(bubble.position.y, 0, 0.08);
-    } else {
-      bubble.position.x = THREE.MathUtils.lerp(bubble.position.x, worldMousePos.x, 0.08);
-      bubble.position.y = THREE.MathUtils.lerp(bubble.position.y, worldMousePos.y, 0.08);
+    if (!lettersOnly) {
+      const isTouch = 'ontouchstart' in window;
+      if (isTouch) {
+        bubble.position.x = THREE.MathUtils.lerp(bubble.position.x, params.bubbleXPos, 0.08);
+        bubble.position.y = THREE.MathUtils.lerp(bubble.position.y, 0, 0.08);
+      } else {
+        bubble.position.x = THREE.MathUtils.lerp(bubble.position.x, worldMousePos.x, 0.08);
+        bubble.position.y = THREE.MathUtils.lerp(bubble.position.y, worldMousePos.y, 0.08);
+      }
     }
 
     bubbleGltf.rotation.x = THREE.MathUtils.lerp(bubbleGltf.rotation.x, -pointer.y * 0.2, 0.06);
@@ -505,9 +534,11 @@ export async function createRefractionScene({
         });
       }
       boxMesh.visible = true;
-      viewportPlane.visible = true;
-      fillTopLeft.visible = true;
-      fillBottomRight.visible = true;
+      if (!lettersOnly) {
+        viewportPlane.visible = true;
+        fillTopLeft.visible = true;
+        fillBottomRight.visible = true;
+      }
       getSkyTexture = false;
     }
 
@@ -558,6 +589,7 @@ export async function createRefractionScene({
   }
 
   function onPointerDown() {
+    if (lettersOnly) return;
     if (holdTimer) clearTimeout(holdTimer);
     holdTimer = setTimeout(() => {
       allowSpriteOpacity = true;
@@ -568,6 +600,7 @@ export async function createRefractionScene({
   }
 
   function onPointerUp() {
+    if (lettersOnly) return;
     if (holdTimer) clearTimeout(holdTimer);
     onHoldChange?.(false);
     if (sceneIndex === 1) scene1HoldTl.reverse();
@@ -575,13 +608,15 @@ export async function createRefractionScene({
   }
 
   function onPointerMove(clientX: number, clientY: number) {
-    pointer.x = (clientX / window.innerWidth) * 2 - 1;
-    pointer.y = -(clientY / window.innerHeight) * 2 + 1;
+    const rect = canvas.getBoundingClientRect();
+    const w = Math.max(1, rect.width);
+    const h = Math.max(1, rect.height);
+    pointer.x = ((clientX - rect.left) / w) * 2 - 1;
+    pointer.y = -((clientY - rect.top) / h) * 2 + 1;
   }
 
   function resize() {
-    const w = window.innerWidth;
-    const h = window.innerHeight;
+    const { w, h } = viewSize();
     renderer.setSize(w, h, false);
     camera.aspect = w / h;
     camera.updateProjectionMatrix();
