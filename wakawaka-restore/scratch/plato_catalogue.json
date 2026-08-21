@@ -1,0 +1,810 @@
+{
+  "globals": {
+    "SiteSettings": {
+      "title": "WAKA-WAKA",
+      "description": "WAKA WAKA is a Los Angeles based studio focusing on wood furniture and functional objects designed and hand crafted by Shin Okuda.",
+      "keywords": null,
+      "gaTrackingId": "UA-173085492-1",
+      "shareImage": {
+        "asset": {
+          "url": "https://cdn.sanity.io/images/8yrspuwy/production/18724c795ad1c6067c6973cf67fa81bae947808d-1200x630.jpg"
+        }
+      },
+      "globalFooterPhone": "+1 32 36 33 34 58",
+      "globalFooterLinks": [
+        {
+          "linkLabel": "iko Iko",
+          "linkUrl": "http://www.ikoikospace.com/"
+        },
+        {
+          "linkLabel": "instagram",
+          "linkUrl": "https://www.instagram.com/wakawakainc/"
+        },
+        {
+          "linkLabel": "email",
+          "linkUrl": "mailto:info@wakawaka.world"
+        }
+      ],
+      "globalFooterLeftCopy": "functional objects",
+      "globalFooterLocation": "Los Angeles, CA",
+      "globalFooterCopyrightLabel": "Waka Waka",
+      "globalFooterCopyrightYears": "©2026"
+    }
+  },
+  "serverData": {
+    "meta": null,
+    "pageTitle": "Catalogue <br/> FW/20",
+    "allChair": [
+      {
+        "_id": "5e77f9bf-dc92-4a82-ab9c-30acfc5e0ad5",
+        "slug": {
+          "current": "compartment-chair"
+        },
+        "chairType": {
+          "key": "Chair Collection"
+        },
+        "name": "Compartment Chair",
+        "materials": "Birch Wood",
+        "dimensions": "17.5x18x32x17",
+        "featured_image_1": {
+          "asset": {
+            "url": "https://cdn.sanity.io/images/8yrspuwy/production/255b56fe5b24b2aa2039b6c7305aa88cd30cc7e1-2444x3056.jpg",
+            "title": null,
+            "label": null,
+            "metadata": {
+              "palette": {
+                "dominant": {
+                  "background": "#bcbcb4"
+                },
+                "muted": {
+                  "background": "#8c837b"
+                }
+              },
+              "dimensions": {
+                "width": 2444,
+                "height": 3056
+              }
+            }
+          }
+        },
+        "featured_image_2": {
+          "asset": {
+            "url": "https://cdn.sanity.io/images/8yrspuwy/production/85e2d3ee172dbc24aeaa4dc1de012065aa99b871-2437x3047.jpg",
+            "title": null,
+            "label": null,
+            "metadata": {
+              "palette": {
+                "dominant": {
+                  "background": "#c4c4bc"
+                },
+                "muted": {
+                  "background": "#84745c"
+                }
+              },
+              "dimensions": {
+                "width": 2437,
+                "height": 3047
+              }
+            }
+          }
+        },
+        "index": "01"
+      },
+      {
+        "_id": "db7fe76c-fe93-4ad7-97f0-b05856897634",
+        "slug": {
+          "current": "cylinder-back"
+        },
+        "chairType": {
+          "key": "Chair Collection"
+        },
+        "name": "Cylinder Back",
+        "materials": "Birch Wood",
+        "dimensions": "17.5x21x30x17",
+        "featured_image_1": {
+          "asset": {
+            "url": "https://cdn.sanity.io/images/8yrspuwy/production/84cea93a1f875612a2e2640e6b031d1ec8ed0324-2418x3021.jpg",
+            "title": null,
+            "label": null,
+            "metadata": {
+              "palette": {
+                "dominant": {
+                  "background": "#bcb4b4"
+                },
+                "muted": {
+                  "background": "#807e7b"
+                }
+              },
+              "dimensions": {
+                "width": 2418,
+                "height": 3021
+              }
+            }
+          }
+        },
+        "featured_image_2": {
+          "asset": {
+            "url": "https://cdn.sanity.io/images/8yrspuwy/production/413315c187fbfcdc3d3768c6f641e3426e0952ab-2422x3028.jpg",
+            "title": null,
+            "label": null,
+            "metadata": {
+              "palette": {
+                "dominant": {
+                  "background": "#c4c4bc"
+                },
+                "muted": {
+                  "background": "#8f7054"
+                }
+              },
+              "dimensions": {
+                "width": 2422,
+                "height": 3028
+              }
+            }
+          }
+        },
+        "index": "02"
+      },
+      {
+        "_id": "3ac580a5-32ae-44ab-9ea4-b0a32843b00b",
+        "slug": {
+          "current": "cylinder-back-arm"
+        },
+        "chairType": {
+          "key": "Chair Collection"
+        },
+        "name": "Cylinder Back Arm",
+        "materials": "Birch Wood",
+        "dimensions": "21.5x22x27x17",
+        "featured_image_1": {
+          "asset": {
+            "url": "https://cdn.sanity.io/images/8yrspuwy/production/b82d5227fd22047d739a4c25644651bfb97068d0-2444x3055.jpg",
+            "title": null,
+            "label": null,
+            "metadata": {
+              "palette": {
+                "dominant": {
+                  "background": "#c4c4bc"
+                },
+                "muted": {
+                  "background": "#a68367"
+                }
+              },
+              "dimensions": {
+                "width": 2444,
+                "height": 3055
+              }
+            }
+          }
+        },
+        "featured_image_2": {
+          "asset": {
+            "url": "https://cdn.sanity.io/images/8yrspuwy/production/7803d84dc36b232e27b8c1753c3c2cd335964d4a-1600x2000.jpg",
+            "title": null,
+            "label": null,
+            "metadata": {
+              "palette": {
+                "dominant": {
+                  "background": "#c4c4bc"
+                },
+                "muted": {
+                  "background": "#746c94"
+                }
+              },
+              "dimensions": {
+                "width": 1600,
+                "height": 2000
+              }
+            }
+          }
+        },
+        "index": "03"
+      },
+      {
+        "_id": "823ae9f6-c3f9-4c95-995e-50fb73ac4fe7",
+        "slug": {
+          "current": "counter-height-ladder-back"
+        },
+        "chairType": {
+          "key": "Chair Collection"
+        },
+        "name": "Counter Height Ladder Back",
+        "materials": "Birch Wood",
+        "dimensions": "17x19x64x24",
+        "featured_image_1": {
+          "asset": {
+            "url": "https://cdn.sanity.io/images/8yrspuwy/production/eb66949df8be141c06ffc0e84c6b9488933c2e01-2424x3031.jpg",
+            "title": null,
+            "label": null,
+            "metadata": {
+              "palette": {
+                "dominant": {
+                  "background": "#bcbcbc"
+                },
+                "muted": {
+                  "background": "#838484"
+                }
+              },
+              "dimensions": {
+                "width": 2424,
+                "height": 3031
+              }
+            }
+          }
+        },
+        "featured_image_2": {
+          "asset": {
+            "url": "https://cdn.sanity.io/images/8yrspuwy/production/f6d1e3c34b1ccf8bcbd61342ea1262e632b4eaef-2428x3036.jpg",
+            "title": null,
+            "label": null,
+            "metadata": {
+              "palette": {
+                "dominant": {
+                  "background": "#bcb4b3"
+                },
+                "muted": {
+                  "background": "#848481"
+                }
+              },
+              "dimensions": {
+                "width": 2428,
+                "height": 3036
+              }
+            }
+          }
+        },
+        "index": "04"
+      },
+      {
+        "_id": "7abed5ed-9338-45f2-86a7-e32eba589b0f",
+        "slug": {
+          "current": "flat-back-dining"
+        },
+        "chairType": {
+          "key": "Chair Collection"
+        },
+        "name": "Flat Back Dining",
+        "materials": "Birch Wood",
+        "dimensions": "17.5x19.5x30x17",
+        "featured_image_1": {
+          "asset": {
+            "url": "https://cdn.sanity.io/images/8yrspuwy/production/ad6d1c753a42904a149c35ad0e4a46fd87ebb206-2437x3046.jpg",
+            "title": null,
+            "label": null,
+            "metadata": {
+              "palette": {
+                "dominant": {
+                  "background": "#aa8755"
+                },
+                "muted": {
+                  "background": "#aa8755"
+                }
+              },
+              "dimensions": {
+                "width": 2437,
+                "height": 3046
+              }
+            }
+          }
+        },
+        "featured_image_2": {
+          "asset": {
+            "url": "https://cdn.sanity.io/images/8yrspuwy/production/ce1b8a4546780bcd284829635be92c3925df74b5-2442x3053.jpg",
+            "title": null,
+            "label": null,
+            "metadata": {
+              "palette": {
+                "dominant": {
+                  "background": "#c4bcb6"
+                },
+                "muted": {
+                  "background": "#a17e55"
+                }
+              },
+              "dimensions": {
+                "width": 2442,
+                "height": 3053
+              }
+            }
+          }
+        },
+        "index": "05"
+      },
+      {
+        "_id": "48774861-91be-4b39-93c0-8add2244d4d5",
+        "slug": {
+          "current": "cylinder-back-high-arm"
+        },
+        "chairType": {
+          "key": "Chair Collection"
+        },
+        "name": "Cylinder Back High Arm",
+        "materials": "Birch Wood",
+        "dimensions": "21.5x22x35x25",
+        "featured_image_1": {
+          "asset": {
+            "url": "https://cdn.sanity.io/images/8yrspuwy/production/bcfa822cf0c7498346f9562591e7b070808b6f39-2425x3032.jpg",
+            "title": null,
+            "label": null,
+            "metadata": {
+              "palette": {
+                "dominant": {
+                  "background": "#c4bcb7"
+                },
+                "muted": {
+                  "background": "#646c7c"
+                }
+              },
+              "dimensions": {
+                "width": 2425,
+                "height": 3032
+              }
+            }
+          }
+        },
+        "featured_image_2": {
+          "asset": {
+            "url": "https://cdn.sanity.io/images/8yrspuwy/production/2de042624989ba98377462afb19e6d02ef28ef8e-2424x3030.jpg",
+            "title": null,
+            "label": null,
+            "metadata": {
+              "palette": {
+                "dominant": {
+                  "background": "#c4c4bc"
+                },
+                "muted": {
+                  "background": "#8c8c84"
+                }
+              },
+              "dimensions": {
+                "width": 2424,
+                "height": 3030
+              }
+            }
+          }
+        },
+        "index": "06"
+      },
+      {
+        "_id": "3324acaa-5703-4ba6-8993-aa215567d436",
+        "slug": {
+          "current": "leaning-cylinder-back"
+        },
+        "chairType": {
+          "key": "Chair Collection"
+        },
+        "name": "Leaning Cylinder Back",
+        "materials": "Birch Wood",
+        "dimensions": "17x22x30x17",
+        "featured_image_1": {
+          "asset": {
+            "url": "https://cdn.sanity.io/images/8yrspuwy/production/b819442e8e31cb9f07d7dba184f950c3496e5cf1-2428x3035.jpg",
+            "title": null,
+            "label": null,
+            "metadata": {
+              "palette": {
+                "dominant": {
+                  "background": "#c4c4bc"
+                },
+                "muted": {
+                  "background": "#9b575a"
+                }
+              },
+              "dimensions": {
+                "width": 2428,
+                "height": 3035
+              }
+            }
+          }
+        },
+        "featured_image_2": {
+          "asset": {
+            "url": "https://cdn.sanity.io/images/8yrspuwy/production/b7b32f5943ad66c9d2d165a99ae1b5bd2318fdab-2427x3034.jpg",
+            "title": null,
+            "label": null,
+            "metadata": {
+              "palette": {
+                "dominant": {
+                  "background": "#c4c4bc"
+                },
+                "muted": {
+                  "background": "#8c5255"
+                }
+              },
+              "dimensions": {
+                "width": 2427,
+                "height": 3034
+              }
+            }
+          }
+        },
+        "index": "07"
+      },
+      {
+        "_id": "49f91065-1ec5-4bfb-b39a-62b7dc496424",
+        "slug": {
+          "current": "double-cylinder-back"
+        },
+        "chairType": {
+          "key": "Chair Collection"
+        },
+        "name": "Double Cylinder Back",
+        "materials": "Birch Wood",
+        "dimensions": "17.5x21x33x17",
+        "featured_image_1": {
+          "asset": {
+            "url": "https://cdn.sanity.io/images/8yrspuwy/production/f506d4ed91daf9a3101fa3bfec971720564d83c9-2434x3042.jpg",
+            "title": null,
+            "label": null,
+            "metadata": {
+              "palette": {
+                "dominant": {
+                  "background": "#c4c4bc"
+                },
+                "muted": {
+                  "background": "#b58556"
+                }
+              },
+              "dimensions": {
+                "width": 2434,
+                "height": 3042
+              }
+            }
+          }
+        },
+        "featured_image_2": {
+          "asset": {
+            "url": "https://cdn.sanity.io/images/8yrspuwy/production/3b70b2d1575384c4b2ac9d7c2e81243aee7bb43a-1600x2000.jpg",
+            "title": null,
+            "label": null,
+            "metadata": {
+              "palette": {
+                "dominant": {
+                  "background": "#c4c4bc"
+                },
+                "muted": {
+                  "background": "#7c807b"
+                }
+              },
+              "dimensions": {
+                "width": 1600,
+                "height": 2000
+              }
+            }
+          }
+        },
+        "index": "08"
+      },
+      {
+        "_id": "16fb9ada-59fa-44db-a2cb-f49f44dd1024",
+        "slug": {
+          "current": "flat-back-arm"
+        },
+        "chairType": {
+          "key": "Chair Collection"
+        },
+        "name": "Flat Back Arm",
+        "materials": "Birch Wood",
+        "dimensions": "21.5x19x30.25x17",
+        "featured_image_1": {
+          "asset": {
+            "url": "https://cdn.sanity.io/images/8yrspuwy/production/3a73d4ee1a547db96743fe2270caee6d311301c9-2428x3036.jpg",
+            "title": null,
+            "label": null,
+            "metadata": {
+              "palette": {
+                "dominant": {
+                  "background": "#c4c4bc"
+                },
+                "muted": {
+                  "background": "#9c7164"
+                }
+              },
+              "dimensions": {
+                "width": 2428,
+                "height": 3036
+              }
+            }
+          }
+        },
+        "featured_image_2": {
+          "asset": {
+            "url": "https://cdn.sanity.io/images/8yrspuwy/production/a03a192299f12ad5f3facb84e67478c68158cbf9-2430x3037.jpg",
+            "title": null,
+            "label": null,
+            "metadata": {
+              "palette": {
+                "dominant": {
+                  "background": "#c4c4bb"
+                },
+                "muted": {
+                  "background": "#b89d79"
+                }
+              },
+              "dimensions": {
+                "width": 2430,
+                "height": 3037
+              }
+            }
+          }
+        },
+        "index": "09"
+      },
+      {
+        "_id": "0acae43b-99af-4d32-b5dd-8e8669a937ab",
+        "slug": {
+          "current": "mini-cylinder"
+        },
+        "chairType": {
+          "key": "Chair Collection"
+        },
+        "name": "Mini Cylinder Chair",
+        "materials": "Birch Wood",
+        "dimensions": "12.75x16.5x22.5x12",
+        "featured_image_1": {
+          "asset": {
+            "url": "https://cdn.sanity.io/images/8yrspuwy/production/5cd1232f2464a893211a78e20c7c91b94e5afd57-2413x3016.jpg",
+            "title": null,
+            "label": null,
+            "metadata": {
+              "palette": {
+                "dominant": {
+                  "background": "#bcbcbc"
+                },
+                "muted": {
+                  "background": "#8c8274"
+                }
+              },
+              "dimensions": {
+                "width": 2413,
+                "height": 3016
+              }
+            }
+          }
+        },
+        "featured_image_2": {
+          "asset": {
+            "url": "https://cdn.sanity.io/images/8yrspuwy/production/140eb5adc36f4fc5cebe59ff06b20b04c96153db-2433x3041.jpg",
+            "title": null,
+            "label": null,
+            "metadata": {
+              "palette": {
+                "dominant": {
+                  "background": "#bcbcbc"
+                },
+                "muted": {
+                  "background": "#8c7c74"
+                }
+              },
+              "dimensions": {
+                "width": 2433,
+                "height": 3041
+              }
+            }
+          }
+        },
+        "index": 10
+      },
+      {
+        "_id": "9a89dc45-bdba-4195-85ef-80bc7a357d5e",
+        "slug": {
+          "current": "double-cylinder-rocker"
+        },
+        "chairType": {
+          "key": "Chair Collection"
+        },
+        "name": "Double Cylinder Rocker",
+        "materials": "Birch Wood",
+        "dimensions": "21.5x 28x 29x14",
+        "featured_image_1": {
+          "asset": {
+            "url": "https://cdn.sanity.io/images/8yrspuwy/production/57ae11348039c445cbc4d0d206a56da528ab698b-2420x3025.jpg",
+            "title": null,
+            "label": null,
+            "metadata": {
+              "palette": {
+                "dominant": {
+                  "background": "#b4b4ac"
+                },
+                "muted": {
+                  "background": "#84837b"
+                }
+              },
+              "dimensions": {
+                "width": 2420,
+                "height": 3025
+              }
+            }
+          }
+        },
+        "featured_image_2": {
+          "asset": {
+            "url": "https://cdn.sanity.io/images/8yrspuwy/production/bc23a63e52fb402595e1b4765389bf57cc205ea0-2425x3032.jpg",
+            "title": null,
+            "label": null,
+            "metadata": {
+              "palette": {
+                "dominant": {
+                  "background": "#c4c4bc"
+                },
+                "muted": {
+                  "background": "#797b78"
+                }
+              },
+              "dimensions": {
+                "width": 2425,
+                "height": 3032
+              }
+            }
+          }
+        },
+        "index": 11
+      },
+      {
+        "_id": "6c789162-9ef5-4b8f-a757-3614f5c7c553",
+        "slug": {
+          "current": "leaning-flat-back-dining"
+        },
+        "chairType": {
+          "key": "Chair Collection"
+        },
+        "name": "Leaning Flat Back Dining",
+        "materials": "Birch Wood",
+        "dimensions": "17x21x29.5x17",
+        "featured_image_1": {
+          "asset": {
+            "url": "https://cdn.sanity.io/images/8yrspuwy/production/4f4ad2cf58c35b5914c2c3438ad91cc0f0cebdc9-2440x3049.jpg",
+            "title": null,
+            "label": null,
+            "metadata": {
+              "palette": {
+                "dominant": {
+                  "background": "#c4c4bc"
+                },
+                "muted": {
+                  "background": "#a3836d"
+                }
+              },
+              "dimensions": {
+                "width": 2440,
+                "height": 3049
+              }
+            }
+          }
+        },
+        "featured_image_2": {
+          "asset": {
+            "url": "https://cdn.sanity.io/images/8yrspuwy/production/00bff9f7ba45cce64ebfd61ad622287b9f62d254-2435x3044.jpg",
+            "title": null,
+            "label": null,
+            "metadata": {
+              "palette": {
+                "dominant": {
+                  "background": "#a28155"
+                },
+                "muted": {
+                  "background": "#a28155"
+                }
+              },
+              "dimensions": {
+                "width": 2435,
+                "height": 3044
+              }
+            }
+          }
+        },
+        "index": 12
+      },
+      {
+        "_id": "cfd7520c-7d36-4e76-9dd5-be03ed39e710",
+        "slug": {
+          "current": "ladder-back"
+        },
+        "chairType": {
+          "key": "Chair Collection"
+        },
+        "name": "Ladder Back",
+        "materials": "Birch Wood",
+        "dimensions": "17x19x48x17",
+        "featured_image_1": {
+          "asset": {
+            "url": "https://cdn.sanity.io/images/8yrspuwy/production/ad78a9809bbf1996013e53a80322c2aed5e9453e-2435x3044.jpg",
+            "title": null,
+            "label": null,
+            "metadata": {
+              "palette": {
+                "dominant": {
+                  "background": "#bcb6b4"
+                },
+                "muted": {
+                  "background": "#898682"
+                }
+              },
+              "dimensions": {
+                "width": 2435,
+                "height": 3044
+              }
+            }
+          }
+        },
+        "featured_image_2": {
+          "asset": {
+            "url": "https://cdn.sanity.io/images/8yrspuwy/production/3a843898d200cfd170fd714f62fbec8dd444bd71-2432x3040.jpg",
+            "title": null,
+            "label": null,
+            "metadata": {
+              "palette": {
+                "dominant": {
+                  "background": "#c4bcbc"
+                },
+                "muted": {
+                  "background": "#84776c"
+                }
+              },
+              "dimensions": {
+                "width": 2432,
+                "height": 3040
+              }
+            }
+          }
+        },
+        "index": 13
+      },
+      {
+        "_id": "9359b352-d9e6-494b-a666-2703cfbf708c",
+        "slug": {
+          "current": "spool-stool"
+        },
+        "chairType": {
+          "key": "Chair Collection"
+        },
+        "name": "Spool Stool",
+        "materials": "Baltic Birch Plywood, Formica, Lacquer",
+        "dimensions": "14x16.5",
+        "featured_image_1": {
+          "asset": {
+            "url": "https://cdn.sanity.io/images/8yrspuwy/production/d0bb3e651a3e16eaee6469f18b03bdfeebcc3606-2441x3051.jpg",
+            "title": null,
+            "label": null,
+            "metadata": {
+              "palette": {
+                "dominant": {
+                  "background": "#4a312d"
+                },
+                "muted": {
+                  "background": "#b27e78"
+                }
+              },
+              "dimensions": {
+                "width": 2441,
+                "height": 3051
+              }
+            }
+          }
+        },
+        "featured_image_2": {
+          "asset": {
+            "url": "https://cdn.sanity.io/images/8yrspuwy/production/78ca6cd0cec0107d320d92fc329c5773c3885c50-2442x3054.jpg",
+            "title": null,
+            "label": null,
+            "metadata": {
+              "palette": {
+                "dominant": {
+                  "background": "#bcbcb4"
+                },
+                "muted": {
+                  "background": "#9e5956"
+                }
+              },
+              "dimensions": {
+                "width": 2442,
+                "height": 3054
+              }
+            }
+          }
+        },
+        "index": 14
+      }
+    ]
+  }
+}

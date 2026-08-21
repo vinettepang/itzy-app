@@ -1,0 +1,56 @@
+﻿
+--- setupDOM 4402 ---
+.A)(t).constructor):n.apply(t,o));var t,n,o}return(0,l.A)(e,t),(0,o.A)(e,[{key:"setupDOM",value:function(){u.os.set(this.el,{autoAlpha:0})}},{key:"initTL",value:function(){var t=this;this.TL.show=u.os.timeline({paused:!0,onComplete:function(){return t.onShown()}}),this.TL.show.to(this.el,.5,{autoAlpha:1,ease:"cubic.out"}),this.TL.hide=u.os.timeline({paused:!0,onComplete:function(){return t.onHidden()}}),this.TL.hide.to(this.el
+
+--- initTL 4469 ---
+.A)(e,[{key:"setupDOM",value:function(){u.os.set(this.el,{autoAlpha:0})}},{key:"initTL",value:function(){var t=this;this.TL.show=u.os.timeline({paused:!0,onComplete:function(){return t.onShown()}}),this.TL.show.to(this.el,.5,{autoAlpha:1,ease:"cubic.out"}),this.TL.hide=u.os.timeline({paused:!0,onComplete:function(){return t.onHidden()}}),this.TL.hide.to(this.el,.3,{autoAlpha:0,ease:"cubic.out"})}},{key:"onDOMInit",value:functi
+
+--- onDOMInit 4796 ---
+nHidden()}}),this.TL.hide.to(this.el,.3,{autoAlpha:0,ease:"cubic.out"})}},{key:"onDOMInit",value:function(){var t,n,a,o,i,l=d.A.getState().app,c=l.oldPage,u=l.page;c&&"product"===u.type&&"product"!==c.type&&this.el.classList.add("next-page"),document.getElementById("content").appendChild(this.el),(0,h.Q)(this.el),(t=e,n="onDOMInit",a=this,o=3,i=(0,r.A)((0,s.A)(1&o?t.prototype:t),n,a),2&o&&"function"==typeof i?function(t){retur
+
+--- onDOMInit 5039 ---
+ocument.getElementById("content").appendChild(this.el),(0,h.Q)(this.el),(t=e,n="onDOMInit",a=this,o=3,i=(0,r.A)((0,s.A)(1&o?t.prototype:t),n,a),2&o&&"function"==typeof i?function(t){return i.apply(a,t)}:i)([])}},{key:"showComponent",value:function(){var t=this;setTimeout(function(){t.TL.show.play(0)},0)}},{key:"hideComponent",value:function(){var t=this;setTimeout(function(){t.TL.hide.play(0)},0)}}])}(c.A);e.A=f},1155:function
+
+--- showComponent 5177 ---
+,n,a),2&o&&"function"==typeof i?function(t){return i.apply(a,t)}:i)([])}},{key:"showComponent",value:function(){var t=this;setTimeout(function(){t.TL.show.play(0)},0)}},{key:"hideComponent",value:function(){var t=this;setTimeout(function(){t.TL.hide.play(0)},0)}}])}(c.A);e.A=f},1155:function(t,e,n){"use strict";var a=n(3029),o=n(2901),i=n(388),s=n(3954),r=n(991),l=n(5361),c=n(7146),u=n(3996),d=n(3708),h=n(6016),p=n(1937),f=n(8
+
+--- onShown 4574 ---
+var t=this;this.TL.show=u.os.timeline({paused:!0,onComplete:function(){return t.onShown()}}),this.TL.show.to(this.el,.5,{autoAlpha:1,ease:"cubic.out"}),this.TL.hide=u.os.timeline({paused:!0,onComplete:function(){return t.onHidden()}}),this.TL.hide.to(this.el,.3,{autoAlpha:0,ease:"cubic.out"})}},{key:"onDOMInit",value:function(){var t,n,a,o,i,l=d.A.getState().app,c=l.oldPage,u=l.page;c&&"product"===u.type&&"product"!==c.type&&t
+
+--- onHidden 4715 ---
+bic.out"}),this.TL.hide=u.os.timeline({paused:!0,onComplete:function(){return t.onHidden()}}),this.TL.hide.to(this.el,.3,{autoAlpha:0,ease:"cubic.out"})}},{key:"onDOMInit",value:function(){var t,n,a,o,i,l=d.A.getState().app,c=l.oldPage,u=l.page;c&&"product"===u.type&&"product"!==c.type&&this.el.classList.add("next-page"),document.getElementById("content").appendChild(this.el),(0,h.Q)(this.el),(t=e,n="onDOMInit",a=this,o=3,i=(0
+
+--- appendChild 4993 ---
+==c.type&&this.el.classList.add("next-page"),document.getElementById("content").appendChild(this.el),(0,h.Q)(this.el),(t=e,n="onDOMInit",a=this,o=3,i=(0,r.A)((0,s.A)(1&o?t.prototype:t),n,a),2&o&&"function"==typeof i?function(t){return i.apply(a,t)}:i)([])}},{key:"showComponent",value:function(){var t=this;setTimeout(function(){t.TL.show.play(0)},0)}},{key:"hideComponent",value:function(){var t=this;setTimeout(function(){t.TL.h
+
+--- TL.show 4510 ---
+.os.set(this.el,{autoAlpha:0})}},{key:"initTL",value:function(){var t=this;this.TL.show=u.os.timeline({paused:!0,onComplete:function(){return t.onShown()}}),this.TL.show.to(this.el,.5,{autoAlpha:1,ease:"cubic.out"}),this.TL.hide=u.os.timeline({paused:!0,onComplete:function(){return t.onHidden()}}),this.TL.hide.to(this.el,.3,{autoAlpha:0,ease:"cubic.out"})}},{key:"onDOMInit",value:function(){var t,n,a,o,i,l=d.A.getState().app,c
+
+--- TL.show 4592 ---
+.show=u.os.timeline({paused:!0,onComplete:function(){return t.onShown()}}),this.TL.show.to(this.el,.5,{autoAlpha:1,ease:"cubic.out"}),this.TL.hide=u.os.timeline({paused:!0,onComplete:function(){return t.onHidden()}}),this.TL.hide.to(this.el,.3,{autoAlpha:0,ease:"cubic.out"})}},{key:"onDOMInit",value:function(){var t,n,a,o,i,l=d.A.getState().app,c=l.oldPage,u=l.page;c&&"product"===u.type&&"product"!==c.type&&this.el.classList.a
+
+--- TL.show 5244 ---
+([])}},{key:"showComponent",value:function(){var t=this;setTimeout(function(){t.TL.show.play(0)},0)}},{key:"hideComponent",value:function(){var t=this;setTimeout(function(){t.TL.hide.play(0)},0)}}])}(c.A);e.A=f},1155:function(t,e,n){"use strict";var a=n(3029),o=n(2901),i=n(388),s=n(3954),r=n(991),l=n(5361),c=n(7146),u=n(3996),d=n(3708),h=n(6016),p=n(1937),f=n(8953);function g(){try{var t=!Boolean.prototype.valueOf.call(Reflect
+
+--- play 5252 ---
+key:"showComponent",value:function(){var t=this;setTimeout(function(){t.TL.show.play(0)},0)}},{key:"hideComponent",value:function(){var t=this;setTimeout(function(){t.TL.hide.play(0)},0)}}])}(c.A);e.A=f},1155:function(t,e,n){"use strict";var a=n(3029),o=n(2901),i=n(388),s=n(3954),r=n(991),l=n(5361),c=n(7146),u=n(3996),d=n(3708),h=n(6016),p=n(1937),f=n(8953);function g(){try{var t=!Boolean.prototype.valueOf.call(Reflect.constru
+
+--- play 5347 ---
+key:"hideComponent",value:function(){var t=this;setTimeout(function(){t.TL.hide.play(0)},0)}}])}(c.A);e.A=f},1155:function(t,e,n){"use strict";var a=n(3029),o=n(2901),i=n(388),s=n(3954),r=n(991),l=n(5361),c=n(7146),u=n(3996),d=n(3708),h=n(6016),p=n(1937),f=n(8953);function g(){try{var t=!Boolean.prototype.valueOf.call(Reflect.construct(Boolean,[],function(){}))}catch(t){}return(g=function(){return!!t})()}var v=function(t){func
+
+--- play 8060 ---
+")?(t.parentNode.classList.add("is-loaded"),t.removeAttribute("src"),t.style.display="none"):t.parentNode.classList.add("is-loaded"),e(t)},o=function(){t.removeEventListener("load",o),t.removeEventListener("error",i),"function"==typeof t.decode?t.decode().then(n,n):n()},i=function(){t.removeEventListener("load",o),t.removeEventListener("error",i),e(t)};t.addEventListener("load",o),t.addEventListener("error",i),s(t)?(r(t.parent
+
+HTML label-global 5152
+ay:none;position:absolute;right:20px;top:60%;width:48px;z-index:0}.logo-global svg{fill:#28282a;height:auto;width:100%}.label-global{bottom:20px;color:#28282a;display:none;font-family:Waka Sans,Helvetica,Arial,sans-serif;font-size:1rem;font-style:normal;font-weight:500;left:20px;letter-spacing:-.02em;line-height:1;position:absolute;z-index:0}@media(max-width:960px){.label-global{font-size:8px}}.main-background{displa
+
+HTML logo-global 5015
+n:manipulation;text-size-adjust:none}.site{background-color:#edeae4;height:auto;position:relative;width:100%;z-index:1}.logo-global{display:none;position:absolute;right:20px;top:60%;width:48px;z-index:0}.logo-global svg{fill:#28282a;height:auto;width:100%}.label-global{bottom:20px;color:#28282a;display:none;font-family:Waka Sans,Helvetica,Arial,sans-serif;font-size:1rem;font-style:normal;font-weight:500;left:20px;let
+
+HTML main-background 5430
+x;letter-spacing:-.02em;line-height:1;position:absolute;z-index:0}@media(max-width:960px){.label-global{font-size:8px}}.main-background{display:none;height:100%;left:0;position:absolute;top:0;width:100%;z-index:0}.main-background,.scroll-wrapper{background-color:#edeae4}#content{height:auto;min-height:100%;position:relative;z-index:1}img{display:block;height:auto;width:100%}.page-overlay{background-color:rgba(0,0,0,.
+
+HTML is-intro -1
+
+HTML LARGER 26854
+lass=global-cursor> <div class=cursor-content> <div class=chair-content> <h4></h4> <h2></h2> </div> <div class=pdp-zoom>LARGER</div> <div class=pdp-loading>LOADING <span class=loading-bar></span> </div> <div class=pdp-unzoom>SMALLER</div> </div> </div> <main id=content tabindex=-1> <section class=page-wrapper id=homepage> <div class=scroll-wrapper> <div class=container> <h2 class=waka>Waka</h2> <a class=credit-link h

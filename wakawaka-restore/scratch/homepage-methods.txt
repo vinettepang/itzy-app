@@ -1,0 +1,24 @@
+﻿
+
+#################### key:"generateRandomGrid" ####################
+
+key:"generateRandomGrid",value:function(){var t=this.$grids[this.randomGridIndex],e=(0,v.nd)(0,2),i=t.querySelectorAll("img");0===e?(i[0].classList.add("is-active"),i[0].dataset.sizes="100vw"):(0,h.A)(i).forEach(function(t){t.classList.add("is-active")}),this.isMobile||(g.A.dispatch((0,$.Li)(!1)),g.A.dispatch((0,$.IN)({name:t.dataset.name,type:"direct"}))),t.classList.add("grid--layout-"+e),this.el.classList.add("layout-"+e)}},{
+
+
+#################### key:"onShown" ####################
+
+key:"onShown",value:function(){var t=this;g.A.getState().app.oldPage?((0,y.z6)((0,h.A)(this.el.querySelectorAll("img.is-active"))),this.update()):setTimeout(function(){t.TL.showPoster.play(0)},500),b(e,"onShown",this,3)([])}},{
+
+
+#################### key:"calculateZ" ####################
+
+key:"calculateZ",value:function(){var t=this;this.$html.classList.add("is-intro"),this.$html.style.overflow="hidden",this.$html.style.pointerEvents="none",this.$body.style.overflow="hidden",this.$body.style.perspective="2000px",this.$body.style.perspectiveOrigin="50% 0%",this.$body.style.height="100%",this.$site.style.background="transparent",this.$site.style.overflow="hidden",this.$mainBackground.style.display="block",this.$labelGlobal=this.$body.querySelector(".label-global"),this.$logoGlobal=this.$body.querySelector(".logo-global"),this.$labelGlobal.style.display="block",this.$logoGlobal.style.display="block",m.os.set([this.$footer,this.$credit,this.$logo],{opacity:0,willChange:"opacity"}),this.TL.showPoster=m.os.timeline({paused:!0}),this.TL.showPoster.to(this.el,.5,{autoAlpha:1,ease:"cubic.out"});var e=this.$site.offsetHeight,i=window.innerHeight,n=this.isMobile?1100/1800:1500/1800,s=e/n/i,o=i*n,l=Math.abs((o-i)/2),a=2e3*(1-s);m.os.set(this.$site,{z:a,y:l*s,willChange:"transform"}),m.os.set(this.$mainBackground,{y:e,willChange:"transform"}),m.os.set(this.$gridAnimationWrapper,{y:e,willChange:"transform"}),m.os.set(this.$grid,{y:-e,willChange:"transform"}),this.TL.showPoster.to(this.$mainBackground,{y:0,duration:1.2,ease:"power3.inOut"},0),this.TL.showPoster.to(this.$gridAnimationWrapper,{y:0,duration:1.2,ease:"power3.inOut"},0),this.TL.showPoster.to([this.$footer,this.$credit,this.$logo],{opacity:1,duration:.5,ease:"quart.out",clearProps:"willChange"},1.2),this.TL.showPo
+MISS key:"update"
+
+
+#################### key:"hideComponent" ####################
+
+key:"hideComponent",value:function(){var t=this;"productIN"!==g.A.getState().app.animationType||this.isMobile||(this.TL.hide=m.os.timeline({paused:!0}),this.$overlay.style.display="block",this.TL.hide.to(this.$overlay,1,{opacity:1,ease:"power2.inOut"}),this.undelegateEvents(),this.isMobile||g.A.dispatch((0,$.Li)(!0)),this.el.style.cursor="none",this.$grid.style.pointerEvents="none"),setTimeout(function(){t.TL.hide.play(0)},0)}},{key:"onInit",value:function(){b(e,"onInit",this,3)([])}},{key:"onFeaturedEnter",value:function(){this.isMobile||g.A.dispatch((0,$.Li)(!0))}},{key:"onFeaturedLeave",value:function(){this.isMobile||g.A.dispatch((0,$.Li)(!1))}},{key:"dispose",value:function(){window.cancelAnimationFrame(this.raf),document.documentElement.classList.remove("is-intro"),document.documentElement.classList.remove("is-homepage"),b(e,"dispose",this,3)([])}}])}(u.A);function k(){try{var t=!Boolean.prototype.valueOf.call(Reflect.construct(Boolean,[],function(){}))}catch(t){}return(k=function(){return!!t})()}var L=function(t){function e(t){var i,s,a,r;return(0,n.A)(this,e),s=this,a=e,r=[t],a=(0,l.A)(a),(i=(0,o.A)(s,k()?Reflect.construct(a,r||[],(0,l.A)(s).constructor):a.apply(s,r))).stor
+
+
+GRID TO: .$logo],{opacity:1,duration:.5,ease:"quart.out",clearProps:"willChange"},1.2),this.TL.showPoster.to(this.$grid,{y:0,duration:1.2,ease:"power3.inOut",onComplete:function(){return t.onFirstShownComplete()}},0)}},{key:"onFirstShownComplete",value:function(){var t=this;m.os.set([this.$mainBackground,this.$gridAnimationWrapper,this.$grid],{clearProps:"willChange"}),Promise.resolve(this.heroImages).then(function(){m.os.to(t.$site,{z:0,duration:1.5,ease:"power4.inOut",y:0,delay:1.5,clearProps:"all",onComplete:function(){t.$html.style.overflow=null,t.$html.style.pointerEvents=null,t.$body.style.perspe

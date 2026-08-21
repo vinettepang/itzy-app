@@ -1,0 +1,438 @@
+{
+  "data": {
+    "global-data": {
+      "data": {
+        "global_header": {
+          "__typename": "global_header",
+          "external_links": [
+            {
+              "url": "https://www.instagram.com/stagecrew.studio",
+              "label": "Insta"
+            },
+            {
+              "url": "mailto:office@stagecrew.studio",
+              "label": "Email"
+            }
+          ]
+        },
+        "global_footer": {
+          "__typename": "global_footer",
+          "disclaimer": "We do not use AI, generative or otherwise, in our work.",
+          "contact_info": "<p>For new partnerships and general<br>enquiries, reach out on:</p>\n<p><a href=\"mailto: office@stagecrew.studio\" target=\"_blank\" rel=\"noopener\">office@stagecrew.studio</a></p>",
+          "bottom_labels": [
+            {
+              "label": "SC"
+            },
+            {
+              "label": "WW"
+            }
+          ],
+          "Text": "<p><strong>STAGECREW</strong> is a purposefully compact, international design studio with a fierce collaborative spirit.</p>"
+        },
+        "global_seo": {
+          "__typename": "global_seo",
+          "site_name": "STAGECREW",
+          "seo_settings": {
+            "__typename": "block_seo",
+            "title": null,
+            "description": "STAGECREW is a purposefully compact creative studio with a focus on a fierce collaborative spirit and an experimental process that prioritises fun and experimentation over deadlines and deliverables.",
+            "og_image": {
+              "__typename": "directus_files",
+              "id": "2251a1ab-785b-464c-9306-cc5428236ecf",
+              "type": "image/jpeg",
+              "width": 1200,
+              "height": 630,
+              "filename_disk": "2251a1ab-785b-464c-9306-cc5428236ecf.jpg",
+              "modified_on": "2026-06-08T11:55:24.000Z"
+            }
+          }
+        }
+      },
+      "pending": false
+    },
+    "page-work": {
+      "data": {
+        "page_work": {
+          "__typename": "page_work",
+          "text": "<p><strong>STAGECREW</strong> is an intentionally compact, international design studio with a fierce collaborative spirit, working in cultural spaces and beyond. We specialize in holistic visual identities, digital experiences, and brand alignment, always with great care and a deep respect for those we work with. We are particularly inspired by the tactile properties of physical objects and spaces that surround us, often drawing upon these natural motifs and references in our output.</p>",
+          "seo_settings": null
+        },
+        "projects": [
+          {
+            "__typename": "projects",
+            "title": "Hall Gad Architects",
+            "slug": "hall-gad-architects",
+            "sort": 1,
+            "cover": {
+              "__typename": "directus_files",
+              "id": "f5f42e31-3fa2-4257-ba4b-a6974d13baa5",
+              "type": "video/mp4",
+              "width": null,
+              "height": null,
+              "filename_disk": "f5f42e31-3fa2-4257-ba4b-a6974d13baa5.mp4",
+              "modified_on": "2026-02-24T15:50:56.000Z",
+              "vimeo_id": "1167771305",
+              "vimeo_thumb": "https://i.vimeocdn.com/video/2125882267-619ebe3d9e06740c0cfa826616120ed4ff144c4c86a77f4b1a89d376206fb054-d?region=us?mw=1280",
+              "vimeo_width": 1316,
+              "vimeo_height": 940,
+              "vimeo_url": "https://player.vimeo.com/progressive_redirect/playback/1167771305/rendition/1080p/file.mp4%20%281080p%29.mp4?loc=external&oauth2_token_id=1808737147&signature=c4d91aa847ac044f0eac5fbf537c89fc37e98c00ba6d25655777338bc9a3863f"
+            },
+            "is_coming_soon": false,
+            "areas": [
+              {
+                "__typename": "projects_areas",
+                "areas_id": {
+                  "__typename": "areas",
+                  "title": "Creative Direction"
+                }
+              },
+              {
+                "__typename": "projects_areas",
+                "areas_id": {
+                  "__typename": "areas",
+                  "title": "Visual Identity"
+                }
+              },
+              {
+                "__typename": "projects_areas",
+                "areas_id": {
+                  "__typename": "areas",
+                  "title": "Social"
+                }
+              },
+              {
+                "__typename": "projects_areas",
+                "areas_id": {
+                  "__typename": "areas",
+                  "title": "Digital"
+                }
+              },
+              {
+                "__typename": "projects_areas",
+                "areas_id": {
+                  "__typename": "areas",
+                  "title": "Print"
+                }
+              }
+            ]
+          },
+          {
+            "__typename": "projects",
+            "title": "AURA",
+            "slug": "aura",
+            "sort": 2,
+            "cover": {
+              "__typename": "directus_files",
+              "id": "63bd4540-11b8-4df9-9581-093c247711be",
+              "type": "image/jpeg",
+              "width": 1974,
+              "height": 1401,
+              "filename_disk": "63bd4540-11b8-4df9-9581-093c247711be.jpg",
+              "modified_on": "2026-03-11T13:04:55.000Z",
+              "vimeo_id": null,
+              "vimeo_thumb": null,
+              "vimeo_width": null,
+              "vimeo_height": null,
+              "vimeo_url": null
+            },
+            "is_coming_soon": false,
+            "areas": [
+              {
+                "__typename": "projects_areas",
+                "areas_id": {
+                  "__typename": "areas",
+                  "title": "Strategy"
+                }
+              },
+              {
+                "__typename": "projects_areas",
+                "areas_id": {
+                  "__typename": "areas",
+                  "title": "Creative Direction"
+                }
+              },
+              {
+                "__typename": "projects_areas",
+                "areas_id": {
+                  "__typename": "areas",
+                  "title": "Visual Identity"
+                }
+              },
+              {
+                "__typename": "projects_areas",
+                "areas_id": {
+                  "__typename": "areas",
+                  "title": "Packaging"
+                }
+              },
+              {
+                "__typename": "projects_areas",
+                "areas_id": {
+                  "__typename": "areas",
+                  "title": "Digital"
+                }
+              }
+            ]
+          },
+          {
+            "__typename": "projects",
+            "title": "The Hall",
+            "slug": "the-hall",
+            "sort": 3,
+            "cover": {
+              "__typename": "directus_files",
+              "id": "ec82b12d-7678-44a1-bafe-90b713fd436c",
+              "type": "image/jpeg",
+              "width": 1974,
+              "height": 1401,
+              "filename_disk": "ec82b12d-7678-44a1-bafe-90b713fd436c.jpg",
+              "modified_on": "2026-05-28T09:54:42.000Z",
+              "vimeo_id": null,
+              "vimeo_thumb": null,
+              "vimeo_width": null,
+              "vimeo_height": null,
+              "vimeo_url": null
+            },
+            "is_coming_soon": false,
+            "areas": [
+              {
+                "__typename": "projects_areas",
+                "areas_id": {
+                  "__typename": "areas",
+                  "title": "Strategy"
+                }
+              },
+              {
+                "__typename": "projects_areas",
+                "areas_id": {
+                  "__typename": "areas",
+                  "title": "Creative Direction"
+                }
+              },
+              {
+                "__typename": "projects_areas",
+                "areas_id": {
+                  "__typename": "areas",
+                  "title": "Visual Identity"
+                }
+              },
+              {
+                "__typename": "projects_areas",
+                "areas_id": {
+                  "__typename": "areas",
+                  "title": "Digital"
+                }
+              },
+              {
+                "__typename": "projects_areas",
+                "areas_id": {
+                  "__typename": "areas",
+                  "title": "Print"
+                }
+              },
+              {
+                "__typename": "projects_areas",
+                "areas_id": {
+                  "__typename": "areas",
+                  "title": "Signage"
+                }
+              }
+            ]
+          },
+          {
+            "__typename": "projects",
+            "title": "INNERSTATE",
+            "slug": "innerstate",
+            "sort": 4,
+            "cover": {
+              "__typename": "directus_files",
+              "id": "7370500c-e985-4877-89a7-4be623df7913",
+              "type": "image/jpeg",
+              "width": 1974,
+              "height": 1401,
+              "filename_disk": "7370500c-e985-4877-89a7-4be623df7913.jpg",
+              "modified_on": "2026-04-23T11:30:57.000Z",
+              "vimeo_id": null,
+              "vimeo_thumb": null,
+              "vimeo_width": null,
+              "vimeo_height": null,
+              "vimeo_url": null
+            },
+            "is_coming_soon": false,
+            "areas": [
+              {
+                "__typename": "projects_areas",
+                "areas_id": {
+                  "__typename": "areas",
+                  "title": "Strategy"
+                }
+              },
+              {
+                "__typename": "projects_areas",
+                "areas_id": {
+                  "__typename": "areas",
+                  "title": "Creative Direction"
+                }
+              },
+              {
+                "__typename": "projects_areas",
+                "areas_id": {
+                  "__typename": "areas",
+                  "title": "Visual Identity"
+                }
+              },
+              {
+                "__typename": "projects_areas",
+                "areas_id": {
+                  "__typename": "areas",
+                  "title": "Digital"
+                }
+              },
+              {
+                "__typename": "projects_areas",
+                "areas_id": {
+                  "__typename": "areas",
+                  "title": "Social"
+                }
+              }
+            ]
+          },
+          {
+            "__typename": "projects",
+            "title": "Craftland",
+            "slug": "craftland",
+            "sort": 5,
+            "cover": {
+              "__typename": "directus_files",
+              "id": "6cf34bee-fb21-4724-b8dd-76376452aadd",
+              "type": "video/mp4",
+              "width": null,
+              "height": null,
+              "filename_disk": "6cf34bee-fb21-4724-b8dd-76376452aadd.mp4",
+              "modified_on": "2026-02-24T15:54:14.000Z",
+              "vimeo_id": "1167775981",
+              "vimeo_thumb": "https://i.vimeocdn.com/video/2125888804-f5a0560e3e970860ce6e4350f4edf63402877e334b543927f54610577238890f-d?region=us?mw=1280",
+              "vimeo_width": 2500,
+              "vimeo_height": 1780,
+              "vimeo_url": "https://player.vimeo.com/progressive_redirect/playback/1167775981/rendition/1440p/file.mp4%20%281440p%29.mp4?loc=external&oauth2_token_id=1808737147&signature=93f9e7707001c0d880d6ab7d5fd2e8e4ae2ed0581bb9411c95011d4ce2a96a3e"
+            },
+            "is_coming_soon": true,
+            "areas": [
+              {
+                "__typename": "projects_areas",
+                "areas_id": {
+                  "__typename": "areas",
+                  "title": "Creative Direction"
+                }
+              },
+              {
+                "__typename": "projects_areas",
+                "areas_id": {
+                  "__typename": "areas",
+                  "title": "Visual Concepts"
+                }
+              },
+              {
+                "__typename": "projects_areas",
+                "areas_id": {
+                  "__typename": "areas",
+                  "title": "Visual Identity"
+                }
+              }
+            ]
+          },
+          {
+            "__typename": "projects",
+            "title": "Benjamin Park",
+            "slug": "last-future",
+            "sort": 6,
+            "cover": {
+              "__typename": "directus_files",
+              "id": "5592633b-6b50-4d58-865c-c76dfa309005",
+              "type": "image/jpeg",
+              "width": 1974,
+              "height": 1401,
+              "filename_disk": "5592633b-6b50-4d58-865c-c76dfa309005.jpg",
+              "modified_on": "2026-03-11T15:54:48.000Z",
+              "vimeo_id": null,
+              "vimeo_thumb": null,
+              "vimeo_width": null,
+              "vimeo_height": null,
+              "vimeo_url": null
+            },
+            "is_coming_soon": true,
+            "areas": [
+              {
+                "__typename": "projects_areas",
+                "areas_id": {
+                  "__typename": "areas",
+                  "title": "Visual Concepts"
+                }
+              },
+              {
+                "__typename": "projects_areas",
+                "areas_id": {
+                  "__typename": "areas",
+                  "title": "Strategy"
+                }
+              },
+              {
+                "__typename": "projects_areas",
+                "areas_id": {
+                  "__typename": "areas",
+                  "title": "Visual Identity"
+                }
+              },
+              {
+                "__typename": "projects_areas",
+                "areas_id": {
+                  "__typename": "areas",
+                  "title": "Photography"
+                }
+              }
+            ]
+          },
+          {
+            "__typename": "projects",
+            "title": "New Province",
+            "slug": "new-province",
+            "sort": 8,
+            "cover": {
+              "__typename": "directus_files",
+              "id": "6b0f68ec-e923-4ff5-8cf8-f3242906c29c",
+              "type": "image/jpeg",
+              "width": 1974,
+              "height": 1401,
+              "filename_disk": "6b0f68ec-e923-4ff5-8cf8-f3242906c29c.jpg",
+              "modified_on": "2026-05-19T13:01:44.000Z",
+              "vimeo_id": null,
+              "vimeo_thumb": null,
+              "vimeo_width": null,
+              "vimeo_height": null,
+              "vimeo_url": null
+            },
+            "is_coming_soon": true,
+            "areas": [
+              {
+                "__typename": "projects_areas",
+                "areas_id": {
+                  "__typename": "areas",
+                  "title": "Visual Concepts"
+                }
+              },
+              {
+                "__typename": "projects_areas",
+                "areas_id": {
+                  "__typename": "areas",
+                  "title": "Strategy"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "pending": false
+    }
+  },
+  "prerenderedAt": 1781016911247
+}

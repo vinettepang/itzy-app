@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Cylinder Back",
+    "slug": "cylinder-back",
+    "image1": "https://cdn.sanity.io/images/8yrspuwy/production/84cea93a1f875612a2e2640e6b031d1ec8ed0324-2418x3021.jpg?w=1600&fit=max&auto=format&q=85",
+    "image2": "https://cdn.sanity.io/images/8yrspuwy/production/413315c187fbfcdc3d3768c6f641e3426e0952ab-2422x3028.jpg?w=1600&fit=max&auto=format&q=85",
+    "color1": "#807e7b",
+    "color2": "#8f7054",
+    "ratio1": 125
+  },
+  {
+    "name": "Double Cylinder Back",
+    "slug": "double-cylinder-back",
+    "image1": "https://cdn.sanity.io/images/8yrspuwy/production/f506d4ed91daf9a3101fa3bfec971720564d83c9-2434x3042.jpg?w=1600&fit=max&auto=format&q=85",
+    "image2": "https://cdn.sanity.io/images/8yrspuwy/production/3b70b2d1575384c4b2ac9d7c2e81243aee7bb43a-1600x2000.jpg?w=1600&fit=max&auto=format&q=85",
+    "color1": "#b58556",
+    "color2": "#7c807b",
+    "ratio1": 125
+  },
+  {
+    "name": "Compartment Chair",
+    "slug": "compartment-chair",
+    "image1": "https://cdn.sanity.io/images/8yrspuwy/production/255b56fe5b24b2aa2039b6c7305aa88cd30cc7e1-2444x3056.jpg?w=1600&fit=max&auto=format&q=85",
+    "image2": "https://cdn.sanity.io/images/8yrspuwy/production/85e2d3ee172dbc24aeaa4dc1de012065aa99b871-2437x3047.jpg?w=1600&fit=max&auto=format&q=85",
+    "color1": "#8c837b",
+    "color2": "#84745c",
+    "ratio1": 125
+  }
+]

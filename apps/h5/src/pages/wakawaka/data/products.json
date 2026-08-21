@@ -1,0 +1,375 @@
+{
+  "cylinder-back": {
+    "name": "Cylinder Back",
+    "slug": "cylinder-back",
+    "chairType": {
+      "key": "Chair Collection"
+    },
+    "description": "One of our foundation chair models, designed with volume and line as the guides. The upright silhouette, with a back supporting cylinder, dowel connectors and stainless steel hardware. Available in natural oil, black, white, pompeii red, indigo, grey, purple, and forest green finish.",
+    "dimensions": "17.5x21x30x17",
+    "infos": [
+      {
+        "key": "Width",
+        "value": "17.5\""
+      },
+      {
+        "key": "Depth",
+        "value": "21\""
+      },
+      {
+        "key": "Height",
+        "value": "30\""
+      },
+      {
+        "key": "Seating Height",
+        "value": "17\""
+      },
+      {
+        "key": "Natural Finish",
+        "value": "$1430"
+      },
+      {
+        "key": "Color Finish",
+        "value": "$1980"
+      }
+    ],
+    "specSheet": "https://cdn.sanity.io/files/8yrspuwy/production/adefce1ad8fdafd8d143d275ab1717873df79f21.pdf",
+    "gallery": [
+      {
+        "url": "https://cdn.sanity.io/images/8yrspuwy/production/413315c187fbfcdc3d3768c6f641e3426e0952ab-2422x3028.jpg?w=1600&fit=max&auto=format&q=85",
+        "color": "#8f7054",
+        "ratio": 125
+      },
+      {
+        "url": "https://cdn.sanity.io/images/8yrspuwy/production/5aa029b3cef9b588d5910b07e7ae2b8c3b5137ac-2418x3021.jpg?w=1600&fit=max&auto=format&q=85",
+        "color": "#97714c",
+        "ratio": 125
+      },
+      {
+        "url": "https://cdn.sanity.io/images/8yrspuwy/production/882b9d4d275b8cbb19110caabe014948d09d2beb-2389x2986.jpg?w=1600&fit=max&auto=format&q=85",
+        "color": "#906e4e",
+        "ratio": 125
+      },
+      {
+        "url": "https://cdn.sanity.io/images/8yrspuwy/production/141cd7bad1ef246fdadd5d693d55a837d405abf4-3043x2434.jpg?w=1600&fit=max&auto=format&q=85",
+        "color": "#a48155",
+        "ratio": 80
+      },
+      {
+        "url": "https://cdn.sanity.io/images/8yrspuwy/production/337a91d2c49a33857774d73a5b6a4cbd56dba0e0-3034x2427.jpg?w=1600&fit=max&auto=format&q=85",
+        "color": "#987557",
+        "ratio": 80
+      },
+      {
+        "url": "https://cdn.sanity.io/images/8yrspuwy/production/5706481af02ba5ddce352f8852769ae4b4616dbc-2444x3055.jpg?w=1600&fit=max&auto=format&q=85",
+        "color": "#a27c65",
+        "ratio": 125
+      }
+    ],
+    "next": {
+      "name": "Cylinder Back Arm",
+      "slug": "cylinder-back-arm",
+      "image": "https://cdn.sanity.io/images/8yrspuwy/production/b82d5227fd22047d739a4c25644651bfb97068d0-2444x3055.jpg?w=800&fit=max&auto=format&q=85",
+      "color": "#c4c4bc"
+    }
+  },
+  "compartment-chair": {
+    "name": "Compartment Chair",
+    "slug": "compartment-chair",
+    "chairType": {
+      "key": "Chair Collection"
+    },
+    "description": "A squared seating concept in a spirited formica palette, with a storage cubbie and exposed stainless steel hardware. A Japanese inspired zabuton cushion with 12” long fringed edge as an expressionist cushion idea. Use then store. Available in matcha, cloud grey, coral, glossy black laminate and plywood, grey wool pinstripe, hemp burlap, hemp linen, blue/white pinstripe cotton foam cushion with rayon fringe.",
+    "dimensions": "17.5x18x32x17",
+    "infos": [
+      {
+        "key": "Width",
+        "value": "17.5\""
+      },
+      {
+        "key": "Depth",
+        "value": "18\" "
+      },
+      {
+        "key": "Height",
+        "value": "32\""
+      },
+      {
+        "key": "Seating Height",
+        "value": "17\""
+      },
+      {
+        "key": "Price",
+        "value": "$2200"
+      }
+    ],
+    "specSheet": "https://cdn.sanity.io/files/8yrspuwy/production/ea8370f79ea0faee11269b1c32047119d9a32e00.pdf",
+    "gallery": [
+      {
+        "url": "https://cdn.sanity.io/images/8yrspuwy/production/9bb03a11d81e343435fbefd4506a7d0e37d66f14-1500x1001.jpg?w=1600&fit=max&auto=format&q=85",
+        "color": "#8c6a55",
+        "ratio": 67
+      },
+      {
+        "url": "https://cdn.sanity.io/images/8yrspuwy/production/8a63e5b2f2021d962adde1561b10c54aa00fa256-750x938.jpg?w=1600&fit=max&auto=format&q=85",
+        "color": "#a08063",
+        "ratio": 125
+      },
+      {
+        "url": "https://cdn.sanity.io/images/8yrspuwy/production/6380c471e081d898dd17a5e5a774addc954b6c32-750x938.jpg?w=1600&fit=max&auto=format&q=85",
+        "color": "#a78062",
+        "ratio": 125
+      },
+      {
+        "url": "https://cdn.sanity.io/images/8yrspuwy/production/883b259c9a5ad7f510445cf0eaa4975b2ca3ac2d-750x938.jpg?w=1600&fit=max&auto=format&q=85",
+        "color": "#a28365",
+        "ratio": 125
+      },
+      {
+        "url": "https://cdn.sanity.io/images/8yrspuwy/production/fa2ef6ee97a244a00a3c3f95334539a8e54fb437-750x938.jpg?w=1600&fit=max&auto=format&q=85",
+        "color": "#a66558",
+        "ratio": 125
+      },
+      {
+        "url": "https://cdn.sanity.io/images/8yrspuwy/production/85e2d3ee172dbc24aeaa4dc1de012065aa99b871-2437x3047.jpg?w=1600&fit=max&auto=format&q=85",
+        "color": "#84745c",
+        "ratio": 125
+      },
+      {
+        "url": "https://cdn.sanity.io/images/8yrspuwy/production/d536f52f1845476bc89c3d55dda42a410ab348d1-2425x3031.jpg?w=1600&fit=max&auto=format&q=85",
+        "color": "#8c8c7c",
+        "ratio": 125
+      },
+      {
+        "url": "https://cdn.sanity.io/images/8yrspuwy/production/e96205e37ca035c8343ea7cdeb34c8014f53d221-2413x3016.jpg?w=1600&fit=max&auto=format&q=85",
+        "color": "#8e8175",
+        "ratio": 125
+      },
+      {
+        "url": "https://cdn.sanity.io/images/8yrspuwy/production/47728005129862e6897bceaa2d489722b9d0a554-2414x3018.jpg?w=1600&fit=max&auto=format&q=85",
+        "color": "#918674",
+        "ratio": 125
+      },
+      {
+        "url": "https://cdn.sanity.io/images/8yrspuwy/production/e36c6f4889f007c9b85f53373dee2e7a29879d12-2426x3032.jpg?w=1600&fit=max&auto=format&q=85",
+        "color": "#8c7c73",
+        "ratio": 125
+      },
+      {
+        "url": "https://cdn.sanity.io/images/8yrspuwy/production/255b56fe5b24b2aa2039b6c7305aa88cd30cc7e1-2444x3056.jpg?w=1600&fit=max&auto=format&q=85",
+        "color": "#8c837b",
+        "ratio": 125
+      }
+    ],
+    "next": {
+      "name": "Cylinder Back",
+      "slug": "cylinder-back",
+      "image": "https://cdn.sanity.io/images/8yrspuwy/production/84cea93a1f875612a2e2640e6b031d1ec8ed0324-2418x3021.jpg?w=800&fit=max&auto=format&q=85",
+      "color": "#c4c4bc"
+    }
+  },
+  "cylinder-back-arm": {
+    "name": "Cylinder Back Arm",
+    "slug": "cylinder-back-arm",
+    "chairType": "Chair",
+    "description": null,
+    "dimensions": null,
+    "infos": [],
+    "specSheet": null,
+    "gallery": [
+      {
+        "url": "https://cdn.sanity.io/images/8yrspuwy/production/b82d5227fd22047d739a4c25644651bfb97068d0-2444x3055.jpg?w=800&fit=max&auto=format&q=85",
+        "color": "#a68367",
+        "ratio": 125
+      }
+    ],
+    "next": null
+  },
+  "counter-height-ladder-back": {
+    "name": "Counter Height Ladder Back",
+    "slug": "counter-height-ladder-back",
+    "chairType": "Chair",
+    "description": null,
+    "dimensions": null,
+    "infos": [],
+    "specSheet": null,
+    "gallery": [
+      {
+        "url": "https://cdn.sanity.io/images/8yrspuwy/production/eb66949df8be141c06ffc0e84c6b9488933c2e01-2424x3031.jpg?w=800&fit=max&auto=format&q=85",
+        "color": "#838484",
+        "ratio": 125
+      }
+    ],
+    "next": null
+  },
+  "flat-back-dining": {
+    "name": "Flat Back Dining",
+    "slug": "flat-back-dining",
+    "chairType": "Chair",
+    "description": null,
+    "dimensions": null,
+    "infos": [],
+    "specSheet": null,
+    "gallery": [
+      {
+        "url": "https://cdn.sanity.io/images/8yrspuwy/production/ad6d1c753a42904a149c35ad0e4a46fd87ebb206-2437x3046.jpg?w=800&fit=max&auto=format&q=85",
+        "color": "#aa8755",
+        "ratio": 125
+      }
+    ],
+    "next": null
+  },
+  "cylinder-back-high-arm": {
+    "name": "Cylinder Back High Arm",
+    "slug": "cylinder-back-high-arm",
+    "chairType": "Chair",
+    "description": null,
+    "dimensions": null,
+    "infos": [],
+    "specSheet": null,
+    "gallery": [
+      {
+        "url": "https://cdn.sanity.io/images/8yrspuwy/production/bcfa822cf0c7498346f9562591e7b070808b6f39-2425x3032.jpg?w=800&fit=max&auto=format&q=85",
+        "color": "#646c7c",
+        "ratio": 125
+      }
+    ],
+    "next": null
+  },
+  "leaning-cylinder-back": {
+    "name": "Leaning Cylinder Back",
+    "slug": "leaning-cylinder-back",
+    "chairType": "Chair",
+    "description": null,
+    "dimensions": null,
+    "infos": [],
+    "specSheet": null,
+    "gallery": [
+      {
+        "url": "https://cdn.sanity.io/images/8yrspuwy/production/b819442e8e31cb9f07d7dba184f950c3496e5cf1-2428x3035.jpg?w=800&fit=max&auto=format&q=85",
+        "color": "#9b575a",
+        "ratio": 125
+      }
+    ],
+    "next": null
+  },
+  "double-cylinder-back": {
+    "name": "Double Cylinder Back",
+    "slug": "double-cylinder-back",
+    "chairType": "Chair",
+    "description": null,
+    "dimensions": null,
+    "infos": [],
+    "specSheet": null,
+    "gallery": [
+      {
+        "url": "https://cdn.sanity.io/images/8yrspuwy/production/f506d4ed91daf9a3101fa3bfec971720564d83c9-2434x3042.jpg?w=800&fit=max&auto=format&q=85",
+        "color": "#b58556",
+        "ratio": 125
+      }
+    ],
+    "next": null
+  },
+  "flat-back-arm": {
+    "name": "Flat Back Arm",
+    "slug": "flat-back-arm",
+    "chairType": "Chair",
+    "description": null,
+    "dimensions": null,
+    "infos": [],
+    "specSheet": null,
+    "gallery": [
+      {
+        "url": "https://cdn.sanity.io/images/8yrspuwy/production/3a73d4ee1a547db96743fe2270caee6d311301c9-2428x3036.jpg?w=800&fit=max&auto=format&q=85",
+        "color": "#9c7164",
+        "ratio": 125
+      }
+    ],
+    "next": null
+  },
+  "mini-cylinder": {
+    "name": "Mini Cylinder Chair",
+    "slug": "mini-cylinder",
+    "chairType": "Chair",
+    "description": null,
+    "dimensions": null,
+    "infos": [],
+    "specSheet": null,
+    "gallery": [
+      {
+        "url": "https://cdn.sanity.io/images/8yrspuwy/production/5cd1232f2464a893211a78e20c7c91b94e5afd57-2413x3016.jpg?w=800&fit=max&auto=format&q=85",
+        "color": "#8c8274",
+        "ratio": 125
+      }
+    ],
+    "next": null
+  },
+  "double-cylinder-rocker": {
+    "name": "Double Cylinder Rocker",
+    "slug": "double-cylinder-rocker",
+    "chairType": "Chair",
+    "description": null,
+    "dimensions": null,
+    "infos": [],
+    "specSheet": null,
+    "gallery": [
+      {
+        "url": "https://cdn.sanity.io/images/8yrspuwy/production/57ae11348039c445cbc4d0d206a56da528ab698b-2420x3025.jpg?w=800&fit=max&auto=format&q=85",
+        "color": "#84837b",
+        "ratio": 125
+      }
+    ],
+    "next": null
+  },
+  "leaning-flat-back-dining": {
+    "name": "Leaning Flat Back Dining",
+    "slug": "leaning-flat-back-dining",
+    "chairType": "Chair",
+    "description": null,
+    "dimensions": null,
+    "infos": [],
+    "specSheet": null,
+    "gallery": [
+      {
+        "url": "https://cdn.sanity.io/images/8yrspuwy/production/4f4ad2cf58c35b5914c2c3438ad91cc0f0cebdc9-2440x3049.jpg?w=800&fit=max&auto=format&q=85",
+        "color": "#a3836d",
+        "ratio": 125
+      }
+    ],
+    "next": null
+  },
+  "ladder-back": {
+    "name": "Ladder Back",
+    "slug": "ladder-back",
+    "chairType": "Chair",
+    "description": null,
+    "dimensions": null,
+    "infos": [],
+    "specSheet": null,
+    "gallery": [
+      {
+        "url": "https://cdn.sanity.io/images/8yrspuwy/production/ad78a9809bbf1996013e53a80322c2aed5e9453e-2435x3044.jpg?w=800&fit=max&auto=format&q=85",
+        "color": "#898682",
+        "ratio": 125
+      }
+    ],
+    "next": null
+  },
+  "spool-stool": {
+    "name": "Spool Stool",
+    "slug": "spool-stool",
+    "chairType": "Chair",
+    "description": null,
+    "dimensions": null,
+    "infos": [],
+    "specSheet": null,
+    "gallery": [
+      {
+        "url": "https://cdn.sanity.io/images/8yrspuwy/production/d0bb3e651a3e16eaee6469f18b03bdfeebcc3606-2441x3051.jpg?w=800&fit=max&auto=format&q=85",
+        "color": "#b27e78",
+        "ratio": 125
+      }
+    ],
+    "next": null
+  }
+}

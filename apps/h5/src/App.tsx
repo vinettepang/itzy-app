@@ -11,6 +11,8 @@ import GamePage from '@/pages/GamePage';
 import Home from '@/pages/Home';
 import XkmPage from '@/pages/XkmPage';
 import SongsPage from '@/pages/SongsPage';
+import TourSetlistPage from '@/pages/TourSetlistPage';
+import CheerGuidePage from '@/pages/CheerGuidePage';
 import UnseenPage from '@/pages/UnseenPage';
 import BallsPage from '@/pages/BallsPage';
 import HaoqiPage from '@/pages/haoqi/HaoqiPage';
@@ -28,11 +30,22 @@ import FacilProjectPage from '@/pages/facil/pages/FacilProjectPage';
 import FacilLegalPage from '@/pages/facil/pages/FacilLegalPage';
 import NewHomePage from '@/pages/new-home/NewHomePage';
 import MenuPage from '@/pages/MenuPage';
+import WakaLayout from '@/pages/wakawaka/WakaLayout';
+import WakaHomePage from '@/pages/wakawaka/pages/HomePage';
+import WakaStudioPage from '@/pages/wakawaka/pages/StudioPage';
+import WakaCataloguePage from '@/pages/wakawaka/pages/CataloguePage';
+import WakaFurniturePage from '@/pages/wakawaka/pages/FurniturePage';
+import WakaProductPage from '@/pages/wakawaka/pages/ProductPage';
 import UnseenStudioLayout from '@/pages/unseen-studio/UnseenStudioLayout';
 import UnseenStudioHomePage from '@/pages/unseen-studio/pages/HomePage';
 import UnseenStudioProjectsPage from '@/pages/unseen-studio/pages/ProjectsPage';
 import UnseenStudioContactPage from '@/pages/unseen-studio/pages/ContactPage';
 import UnseenStudioWorldPage from '@/pages/unseen-studio/pages/WorldPage';
+import StagecrewLayout from '@/pages/stagecrew/StagecrewLayout';
+import StagecrewWorkPage from '@/pages/stagecrew/pages/WorkPage';
+import StagecrewInfoPage from '@/pages/stagecrew/pages/InfoPage';
+import StagecrewBackstagePage from '@/pages/stagecrew/pages/BackstagePage';
+import StagecrewProjectPage from '@/pages/stagecrew/pages/ProjectPage';
 
 const HAOQI_PROJECT_SLUGS = [
   'reunimos',
@@ -52,7 +65,16 @@ export default function App() {
       <Route path="/home" element={<Home />} />
       <Route path="/xkm" element={<XkmPage />} />
       <Route path="/new_home" element={<NewHomePage />} />
+      <Route path="/wakawaka" element={<WakaLayout />}>
+        <Route index element={<WakaHomePage />} />
+        <Route path="studio" element={<WakaStudioPage />} />
+        <Route path="catalogue" element={<WakaCataloguePage />} />
+        <Route path="furniture" element={<WakaFurniturePage />} />
+        <Route path="furniture/:category" element={<WakaFurniturePage />} />
+        <Route path=":slug" element={<WakaProductPage />} />
+      </Route>
       <Route path="/songs" element={<SongsPage />} />
+      <Route path="/cheer/:slug" element={<CheerGuidePage />} />
       <Route path="/unseen" element={<UnseenPage />} />
       <Route path="/balls" element={<BallsPage />} />
       <Route path="/haoqi" element={<HaoqiPage />} />
@@ -66,6 +88,12 @@ export default function App() {
         <Route path="projects" element={<UnseenStudioProjectsPage />} />
         <Route path="contact" element={<UnseenStudioContactPage />} />
         <Route path="world" element={<UnseenStudioWorldPage />} />
+      </Route>
+      <Route path="/stagecrew" element={<StagecrewLayout />}>
+        <Route index element={<StagecrewWorkPage />} />
+        <Route path="info" element={<StagecrewInfoPage />} />
+        <Route path="backstage" element={<StagecrewBackstagePage />} />
+        <Route path="work/:slug" element={<StagecrewProjectPage />} />
       </Route>
       <Route path="/facil" element={<FacilLayout />}>
         <Route index element={<FacilHomePage />} />
@@ -97,6 +125,7 @@ export default function App() {
       <Route element={<AppLayout />}>
         <Route path="/gallery" element={<GalleryHome />} />
         <Route path="/schedules" element={<SchedulesPage />} />
+        <Route path="/setlist" element={<TourSetlistPage />} />
         <Route path="/gallery/:id" element={<GalleryDetail />} />
         <Route path="/lab-style" element={<LabStylePage />} />
         <Route path="/poster" element={<PosterPage />} />

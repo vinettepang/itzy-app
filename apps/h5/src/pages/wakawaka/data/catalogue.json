@@ -1,0 +1,103 @@
+{
+  "title": "Catalogue\nFW/20",
+  "chairs": [
+    {
+      "n": "0001",
+      "name": "Compartment Chair",
+      "slug": "compartment-chair",
+      "material": "Birch Wood",
+      "dimensions": "17.5x18x32x17"
+    },
+    {
+      "n": "0002",
+      "name": "Cylinder Back",
+      "slug": "cylinder-back",
+      "material": "Birch Wood",
+      "dimensions": "17.5x21x30x17"
+    },
+    {
+      "n": "0003",
+      "name": "Cylinder Back Arm",
+      "slug": "cylinder-back-arm",
+      "material": "Birch Wood",
+      "dimensions": "21.5x22x27x17"
+    },
+    {
+      "n": "0004",
+      "name": "Counter Height Ladder Back",
+      "slug": "counter-height-ladder-back",
+      "material": "Birch Wood",
+      "dimensions": "17x19x64x24"
+    },
+    {
+      "n": "0005",
+      "name": "Flat Back Dining",
+      "slug": "flat-back-dining",
+      "material": "Birch Wood",
+      "dimensions": "17.5x19.5x30x17"
+    },
+    {
+      "n": "0006",
+      "name": "Cylinder Back High Arm",
+      "slug": "cylinder-back-high-arm",
+      "material": "Birch Wood",
+      "dimensions": "21.5x22x35x25"
+    },
+    {
+      "n": "0007",
+      "name": "Leaning Cylinder Back",
+      "slug": "leaning-cylinder-back",
+      "material": "Birch Wood",
+      "dimensions": "17x22x30x17"
+    },
+    {
+      "n": "0008",
+      "name": "Double Cylinder Back",
+      "slug": "double-cylinder-back",
+      "material": "Birch Wood",
+      "dimensions": "17.5x21x33x17"
+    },
+    {
+      "n": "0009",
+      "name": "Flat Back Arm",
+      "slug": "flat-back-arm",
+      "material": "Birch Wood",
+      "dimensions": "21.5x19x30.25x17"
+    },
+    {
+      "n": "0010",
+      "name": "Mini Cylinder Chair",
+      "slug": "mini-cylinder",
+      "material": "Birch Wood",
+      "dimensions": "12.75x16.5x22.5x12"
+    },
+    {
+      "n": "0011",
+      "name": "Double Cylinder Rocker",
+      "slug": "double-cylinder-rocker",
+      "material": "Birch Wood",
+      "dimensions": "21.5x 28x 29x14"
+    },
+    {
+      "n": "0012",
+      "name": "Leaning Flat Back Dining",
+      "slug": "leaning-flat-back-dining",
+      "material": "Birch Wood",
+      "dimensions": "17x21x29.5x17"
+    },
+    {
+      "n": "0013",
+      "name": "Ladder Back",
+      "slug": "ladder-back",
+      "material": "Birch Wood",
+      "dimensions": "17x19x48x17"
+    },
+    {
+      "n": "0014",
+      "name": "Spool Stool",
+      "slug": "spool-stool",
+      "material": "Baltic Birch Plywood, Formica, Lacquer",
+      "dimensions": "14x16.5"
+    }
+  ]
+}

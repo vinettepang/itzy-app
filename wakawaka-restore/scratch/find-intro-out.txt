@@ -1,0 +1,38 @@
+﻿len 256491
+
+=== Homepage 214802 ===
+).reduce(function(e,n){return i.f[n](t,e),e},[]))},i.u=function(t){return"js/"+({265:"Index",354:"Notfound",450:"About",524:"Product",779:"Shop",831:"Homepage"}[t]||t)+"."+{219:"60998907b07dbdd7a180",265:"2e44de6b4902e67fb179",354:"29fe0f7cfda93ae0d1f5",450:"04c9e912b857cb807288",524:"0fbbef5a021221c6a9d5",579:"6f1d787b9ed5ebf97971",779:"085bb6f0bc70276510d6",831:"18a30190782f06d8a84f"}[t]+".js"},i.miniCssF=function(t){},i.g=function(){if("object"==typeof globalThis)return globalThis;try{return this||new Function("return this")()}catch(t){if("object"==typeof window)return window}}(),i.o=functi
+
+=== Homepage 240481 ===
+{}))}catch(t){}return(et=function(){return!!t})()}function nt(t,e){return new Promise(function(t,n){switch(e.charAt(0).toUpperCase()+e.slice(1)){case"Homepage":return Promise.all([i.e(219),i.e(831)]).then(i.bind(i,7625)).then(function(e){var n=e.default;t(n)}).catch(function(t){return n("An error occurred while loading the component")});case"Furniture":return Promise.all([i.e(219),i.e(579),i.e(779)]).then(i.bind(i,9348)).then(function(e){var n=e.default;t(n)}).catch(function(t){return n("An error occurred while loading the component")});case"Product":return Promise.all([i.e(579),i.e(524)]).the
+MISS calculateZ
+MISS showPoster
+MISS generateRandomGrid
+MISS grid__animation
+MISS 1500
+MISS 1100
+MISS 1800
+MISS power4
+MISS power3.inOut
+
+=== main-background 242214 ===
+etElementById("__PLATO_DATA__").innerHTML);return t&&b.A.dispatch((0,tt.wx)(t)),this.layout=new J,this.$mainBackground=document.querySelector(".site .main-background"),this.layout.init()}},{key:"onLocationChanged",value:function(t,e){this.prevLocation=e,t!==e&&(this.location=t,this.routing(t,!1))}},{key:"routing",value:(i=a(p().mark(function t(e){var n,r,o,i,s,a,l,u=this;return p().wrap(function(t){for(;;)switch(t.prev=t.next){case 0:return n=null,r=(0,q.a)(e),t.prev=1,t.next=2,nt(r.template,r.template);case 2:o=t.sent,n=o,t.next=4;break;case 3:t.prev=3,t.catch(1);case 4:b.A.dispatch((0,tt.Nw)
+
+=== perspective 159555 ===
+ment,Rn=pr("div")||{style:{}},pr("div"),sr=mr(sr),ar=sr+"Origin",Rn.style.cssText="border-width:0;line-height:0;position:absolute;padding:0",qn=!!mr("perspective"),$n=Pn.core.reverting,Ln=1)},gr=function(t){var e,n=t.ownerSVGElement,r=pr("svg",n&&n.getAttribute("xmlns")||"http://www.w3.org/2000/svg"),o=t.cloneNode(!0);o.style.display="block",r.appendChild(o),Cn.appendChild(r);try{e=o.getBBox()}catch(t){}return r.removeChild(o),Cn.removeChild(r),e},yr=function(t,e){for(var n=e.length;n--;)if(t.hasAttribute(e[n]))return t.getAttribute(e[n])},vr=function(t){var e,n;try{e=t.getBBox()}catch(r){e=gr
+
+=== perspective 168443 ===
+seFloat(u)*Nn,k=Math.sin(_),A=Math.cos(_);_=parseFloat(c)*Nn,w=Math.cos(_),i=Fr(g,i,k*w*-y),s=Fr(g,s,-Math.sin(_)*-y),a=Fr(g,a,A*w*-y+y)}m!==Br&&(v+="perspective("+m+Hr),(r||o)&&(v+="translate("+r+"%, "+o+"%) "),(j||i!==Br||s!==Br||a!==Br)&&(v+=a!==Br||j?"translate3d("+i+", "+s+", "+a+") ":"translate("+i+", "+s+Hr),l!==Ur&&(v+="rotate("+l+Hr),u!==Ur&&(v+="rotateY("+u+Hr),c!==Ur&&(v+="rotateX("+c+Hr),d===Ur&&p===Ur||(v+="skew("+d+", "+p+Hr),1===f&&1===h||(v+="scale("+f+", "+h+Hr),g.style[sr]=v||"translate(0, 0)"},Wr=function(t,e){var n,r,o,i,s,a=e||this,l=a.xPercent,u=a.yPercent,c=a.x,d=a.y,p=a
+
+=== perspective 170339 ===
+ansform",""),d[sr]=e,r=qr(n,1),wr(n,sr),n.setAttribute("transform",i)):(i=getComputedStyle(n)[sr],d[sr]=e,r=qr(n,1),d[sr]=i),zn)(i=c[o])!==(s=r[o])&&"perspective,force3D,transformOrigin,svgOrigin".indexOf(o)<0&&(a=re(i)!==(u=re(s))?Or(n,o,i,u):parseFloat(i),l=parseFloat(s),t._pt=new gn(t._pt,r,o,a,l-a,Gn),t._pt.u=u||0,t._props.push(o));Kr(r,c)};yt("padding,margin,Width,Radius",function(t,e){var n="Top",r="Right",o="Bottom",i="Left",s=(e<3?[n,r,o,i]:[n+i,n+r,o+r,o+i]).map(function(n){return e<2?t+n:"border"+n+t});Mr[e>1?"border"+t:t]=function(t,e,n,r,o){var i,a;if(arguments.length<4)return i=s.
+MISS featuredChairs
+MISS layout-
+
+chunk samples [
+  '219:"60998907b07dbdd7a180"',
+  '265:"2e44de6b4902e67fb179"',
+  '354:"29fe0f7cfda93ae0d1f5"',
+  '450:"04c9e912b857cb807288"',
+  '524:"0fbbef5a021221c6a9d5"'
+]

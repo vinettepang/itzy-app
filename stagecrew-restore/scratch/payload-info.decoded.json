@@ -1,0 +1,199 @@
+{
+  "data": {
+    "global-data": {
+      "data": {
+        "global_header": {
+          "__typename": "global_header",
+          "external_links": [
+            {
+              "url": "https://www.instagram.com/stagecrew.studio",
+              "label": "Insta"
+            },
+            {
+              "url": "mailto:office@stagecrew.studio",
+              "label": "Email"
+            }
+          ]
+        },
+        "global_footer": {
+          "__typename": "global_footer",
+          "disclaimer": "We do not use AI, generative or otherwise, in our work.",
+          "contact_info": "<p>For new partnerships and general<br>enquiries, reach out on:</p>\n<p><a href=\"mailto: office@stagecrew.studio\" target=\"_blank\" rel=\"noopener\">office@stagecrew.studio</a></p>",
+          "bottom_labels": [
+            {
+              "label": "SC"
+            },
+            {
+              "label": "WW"
+            }
+          ],
+          "Text": "<p><strong>STAGECREW</strong> is a purposefully compact, international design studio with a fierce collaborative spirit.</p>"
+        },
+        "global_seo": {
+          "__typename": "global_seo",
+          "site_name": "STAGECREW",
+          "seo_settings": {
+            "__typename": "block_seo",
+            "title": null,
+            "description": "STAGECREW is a purposefully compact creative studio with a focus on a fierce collaborative spirit and an experimental process that prioritises fun and experimentation over deadlines and deliverables.",
+            "og_image": {
+              "__typename": "directus_files",
+              "id": "2251a1ab-785b-464c-9306-cc5428236ecf",
+              "type": "image/jpeg",
+              "width": 1200,
+              "height": 630,
+              "filename_disk": "2251a1ab-785b-464c-9306-cc5428236ecf.jpg",
+              "modified_on": "2026-06-08T11:55:24.000Z"
+            }
+          }
+        }
+      },
+      "pending": false
+    },
+    "page-info": {
+      "data": {
+        "page_info": {
+          "__typename": "page_info",
+          "title": "Introduction",
+          "title2": "Pitch",
+          "title3": "The Mark",
+          "text": "<p><strong>STAGECREW</strong>&rsquo;s primary goal is to create lasting work via a creative process that promotes curiosity, conversation and open-mindedness, and by fostering an infectious, collaborative energy; one which brings together different skills, perspectives, and personalities to reach a common goal with enthusiasm and respect. We seek to make great things with great people, all around the globe.</p>",
+          "text2": null,
+          "text3": "<p><strong>OUR MARK</strong> represents the backstage of a theatre; a magical space that runs behind and adjacent to the stage, where the team move unseen to produce the show. We love what this represents; an all-hands on deck, energetic coming together of people to create something uniquely human.</p>",
+          "text4": "<p><strong>WE </strong>support our core in-house team with an extended network of supremely talented friends and collaborators, who help us shape our projects with technical skill, fresh perspectives, and new ideas. We embrace a more personal, ongoing one-to-one relationship with our partners; one that yields meaningful and distinct work though enjoyment and experimentation over arbitrary deadlines and deliverables. We firmly reject the use of generative AI in favour of authentic human creativity.</p>",
+          "info_lists": [
+            {
+              "list": "Creative Direction\nStrategy\nStorytelling\nVisual Identity\nPhotography + Film\nDigital",
+              "title": "Areas of\nExpertise"
+            },
+            {
+              "list": "Culture\nSustainability\nFashion\nArts\nHospitality\nFood & Drink\nProduct",
+              "title": "Operating\nSectors"
+            },
+            {
+              "list": "Collaboration\nRespect\nIntention\nEnjoyment\nCuriosity",
+              "title": "Core\nPrinciples"
+            }
+          ],
+          "media": {
+            "__typename": "directus_files",
+            "id": "f1349f54-c509-4211-ae11-b2b7299e7e34",
+            "type": "video/mp4",
+            "width": 2472,
+            "height": 1908,
+            "filename_disk": "f1349f54-c509-4211-ae11-b2b7299e7e34.mp4",
+            "modified_on": "2026-06-09T12:32:18.000Z",
+            "vimeo_id": "1199739290",
+            "vimeo_thumb": "https://i.vimeocdn.com/video/2166643184-9adebe5eea86871f84bbd51622487a375b458d328a8abf9b7a646a1bd6065c3e-d?region=us?mw=1280",
+            "vimeo_width": 2048,
+            "vimeo_height": 1536,
+            "vimeo_url": "https://player.vimeo.com/progressive_redirect/playback/1199739290/rendition/1440p/file.mp4%20%281440p%29.mp4?loc=external&oauth2_token_id=1808737147&signature=e392dd0262a01f428e1a94a6240ef33e9c6c68dc1266a1f2e3708fc90317f01f"
+          },
+          "media3": {
+            "__typename": "directus_files",
+            "id": "ae3ed0b0-2465-4eb4-89ff-5a2bd61f4712",
+            "type": "image/jpeg",
+            "width": 2472,
+            "height": 1908,
+            "filename_disk": "ae3ed0b0-2465-4eb4-89ff-5a2bd61f4712.jpg",
+            "modified_on": "2026-06-01T14:48:04.000Z",
+            "vimeo_id": null,
+            "vimeo_thumb": null,
+            "vimeo_width": null,
+            "vimeo_height": null,
+            "vimeo_url": null
+          },
+          "media4": {
+            "__typename": "block_mediaset",
+            "media_mobile": {
+              "__typename": "directus_files",
+              "id": "1f539a25-fb0a-462e-a617-57d9a9067b67",
+              "type": "image/jpeg",
+              "width": 1119,
+              "height": 1788,
+              "filename_disk": "1f539a25-fb0a-462e-a617-57d9a9067b67.jpg",
+              "modified_on": "2026-06-08T09:28:58.000Z",
+              "vimeo_id": null,
+              "vimeo_thumb": null,
+              "vimeo_width": null,
+              "vimeo_height": null,
+              "vimeo_url": null
+            },
+            "media_desktop": {
+              "__typename": "directus_files",
+              "id": "33f18306-ef60-49a8-8732-b3185563f69e",
+              "type": "image/jpeg",
+              "width": 3428,
+              "height": 1894,
+              "filename_disk": "33f18306-ef60-49a8-8732-b3185563f69e.jpg",
+              "modified_on": "2026-06-04T10:01:44.000Z",
+              "vimeo_id": null,
+              "vimeo_thumb": null,
+              "vimeo_width": null,
+              "vimeo_height": null,
+              "vimeo_url": null
+            }
+          },
+          "seo_settings": {
+            "__typename": "block_seo",
+            "title": "Info",
+            "description": "STAGECREW’s primary goal is to create lasting work via a creative process that promotes curiosity, conversation and open-mindedness, and by fostering an infectious, collaborative energy.",
+            "og_image": null
+          }
+        }
+      },
+      "pending": false
+    },
+    "global-footer": {
+      "data": {
+        "global_header": {
+          "__typename": "global_header",
+          "external_links": [
+            {
+              "url": "https://www.instagram.com/stagecrew.studio",
+              "label": "Insta"
+            },
+            {
+              "url": "mailto:office@stagecrew.studio",
+              "label": "Email"
+            }
+          ]
+        },
+        "global_footer": {
+          "__typename": "global_footer",
+          "disclaimer": "We do not use AI, generative or otherwise, in our work.",
+          "contact_info": "<p>For new partnerships and general<br>enquiries, reach out on:</p>\n<p><a href=\"mailto: office@stagecrew.studio\" target=\"_blank\" rel=\"noopener\">office@stagecrew.studio</a></p>",
+          "bottom_labels": [
+            {
+              "label": "SC"
+            },
+            {
+              "label": "WW"
+            }
+          ],
+          "Text": "<p><strong>STAGECREW</strong> is a purposefully compact, international design studio with a fierce collaborative spirit.</p>"
+        },
+        "global_seo": {
+          "__typename": "global_seo",
+          "site_name": "STAGECREW",
+          "seo_settings": {
+            "__typename": "block_seo",
+            "title": null,
+            "description": "STAGECREW is a purposefully compact creative studio with a focus on a fierce collaborative spirit and an experimental process that prioritises fun and experimentation over deadlines and deliverables.",
+            "og_image": {
+              "__typename": "directus_files",
+              "id": "2251a1ab-785b-464c-9306-cc5428236ecf",
+              "type": "image/jpeg",
+              "width": 1200,
+              "height": 630,
+              "filename_disk": "2251a1ab-785b-464c-9306-cc5428236ecf.jpg",
+              "modified_on": "2026-06-08T11:55:24.000Z"
+            }
+          }
+        }
+      },
+      "pending": false
+    }
+  },
+  "prerenderedAt": 1781016911247
+}

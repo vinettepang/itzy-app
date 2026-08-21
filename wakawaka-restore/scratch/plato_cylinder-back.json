@@ -1,0 +1,239 @@
+{
+  "globals": {
+    "SiteSettings": {
+      "title": "WAKA-WAKA",
+      "description": "WAKA WAKA is a Los Angeles based studio focusing on wood furniture and functional objects designed and hand crafted by Shin Okuda.",
+      "keywords": null,
+      "gaTrackingId": "UA-173085492-1",
+      "shareImage": {
+        "asset": {
+          "url": "https://cdn.sanity.io/images/8yrspuwy/production/18724c795ad1c6067c6973cf67fa81bae947808d-1200x630.jpg"
+        }
+      },
+      "globalFooterPhone": "+1 32 36 33 34 58",
+      "globalFooterLinks": [
+        {
+          "linkLabel": "iko Iko",
+          "linkUrl": "http://www.ikoikospace.com/"
+        },
+        {
+          "linkLabel": "instagram",
+          "linkUrl": "https://www.instagram.com/wakawakainc/"
+        },
+        {
+          "linkLabel": "email",
+          "linkUrl": "mailto:info@wakawaka.world"
+        }
+      ],
+      "globalFooterLeftCopy": "functional objects",
+      "globalFooterLocation": "Los Angeles, CA",
+      "globalFooterCopyrightLabel": "Waka Waka",
+      "globalFooterCopyrightYears": "©2026"
+    }
+  },
+  "serverData": {
+    "_id": "db7fe76c-fe93-4ad7-97f0-b05856897634",
+    "slug": {
+      "current": "cylinder-back"
+    },
+    "chairType": {
+      "key": "Chair Collection"
+    },
+    "name": "Cylinder Back",
+    "description": "One of our foundation chair models, designed with volume and line as the guides. The upright silhouette, with a back supporting cylinder, dowel connectors and stainless steel hardware. Available in natural oil, black, white, pompeii red, indigo, grey, purple, and forest green finish.",
+    "dimensions": "17.5x21x30x17",
+    "chairInfos": [
+      {
+        "key": "Width",
+        "value": "17.5\""
+      },
+      {
+        "key": "Depth",
+        "value": "21\""
+      },
+      {
+        "key": "Height",
+        "value": "30\""
+      },
+      {
+        "key": "Seating Height",
+        "value": "17\""
+      },
+      {
+        "key": "Natural Finish",
+        "value": "$1430"
+      },
+      {
+        "key": "Color Finish",
+        "value": "$1980"
+      }
+    ],
+    "specSheet": {
+      "asset": {
+        "url": "https://cdn.sanity.io/files/8yrspuwy/production/adefce1ad8fdafd8d143d275ab1717873df79f21.pdf"
+      }
+    },
+    "imagesGallery": [
+      {
+        "asset": {
+          "url": "https://cdn.sanity.io/images/8yrspuwy/production/413315c187fbfcdc3d3768c6f641e3426e0952ab-2422x3028.jpg",
+          "path": "images/8yrspuwy/production/413315c187fbfcdc3d3768c6f641e3426e0952ab-2422x3028.jpg",
+          "title": null,
+          "label": null,
+          "metadata": {
+            "palette": {
+              "dominant": {
+                "background": "#c4c4bc"
+              },
+              "muted": {
+                "background": "#8f7054"
+              }
+            },
+            "dimensions": {
+              "width": 2422,
+              "height": 3028
+            }
+          }
+        }
+      },
+      {
+        "asset": {
+          "url": "https://cdn.sanity.io/images/8yrspuwy/production/5aa029b3cef9b588d5910b07e7ae2b8c3b5137ac-2418x3021.jpg",
+          "path": "images/8yrspuwy/production/5aa029b3cef9b588d5910b07e7ae2b8c3b5137ac-2418x3021.jpg",
+          "title": null,
+          "label": null,
+          "metadata": {
+            "palette": {
+              "dominant": {
+                "background": "#d5ac7a"
+              },
+              "muted": {
+                "background": "#97714c"
+              }
+            },
+            "dimensions": {
+              "width": 2418,
+              "height": 3021
+            }
+          }
+        }
+      },
+      {
+        "asset": {
+          "url": "https://cdn.sanity.io/images/8yrspuwy/production/882b9d4d275b8cbb19110caabe014948d09d2beb-2389x2986.jpg",
+          "path": "images/8yrspuwy/production/882b9d4d275b8cbb19110caabe014948d09d2beb-2389x2986.jpg",
+          "title": null,
+          "label": null,
+          "metadata": {
+            "palette": {
+              "dominant": {
+                "background": "#c4c4bc"
+              },
+              "muted": {
+                "background": "#906e4e"
+              }
+            },
+            "dimensions": {
+              "width": 2389,
+              "height": 2986
+            }
+          }
+        }
+      },
+      {
+        "asset": {
+          "url": "https://cdn.sanity.io/images/8yrspuwy/production/141cd7bad1ef246fdadd5d693d55a837d405abf4-3043x2434.jpg",
+          "path": "images/8yrspuwy/production/141cd7bad1ef246fdadd5d693d55a837d405abf4-3043x2434.jpg",
+          "title": null,
+          "label": null,
+          "metadata": {
+            "palette": {
+              "dominant": {
+                "background": "#cab296"
+              },
+              "muted": {
+                "background": "#a48155"
+              }
+            },
+            "dimensions": {
+              "width": 3043,
+              "height": 2434
+            }
+          }
+        }
+      },
+      {
+        "asset": {
+          "url": "https://cdn.sanity.io/images/8yrspuwy/production/337a91d2c49a33857774d73a5b6a4cbd56dba0e0-3034x2427.jpg",
+          "path": "images/8yrspuwy/production/337a91d2c49a33857774d73a5b6a4cbd56dba0e0-3034x2427.jpg",
+          "title": null,
+          "label": null,
+          "metadata": {
+            "palette": {
+              "dominant": {
+                "background": "#c4c4bc"
+              },
+              "muted": {
+                "background": "#987557"
+              }
+            },
+            "dimensions": {
+              "width": 3034,
+              "height": 2427
+            }
+          }
+        }
+      },
+      {
+        "asset": {
+          "url": "https://cdn.sanity.io/images/8yrspuwy/production/5706481af02ba5ddce352f8852769ae4b4616dbc-2444x3055.jpg",
+          "path": "images/8yrspuwy/production/5706481af02ba5ddce352f8852769ae4b4616dbc-2444x3055.jpg",
+          "title": null,
+          "label": null,
+          "metadata": {
+            "palette": {
+              "dominant": {
+                "background": "#c4c4bc"
+              },
+              "muted": {
+                "background": "#a27c65"
+              }
+            },
+            "dimensions": {
+              "width": 2444,
+              "height": 3055
+            }
+          }
+        }
+      }
+    ],
+    "next": {
+      "slug": {
+        "current": "cylinder-back-arm"
+      },
+      "name": "Cylinder Back Arm",
+      "image": {
+        "asset": {
+          "url": "https://cdn.sanity.io/images/8yrspuwy/production/b82d5227fd22047d739a4c25644651bfb97068d0-2444x3055.jpg",
+          "path": "images/8yrspuwy/production/b82d5227fd22047d739a4c25644651bfb97068d0-2444x3055.jpg",
+          "title": null,
+          "label": null,
+          "metadata": {
+            "palette": {
+              "dominant": {
+                "background": "#c4c4bc"
+              },
+              "muted": {
+                "background": "#a68367"
+              }
+            },
+            "dimensions": {
+              "width": 2444,
+              "height": 3055
+            }
+          }
+        }
+      }
+    }
+  }
+}

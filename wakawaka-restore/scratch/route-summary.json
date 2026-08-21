@@ -1,0 +1,99 @@
+{
+  "routes": [
+    {
+      "route": "/",
+      "status": 200,
+      "keys": [
+        "meta",
+        "featuredChairs"
+      ],
+      "file": "c:\\projects\\study\\vibe-coding\\itzy-app\\wakawaka-restore\\scratch\\plato_.json",
+      "bytes": 5635
+    },
+    {
+      "route": "/studio",
+      "status": 200,
+      "keys": [
+        "meta",
+        "aboutMainImage",
+        "aboutMainContentRaw",
+        "aboutPhoneLabel",
+        "aboutPhoneContent",
+        "aboutEmailLabel",
+        "aboutEmailContent",
+        "aboutSocialLabel",
+        "aboutSocialLinks",
+        "aboutPress"
+      ],
+      "file": "c:\\projects\\study\\vibe-coding\\itzy-app\\wakawaka-restore\\scratch\\plato_studio.json",
+      "bytes": 4065
+    },
+    {
+      "route": "/catalogue",
+      "status": 200,
+      "keys": [
+        "meta",
+        "pageTitle",
+        "allChair"
+      ],
+      "file": "c:\\projects\\study\\vibe-coding\\itzy-app\\wakawaka-restore\\scratch\\plato_catalogue.json",
+      "bytes": 23535
+    },
+    {
+      "route": "/furniture/chair-collection",
+      "status": 200,
+      "keys": [
+        "meta",
+        "filters"
+      ],
+      "file": "c:\\projects\\study\\vibe-coding\\itzy-app\\wakawaka-restore\\scratch\\plato_furniture_chair-collection.json",
+      "bytes": 971797
+    },
+    {
+      "route": "/cylinder-back",
+      "status": 200,
+      "keys": [
+        "_id",
+        "slug",
+        "chairType",
+        "name",
+        "description",
+        "dimensions",
+        "chairInfos",
+        "specSheet",
+        "imagesGallery",
+        "next"
+      ],
+      "file": "c:\\projects\\study\\vibe-coding\\itzy-app\\wakawaka-restore\\scratch\\plato_cylinder-back.json",
+      "bytes": 7062
+    },
+    {
+      "route": "/furniture",
+      "status": 200,
+      "keys": [
+        "meta",
+        "filters"
+      ],
+      "file": "c:\\projects\\study\\vibe-coding\\itzy-app\\wakawaka-restore\\scratch\\plato_furniture.json",
+      "bytes": 971797
+    },
+    {
+      "route": "/compartment-chair",
+      "status": 200,
+      "keys": [
+        "_id",
+        "slug",
+        "chairType",
+        "name",
+        "description",
+        "dimensions",
+        "chairInfos",
+        "specSheet",
+        "imagesGallery",
+        "next"
+      ],
+      "file": "c:\\projects\\study\\vibe-coding\\itzy-app\\wakawaka-restore\\scratch\\plato_compartment-chair.json",
+      "bytes": 10410
+    }
+  ]
+}

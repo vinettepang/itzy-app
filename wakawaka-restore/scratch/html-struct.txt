@@ -1,0 +1,47 @@
+﻿
+== label-global 5152 ==
+label-global{bottom:20px;color:#28282a;display:none;font-family:Waka Sans,Helvetica,Arial,sans-serif;font-size:1rem;font-style:normal;font-weight:500;left:20px;letter-spacing:-.02em;line-height:1;position:absolute;z-index:0}@media(max-width:960px){.l
+
+== label-global 5401 ==
+label-global{font-size:8px}}.main-background{display:none;height:100%;left:0;position:absolute;top:0;width:100%;z-index:0}.main-background,.scroll-wrapper{background-color:#edeae4}#content{height:auto;min-height:100%;position:relative;z-index:1}img{d
+
+== label-global 46008 ==
+label-global>WAKA WAKA is a Los Angeles based studio focusing on wood furniture and functional objects designed and hand crafted by Shin Okuda.</p> <script id=__PLATO_DATA__ type=application/json> {"globals":{"SiteSettings":{"title":"WAKA-WAKA","desc
+
+== logo-global 5015 ==
+logo-global{display:none;position:absolute;right:20px;top:60%;width:48px;z-index:0}.logo-global svg{fill:#28282a;height:auto;width:100%}.label-global{bottom:20px;color:#28282a;display:none;font-family:Waka Sans,Helvetica,Arial,sans-serif;font-size:1r
+
+== logo-global 5099 ==
+logo-global svg{fill:#28282a;height:auto;width:100%}.label-global{bottom:20px;color:#28282a;display:none;font-family:Waka Sans,Helvetica,Arial,sans-serif;font-size:1rem;font-style:normal;font-weight:500;left:20px;letter-spacing:-.02em;line-height:1;p
+
+== logo-global 42657 ==
+logo-global> <svg xmlns=http://www.w3.org/2000/svg viewBox="0 0 44 61" width=44px> <path d="M24.74 61c2.03-1.22 3.7-2.9 4.7-4.74.79-1.5 1.2-2.99 1.44-5.27l5.03-.02c-.02 2.65-.18 4.93-.45 6.35-.34 1.77-.63 2.2-1.51 2.2-.59 0-1.35-.14-2.32-.46.16.46.2.
+
+== main-background 5430 ==
+main-background{display:none;height:100%;left:0;position:absolute;top:0;width:100%;z-index:0}.main-background,.scroll-wrapper{background-color:#edeae4}#content{height:auto;min-height:100%;position:relative;z-index:1}img{display:block;height:auto;widt
+
+== main-background 5524 ==
+main-background,.scroll-wrapper{background-color:#edeae4}#content{height:auto;min-height:100%;position:relative;z-index:1}img{display:block;height:auto;width:100%}.page-overlay{background-color:rgba(0,0,0,.25);display:none;height:100%;left:0;opacity:
+
+== main-background 42615 ==
+main-background></span> </div> <div class=logo-global> <svg xmlns=http://www.w3.org/2000/svg viewBox="0 0 44 61" width=44px> <path d="M24.74 61c2.03-1.22 3.7-2.9 4.7-4.74.79-1.5 1.2-2.99 1.44-5.27l5.03-.02c-.02 2.65-.18 4.93-.45 6.35-.34 1.77-.63 2.2
+
+== site-header 6335 ==
+site-header{align-items:flex-end;display:flex;flex-direction:row;justify-content:space-between;left:0;opacity:0;padding:27px 20px;pointer-events:none;position:fixed;top:0;width:100%;z-index:10}@media(max-width:960px){#site-header{align-items:flex-sta
+
+== site-header 6553 ==
+site-header{align-items:flex-start;justify-content:flex-start;padding:17px 10px}#site-header .header-nav{display:none}}#site-header .site-header__left,#site-header .site-header__right{flex:1;position:relative;top:-4px}@media(max-width:960px){#site-he
+
+== site-header 6634 ==
+site-header .header-nav{display:none}}#site-header .site-header__left,#site-header .site-header__right{flex:1;position:relative;top:-4px}@media(max-width:960px){#site-header .site-header__left,#site-header .site-header__right{flex-basis:auto;flex-gro
+
+== global-cursor 15698 ==
+global-cursor{left:0;opacity:0;pointer-events:none;position:fixed;top:0;z-index:10}.global-cursor .cursor-content{height:18px;margin-top:-4px;overflow:hidden;position:relative;transition:opacity .3s cubic-bezier(.445,.05,.55,.95);width:500px;z-index:
+
+== global-cursor 15782 ==
+global-cursor .cursor-content{height:18px;margin-top:-4px;overflow:hidden;position:relative;transition:opacity .3s cubic-bezier(.445,.05,.55,.95);width:500px;z-index:99}.global-cursor .cursor-content .chair-content{align-items:flex-end;display:flex;l
+
+== global-cursor 15952 ==
+global-cursor .cursor-content .chair-content{align-items:flex-end;display:flex;left:0;opacity:0;position:absolute;top:2px}.global-cursor .cursor-content h2{font-family:Waka Sans,Helvetica,Arial,sans-serif;font-size:1.4rem;font-style:normal;font-weigh
+
+SITE OPEN class=site> <a class=skip-link href=#content>Skip to content</a> <header id=site-header> <div class=site-header__left> <h2 class=logo><a href=/ >Waka Waka</a></h2> </div> <nav class="header-nav site-header__center"> <a data-page=furniture href=/furniture/chair-collection title>Furniture, </a> <a data-page=catalogue href=/catalogue title>Index, </a> <a data-page=about href=/studio title>Studio</a> </nav> <div class=site-header__right> <h2 class=header-info> <span class=location>los angeles, ca</span>&nbsp;<span class=time>13:36</span> <button type=button class="menu-dot-button menu-dot-container" aria-label="Open menu"> <svg width=12px class=menu-dot viewBox="0 0 12 12" xmlns=http://www.w3.org/2000/svg aria-hidden=true focusable=false> <circle cx=6 cy=6 r=6 /> </svg> </button> </h2> </div> 

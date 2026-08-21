@@ -44,6 +44,7 @@ export default function AppLayout() {
           <NavLinkLike to="/portfolio" label="Portfolio" />
           <NavLinkLike to="/xkm" label="XKM" />
           <NavLinkLike to="/songs" label="Songs" />
+          <NavLinkLike to="/setlist" label="歌单" />
           <NavLinkLike to="/unseen" label="Unseen" />
           <NavLinkLike to="/balls" label="Balls" />
         </nav>

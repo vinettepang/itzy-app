@@ -1,0 +1,11 @@
+const fs = require('fs');
+const path = require('path');
+const htmlPath = path.join(process.env.TEMP || '/tmp', 'waka-home.html');
+const html = fs.readFileSync(htmlPath, 'utf8');
+console.log('len', html.length);
+const scripts = [...html.matchAll(/src="([^"]+)"/g)].map((m) => m[1]);
+console.log('SCRIPTS:');
+scripts.forEach((s) => console.log(s));
+const preload = [...html.matchAll(/href="([^"]+\.js[^"]*)"/g)].map((m) => m[1]);
+console.log('PRELOAD:');
+preload.forEach((s) => console.log(s));

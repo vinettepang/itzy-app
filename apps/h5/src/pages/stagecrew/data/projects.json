@@ -1,0 +1,562 @@
+{
+  "hall-gad-architects": {
+    "id": 2,
+    "title": "Hall Gad Architects",
+    "subtitle": "A force for local good.",
+    "slug": "hall-gad-architects",
+    "sort": 1,
+    "isComingSoon": false,
+    "text": "<p><strong>WITH</strong> a strong sense of social responsibility for the physical spaces in which their structures inhabit, Hall Gad Architects are a new practice who specialize in ambitious and challenging architecture that aims to enhance and sustain environments and ecosystems alike. We worked with founders Jessica Hall and Holden Gad to create an identity and digital presence that matched their aesthetic sensibilities and sheer sense of scale and perspective.</p>",
+    "areas": [
+      "Creative Direction",
+      "Visual Identity",
+      "Social",
+      "Digital",
+      "Print"
+    ],
+    "cover": {
+      "id": "f5f42e31-3fa2-4257-ba4b-a6974d13baa5",
+      "type": "video",
+      "mime": "video/mp4",
+      "width": 1316,
+      "height": 940,
+      "src": "https://player.vimeo.com/progressive_redirect/playback/1167771305/rendition/1080p/file.mp4%20%281080p%29.mp4?loc=external&oauth2_token_id=1808737147&signature=c4d91aa847ac044f0eac5fbf537c89fc37e98c00ba6d25655777338bc9a3863f",
+      "poster": "https://i.vimeocdn.com/video/2125882267-619ebe3d9e06740c0cfa826616120ed4ff144c4c86a77f4b1a89d376206fb054-d?region=us?mw=1280",
+      "filename": "f5f42e31-3fa2-4257-ba4b-a6974d13baa5.mp4"
+    },
+    "gallery": [
+      {
+        "id": "a9bf0c0c-1661-45cd-9387-4578d61982e0",
+        "type": "image",
+        "mime": "image/jpeg",
+        "width": 3120,
+        "height": 1754,
+        "src": "https://stagecrew-media.b-cdn.net/a9bf0c0c-1661-45cd-9387-4578d61982e0.jpg?width=1600&format=webp&quality=75",
+        "poster": "https://stagecrew-media.b-cdn.net/a9bf0c0c-1661-45cd-9387-4578d61982e0.jpg?width=800&format=webp&quality=60",
+        "filename": "a9bf0c0c-1661-45cd-9387-4578d61982e0.jpg"
+      },
+      {
+        "id": "3dfb31e7-d364-436e-8246-94c2d0dd99ff",
+        "type": "image",
+        "mime": "image/jpeg",
+        "width": 3080,
+        "height": 3080,
+        "src": "https://stagecrew-media.b-cdn.net/3dfb31e7-d364-436e-8246-94c2d0dd99ff.jpg?width=1600&format=webp&quality=75",
+        "poster": "https://stagecrew-media.b-cdn.net/3dfb31e7-d364-436e-8246-94c2d0dd99ff.jpg?width=800&format=webp&quality=60",
+        "filename": "3dfb31e7-d364-436e-8246-94c2d0dd99ff.jpg"
+      },
+      {
+        "id": "e6a1c87d-c621-4d25-ad41-2d7d8ac5fb61",
+        "type": "video",
+        "mime": "video/mp4",
+        "width": 2310,
+        "height": 2310,
+        "src": "https://player.vimeo.com/progressive_redirect/playback/1190443214/rendition/1080p/file.mp4%20%281080p%29.mp4?loc=external&oauth2_token_id=1808737147&signature=0ee6aa7a91e8976e7d62bdd218ec7f6157d42405cc9622aaa7e130214cc17553",
+        "poster": "https://i.vimeocdn.com/video/2155222434-c9d721f6041753211d4d0746a673894b1aadca859eea4bf63d9677d6ba074420-d?region=us?mw=1280",
+        "filename": "e6a1c87d-c621-4d25-ad41-2d7d8ac5fb61.mp4"
+      },
+      {
+        "id": "c8f64ffa-cc3f-4823-9797-f3694ceedac2",
+        "type": "image",
+        "mime": "image/jpeg",
+        "width": 4680,
+        "height": 2631,
+        "src": "https://stagecrew-media.b-cdn.net/c8f64ffa-cc3f-4823-9797-f3694ceedac2.jpg?width=1600&format=webp&quality=75",
+        "poster": "https://stagecrew-media.b-cdn.net/c8f64ffa-cc3f-4823-9797-f3694ceedac2.jpg?width=800&format=webp&quality=60",
+        "filename": "c8f64ffa-cc3f-4823-9797-f3694ceedac2.jpg"
+      },
+      {
+        "id": "b6031c73-7d91-41f2-afe6-11e181bb9376",
+        "type": "image",
+        "mime": "image/jpeg",
+        "width": 2310,
+        "height": 3270,
+        "src": "https://stagecrew-media.b-cdn.net/b6031c73-7d91-41f2-afe6-11e181bb9376.jpg?width=1600&format=webp&quality=75",
+        "poster": "https://stagecrew-media.b-cdn.net/b6031c73-7d91-41f2-afe6-11e181bb9376.jpg?width=800&format=webp&quality=60",
+        "filename": "b6031c73-7d91-41f2-afe6-11e181bb9376.jpg"
+      },
+      {
+        "id": "e4231201-ec6f-4b4f-b047-17f4a84b02e7",
+        "type": "image",
+        "mime": "image/jpeg",
+        "width": 990,
+        "height": 1402,
+        "src": "https://stagecrew-media.b-cdn.net/e4231201-ec6f-4b4f-b047-17f4a84b02e7.jpg?width=1600&format=webp&quality=75",
+        "poster": "https://stagecrew-media.b-cdn.net/e4231201-ec6f-4b4f-b047-17f4a84b02e7.jpg?width=800&format=webp&quality=60",
+        "filename": "e4231201-ec6f-4b4f-b047-17f4a84b02e7.jpg"
+      },
+      {
+        "id": "4d3df8d9-77f8-4227-9f2e-4ea50a947ad5",
+        "type": "image",
+        "mime": "image/jpeg",
+        "width": 4680,
+        "height": 2631,
+        "src": "https://stagecrew-media.b-cdn.net/4d3df8d9-77f8-4227-9f2e-4ea50a947ad5.jpg?width=1600&format=webp&quality=75",
+        "poster": "https://stagecrew-media.b-cdn.net/4d3df8d9-77f8-4227-9f2e-4ea50a947ad5.jpg?width=800&format=webp&quality=60",
+        "filename": "4d3df8d9-77f8-4227-9f2e-4ea50a947ad5.jpg"
+      },
+      {
+        "id": "9ac20720-5425-4b45-b639-ca37f1ce0ed8",
+        "type": "image",
+        "mime": "image/jpeg",
+        "width": 2310,
+        "height": 2310,
+        "src": "https://stagecrew-media.b-cdn.net/9ac20720-5425-4b45-b639-ca37f1ce0ed8.jpg?width=1600&format=webp&quality=75",
+        "poster": "https://stagecrew-media.b-cdn.net/9ac20720-5425-4b45-b639-ca37f1ce0ed8.jpg?width=800&format=webp&quality=60",
+        "filename": "9ac20720-5425-4b45-b639-ca37f1ce0ed8.jpg"
+      },
+      {
+        "id": "729fb0aa-80e1-4cfa-ac5f-4b392a97e102",
+        "type": "image",
+        "mime": "image/jpeg",
+        "width": 2310,
+        "height": 2310,
+        "src": "https://stagecrew-media.b-cdn.net/729fb0aa-80e1-4cfa-ac5f-4b392a97e102.jpg?width=1600&format=webp&quality=75",
+        "poster": "https://stagecrew-media.b-cdn.net/729fb0aa-80e1-4cfa-ac5f-4b392a97e102.jpg?width=800&format=webp&quality=60",
+        "filename": "729fb0aa-80e1-4cfa-ac5f-4b392a97e102.jpg"
+      }
+    ],
+    "crew": []
+  },
+  "aura": {
+    "id": 1,
+    "title": "AURA",
+    "subtitle": "Naturally sourced products for mind, body and soul.",
+    "slug": "aura",
+    "sort": 2,
+    "isComingSoon": false,
+    "text": "<p><strong>AURA</strong> are a newly-founded beauty company that are as invested in mental health as much as physical, choosing to donate 10% of their profits to mental health charities across America from their pop-up stores. It&rsquo;s been our pleasure to work with them on their ident and launch rollout, handling everything from sun-care packaging to social campaigns, with a comprehensive e-commerce website spearheading a digital phase coming later in the year.</p>",
+    "areas": [
+      "Strategy",
+      "Creative Direction",
+      "Visual Identity",
+      "Packaging",
+      "Digital"
+    ],
+    "cover": {
+      "id": "63bd4540-11b8-4df9-9581-093c247711be",
+      "type": "image",
+      "mime": "image/jpeg",
+      "width": 1974,
+      "height": 1401,
+      "src": "https://stagecrew-media.b-cdn.net/63bd4540-11b8-4df9-9581-093c247711be.jpg?width=1600&format=webp&quality=75",
+      "poster": "https://stagecrew-media.b-cdn.net/63bd4540-11b8-4df9-9581-093c247711be.jpg?width=800&format=webp&quality=60",
+      "filename": "63bd4540-11b8-4df9-9581-093c247711be.jpg"
+    },
+    "gallery": [
+      {
+        "id": "62f10938-71dc-49e7-adf6-13bf7273e2a6",
+        "type": "image",
+        "mime": "image/jpeg",
+        "width": 4680,
+        "height": 2631,
+        "src": "https://stagecrew-media.b-cdn.net/62f10938-71dc-49e7-adf6-13bf7273e2a6.jpg?width=1600&format=webp&quality=75",
+        "poster": "https://stagecrew-media.b-cdn.net/62f10938-71dc-49e7-adf6-13bf7273e2a6.jpg?width=800&format=webp&quality=60",
+        "filename": "62f10938-71dc-49e7-adf6-13bf7273e2a6.jpg"
+      },
+      {
+        "id": "ab051a52-55a3-4a82-833d-e37de172559b",
+        "type": "image",
+        "mime": "image/jpeg",
+        "width": 2310,
+        "height": 2310,
+        "src": "https://stagecrew-media.b-cdn.net/ab051a52-55a3-4a82-833d-e37de172559b.jpg?width=1600&format=webp&quality=75",
+        "poster": "https://stagecrew-media.b-cdn.net/ab051a52-55a3-4a82-833d-e37de172559b.jpg?width=800&format=webp&quality=60",
+        "filename": "ab051a52-55a3-4a82-833d-e37de172559b.jpg"
+      },
+      {
+        "id": "6b82853d-3015-44be-abb8-66cbcf46fd25",
+        "type": "image",
+        "mime": "image/jpeg",
+        "width": 990,
+        "height": 990,
+        "src": "https://stagecrew-media.b-cdn.net/6b82853d-3015-44be-abb8-66cbcf46fd25.jpg?width=1600&format=webp&quality=75",
+        "poster": "https://stagecrew-media.b-cdn.net/6b82853d-3015-44be-abb8-66cbcf46fd25.jpg?width=800&format=webp&quality=60",
+        "filename": "6b82853d-3015-44be-abb8-66cbcf46fd25.jpg"
+      },
+      {
+        "id": "6d861736-e41f-47db-ab82-59f6f277c66e",
+        "type": "image",
+        "mime": "image/jpeg",
+        "width": 4680,
+        "height": 2631,
+        "src": "https://stagecrew-media.b-cdn.net/6d861736-e41f-47db-ab82-59f6f277c66e.jpg?width=1600&format=webp&quality=75",
+        "poster": "https://stagecrew-media.b-cdn.net/6d861736-e41f-47db-ab82-59f6f277c66e.jpg?width=800&format=webp&quality=60",
+        "filename": "6d861736-e41f-47db-ab82-59f6f277c66e.jpg"
+      },
+      {
+        "id": "394abeaf-1113-4029-a9c2-6ae8305e5937",
+        "type": "image",
+        "mime": "image/jpeg",
+        "width": 2310,
+        "height": 3270,
+        "src": "https://stagecrew-media.b-cdn.net/394abeaf-1113-4029-a9c2-6ae8305e5937.jpg?width=1600&format=webp&quality=75",
+        "poster": "https://stagecrew-media.b-cdn.net/394abeaf-1113-4029-a9c2-6ae8305e5937.jpg?width=800&format=webp&quality=60",
+        "filename": "394abeaf-1113-4029-a9c2-6ae8305e5937.jpg"
+      },
+      {
+        "id": "ffe602c4-7b21-4ba0-818a-55e15a8f6ff1",
+        "type": "image",
+        "mime": "image/jpeg",
+        "width": 2310,
+        "height": 3270,
+        "src": "https://stagecrew-media.b-cdn.net/ffe602c4-7b21-4ba0-818a-55e15a8f6ff1.jpg?width=1600&format=webp&quality=75",
+        "poster": "https://stagecrew-media.b-cdn.net/ffe602c4-7b21-4ba0-818a-55e15a8f6ff1.jpg?width=800&format=webp&quality=60",
+        "filename": "ffe602c4-7b21-4ba0-818a-55e15a8f6ff1.jpg"
+      },
+      {
+        "id": "3e92a068-9e0a-4e50-aa53-0a8019bea5b4",
+        "type": "image",
+        "mime": "image/jpeg",
+        "width": 4680,
+        "height": 2631,
+        "src": "https://stagecrew-media.b-cdn.net/3e92a068-9e0a-4e50-aa53-0a8019bea5b4.jpg?width=1600&format=webp&quality=75",
+        "poster": "https://stagecrew-media.b-cdn.net/3e92a068-9e0a-4e50-aa53-0a8019bea5b4.jpg?width=800&format=webp&quality=60",
+        "filename": "3e92a068-9e0a-4e50-aa53-0a8019bea5b4.jpg"
+      },
+      {
+        "id": "09fdc330-f8db-4942-a9f4-48c03abc40bb",
+        "type": "image",
+        "mime": "image/jpeg",
+        "width": 4680,
+        "height": 2631,
+        "src": "https://stagecrew-media.b-cdn.net/09fdc330-f8db-4942-a9f4-48c03abc40bb.jpg?width=1600&format=webp&quality=75",
+        "poster": "https://stagecrew-media.b-cdn.net/09fdc330-f8db-4942-a9f4-48c03abc40bb.jpg?width=800&format=webp&quality=60",
+        "filename": "09fdc330-f8db-4942-a9f4-48c03abc40bb.jpg"
+      },
+      {
+        "id": "875cfcaa-b627-45eb-aecb-e6d4bdc658dd",
+        "type": "image",
+        "mime": "image/jpeg",
+        "width": 4680,
+        "height": 2631,
+        "src": "https://stagecrew-media.b-cdn.net/875cfcaa-b627-45eb-aecb-e6d4bdc658dd.jpg?width=1600&format=webp&quality=75",
+        "poster": "https://stagecrew-media.b-cdn.net/875cfcaa-b627-45eb-aecb-e6d4bdc658dd.jpg?width=800&format=webp&quality=60",
+        "filename": "875cfcaa-b627-45eb-aecb-e6d4bdc658dd.jpg"
+      }
+    ],
+    "crew": []
+  },
+  "the-hall": {
+    "id": 3,
+    "title": "The Hall",
+    "subtitle": "The low-cost theatre at the heart of the community.",
+    "slug": "the-hall",
+    "sort": 3,
+    "isComingSoon": false,
+    "text": "<p><strong>FROM</strong> big stage staples to independent small-run plays, The Hall Theatre aims to provide an affordable, community-driven way to enjoy this wonderful art-form. In the face of difficult funding conditions, it's more important than ever to find unique ways in which to thrive, and so we're honored to be partnering with them on their visual direction across both physical and digital spaces.</p>",
+    "areas": [
+      "Strategy",
+      "Creative Direction",
+      "Visual Identity",
+      "Digital",
+      "Print",
+      "Signage"
+    ],
+    "cover": {
+      "id": "ec82b12d-7678-44a1-bafe-90b713fd436c",
+      "type": "image",
+      "mime": "image/jpeg",
+      "width": 1974,
+      "height": 1401,
+      "src": "https://stagecrew-media.b-cdn.net/ec82b12d-7678-44a1-bafe-90b713fd436c.jpg?width=1600&format=webp&quality=75",
+      "poster": "https://stagecrew-media.b-cdn.net/ec82b12d-7678-44a1-bafe-90b713fd436c.jpg?width=800&format=webp&quality=60",
+      "filename": "ec82b12d-7678-44a1-bafe-90b713fd436c.jpg"
+    },
+    "gallery": [
+      {
+        "id": "a42454e6-1caa-4070-9b14-f855260b39a0",
+        "type": "image",
+        "mime": "image/jpeg",
+        "width": 3120,
+        "height": 1754,
+        "src": "https://stagecrew-media.b-cdn.net/a42454e6-1caa-4070-9b14-f855260b39a0.jpg?width=1600&format=webp&quality=75",
+        "poster": "https://stagecrew-media.b-cdn.net/a42454e6-1caa-4070-9b14-f855260b39a0.jpg?width=800&format=webp&quality=60",
+        "filename": "a42454e6-1caa-4070-9b14-f855260b39a0.jpg"
+      },
+      {
+        "id": "2b2508af-74c1-448f-8ef0-8fab6410dd40",
+        "type": "image",
+        "mime": "image/jpeg",
+        "width": 1485,
+        "height": 1485,
+        "src": "https://stagecrew-media.b-cdn.net/2b2508af-74c1-448f-8ef0-8fab6410dd40.jpg?width=1600&format=webp&quality=75",
+        "poster": "https://stagecrew-media.b-cdn.net/2b2508af-74c1-448f-8ef0-8fab6410dd40.jpg?width=800&format=webp&quality=60",
+        "filename": "2b2508af-74c1-448f-8ef0-8fab6410dd40.jpg"
+      },
+      {
+        "id": "6e649b52-f140-4bba-bd1c-3add49ba75c8",
+        "type": "image",
+        "mime": "image/jpeg",
+        "width": 2310,
+        "height": 2310,
+        "src": "https://stagecrew-media.b-cdn.net/6e649b52-f140-4bba-bd1c-3add49ba75c8.jpg?width=1600&format=webp&quality=75",
+        "poster": "https://stagecrew-media.b-cdn.net/6e649b52-f140-4bba-bd1c-3add49ba75c8.jpg?width=800&format=webp&quality=60",
+        "filename": "6e649b52-f140-4bba-bd1c-3add49ba75c8.jpg"
+      },
+      {
+        "id": "981ef1d2-ffb7-4ed4-a753-9a8631881750",
+        "type": "image",
+        "mime": "image/jpeg",
+        "width": 4680,
+        "height": 2631,
+        "src": "https://stagecrew-media.b-cdn.net/981ef1d2-ffb7-4ed4-a753-9a8631881750.jpg?width=1600&format=webp&quality=75",
+        "poster": "https://stagecrew-media.b-cdn.net/981ef1d2-ffb7-4ed4-a753-9a8631881750.jpg?width=800&format=webp&quality=60",
+        "filename": "981ef1d2-ffb7-4ed4-a753-9a8631881750.jpg"
+      },
+      {
+        "id": "9f102643-4143-43be-abfe-010aa37e8994",
+        "type": "image",
+        "mime": "image/jpeg",
+        "width": 1485,
+        "height": 2103,
+        "src": "https://stagecrew-media.b-cdn.net/9f102643-4143-43be-abfe-010aa37e8994.jpg?width=1600&format=webp&quality=75",
+        "poster": "https://stagecrew-media.b-cdn.net/9f102643-4143-43be-abfe-010aa37e8994.jpg?width=800&format=webp&quality=60",
+        "filename": "9f102643-4143-43be-abfe-010aa37e8994.jpg"
+      },
+      {
+        "id": "87e92353-16af-44b9-ad96-8dea4b770167",
+        "type": "image",
+        "mime": "image/jpeg",
+        "width": 1800,
+        "height": 2548,
+        "src": "https://stagecrew-media.b-cdn.net/87e92353-16af-44b9-ad96-8dea4b770167.jpg?width=1600&format=webp&quality=75",
+        "poster": "https://stagecrew-media.b-cdn.net/87e92353-16af-44b9-ad96-8dea4b770167.jpg?width=800&format=webp&quality=60",
+        "filename": "87e92353-16af-44b9-ad96-8dea4b770167.jpg"
+      },
+      {
+        "id": "58e03c7a-0139-4e87-9650-38e11cf5d8eb",
+        "type": "image",
+        "mime": "image/jpeg",
+        "width": 2973,
+        "height": 1671,
+        "src": "https://stagecrew-media.b-cdn.net/58e03c7a-0139-4e87-9650-38e11cf5d8eb.jpg?width=1600&format=webp&quality=75",
+        "poster": "https://stagecrew-media.b-cdn.net/58e03c7a-0139-4e87-9650-38e11cf5d8eb.jpg?width=800&format=webp&quality=60",
+        "filename": "58e03c7a-0139-4e87-9650-38e11cf5d8eb.jpg"
+      },
+      {
+        "id": "2c26ef11-dfc2-4acf-b5ef-1ee7d610bcf6",
+        "type": "video",
+        "mime": "video/mp4",
+        "width": 990,
+        "height": 990,
+        "src": "https://player.vimeo.com/progressive_redirect/playback/1167771341/rendition/1080p/file.mp4%20%281080p%29.mp4?loc=external&oauth2_token_id=1808737147&signature=e939c50a43271f495bbf27dab63b45018dc7aad77ee56ecac1e8715dc8865100",
+        "poster": "https://i.vimeocdn.com/video/2125882308-6510ea7d5bdb150b14a1887e1a9dac8a545957baaa2e1b0090705938cbcaef37-d?region=us?mw=1280",
+        "filename": "2c26ef11-dfc2-4acf-b5ef-1ee7d610bcf6.mp4"
+      },
+      {
+        "id": "be2bd496-3e56-49c3-9236-95ac71472ab5",
+        "type": "image",
+        "mime": "image/jpeg",
+        "width": 2310,
+        "height": 2310,
+        "src": "https://stagecrew-media.b-cdn.net/be2bd496-3e56-49c3-9236-95ac71472ab5.jpg?width=1600&format=webp&quality=75",
+        "poster": "https://stagecrew-media.b-cdn.net/be2bd496-3e56-49c3-9236-95ac71472ab5.jpg?width=800&format=webp&quality=60",
+        "filename": "be2bd496-3e56-49c3-9236-95ac71472ab5.jpg"
+      }
+    ],
+    "crew": []
+  },
+  "innerstate": {
+    "id": 5,
+    "title": "INNERSTATE",
+    "subtitle": "Full scholarship sport representation.",
+    "slug": "innerstate",
+    "sort": 4,
+    "isComingSoon": false,
+    "text": "<p><strong>INNERSTATE</strong> are a talent agency that represents a diverse range of exceptional athletes, musicians, and stage actors all over the globe, offering support and opportunity through close collaboration and over 20 years of hands-on experience though its full scholarship program, which gives vital mentorship to young talent as they navigate the early stages of their careers. We worked with them to craft a bold, energetic brand direction to match their infectious personalities.</p>",
+    "areas": [
+      "Strategy",
+      "Creative Direction",
+      "Visual Identity",
+      "Digital",
+      "Social"
+    ],
+    "cover": {
+      "id": "7370500c-e985-4877-89a7-4be623df7913",
+      "type": "image",
+      "mime": "image/jpeg",
+      "width": 1974,
+      "height": 1401,
+      "src": "https://stagecrew-media.b-cdn.net/7370500c-e985-4877-89a7-4be623df7913.jpg?width=1600&format=webp&quality=75",
+      "poster": "https://stagecrew-media.b-cdn.net/7370500c-e985-4877-89a7-4be623df7913.jpg?width=800&format=webp&quality=60",
+      "filename": "7370500c-e985-4877-89a7-4be623df7913.jpg"
+    },
+    "gallery": [
+      {
+        "id": "624fa3c5-ef95-4455-8456-5fd22a5f868d",
+        "type": "image",
+        "mime": "image/jpeg",
+        "width": 2970,
+        "height": 1686,
+        "src": "https://stagecrew-media.b-cdn.net/624fa3c5-ef95-4455-8456-5fd22a5f868d.jpg?width=1600&format=webp&quality=75",
+        "poster": "https://stagecrew-media.b-cdn.net/624fa3c5-ef95-4455-8456-5fd22a5f868d.jpg?width=800&format=webp&quality=60",
+        "filename": "624fa3c5-ef95-4455-8456-5fd22a5f868d.jpg"
+      },
+      {
+        "id": "92827a8d-22b0-4636-8f8b-d62a38de7a5b",
+        "type": "video",
+        "mime": "video/mp4",
+        "width": 760,
+        "height": 760,
+        "src": "https://player.vimeo.com/progressive_redirect/playback/1167774751/rendition/720p/file.mp4%20%28720p%29.mp4?loc=external&oauth2_token_id=1808737147&signature=6d1f0629ced77efd78996b06b90ecc0b06207dbfef455c68fa621fbedf0fa334",
+        "poster": "https://i.vimeocdn.com/video/2125888188-c46090438353b05327599c2607616e365c975df3a73106a373f38f1063777e37-d?region=us?mw=1280",
+        "filename": "92827a8d-22b0-4636-8f8b-d62a38de7a5b.mp4"
+      },
+      {
+        "id": "6726c521-98ad-4044-83b3-cea95977db0e",
+        "type": "image",
+        "mime": "image/jpeg",
+        "width": 1484,
+        "height": 1484,
+        "src": "https://stagecrew-media.b-cdn.net/6726c521-98ad-4044-83b3-cea95977db0e.jpg?width=1600&format=webp&quality=75",
+        "poster": "https://stagecrew-media.b-cdn.net/6726c521-98ad-4044-83b3-cea95977db0e.jpg?width=800&format=webp&quality=60",
+        "filename": "6726c521-98ad-4044-83b3-cea95977db0e.jpg"
+      },
+      {
+        "id": "81527e06-7d01-4e95-9a84-d73bb06b5aba",
+        "type": "image",
+        "mime": "image/jpeg",
+        "width": 2973,
+        "height": 1671,
+        "src": "https://stagecrew-media.b-cdn.net/81527e06-7d01-4e95-9a84-d73bb06b5aba.jpg?width=1600&format=webp&quality=75",
+        "poster": "https://stagecrew-media.b-cdn.net/81527e06-7d01-4e95-9a84-d73bb06b5aba.jpg?width=800&format=webp&quality=60",
+        "filename": "81527e06-7d01-4e95-9a84-d73bb06b5aba.jpg"
+      },
+      {
+        "id": "431c054b-8cd3-4b80-ab4f-0f89dc243355",
+        "type": "image",
+        "mime": "image/jpeg",
+        "width": 1485,
+        "height": 2103,
+        "src": "https://stagecrew-media.b-cdn.net/431c054b-8cd3-4b80-ab4f-0f89dc243355.jpg?width=1600&format=webp&quality=75",
+        "poster": "https://stagecrew-media.b-cdn.net/431c054b-8cd3-4b80-ab4f-0f89dc243355.jpg?width=800&format=webp&quality=60",
+        "filename": "431c054b-8cd3-4b80-ab4f-0f89dc243355.jpg"
+      },
+      {
+        "id": "381f1e00-d2de-4aae-aa1b-94ee3b921d21",
+        "type": "image",
+        "mime": "image/jpeg",
+        "width": 1485,
+        "height": 2103,
+        "src": "https://stagecrew-media.b-cdn.net/381f1e00-d2de-4aae-aa1b-94ee3b921d21.jpg?width=1600&format=webp&quality=75",
+        "poster": "https://stagecrew-media.b-cdn.net/381f1e00-d2de-4aae-aa1b-94ee3b921d21.jpg?width=800&format=webp&quality=60",
+        "filename": "381f1e00-d2de-4aae-aa1b-94ee3b921d21.jpg"
+      },
+      {
+        "id": "cf3c6abd-b2a2-43a4-96db-180ea86af89b",
+        "type": "image",
+        "mime": "image/jpeg",
+        "width": 2973,
+        "height": 1671,
+        "src": "https://stagecrew-media.b-cdn.net/cf3c6abd-b2a2-43a4-96db-180ea86af89b.jpg?width=1600&format=webp&quality=75",
+        "poster": "https://stagecrew-media.b-cdn.net/cf3c6abd-b2a2-43a4-96db-180ea86af89b.jpg?width=800&format=webp&quality=60",
+        "filename": "cf3c6abd-b2a2-43a4-96db-180ea86af89b.jpg"
+      },
+      {
+        "id": "5eb6ee01-64c3-471d-8f4a-f4012d4cc757",
+        "type": "image",
+        "mime": "image/jpeg",
+        "width": 1484,
+        "height": 1484,
+        "src": "https://stagecrew-media.b-cdn.net/5eb6ee01-64c3-471d-8f4a-f4012d4cc757.jpg?width=1600&format=webp&quality=75",
+        "poster": "https://stagecrew-media.b-cdn.net/5eb6ee01-64c3-471d-8f4a-f4012d4cc757.jpg?width=800&format=webp&quality=60",
+        "filename": "5eb6ee01-64c3-471d-8f4a-f4012d4cc757.jpg"
+      },
+      {
+        "id": "ab437694-07f6-41e8-9da4-0540633ab0c7",
+        "type": "image",
+        "mime": "image/jpeg",
+        "width": 1485,
+        "height": 1485,
+        "src": "https://stagecrew-media.b-cdn.net/ab437694-07f6-41e8-9da4-0540633ab0c7.jpg?width=1600&format=webp&quality=75",
+        "poster": "https://stagecrew-media.b-cdn.net/ab437694-07f6-41e8-9da4-0540633ab0c7.jpg?width=800&format=webp&quality=60",
+        "filename": "ab437694-07f6-41e8-9da4-0540633ab0c7.jpg"
+      }
+    ],
+    "crew": []
+  },
+  "craftland": {
+    "id": 6,
+    "title": "Craftland",
+    "subtitle": null,
+    "slug": "craftland",
+    "sort": 5,
+    "isComingSoon": true,
+    "text": "<p>Coming soon.</p>",
+    "areas": [
+      "Creative Direction",
+      "Visual Concepts",
+      "Visual Identity"
+    ],
+    "cover": {
+      "id": "6cf34bee-fb21-4724-b8dd-76376452aadd",
+      "type": "video",
+      "mime": "video/mp4",
+      "width": 2500,
+      "height": 1780,
+      "src": "https://player.vimeo.com/progressive_redirect/playback/1167775981/rendition/1440p/file.mp4%20%281440p%29.mp4?loc=external&oauth2_token_id=1808737147&signature=93f9e7707001c0d880d6ab7d5fd2e8e4ae2ed0581bb9411c95011d4ce2a96a3e",
+      "poster": "https://i.vimeocdn.com/video/2125888804-f5a0560e3e970860ce6e4350f4edf63402877e334b543927f54610577238890f-d?region=us?mw=1280",
+      "filename": "6cf34bee-fb21-4724-b8dd-76376452aadd.mp4"
+    },
+    "gallery": [],
+    "crew": [
+      {
+        "role": null,
+        "name": null
+      }
+    ]
+  },
+  "last-future": {
+    "id": 4,
+    "title": "Benjamin Park",
+    "subtitle": "A subtitle here",
+    "slug": "last-future",
+    "sort": 6,
+    "isComingSoon": true,
+    "text": "<p>Text here</p>",
+    "areas": [
+      "Visual Concepts",
+      "Strategy",
+      "Visual Identity",
+      "Photography"
+    ],
+    "cover": {
+      "id": "5592633b-6b50-4d58-865c-c76dfa309005",
+      "type": "image",
+      "mime": "image/jpeg",
+      "width": 1974,
+      "height": 1401,
+      "src": "https://stagecrew-media.b-cdn.net/5592633b-6b50-4d58-865c-c76dfa309005.jpg?width=1600&format=webp&quality=75",
+      "poster": "https://stagecrew-media.b-cdn.net/5592633b-6b50-4d58-865c-c76dfa309005.jpg?width=800&format=webp&quality=60",
+      "filename": "5592633b-6b50-4d58-865c-c76dfa309005.jpg"
+    },
+    "gallery": [],
+    "crew": []
+  },
+  "new-province": {
+    "id": 7,
+    "title": "New Province",
+    "subtitle": null,
+    "slug": "new-province",
+    "sort": 8,
+    "isComingSoon": true,
+    "text": "<p>N/A</p>",
+    "areas": [
+      "Visual Concepts",
+      "Strategy"
+    ],
+    "cover": {
+      "id": "6b0f68ec-e923-4ff5-8cf8-f3242906c29c",
+      "type": "image",
+      "mime": "image/jpeg",
+      "width": 1974,
+      "height": 1401,
+      "src": "https://stagecrew-media.b-cdn.net/6b0f68ec-e923-4ff5-8cf8-f3242906c29c.jpg?width=1600&format=webp&quality=75",
+      "poster": "https://stagecrew-media.b-cdn.net/6b0f68ec-e923-4ff5-8cf8-f3242906c29c.jpg?width=800&format=webp&quality=60",
+      "filename": "6b0f68ec-e923-4ff5-8cf8-f3242906c29c.jpg"
+    },
+    "gallery": [],
+    "crew": []
+  }
+}

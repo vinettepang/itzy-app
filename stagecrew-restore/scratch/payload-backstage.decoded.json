@@ -1,0 +1,333 @@
+{
+  "data": {
+    "global-data": {
+      "data": {
+        "global_header": {
+          "__typename": "global_header",
+          "external_links": [
+            {
+              "url": "https://www.instagram.com/stagecrew.studio",
+              "label": "Insta"
+            },
+            {
+              "url": "mailto:office@stagecrew.studio",
+              "label": "Email"
+            }
+          ]
+        },
+        "global_footer": {
+          "__typename": "global_footer",
+          "disclaimer": "We do not use AI, generative or otherwise, in our work.",
+          "contact_info": "<p>For new partnerships and general<br>enquiries, reach out on:</p>\n<p><a href=\"mailto: office@stagecrew.studio\" target=\"_blank\" rel=\"noopener\">office@stagecrew.studio</a></p>",
+          "bottom_labels": [
+            {
+              "label": "SC"
+            },
+            {
+              "label": "WW"
+            }
+          ],
+          "Text": "<p><strong>STAGECREW</strong> is a purposefully compact, international design studio with a fierce collaborative spirit.</p>"
+        },
+        "global_seo": {
+          "__typename": "global_seo",
+          "site_name": "STAGECREW",
+          "seo_settings": {
+            "__typename": "block_seo",
+            "title": null,
+            "description": "STAGECREW is a purposefully compact creative studio with a focus on a fierce collaborative spirit and an experimental process that prioritises fun and experimentation over deadlines and deliverables.",
+            "og_image": {
+              "__typename": "directus_files",
+              "id": "2251a1ab-785b-464c-9306-cc5428236ecf",
+              "type": "image/jpeg",
+              "width": 1200,
+              "height": 630,
+              "filename_disk": "2251a1ab-785b-464c-9306-cc5428236ecf.jpg",
+              "modified_on": "2026-06-08T11:55:24.000Z"
+            }
+          }
+        }
+      },
+      "pending": false
+    },
+    "page-backstage": {
+      "data": {
+        "page_backstage": {
+          "__typename": "page_backstage",
+          "title": "Backstage",
+          "text": "<p><strong>HERE</strong> you will find an assorted mix of experiments, some failed and some discarded, concepts loved or forgotten, branched versions of new or old work, thoughts and musings, typographic alchemy and more. We like to show these visual expressions as even something unseen or unused may hold inside it some sort of shy value. We&rsquo;ll continue to add to this collection over time as we explore further.</p>",
+          "seo_settings": {
+            "__typename": "block_seo",
+            "title": "Backstage",
+            "description": "Here you will find an assorted mix of experiments, some failed and some discarded, concepts loved or forgotten, branched versions of new or old work, thoughts and musings, typographic alchemy and more.",
+            "og_image": null
+          }
+        },
+        "backstage": [
+          {
+            "__typename": "backstage",
+            "column": "2",
+            "info": "SC.B—26",
+            "title": "Internal\nKinetic Typography\n\nFull Disclosure",
+            "sort": 1,
+            "media": {
+              "__typename": "directus_files",
+              "id": "6de06fcb-be03-46a1-9aba-c8c0060e6c2f",
+              "type": "video/mp4",
+              "width": null,
+              "height": null,
+              "filename_disk": "6de06fcb-be03-46a1-9aba-c8c0060e6c2f.mp4",
+              "modified_on": "2026-02-24T15:57:30.000Z",
+              "vimeo_id": "1167771293",
+              "vimeo_thumb": "https://i.vimeocdn.com/video/2125882248-b629e526b2ddb1893feefd5bfb5ee8483204a42912b1bd8a7642909a9e742947-d?region=us?mw=1280",
+              "vimeo_width": 1080,
+              "vimeo_height": 1080,
+              "vimeo_url": "https://player.vimeo.com/progressive_redirect/playback/1167771293/rendition/1080p/file.mp4%20%281080p%29.mp4?loc=external&oauth2_token_id=1808737147&signature=8200452dfd020a8ad430ea48f9518549b95ca5927926a851886a99b438c4bec2"
+            }
+          },
+          {
+            "__typename": "backstage",
+            "column": "2",
+            "info": "SC.B—26",
+            "title": "External\nPoster\n\nNew Province",
+            "sort": 2,
+            "media": {
+              "__typename": "directus_files",
+              "id": "0a64da92-6ba6-4489-8156-f3102918e110",
+              "type": "image/jpeg",
+              "width": 1300,
+              "height": 1733,
+              "filename_disk": "0a64da92-6ba6-4489-8156-f3102918e110.jpg",
+              "modified_on": "2026-05-20T10:18:16.000Z",
+              "vimeo_id": null,
+              "vimeo_thumb": null,
+              "vimeo_width": null,
+              "vimeo_height": null,
+              "vimeo_url": null
+            }
+          },
+          {
+            "__typename": "backstage",
+            "column": "1",
+            "info": "SC.A—25",
+            "title": "External\nPoster Concept\n\nHuman Hands",
+            "sort": 3,
+            "media": {
+              "__typename": "directus_files",
+              "id": "9d0f4fc5-1899-4f87-9bc3-eacca74d5dff",
+              "type": "image/jpeg",
+              "width": 972,
+              "height": 1326,
+              "filename_disk": "9d0f4fc5-1899-4f87-9bc3-eacca74d5dff.jpg",
+              "modified_on": "2026-03-16T12:09:13.000Z",
+              "vimeo_id": null,
+              "vimeo_thumb": null,
+              "vimeo_width": null,
+              "vimeo_height": null,
+              "vimeo_url": null
+            }
+          },
+          {
+            "__typename": "backstage",
+            "column": "3",
+            "info": "SC.A—25",
+            "title": "External\nBusiness Card\n\nDustin Popiel",
+            "sort": 4,
+            "media": {
+              "__typename": "directus_files",
+              "id": "045b154c-4492-4d5c-be15-c6ddcfb92910",
+              "type": "image/jpeg",
+              "width": 969,
+              "height": 714,
+              "filename_disk": "045b154c-4492-4d5c-be15-c6ddcfb92910.jpg",
+              "modified_on": "2026-03-16T12:08:42.000Z",
+              "vimeo_id": null,
+              "vimeo_thumb": null,
+              "vimeo_width": null,
+              "vimeo_height": null,
+              "vimeo_url": null
+            }
+          },
+          {
+            "__typename": "backstage",
+            "column": "1",
+            "info": "SC.B—25",
+            "title": "Internal\nPoster Series\n\nPulitzer",
+            "sort": 5,
+            "media": {
+              "__typename": "directus_files",
+              "id": "75f39c4f-eef3-4d63-97f7-e822b3f2facf",
+              "type": "image/jpeg",
+              "width": 1839,
+              "height": 1356,
+              "filename_disk": "75f39c4f-eef3-4d63-97f7-e822b3f2facf.jpg",
+              "modified_on": "2026-03-11T13:40:43.000Z",
+              "vimeo_id": null,
+              "vimeo_thumb": null,
+              "vimeo_width": null,
+              "vimeo_height": null,
+              "vimeo_url": null
+            }
+          },
+          {
+            "__typename": "backstage",
+            "column": "1",
+            "info": "SC.B—26",
+            "title": "External\nEditorial Spread\n\nBenjamin Park",
+            "sort": 6,
+            "media": {
+              "__typename": "directus_files",
+              "id": "35433a38-187b-4a88-9f83-7b92d71f9e93",
+              "type": "image/jpeg",
+              "width": 2160,
+              "height": 2880,
+              "filename_disk": "35433a38-187b-4a88-9f83-7b92d71f9e93.jpg",
+              "modified_on": "2026-05-20T11:30:31.000Z",
+              "vimeo_id": null,
+              "vimeo_thumb": null,
+              "vimeo_width": null,
+              "vimeo_height": null,
+              "vimeo_url": null
+            }
+          },
+          {
+            "__typename": "backstage",
+            "column": "2",
+            "info": "SC.B—25",
+            "title": "Internal\nCard Concept\n\nSTAGECREW",
+            "sort": 7,
+            "media": {
+              "__typename": "directus_files",
+              "id": "1c019877-3b32-47b1-ab9d-48a70adcaff7",
+              "type": "image/jpeg",
+              "width": 1473,
+              "height": 1548,
+              "filename_disk": "1c019877-3b32-47b1-ab9d-48a70adcaff7.jpg",
+              "modified_on": "2026-03-11T14:56:31.000Z",
+              "vimeo_id": null,
+              "vimeo_thumb": null,
+              "vimeo_width": null,
+              "vimeo_height": null,
+              "vimeo_url": null
+            }
+          },
+          {
+            "__typename": "backstage",
+            "column": "3",
+            "info": "SC.B—26",
+            "title": "Internal\nMotion Experiment\n\nCamera Crew",
+            "sort": 8,
+            "media": {
+              "__typename": "directus_files",
+              "id": "0bf6d1df-94e3-474f-903f-fef12471304f",
+              "type": "video/mp4",
+              "width": null,
+              "height": null,
+              "filename_disk": "0bf6d1df-94e3-474f-903f-fef12471304f.mp4",
+              "modified_on": "2026-03-04T15:21:42.000Z",
+              "vimeo_id": "1170318814",
+              "vimeo_thumb": "https://i.vimeocdn.com/video/2129395014-652e40cd116159dcad7895715bf48a024ed75ee8b48a2c8e339e87f681431442-d?region=us?mw=1280",
+              "vimeo_width": 1080,
+              "vimeo_height": 1080,
+              "vimeo_url": "https://player.vimeo.com/progressive_redirect/playback/1170318814/rendition/1080p/file.mp4%20%281080p%29.mp4?loc=external&oauth2_token_id=1808737147&signature=8d861e98b9ea38e01c892f340368ecf779066abe1f2ac7c9bef4d2d2ae50a064"
+            }
+          },
+          {
+            "__typename": "backstage",
+            "column": "3",
+            "info": "SC.A—25",
+            "title": "External\nTee\n\nPalm Beach Music Group",
+            "sort": 9,
+            "media": {
+              "__typename": "directus_files",
+              "id": "15ba49b1-42f5-4ee3-93e4-5983636dacfa",
+              "type": "image/jpeg",
+              "width": 969,
+              "height": 714,
+              "filename_disk": "15ba49b1-42f5-4ee3-93e4-5983636dacfa.jpg",
+              "modified_on": "2026-03-11T13:40:59.000Z",
+              "vimeo_id": null,
+              "vimeo_thumb": null,
+              "vimeo_width": null,
+              "vimeo_height": null,
+              "vimeo_url": null
+            }
+          },
+          {
+            "__typename": "backstage",
+            "column": "3",
+            "info": "SC.A—26",
+            "title": "External\nBrand Mark\n\nLast Future",
+            "sort": 10,
+            "media": {
+              "__typename": "directus_files",
+              "id": "7903b46c-8f41-4c15-9b39-92c2d9698d98",
+              "type": "image/jpeg",
+              "width": 2310,
+              "height": 2310,
+              "filename_disk": "7903b46c-8f41-4c15-9b39-92c2d9698d98.jpg",
+              "modified_on": "2026-03-11T13:44:02.000Z",
+              "vimeo_id": null,
+              "vimeo_thumb": null,
+              "vimeo_width": null,
+              "vimeo_height": null,
+              "vimeo_url": null
+            }
+          }
+        ]
+      },
+      "pending": false
+    },
+    "global-footer": {
+      "data": {
+        "global_header": {
+          "__typename": "global_header",
+          "external_links": [
+            {
+              "url": "https://www.instagram.com/stagecrew.studio",
+              "label": "Insta"
+            },
+            {
+              "url": "mailto:office@stagecrew.studio",
+              "label": "Email"
+            }
+          ]
+        },
+        "global_footer": {
+          "__typename": "global_footer",
+          "disclaimer": "We do not use AI, generative or otherwise, in our work.",
+          "contact_info": "<p>For new partnerships and general<br>enquiries, reach out on:</p>\n<p><a href=\"mailto: office@stagecrew.studio\" target=\"_blank\" rel=\"noopener\">office@stagecrew.studio</a></p>",
+          "bottom_labels": [
+            {
+              "label": "SC"
+            },
+            {
+              "label": "WW"
+            }
+          ],
+          "Text": "<p><strong>STAGECREW</strong> is a purposefully compact, international design studio with a fierce collaborative spirit.</p>"
+        },
+        "global_seo": {
+          "__typename": "global_seo",
+          "site_name": "STAGECREW",
+          "seo_settings": {
+            "__typename": "block_seo",
+            "title": null,
+            "description": "STAGECREW is a purposefully compact creative studio with a focus on a fierce collaborative spirit and an experimental process that prioritises fun and experimentation over deadlines and deliverables.",
+            "og_image": {
+              "__typename": "directus_files",
+              "id": "2251a1ab-785b-464c-9306-cc5428236ecf",
+              "type": "image/jpeg",
+              "width": 1200,
+              "height": 630,
+              "filename_disk": "2251a1ab-785b-464c-9306-cc5428236ecf.jpg",
+              "modified_on": "2026-06-08T11:55:24.000Z"
+            }
+          }
+        }
+      },
+      "pending": false
+    }
+  },
+  "prerenderedAt": 1781016911247
+}

@@ -1,0 +1,24 @@
+{
+  "title": "WAKA-WAKA",
+  "description": "WAKA WAKA is a Los Angeles based studio focusing on wood furniture and functional objects designed and hand crafted by Shin Okuda.",
+  "phone": "+1 32 36 33 34 58",
+  "location": "Los Angeles, CA",
+  "footerLeft": "functional objects",
+  "copyrightLabel": "Waka Waka",
+  "copyrightYears": "©2026",
+  "links": [
+    {
+      "linkLabel": "iko Iko",
+      "linkUrl": "http://www.ikoikospace.com/"
+    },
+    {
+      "linkLabel": "instagram",
+      "linkUrl": "https://www.instagram.com/wakawakainc/"
+    },
+    {
+      "linkLabel": "email",
+      "linkUrl": "mailto:info@wakawaka.world"
+    }
+  ],
+  "shareImage": "https://cdn.sanity.io/images/8yrspuwy/production/18724c795ad1c6067c6973cf67fa81bae947808d-1200x630.jpg?w=1200&fit=max&auto=format&q=85"
+}

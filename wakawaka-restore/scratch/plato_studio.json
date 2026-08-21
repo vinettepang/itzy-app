@@ -1,0 +1,102 @@
+{
+  "globals": {
+    "SiteSettings": {
+      "title": "WAKA-WAKA",
+      "description": "WAKA WAKA is a Los Angeles based studio focusing on wood furniture and functional objects designed and hand crafted by Shin Okuda.",
+      "keywords": null,
+      "gaTrackingId": "UA-173085492-1",
+      "shareImage": {
+        "asset": {
+          "url": "https://cdn.sanity.io/images/8yrspuwy/production/18724c795ad1c6067c6973cf67fa81bae947808d-1200x630.jpg"
+        }
+      },
+      "globalFooterPhone": "+1 32 36 33 34 58",
+      "globalFooterLinks": [
+        {
+          "linkLabel": "iko Iko",
+          "linkUrl": "http://www.ikoikospace.com/"
+        },
+        {
+          "linkLabel": "instagram",
+          "linkUrl": "https://www.instagram.com/wakawakainc/"
+        },
+        {
+          "linkLabel": "email",
+          "linkUrl": "mailto:info@wakawaka.world"
+        }
+      ],
+      "globalFooterLeftCopy": "functional objects",
+      "globalFooterLocation": "Los Angeles, CA",
+      "globalFooterCopyrightLabel": "Waka Waka",
+      "globalFooterCopyrightYears": "©2026"
+    }
+  },
+  "serverData": {
+    "meta": null,
+    "aboutMainImage": {
+      "asset": {
+        "url": "https://cdn.sanity.io/images/8yrspuwy/production/cef505ebb6ec5c35f8b797ed1043985896ab0400-1539x1924.jpg",
+        "title": null,
+        "label": null,
+        "metadata": {
+          "palette": {
+            "dominant": {
+              "background": "#848484"
+            },
+            "muted": {
+              "background": "#848484"
+            }
+          },
+          "dimensions": {
+            "width": 1539,
+            "height": 1924
+          }
+        }
+      }
+    },
+    "aboutMainContentRaw": "<p><strong>Waka Waka </strong>is a <strong>LOS ANGELES</strong><em>(CA)</em> based studio focusing on wood furniture &amp; <strong>functional objects</strong> designed and hand crafted by <strong>Shin Okuda</strong>. His work ranges from seating concepts, utilitarian objects and space design, all of which demonstrate a simplicity in form, subtle detailing and a unique interpretation of proportion.</p>",
+    "aboutPhoneLabel": "Phone",
+    "aboutPhoneContent": "+1 32 36 33 34 58",
+    "aboutEmailLabel": "Email",
+    "aboutEmailContent": "info@wakawaka.world",
+    "aboutSocialLabel": "Social",
+    "aboutSocialLinks": [
+      {
+        "linkLabel": "@wakawakainc",
+        "linkUrl": "https://www.instagram.com/wakawakainc/"
+      }
+    ],
+    "aboutPress": [
+      {
+        "articleTitle": "Into The Wood",
+        "articleOrigin": "New York Times",
+        "articleLink": "https://www.wsj.com/articles/the-return-of-honest-and-beautiful-wood-furniture-11585571780"
+      },
+      {
+        "articleTitle": "Eight Creative Talents Writing the Next Chapter in California Design",
+        "articleOrigin": "Architectural Digest",
+        "articleLink": "https://www.architecturaldigest.com/story/eight-creative-talents-writing-the-next-chapter-in-california-design"
+      },
+      {
+        "articleTitle": "In Los Angeles, an Eccentric Shrine to Books New and Old",
+        "articleOrigin": "New York Times",
+        "articleLink": "https://www.nytimes.com/2019/03/14/t-magazine/owl-bureau-los-angeles-book-store.html"
+      },
+      {
+        "articleTitle": "Bespoke Furniture Influenced by Japanese Tea Rooms and Ettore Sottsass",
+        "articleOrigin": "Another Mag",
+        "articleLink": "https://www.anothermag.com/design-living/10960/bespoke-furniture-influenced-by-japanese-tea-rooms-and-ettore-sottsass"
+      },
+      {
+        "articleTitle": "T Suggests: Tasseled Chairs, Custom Face Oils and More",
+        "articleOrigin": "New York Times",
+        "articleLink": "https://www.nytimes.com/2018/11/16/t-magazine/lindsey-adelman-pop-up-vitruvi-face-oil-editors-picks.html"
+      },
+      {
+        "articleTitle": "The Rounded Simplicity of Waka Waka's Splendid Designs",
+        "articleOrigin": "Ravelin Magazine",
+        "articleLink": "https://www.ravelinmagazine.com/posts/the-rounded-simplicity-of-waka-wakas-splendid-designs/"
+      }
+    ]
+  }
+}

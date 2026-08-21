@@ -1,0 +1,30 @@
+
+=== Coming Soon @7324 ===
+,j(h,null,{default:V(()=>[c("div",Ye,[c("div",null,W(a(T)[a(k)]?.title),1),a(T)[a(k)]?.is_coming_soon?(u(),f("div",Re," Coming Soon ")):(u(),f("ul",Fe,[(u(!0),f($,null,oe(a(T)[a(k)]?.areas.slice(0,e.$viewport.isLessThan("lg")?2:10),(o,i)=>(u(),f("li",{key:i,class:"inline-block after:mr-0.5 last:after:hidden after:conte
+
+=== is_coming @3928 ===
+ntListener("mousemove",ee),document.addEventListener("mouseup",te))),await O(),me(),C=!0,v=!0,_(),s.value.forEach(e=>{e.is_coming_soon||(De(`/work/${e.slug}`),$fetch(`/work/${e.slug}/_payload.json`,{method:"GET"}).catch(()=>{}))})}),Me(()=>{t.value&&(F.value?(t.value.removeEventListener("touchstart",Q),t.value.removeEv
+
+=== scroll @1454 ===
+ints>0)||!1,de=(e,l,r)=>e+(l-e)*r,ve=()=>{if(w||!t.value||s.value.length===0)return;w=!0;const e=[...s.value],l=t.value.scrollHeight;L.value.unshift(...e),O(()=>{const n=t.value.scrollHeight-l;d+=n,p+=n,S(p),w=!1})},fe=()=>{w||s.value.length===0||(w=!0,L.value.push(...s.value),O(()=>{w=!1}))},U=(e=!0)=>{if(!t.value||I|
+
+=== wheel @3769 ===
+entListener("touchend",Z,{passive:!1})):(t.value.addEventListener("mousedown",K,{passive:!1}),t.value.addEventListener("wheel",le,{passive:!1}),document.addEventListener("mousemove",ee),document.addEventListener("mouseup",te))),await O(),me(),C=!0,v=!0,_(),s.value.forEach(e=>{e.is_coming_soon||(De(`/work/${e.slug}`),$f
+
+=== pointer @6214 ===
+l max-lg:hidden"},null,-1)),e.$viewport.isLessThan("lg")?(u(),se(n,{key:0,to:`/work/${o.slug}`,onClick:we,class:"cursor-pointer w-auto block"},{default:V(()=>[j(r,{fileData:o.cover,containerClasses:"relative overflow-hidden aspect-[5/3.5] media-divider",mediaClasses:"media-object scale-[1.005]--",sizes:"sm:100vw lg:40v
+
+=== translate @1042 ===
+q;He();const ie=xe(),t=x(null),R=x(null),s=x([]),L=x([]),k=x(0),F=x(!1),B=Le(),S=e=>{R.value&&(R.value.style.transform=`translateY(${-e}px)`)};let d=0,p=0,v=!1,g=!1,m=!1,y=0,A=0,C=!0,D=null,E=null,w=!1,I=!0,G=0;const ce=N(()=>typeof navigator>"u"?!1:/^((?!chrome|android).)*safari/i.test(navigator.userAgent)),ue=()=>typ
+
+=== drag @5794 ===
+tive overflow-hidden aspect-[5/3.5] media-divider",mediaClasses:"media-object scale-[1.005]--",sizes:"sm:100vw lg:40vw",draggable:"false",eager:i>=a(s).length&&i<a(s).length+2},null,8,["fileData","eager"]),c("div",{class:"absolute inset-0",onDragstart:l[0]||(l[0]=Y(()=>{},["prevent"]))},null,32)],64)):(u(),f($,{key:1},
+
+=== requestAnimationFrame @2419 ===
+Ve*r);const n=p,h=d,o=1-Math.pow(1-Ne,r*60);G++;const i=G%ze===0;if(Math.abs(n-h)>.1){const H=de(n,h,o);p=H,S(H),U(i),E=requestAnimationFrame(_)}else p=h,S(h),U(i),v=!1,C?E=requestAnimationFrame(_):M=null},K=e=>{g=!0,m=!1,y=e.clientY,A=d,document.body.style.cursor="grabbing",document.body.style.userSelect="none",z()},Q
+
+=== onClick @393 ===
+ se,t as W,q as Ae}from"./DrDZC_3w.js";import{u as He}from"./DxBSiGkk.js";import{_ as $e}from"./DlAUqK2U.js";const je=["onClick","onMouseup"],Ye={class:"-z-1 absolute left-0 w-full lg:w-[59%] lg:left-[41%] top-[calc(40dvh-34px)] sm:top-[calc(25dvh-34px)] lg:top-[calc(50dvh-34px-0.625rem)]-- lg:top-[calc(50dvh-34px)] fl
+
+=== slug @3959 ===
+ment.addEventListener("mouseup",te))),await O(),me(),C=!0,v=!0,_(),s.value.forEach(e=>{e.is_coming_soon||(De(`/work/${e.slug}`),$fetch(`/work/${e.slug}/_payload.json`,{method:"GET"}).catch(()=>{}))})}),Me(()=>{t.value&&(F.value?(t.value.removeEventListener("touchstart",Q),t.value.removeEventListener("touchmove",X),t.va

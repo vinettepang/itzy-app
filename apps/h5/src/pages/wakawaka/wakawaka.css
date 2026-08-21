@@ -1,0 +1,313 @@
+/* Rebuild overlays — prod CSS is imported as wakawaka.prod.css */
+
+/*
+ * Global h5 `:root { font: 18px }` beats prod `html { font-size: 62.5% }`
+ * (:root specificity > html). Force the Waka rem base while this route is mounted.
+ * 10px ≡ 62.5% of the common 16px UA default → 1.4rem = 14px, 2.4rem = 24px.
+ */
+html.is-wakawaka {
+  font-size: 10px !important;
+  background-color: #d4d1cb !important;
+  font-family: 'Waka Sans', Helvetica, Arial, sans-serif !important;
+  line-height: 1.15;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+html.is-wakawaka body {
+  font-size: 1.4rem !important;
+  line-height: 1.6em !important;
+  font-family: 'Waka Sans', Helvetica, Arial, sans-serif !important;
+  font-weight: 400 !important;
+  color: #28282a !important;
+  background: #edeae4 !important;
+  letter-spacing: normal !important;
+}
+
+html.is-wakawaka #root {
+  max-width: none !important;
+  text-align: left !important;
+  min-height: 100% !important;
+  display: block !important;
+  background: transparent !important;
+}
+
+/* Neutralize global index.css h1/h2/p — do NOT !important font-size
+   or it will crush prod `.waka` / `#site-header h2` rem/vw rules. */
+html.is-wakawaka h1,
+html.is-wakawaka h2,
+html.is-wakawaka h3,
+html.is-wakawaka h4,
+html.is-wakawaka h5,
+html.is-wakawaka p {
+  font-family: inherit;
+  font-weight: inherit;
+  color: inherit;
+  margin: 0;
+}
+
+/* Prod CSS hides pages until JS intro; reveal for non-home / post-intro. */
+.waka-app .page-wrapper:not(#homepage),
+.waka-app #about,
+.waka-app #index,
+.waka-app #shop,
+.waka-app #product,
+.waka-app .filters-container,
+.waka-app .product-content,
+.waka-app .product__close,
+.waka-app .product__back {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+.waka-app #site-header {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: none;
+}
+
+.waka-app #site-header a,
+.waka-app #site-header button {
+  pointer-events: auto;
+}
+
+/*
+ * Hide home ONLY before intro starts.
+ * During .is-intro GSAP must own opacity (do not keep opacity:0 here —
+ * that previously left a blank page if the timeline never overrode it).
+ */
+html.is-wakawaka.is-homepage:not(.is-intro):not(.is-intro-done) #homepage {
+  opacity: 0;
+  visibility: hidden;
+}
+
+html.is-intro .waka-app #site-header {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* After intro completes */
+html.is-wakawaka.is-intro-done #homepage,
+html.is-wakawaka.is-intro-done #homepage .scroll-wrapper,
+html.is-wakawaka.is-intro-done #homepage .waka,
+html.is-wakawaka.is-intro-done #homepage .grid,
+html.is-wakawaka.is-intro-done #homepage .grid__item,
+html.is-wakawaka.is-intro-done #homepage .credit-link,
+html.is-wakawaka.is-intro-done #homepage .waka__logo,
+html.is-wakawaka.is-intro-done #site-footer {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Non-home pages still force-visible */
+html.is-wakawaka:not(.is-homepage) #site-footer {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.waka-app {
+  min-height: 100vh;
+  background: #edeae4;
+  color: #28282a;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.waka-app a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.fullscreen-menu-container.is-open,
+.waka-app.is-menu-open .fullscreen-menu-container {
+  display: block;
+  background: #28282a;
+}
+
+.fullscreen-menu-container.is-open .fullscreen-menu__nav-item-wrapper,
+.waka-app.is-menu-open .fullscreen-menu__nav-item-wrapper {
+  transform: none !important;
+}
+
+.fullscreen-menu-container.is-open .fullscreen-menu__logo,
+.waka-app.is-menu-open .fullscreen-menu__logo {
+  opacity: 1 !important;
+}
+
+.fullscreen-menu__logo svg {
+  fill: #edeae4;
+}
+
+.responsive-image {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.responsive-image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.waka-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+#homepage .grid {
+  width: 100%;
+}
+
+#homepage .grid__item-content {
+  margin-top: 0.75rem;
+}
+
+/* Intro: cream plane behind the site while it pulls forward in Z (prod absolute) */
+.waka-app > .main-background {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #edeae4;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.logo-global {
+  display: none;
+  position: absolute;
+  right: 20px;
+  top: 60%;
+  width: 48px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.logo-global svg {
+  fill: #28282a;
+  height: auto;
+  width: 100%;
+}
+
+.label-global {
+  display: none;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 0;
+  margin: 0;
+  color: #28282a;
+  font-family: 'Waka Sans', Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  max-width: 28rem;
+  pointer-events: none;
+}
+
+@media (max-width: 960px) {
+  .label-global {
+    font-size: 8px;
+  }
+}
+
+html.is-intro .waka-app {
+  background: transparent;
+  z-index: 1;
+}
+
+html.is-intro #root {
+  background: #edeae4;
+}
+
+/* Product canvas strip + zoom */
+#product .product-assets-carousel {
+  display: none;
+}
+
+#product .product-assets {
+  pointer-events: auto;
+}
+
+#product .product-assets #c {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: none;
+}
+
+#product .product-assets .responsive-image {
+  cursor: pointer;
+  pointer-events: auto;
+  width: min(52vw, 720px);
+  max-height: 78vh;
+  margin: 8vh auto 0;
+  padding-top: 0 !important;
+  height: min(78vh, 900px);
+}
+
+#product .product__pause-button {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 12;
+  pointer-events: auto;
+  font-family: 'Waka Sans', Helvetica, Arial, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.waka-pdp-cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 20;
+  pointer-events: none;
+  font-family: 'Waka Sans', Helvetica, Arial, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  mix-blend-mode: difference;
+  color: #edeae4;
+}
+
+#product .product-content__body {
+  display: none;
+}
+
+#product.is-info-open .product-content__body {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+#product .product-content__button--close {
+  display: none;
+}
+
+#product.is-info-open .product-content__button--info {
+  display: none;
+}
+
+#product.is-info-open .product-content__button--close {
+  display: inline-block;
+}

@@ -1,0 +1,345 @@
+{
+  "globals": {
+    "SiteSettings": {
+      "title": "WAKA-WAKA",
+      "description": "WAKA WAKA is a Los Angeles based studio focusing on wood furniture and functional objects designed and hand crafted by Shin Okuda.",
+      "keywords": null,
+      "gaTrackingId": "UA-173085492-1",
+      "shareImage": {
+        "asset": {
+          "url": "https://cdn.sanity.io/images/8yrspuwy/production/18724c795ad1c6067c6973cf67fa81bae947808d-1200x630.jpg"
+        }
+      },
+      "globalFooterPhone": "+1 32 36 33 34 58",
+      "globalFooterLinks": [
+        {
+          "linkLabel": "iko Iko",
+          "linkUrl": "http://www.ikoikospace.com/"
+        },
+        {
+          "linkLabel": "instagram",
+          "linkUrl": "https://www.instagram.com/wakawakainc/"
+        },
+        {
+          "linkLabel": "email",
+          "linkUrl": "mailto:info@wakawaka.world"
+        }
+      ],
+      "globalFooterLeftCopy": "functional objects",
+      "globalFooterLocation": "Los Angeles, CA",
+      "globalFooterCopyrightLabel": "Waka Waka",
+      "globalFooterCopyrightYears": "©2026"
+    }
+  },
+  "serverData": {
+    "_id": "5e77f9bf-dc92-4a82-ab9c-30acfc5e0ad5",
+    "slug": {
+      "current": "compartment-chair"
+    },
+    "chairType": {
+      "key": "Chair Collection"
+    },
+    "name": "Compartment Chair",
+    "description": "A squared seating concept in a spirited formica palette, with a storage cubbie and exposed stainless steel hardware. A Japanese inspired zabuton cushion with 12” long fringed edge as an expressionist cushion idea. Use then store. Available in matcha, cloud grey, coral, glossy black laminate and plywood, grey wool pinstripe, hemp burlap, hemp linen, blue/white pinstripe cotton foam cushion with rayon fringe.",
+    "dimensions": "17.5x18x32x17",
+    "chairInfos": [
+      {
+        "key": "Width",
+        "value": "17.5\""
+      },
+      {
+        "key": "Depth",
+        "value": "18\" "
+      },
+      {
+        "key": "Height",
+        "value": "32\""
+      },
+      {
+        "key": "Seating Height",
+        "value": "17\""
+      },
+      {
+        "key": "Price",
+        "value": "$2200"
+      }
+    ],
+    "specSheet": {
+      "asset": {
+        "url": "https://cdn.sanity.io/files/8yrspuwy/production/ea8370f79ea0faee11269b1c32047119d9a32e00.pdf"
+      }
+    },
+    "imagesGallery": [
+      {
+        "asset": {
+          "url": "https://cdn.sanity.io/images/8yrspuwy/production/9bb03a11d81e343435fbefd4506a7d0e37d66f14-1500x1001.jpg",
+          "path": "images/8yrspuwy/production/9bb03a11d81e343435fbefd4506a7d0e37d66f14-1500x1001.jpg",
+          "title": null,
+          "label": null,
+          "metadata": {
+            "palette": {
+              "dominant": {
+                "background": "#8c6a55"
+              },
+              "muted": {
+                "background": "#8c6a55"
+              }
+            },
+            "dimensions": {
+              "width": 1500,
+              "height": 1001
+            }
+          }
+        }
+      },
+      {
+        "asset": {
+          "url": "https://cdn.sanity.io/images/8yrspuwy/production/8a63e5b2f2021d962adde1561b10c54aa00fa256-750x938.jpg",
+          "path": "images/8yrspuwy/production/8a63e5b2f2021d962adde1561b10c54aa00fa256-750x938.jpg",
+          "title": null,
+          "label": null,
+          "metadata": {
+            "palette": {
+              "dominant": {
+                "background": "#a08063"
+              },
+              "muted": {
+                "background": "#a08063"
+              }
+            },
+            "dimensions": {
+              "width": 750,
+              "height": 938
+            }
+          }
+        }
+      },
+      {
+        "asset": {
+          "url": "https://cdn.sanity.io/images/8yrspuwy/production/6380c471e081d898dd17a5e5a774addc954b6c32-750x938.jpg",
+          "path": "images/8yrspuwy/production/6380c471e081d898dd17a5e5a774addc954b6c32-750x938.jpg",
+          "title": null,
+          "label": null,
+          "metadata": {
+            "palette": {
+              "dominant": {
+                "background": "#a78062"
+              },
+              "muted": {
+                "background": "#a78062"
+              }
+            },
+            "dimensions": {
+              "width": 750,
+              "height": 938
+            }
+          }
+        }
+      },
+      {
+        "asset": {
+          "url": "https://cdn.sanity.io/images/8yrspuwy/production/883b259c9a5ad7f510445cf0eaa4975b2ca3ac2d-750x938.jpg",
+          "path": "images/8yrspuwy/production/883b259c9a5ad7f510445cf0eaa4975b2ca3ac2d-750x938.jpg",
+          "title": null,
+          "label": null,
+          "metadata": {
+            "palette": {
+              "dominant": {
+                "background": "#cdb893"
+              },
+              "muted": {
+                "background": "#a28365"
+              }
+            },
+            "dimensions": {
+              "width": 750,
+              "height": 938
+            }
+          }
+        }
+      },
+      {
+        "asset": {
+          "url": "https://cdn.sanity.io/images/8yrspuwy/production/fa2ef6ee97a244a00a3c3f95334539a8e54fb437-750x938.jpg",
+          "path": "images/8yrspuwy/production/fa2ef6ee97a244a00a3c3f95334539a8e54fb437-750x938.jpg",
+          "title": null,
+          "label": null,
+          "metadata": {
+            "palette": {
+              "dominant": {
+                "background": "#c9b095"
+              },
+              "muted": {
+                "background": "#a66558"
+              }
+            },
+            "dimensions": {
+              "width": 750,
+              "height": 938
+            }
+          }
+        }
+      },
+      {
+        "asset": {
+          "url": "https://cdn.sanity.io/images/8yrspuwy/production/85e2d3ee172dbc24aeaa4dc1de012065aa99b871-2437x3047.jpg",
+          "path": "images/8yrspuwy/production/85e2d3ee172dbc24aeaa4dc1de012065aa99b871-2437x3047.jpg",
+          "title": null,
+          "label": null,
+          "metadata": {
+            "palette": {
+              "dominant": {
+                "background": "#c4c4bc"
+              },
+              "muted": {
+                "background": "#84745c"
+              }
+            },
+            "dimensions": {
+              "width": 2437,
+              "height": 3047
+            }
+          }
+        }
+      },
+      {
+        "asset": {
+          "url": "https://cdn.sanity.io/images/8yrspuwy/production/d536f52f1845476bc89c3d55dda42a410ab348d1-2425x3031.jpg",
+          "path": "images/8yrspuwy/production/d536f52f1845476bc89c3d55dda42a410ab348d1-2425x3031.jpg",
+          "title": null,
+          "label": null,
+          "metadata": {
+            "palette": {
+              "dominant": {
+                "background": "#bcbcb4"
+              },
+              "muted": {
+                "background": "#8c8c7c"
+              }
+            },
+            "dimensions": {
+              "width": 2425,
+              "height": 3031
+            }
+          }
+        }
+      },
+      {
+        "asset": {
+          "url": "https://cdn.sanity.io/images/8yrspuwy/production/e96205e37ca035c8343ea7cdeb34c8014f53d221-2413x3016.jpg",
+          "path": "images/8yrspuwy/production/e96205e37ca035c8343ea7cdeb34c8014f53d221-2413x3016.jpg",
+          "title": null,
+          "label": null,
+          "metadata": {
+            "palette": {
+              "dominant": {
+                "background": "#c4c4bc"
+              },
+              "muted": {
+                "background": "#8e8175"
+              }
+            },
+            "dimensions": {
+              "width": 2413,
+              "height": 3016
+            }
+          }
+        }
+      },
+      {
+        "asset": {
+          "url": "https://cdn.sanity.io/images/8yrspuwy/production/47728005129862e6897bceaa2d489722b9d0a554-2414x3018.jpg",
+          "path": "images/8yrspuwy/production/47728005129862e6897bceaa2d489722b9d0a554-2414x3018.jpg",
+          "title": null,
+          "label": null,
+          "metadata": {
+            "palette": {
+              "dominant": {
+                "background": "#bcbcb3"
+              },
+              "muted": {
+                "background": "#918674"
+              }
+            },
+            "dimensions": {
+              "width": 2414,
+              "height": 3018
+            }
+          }
+        }
+      },
+      {
+        "asset": {
+          "url": "https://cdn.sanity.io/images/8yrspuwy/production/e36c6f4889f007c9b85f53373dee2e7a29879d12-2426x3032.jpg",
+          "path": "images/8yrspuwy/production/e36c6f4889f007c9b85f53373dee2e7a29879d12-2426x3032.jpg",
+          "title": null,
+          "label": null,
+          "metadata": {
+            "palette": {
+              "dominant": {
+                "background": "#c4c4bc"
+              },
+              "muted": {
+                "background": "#8c7c73"
+              }
+            },
+            "dimensions": {
+              "width": 2426,
+              "height": 3032
+            }
+          }
+        }
+      },
+      {
+        "asset": {
+          "url": "https://cdn.sanity.io/images/8yrspuwy/production/255b56fe5b24b2aa2039b6c7305aa88cd30cc7e1-2444x3056.jpg",
+          "path": "images/8yrspuwy/production/255b56fe5b24b2aa2039b6c7305aa88cd30cc7e1-2444x3056.jpg",
+          "title": null,
+          "label": null,
+          "metadata": {
+            "palette": {
+              "dominant": {
+                "background": "#bcbcb4"
+              },
+              "muted": {
+                "background": "#8c837b"
+              }
+            },
+            "dimensions": {
+              "width": 2444,
+              "height": 3056
+            }
+          }
+        }
+      }
+    ],
+    "next": {
+      "slug": {
+        "current": "cylinder-back"
+      },
+      "name": "Cylinder Back",
+      "image": {
+        "asset": {
+          "url": "https://cdn.sanity.io/images/8yrspuwy/production/413315c187fbfcdc3d3768c6f641e3426e0952ab-2422x3028.jpg",
+          "path": "images/8yrspuwy/production/413315c187fbfcdc3d3768c6f641e3426e0952ab-2422x3028.jpg",
+          "title": null,
+          "label": null,
+          "metadata": {
+            "palette": {
+              "dominant": {
+                "background": "#c4c4bc"
+              },
+              "muted": {
+                "background": "#8f7054"
+              }
+            },
+            "dimensions": {
+              "width": 2422,
+              "height": 3028
+            }
+          }
+        }
+      }
+    }
+  }
+}

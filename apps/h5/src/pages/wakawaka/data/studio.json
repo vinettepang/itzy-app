@@ -1,0 +1,47 @@
+{
+  "image": "https://cdn.sanity.io/images/8yrspuwy/production/cef505ebb6ec5c35f8b797ed1043985896ab0400-1539x1924.jpg?w=1600&fit=max&auto=format&q=85",
+  "contentRaw": "<p><strong>Waka Waka </strong>is a <strong>LOS ANGELES</strong><em>(CA)</em> based studio focusing on wood furniture &amp; <strong>functional objects</strong> designed and hand crafted by <strong>Shin Okuda</strong>. His work ranges from seating concepts, utilitarian objects and space design, all of which demonstrate a simplicity in form, subtle detailing and a unique interpretation of proportion.</p>",
+  "phoneLabel": "Phone",
+  "phone": "+1 32 36 33 34 58",
+  "emailLabel": "Email",
+  "email": "info@wakawaka.world",
+  "socialLabel": "Social",
+  "socialLinks": [
+    {
+      "linkLabel": "@wakawakainc",
+      "linkUrl": "https://www.instagram.com/wakawakainc/"
+    }
+  ],
+  "press": [
+    {
+      "title": "Into The Wood",
+      "outlet": "New York Times",
+      "url": "https://www.wsj.com/articles/the-return-of-honest-and-beautiful-wood-furniture-11585571780"
+    },
+    {
+      "title": "Eight Creative Talents Writing the Next Chapter in California Design",
+      "outlet": "Architectural Digest",
+      "url": "https://www.architecturaldigest.com/story/eight-creative-talents-writing-the-next-chapter-in-california-design"
+    },
+    {
+      "title": "In Los Angeles, an Eccentric Shrine to Books New and Old",
+      "outlet": "New York Times",
+      "url": "https://www.nytimes.com/2019/03/14/t-magazine/owl-bureau-los-angeles-book-store.html"
+    },
+    {
+      "title": "Bespoke Furniture Influenced by Japanese Tea Rooms and Ettore Sottsass",
+      "outlet": "Another Mag",
+      "url": "https://www.anothermag.com/design-living/10960/bespoke-furniture-influenced-by-japanese-tea-rooms-and-ettore-sottsass"
+    },
+    {
+      "title": "T Suggests: Tasseled Chairs, Custom Face Oils and More",
+      "outlet": "New York Times",
+      "url": "https://www.nytimes.com/2018/11/16/t-magazine/lindsey-adelman-pop-up-vitruvi-face-oil-editors-picks.html"
+    },
+    {
+      "title": "The Rounded Simplicity of Waka Waka's Splendid Designs",
+      "outlet": "Ravelin Magazine",
+      "url": "https://www.ravelinmagazine.com/posts/the-rounded-simplicity-of-waka-wakas-splendid-designs/"
+    }
+  ]
+}
