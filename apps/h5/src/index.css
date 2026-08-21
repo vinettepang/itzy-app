@@ -92,3 +92,13 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+
+/* Lenis scroll damping (setlist / cheer pages) */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+html.lenis {
+  scroll-behavior: auto !important;
+}

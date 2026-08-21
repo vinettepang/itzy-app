@@ -3,6 +3,7 @@ import {
   CHEER_GUIDES,
   songTitleToCheerSlug,
 } from '@/pages/cheer/cheerData';
+import { useScrollDamping } from '@/hooks/useScrollDamping';
 import './TourSetlistPage.css';
 
 type SetlistSong = { title: string; hasCheer: boolean };
@@ -43,6 +44,7 @@ function cheerHref(title: string) {
 }
 
 export default function TourSetlistPage() {
+  useScrollDamping();
   const cheerCount = SETLIST.filter((s) => s.hasCheer).length;
 
   return (

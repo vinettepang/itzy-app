@@ -1,8 +1,10 @@
 import { Link, useParams } from 'react-router-dom';
 import { CHEER_GUIDES } from '@/pages/cheer/cheerData';
+import { useScrollDamping } from '@/hooks/useScrollDamping';
 import './CheerGuidePage.css';
 
 export default function CheerGuidePage() {
+  useScrollDamping();
   const { slug = '' } = useParams<{ slug: string }>();
   const guide = CHEER_GUIDES[slug];
 
