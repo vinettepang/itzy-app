@@ -1,4 +1,5 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
+import ScrollToTop from '@/components/ScrollToTop';
 import AppLayout from '@/layouts/AppLayout';
 import GalleryHome from '@/pages/GalleryHome';
 import GalleryDetail from '@/pages/GalleryDetail';
@@ -29,6 +30,8 @@ import FacilContactPage from '@/pages/facil/pages/FacilContactPage';
 import FacilProjectPage from '@/pages/facil/pages/FacilProjectPage';
 import FacilLegalPage from '@/pages/facil/pages/FacilLegalPage';
 import NewHomePage from '@/pages/new-home/NewHomePage';
+import NewNewPage from '@/pages/newnew/NewNewPage';
+import NewNewLayout from '@/pages/newnew/NewNewLayout';
 import MenuPage from '@/pages/MenuPage';
 import WakaLayout from '@/pages/wakawaka/WakaLayout';
 import WakaHomePage from '@/pages/wakawaka/pages/HomePage';
@@ -58,13 +61,24 @@ const HAOQI_PROJECT_SLUGS = [
 
 export default function App() {
   return (
-    <Routes>
+    <>
+      <ScrollToTop />
+      <Routes>
       
       <Route path="/" element={<XkmPage />} />
       <Route path="/menu" element={<MenuPage />} />
       <Route path="/home" element={<Home />} />
       <Route path="/xkm" element={<XkmPage />} />
       <Route path="/new_home" element={<NewHomePage />} />
+      <Route path="/newnew" element={<NewNewPage />} />
+      <Route element={<NewNewLayout />}>
+        <Route path="/poster" element={<PosterPage />} />
+        <Route path="/poster/preview" element={<PosterPreviewPage />} />
+        <Route path="/game" element={<GamePage />} />
+        <Route path="/setlist" element={<TourSetlistPage />} />
+        <Route path="/cheer/:slug" element={<CheerGuidePage />} />
+        <Route path="/unseen" element={<UnseenPage />} />
+      </Route>
       <Route path="/wakawaka" element={<WakaLayout />}>
         <Route index element={<WakaHomePage />} />
         <Route path="studio" element={<WakaStudioPage />} />
@@ -74,8 +88,6 @@ export default function App() {
         <Route path=":slug" element={<WakaProductPage />} />
       </Route>
       <Route path="/songs" element={<SongsPage />} />
-      <Route path="/cheer/:slug" element={<CheerGuidePage />} />
-      <Route path="/unseen" element={<UnseenPage />} />
       <Route path="/balls" element={<BallsPage />} />
       <Route path="/haoqi" element={<HaoqiPage />} />
       <Route path="/haoqi/:slug" element={<HaoqiProjectPage />} />
@@ -125,15 +137,12 @@ export default function App() {
       <Route element={<AppLayout />}>
         <Route path="/gallery" element={<GalleryHome />} />
         <Route path="/schedules" element={<SchedulesPage />} />
-        <Route path="/setlist" element={<TourSetlistPage />} />
         <Route path="/gallery/:id" element={<GalleryDetail />} />
         <Route path="/lab-style" element={<LabStylePage />} />
-        <Route path="/poster" element={<PosterPage />} />
-        <Route path="/poster/preview" element={<PosterPreviewPage />} />
-        <Route path="/game" element={<GamePage />} />
         <Route path="/portfolio" element={<PortfolioPage />} />
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
+    </>
   );
 }

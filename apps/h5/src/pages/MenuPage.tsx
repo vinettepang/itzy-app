@@ -50,6 +50,7 @@ function buildMenuGroups(): MenuGroup[] {
         { to: '/xkm', label: 'XKM（别名）' },
         { to: '/home', label: 'Home' },
         { to: '/new_home', label: 'New Home', note: 'XKM + haoqi 下落' },
+        { to: '/newnew', label: 'NewNew', note: 'Oh Ira 配色版' },
       ],
     },
     {

@@ -30,7 +30,11 @@ body:has(.xkm--new-home) {
 .xkm--new-home .xkm-coverNav,
 .xkm--new-home .xkm-coverNav__cell,
 .xkm--new-home .xkm-coverNav__cell--motto {
-  background: #e4e4e4;
+  background: #fff;
+}
+
+.xkm--new-home .xkm-section-container {
+  background-color: #fff;
 }
 
 .xkm-media--fall {

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Lenis from "lenis";
 import { request, resolveMediaUrl } from "@/services/request";
 import itzyPng from "@/assets/itzy-w.png";
+import itzyLogoPng from "@/assets/itzy.png";
 import tourPosterWebp from "@/assets/tour-poster.webp";
 import NewHomeFallCanvas from "./NewHomeFallCanvas";
 import NewHomeRefractionCanvas from "./NewHomeRefractionCanvas";
@@ -33,6 +34,9 @@ type OverlayPhase = "visible" | "fading" | "hidden";
 const LOADING_OVERLAY_COPY = "itzy all in us";
 const OVERLAY_MIN_MS = 3000;
 const OVERLAY_MAX_MS = 15000;
+
+/** 内存缓存：SPA 返回跳过遮罩，整页刷新后自动清空并重新显示 */
+const overlaySeenKeys = new Set<string>();
 
 function XkmLoadingTypewriter({ active }: { active: boolean }) {
   const [text, setText] = useState("");
@@ -75,10 +79,11 @@ function XkmLoadingTypewriter({ active }: { active: boolean }) {
   );
 }
 
-function useXkmMediaOverlay(deps: unknown[]) {
+function useXkmMediaOverlay(deps: unknown[], cacheKey?: string) {
+  const cached = Boolean(cacheKey && overlaySeenKeys.has(cacheKey));
   const rootRef = useRef<HTMLDivElement>(null);
-  const [phase, setPhase] = useState<OverlayPhase>("visible");
-  const hasDismissedRef = useRef(false);
+  const [phase, setPhase] = useState<OverlayPhase>(cached ? "hidden" : "visible");
+  const hasDismissedRef = useRef(cached);
 
   useEffect(() => {
     if (hasDismissedRef.current) return;
@@ -94,6 +99,7 @@ function useXkmMediaOverlay(deps: unknown[]) {
     const finish = () => {
       if (cancelled || hasDismissedRef.current) return;
       hasDismissedRef.current = true;
+      if (cacheKey) overlaySeenKeys.add(cacheKey);
       setPhase("fading");
     };
 
@@ -388,7 +394,13 @@ function InfoMarquee() {
   );
 }
 
-export default function NewHomePage() {
+export default function NewHomePage({
+  overlayCacheKey,
+  homeHref,
+}: {
+  overlayCacheKey?: string;
+  homeHref?: string;
+} = {}) {
   const [data, setData] = useState<HomeSchedulesPayload | null>(null);
   const [loading, setLoading] = useState(true);
   const [err, setErr] = useState<string | null>(null);
@@ -429,7 +441,19 @@ export default function NewHomePage() {
   }, []);
 
   useEffect(() => {
-    if (prefersReducedMotion()) return;
+    const prevRestoration = history.scrollRestoration;
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
+    window.scrollTo(0, 0);
+
+    if (prefersReducedMotion()) {
+      return () => {
+        if ("scrollRestoration" in history) {
+          history.scrollRestoration = prevRestoration;
+        }
+      };
+    }
 
     const lenis = new Lenis({
       duration: 1.35,
@@ -438,6 +462,7 @@ export default function NewHomePage() {
       wheelMultiplier: 0.92,
       touchMultiplier: 1.1,
     });
+    lenis.scrollTo(0, { immediate: true });
 
     let raf = 0;
     const tick = (ms: number) => {
@@ -449,6 +474,9 @@ export default function NewHomePage() {
     return () => {
       cancelAnimationFrame(raf);
       lenis.destroy();
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = prevRestoration;
+      }
     };
   }, []);
 
@@ -462,12 +490,10 @@ export default function NewHomePage() {
     ];
   }, [data]);
 
-  const { rootRef, phase: overlayPhase, onOverlayTransitionEnd } = useXkmMediaOverlay([
-    loading,
-    tickets.length,
-    galleryImages.length,
-    fallReady,
-  ]);
+  const { rootRef, phase: overlayPhase, onOverlayTransitionEnd } = useXkmMediaOverlay(
+    [loading, tickets.length, galleryImages.length, fallReady],
+    overlayCacheKey,
+  );
 
   return (
     <div className="xkm xkm--new-home" ref={rootRef}>
@@ -502,7 +528,24 @@ export default function NewHomePage() {
       </header>
 
       <div className="xkm-scroll" aria-label="Scrollable content layer">
-        <nav className="xkm-coverNav" aria-label="Site navigation">
+        <nav
+          className={`xkm-coverNav${homeHref ? " xkm-coverNav--withHome" : ""}`}
+          aria-label="Site navigation"
+        >
+          {homeHref ? (
+            <Link
+              to={homeHref}
+              className="xkm-coverNav__home"
+              aria-label="ITZY home"
+              onClick={() => {
+                if (window.location.pathname === homeHref) {
+                  window.scrollTo(0, 0);
+                }
+              }}
+            >
+              <img src={itzyLogoPng} alt="ITZY" width={64} height={20} decoding="async" />
+            </Link>
+          ) : null}
           <InfoMarquee />
           <button type="button" className="xkm-coverNav__cell xkm-coverNav__cell--motto">
             MOTTO
@@ -548,6 +591,15 @@ export default function NewHomePage() {
                 </Link>
                 <Link to="/game" className="xkm-objectBtn">
                   <span className="xkm-objectBtn__text text-alpha">GAME</span>
+                </Link>
+              </div>
+
+              <div className="xkm-ticketActions" aria-label="Guide links">
+                <Link to="/setlist" className="xkm-objectBtn">
+                  <span className="xkm-objectBtn__text text-alpha">应援法</span>
+                </Link>
+                <Link to="/unseen" className="xkm-objectBtn">
+                  <span className="xkm-objectBtn__text text-alpha">娃娃图鉴</span>
                 </Link>
               </div>
 
