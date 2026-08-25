@@ -174,53 +174,108 @@ body:has(.newnew-page .xkm--new-home) {
   color: var(--newnew-ink);
 }
 
+.newnew-page .xkm--new-home .xkm-ticketBlock__title {
+  color: #000;
+  font-family: fantasy;
+  font-size: 18px;
+  mix-blend-mode: normal;
+}
+
 .newnew-page .xkm--new-home .xkm-flat-ticket,
 .newnew-page .xkm--new-home .xkm-hybrid-ticket {
-  box-shadow: none;
-  background: #60646d;
-  border: 2px solid #60646d;
-  border-radius: 0;
-  color: #f9251d;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--flat-stub-w, 88px);
+  align-items: stretch;
+  box-shadow: 0 10px 28px rgba(40, 44, 52, 0.18);
+  background: #5f636d;
+  border: 3px solid #abb0a4;
+  border-radius: 14px;
+  color: #ffffff;
+  overflow: hidden;
+  height: 90px;
+  min-height: 90px;
+  max-height: 90px;
+  font-family: ui-monospace, "Courier New", "SF Mono", monospace;
 }
 
 /* 暂时关闭票根海报背景图，改用纯色底 */
 .newnew-page .xkm--new-home .xkm-flat-ticket::after,
 .newnew-page .xkm--new-home .xkm-hybrid-ticket::after {
-  background-color: #60646d;
+  background-color: #5f636d;
   /* background-image: var(--ticket-poster-bg); */
   background-image: none;
 }
 
 .newnew-page .xkm--new-home .xkm-flat-ticket::before,
-.newnew-page .xkm--new-home .xkm-hybrid-ticket::before {
+.newnew-page .xkm--new-home .xkm-hybrid-ticket::before,
+.newnew-page .xkm--new-home .xkm-flat-ticket:hover::before,
+.newnew-page .xkm--new-home .xkm-hybrid-ticket:hover::before {
   background-color: transparent;
+  background: transparent;
   -webkit-backdrop-filter: none;
   backdrop-filter: none;
+}
+
+.newnew-page .xkm--new-home .xkm-flat-ticket__copy::before,
+.newnew-page .xkm--new-home .xkm-hybrid-ticket__copy::before {
+  background: #abb0a4;
 }
 
 .newnew-page .xkm--new-home .xkm-flat-ticket__kicker,
 .newnew-page .xkm--new-home .xkm-flat-ticket__title,
 .newnew-page .xkm--new-home .xkm-flat-ticket__venue,
 .newnew-page .xkm--new-home .xkm-flat-ticket__venueIcon,
-.newnew-page .xkm--new-home .xkm-flat-ticket-date__month,
-.newnew-page .xkm--new-home .xkm-flat-ticket-date__day,
-.newnew-page .xkm--new-home .xkm-flat-ticket-date__year,
-.newnew-page .xkm--new-home .xkm-flat-ticket-date__badge,
 .newnew-page .xkm--new-home .xkm-hybrid-ticket__kicker,
 .newnew-page .xkm--new-home .xkm-hybrid-ticket__title,
 .newnew-page .xkm--new-home .xkm-hybrid-ticket__venue,
 .newnew-page .xkm--new-home .xkm-hybrid-ticket__venueIcon,
+.newnew-page .xkm--new-home .xkm-flat-ticket-date__month,
+.newnew-page .xkm--new-home .xkm-flat-ticket-date__day,
+.newnew-page .xkm--new-home .xkm-flat-ticket-date__year,
 .newnew-page .xkm--new-home .xkm-ticket-date__month,
 .newnew-page .xkm--new-home .xkm-ticket-date__day,
-.newnew-page .xkm--new-home .xkm-ticket-date__year,
+.newnew-page .xkm--new-home .xkm-ticket-date__year {
+  color: #ffffff;
+  -webkit-text-fill-color: #ffffff;
+  opacity: 1;
+  font-family: ui-monospace, "Courier New", "SF Mono", monospace;
+}
+
+.newnew-page .xkm--new-home .xkm-flat-ticket__title,
+.newnew-page .xkm--new-home .xkm-hybrid-ticket__title {
+  -webkit-line-clamp: 2;
+  line-height: 1.15;
+}
+
+.newnew-page .xkm--new-home .xkm-flat-ticket-date__badge,
 .newnew-page .xkm--new-home .xkm-ticket-date__badge {
-  color: #f9251d;
+  color: #ffffff;
+  -webkit-text-fill-color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 999px;
+  background: transparent;
+  font-family: ui-monospace, "Courier New", "SF Mono", monospace;
+}
+
+.newnew-page .xkm--new-home .xkm-flat-ticket__stub,
+.newnew-page .xkm--new-home .xkm-hybrid-ticket__stub {
+  border-left-color: rgba(171, 176, 164, 0.7);
+}
+
+.newnew-page .xkm--new-home .xkm-flat-ticket__tear::after,
+.newnew-page .xkm--new-home .xkm-hybrid-ticket__tear::after {
+  border-color: rgba(255, 255, 255, 0.65);
 }
 
 .newnew-page .xkm--new-home .xkm-btnBlock,
 .newnew-page .xkm--new-home .xkm-ticketBlock {
   color: var(--newnew-ink);
   background: #d9d9d9;
+}
+
+/* 暂时隐藏 TICKET / GAME */
+.newnew-page .xkm--new-home .xkm-btnRowTop {
+  display: none;
 }
 
 .newnew-page .xkm--new-home .xkm-ticketActions {
@@ -232,12 +287,35 @@ body:has(.newnew-page .xkm--new-home) {
   align-items: start;
 }
 
+/* 应援法 / 娃娃图鉴：参考粉红高对比 feel */
 .newnew-page .xkm--new-home .xkm-ticketActions .xkm-objectBtn {
   width: 100%;
   height: auto;
   min-height: 0;
   aspect-ratio: 5 / 3;
   align-self: start;
+  background: #ff9ecb;
+  border: 2px solid #ffffff;
+  border-radius: 999px;
+  color: #ffffff;
+  box-shadow: 0 10px 28px rgba(255, 80, 140, 0.28);
+}
+
+.newnew-page .xkm--new-home .xkm-ticketActions .xkm-objectBtn__text {
+  color: #ffffff;
+  -webkit-text-fill-color: #ffffff;
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+  font-family: ui-monospace, "Courier New", "SF Mono", monospace;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.newnew-page .xkm--new-home .xkm-ticketActions .xkm-objectBtn:hover,
+.newnew-page .xkm--new-home .xkm-ticketActions .xkm-objectBtn:active {
+  background: #ff7eb8;
+  border-color: #ffffff;
 }
 
 .newnew-page .xkm--new-home .xkm-btnBlock {
@@ -405,14 +483,15 @@ body:has(.newnew-page .xkm--new-home) {
   }
 
   .newnew-page .xkm--new-home .xkm-ticketBlock__title {
-    font-size: 11px;
+    font-size: 18px;
   }
 
   .newnew-page .xkm--new-home .xkm-flat-ticket,
   .newnew-page .xkm--new-home .xkm-hybrid-ticket {
-    height: clamp(60px, 9vh, 74px);
-    min-height: clamp(60px, 9vh, 74px);
-    max-height: clamp(60px, 9vh, 74px);
+    height: 90px;
+    min-height: 90px;
+    max-height: 90px;
+    border-radius: 14px;
   }
 
   .newnew-page .xkm--new-home .xkm-ticketActions {
@@ -428,7 +507,7 @@ body:has(.newnew-page .xkm--new-home) {
 
   .newnew-page .xkm--new-home .xkm-btnBlock__inner {
     display: grid;
-    grid-template-rows: auto auto auto minmax(0, 1fr) auto;
+    grid-template-rows: auto auto minmax(0, 1fr) auto;
     gap: 4px;
     min-height: 0;
     height: 100%;
@@ -436,7 +515,7 @@ body:has(.newnew-page .xkm--new-home) {
   }
 
   .newnew-page .xkm--new-home .xkm-btnRowTop {
-    gap: 6px;
+    display: none;
   }
 
   .newnew-page .xkm--new-home .xkm-ticketActions .xkm-objectBtn,
@@ -474,7 +553,7 @@ body:has(.newnew-page .xkm--new-home) {
   }
 
   .newnew-page .xkm--new-home .xkm-contactBtn {
-    min-height: 26px;
+    min-height: 30px;
     padding: 0 6px;
     font-size: 7px;
     display: flex;

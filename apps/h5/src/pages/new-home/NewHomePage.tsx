@@ -606,7 +606,7 @@ export default function NewHomePage({
               <div className="xkm-projectsPanel">
                 <p className="xkm-projectsPanel__text text-alpha">
                   <p className="xkm-projectsPanel__line">
-                      WE BELIEVE IN ITZY. CAUSE WE ARE MIDZY. 
+                      하나가 돼 ’cause you are my motto
                   </p>
                  {/* <span className="xkm-projectsPanel__line">
                     WE BELIEVE IN ITZY
