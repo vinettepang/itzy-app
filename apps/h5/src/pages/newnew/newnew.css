@@ -169,6 +169,11 @@ body:has(.newnew-page .xkm--new-home) {
   background-image: none;
 }
 
+.newnew-page .xkm--new-home .xkm-imageScroller__img {
+  height: 220px;
+  min-height: 220px;
+}
+
 .newnew-page .xkm--new-home .xkm-ticketBlock__title,
 .newnew-page .xkm--new-home .xkm-projectsPanel__line {
   color: var(--newnew-ink);
@@ -298,7 +303,7 @@ body:has(.newnew-page .xkm--new-home) {
   border: 2px solid #ffffff;
   border-radius: 999px;
   color: #ffffff;
-  box-shadow: 0 10px 28px rgba(255, 80, 140, 0.28);
+  box-shadow: none;
 }
 
 .newnew-page .xkm--new-home .xkm-ticketActions .xkm-objectBtn__text {
@@ -472,8 +477,8 @@ body:has(.newnew-page .xkm--new-home) {
   }
 
   .newnew-page .xkm--new-home .xkm-imageScroller__img {
-    height: 150px;
-    min-height: 150px;
+    height: 220px;
+    min-height: 220px;
   }
 
   .newnew-page .xkm--new-home .xkm-ticketBlock {
@@ -566,6 +571,30 @@ body:has(.newnew-page .xkm--new-home) {
     font-size: 7px;
     padding: 0;
     line-height: 1.2;
+  }
+}
+
+/* 宽屏：NEXT COMING / MIDZY's PLAY 保持与小屏相同的垂直排列 */
+@media (min-width: 1024px) {
+  .newnew-page .xkm--new-home .xkm-section-container {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto auto;
+    grid-template-areas: none;
+    column-gap: 0;
+    row-gap: clamp(12px, 1.6vw, 24px);
+    align-items: stretch;
+  }
+
+  .newnew-page .xkm--new-home .xkm-imageScroller,
+  .newnew-page .xkm--new-home .xkm-ticketBlock,
+  .newnew-page .xkm--new-home .xkm-btnBlock {
+    grid-area: auto;
+    width: 100%;
+  }
+
+  .newnew-page .xkm--new-home .xkm-btnBlock {
+    height: auto;
   }
 }
 
