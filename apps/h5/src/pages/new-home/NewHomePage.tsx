@@ -5,6 +5,7 @@ import { request, resolveMediaUrl } from "@/services/request";
 import itzyPng from "@/assets/itzy-w.png";
 import itzyLogoPng from "@/assets/itzy.png";
 import tourPosterWebp from "@/assets/tour-poster.webp";
+import screamFigureGif from "@/assets/scream-figure-jump-transparent.gif";
 import NewHomeFallCanvas from "./NewHomeFallCanvas";
 import NewHomeRefractionCanvas from "./NewHomeRefractionCanvas";
 import "../XkmPage.css";
@@ -394,6 +395,90 @@ function InfoMarquee() {
   );
 }
 
+const NEWNEW_NAV_TOP = 0;
+const NEWNEW_NAV_PINNED_CLASS = "xkm-coverNav--pinned";
+
+function setupNewnewHomeScroll(root: HTMLDivElement) {
+  const scrollEl = root.querySelector(".xkm-scroll");
+  const fixedEl = root.querySelector(".xkm-fixed");
+  const nav = root.querySelector(".xkm-coverNav");
+  const section = root.querySelector(".xkm-section-container");
+
+  if (!scrollEl || !nav || !section) {
+    return { getMaxScroll: () => Infinity, onScroll: () => {}, cleanup: () => {} };
+  }
+
+  let maxScroll = 0;
+  let pinStart = 0;
+  let navHeight = 0;
+
+  const measurePin = () => {
+    const wasPinned = nav.classList.contains(NEWNEW_NAV_PINNED_CLASS);
+    nav.classList.remove(NEWNEW_NAV_PINNED_CLASS);
+    section.style.paddingTop = "";
+    navHeight = nav.offsetHeight;
+    pinStart = nav.getBoundingClientRect().top + window.scrollY - NEWNEW_NAV_TOP;
+    if (wasPinned) {
+      nav.classList.add(NEWNEW_NAV_PINNED_CLASS);
+      section.style.paddingTop = `${navHeight}px`;
+    }
+  };
+
+  const updateLimits = () => {
+    const fixedH = fixedEl?.offsetHeight ?? 0;
+    const scrollH = scrollEl.offsetHeight;
+    maxScroll = Math.max(0, fixedH + scrollH - window.innerHeight);
+    // scroll 已有 margin-top = fixedH，容器高度只取内容块高度
+    root.style.height = `${scrollH}px`;
+    measurePin();
+  };
+
+  const updatePin = () => {
+    if (window.scrollY >= pinStart) {
+      if (!nav.classList.contains(NEWNEW_NAV_PINNED_CLASS)) {
+        nav.classList.add(NEWNEW_NAV_PINNED_CLASS);
+        section.style.paddingTop = `${navHeight}px`;
+      }
+    } else {
+      nav.classList.remove(NEWNEW_NAV_PINNED_CLASS);
+      section.style.paddingTop = "";
+    }
+  };
+
+  const onScroll = () => {
+    updatePin();
+    if (window.scrollY > maxScroll) {
+      window.scrollTo(0, maxScroll);
+    }
+  };
+
+  updateLimits();
+  onScroll();
+
+  const ro = new ResizeObserver(() => {
+    updateLimits();
+    onScroll();
+  });
+  ro.observe(scrollEl);
+  const onResize = () => {
+    updateLimits();
+    onScroll();
+  };
+  window.addEventListener("resize", onResize);
+
+  return {
+    getMaxScroll: () => maxScroll,
+    onScroll,
+    cleanup: () => {
+      ro.disconnect();
+      window.removeEventListener("resize", onResize);
+      nav.classList.remove(NEWNEW_NAV_PINNED_CLASS);
+      section.style.paddingTop = "";
+      root.style.height = "";
+    },
+  };
+}
+
 export default function NewHomePage({
   overlayCacheKey,
   homeHref,
@@ -440,6 +525,21 @@ export default function NewHomePage({
     };
   }, []);
 
+  const tickets = useMemo(() => {
+    const schedules = collectTicketSchedules(data);
+    if (!schedules.length) return [];
+    const primary = buildTicketFromSchedule(schedules[0]);
+    return [
+      // { ticket: primary, variant: "hybrid" as const },
+      { ticket: primary, variant: "flat" as const },
+    ];
+  }, [data]);
+
+  const { rootRef, phase: overlayPhase, onOverlayTransitionEnd } = useXkmMediaOverlay(
+    [loading, tickets.length, galleryImages.length, fallReady],
+    overlayCacheKey,
+  );
+
   useEffect(() => {
     const prevRestoration = history.scrollRestoration;
     if ("scrollRestoration" in history) {
@@ -447,8 +547,19 @@ export default function NewHomePage({
     }
     window.scrollTo(0, 0);
 
+    const root = rootRef.current;
+    const isNewnew = overlayCacheKey === "newnew";
+    const newnewScroll = isNewnew && root ? setupNewnewHomeScroll(root) : null;
+
+    const onNewnewScroll = () => {
+      newnewScroll?.onScroll();
+    };
+
     if (prefersReducedMotion()) {
+      window.addEventListener("scroll", onNewnewScroll, { passive: true });
       return () => {
+        window.removeEventListener("scroll", onNewnewScroll);
+        newnewScroll?.cleanup();
         if ("scrollRestoration" in history) {
           history.scrollRestoration = prevRestoration;
         }
@@ -464,6 +575,14 @@ export default function NewHomePage({
     });
     lenis.scrollTo(0, { immediate: true });
 
+    const onLenisScroll = () => {
+      onNewnewScroll();
+      if (!newnewScroll) return;
+      const max = newnewScroll.getMaxScroll();
+      if (lenis.scroll > max) lenis.scrollTo(max);
+    };
+    lenis.on("scroll", onLenisScroll);
+
     let raf = 0;
     const tick = (ms: number) => {
       lenis.raf(ms);
@@ -473,27 +592,14 @@ export default function NewHomePage({
 
     return () => {
       cancelAnimationFrame(raf);
+      lenis.off("scroll", onLenisScroll);
       lenis.destroy();
+      newnewScroll?.cleanup();
       if ("scrollRestoration" in history) {
         history.scrollRestoration = prevRestoration;
       }
     };
-  }, []);
-
-  const tickets = useMemo(() => {
-    const schedules = collectTicketSchedules(data);
-    if (!schedules.length) return [];
-    const primary = buildTicketFromSchedule(schedules[0]);
-    return [
-      // { ticket: primary, variant: "hybrid" as const },
-      { ticket: primary, variant: "flat" as const },
-    ];
-  }, [data]);
-
-  const { rootRef, phase: overlayPhase, onOverlayTransitionEnd } = useXkmMediaOverlay(
-    [loading, tickets.length, galleryImages.length, fallReady],
-    overlayCacheKey,
-  );
+  }, [overlayCacheKey, rootRef]);
 
   return (
     <div className="xkm xkm--new-home" ref={rootRef}>
@@ -594,14 +700,49 @@ export default function NewHomePage({
                 </Link>
               </div>
 
-              <div className="xkm-ticketActions" aria-label="Guide links">
-                <Link to="/setlist" className="xkm-objectBtn">
-                  <span className="xkm-objectBtn__text text-alpha">应援法</span>
+              {overlayCacheKey !== "newnew" ? (
+                <div className="xkm-ticketActions" aria-label="Guide links">
+                  <Link to="/setlist" className="xkm-objectBtn">
+                    <span className="xkm-objectBtn__text text-alpha">应援法</span>
+                  </Link>
+                  <Link to="/unseen" className="xkm-objectBtn">
+                    <span className="xkm-objectBtn__text text-alpha">娃娃图鉴</span>
+                  </Link>
+                </div>
+              ) : null}
+
+              <Link to="/cheer/tunnel-vision" className="xkm-caseCard" aria-label="Tunnel Vision 应援法">
+                <div className="xkm-caseCard__label">
+                  <span>FANCHANT</span>
+                  <span>GUIDE FOR</span>
+                  <span>TUNNEL VISION</span>
+                </div>
+                <p className="xkm-caseCard__meta">midzy . scream along</p>
+                <div className="xkm-caseCard__panel">
+                  <img
+                    className="xkm-caseCard__art"
+                    src={screamFigureGif}
+                    alt="Screaming figure"
+                    decoding="async"
+                    loading="lazy"
+                  />
+                  <span className="xkm-caseCard__cta">view case →</span>
+                </div>
+              </Link>
+
+              {overlayCacheKey === "newnew" ? (
+                <Link to="/unseen" className="xkm-caseCard xkm-caseCard--dollGuide" aria-label="娃娃图鉴">
+                  <div className="xkm-caseCard__label">
+                    <span>DOLL</span>
+                    <span>GUIDE FOR</span>
+                    <span>TWINZY</span>
+                  </div>
+                  <p className="xkm-caseCard__meta">wdzy . twinzy</p>
+                  <div className="xkm-caseCard__panel">
+                    <span className="xkm-caseCard__cta">view case →</span>
+                  </div>
                 </Link>
-                <Link to="/unseen" className="xkm-objectBtn">
-                  <span className="xkm-objectBtn__text text-alpha">娃娃图鉴</span>
-                </Link>
-              </div>
+              ) : null}
 
               <div className="xkm-projectsPanel">
                 <p className="xkm-projectsPanel__text text-alpha">

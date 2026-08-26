@@ -43,14 +43,19 @@ body:has(.newnew-shell) {
   border-bottom: 1px solid var(--newnew-border);
   grid-template-columns: auto minmax(0, 2fr) minmax(0, 1fr);
   align-items: center;
+  color: #000;
 }
 
-.newnew-shell .xkm-coverNav__cell,
 .newnew-shell .xkm-coverNav__cell--motto,
 .newnew-shell .xkm-coverNav__cell--marquee {
-  background: #d9d9d9;
+  background: #f4f4f4;
   border-color: var(--newnew-border);
-  color: var(--newnew-accent);
+  color: #000;
+}
+
+.newnew-shell .xkm-coverNav__cell {
+  border-color: var(--newnew-border);
+  color: #000;
 }
 
 .newnew-shell .xkm-coverNav__home {
@@ -82,7 +87,7 @@ body:has(.newnew-shell) {
 .newnew-shell .xkm-infoMarquee__label,
 .newnew-shell .xkm-coverNav__label,
 .newnew-shell .xkm-coverNav__meta {
-  color: var(--newnew-accent);
+  color: #000;
 }
 
 .newnew-shell__main {
@@ -105,26 +110,114 @@ body:has(.newnew-page .xkm--new-home) {
 }
 
 /* 上滑内容块：INFORMATION nav + 票根 + MIDZY PLAY */
+.newnew-page .xkm--new-home {
+  --newnew-nav-top: 0px;
+  height: auto;
+  min-height: calc(100vh + var(--xkm-fixed-h));
+  overflow: visible;
+}
+
 .newnew-page .xkm--new-home .xkm-scroll {
   background: var(--newnew-surface);
+  display: block;
+  height: auto;
+  overflow: visible;
 }
 
 .newnew-page .xkm--new-home .xkm-scroll::before {
-  background: linear-gradient(
-    180deg,
-    rgba(96, 100, 109, 0),
-    rgba(96, 100, 109, 0.72),
-    #d9d9d9
-  );
+  content: none;
+  display: none;
 }
 
-.newnew-page .xkm--new-home .xkm-coverNav,
-.newnew-page .xkm--new-home .xkm-coverNav__cell,
+.newnew-page .xkm--new-home .xkm-coverNav {
+  position: relative;
+  z-index: 12;
+  width: 100%;
+  box-sizing: border-box;
+  background: #d9d9d9;
+  color: #000;
+}
+
+.newnew-page .xkm--new-home .xkm-coverNav--pinned {
+  position: fixed;
+  top: var(--newnew-nav-top);
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 200;
+  margin: 0;
+  background: transparent;
+  border-bottom: none;
+}
+
+.newnew-page .xkm--new-home .xkm-coverNav--pinned .xkm-coverNav__cell {
+  border: none;
+}
+
+.newnew-page .xkm--new-home .xkm-section-container {
+  height: auto;
+  overflow: visible;
+}
+
+.newnew-page .xkm--new-home .xkm-ticketBlock {
+  overflow: visible;
+  padding-bottom: 8px;
+}
+
+.newnew-page .xkm--new-home .xkm-btnBlock {
+  height: auto;
+  overflow: visible;
+  overflow-y: visible;
+  margin-top: 24px;
+}
+
+.newnew-page .xkm--new-home .xkm-btnBlock__inner {
+  height: auto;
+  min-height: 0;
+  flex: none;
+}
+
+.newnew-page .xkm--new-home a.xkm-caseCard {
+  grid-template-rows: auto auto auto;
+  background: #efefef;
+  margin: 10px;
+}
+
+.newnew-page .xkm--new-home a.xkm-caseCard--dollGuide {
+  background: #60646d;
+  color: #ffffff;
+}
+
+.newnew-page .xkm--new-home a.xkm-caseCard--dollGuide .xkm-caseCard__label,
+.newnew-page .xkm--new-home a.xkm-caseCard--dollGuide .xkm-caseCard__meta {
+  color: #ffffff;
+}
+
+.newnew-page .xkm--new-home a.xkm-caseCard--dollGuide .xkm-caseCard__panel {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.newnew-page .xkm--new-home a.xkm-caseCard--dollGuide:hover .xkm-caseCard__panel,
+.newnew-page .xkm--new-home a.xkm-caseCard--dollGuide:active .xkm-caseCard__panel {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.newnew-page .xkm--new-home .xkm-projectsPanel {
+  background: #d9d9d9;
+  border: none;
+  min-height: 200px;
+}
+
 .newnew-page .xkm--new-home .xkm-coverNav__cell--motto,
 .newnew-page .xkm--new-home .xkm-coverNav__cell--marquee {
-  background: #d9d9d9;
+  background: #f4f4f4;
   border-color: var(--newnew-border);
-  color: var(--newnew-accent);
+  color: #000;
+}
+
+.newnew-page .xkm--new-home .xkm-coverNav__cell {
+  border-color: var(--newnew-border);
+  color: #000;
 }
 
 .newnew-page .xkm--new-home .xkm-coverNav--withHome {
@@ -161,7 +254,7 @@ body:has(.newnew-page .xkm--new-home) {
 .newnew-page .xkm--new-home .xkm-infoMarquee__label,
 .newnew-page .xkm--new-home .xkm-coverNav__label,
 .newnew-page .xkm--new-home .xkm-coverNav__meta {
-  color: var(--newnew-accent);
+  color: #000;
 }
 
 .newnew-page .xkm--new-home .xkm-section-container {
@@ -283,54 +376,8 @@ body:has(.newnew-page .xkm--new-home) {
   display: none;
 }
 
-.newnew-page .xkm--new-home .xkm-ticketActions {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
-  width: 100%;
-  height: min-content;
-  align-items: start;
-}
-
-/* 应援法 / 娃娃图鉴：参考粉红高对比 feel */
-.newnew-page .xkm--new-home .xkm-ticketActions .xkm-objectBtn {
-  width: 100%;
-  height: auto;
-  min-height: 0;
-  aspect-ratio: 5 / 3;
-  align-self: start;
-  background: #ff9ecb;
-  border: 2px solid #ffffff;
-  border-radius: 999px;
-  color: #ffffff;
-  box-shadow: none;
-}
-
-.newnew-page .xkm--new-home .xkm-ticketActions .xkm-objectBtn__text {
-  color: #ffffff;
-  -webkit-text-fill-color: #ffffff;
-  background: none;
-  -webkit-background-clip: unset;
-  background-clip: unset;
-  font-family: ui-monospace, "Courier New", "SF Mono", monospace;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-}
-
-.newnew-page .xkm--new-home .xkm-ticketActions .xkm-objectBtn:hover,
-.newnew-page .xkm--new-home .xkm-ticketActions .xkm-objectBtn:active {
-  background: #ff7eb8;
-  border-color: #ffffff;
-}
-
 .newnew-page .xkm--new-home .xkm-btnBlock {
   padding: 14px;
-  overflow: hidden;
-}
-
-.newnew-page .xkm--new-home .xkm-projectsPanel {
-  background: #d9d9d9;
-  border: none;
 }
 
 .newnew-page .xkm--new-home .xkm-objectBtn {
@@ -392,7 +439,7 @@ body:has(.newnew-page .xkm--new-home) {
   background: rgba(255, 255, 255, 0.88);
 }
 
-/* 小屏：上滑内容块一版显示，无内部滚动条 */
+/* 小屏：上滑内容块随内容增高，页面继续向下滚动 */
 @media (max-width: 1023px) {
   .newnew-shell {
     --newnew-nav-h: 48px;
@@ -425,13 +472,6 @@ body:has(.newnew-page .xkm--new-home) {
     min-height: 22px;
   }
 
-  .newnew-page .xkm--new-home .xkm-scroll {
-    height: 100vh;
-    height: 100dvh;
-    overflow: hidden;
-    grid-template-rows: auto minmax(0, 1fr);
-  }
-
   .newnew-page .xkm--new-home .xkm-coverNav {
     height: 48px;
     padding: 6px 8px;
@@ -462,12 +502,9 @@ body:has(.newnew-page .xkm--new-home) {
 
   .newnew-page .xkm--new-home .xkm-section-container {
     display: grid;
-    grid-template-rows: auto auto minmax(0, 1fr);
-    min-height: 0;
-    height: 100%;
-    overflow: hidden;
+    grid-template-rows: auto auto auto;
     gap: 4px;
-    align-content: stretch;
+    align-content: start;
   }
 
   .newnew-page .xkm--new-home .xkm-imageScroller {
@@ -482,7 +519,7 @@ body:has(.newnew-page .xkm--new-home) {
   }
 
   .newnew-page .xkm--new-home .xkm-ticketBlock {
-    padding: 4px 10px 0;
+    padding: 4px 10px 12px;
     gap: 4px;
     min-height: 0;
   }
@@ -499,24 +536,46 @@ body:has(.newnew-page .xkm--new-home) {
     border-radius: 14px;
   }
 
-  .newnew-page .xkm--new-home .xkm-ticketActions {
-    gap: 6px;
-  }
-
   .newnew-page .xkm--new-home .xkm-btnBlock {
-    min-height: 0;
-    height: 100%;
     padding: 4px 10px 6px;
-    overflow: hidden;
+    margin-top: 28px;
   }
 
+  /* 行序：MIDZY's PLAY / FANCHANT card / 娃娃图鉴 card / 文案 / 底部 */
   .newnew-page .xkm--new-home .xkm-btnBlock__inner {
     display: grid;
-    grid-template-rows: auto auto minmax(0, 1fr) auto;
+    grid-template-rows: auto auto auto auto auto auto;
     gap: 4px;
-    min-height: 0;
-    height: 100%;
-    flex: none;
+  }
+
+  .newnew-page .xkm--new-home a.xkm-caseCard {
+    grid-template-rows: auto auto auto;
+    gap: 4px;
+    padding: 6px 10px 8px;
+  }
+
+  .newnew-page .xkm--new-home a.xkm-caseCard--dollGuide .xkm-caseCard__panel {
+    min-height: 200px;
+  }
+
+  .newnew-page .xkm--new-home .xkm-caseCard__panel {
+    min-height: 200px;
+    gap: 6px;
+    padding: 8px 8px 10px;
+  }
+
+  .newnew-page .xkm--new-home .xkm-caseCard__label {
+    font-size: clamp(11px, 3vw, 13px);
+    line-height: 1.05;
+  }
+
+  .newnew-page .xkm--new-home .xkm-caseCard__meta {
+    font-size: clamp(10px, 2.6vw, 12px);
+  }
+
+  .newnew-page .xkm--new-home .xkm-caseCard__cta {
+    min-height: 28px;
+    padding: 0 16px;
   }
 
   .newnew-page .xkm--new-home .xkm-btnRowTop {
@@ -539,7 +598,7 @@ body:has(.newnew-page .xkm--new-home) {
 
   .newnew-page .xkm--new-home .xkm-projectsPanel {
     padding: 4px 6px;
-    min-height: 0;
+    min-height: 200px;
     align-self: stretch;
   }
 
@@ -582,7 +641,7 @@ body:has(.newnew-page .xkm--new-home) {
     grid-template-rows: auto auto auto;
     grid-template-areas: none;
     column-gap: 0;
-    row-gap: clamp(12px, 1.6vw, 24px);
+    row-gap: clamp(20px, 2.2vw, 32px);
     align-items: stretch;
   }
 

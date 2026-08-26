@@ -81,6 +81,83 @@ body:has(.xkm--new-home) {
   z-index: 4;
 }
 
+/* 应援法下方的 case 卡片：等宽标签 + 粉色插画面板 + 胶囊 CTA
+   选择器需盖过 webgl-refraction.css 泄漏的全局 a:not(.default-link) 样式 */
+.xkm--new-home a.xkm-caseCard {
+  display: grid;
+  grid-template-rows: auto auto minmax(0, 1fr);
+  gap: 10px;
+  min-height: 0;
+  padding: 16px 14px 14px;
+  border: none;
+  border-radius: 5px;
+  background: #d9d9d9;
+  color: #111;
+  text-decoration: none;
+}
+
+.xkm-caseCard__label {
+  display: grid;
+  gap: 2px;
+  font-family: ui-monospace, "Courier New", "SF Mono", monospace;
+  font-size: clamp(13px, 3.6vw, 16px);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+.xkm-caseCard__meta {
+  margin: 0;
+  font-family: ui-monospace, "Courier New", "SF Mono", monospace;
+  font-size: clamp(11px, 3vw, 13px);
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+.xkm-caseCard__panel {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 12px;
+  place-items: center;
+  min-height: 0;
+  padding: 18px 14px 16px;
+  border-radius: 6px;
+  background: #ff9ecb;
+  transition: background-color 0.15s ease;
+}
+
+/* 由可用高度决定尺寸，卡片被压缩时插画跟着缩小而不是溢出 */
+.xkm-caseCard__art {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: min(70%, 240px);
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.xkm-caseCard__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 24px;
+  border: 2px solid #fff;
+  border-radius: 999px;
+  color: #fff;
+  font-family: ui-monospace, "Courier New", "SF Mono", monospace;
+  font-size: clamp(13px, 3.4vw, 15px);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.xkm-caseCard:hover .xkm-caseCard__panel,
+.xkm-caseCard:active .xkm-caseCard__panel {
+  background: #ff7eb8;
+}
+
 @media (max-width: 720px) {
   .xkm-media__refraction {
     width: min(88vw, 360px);
