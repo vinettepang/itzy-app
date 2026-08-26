@@ -1,4 +1,12 @@
-import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties, type TransitionEvent } from "react";
+import {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type CSSProperties,
+  type TransitionEvent,
+} from "react";
 import { Link } from "react-router-dom";
 import Lenis from "lenis";
 import { request, resolveMediaUrl } from "@/services/request";
@@ -6,6 +14,7 @@ import itzyPng from "@/assets/itzy-w.png";
 import itzyLogoPng from "@/assets/itzy.png";
 import tourPosterWebp from "@/assets/tour-poster.webp";
 import screamFigureGif from "@/assets/scream-figure-jump-transparent.gif";
+import dollGif from "@/assets/doll.png";
 import NewHomeFallCanvas from "./NewHomeFallCanvas";
 import NewHomeRefractionCanvas from "./NewHomeRefractionCanvas";
 import "../XkmPage.css";
@@ -21,7 +30,11 @@ const galleryImages = Object.entries(
   .sort(([a], [b]) => a.localeCompare(b, undefined, { numeric: true }))
   .map(([path, src]) => ({
     src,
-    alt: path.split("/").pop()?.replace(/\.[^.]+$/, "") ?? "image",
+    alt:
+      path
+        .split("/")
+        .pop()
+        ?.replace(/\.[^.]+$/, "") ?? "image",
   }));
 
 function prefersReducedMotion() {
@@ -66,7 +79,8 @@ function XkmLoadingTypewriter({ active }: { active: boolean }) {
     };
   }, [active, reducedMotion]);
 
-  const showCursor = active && !reducedMotion && text.length < LOADING_OVERLAY_COPY.length;
+  const showCursor =
+    active && !reducedMotion && text.length < LOADING_OVERLAY_COPY.length;
 
   return (
     <p className="xkm-loadingOverlay__text" aria-live="polite">
@@ -83,7 +97,9 @@ function XkmLoadingTypewriter({ active }: { active: boolean }) {
 function useXkmMediaOverlay(deps: unknown[], cacheKey?: string) {
   const cached = Boolean(cacheKey && overlaySeenKeys.has(cacheKey));
   const rootRef = useRef<HTMLDivElement>(null);
-  const [phase, setPhase] = useState<OverlayPhase>(cached ? "hidden" : "visible");
+  const [phase, setPhase] = useState<OverlayPhase>(
+    cached ? "hidden" : "visible",
+  );
   const hasDismissedRef = useRef(cached);
 
   useEffect(() => {
@@ -246,7 +262,9 @@ function buildTicketFromSchedule(pick: HomeSchedule): TicketView {
   };
 }
 
-function collectTicketSchedules(data: HomeSchedulesPayload | null): HomeSchedule[] {
+function collectTicketSchedules(
+  data: HomeSchedulesPayload | null,
+): HomeSchedule[] {
   const candidates: HomeSchedule[] = [];
   if (data?.tourSpotlight) candidates.push(data.tourSpotlight);
   candidates.push(...(data?.featured ?? []));
@@ -269,7 +287,8 @@ function XkmTicketCard({
   ticket: TicketView;
   variant: TicketVariant;
 }) {
-  const rootClass = variant === "hybrid" ? "xkm-hybrid-ticket" : "xkm-flat-ticket";
+  const rootClass =
+    variant === "hybrid" ? "xkm-hybrid-ticket" : "xkm-flat-ticket";
 
   return (
     <Link
@@ -376,8 +395,15 @@ function InfoMarquee() {
   const items = [INFO_MARQUEE_TEXT, INFO_MARQUEE_TEXT];
 
   return (
-    <div className="xkm-coverNav__cell xkm-coverNav__cell--marquee" aria-label="Information">
-      <div className="xkm-infoMarquee__viewport" role="marquee" aria-label="Information ticker">
+    <div
+      className="xkm-coverNav__cell xkm-coverNav__cell--marquee"
+      aria-label="Information"
+    >
+      <div
+        className="xkm-infoMarquee__viewport"
+        role="marquee"
+        aria-label="Information ticker"
+      >
         <div className="xkm-infoMarquee__track">
           {items.map((text, i) => (
             <span
@@ -405,7 +431,11 @@ function setupNewnewHomeScroll(root: HTMLDivElement) {
   const section = root.querySelector(".xkm-section-container");
 
   if (!scrollEl || !nav || !section) {
-    return { getMaxScroll: () => Infinity, onScroll: () => {}, cleanup: () => {} };
+    return {
+      getMaxScroll: () => Infinity,
+      onScroll: () => {},
+      cleanup: () => {},
+    };
   }
 
   let maxScroll = 0;
@@ -417,7 +447,8 @@ function setupNewnewHomeScroll(root: HTMLDivElement) {
     nav.classList.remove(NEWNEW_NAV_PINNED_CLASS);
     section.style.paddingTop = "";
     navHeight = nav.offsetHeight;
-    pinStart = nav.getBoundingClientRect().top + window.scrollY - NEWNEW_NAV_TOP;
+    pinStart =
+      nav.getBoundingClientRect().top + window.scrollY - NEWNEW_NAV_TOP;
     if (wasPinned) {
       nav.classList.add(NEWNEW_NAV_PINNED_CLASS);
       section.style.paddingTop = `${navHeight}px`;
@@ -535,7 +566,11 @@ export default function NewHomePage({
     ];
   }, [data]);
 
-  const { rootRef, phase: overlayPhase, onOverlayTransitionEnd } = useXkmMediaOverlay(
+  const {
+    rootRef,
+    phase: overlayPhase,
+    onOverlayTransitionEnd,
+  } = useXkmMediaOverlay(
     [loading, tickets.length, galleryImages.length, fallReady],
     overlayCacheKey,
   );
@@ -625,7 +660,10 @@ export default function NewHomePage({
           height={40}
           decoding="async"
         />
-        <div className="xkm-media xkm-media--fall" aria-label="Falling stickers and refraction hero">
+        <div
+          className="xkm-media xkm-media--fall"
+          aria-label="Falling stickers and refraction hero"
+        >
           <NewHomeFallCanvas onReady={onFallReady} />
           <div className="xkm-media__refraction" aria-label="WebGL refraction">
             <NewHomeRefractionCanvas />
@@ -649,21 +687,29 @@ export default function NewHomePage({
                 }
               }}
             >
-              <img src={itzyLogoPng} alt="ITZY" width={64} height={20} decoding="async" />
+              <img
+                src={itzyLogoPng}
+                alt="ITZY"
+                width={64}
+                height={20}
+                decoding="async"
+              />
             </Link>
           ) : null}
           <InfoMarquee />
-          <button type="button" className="xkm-coverNav__cell xkm-coverNav__cell--motto">
+          <button
+            type="button"
+            className="xkm-coverNav__cell xkm-coverNav__cell--motto"
+          >
             MOTTO
           </button>
         </nav>
 
         <div className="xkm-section-container">
           {galleryImages.length > 0 ? (
-              <ImageScroller images={galleryImages} />
-            ) : null}
+            <ImageScroller images={galleryImages} />
+          ) : null}
           <div className="xkm-ticketBlock">
-          
             <div className="xkm-ticketBlock__title">
               <span>NEXT COMING</span>
             </div>
@@ -687,10 +733,9 @@ export default function NewHomePage({
 
           <div className="xkm-btnBlock">
             <div className="xkm-btnBlock__inner">
-              
-            <div className="xkm-ticketBlock__title">
-              <span>MIDZY's PLAY</span>
-            </div>
+              <div className="xkm-ticketBlock__title">
+                <span>MIDZY's PLAY</span>
+              </div>
               <div className="xkm-btnRowTop" aria-label="Quick actions">
                 <Link to="/poster" className="xkm-objectBtn">
                   <span className="xkm-objectBtn__text text-alpha">TICKET</span>
@@ -703,15 +748,23 @@ export default function NewHomePage({
               {overlayCacheKey !== "newnew" ? (
                 <div className="xkm-ticketActions" aria-label="Guide links">
                   <Link to="/setlist" className="xkm-objectBtn">
-                    <span className="xkm-objectBtn__text text-alpha">应援法</span>
+                    <span className="xkm-objectBtn__text text-alpha">
+                      应援法
+                    </span>
                   </Link>
                   <Link to="/unseen" className="xkm-objectBtn">
-                    <span className="xkm-objectBtn__text text-alpha">娃娃图鉴</span>
+                    <span className="xkm-objectBtn__text text-alpha">
+                      娃娃图鉴
+                    </span>
                   </Link>
                 </div>
               ) : null}
 
-              <Link to="/cheer/tunnel-vision" className="xkm-caseCard" aria-label="Tunnel Vision 应援法">
+              <Link
+                to="/cheer/tunnel-vision"
+                className="xkm-caseCard"
+                aria-label="Tunnel Vision 应援法"
+              >
                 <div className="xkm-caseCard__label">
                   <span>FANCHANT</span>
                   <span>GUIDE FOR</span>
@@ -731,7 +784,11 @@ export default function NewHomePage({
               </Link>
 
               {overlayCacheKey === "newnew" ? (
-                <Link to="/unseen" className="xkm-caseCard xkm-caseCard--dollGuide" aria-label="娃娃图鉴">
+                <Link
+                  to="/unseen"
+                  className="xkm-caseCard xkm-caseCard--dollGuide"
+                  aria-label="娃娃图鉴"
+                >
                   <div className="xkm-caseCard__label">
                     <span>DOLL</span>
                     <span>GUIDE FOR</span>
@@ -739,6 +796,13 @@ export default function NewHomePage({
                   </div>
                   <p className="xkm-caseCard__meta">wdzy . twinzy</p>
                   <div className="xkm-caseCard__panel">
+                    <img
+                      className="xkm-caseCard__art"
+                      src={dollGif}
+                      alt="Screaming figure"
+                      decoding="async"
+                      loading="lazy"
+                    />
                     <span className="xkm-caseCard__cta">view case →</span>
                   </div>
                 </Link>
@@ -747,18 +811,19 @@ export default function NewHomePage({
               <div className="xkm-projectsPanel">
                 <p className="xkm-projectsPanel__text text-alpha">
                   <p className="xkm-projectsPanel__line">
-                      하나가 돼 ’cause you are my motto
+                    하나가 돼 ’cause you are my motto
                   </p>
-                 {/* <span className="xkm-projectsPanel__line">
+                  {/* <span className="xkm-projectsPanel__line">
                     WE BELIEVE IN ITZY
                   </span> */}
-                   {/* <span className="xkm-projectsPanel__line">WRITE US AN EMAIL</span> */}
+                  {/* <span className="xkm-projectsPanel__line">WRITE US AN EMAIL</span> */}
                 </p>
               </div>
 
               <div className="xkm-btnBlock__bottom">
                 <div className="xkm-contactRow" aria-label="Contact">
-                  <a className="xkm-contactBtn" 
+                  <a
+                    className="xkm-contactBtn"
                     href="https://itzy.jype.com/"
                     target="_blank"
                     rel="noreferrer"
@@ -791,7 +856,6 @@ export default function NewHomePage({
             </div>
           </div>
         </div>
-        
       </div>
     </div>
   );
