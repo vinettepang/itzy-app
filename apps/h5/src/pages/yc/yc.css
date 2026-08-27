@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Martian+Mono:wght@400;500;600;700&display=swap");.yc-root{
+color-scheme:dark;--page:#2e1f15;--paper-light:244,241,219;--ticket-ink:#4a301d;font-family:Martian Mono,Geist Mono,Space Mono,monospace;font-synthesis:none}
+.yc-root,.yc-root *{
+box-sizing:border-box}
+.yc-root{
+min-height:100%;margin:0;min-width:320px;min-height:100dvh;overflow:hidden;background:var(--page)}
+.yc-root .page-background{
+position:fixed;z-index:0;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none;user-select:none}
+.yc-root .back-link{
+position:fixed;z-index:50;top:max(16px,env(safe-area-inset-top));left:16px;min-height:44px;padding:0 2px;display:inline-flex;align-items:center;color:rgb(var(--paper-light));font:400 10px/1 Martian Mono,Geist Mono,monospace;letter-spacing:.02em;text-decoration:none;transition:opacity .15s ease;border:0;border-radius:0;background:transparent;width:auto;height:auto;box-shadow:none}
+.yc-root .page-shell,.yc-root .ticket-stage{
+min-height:100dvh}
+.yc-root .ticket-stage{
+position:relative;z-index:10;display:flex;width:100%;padding:max(54px,env(safe-area-inset-top)) 16px max(24px,env(safe-area-inset-bottom));align-items:center;flex-direction:column;justify-content:center}
+.yc-root .ticket-machine{
+position:relative;width:min(920px,calc(100vw - 24px));height:min(570px,calc(100dvh - 210px));min-height:490px;isolation:isolate;perspective:1200px}
+.yc-root .final-ticket-callout{
+position:absolute;z-index:12;top:8px;left:50%;display:grid;width:min(520px,calc(100vw - 32px));transform:translateX(-50%);gap:7px;color:rgba(255,218,190,.92);text-align:center;pointer-events:none}
+.yc-root .final-ticket-callout span{
+font:500 9px/1 Martian Mono,Geist Mono,monospace;letter-spacing:.16em;opacity:.58}
+.yc-root .final-ticket-callout strong{
+font:500 14px/1.35 Martian Mono,Geist Mono,monospace;letter-spacing:-.02em}
+.yc-root .roll-canvas{
+position:absolute;z-index:1;inset:0;display:block;width:100%;height:100%;pointer-events:none;filter:drop-shadow(0 28px 25px rgba(10,4,1,.35))}
+.yc-root .feed-shadow{
+display:none}
+.yc-root .ticket-pull{
+--pull:0;--ticket-rest-y:40px;position:absolute;z-index:8;top:145px;left:50%;width:min(520px,calc(100vw - 32px));opacity:0;transform:translate3d(-50%,var(--ticket-rest-y),70px);transform-origin:50% 50%;touch-action:none;cursor:grab;will-change:transform}
+.yc-root .ticket-pull:active{
+cursor:grabbing}
+.yc-root .ticket-machine.is-tension .ticket-pull{
+cursor:progress}
+.yc-root .ticket-machine.is-holding .ticket-pull,.yc-root .ticket-machine.is-tearing .ticket-pull{
+opacity:0}
+.yc-root .ticket-machine.is-detached .ticket-pull,.yc-root .ticket-machine.is-settling .ticket-pull{
+opacity:1;transform:translate3d(-50%,var(--ticket-rest-y),70px) rotateY(0) rotate(0) scale(1);transform-origin:50% 50%;cursor:default;pointer-events:none}
+.yc-root .ticket-machine.is-settling .ticket-pull{
+animation:ticket-materialize .28s cubic-bezier(.215,.61,.355,1) .28s both}
+.yc-root .ticket-machine.is-detached .ticket-pull{
+pointer-events:auto}
+.yc-root .tear-seam{
+display:none}
+.yc-root .tear-seam:before{
+content:"";position:absolute;top:0;left:4px;height:100%;border-left:1px dashed rgba(65,36,20,.72)}
+.yc-root .tear-seam span{
+position:absolute;top:-12%;left:0;width:10px;height:16%;background:linear-gradient(180deg,transparent,rgba(255,236,211,.9),transparent);filter:blur(2px)}
+.yc-root .ticket-machine.is-tearing .tear-seam span{
+animation:tear-glint .26s ease-in-out 60ms both}
+.yc-root .ticket-machine.is-tearing .tear-seam{
+animation:seam-away .26s ease-out 90ms both}
+.yc-root .ticket-machine.is-detached .tear-seam{
+opacity:0}
+@keyframes ticket-rip{
+0%{
+transform:translate3d(calc(-18% + 70px),0,40px) rotateY(-18deg) rotate(-2deg) scale(.76)}
+10%{
+transform:translate3d(calc(-18% + 94px),1px,96px) rotateY(-22deg) rotate(2deg) scale(.76)}
+26%{
+transform:translate3d(-4%,-80px,220px) rotateY(-58deg) rotate(15deg) scale(.7)}
+48%{
+transform:translate3d(-28%,-122px,310px) rotateY(76deg) rotate(26deg) scale(.58)}
+68%{
+transform:translate3d(-68%,78px,230px) rotateY(-28deg) rotate(-11deg) scale(.82)}
+84%{
+transform:translate3d(-49%,32px,112px) rotateY(7deg) rotate(2deg) scale(1.035)}
+to{
+transform:translate3d(-50%,40px,70px) rotateY(0) rotate(0) scale(1)}
+}
+@keyframes ticket-materialize{
+0%{
+opacity:0;transform:translate3d(-50%,var(--ticket-rest-y),70px) scale(.95)}
+72%{
+opacity:.92;transform:translate3d(-50%,var(--ticket-rest-y),70px) scale(1.012)}
+to{
+opacity:1;transform:translate3d(-50%,var(--ticket-rest-y),70px) scale(1)}
+}
+@keyframes tear-glint{
+0%{
+transform:translateY(0)}
+to{
+transform:translateY(720%)}
+}
+@keyframes seam-away{
+to{
+opacity:0}
+}
+.yc-root .ticket-perspective{
+width:min(520px,calc(100vw - 32px));perspective:1200px;transform-style:preserve-3d}
+.yc-root .ticket-tilt{
+position:relative;transform:translate3d(var(--ticket-x,0),var(--ticket-y,0),0) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg));transform-style:preserve-3d;box-shadow:0 24px 54px rgba(0,0,0,.25),0 7px 18px rgba(0,0,0,.12);will-change:transform}
+.yc-root .ticket-artwork{
+position:relative;width:100%;min-height:280px;overflow:hidden;background:linear-gradient(135deg,#ffcb8e,#ff6a00 58%,#fc5e10);cursor:default;user-select:none;-webkit-user-select:none;mask-image:radial-gradient(circle 16px at 0 0,transparent 99%,#000 100%),radial-gradient(circle 16px at 100% 0,transparent 99%,#000 100%),radial-gradient(circle 16px at 0 100%,transparent 99%,#000 100%),radial-gradient(circle 16px at 100% 100%,transparent 99%,#000 100%),radial-gradient(circle 14px at 76% 0,transparent 99%,#000 100%),radial-gradient(circle 14px at 76% 100%,transparent 99%,#000 100%);mask-composite:intersect;-webkit-mask-image:radial-gradient(circle 16px at 0 0,transparent 99%,#000 100%),radial-gradient(circle 16px at 100% 0,transparent 99%,#000 100%),radial-gradient(circle 16px at 0 100%,transparent 99%,#000 100%),radial-gradient(circle 16px at 100% 100%,transparent 99%,#000 100%),radial-gradient(circle 14px at 76% 0,transparent 99%,#000 100%),radial-gradient(circle 14px at 76% 100%,transparent 99%,#000 100%);-webkit-mask-composite:destination-in}
+.yc-root .paper-noise,.yc-root .ticket-overlay{
+position:absolute;inset:0;display:block;width:100%;height:100%}
+.yc-root .mesh-layer{
+position:absolute;inset:0;z-index:0}
+.yc-root .glass-layer canvas,.yc-root .glass-layer>div,.yc-root .mesh-layer canvas,.yc-root .mesh-layer>div{
+width:100%;height:100%}
+.yc-root .paper-noise{
+z-index:1;opacity:.4;mix-blend-mode:overlay;pointer-events:none}
+.yc-root .glass-layer{
+display:none}
+
+.yc-root .ticket-overlay{
+z-index:6;overflow:visible}
+.yc-root .ticket-copy{
+fill:var(--ticket-ink);font-family:Martian Mono,Geist Mono,Space Mono,monospace}
+.yc-root .ticket-small{
+font-size:11px;font-weight:400;letter-spacing:.04em}
+.yc-root .ticket-name{
+font-size:36px;font-weight:500;letter-spacing:-.02em}
+.yc-root .ticket-separator{
+stroke:var(--ticket-ink);stroke-width:1.5;stroke-dasharray:4 4;opacity:.2}
+.yc-root .ticket-admit{
+font-size:40px;font-weight:500;letter-spacing:-.02em;opacity:.4}
+.yc-root .ticket-year{
+fill:#fff;font-family:Martian Mono,Geist Mono,monospace;font-size:90px;font-weight:700;letter-spacing:.05em;opacity:.15;mix-blend-mode:overlay}
+.yc-root .ticket-actions{
+display:flex;min-height:44px;margin-top:2px;align-items:center;justify-content:center;gap:8px}
+.yc-root .save-button,.yc-root .tear-button{
+display:inline-flex;min-height:44px;padding:8px 16px;align-items:center;justify-content:center;gap:6px;border:1px solid rgba(var(--paper-light),.15);border-radius:999px;color:rgba(var(--paper-light),.6);background:transparent;font:400 10px/1 Martian Mono,Geist Mono,monospace;letter-spacing:.04em;cursor:pointer;transition:color .15s ease,border-color .15s ease,transform .12s ease}
+.yc-root .tear-button{
+border-color:rgba(255,139,66,.38);color:rgba(255,205,169,.84)}
+.yc-root .tear-button:disabled{
+opacity:.56;cursor:progress}
+.yc-root .save-button:active,.yc-root .tear-button:active{
+transform:scale(.97)}
+.yc-root .save-button:disabled{
+cursor:default;opacity:.4}
+.yc-root .back-link:focus-visible,.yc-root .save-button:focus-visible,.yc-root .tear-button:focus-visible{
+outline:2px solid rgba(var(--paper-light),.8);outline-offset:3px}
+.yc-root .gesture-hint{
+min-height:14px;margin:9px 0 0;color:rgba(255,204,168,.48);font:400 9px/1.4 Martian Mono,Geist Mono,monospace;letter-spacing:.045em;text-align:center}
+.yc-root .ticket-note{
+max-width:320px;margin:12px auto 0;color:rgba(var(--paper-light),.45);font:400 10px/1.5 Martian Mono,Geist Mono,monospace;letter-spacing:.02em;text-align:center}
+.yc-root .caption-spacer{
+width:100%;height:80px;flex:0 0 80px}
+.yc-root .visually-hidden{
+position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media (hover:hover) and (pointer:fine){
+.yc-root .back-link:hover{
+opacity:.6}
+.yc-root .save-button:hover:not(:disabled){
+color:rgba(var(--paper-light),.9);border-color:rgba(var(--paper-light),.3)}
+.yc-root .tear-button:hover:not(:disabled){
+color:#ffe0c8;border-color:rgba(255,160,98,.72);transform:translateY(-1px)}
+}
+@media (max-width:640px){
+.yc-root .ticket-stage{
+padding-right:32px;padding-left:32px}
+.yc-root .ticket-machine{
+width:calc(100vw - 48px);height:min(480px,calc(100dvh - 205px));min-height:410px}
+.yc-root .ticket-pull{
+top:116px;--ticket-rest-y:38px}
+.yc-root .final-ticket-callout,.yc-root .ticket-perspective,.yc-root .ticket-pull{
+width:min(520px,calc(100vw - 64px))}
+.yc-root .final-ticket-callout{
+top:2px}
+.yc-root .final-ticket-callout strong{
+font-size:12px}
+.yc-root .tear-seam{
+top:150px}
+.yc-root .ticket-artwork{
+min-height:0;aspect-ratio:520/280}
+.yc-root .ticket-machine.is-detached .ticket-pull,.yc-root .ticket-machine.is-settling .ticket-pull{
+transform:translate3d(-50%,38px,70px)}
+.yc-root .ticket-actions{
+margin-top:0}
+.yc-root .ticket-note{
+display:none}
+.yc-root .caption-spacer{
+height:23px;flex-basis:23px}
+}
+@media (prefers-reduced-motion:reduce){
+.yc-root .back-link,.yc-root .save-button,.yc-root .tear-button,.yc-root .ticket-tilt{
+transition:none}
+.yc-root .tear-seam span,.yc-root .ticket-pull{
+animation:none!important}
+}
+/* Detail page: final ticket only, no roll canvas */
+.yc-root.yc-detail .yc-detail-machine{
+width:min(520px,calc(100vw - 32px));height:auto;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;perspective:none;isolation:auto}
+.yc-root.yc-detail .final-ticket-callout{
+position:relative;top:auto;left:auto;transform:none;width:100%}
+.yc-root.yc-detail .yc-detail-pull{
+position:relative;z-index:8;width:100%;opacity:1;transform:none;cursor:default;pointer-events:auto}
+.yc-root.yc-detail .ticket-perspective{
+width:100%}
+.yc-root.yc-detail .ticket-artwork{
+min-height:0;aspect-ratio:520/280}
+.yc-root.yc-detail a.tear-button,.yc-root.yc-detail a.save-button,.yc-root a.save-button{
+text-decoration:none}
+@media (max-width:640px){
+.yc-root.yc-detail .yc-detail-machine{
+width:min(520px,calc(100vw - 64px))}
+}

@@ -95,6 +95,15 @@ function buildMenuGroups(): MenuGroup[] {
       ],
     },
     {
+      id: 'anthnyung-yc',
+      title: 'YC Ticket',
+      links: [
+        { to: '/yc', label: 'Startup School 2026', note: 'anthnyung.com/yc' },
+        { to: '/yc/detail', label: 'Ticket detail', note: '最终票根' },
+      ],
+    },
+
+    {
       id: 'wakawaka',
       title: 'Waka Waka',
       links: [

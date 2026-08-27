@@ -1,0 +1,11 @@
+const fs = require('fs');
+const raw = fs.readFileSync(__dirname + '/page-f3b41d12594d0335.js', 'utf8');
+const i = raw.indexOf('distortion:.39');
+console.log('idx', i);
+console.log(raw.slice(Math.max(0, i - 700), i + 500));
+const j = raw.indexOf('shape:"lines"');
+console.log('\nshape idx', j);
+console.log(raw.slice(Math.max(0, j - 400), j + 300));
+const k = raw.indexOf('function h(');
+console.log('\nroll start', k);
+console.log(raw.slice(k, k + 2500));

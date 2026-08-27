@@ -365,6 +365,50 @@ body:has(.newnew-page .xkm--new-home) {
   border-color: rgba(255, 255, 255, 0.65);
 }
 
+/* Concert ticket under flat stubs */
+.newnew-page .xkm--new-home .newnew-yc-ticket {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  text-decoration: none;
+  color: inherit;
+  border: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: none;
+  transform: translateZ(0);
+}
+
+.newnew-page .xkm--new-home .newnew-yc-ticket .ticket-artwork {
+  min-height: 0;
+  width: 100%;
+  height: 150px;
+  aspect-ratio: auto;
+  border: 0;
+  border-radius: 14px;
+  box-shadow: none;
+}
+
+.newnew-page .xkm--new-home .newnew-yc-ticket--blue .ticket-artwork {
+  background: linear-gradient(135deg, #7aceeb, #3878af 58%, #1a2e69);
+}
+
+.newnew-page .xkm--new-home .newnew-yc-ticket--blue .mesh-layer {
+  display: none;
+}
+
+.newnew-page .xkm--new-home .newnew-yc-ticket--mesh .ticket-artwork {
+  background: linear-gradient(135deg, #ffcb8e, #ff6a00 58%, #fc5e10);
+}
+
+.newnew-page .xkm--new-home .newnew-yc-ticket--mesh .mesh-layer {
+  display: block;
+}
+
+.newnew-page .xkm--new-home .newnew-yc-ticket:active {
+  transform: scale(0.99);
+}
+
 .newnew-page .xkm--new-home .xkm-btnBlock,
 .newnew-page .xkm--new-home .xkm-ticketBlock {
   color: var(--newnew-ink);

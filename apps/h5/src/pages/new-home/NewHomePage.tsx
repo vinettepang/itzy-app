@@ -17,6 +17,7 @@ import screamFigureGif from "@/assets/scream-figure-jump-transparent.gif";
 import dollGif from "@/assets/doll.png";
 import NewHomeFallCanvas from "./NewHomeFallCanvas";
 import NewHomeRefractionCanvas from "./NewHomeRefractionCanvas";
+import NewNewArtworkTicket from "@/pages/newnew/NewNewArtworkTicket";
 import "../XkmPage.css";
 import "../XkmPage.pc.css";
 import "./new-home.css";
@@ -240,6 +241,7 @@ type TicketView = {
   year: string;
   daysLeft: number | null;
   posterUrl: string;
+  city?: string;
 };
 
 function buildTicketFromSchedule(pick: HomeSchedule): TicketView {
@@ -259,6 +261,7 @@ function buildTicketFromSchedule(pick: HomeSchedule): TicketView {
     year: String(new Date(pick.startsAt).getFullYear()),
     daysLeft: diffDays(pick.startsAt),
     posterUrl: cover || tourPosterWebp,
+    city: pick.venue?.city,
   };
 }
 
@@ -725,6 +728,20 @@ export default function NewHomePage({
                     variant={item.variant}
                   />
                 ))}
+                {overlayCacheKey === "newnew" ? (
+                  <>
+                    <NewNewArtworkTicket
+                      ticket={tickets[0].ticket}
+                      cycleTitle={data?.tourSpotlightCycleTitle}
+                      tone="blue"
+                    />
+                    <NewNewArtworkTicket
+                      ticket={tickets[0].ticket}
+                      cycleTitle={data?.tourSpotlightCycleTitle}
+                      tone="mesh"
+                    />
+                  </>
+                ) : null}
               </div>
             ) : !loading && !err ? (
               <p className="xkm-muted">No upcoming schedule</p>

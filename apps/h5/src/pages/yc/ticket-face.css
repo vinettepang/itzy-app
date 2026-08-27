@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Martian+Mono:wght@400;500;600;700&display=swap");
+
+/* Standalone ticket face — usable outside .yc-root */
+.ticket-artwork {
+  --ticket-ink: #4a301d;
+  position: relative;
+  width: 100%;
+  min-height: 280px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #ffcb8e, #ff6a00 58%, #fc5e10);
+  cursor: default;
+  user-select: none;
+  -webkit-user-select: none;
+  mask-image:
+    radial-gradient(circle 16px at 0 0, transparent 99%, #000 100%),
+    radial-gradient(circle 16px at 100% 0, transparent 99%, #000 100%),
+    radial-gradient(circle 16px at 0 100%, transparent 99%, #000 100%),
+    radial-gradient(circle 16px at 100% 100%, transparent 99%, #000 100%),
+    radial-gradient(circle 14px at 76% 0, transparent 99%, #000 100%),
+    radial-gradient(circle 14px at 76% 100%, transparent 99%, #000 100%);
+  mask-composite: intersect;
+  -webkit-mask-image:
+    radial-gradient(circle 16px at 0 0, transparent 99%, #000 100%),
+    radial-gradient(circle 16px at 100% 0, transparent 99%, #000 100%),
+    radial-gradient(circle 16px at 0 100%, transparent 99%, #000 100%),
+    radial-gradient(circle 16px at 100% 100%, transparent 99%, #000 100%),
+    radial-gradient(circle 14px at 76% 0, transparent 99%, #000 100%),
+    radial-gradient(circle 14px at 76% 100%, transparent 99%, #000 100%);
+  -webkit-mask-composite: destination-in;
+}
+
+.ticket-artwork .paper-noise,
+.ticket-artwork .ticket-overlay {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.ticket-artwork .mesh-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.ticket-artwork .mesh-layer canvas,
+.ticket-artwork .mesh-layer > div {
+  width: 100%;
+  height: 100%;
+}
+
+.ticket-artwork .paper-noise {
+  z-index: 1;
+  opacity: 0.4;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+.ticket-artwork .ticket-overlay {
+  z-index: 6;
+  overflow: visible;
+}
+
+.ticket-artwork .ticket-copy {
+  fill: var(--ticket-ink);
+  font-family: Martian Mono, Geist Mono, "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei", "Noto Sans SC", Space Mono, monospace;
+}
+
+.ticket-artwork .ticket-small {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+}
+
+.ticket-artwork .ticket-name {
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.ticket-artwork .ticket-separator {
+  stroke: var(--ticket-ink);
+  stroke-width: 1.5;
+  stroke-dasharray: 4 4;
+  opacity: 0.2;
+}
+
+.ticket-artwork .ticket-admit {
+  font-size: 40px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  opacity: 0.4;
+}
+
+.ticket-artwork .ticket-year {
+  fill: #fff;
+  font-family: Martian Mono, Geist Mono, monospace;
+  font-size: 90px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  opacity: 0.15;
+  mix-blend-mode: overlay;
+}
+
+/* Flat-ticket date stub layout (concert / newnew) */
+.ticket-artwork .ticket-date-month {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.ticket-artwork .ticket-date-day {
+  font-size: 42px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.ticket-artwork .ticket-date-year {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.ticket-artwork .ticket-date-badge-bg {
+  fill: rgba(74, 48, 29, 0.08);
+  stroke: rgba(74, 48, 29, 0.45);
+  stroke-width: 1.2;
+}
+
+.ticket-artwork .ticket-date-badge-text {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}

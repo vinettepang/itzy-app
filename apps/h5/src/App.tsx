@@ -49,6 +49,8 @@ import StagecrewWorkPage from '@/pages/stagecrew/pages/WorkPage';
 import StagecrewInfoPage from '@/pages/stagecrew/pages/InfoPage';
 import StagecrewBackstagePage from '@/pages/stagecrew/pages/BackstagePage';
 import StagecrewProjectPage from '@/pages/stagecrew/pages/ProjectPage';
+import YcPage from '@/pages/yc/YcPage';
+import YcDetailPage from '@/pages/yc/YcDetailPage';
 
 const HAOQI_PROJECT_SLUGS = [
   'reunimos',
@@ -107,6 +109,9 @@ export default function App() {
         <Route path="backstage" element={<StagecrewBackstagePage />} />
         <Route path="work/:slug" element={<StagecrewProjectPage />} />
       </Route>
+      <Route path="/yc" element={<YcPage />} />
+      <Route path="/yc/detail" element={<YcDetailPage />} />
+
       <Route path="/facil" element={<FacilLayout />}>
         <Route index element={<FacilHomePage />} />
         <Route path="trabajos" element={<FacilWorksPage />} />
