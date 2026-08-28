@@ -7,8 +7,6 @@
   --unseen-serif: 'Times New Roman', Times, Georgia, serif;
   --unseen-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
-  /* Explicit viewport size: NewNewPageTransition uses will-change/transform,
-     which creates a containing block — inset:0 alone collapses to height 0. */
   position: fixed;
   inset: 0;
   top: 0;
@@ -32,7 +30,7 @@
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior: contain;
-  padding: calc(var(--newnew-nav-h, 60px) + 20px) clamp(16px, 4vw, 40px)
+  padding: clamp(16px, 3vw, 28px) clamp(16px, 4vw, 40px)
     clamp(40px, 8vw, 72px);
   box-sizing: border-box;
   background: #ffffff;
@@ -144,7 +142,7 @@
 
 @media (max-width: 900px) {
   .unseen-gate {
-    padding-top: calc(var(--newnew-nav-h, 48px) + 16px);
+    padding-top: 16px;
     padding-left: 14px;
     padding-right: 14px;
   }
@@ -340,8 +338,11 @@
   inset: 0;
   z-index: 40;
   display: grid;
-  place-items: center;
-  padding: 24px;
+  align-content: start;
+  justify-items: center;
+  padding: 16px 16px 32px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   background: rgba(0, 0, 0, 0.72);
   backdrop-filter: blur(6px);
 }
@@ -349,8 +350,9 @@
 .unseen-modal__panel {
   position: relative;
   width: min(420px, 100%);
-  max-height: min(90vh, 720px);
-  overflow: auto;
+  max-height: none;
+  overflow: visible;
+  margin-top: 0;
   padding: 24px;
   border: 1px solid rgba(244, 244, 239, 0.15);
   background: #141414;

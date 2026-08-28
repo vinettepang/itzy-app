@@ -800,7 +800,7 @@ export default function NewHomePage({
 
               {overlayCacheKey === "newnew" ? (
                 <Link
-                  to="/unseen"
+                  to="/dolls"
                   className="xkm-caseCard xkm-caseCard--dollGuide"
                   aria-label="娃娃图鉴"
                 >

@@ -78,6 +78,7 @@ function buildMenuGroups(): MenuGroup[] {
         { to: '/cheer/gold', label: 'GOLD 应援法' },
         { to: '/cheer/wannabe', label: 'WANNABE 应援法' },
         { to: '/unseen', label: 'Unseen', note: '本地玩偶页' },
+        { to: '/dolls', label: 'Dolls', note: 'newnew 娃娃图鉴' },
         { to: '/balls', label: 'Balls' },
         { to: '/labs/webgl-refraction', label: 'WebGL Refraction' },
       ],

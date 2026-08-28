@@ -15,6 +15,7 @@ import SongsPage from '@/pages/SongsPage';
 import TourSetlistPage from '@/pages/TourSetlistPage';
 import CheerGuidePage from '@/pages/CheerGuidePage';
 import UnseenPage from '@/pages/UnseenPage';
+import DollsPage from '@/pages/DollsPage';
 import BallsPage from '@/pages/BallsPage';
 import HaoqiPage from '@/pages/haoqi/HaoqiPage';
 import HaoqiProjectPage from '@/pages/haoqi/HaoqiProjectPage';
@@ -75,6 +76,7 @@ export default function App() {
       <Route path="/new_home" element={<NewHomePage />} />
       <Route path="/newnew" element={<NewNewPage />} />
       <Route path="/ui" element={<UiPage />} />
+      <Route path="/dolls" element={<DollsPage />} />
       <Route element={<NewNewLayout />}>
         <Route path="/poster" element={<PosterPage />} />
         <Route path="/poster/preview" element={<PosterPreviewPage />} />

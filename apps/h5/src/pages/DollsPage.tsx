@@ -8,7 +8,7 @@ import {
 import { fetchDollGallery, getDollById } from '@/pages/unseen/fetchDollCatalog';
 import type { UnseenDoll } from '@/types/dollCatalog';
 import { useUnseenDrag } from '@/pages/unseen/useUnseenDrag';
-import './UnseenPage.css';
+import './DollsPage.css';
 
 const GALLERY_SECTIONS = [
   { key: 'twinzy', title: 'TWINZY', match: /twinzy/i },
@@ -21,7 +21,7 @@ function focusPanForDoll(doll: UnseenDoll) {
   return { x: -doll.worldX, y: -doll.worldY };
 }
 
-export default function UnseenPage() {
+export default function DollsPage() {
   const [phase, setPhase] = useState<Phase>('loading');
   const [progress, setProgress] = useState(0);
   const [selectedDollId, setSelectedDollId] = useState<string | null>(null);
