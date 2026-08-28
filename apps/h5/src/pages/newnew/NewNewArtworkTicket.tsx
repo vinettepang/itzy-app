@@ -70,13 +70,22 @@ export default function NewNewArtworkTicket({
     [ticket, cycleTitle],
   );
 
+  const fontBoost =
+    tone === 'blue' ? { body: 5, countdown: 9 } : { body: 6, countdown: 8 };
+
   return (
     <Link
       to="/schedules"
       className={`newnew-yc-ticket newnew-yc-ticket--${tone}`}
       aria-label={`${ticket.artist} ${ticket.title} ticket`}
     >
-      <TicketArtwork name={ticket.title} reduced={reduced} copy={copy} />
+      <TicketArtwork
+        name={ticket.title}
+        reduced={reduced}
+        copy={copy}
+        fontBoost={fontBoost}
+        layout={tone === 'blue' ? 'compact' : 'default'}
+      />
     </Link>
   );
 }

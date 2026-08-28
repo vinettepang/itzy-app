@@ -721,27 +721,21 @@ export default function NewHomePage({
 
             {tickets.length > 0 ? (
               <div className="xkm-ticketList">
-                {tickets.map((item, index) => (
-                  <XkmTicketCard
-                    key={`${item.ticket.title}-${index}`}
-                    ticket={item.ticket}
-                    variant={item.variant}
-                  />
-                ))}
                 {overlayCacheKey === "newnew" ? (
-                  <>
-                    <NewNewArtworkTicket
-                      ticket={tickets[0].ticket}
-                      cycleTitle={data?.tourSpotlightCycleTitle}
-                      tone="blue"
+                  <NewNewArtworkTicket
+                    ticket={tickets[0].ticket}
+                    cycleTitle={data?.tourSpotlightCycleTitle}
+                    tone="blue"
+                  />
+                ) : (
+                  tickets.map((item, index) => (
+                    <XkmTicketCard
+                      key={`${item.ticket.title}-${index}`}
+                      ticket={item.ticket}
+                      variant={item.variant}
                     />
-                    <NewNewArtworkTicket
-                      ticket={tickets[0].ticket}
-                      cycleTitle={data?.tourSpotlightCycleTitle}
-                      tone="mesh"
-                    />
-                  </>
-                ) : null}
+                  ))
+                )}
               </div>
             ) : !loading && !err ? (
               <p className="xkm-muted">No upcoming schedule</p>
@@ -778,9 +772,13 @@ export default function NewHomePage({
               ) : null}
 
               <Link
-                to="/cheer/tunnel-vision"
+                to={overlayCacheKey === "newnew" ? "/setlist" : "/cheer/tunnel-vision"}
                 className="xkm-caseCard"
-                aria-label="Tunnel Vision 应援法"
+                aria-label={
+                  overlayCacheKey === "newnew"
+                    ? "三巡歌单"
+                    : "Tunnel Vision 应援法"
+                }
               >
                 <div className="xkm-caseCard__label">
                   <span>FANCHANT</span>

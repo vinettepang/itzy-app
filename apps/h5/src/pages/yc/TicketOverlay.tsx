@@ -22,6 +22,47 @@ export type TicketCopy = {
 type Props = {
   name: string;
   copy?: TicketCopy;
+  /** Extra px added to body text (+2) and countdown badge (+4) on newnew tickets. */
+  fontBoost?: { body?: number; countdown?: number };
+  /** Wide short bar — stretch overlay and push copy toward left/right edges. */
+  layout?: 'default' | 'compact';
+};
+
+type LayoutMetrics = {
+  leftX: number;
+  kickerY: [number, number];
+  nameY: (i: number, lineCount: number) => number;
+  footerY: number;
+  sepX: number;
+  dateMonth: { x: number; y: number };
+  dateDay: { x: number; y: number };
+  dateYear: { x: number; y: number };
+  badge: { rectX: number; rectY: number; textX: number; textY: number };
+};
+
+const LAYOUTS: Record<'default' | 'compact', LayoutMetrics> = {
+  default: {
+    leftX: 36,
+    kickerY: [43, 60],
+    nameY: (i, lineCount) => (lineCount === 1 ? 158 : 137 + 43 * i),
+    footerY: 244,
+    sepX: 395.2,
+    dateMonth: { x: 450, y: 78 },
+    dateDay: { x: 450, y: 138 },
+    dateYear: { x: 498, y: 140 },
+    badge: { rectX: 418, rectY: 198, textX: 450, textY: 213 },
+  },
+  compact: {
+    leftX: 30,
+    kickerY: [50, 66],
+    nameY: (i, lineCount) => (lineCount === 1 ? 156 : 136 + 40 * i),
+    footerY: 234,
+    sepX: 398,
+    dateMonth: { x: 462, y: 82 },
+    dateDay: { x: 462, y: 132 },
+    dateYear: { x: 500, y: 134 },
+    badge: { rectX: 430, rectY: 186, textX: 462, textY: 201 },
+  },
 };
 
 function splitHeadline(text: string): string[] {
@@ -65,7 +106,16 @@ const YC_DEFAULTS: Required<
 };
 
 /** SVG ticket typography overlay (SOURCE · fn-svg-u). */
-export default function TicketOverlay({ name, copy }: Props) {
+export default function TicketOverlay({
+  name,
+  copy,
+  fontBoost,
+  layout = 'default',
+}: Props) {
+  const bodyBoost = fontBoost?.body ?? 0;
+  const countdownBoost = fontBoost?.countdown ?? 0;
+  const metrics = LAYOUTS[layout];
+  const compact = layout === 'compact';
   const kickerTop = copy?.kickerTop ?? YC_DEFAULTS.kickerTop;
   const kickerBottom = copy?.kickerBottom ?? YC_DEFAULTS.kickerBottom;
   const footer = copy?.footer ?? YC_DEFAULTS.footer;
@@ -84,22 +134,28 @@ export default function TicketOverlay({ name, copy }: Props) {
     return splitHeadline(source);
   }, [copy?.headline, name]);
   const longest = Math.max(...lines.map((l) => l.length), 1);
-  const nameSize = Math.max(16, Math.min(36, 320 / Math.max(longest, 7)));
-
+  const nameSize =
+    Math.max(16, Math.min(36, 320 / Math.max(longest, 7))) + bodyBoost;
+  const smallSize = 11 + bodyBoost;
+  const monthSize = 12 + bodyBoost;
+  const daySize = 42 + bodyBoost;
+  const yearSize = 11 + bodyBoost;
+  const badgeSize = 11 + countdownBoost;
   return (
     <svg
       id="ticket-overlay"
-      className="ticket-overlay"
+      className={`ticket-overlay${compact ? ' ticket-overlay--compact' : ''}`}
       viewBox="0 0 520 280"
+      preserveAspectRatio={compact ? 'none' : 'xMidYMid meet'}
       xmlns="http://www.w3.org/2000/svg"
     >
       <title>{titleAttr}</title>
       <desc>{descAttr}</desc>
-      <g className="ticket-copy ticket-small">
-        <text x="36" y="43">
+      <g className="ticket-copy ticket-small" style={{ fontSize: smallSize }}>
+        <text x={metrics.leftX} y={metrics.kickerY[0]}>
           {kickerTop}
         </text>
-        <text x="36" y="60">
+        <text x={metrics.leftX} y={metrics.kickerY[1]}>
           {kickerBottom}
         </text>
       </g>
@@ -111,66 +167,75 @@ export default function TicketOverlay({ name, copy }: Props) {
         {lines.map((line, i) => (
           <text
             key={`${line}-${i}`}
-            x="36"
-            y={lines.length === 1 ? 158 : 137 + 43 * i}
+            x={metrics.leftX}
+            y={metrics.nameY(i, lines.length)}
           >
             {line}
           </text>
         ))}
       </g>
-      <text x="36" y="244" className="ticket-copy ticket-small">
+      <text
+        x={metrics.leftX}
+        y={metrics.footerY}
+        className="ticket-copy ticket-small"
+        style={{ fontSize: smallSize }}
+      >
         {footer}
       </text>
       <line
-        x1="395.2"
+        x1={metrics.sepX}
         y1="18"
-        x2="395.2"
+        x2={metrics.sepX}
         y2="262"
         className="ticket-separator"
       />
       {stubLayout === 'date' ? (
         <g className="ticket-date-stub" aria-label={`${month}月 ${day} ${year}`}>
           <text
-            x="450"
-            y="78"
+            x={metrics.dateMonth.x}
+            y={metrics.dateMonth.y}
             textAnchor="middle"
             className="ticket-copy ticket-date-month"
+            style={{ fontSize: monthSize }}
           >
             {month}月
           </text>
           <text
-            x="450"
-            y="138"
+            x={metrics.dateDay.x}
+            y={metrics.dateDay.y}
             textAnchor="middle"
             className="ticket-copy ticket-date-day"
+            style={{ fontSize: daySize }}
           >
             {day}
           </text>
           <text
-            x="498"
-            y="140"
+            x={metrics.dateYear.x}
+            y={metrics.dateYear.y}
             textAnchor="middle"
             className="ticket-copy ticket-date-year"
-            transform="rotate(90 498 140)"
+            transform={`rotate(90 ${metrics.dateYear.x} ${metrics.dateYear.y})`}
+            style={{ fontSize: yearSize }}
           >
             {year}
           </text>
           {daysLeft !== null && daysLeft !== undefined ? (
             <g className="ticket-date-badge">
               <rect
-                x="418"
-                y="198"
+                x={metrics.badge.rectX}
+                y={metrics.badge.rectY}
                 width="64"
-                height="22"
+                height={22 + Math.max(0, countdownBoost - 2)}
                 rx="11"
                 ry="11"
                 className="ticket-date-badge-bg"
               />
               <text
-                x="450"
-                y="213"
+                x={metrics.badge.textX}
+                y={metrics.badge.textY + Math.max(0, countdownBoost - 2)}
                 textAnchor="middle"
                 className="ticket-copy ticket-date-badge-text"
+                style={{ fontSize: badgeSize }}
               >
                 {daysLeft}天
               </text>

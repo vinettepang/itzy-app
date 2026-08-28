@@ -27,13 +27,15 @@ type TicketArtworkProps = {
   name: string;
   reduced: boolean;
   copy?: TicketCopy;
+  fontBoost?: { body?: number; countdown?: number };
+  layout?: 'default' | 'compact';
   /** Kept for API compat with machine/detail pages. */
   glass?: GlassMotion;
 };
 
 /** Full-bleed MeshGradient + noise + SVG ticket face. */
 export const TicketArtwork = forwardRef<HTMLDivElement, TicketArtworkProps>(
-  function TicketArtwork({ name, reduced, copy }, ref) {
+  function TicketArtwork({ name, reduced, copy, fontBoost, layout }, ref) {
     const label =
       copy?.titleAttr ?? `Startup School 2026 admission ticket for ${name}`;
 
@@ -64,7 +66,12 @@ export const TicketArtwork = forwardRef<HTMLDivElement, TicketArtworkProps>(
           />
         </div>
         <PaperNoise />
-        <TicketOverlay name={name} copy={copy} />
+        <TicketOverlay
+          name={name}
+          copy={copy}
+          fontBoost={fontBoost}
+          layout={layout}
+        />
       </div>
     );
   },

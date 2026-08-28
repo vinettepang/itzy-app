@@ -1,0 +1,65 @@
+.ui-page {
+  min-height: 100vh;
+  padding: 24px 16px 32px;
+  box-sizing: border-box;
+  background: #60646d;
+  color: #111;
+}
+
+.ui-page__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.ui-page__title {
+  margin: 0;
+  font-family: fantasy;
+  font-size: 18px;
+  color: #fff;
+}
+
+.ui-page__back {
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+.ui-page__back:hover {
+  opacity: 1;
+}
+
+.ui-page__section.xkm-ticketBlock {
+  max-width: 520px;
+  padding: 0;
+  background: transparent;
+}
+
+.ui-page .xkm-ticketBlock__title {
+  color: #fff;
+  font-family: fantasy;
+  font-size: 18px;
+  mix-blend-mode: normal;
+}
+
+.ui-page__ticketList {
+  display: grid;
+  gap: 10px;
+}
+
+.ui-page__muted,
+.ui-page__err {
+  margin: 0;
+  font-size: 14px;
+}
+
+.ui-page__muted {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.ui-page__err {
+  color: #ffb4b0;
+}

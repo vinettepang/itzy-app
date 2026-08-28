@@ -31,6 +31,7 @@ import FacilProjectPage from '@/pages/facil/pages/FacilProjectPage';
 import FacilLegalPage from '@/pages/facil/pages/FacilLegalPage';
 import NewHomePage from '@/pages/new-home/NewHomePage';
 import NewNewPage from '@/pages/newnew/NewNewPage';
+import UiPage from '@/pages/ui/UiPage';
 import NewNewLayout from '@/pages/newnew/NewNewLayout';
 import MenuPage from '@/pages/MenuPage';
 import WakaLayout from '@/pages/wakawaka/WakaLayout';
@@ -73,6 +74,7 @@ export default function App() {
       <Route path="/xkm" element={<XkmPage />} />
       <Route path="/new_home" element={<NewHomePage />} />
       <Route path="/newnew" element={<NewNewPage />} />
+      <Route path="/ui" element={<UiPage />} />
       <Route element={<NewNewLayout />}>
         <Route path="/poster" element={<PosterPage />} />
         <Route path="/poster/preview" element={<PosterPreviewPage />} />
