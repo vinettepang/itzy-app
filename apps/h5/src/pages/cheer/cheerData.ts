@@ -10,6 +10,9 @@ import { notShyGuide } from './guides/not-shy';
 import { thatsANoNoGuide } from './guides/thats-a-no-no';
 import { tunnelVisionGuide } from './guides/tunnel-vision';
 import { wannabeGuide } from './guides/wannabe';
+import { cakeGuide } from './guides/cake';
+import { sneakersGuide } from './guides/sneakers';
+import { dallaDallaGuide } from './guides/dalla-dalla';
 
 export type {
   CheerAccent,
@@ -32,6 +35,9 @@ const GUIDES: CheerGuide[] = [
   thatsANoNoGuide,
   notShyGuide,
   locoGuide,
+  sneakersGuide,
+  cakeGuide,
+  dallaDallaGuide,
 ];
 
 export const CHEER_GUIDES: Record<string, CheerGuide> = Object.fromEntries(

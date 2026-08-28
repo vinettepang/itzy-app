@@ -27,15 +27,15 @@ function buildConcertCopy(
 ): TicketCopy {
   const venue = ticket.venueLine.trim() || 'TBA';
   const city = ticket.city?.trim();
-  const place = city ? `${venue}, ${city}` : venue;
+  const place = city ? `${venue},${city}` : venue;
   const dayNum = String(ticket.day).replace(/\D/g, '') || ticket.day;
   const cycle = (cycleTitle || 'WORLD TOUR').trim();
 
   return {
-    headline: ticket.title,
-    kickerTop: 'JYP ENTERTAINMENT PRESENTS',
+    headline: place,
+    kickerTop: 'ITZY TUNNEL VISION WORLD TOUR',
     kickerBottom: /[a-z]/i.test(cycle) ? cycle.toUpperCase() : cycle,
-    footer: place,
+    footer: ticket.title,
     stubLayout: 'date',
     month: ticket.month,
     day: dayNum,

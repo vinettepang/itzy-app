@@ -27,18 +27,7 @@ export default function CheerGuidePage() {
   return (
     <div className={`cheer-page cheer-page--${accent}`}>
       <header className="cheer-header">
-        <Link className="cheer-back" to="/setlist">
-          ← 歌单
-        </Link>
         <h1 className="cheer-title">{guide.title}</h1>
-        <p className="cheer-credit">{guide.credit}</p>
-        <div className="cheer-legend" aria-label="颜色说明">
-          <span className="cheer-legend__item cheer-legend__item--lyric">歌词</span>
-          <span className="cheer-legend__item cheer-legend__item--cheer">应援</span>
-          {hasEcho ? (
-            <span className="cheer-legend__item cheer-legend__item--echo">跟喊</span>
-          ) : null}
-        </div>
       </header>
 
       <div className="cheer-columns">
@@ -59,6 +48,24 @@ export default function CheerGuidePage() {
           </div>
         ))}
       </div>
+
+      {/*
+        挂在歌词页内（非 body portal）：
+        - 父级无 transform 时 fixed 贴视口
+        - 返回过渡父级带 transform 时随页一起滑走并卸载
+      */}
+      <div className="cheer-floatDock" aria-label="颜色说明">
+        <div className="cheer-legend cheer-legend--float">
+          <span className="cheer-legend__item cheer-legend__item--lyric">歌词</span>
+          <span className="cheer-legend__item cheer-legend__item--cheer">应援</span>
+          {hasEcho ? (
+            <span className="cheer-legend__item cheer-legend__item--echo">跟喊</span>
+          ) : null}
+        </div>
+      </div>
+      <Link className="cheer-back cheer-back--float" to="/setlist">
+        ← 歌单
+      </Link>
     </div>
   );
 }

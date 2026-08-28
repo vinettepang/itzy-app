@@ -69,7 +69,7 @@ export default function TourSetlistPage() {
                 to={cheerHref(song.title)}
                 aria-label={`${song.title} 应援法`}
               >
-                应援法
+                <span className="setlist-cheer__text">应援法</span>
               </Link>
             ) : null}
           </li>

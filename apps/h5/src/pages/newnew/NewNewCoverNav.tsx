@@ -1,8 +1,10 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import itzyLogoPng from '@/assets/itzy.png';
 
 const INFO_MARQUEE_TEXT = 'MIDZY · ITZY · MIDZY · ITZY';
 const HOME_HREF = '/newnew';
+const NAV_PINNED_CLASS = 'xkm-coverNav--pinned';
 
 function InfoMarquee() {
   const items = [INFO_MARQUEE_TEXT, INFO_MARQUEE_TEXT];
@@ -28,8 +30,24 @@ function InfoMarquee() {
 }
 
 export default function NewNewCoverNav() {
+  const [pinned, setPinned] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setPinned(window.scrollY > 0);
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
-    <nav className="xkm-coverNav xkm-coverNav--withHome newnew-shell__nav" aria-label="Site navigation">
+    <nav
+      className={`xkm-coverNav xkm-coverNav--withHome newnew-shell__nav${
+        pinned ? ` ${NAV_PINNED_CLASS}` : ''
+      }`}
+      aria-label="Site navigation"
+    >
       <Link
         to={HOME_HREF}
         className="xkm-coverNav__home"

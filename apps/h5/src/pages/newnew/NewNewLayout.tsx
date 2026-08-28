@@ -1,5 +1,5 @@
-import { Outlet } from 'react-router-dom';
 import NewNewCoverNav from './NewNewCoverNav';
+import NewNewPageTransition from './NewNewPageTransition';
 import '../XkmPage.css';
 import '../XkmPage.pc.css';
 import './newnew.css';
@@ -10,7 +10,7 @@ export default function NewNewLayout() {
     <div className="newnew-shell">
       <NewNewCoverNav />
       <div className="newnew-shell__main">
-        <Outlet />
+        <NewNewPageTransition />
       </div>
     </div>
   );

@@ -10,25 +10,31 @@ function clone<T>(x: T): T {
   return JSON.parse(JSON.stringify(x)) as T;
 }
 
-/** 将模板里的行程时间锚定到「今天」起算的本地日期，便于首页分区与海报级联有数据 */
+/** 使用 schedules.json 中的真实巡演日期 */
 function buildSchedulesList(): JsonSchedule[] {
-  const raw = schedulesTemplate as JsonSchedule[];
-  const list = clone(raw);
-  const now = new Date();
-  const y = now.getFullYear();
-  const mo = now.getMonth();
-  const day = now.getDate();
-  const at = (offsetDay: number, h: number, min = 0) =>
-    new Date(y, mo, day + offsetDay, h, min, 0, 0).toISOString();
+  return clone(schedulesTemplate as JsonSchedule[]);
+}
 
-  if (list[0]) list[0].startsAt = at(0, 19, 0);
-  if (list[1]) list[1].startsAt = at(0, 14, 30);
-  if (list[2]) list[2].startsAt = at(3, 18, 0);
-  if (list[3]) list[3].startsAt = at(10, 19, 0);
-  if (list[4]) list[4].startsAt = at(0, 12, 0);
-  if (list[5]) list[5].startsAt = at(3, 20, 0);
-  if (list[6]) list[6].startsAt = at(20, 17, 0);
-  return list;
+function pickTourSpotlight(list: JsonSchedule[]): {
+  tourSpotlight: JsonSchedule | null;
+  tourSpotlightCycleTitle: string;
+} {
+  const cycleTitle = 'TUNNEL VISION 世巡';
+  const inCycle = list.filter((s) => s.tourCycleId);
+  if (!inCycle.length) {
+    return { tourSpotlight: null, tourSpotlightCycleTitle: cycleTitle };
+  }
+  const now = Date.now();
+  const byAsc = [...inCycle].sort(
+    (a, b) => new Date(a.startsAt).getTime() - new Date(b.startsAt).getTime(),
+  );
+  const upcoming = byAsc.find((s) => new Date(s.startsAt).getTime() >= now);
+  const tourSpotlight = upcoming ?? byAsc[byAsc.length - 1] ?? null;
+  const tc = tourSpotlight?.tourCycle as { title?: string } | null | undefined;
+  return {
+    tourSpotlight,
+    tourSpotlightCycleTitle: tc?.title ?? cycleTitle,
+  };
 }
 
 function buildSchedulesHome() {
@@ -60,9 +66,7 @@ function buildSchedulesHome() {
     .sort((a, b) => new Date(a.startsAt).getTime() - new Date(b.startsAt).getTime())
     .slice(0, 20);
 
-  const tourSpotlight = list.find((s) => s.id === 'mock-sch-tour-spot') ?? null;
-  const tc = tourSpotlight?.tourCycle as { title?: string } | null | undefined;
-  const tourSpotlightCycleTitle = tc?.title ?? 'TUNNEL VISION 世巡';
+  const { tourSpotlight, tourSpotlightCycleTitle } = pickTourSpotlight(list);
 
   return {
     today,

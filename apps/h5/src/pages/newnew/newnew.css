@@ -17,7 +17,7 @@
   --newnew-ink: #111111;
   --newnew-accent: #1733ff;
   --newnew-border: rgba(17, 17, 17, 0.1);
-  --newnew-nav-top: 20px;
+  --newnew-nav-top: 0px;
   --newnew-nav-h: 60px;
   min-height: 100vh;
   padding-top: calc(var(--newnew-nav-top) + var(--newnew-nav-h));
@@ -44,6 +44,16 @@ body:has(.newnew-shell) {
   grid-template-columns: auto minmax(0, 2fr) minmax(0, 1fr);
   align-items: center;
   color: #000;
+}
+
+/* 内容上滑后：与首页 pinned nav 一致，去掉底色与底边 */
+.newnew-shell > .xkm-coverNav.newnew-shell__nav.xkm-coverNav--pinned {
+  background: transparent;
+  border-bottom: none;
+}
+
+.newnew-shell > .xkm-coverNav.newnew-shell__nav.xkm-coverNav--pinned .xkm-coverNav__cell {
+  border: none;
 }
 
 .newnew-shell .xkm-coverNav__cell--motto,
@@ -92,6 +102,27 @@ body:has(.newnew-shell) {
 
 .newnew-shell__main {
   min-width: 0;
+  position: relative;
+  overflow-x: clip;
+}
+
+.newnew-page-transition {
+  position: relative;
+  width: 100%;
+  min-height: 40vh;
+  overflow-x: clip;
+}
+
+.newnew-page-transition__page {
+  width: 100%;
+  will-change: transform;
+  background: var(--newnew-surface, #d9d9d9);
+}
+
+/* 进入完成：去掉 transform 含块，页内 position:fixed 才能贴视口 */
+.newnew-page-transition__page[data-settled] {
+  transform: none !important;
+  will-change: auto;
 }
 
 .newnew-page .xkm--new-home {

@@ -1,18 +1,16 @@
 .cheer-page {
-  --cheer-bg: #1a1a1c;
-  --cheer-lyric: #f5f5f5;
-  --cheer-cheer: #5ce1ff;
-  --cheer-echo: #ff9f43;
-  --cheer-muted: rgba(255, 255, 255, 0.42);
+  --cheer-bg: #f0f5f2;
+  --cheer-lyric: #050a07;
+  --cheer-cheer: #ff4d00;
+  --cheer-echo: #8a6a3a;
+  --cheer-muted: rgba(5, 10, 7, 0.42);
 
   min-height: 100vh;
   margin: 0 calc(50% - 50vw);
   width: 100vw;
   box-sizing: border-box;
-  padding: 20px 16px 48px;
-  background:
-    radial-gradient(900px 420px at 50% -10%, rgba(92, 225, 255, 0.08), transparent 60%),
-    linear-gradient(180deg, #222226 0%, var(--cheer-bg) 40%, #121214 100%);
+  padding: 20px 16px 120px;
+  background: var(--cheer-bg);
   color: var(--cheer-lyric);
 }
 
@@ -46,13 +44,50 @@
   color: var(--cheer-lyric);
 }
 
+/*
+ * 挂在歌词页内的 fixed（非 portal）。
+ * 静止时父级清除 transform → 贴视口；返回时父级 transform → 随页滑走。
+ */
+.cheer-floatDock {
+  position: fixed;
+  right: max(16px, env(safe-area-inset-right));
+  bottom: max(72px, calc(20px + env(safe-area-inset-bottom) + 52px));
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.cheer-back--float {
+  position: fixed;
+  left: 50%;
+  bottom: max(20px, calc(12px + env(safe-area-inset-bottom)));
+  z-index: 50;
+  transform: translateX(-50%);
+  margin: 0;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(240, 245, 242, 0.92);
+  border: 1px solid rgba(5, 10, 7, 0.12);
+  color: var(--cheer-lyric);
+  box-shadow: 0 8px 24px rgba(5, 10, 7, 0.12);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+.cheer-back--float:hover {
+  color: var(--cheer-lyric);
+  background: #fff;
+}
+
 .cheer-title {
   margin: 0;
   font-size: clamp(22px, 5vw, 30px);
   font-weight: 800;
   letter-spacing: -0.02em;
   line-height: 1.25;
-  color: #fff;
+  color: var(--cheer-lyric);
 }
 
 .cheer-credit {
@@ -69,13 +104,27 @@
   margin-top: 16px;
 }
 
+.cheer-legend--float {
+  margin-top: 0;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  padding: 8px;
+  border-radius: 16px;
+  background: rgba(240, 245, 242, 0.92);
+  border: 1px solid rgba(5, 10, 7, 0.12);
+  box-shadow: 0 8px 24px rgba(5, 10, 7, 0.12);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
 .cheer-legend__item {
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.04em;
   padding: 4px 10px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(5, 10, 7, 0.12);
 }
 
 .cheer-legend__item--lyric {
@@ -84,60 +133,29 @@
 
 .cheer-legend__item--cheer {
   color: var(--cheer-cheer);
-  border-color: rgba(92, 225, 255, 0.35);
+  border-color: rgba(255, 77, 0, 0.35);
 }
 
 .cheer-legend__item--echo {
   color: var(--cheer-echo);
-  border-color: rgba(255, 159, 67, 0.4);
+  border-color: rgba(138, 106, 58, 0.4);
 }
 
-.cheer-page--cyan {
-  --cheer-cheer: #5ce1ff;
-}
-
-.cheer-page--pink {
-  --cheer-cheer: #ff4fa3;
-  background:
-    radial-gradient(900px 420px at 50% -10%, rgba(255, 79, 163, 0.1), transparent 60%),
-    linear-gradient(180deg, #222226 0%, var(--cheer-bg) 40%, #121214 100%);
-}
-
-.cheer-page--pink .cheer-legend__item--cheer {
-  border-color: rgba(255, 79, 163, 0.4);
-}
-
-.cheer-page--red {
-  --cheer-cheer: #ff3b5c;
-  background:
-    radial-gradient(900px 420px at 50% -10%, rgba(255, 59, 92, 0.1), transparent 60%),
-    linear-gradient(180deg, #222226 0%, var(--cheer-bg) 40%, #121214 100%);
-}
-
-.cheer-page--red .cheer-legend__item--cheer {
-  border-color: rgba(255, 59, 92, 0.4);
-}
-
-.cheer-page--orange {
-  --cheer-cheer: #ff9f43;
-  background:
-    radial-gradient(900px 420px at 50% -10%, rgba(255, 159, 67, 0.1), transparent 60%),
-    linear-gradient(180deg, #222226 0%, var(--cheer-bg) 40%, #121214 100%);
-}
-
-.cheer-page--orange .cheer-legend__item--cheer {
-  border-color: rgba(255, 159, 67, 0.4);
-}
-
+.cheer-page--cyan,
+.cheer-page--pink,
+.cheer-page--red,
+.cheer-page--orange,
 .cheer-page--blue {
-  --cheer-cheer: #4da3ff;
-  background:
-    radial-gradient(900px 420px at 50% -10%, rgba(77, 163, 255, 0.1), transparent 60%),
-    linear-gradient(180deg, #222226 0%, var(--cheer-bg) 40%, #121214 100%);
+  --cheer-cheer: #ff4d00;
+  background: var(--cheer-bg);
 }
 
+.cheer-page--cyan .cheer-legend__item--cheer,
+.cheer-page--pink .cheer-legend__item--cheer,
+.cheer-page--red .cheer-legend__item--cheer,
+.cheer-page--orange .cheer-legend__item--cheer,
 .cheer-page--blue .cheer-legend__item--cheer {
-  border-color: rgba(77, 163, 255, 0.4);
+  border-color: rgba(255, 77, 0, 0.35);
 }
 
 .cheer-columns {
@@ -164,6 +182,7 @@
 
 .cheer-span--lyric {
   color: var(--cheer-lyric);
+  font-weight: 800;
 }
 
 .cheer-span--cheer {
@@ -178,7 +197,16 @@
 
 @media (min-width: 768px) {
   .cheer-page {
-    padding: 28px 28px 64px;
+    padding: 28px 28px 132px;
+  }
+
+  .cheer-floatDock {
+    right: 28px;
+    bottom: max(80px, calc(28px + env(safe-area-inset-bottom) + 52px));
+  }
+
+  .cheer-back--float {
+    bottom: max(28px, calc(20px + env(safe-area-inset-bottom)));
   }
 
   .cheer-columns {

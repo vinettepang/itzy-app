@@ -73,7 +73,9 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 32px;
+  box-sizing: border-box;
+  min-width: 64px;
+  height: 32px;
   padding: 0 12px;
   border-radius: 999px;
   border: 1px solid rgba(255, 106, 168, 0.35);
@@ -82,9 +84,18 @@
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: center;
   text-decoration: none;
   white-space: nowrap;
   transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.setlist-cheer__text {
+  display: block;
+  line-height: 1;
+  /* CJK 字形视觉重心偏上，略下移做光学居中 */
+  transform: translateY(0.08em);
 }
 
 .setlist-cheer:hover {
@@ -109,5 +120,6 @@
   .setlist-cheer {
     padding: 0 10px;
     font-size: 11px;
+    height: 30px;
   }
 }
