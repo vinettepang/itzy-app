@@ -2,17 +2,27 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 
 /**
- * facilagencia.com Footer 的 FÁCIL® logo —— 1:1 复刻。
+ * facilagencia.com Footer 的 FÁCIL® logo —— 1:1 复刻
  *
- * 字母造型直接用真站 sprite（public/facil-sprite.svg），每个字母是一个 <use>
- * 引用同一个 symbol，堆叠在同一 viewBox 0 0 1368 387 里，组合出完整 wordmark。
+ * 字母 path 直接内联自真站 sprite（public/facil-sprite.svg 的 6 个 symbol），
+ * 用同文档 <use href="#f"> 引用，避免外部 sprite 引用在浏览器里的兼容性问题。
  *
- * 滑动效果（对照真站 Hn.goBlack 的非 fixed 分支）：
- *   FA   → delay 0.1s, duration ~0.3s → #1a1a1a
- *   CIL  → delay 0.5s, duration ~0.25s → #1a1a1a
- *   ®    → delay 1.1s, duration ~0.2s → #1a1a1a
- * 总时长 ≈ 1.35s。滚回时反向熄灭（可重复触发）。
+ * 滑动效果（对照真站 Hn.goBlack 非 fixed 分支）：
+ *   [FA]  delay 0.10s → #1a1a1a
+ *   [CIL] delay 0.30s → #1a1a1a
+ *   [®]   delay 0.70s → #1a1a1a
+ * 总时长 ≈ 1s。滚回时反向熄灭（可重复触发）。
  */
+
+// 内联 6 个 symbol（1465B），保证同文档 <use href="#...">
+const SPRITE_DEFS = `
+<symbol viewBox="0 0 1368 387.1" id="fa"><path d="M511.31 36.15H335.6L226.19 378.1h129.77l13.74-54.94h98.04L481 378.1h140.19zM390.07 239.81l29.84-128.82h.95l27 128.82h-57.78z"/></symbol>
+<symbol viewBox="0 0 1368 387.1" id="fc"><path d="M773.7 298.06c-34.1 0-36.94-38.84-36.94-90.93 0-54.94 3.31-90.93 38.36-90.93 16.58 0 30.79 7.58 32.68 46.41h124.09C931.42 62.2 858.48 27.16 772.28 27.16c-115.57 0-179.03 71.99-175.71 178.55 0 108.46 55.41 181.39 175.24 181.39 42.62 0 82.41-10.42 111.77-32.21 29.36-22.26 48.31-56.36 48.31-103.25H804.96c-1.9 36-13.74 46.42-31.26 46.42Z"/></symbol>
+<symbol viewBox="0 0 1368 387.1" id="ff"><path d="M260.02 125.19V36.15H0V378.1h135.45V250.7h116.04v-89.04H135.45v-36.47h124.57z"/></symbol>
+<symbol viewBox="0 0 1368 387.1" id="fi"><path d="M952.21 36.15h135.45V378.1H952.21z"/></symbol>
+<symbol viewBox="0 0 1368 387.1" id="fl"><path d="M1243.44 286.22V36.15h-135.45V378.1H1368v-91.88h-124.56z"/></symbol>
+<symbol viewBox="0 0 1368 387.1" id="fr"><path d="M598.9 32.4c0-9.3-5.1-12.8-17.6-12.8h-15.6v40.5h9.8V44h3.6l8.1 16.1h11.1l-8.7-16.7c6.6-.6 9.3-4.9 9.3-11Zm-15.5 3.7h-7.9v-8.8h6.2c5.5 0 7.3 1.5 7.3 4s-1 4.8-5.7 4.8Zm-2-36.1c-22 0-39.8 17.8-39.8 39.8s17.8 39.8 39.8 39.8 39.8-17.8 39.8-39.8S603.4 0 581.4 0Zm0 69.8c-16.5 0-30-13.5-30-30s13.5-30 30-30 30 13.5 30 30-13.5 30-30 30Z"/></symbol>
+`.trim();
 
 const DIM = '#f5f5f5';
 const LIT = '#1a1a1a';
@@ -32,22 +42,23 @@ export default function PeopleFooter() {
       return;
     }
 
-    // 字母本来就在背景（fill 浅灰、不位移）
+    // 字母本来就在背景（浅灰、不位移）
     gsap.set(letters, { fill: DIM });
 
     const goBlack = () => {
       const [f, a, c, i, l, r] = letters;
       gsap.timeline({ overwrite: true })
-        .to([f, a],         { fill: LIT, duration: 0.3, delay: 0.10, ease: 'power3.inOut' })
-        .to([c, i, l],      { fill: LIT, duration: 0.25, delay: 0.20, ease: 'power3.inOut' }, '<')
-        .to([r],            { fill: LIT, duration: 0.2, delay: 0.40, ease: 'power3.inOut' }, '<');
+        .to([f, a], { fill: LIT, duration: 0.3, ease: 'power3.inOut' }, 0.1)
+        .to([c, i, l], { fill: LIT, duration: 0.25, ease: 'power3.inOut' }, 0.3)
+        .to([r], { fill: LIT, duration: 0.2, ease: 'power3.inOut' }, 0.7);
     };
 
     const goGrey = () => {
+      // 反向时按点亮顺序回退（先 CIL，再 FA，再 ®）
       gsap.timeline({ overwrite: true })
-        .to(letters.slice(2, 5), { fill: DIM, duration: 0.2, stagger: 0.04, ease: 'power2.inOut' })
-        .to(letters.slice(0, 2), { fill: DIM, duration: 0.2, ease: 'power2.inOut' }, '<')
-        .to(letters[5],           { fill: DIM, duration: 0.2, ease: 'power2.inOut' }, '<');
+        .to([letters[2], letters[3], letters[4]], { fill: DIM, duration: 0.2, ease: 'power2.inOut' })
+        .to([letters[0], letters[1]], { fill: DIM, duration: 0.2, ease: 'power2.inOut' }, '<')
+        .to([letters[5]], { fill: DIM, duration: 0.2, ease: 'power2.inOut' }, '<');
     };
 
     const io = new IntersectionObserver(
@@ -64,30 +75,22 @@ export default function PeopleFooter() {
     return () => io.disconnect();
   }, []);
 
-  // 6 个字母分别放在同一 viewBox 里，叠成完整 FÁCIL®
-  // sprite 里只有 f/a/c/i/l/r（r 是注册标），必须按 viewBox 位置叠放才正确
-  const SPRITE = '/facil-sprite.svg';
-
+  // 用同文档 <use> 引用内联 symbol（用 fa/fc/ff/fi/fl/fr 避免和 React/HTML 关键字冲突）
   return (
     <footer className="people-footer" ref={rootRef}>
+      <div className="people-footer__logo-wrap" dangerouslySetInnerHTML={{ __html: `<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><defs>${SPRITE_DEFS}</defs></svg>` }} />
       <div className="people-footer__logo-wrap">
         <svg
           className="people-footer__logo"
           viewBox="0 0 1368 387.1"
           aria-label="Fácil"
         >
-          <use href={`${SPRITE}#f`} className="people-footer__letter" data-letter="f"
-            ref={(el) => { if (el) lettersRef.current[0] = el; }} />
-          <use href={`${SPRITE}#a`} className="people-footer__letter" data-letter="a"
-            ref={(el) => { if (el) lettersRef.current[1] = el; }} />
-          <use href={`${SPRITE}#c`} className="people-footer__letter" data-letter="c"
-            ref={(el) => { if (el) lettersRef.current[2] = el; }} />
-          <use href={`${SPRITE}#i`} className="people-footer__letter" data-letter="i"
-            ref={(el) => { if (el) lettersRef.current[3] = el; }} />
-          <use href={`${SPRITE}#l`} className="people-footer__letter" data-letter="l"
-            ref={(el) => { if (el) lettersRef.current[4] = el; }} />
-          <use href={`${SPRITE}#r`} className="people-footer__mark" aria-label="registered"
-            ref={(el) => { if (el) lettersRef.current[5] = el; }} />
+          <use href="#ff" data-letter="f" ref={(el) => { if (el) lettersRef.current[0] = el as SVGUseElement; }} />
+          <use href="#fa" data-letter="a" ref={(el) => { if (el) lettersRef.current[1] = el as SVGUseElement; }} />
+          <use href="#fc" data-letter="c" ref={(el) => { if (el) lettersRef.current[2] = el as SVGUseElement; }} />
+          <use href="#fi" data-letter="i" ref={(el) => { if (el) lettersRef.current[3] = el as SVGUseElement; }} />
+          <use href="#fl" data-letter="l" ref={(el) => { if (el) lettersRef.current[4] = el as SVGUseElement; }} />
+          <use href="#fr" data-letter="®" ref={(el) => { if (el) lettersRef.current[5] = el as SVGUseElement; }} />
         </svg>
 
         <ul className="people-footer__contact" aria-label="Contacto">
