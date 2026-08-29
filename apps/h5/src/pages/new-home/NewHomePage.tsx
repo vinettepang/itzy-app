@@ -10,6 +10,7 @@ import {
 import { Link } from "react-router-dom";
 import Lenis from "lenis";
 import { request, resolveMediaUrl } from "@/services/request";
+import { stripBase } from "@/utils/assetUrl";
 import itzyPng from "@/assets/itzy-w.png";
 import itzyLogoPng from "@/assets/itzy.png";
 import tourPosterWebp from "@/assets/tour-poster.webp";
@@ -685,7 +686,7 @@ export default function NewHomePage({
               className="xkm-coverNav__home"
               aria-label="ITZY home"
               onClick={() => {
-                if (window.location.pathname === homeHref) {
+                if (stripBase(window.location.pathname) === homeHref) {
                   window.scrollTo(0, 0);
                 }
               }}

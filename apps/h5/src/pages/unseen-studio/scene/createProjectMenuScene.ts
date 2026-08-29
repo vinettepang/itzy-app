@@ -3,6 +3,7 @@ import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { KTX2Loader } from 'three/addons/loaders/KTX2Loader.js';
 import { UNSEEN_ASSETS } from '../assetPaths';
+import { assetUrl } from '@/utils/assetUrl';
 import { proxiedMediaUrl, type ProjectItem } from '../data/types';
 import { createButterflies } from './createButterflies';
 import { createProjectCardMaterial } from './createProjectCardMaterial';
@@ -49,7 +50,7 @@ export async function createProjectMenuScene({
   const gen = (host.__usPMGen = (host.__usPMGen ?? 0) + 1);
 
   const draco = new DRACOLoader();
-  draco.setDecoderPath('/draco/gltf/');
+  draco.setDecoderPath(assetUrl('/draco/gltf/'));
   const gltf = new GLTFLoader();
   gltf.setDRACOLoader(draco);
 

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { stripBase } from '@/utils/assetUrl';
 import itzyLogoPng from '@/assets/itzy.png';
 
 const INFO_MARQUEE_TEXT = 'MIDZY · ITZY · MIDZY · ITZY';
@@ -53,7 +54,7 @@ export default function NewNewCoverNav() {
         className="xkm-coverNav__home"
         aria-label="ITZY home"
         onClick={() => {
-          if (window.location.pathname === HOME_HREF) {
+          if (stripBase(window.location.pathname) === HOME_HREF) {
             window.scrollTo(0, 0);
           }
         }}

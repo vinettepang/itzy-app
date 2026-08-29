@@ -3,6 +3,7 @@ import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { KTX2Loader } from 'three/addons/loaders/KTX2Loader.js';
 import { UNSEEN_ASSETS } from '../assetPaths';
+import { assetUrl } from '@/utils/assetUrl';
 import { createFluidSim } from './createFluidSim';
 import { createGrass } from './createGrass';
 import { createGrainPass } from './createGrainPass';
@@ -64,7 +65,7 @@ function makeGltfLoader(renderer: THREE.WebGLRenderer) {
   const draco = new DRACOLoader();
   // Use project decoder (same as webgl-refraction). Theme-bundled draco path throws
   // "Unexpected geometry type" with three@0.184.
-  draco.setDecoderPath('/draco/gltf/');
+  draco.setDecoderPath(assetUrl('/draco/gltf/'));
 
   const ktx2 = new KTX2Loader();
   ktx2.setTranscoderPath(`${UNSEEN_ASSETS}basis/`);

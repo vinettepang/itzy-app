@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { assetUrl } from '@/utils/assetUrl';
 import { useHaoqiLiveStatus } from './hooks/useHaoqiLiveStatus';
 import { useHaoqiSound } from './hooks/useHaoqiSound';
 
@@ -85,7 +86,7 @@ export default function HaoqiFrameChrome({
               <span>.design</span>
             </Link>
           ) : (
-            <HoverBox as="a" href="/haoqi" className="haoqi__logo">
+            <HoverBox as="a" href={assetUrl('haoqi')} className="haoqi__logo">
               <span>haoqi</span>
               <span>.design</span>
             </HoverBox>
@@ -117,10 +118,10 @@ export function HaoqiProjectFrameChrome(props: Omit<HaoqiFrameChromeProps, 'logo
       {...props}
       logoAs="link"
       onWork={() => {
-        window.location.href = '/haoqi#selected-work';
+        window.location.href = assetUrl('haoqi#selected-work');
       }}
       onContact={() => {
-        window.location.href = '/haoqi#contact';
+        window.location.href = assetUrl('haoqi#contact');
       }}
     />
   );

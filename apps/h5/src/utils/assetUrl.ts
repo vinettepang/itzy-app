@@ -12,3 +12,16 @@ export function assetUrl(path: string): string {
   const p = path.startsWith('/') ? path : `/${path}`;
   return `${BASE.replace(/\/$/, '')}${p}`;
 }
+
+/**
+ * 把浏览器实际 pathname（含部署 base 前缀）还原为应用路由路径。
+ * 本地开发 base 为 '/' 时原样返回；子路径部署时去掉 base 前缀，
+ * 便于与路由定义（如 '/newnew'）做比较。
+ */
+export function stripBase(pathname: string): string {
+  const base = BASE.replace(/\/$/, '');
+  if (base && pathname.startsWith(base)) {
+    return pathname.slice(base.length) || '/';
+  }
+  return pathname;
+}
