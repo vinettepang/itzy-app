@@ -207,10 +207,9 @@
   justify-content: center;
   gap: 0.02em;
   line-height: 0.9;
-  /* 字母上移时不要被裁掉 */
-  padding-top: 0.35em;
 }
 
+/* 字母常驻背景，只有 color 在动（灰 → 黑） */
 .people-footer__letter {
   display: inline-block;
   font-family: var(--font-serif);
@@ -219,7 +218,7 @@
   letter-spacing: -0.03em;
   line-height: 0.9;
   color: var(--grey);
-  will-change: transform, color;
+  will-change: color;
 }
 
 .people-footer__mark {

@@ -26,43 +26,39 @@ export default function PeopleFooter() {
 
     const reduced = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches;
     if (reduced) {
-      gsap.set(letters, { yPercent: 0, color: LIT, opacity: 1 });
+      gsap.set(letters, { color: LIT });
       return;
     }
 
-    // 初始：下沉 + 浅灰（未点亮）
-    gsap.set(letters, { yPercent: 55, color: DIM, opacity: 0.55 });
+    // 字母本来就落在背景里，保持原位、只有颜色变化（灰 → 黑）
+    gsap.set(letters, { color: DIM });
 
     const io = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
-            // 点亮：上移 + 变深，逐个错开
+            // 快接近底部：挨个点亮（只动颜色，不位移）
             gsap.to(letters, {
-              yPercent: 0,
               color: LIT,
-              opacity: 1,
-              duration: 0.8,
-              delay: 0.1,
-              stagger: 0.09,
-              ease: 'power3.out',
+              duration: 0.45,
+              stagger: 0.14,
+              ease: 'power2.out',
               overwrite: true,
             });
           } else {
-            // 离场：快速回落熄灭，回滑可重复触发
+            // 回滑熄灭，可重复触发
             gsap.to(letters, {
-              yPercent: 55,
               color: DIM,
-              opacity: 0.55,
-              duration: 0.4,
-              stagger: 0.03,
+              duration: 0.35,
+              stagger: 0.06,
               ease: 'power2.in',
               overwrite: true,
             });
           }
         }
       },
-      { threshold: 0.4 },
+      // 底部留 12% 余量，让「快接近底部」就触发，而不是完全到底才动
+      { rootMargin: '0px 0px -12% 0px', threshold: 0.2 },
     );
 
     io.observe(root);
