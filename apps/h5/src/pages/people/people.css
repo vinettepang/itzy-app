@@ -191,52 +191,114 @@
   }
 }
 
-/* ---------- 底部：字母逐个点亮 ---------- */
+/* ---------- 底部：FÁCIL® logo（还原真站 Footer） ---------- */
 
+/* 真站 footer 整块是白底，让 logo 浅灰→黑的对比更明显 */
 .people-footer {
-  max-width: 1134px;
-  margin: clamp(80px, 14vw, 180px) auto 0;
-  padding-top: clamp(40px, 6vw, 72px);
-  border-top: 1px solid rgba(40, 40, 42, 0.18);
-  text-align: center;
+  background: #ffffff;
+  color: var(--primary-color);
+  margin: clamp(80px, 14vw, 180px) calc(50% - 50vw) 0;
+  padding: clamp(48px, 8vw, 96px) clamp(16px, 4vw, 48px) clamp(24px, 4vw, 40px);
+  box-sizing: border-box;
 }
 
-.people-footer__word {
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  gap: 0.02em;
-  line-height: 0.9;
+.people-footer__logo-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 1368px;
+  margin: 0 auto;
 }
 
-/* 字母常驻背景，只有 color 在动（灰 → 黑） */
-.people-footer__letter {
-  display: inline-block;
-  font-family: var(--font-serif);
-  font-size: clamp(3.5rem, 16vw, 11rem);
-  font-weight: 400;
-  letter-spacing: -0.03em;
-  line-height: 0.9;
-  color: var(--grey);
-  will-change: color;
+/* 真站 logo 是黑底粗壮 sans + viewBox 1368x387。我们用同一 viewBox 叠 6 个 <use>，
+   每个 <use> 只渲染一个字母 path，靠它在 viewBox 里的坐标自动落在正确位置 */
+.people-footer__logo {
+  display: block;
+  width: 100%;
+  height: auto;
+  fill: #f5f5f5;          /* DIM 默认值，JS 用 gsap.set 也会设一遍 */
+  will-change: fill;
 }
 
+.people-footer__letter,
 .people-footer__mark {
-  display: inline-block;
-  margin-left: 0.12em;
-  font-family: var(--font-serif);
-  font-size: clamp(0.9rem, 3.2vw, 2rem);
-  line-height: 1;
-  color: rgba(40, 40, 42, 0.4);
-  transform: translateY(-0.15em);
+  /* 各自 <use> 的 fill 由 GSAP 直接控制（更精确，三组不同延迟） */
+  fill: #f5f5f5;
 }
 
-.people-footer__note {
-  margin: clamp(20px, 3vw, 36px) 0 0;
-  font-family: var(--font-serif);
-  font-size: clamp(0.85rem, 1.6vw, 1.1rem);
-  letter-spacing: -0.01em;
+/* 联系信息：lime pill 叠在 logo 上（真站布局） */
+.people-footer__contact {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.people-footer__contact li {
+  position: absolute;
+  pointer-events: auto;
+}
+
+.people-footer__contact .pill {
+  display: inline-block;
+  padding: 0.4em 0.7em;
+  background: var(--lime);
+  color: var(--primary-color);
+  font-size: clamp(0.78rem, 1.2vw, 0.95rem);
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  text-decoration: none;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+
+.people-footer__contact .pill--block {
+  white-space: normal;
+  max-width: 28ch;
+}
+
+.people-footer__contact .pill--sm {
+  font-size: clamp(0.72rem, 1vw, 0.85rem);
+  padding: 0.35em 0.55em;
+}
+
+/* 联系信息位置：与真站相似（百分比定位在小屏自动适配） */
+.people-footer__contact li:nth-child(1) { left: 5.5%;  top: 30%; }  /* email */
+.people-footer__contact li:nth-child(2) { left: 56%;   top: 12%; }  /* phone */
+.people-footer__contact li:nth-child(3) { left: 37%;   top: 44%; }  /* address */
+.people-footer__contact li:nth-child(4) { left: 6%;    top: 62%; }  /* instagram */
+.people-footer__contact li:nth-child(5) { left: 14%;   top: 72%; }  /* linkedin */
+
+.people-footer__legal {
+  max-width: 1368px;
+  margin: clamp(20px, 3vw, 32px) auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em;
+  justify-content: center;
+  font-size: clamp(0.7rem, 1vw, 0.85rem);
   color: rgba(40, 40, 42, 0.45);
+}
+
+.people-footer__brand {
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 720px) {
+  /* 小屏：联系信息太挤容易和字母叠在一起，简化成竖排列表 */
+  .people-footer__contact {
+    position: static;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 12px;
+  }
+  .people-footer__contact li {
+    position: static;
+  }
 }
 
 /* 尊重「减少动态效果」偏好 */
