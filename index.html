@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/itzy-app/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>h5</title>
+    <script type="module" crossorigin src="/itzy-app/assets/index-205be3ff.js"></script>
+    <link rel="stylesheet" href="/itzy-app/assets/index-41415758.css">
+  <script>
+    (function () {
+      try {
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect !== '/itzy-app/' && location.pathname === '/itzy-app/') {
+          history.replaceState(null, '', redirect);
+        }
+      } catch (e) {}
+    })();
+  </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    
+  </body>
+</html>
