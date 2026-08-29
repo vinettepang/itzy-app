@@ -1,4 +1,6 @@
-export const STATIC = '/webgl-refraction-static';
+import { assetUrl } from '@/utils/assetUrl';
+
+export const STATIC = assetUrl('/webgl-refraction-static');
 
 export const TEXTURES = {
   matcap: `${STATIC}/textures/matcap.png`,

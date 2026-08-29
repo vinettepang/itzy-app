@@ -1,4 +1,5 @@
 /** 玻璃色散材质 — 还原自 haoqi.design production chunk 7758f29a8aeb1c60 */
+import { assetUrl } from '@/utils/assetUrl';
 
 export const GLASS_VERT = /* glsl */ `
 varying vec3 worldNormal;
@@ -430,6 +431,6 @@ void main() {
 
 export const STICKER_URLS = Array.from(
   { length: 12 },
-  (_, i) => `/haoqi-static/sticker_img/s_${String(i + 1).padStart(2, '0')}.png`,
+  (_, i) => `${assetUrl('/haoqi-static/sticker_img')}/s_${String(i + 1).padStart(2, '0')}.png`,
 );
 

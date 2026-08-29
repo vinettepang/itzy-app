@@ -1,6 +1,8 @@
 import { useEffect, useRef } from 'react';
 
-const AUDIO_URL = '/haoqi-static/audio/ambient.mp3';
+import { assetUrl } from '@/utils/assetUrl';
+
+const AUDIO_URL = assetUrl('/haoqi-static/audio/ambient.mp3');
 
 /** 环境氛围音 — 优先加载生产同款静态音频，回退 Web Audio */
 export function useHaoqiSound(enabled: boolean) {

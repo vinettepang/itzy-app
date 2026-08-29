@@ -5,6 +5,7 @@ import gsap from 'gsap';
 import { cubemapUrls, MODELS, TEXTURES } from '../assetPaths';
 import { SHADERS } from '../shaders';
 import { SCENE_CONFIG, type Orientation, type SceneIndex } from './sceneConfig';
+import { assetUrl } from '@/utils/assetUrl';
 import type { RefractionMaterials, RefractionSceneHandle, RefractionSceneParams } from './types';
 
 const LAYER_BG = 1;
@@ -29,7 +30,7 @@ let gltfLoader: GLTFLoader | null = null;
 function getGltfLoader() {
   if (!gltfLoader) {
     const draco = new DRACOLoader();
-    draco.setDecoderPath('/draco/gltf/');
+    draco.setDecoderPath(assetUrl('/draco/gltf/'));
     gltfLoader = new GLTFLoader();
     gltfLoader.setDRACOLoader(draco);
   }

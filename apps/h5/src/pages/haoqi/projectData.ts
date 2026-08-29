@@ -1,3 +1,4 @@
+import { assetUrl } from '@/utils/assetUrl';
 export type HaoqiProjectDetail = {
   slug: string;
   title: string;
@@ -17,7 +18,7 @@ export const HAOQI_PROJECTS: Record<string, HaoqiProjectDetail> = {
     published: 'May 31, 2026',
     year: '2024-2026',
     tag: 'Coding Project',
-    heroImg: '/haoqi-static/work/reunimos01.png',
+    heroImg: assetUrl('/haoqi-static/work/reunimos01.png'),
     links: [
       { label: 'reunimos.cc', href: 'https://www.reunimos.cc/' },
       { label: '@wenhaoqi/wasm_design_utils', href: 'https://www.npmjs.com/package/@wenhaoqi/wasm_design_utils' },
@@ -40,7 +41,7 @@ export const HAOQI_PROJECTS: Record<string, HaoqiProjectDetail> = {
     published: 'May 07, 2026',
     year: '2025',
     tag: 'Coding Project',
-    heroImg: '/haoqi-static/work/inspire_mono_01.png',
+    heroImg: assetUrl('/haoqi-static/work/inspire_mono_01.png'),
     links: [{ label: '下载 InspireMono.zip', href: 'https://haoqi.design/fonts/InspireMono.zip' }],
     body: `Inspire Mono 是我在 2025 年一次基于 vibe coding 的实验项目，灵感来自 [RSMS 的字体工作流](https://www.figma.com/community/file/1115382696459820988)：通过 Figma 绘制 glyph，并结合脚本将字形导出为字体。我让 agent 分析了其中关键的字体构建流程，最终定位到基于 [opentype.js](https://opentype.js.org) 的字体生成能力。
 
@@ -70,7 +71,7 @@ export const HAOQI_PROJECTS: Record<string, HaoqiProjectDetail> = {
     published: 'May 31, 2026',
     year: '2025',
     tag: 'Coding Project',
-    heroImg: '/haoqi-static/work/wasm01.png',
+    heroImg: assetUrl('/haoqi-static/work/wasm01.png'),
     links: [{ label: 'npm', href: 'https://www.npmjs.com/package/@wenhaoqi/wasm_design_utils' }],
     body: `@wenhaoqi/wasm_design_utils 是一组浏览器端设计小工具：sRGB ↔ OKLCH 色彩转换、图片取色、以及 squircle / capsule 的 SVG 路径生成。npm：[@wenhaoqi/wasm_design_utils](https://www.npmjs.com/package/@wenhaoqi/wasm_design_utils)。
 
@@ -160,7 +161,7 @@ pathEl.setAttribute("d", d);
     title: 'aDrive 阿里云盘',
     published: 'Jan 07, 2022',
     year: '2020-2022',
-    heroImg: '/haoqi-static/work/ali01.png',
+    heroImg: assetUrl('/haoqi-static/work/ali01.png'),
     links: [
       { label: 'alipan.com', href: 'https://www.alipan.com/' },
       { label: 'Clarity design', href: 'https://design.teambition.com' },
@@ -251,7 +252,7 @@ Figma Time Line 是我们借助 Figma 的 Auto Layout「搭」出来的排期看
     title: 'Shore Icon',
     published: 'Mar 01, 2022',
     year: '2022',
-    heroImg: '/haoqi-static/work/si.png',
+    heroImg: assetUrl('/haoqi-static/work/si.png'),
     links: [
       { label: 'Spotify Icon System', href: 'https://spotify.design/article/refreshing-our-icon-system-the-why-and-how-behind-the-changes' },
       { label: 'Microsoft Fluent System Icons', href: 'https://www.figma.com/community/file/836835755999342788/Microsoft-Fluent-System-Icons' },
@@ -283,7 +284,7 @@ Figma Time Line 是我们借助 Figma 的 Auto Layout「搭」出来的排期看
     title: 'Teambition',
     published: 'May 31, 2026',
     year: '2018-2020',
-    heroImg: '/haoqi-static/work/s01.png',
+    heroImg: assetUrl('/haoqi-static/work/s01.png'),
     links: [{ label: 'teambition.com', href: 'https://www.teambition.com/' }],
     body: `Work in progress — this page is not finished yet.
 

@@ -7,6 +7,7 @@ import {
   useState,
 } from 'react';
 import Lenis from 'lenis';
+import { assetUrl } from '@/utils/assetUrl';
 import { HAOQI_WORK } from './workData';
 import HaoqiHeroCanvas from './HaoqiHeroCanvas';
 import HaoqiFrameChrome from './HaoqiFrameChrome';
@@ -224,7 +225,7 @@ export default function HaoqiPage() {
             </div>
           </div>
           <div className="haoqi__topCenter">
-            <img className="haoqi__pixelIcon" src="/haoqi-static/img/m3.png" alt="" aria-hidden="true" />
+            <img className="haoqi__pixelIcon" src={assetUrl('/haoqi-static/img/m3.png')} alt="" aria-hidden="true" />
             {'Thinking in systems.\nDesigning with care.'}
           </div>
           <div className="haoqi__intro">

@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { assetUrl } from '@/utils/assetUrl';
 import {
   FLUID_COMPOSITE_FRAG,
   FLUID_DECAY_FRAG,
@@ -244,7 +245,7 @@ export function createHaoqiScene(mount: HTMLElement, refs: HaoqiSceneRefs): Haoq
   const loader = new GLTFLoader();
   const texLoader = new THREE.TextureLoader();
 
-  loader.load('/haoqi-static/model/hello.gltf', (gltf) => {
+  loader.load(assetUrl('/haoqi-static/model/hello.gltf'), (gltf) => {
     if (disposed) return;
     centerObject3D(gltf.scene);
     helloGroup.scale.setScalar(window.innerWidth < 1024 ? cfg.hello.scaleMobile : cfg.hello.scaleDesktop);
@@ -254,7 +255,7 @@ export function createHaoqiScene(mount: HTMLElement, refs: HaoqiSceneRefs): Haoq
     helloGroup.add(gltf.scene);
   });
 
-  loader.load('/haoqi-static/model/cursor.glb', (gltf) => {
+  loader.load(assetUrl('/haoqi-static/model/cursor.glb'), (gltf) => {
     if (disposed) return;
     centerObject3D(gltf.scene);
     const mat = makeGlassMaterial(compRT.texture, cfg.cursor.tint);
@@ -265,7 +266,7 @@ export function createHaoqiScene(mount: HTMLElement, refs: HaoqiSceneRefs): Haoq
     cursorGroup.add(gltf.scene);
   });
 
-  loader.load('/haoqi-static/model/cnt.gltf', (gltf) => {
+  loader.load(assetUrl('/haoqi-static/model/cnt.gltf'), (gltf) => {
     if (disposed) return;
     centerObject3D(gltf.scene);
     const mat = makeGlassMaterial(compRT.texture, cfg.cnt.tint);

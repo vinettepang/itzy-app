@@ -1,5 +1,7 @@
-export const UNSEEN_PUBLIC = '/unseen-studio-static/public/';
-export const UNSEEN_ASSETS = '/unseen-studio-static/resources/assets/';
+import { assetUrl } from '@/utils/assetUrl';
+
+export const UNSEEN_PUBLIC = assetUrl('/unseen-studio-static/public/');
+export const UNSEEN_ASSETS = assetUrl('/unseen-studio-static/resources/assets/');
 
 export const UNSEEN_FONT_CSS = `
 @font-face {
