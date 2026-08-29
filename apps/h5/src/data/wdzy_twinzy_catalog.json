@@ -1,412 +1,675 @@
 {
-    "meta": {
-        "project": "ITZY WDZY & TWINZY Catalog",
-        "version": "0.2",
-        "description": "Unified structured dataset for WDZY + TWINZY (plush + MD + accessories partial coverage)",
-        "note": "This is a curated partial dataset, not full official inventory",
-        "created": "2026"
+  "meta": {
+    "project": "ITZY WDZY & TWINZY Catalog",
+    "version": "0.3",
+    "description": "Unified structured dataset for WDZY + TWINZY (plush + MD + accessories partial coverage) + SEGA UFO Catcher (v1.0/2.0/3.0)",
+    "note": "This is a curated partial dataset, not full official inventory",
+    "created": "2026"
+  },
+  "wdzy": [
+    {
+      "id": "wdzy_plush_doll_2021",
+      "series": "WDZY",
+      "collection": "LINE FRIENDS Launch",
+      "year": 2021,
+      "category": "Plush",
+      "productName": "Plush Doll (S Size)",
+      "region": [
+        "KR"
+      ],
+      "members": [
+        {
+          "member": "Yeji",
+          "character": "HATT",
+          "filename": "wdzy_hatt_plush_2021.png",
+          "image": "img/wdzy_hatt_plush_2021.png"
+        },
+        {
+          "member": "Lia",
+          "character": "LYA",
+          "filename": "wdzy_lya_plush_2021.png",
+          "image": "img/wdzy_lya_plush_2021.png"
+        },
+        {
+          "member": "Ryujin",
+          "character": "TUK",
+          "filename": "wdzy_tuk_plush_2021.png",
+          "image": "img/wdzy_tuk_plush_2021.png"
+        },
+        {
+          "member": "Chaeryeong",
+          "character": "CHUNG_EE",
+          "filename": "wdzy_chung_ee_plush_2021.png",
+          "image": "img/wdzy_chung_ee_plush_2021.png"
+        },
+        {
+          "member": "Yuna",
+          "character": "CABBIT",
+          "filename": "wdzy_cabbit_plush_2021.png",
+          "image": "img/wdzy_cabbit_plush_2021.png"
+        }
+      ],
+      "status": "discontinued",
+      "tags": [
+        "plush",
+        "core"
+      ],
+      "image": "img/wdzy_hatt_plush_2021.png",
+      "officialSource": "LINE FRIENDS WDZY",
+      "sizes": {
+        "Yuna": "H22×W17 (cm)",
+        "Lia": "H25×W19.5 (cm)",
+        "Chaeryeong": "H21×W19.5 (cm)",
+        "Ryujin": "H24.5×W18 (cm)",
+        "Yeji": "H24×W15.5 (cm)"
+      }
     },
-    "wdzy": [
+    {
+      "id": "wdzy_keyring_2021",
+      "series": "WDZY",
+      "collection": "LINE FRIENDS Launch",
+      "year": 2021,
+      "category": "Keyring",
+      "productName": "Plush Keyring",
+      "region": [
+        "KR"
+      ],
+      "members": [
         {
-            "id": "wdzy_plush_doll_2021",
-            "series": "WDZY",
-            "collection": "LINE FRIENDS Launch",
-            "year": 2021,
-            "category": "Plush",
-            "productName": "Plush Doll (S Size)",
-            "region": [
-                "KR"
-            ],
-            "members": [
-                {
-                    "member": "Yeji",
-                    "character": "HATT",
-                    "filename": "wdzy_hatt_plush_2021.png",
-                    "image": "img/wdzy_hatt_plush_2021.png"
-                },
-                {
-                    "member": "Lia",
-                    "character": "LYA",
-                    "filename": "wdzy_lya_plush_2021.png",
-                    "image": "img/wdzy_lya_plush_2021.png"
-                },
-                {
-                    "member": "Ryujin",
-                    "character": "TUK",
-                    "filename": "wdzy_tuk_plush_2021.png",
-                    "image": "img/wdzy_tuk_plush_2021.png"
-                },
-                {
-                    "member": "Chaeryeong",
-                    "character": "CHUNG_EE",
-                    "filename": "wdzy_chung_ee_plush_2021.png",
-                    "image": "img/wdzy_chung_ee_plush_2021.png"
-                },
-                {
-                    "member": "Yuna",
-                    "character": "CABBIT",
-                    "filename": "wdzy_cabbit_plush_2021.png",
-                    "image": "img/wdzy_cabbit_plush_2021.png"
-                }
-            ],
-            "status": "discontinued",
-            "tags": [
-                "plush",
-                "core"
-            ],
-            "image": "img/wdzy_hatt_plush_2021.png",
-            "officialSource": "LINE FRIENDS WDZY"
+          "member": "Yeji",
+          "character": "HATT",
+          "filename": "wdzy_hatt_keyring_2021.png",
+          "image": "img/wdzy_hatt_keyring_2021.png"
         },
         {
-            "id": "wdzy_keyring_2021",
-            "series": "WDZY",
-            "collection": "LINE FRIENDS Launch",
-            "year": 2021,
-            "category": "Keyring",
-            "productName": "Plush Keyring",
-            "region": [
-                "KR"
-            ],
-            "members": [
-                {
-                    "member": "Yeji",
-                    "character": "HATT",
-                    "filename": "wdzy_hatt_keyring_2021.png",
-                    "image": "img/wdzy_hatt_keyring_2021.png"
-                },
-                {
-                    "member": "Lia",
-                    "character": "LYA",
-                    "filename": "wdzy_lya_keyring_2021.png",
-                    "image": "img/wdzy_lya_keyring_2021.png"
-                },
-                {
-                    "member": "Ryujin",
-                    "character": "TUK",
-                    "filename": "wdzy_tuk_keyring_2021.png",
-                    "image": "img/wdzy_tuk_keyring_2021.png"
-                },
-                {
-                    "member": "Chaeryeong",
-                    "character": "CHUNG_EE",
-                    "filename": "wdzy_chung_ee_keyring_2021.png",
-                    "image": "img/wdzy_chung_ee_keyring_2021.png"
-                },
-                {
-                    "member": "Yuna",
-                    "character": "CABBIT",
-                    "filename": "wdzy_cabbit_keyring_2021.png",
-                    "image": "img/wdzy_cabbit_keyring_2021.png"
-                }
-            ],
-            "status": "discontinued",
-            "tags": [
-                "keyring",
-                "plush"
-            ],
-            "image": "img/wdzy_hatt_keyring_2021.png",
-            "officialSource": "LINE FRIENDS WDZY"
+          "member": "Lia",
+          "character": "LYA",
+          "filename": "wdzy_lya_keyring_2021.png",
+          "image": "img/wdzy_lya_keyring_2021.png"
         },
         {
-            "id": "wdzy_face_keyring_2021",
-            "series": "WDZY",
-            "collection": "LINE FRIENDS Launch",
-            "year": 2021,
-            "category": "Keyring",
-            "productName": "Face Plush Keyring",
-            "region": [
-                "KR"
-            ],
-            "members": [
-                {
-                    "member": "Yeji",
-                    "character": "HATT",
-                    "filename": "wdzy_hatt_face_keyring_2021.png",
-                    "image": "img/wdzy_hatt_face_keyring_2021.png"
-                },
-                {
-                    "member": "Lia",
-                    "character": "LYA",
-                    "filename": "wdzy_lya_face_keyring_2021.png",
-                    "image": "img/wdzy_lya_face_keyring_2021.png"
-                },
-                {
-                    "member": "Ryujin",
-                    "character": "TUK",
-                    "filename": "wdzy_tuk_face_keyring_2021.png",
-                    "image": "img/wdzy_tuk_face_keyring_2021.png"
-                },
-                {
-                    "member": "Chaeryeong",
-                    "character": "CHUNG_EE",
-                    "filename": "wdzy_chung_ee_face_keyring_2021.png",
-                    "image": "img/wdzy_chung_ee_face_keyring_2021.png"
-                },
-                {
-                    "member": "Yuna",
-                    "character": "CABBIT",
-                    "filename": "wdzy_cabbit_face_keyring_2021.png",
-                    "image": "img/wdzy_cabbit_face_keyring_2021.png"
-                }
-            ],
-            "status": "discontinued",
-            "tags": [
-                "face",
-                "keyring"
-            ],
-            "image": "img/wdzy_hatt_face_keyring_2021.png",
-            "officialSource": "LINE FRIENDS WDZY"
+          "member": "Ryujin",
+          "character": "TUK",
+          "filename": "wdzy_tuk_keyring_2021.png",
+          "image": "img/wdzy_tuk_keyring_2021.png"
         },
         {
-            "id": "wdzy_coin_pouch_2021",
-            "series": "WDZY",
-            "collection": "LINE FRIENDS Launch",
-            "year": 2021,
-            "category": "Pouch",
-            "productName": "Coin Pouch",
-            "region": [
-                "KR"
-            ],
-            "members": [
-                {
-                    "member": "Yeji",
-                    "character": "HATT",
-                    "filename": "wdzy_hatt_coin_pouch_2021.png",
-                    "image": "img/wdzy_hatt_coin_pouch_2021.png"
-                },
-                {
-                    "member": "Lia",
-                    "character": "LYA",
-                    "filename": "wdzy_lya_coin_pouch_2021.png",
-                    "image": "img/wdzy_lya_coin_pouch_2021.png"
-                },
-                {
-                    "member": "Ryujin",
-                    "character": "TUK",
-                    "filename": "wdzy_tuk_coin_pouch_2021.png",
-                    "image": "img/wdzy_tuk_coin_pouch_2021.png"
-                },
-                {
-                    "member": "Chaeryeong",
-                    "character": "CHUNG_EE",
-                    "filename": "wdzy_chung_ee_coin_pouch_2021.png",
-                    "image": "img/wdzy_chung_ee_coin_pouch_2021.png"
-                },
-                {
-                    "member": "Yuna",
-                    "character": "CABBIT",
-                    "filename": "wdzy_cabbit_coin_pouch_2021.png",
-                    "image": "img/wdzy_cabbit_coin_pouch_2021.png"
-                }
-            ],
-            "status": "discontinued",
-            "tags": [
-                "pouch"
-            ],
-            "image": "img/wdzy_hatt_coin_pouch_2021.png",
-            "officialSource": "LINE FRIENDS WDZY"
+          "member": "Chaeryeong",
+          "character": "CHUNG_EE",
+          "filename": "wdzy_chung_ee_keyring_2021.png",
+          "image": "img/wdzy_chung_ee_keyring_2021.png"
+        },
+        {
+          "member": "Yuna",
+          "character": "CABBIT",
+          "filename": "wdzy_cabbit_keyring_2021.png",
+          "image": "img/wdzy_cabbit_keyring_2021.png"
         }
-    ],
-    "twinzy": [
+      ],
+      "status": "discontinued",
+      "tags": [
+        "keyring",
+        "plush"
+      ],
+      "image": "img/wdzy_hatt_keyring_2021.png",
+      "officialSource": "LINE FRIENDS WDZY"
+    },
+    {
+      "id": "wdzy_face_keyring_2021",
+      "series": "WDZY",
+      "collection": "LINE FRIENDS Launch",
+      "year": 2021,
+      "category": "Keyring",
+      "productName": "Face Plush Keyring",
+      "region": [
+        "KR"
+      ],
+      "members": [
         {
-            "id": "twinzy_original_plush_2024",
-            "series": "TWINZY",
-            "collection": "BORN TO BE",
-            "year": 2024,
-            "category": "Plush",
-            "productName": "Original Plush",
-            "region": [
-                "KR"
-            ],
-            "members": [
-                {
-                    "member": "Yeji",
-                    "twinzyName": "KKengEE",
-                    "filename": "twinzy_kkengee_original_plush_2024.png",
-                    "image": "img/twinzy_kkengee_original_plush_2024.png"
-                },
-                {
-                    "member": "Lia",
-                    "twinzyName": "Li-Li",
-                    "filename": "twinzy_lili_original_plush_2024.png",
-                    "image": "img/twinzy_lili_original_plush_2024.png"
-                },
-                {
-                    "member": "Ryujin",
-                    "twinzyName": "RyuJJi",
-                    "filename": "twinzy_ryujji_original_plush_2024.png",
-                    "image": "img/twinzy_ryujji_original_plush_2024.png"
-                },
-                {
-                    "member": "Chaeryeong",
-                    "twinzyName": "RyeoWoo",
-                    "filename": "twinzy_ryeowoo_original_plush_2024.png",
-                    "image": "img/twinzy_ryeowoo_original_plush_2024.png"
-                },
-                {
-                    "member": "Yuna",
-                    "twinzyName": "NAong",
-                    "filename": "twinzy_naong_original_plush_2024.png",
-                    "image": "img/twinzy_naong_original_plush_2024.png"
-                }
-            ],
-            "status": "discontinued",
-            "tags": [
-                "plush",
-                "core"
-            ],
-            "image": "img/twinzy_kkengee_original_plush_2024.png",
-            "officialSource": "ITZY MD"
+          "member": "Yeji",
+          "character": "HATT",
+          "filename": "wdzy_hatt_face_keyring_2021.png",
+          "image": "img/wdzy_hatt_face_keyring_2021.png"
         },
         {
-            "id": "twinzy_mini_plush_2024",
-            "series": "TWINZY",
-            "collection": "BORN TO BE",
-            "year": 2024,
-            "category": "Plush",
-            "productName": "Mini Plush",
-            "region": [
-                "KR"
-            ],
-            "members": [
-                {
-                    "member": "Yeji",
-                    "twinzyName": "KKengEE",
-                    "filename": "twinzy_kkengee_mini_plush_2024.png",
-                    "image": "img/twinzy_kkengee_mini_plush_2024.png"
-                },
-                {
-                    "member": "Lia",
-                    "twinzyName": "Li-Li",
-                    "filename": "twinzy_lili_mini_plush_2024.png",
-                    "image": "img/twinzy_lili_mini_plush_2024.png"
-                },
-                {
-                    "member": "Ryujin",
-                    "twinzyName": "RyuJJi",
-                    "filename": "twinzy_ryujji_mini_plush_2024.png",
-                    "image": "img/twinzy_ryujji_mini_plush_2024.png"
-                },
-                {
-                    "member": "Chaeryeong",
-                    "twinzyName": "RyeoWoo",
-                    "filename": "twinzy_ryeowoo_mini_plush_2024.png",
-                    "image": "img/twinzy_ryeowoo_mini_plush_2024.png"
-                },
-                {
-                    "member": "Yuna",
-                    "twinzyName": "NAong",
-                    "filename": "twinzy_naong_mini_plush_2024.png",
-                    "image": "img/twinzy_naong_mini_plush_2024.png"
-                }
-            ],
-            "status": "discontinued",
-            "tags": [
-                "plush",
-                "mini"
-            ],
-            "image": "img/twinzy_kkengee_mini_plush_2024.png",
-            "officialSource": "ITZY MD"
+          "member": "Lia",
+          "character": "LYA",
+          "filename": "wdzy_lya_face_keyring_2021.png",
+          "image": "img/wdzy_lya_face_keyring_2021.png"
         },
         {
-            "id": "twinzy_onair_plush_2025",
-            "series": "TWINZY",
-            "collection": "ON AIR POP-UP",
-            "year": 2025,
-            "category": "Plush",
-            "productName": "ON AIR Plush",
-            "region": [
-                "KR"
-            ],
-            "members": [
-                {
-                    "member": "Yeji",
-                    "twinzyName": "KKengEE",
-                    "filename": "twinzy_kkengee_onair_2025.png",
-                    "image": "img/twinzy_kkengee_onair_2025.png"
-                },
-                {
-                    "member": "Lia",
-                    "twinzyName": "Li-Li",
-                    "filename": "twinzy_lili_onair_2025.png",
-                    "image": "img/twinzy_lili_onair_2025.png"
-                },
-                {
-                    "member": "Ryujin",
-                    "twinzyName": "RyuJJi",
-                    "filename": "twinzy_ryujji_onair_2025.png",
-                    "image": "img/twinzy_ryujji_onair_2025.png"
-                },
-                {
-                    "member": "Chaeryeong",
-                    "twinzyName": "RyeoWoo",
-                    "filename": "twinzy_ryeowoo_onair_2025.png",
-                    "image": "img/twinzy_ryeowoo_onair_2025.png"
-                },
-                {
-                    "member": "Yuna",
-                    "twinzyName": "NAong",
-                    "filename": "twinzy_naong_onair_2025.png",
-                    "image": "img/twinzy_naong_onair_2025.png"
-                }
-            ],
-            "status": "limited",
-            "tags": [
-                "popup",
-                "plush"
-            ],
-            "image": "img/twinzy_kkengee_onair_2025.png",
-            "officialSource": "ITZY POP-UP"
+          "member": "Ryujin",
+          "character": "TUK",
+          "filename": "wdzy_tuk_face_keyring_2021.png",
+          "image": "img/wdzy_tuk_face_keyring_2021.png"
         },
         {
-            "id": "twinzy_tunnelvision_plush_2025",
-            "series": "TWINZY",
-            "collection": "TUNNEL VISION",
-            "year": 2025,
-            "category": "Plush",
-            "productName": "Tour Plush",
-            "region": [
-                "KR"
-            ],
-            "members": [
-                {
-                    "member": "Yeji",
-                    "twinzyName": "KKengEE",
-                    "filename": "twinzy_kkengee_tour_2025.png",
-                    "image": "img/twinzy_kkengee_tour_2025.png"
-                },
-                {
-                    "member": "Lia",
-                    "twinzyName": "Li-Li",
-                    "filename": "twinzy_lili_tour_2025.png",
-                    "image": "img/twinzy_lili_tour_2025.png"
-                },
-                {
-                    "member": "Ryujin",
-                    "twinzyName": "RyuJJi",
-                    "filename": "twinzy_ryujji_tour_2025.png",
-                    "image": "img/twinzy_ryujji_tour_2025.png"
-                },
-                {
-                    "member": "Chaeryeong",
-                    "twinzyName": "RyeoWoo",
-                    "filename": "twinzy_ryeowoo_tour_2025.png",
-                    "image": "img/twinzy_ryeowoo_tour_2025.png"
-                },
-                {
-                    "member": "Yuna",
-                    "twinzyName": "NAong",
-                    "filename": "twinzy_naong_tour_2025.png",
-                    "image": "img/twinzy_naong_tour_2025.png"
-                }
-            ],
-            "status": "limited",
-            "tags": [
-                "tour",
-                "plush"
-            ],
-            "image": "img/twinzy_kkengee_tour_2025.png",
-            "officialSource": "ITZY TOUR MD"
+          "member": "Chaeryeong",
+          "character": "CHUNG_EE",
+          "filename": "wdzy_chung_ee_face_keyring_2021.png",
+          "image": "img/wdzy_chung_ee_face_keyring_2021.png"
+        },
+        {
+          "member": "Yuna",
+          "character": "CABBIT",
+          "filename": "wdzy_cabbit_face_keyring_2021.png",
+          "image": "img/wdzy_cabbit_face_keyring_2021.png"
         }
-    ]
+      ],
+      "status": "discontinued",
+      "tags": [
+        "face",
+        "keyring"
+      ],
+      "image": "img/wdzy_hatt_face_keyring_2021.png",
+      "officialSource": "LINE FRIENDS WDZY"
+    },
+    {
+      "id": "wdzy_coin_pouch_2021",
+      "series": "WDZY",
+      "collection": "LINE FRIENDS Launch",
+      "year": 2021,
+      "category": "Pouch",
+      "productName": "Coin Pouch",
+      "region": [
+        "KR"
+      ],
+      "members": [
+        {
+          "member": "Yeji",
+          "character": "HATT",
+          "filename": "wdzy_hatt_coin_pouch_2021.png",
+          "image": "img/wdzy_hatt_coin_pouch_2021.png"
+        },
+        {
+          "member": "Lia",
+          "character": "LYA",
+          "filename": "wdzy_lya_coin_pouch_2021.png",
+          "image": "img/wdzy_lya_coin_pouch_2021.png"
+        },
+        {
+          "member": "Ryujin",
+          "character": "TUK",
+          "filename": "wdzy_tuk_coin_pouch_2021.png",
+          "image": "img/wdzy_tuk_coin_pouch_2021.png"
+        },
+        {
+          "member": "Chaeryeong",
+          "character": "CHUNG_EE",
+          "filename": "wdzy_chung_ee_coin_pouch_2021.png",
+          "image": "img/wdzy_chung_ee_coin_pouch_2021.png"
+        },
+        {
+          "member": "Yuna",
+          "character": "CABBIT",
+          "filename": "wdzy_cabbit_coin_pouch_2021.png",
+          "image": "img/wdzy_cabbit_coin_pouch_2021.png"
+        }
+      ],
+      "status": "discontinued",
+      "tags": [
+        "pouch"
+      ],
+      "image": "img/wdzy_hatt_coin_pouch_2021.png",
+      "officialSource": "LINE FRIENDS WDZY"
+    },
+    {
+      "series": "WDZY",
+      "category": "Stand",
+      "productName": "Phone Stand",
+      "collection": "LINE FRIENDS Launch 2021",
+      "year": 2021,
+      "region": [
+        "KR"
+      ],
+      "status": "available",
+      "tags": [
+        "kr",
+        "phone-stand"
+      ],
+      "image": "",
+      "officialSource": "LINE Friends official (KR), 2021-03-12 9am KST, 8H drop",
+      "id": "wdzy_stand_2021",
+      "members": [
+        {
+          "member": "Yeji",
+          "character": "HATT",
+          "filename": "wdzy_hatt_plush_2021.png",
+          "image": "img/wdzy_hatt_plush_2021.png"
+        },
+        {
+          "member": "Lia",
+          "character": "LYA",
+          "filename": "wdzy_lya_plush_2021.png",
+          "image": "img/wdzy_lya_plush_2021.png"
+        },
+        {
+          "member": "Ryujin",
+          "character": "TUK",
+          "filename": "wdzy_tuk_plush_2021.png",
+          "image": "img/wdzy_tuk_plush_2021.png"
+        },
+        {
+          "member": "Chaeryeong",
+          "character": "CHUNG_EE",
+          "filename": "wdzy_chung_ee_plush_2021.png",
+          "image": "img/wdzy_chung_ee_plush_2021.png"
+        },
+        {
+          "member": "Yuna",
+          "character": "CABBIT",
+          "filename": "wdzy_cabbit_plush_2021.png",
+          "image": "img/wdzy_cabbit_plush_2021.png"
+        }
+      ]
+    },
+    {
+      "series": "WDZY",
+      "category": "Pillow",
+      "productName": "Plush Pillow",
+      "collection": "WDZY Japan Launch 2021",
+      "year": 2021,
+      "region": [
+        "JP"
+      ],
+      "status": "available",
+      "tags": [
+        "jp",
+        "pillow"
+      ],
+      "image": "",
+      "officialSource": "Ajiya (JP), 2021-08-07 20:00 JST",
+      "id": "wdzy_pillow_2021",
+      "members": [
+        {
+          "member": "Yeji",
+          "character": "HATT",
+          "filename": "wdzy_hatt_plush_2021.png",
+          "image": "img/wdzy_hatt_plush_2021.png"
+        },
+        {
+          "member": "Lia",
+          "character": "LYA",
+          "filename": "wdzy_lya_plush_2021.png",
+          "image": "img/wdzy_lya_plush_2021.png"
+        },
+        {
+          "member": "Ryujin",
+          "character": "TUK",
+          "filename": "wdzy_tuk_plush_2021.png",
+          "image": "img/wdzy_tuk_plush_2021.png"
+        },
+        {
+          "member": "Chaeryeong",
+          "character": "CHUNG_EE",
+          "filename": "wdzy_chung_ee_plush_2021.png",
+          "image": "img/wdzy_chung_ee_plush_2021.png"
+        },
+        {
+          "member": "Yuna",
+          "character": "CABBIT",
+          "filename": "wdzy_cabbit_plush_2021.png",
+          "image": "img/wdzy_cabbit_plush_2021.png"
+        }
+      ]
+    },
+    {
+      "series": "WDZY",
+      "category": "UFO Catcher",
+      "productName": "SEGA UFO Catcher v1.0",
+      "collection": "WDZY x SEGA UFO Catcher 2022",
+      "year": 2022,
+      "region": [
+        "JP"
+      ],
+      "status": "available",
+      "tags": [
+        "jp",
+        "sega",
+        "v1"
+      ],
+      "image": "",
+      "officialSource": "SEGA UFO Catcher prize, 2022-11-11 CST drop",
+      "id": "wdzy_sega_1_2022",
+      "size": "12×8×14 (cm)",
+      "members": [
+        {
+          "member": "Yeji",
+          "character": "HATT",
+          "filename": "wdzy_hatt_plush_2021.png",
+          "image": "img/wdzy_hatt_plush_2021.png"
+        },
+        {
+          "member": "Lia",
+          "character": "LYA",
+          "filename": "wdzy_lya_plush_2021.png",
+          "image": "img/wdzy_lya_plush_2021.png"
+        },
+        {
+          "member": "Ryujin",
+          "character": "TUK",
+          "filename": "wdzy_tuk_plush_2021.png",
+          "image": "img/wdzy_tuk_plush_2021.png"
+        },
+        {
+          "member": "Chaeryeong",
+          "character": "CHUNG_EE",
+          "filename": "wdzy_chung_ee_plush_2021.png",
+          "image": "img/wdzy_chung_ee_plush_2021.png"
+        },
+        {
+          "member": "Yuna",
+          "character": "CABBIT",
+          "filename": "wdzy_cabbit_plush_2021.png",
+          "image": "img/wdzy_cabbit_plush_2021.png"
+        }
+      ]
+    },
+    {
+      "series": "WDZY",
+      "category": "UFO Catcher",
+      "productName": "SEGA UFO Catcher v2.0",
+      "collection": "WDZY x SEGA UFO Catcher 2022",
+      "year": 2022,
+      "region": [
+        "JP"
+      ],
+      "status": "available",
+      "tags": [
+        "jp",
+        "sega",
+        "v2"
+      ],
+      "image": "",
+      "officialSource": "SEGA UFO Catcher prize, 2022-11-11 CST drop",
+      "id": "wdzy_sega_2_2022",
+      "size": "12×8×14 (cm)",
+      "members": [
+        {
+          "member": "Yeji",
+          "character": "HATT",
+          "filename": "wdzy_hatt_plush_2021.png",
+          "image": "img/wdzy_hatt_plush_2021.png"
+        },
+        {
+          "member": "Lia",
+          "character": "LYA",
+          "filename": "wdzy_lya_plush_2021.png",
+          "image": "img/wdzy_lya_plush_2021.png"
+        },
+        {
+          "member": "Ryujin",
+          "character": "TUK",
+          "filename": "wdzy_tuk_plush_2021.png",
+          "image": "img/wdzy_tuk_plush_2021.png"
+        },
+        {
+          "member": "Chaeryeong",
+          "character": "CHUNG_EE",
+          "filename": "wdzy_chung_ee_plush_2021.png",
+          "image": "img/wdzy_chung_ee_plush_2021.png"
+        },
+        {
+          "member": "Yuna",
+          "character": "CABBIT",
+          "filename": "wdzy_cabbit_plush_2021.png",
+          "image": "img/wdzy_cabbit_plush_2021.png"
+        }
+      ]
+    },
+    {
+      "series": "WDZY",
+      "category": "UFO Catcher",
+      "productName": "SEGA UFO Catcher v3.0",
+      "collection": "WDZY x SEGA UFO Catcher 2022",
+      "year": 2022,
+      "region": [
+        "JP"
+      ],
+      "status": "available",
+      "tags": [
+        "jp",
+        "sega",
+        "v3"
+      ],
+      "image": "",
+      "officialSource": "SEGA UFO Catcher prize, 2022-11-11 CST drop",
+      "id": "wdzy_sega_3_2022",
+      "size": "12×15×14 (cm)",
+      "members": [
+        {
+          "member": "Yeji",
+          "character": "HATT",
+          "filename": "wdzy_hatt_plush_2021.png",
+          "image": "img/wdzy_hatt_plush_2021.png"
+        },
+        {
+          "member": "Lia",
+          "character": "LYA",
+          "filename": "wdzy_lya_plush_2021.png",
+          "image": "img/wdzy_lya_plush_2021.png"
+        },
+        {
+          "member": "Ryujin",
+          "character": "TUK",
+          "filename": "wdzy_tuk_plush_2021.png",
+          "image": "img/wdzy_tuk_plush_2021.png"
+        },
+        {
+          "member": "Chaeryeong",
+          "character": "CHUNG_EE",
+          "filename": "wdzy_chung_ee_plush_2021.png",
+          "image": "img/wdzy_chung_ee_plush_2021.png"
+        },
+        {
+          "member": "Yuna",
+          "character": "CABBIT",
+          "filename": "wdzy_cabbit_plush_2021.png",
+          "image": "img/wdzy_cabbit_plush_2021.png"
+        }
+      ]
+    }
+  ],
+  "twinzy": [
+    {
+      "id": "twinzy_original_plush_2024",
+      "series": "TWINZY",
+      "collection": "BORN TO BE",
+      "year": 2024,
+      "category": "Plush",
+      "productName": "Original Plush",
+      "region": [
+        "KR"
+      ],
+      "members": [
+        {
+          "member": "Yeji",
+          "twinzyName": "KKengEE",
+          "filename": "twinzy_kkengee_original_plush_2024.png",
+          "image": "img/twinzy_kkengee_original_plush_2024.png"
+        },
+        {
+          "member": "Lia",
+          "twinzyName": "Li-Li",
+          "filename": "twinzy_lili_original_plush_2024.png",
+          "image": "img/twinzy_lili_original_plush_2024.png"
+        },
+        {
+          "member": "Ryujin",
+          "twinzyName": "RyuJJi",
+          "filename": "twinzy_ryujji_original_plush_2024.png",
+          "image": "img/twinzy_ryujji_original_plush_2024.png"
+        },
+        {
+          "member": "Chaeryeong",
+          "twinzyName": "RyeoWoo",
+          "filename": "twinzy_ryeowoo_original_plush_2024.png",
+          "image": "img/twinzy_ryeowoo_original_plush_2024.png"
+        },
+        {
+          "member": "Yuna",
+          "twinzyName": "NAong",
+          "filename": "twinzy_naong_original_plush_2024.png",
+          "image": "img/twinzy_naong_original_plush_2024.png"
+        }
+      ],
+      "status": "discontinued",
+      "tags": [
+        "plush",
+        "core"
+      ],
+      "image": "img/twinzy_kkengee_original_plush_2024.png",
+      "officialSource": "ITZY MD"
+    },
+    {
+      "id": "twinzy_mini_plush_2024",
+      "series": "TWINZY",
+      "collection": "BORN TO BE",
+      "year": 2024,
+      "category": "Plush",
+      "productName": "Mini Plush",
+      "region": [
+        "KR"
+      ],
+      "members": [
+        {
+          "member": "Yeji",
+          "twinzyName": "KKengEE",
+          "filename": "twinzy_kkengee_mini_plush_2024.png",
+          "image": "img/twinzy_kkengee_mini_plush_2024.png"
+        },
+        {
+          "member": "Lia",
+          "twinzyName": "Li-Li",
+          "filename": "twinzy_lili_mini_plush_2024.png",
+          "image": "img/twinzy_lili_mini_plush_2024.png"
+        },
+        {
+          "member": "Ryujin",
+          "twinzyName": "RyuJJi",
+          "filename": "twinzy_ryujji_mini_plush_2024.png",
+          "image": "img/twinzy_ryujji_mini_plush_2024.png"
+        },
+        {
+          "member": "Chaeryeong",
+          "twinzyName": "RyeoWoo",
+          "filename": "twinzy_ryeowoo_mini_plush_2024.png",
+          "image": "img/twinzy_ryeowoo_mini_plush_2024.png"
+        },
+        {
+          "member": "Yuna",
+          "twinzyName": "NAong",
+          "filename": "twinzy_naong_mini_plush_2024.png",
+          "image": "img/twinzy_naong_mini_plush_2024.png"
+        }
+      ],
+      "status": "discontinued",
+      "tags": [
+        "plush",
+        "mini"
+      ],
+      "image": "img/twinzy_kkengee_mini_plush_2024.png",
+      "officialSource": "ITZY MD"
+    },
+    {
+      "id": "twinzy_onair_plush_2025",
+      "series": "TWINZY",
+      "collection": "ON AIR POP-UP",
+      "year": 2025,
+      "category": "Plush",
+      "productName": "ON AIR Plush",
+      "region": [
+        "KR"
+      ],
+      "members": [
+        {
+          "member": "Yeji",
+          "twinzyName": "KKengEE",
+          "filename": "twinzy_kkengee_onair_2025.png",
+          "image": "img/twinzy_kkengee_onair_2025.png"
+        },
+        {
+          "member": "Lia",
+          "twinzyName": "Li-Li",
+          "filename": "twinzy_lili_onair_2025.png",
+          "image": "img/twinzy_lili_onair_2025.png"
+        },
+        {
+          "member": "Ryujin",
+          "twinzyName": "RyuJJi",
+          "filename": "twinzy_ryujji_onair_2025.png",
+          "image": "img/twinzy_ryujji_onair_2025.png"
+        },
+        {
+          "member": "Chaeryeong",
+          "twinzyName": "RyeoWoo",
+          "filename": "twinzy_ryeowoo_onair_2025.png",
+          "image": "img/twinzy_ryeowoo_onair_2025.png"
+        },
+        {
+          "member": "Yuna",
+          "twinzyName": "NAong",
+          "filename": "twinzy_naong_onair_2025.png",
+          "image": "img/twinzy_naong_onair_2025.png"
+        }
+      ],
+      "status": "limited",
+      "tags": [
+        "popup",
+        "plush"
+      ],
+      "image": "img/twinzy_kkengee_onair_2025.png",
+      "officialSource": "ITZY POP-UP"
+    },
+    {
+      "id": "twinzy_tunnelvision_plush_2025",
+      "series": "TWINZY",
+      "collection": "TUNNEL VISION",
+      "year": 2025,
+      "category": "Plush",
+      "productName": "Tour Plush",
+      "region": [
+        "KR"
+      ],
+      "members": [
+        {
+          "member": "Yeji",
+          "twinzyName": "KKengEE",
+          "filename": "twinzy_kkengee_tour_2025.png",
+          "image": "img/twinzy_kkengee_tour_2025.png"
+        },
+        {
+          "member": "Lia",
+          "twinzyName": "Li-Li",
+          "filename": "twinzy_lili_tour_2025.png",
+          "image": "img/twinzy_lili_tour_2025.png"
+        },
+        {
+          "member": "Ryujin",
+          "twinzyName": "RyuJJi",
+          "filename": "twinzy_ryujji_tour_2025.png",
+          "image": "img/twinzy_ryujji_tour_2025.png"
+        },
+        {
+          "member": "Chaeryeong",
+          "twinzyName": "RyeoWoo",
+          "filename": "twinzy_ryeowoo_tour_2025.png",
+          "image": "img/twinzy_ryeowoo_tour_2025.png"
+        },
+        {
+          "member": "Yuna",
+          "twinzyName": "NAong",
+          "filename": "twinzy_naong_tour_2025.png",
+          "image": "img/twinzy_naong_tour_2025.png"
+        }
+      ],
+      "status": "limited",
+      "tags": [
+        "tour",
+        "plush"
+      ],
+      "image": "img/twinzy_kkengee_tour_2025.png",
+      "officialSource": "ITZY TOUR MD"
+    }
+  ]
 }
