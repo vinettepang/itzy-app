@@ -24,6 +24,18 @@ type Schedule = {
   tags: ScheduleTagLink[];
 };
 
+/** 行标题：场馆名 · 城市名；缺场馆信息时退回地点 / 标题 */
+function scheduleTitle(s: Schedule): string {
+  const venue = s.venue?.posterDisplayName?.trim();
+  const city = s.venue?.city?.trim();
+  if (venue && city) return `${venue} · ${city}`;
+  if (venue) return venue;
+  const location = s.location?.trim();
+  if (location && city) return `${location} · ${city}`;
+  if (location) return location;
+  return s.title;
+}
+
 export default function SchedulesPage() {
   const [list, setList] = useState<Schedule[]>([]);
   const [loading, setLoading] = useState(true);
@@ -70,22 +82,25 @@ export default function SchedulesPage() {
       ) : null}
 
       <div className="schedules-list">
-        {list.map((s) => (
-          <div key={s.id} className="schedules-row">
-            <div className="schedules-title" title={s.title}>
-              {s.title}
-            </div>
-            {s.tags.length > 0 ? (
-              <div className="schedules-tags" aria-label="Tags">
-                {s.tags.map((x) => (
-                  <span key={x.tag.id} className="schedules-tag">
-                    {x.tag.name}
-                  </span>
-                ))}
+        {list.map((s) => {
+          const title = scheduleTitle(s);
+          return (
+            <div key={s.id} className="schedules-row">
+              <div className="schedules-title" title={title}>
+                {title}
               </div>
-            ) : null}
-          </div>
-        ))}
+              {s.tags.length > 0 ? (
+                <div className="schedules-tags" aria-label="Tags">
+                  {s.tags.map((x) => (
+                    <span key={x.tag.id} className="schedules-tag">
+                      {x.tag.name}
+                    </span>
+                  ))}
+                </div>
+              ) : null}
+            </div>
+          );
+        })}
       </div>
     </div>
   );

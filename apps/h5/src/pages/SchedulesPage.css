@@ -1,13 +1,15 @@
-/* /schedules 演出列表 —— 黑色通栏、标题左对齐、pill 标签右对齐、细线分隔 */
+/* /schedules 演出列表 —— 黑色通栏、标题左对齐、pill 标签右对齐、细线分隔
+   注：本页挂在 NewNewLayout 下，其 shell 已是视口通栏，无需 100vw 全宽 hack。 */
 .schedules-page {
-  /* 突破父级 .h5-main 的居中与内边距，铺满整个视口 */
   position: relative;
-  margin: 0 calc(50% - 50vw);
-  width: 100vw;
+  width: 100%;
   box-sizing: border-box;
   background: #000;
   color: #fff;
-  min-height: 100vh;
+  /* 减去固定导航高度，避免空内容时仍产生一小段可滚动区域 */
+  min-height: calc(100vh - var(--newnew-nav-h, 60px) - var(--newnew-nav-top, 0px));
+  /* clip 不会创建滚动容器，仅防止本页自身产生横向溢出 */
+  overflow-x: clip;
   padding: 24px clamp(20px, 4vw, 48px) 80px;
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
 }

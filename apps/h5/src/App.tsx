@@ -83,6 +83,7 @@ export default function App() {
         <Route path="/poster/preview" element={<PosterPreviewPage />} />
         <Route path="/game" element={<GamePage />} />
         <Route path="/setlist" element={<TourSetlistPage />} />
+        <Route path="/schedules" element={<SchedulesPage />} />
         <Route path="/cheer/:slug" element={<CheerGuidePage />} />
         <Route path="/unseen" element={<UnseenPage />} />
       </Route>
@@ -146,7 +147,6 @@ export default function App() {
       ))}
       <Route element={<AppLayout />}>
         <Route path="/gallery" element={<GalleryHome />} />
-        <Route path="/schedules" element={<SchedulesPage />} />
         <Route path="/gallery/:id" element={<GalleryDetail />} />
         <Route path="/lab-style" element={<LabStylePage />} />
         <Route path="/portfolio" element={<PortfolioPage />} />
