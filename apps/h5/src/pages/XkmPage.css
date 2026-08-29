@@ -326,6 +326,11 @@ html.lenis {
   /* mix-blend-mode: destination-out; */
 }
 
+/* 应援法等 CJK 按钮：line-height .9 会让中文视觉偏上，改为 1 做垂直居中 */
+.xkm-ticketActions .xkm-objectBtn__text {
+  line-height: 1;
+}
+
 @supports not (mix-blend-mode: destination-out) {
   .xkm-objectBtn__text {
     /* mix-blend-mode: normal;

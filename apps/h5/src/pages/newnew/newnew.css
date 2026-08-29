@@ -756,7 +756,7 @@ body:has(.newnew-page .xkm--new-home) {
 }
 
 
-/* 首页加载遮罩：透明度调至 80% */
+/* 首页加载遮罩：不透明度 92% */
 .newnew-page .xkm-loadingOverlay {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.92);
 }

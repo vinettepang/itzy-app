@@ -1,7 +1,11 @@
 .setlist-page {
   min-height: 60vh;
   padding: 4px 20px 28px;
-  max-width: 720px;
+  /* 与首页内容同宽：通栏铺满并居中，不再固定 720px 靠左 */
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .setlist-header {
@@ -73,6 +77,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  /* 垂直居中：去掉 line-height 造成的基线偏移 */
+  line-height: normal;
   box-sizing: border-box;
   min-width: 64px;
   height: 32px;
@@ -92,10 +98,11 @@
 }
 
 .setlist-cheer__text {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   line-height: 1;
-  /* CJK 字形视觉重心偏上，略下移做光学居中 */
-  transform: translateY(0.08em);
+  transform: none;
 }
 
 .setlist-cheer:hover {
