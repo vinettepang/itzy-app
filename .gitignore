@@ -10,3 +10,7 @@ dist
 uploads
 *.db
 .DS_Store
+
+# Vite 加载 TS 配置时生成的临时中转文件（进程异常退出时会残留）
+vite.config.ts.timestamp-*.mjs
+vite.config.js.timestamp-*.mjs
