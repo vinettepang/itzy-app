@@ -56,6 +56,8 @@ function haoqiSpaFallback(): import('vite').Plugin {
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), haoqiSpaFallback()],
+  // GitHub Pages 项目站点部署在 /itzy-app/ 子路径下；本地开发不设置时默认 '/'
+  base: process.env.PAGES_BASE || '/',
   resolve: {
     alias: { '@': path.resolve(__dirname, 'src') },
   },
