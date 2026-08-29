@@ -4,7 +4,7 @@ import { stripBase } from '@/utils/assetUrl';
 import itzyLogoPng from '@/assets/itzy.png';
 
 const INFO_MARQUEE_TEXT = 'MIDZY · ITZY · MIDZY · ITZY';
-const HOME_HREF = '/newnew';
+const HOME_HREF = '/';
 const NAV_PINNED_CLASS = 'xkm-coverNav--pinned';
 
 function InfoMarquee() {

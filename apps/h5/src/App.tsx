@@ -69,12 +69,13 @@ export default function App() {
       <ScrollToTop />
       <Routes>
       
-      <Route path="/" element={<XkmPage />} />
+      <Route path="/" element={<NewNewPage />} />
       <Route path="/menu" element={<MenuPage />} />
       <Route path="/home" element={<Home />} />
       <Route path="/xkm" element={<XkmPage />} />
+      <Route path="/old-home" element={<XkmPage />} />
       <Route path="/new_home" element={<NewHomePage />} />
-      <Route path="/newnew" element={<NewNewPage />} />
+      <Route path="/newnew" element={<Navigate to="/" replace />} />
       <Route path="/ui" element={<UiPage />} />
       <Route path="/dolls" element={<DollsPage />} />
       <Route element={<NewNewLayout />}>

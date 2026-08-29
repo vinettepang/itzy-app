@@ -46,11 +46,11 @@ function buildMenuGroups(): MenuGroup[] {
       title: '入口 / Core',
       links: [
         { to: '/menu', label: 'Menu（本页）' },
-        { to: '/', label: 'XKM', note: '默认首页' },
+        { to: '/', label: 'NewNew', note: '默认首页（Oh Ira 配色版）' },
+        { to: '/old-home', label: 'Old Home', note: '原首页（XKM）' },
         { to: '/xkm', label: 'XKM（别名）' },
         { to: '/home', label: 'Home' },
         { to: '/new_home', label: 'New Home', note: 'XKM + haoqi 下落' },
-        { to: '/newnew', label: 'NewNew', note: 'Oh Ira 配色版' },
         { to: '/ui', label: 'UI', note: 'Mesh 票根' },
       ],
     },
