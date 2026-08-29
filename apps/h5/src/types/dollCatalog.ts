@@ -41,6 +41,8 @@ export type DollMerch = {
   category: string;
   collection: string;
   year: number;
+  model?: string;
+  jan?: string;
 };
 
 export type UnseenDoll = {

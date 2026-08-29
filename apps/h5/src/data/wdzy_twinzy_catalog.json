@@ -1,8 +1,8 @@
 {
   "meta": {
     "project": "ITZY WDZY & TWINZY Catalog",
-    "version": "0.3",
-    "description": "Unified structured dataset for WDZY + TWINZY (plush + MD + accessories partial coverage) + SEGA UFO Catcher (v1.0/2.0/3.0)",
+    "version": "0.4",
+    "description": "Unified structured dataset for WDZY + TWINZY (plush + MD + accessories partial coverage) + SEGA UFO Catcher (v1.0/2.0/3.0) + Cable Mascot (official model numbers) + Cable Mascot (official model numbers)",
     "note": "This is a curated partial dataset, not full official inventory",
     "created": "2026"
   },
@@ -466,6 +466,68 @@
           "character": "CABBIT",
           "filename": "wdzy_cabbit_plush_2021.png",
           "image": "img/wdzy_cabbit_plush_2021.png"
+        }
+      ]
+    },
+    {
+      "id": "wdzy_cable_mascot_2022",
+      "series": "WDZY",
+      "category": "Cable Mascot",
+      "productName": "Cable Mascot (iPhone)",
+      "collection": "WDZY Cable Mascot 2022",
+      "year": 2022,
+      "region": [
+        "JP"
+      ],
+      "status": "available",
+      "tags": [
+        "jp",
+        "cable-mascot",
+        "official"
+      ],
+      "image": "",
+      "officialSource": "LINE FRIENDS × ITZY WDZY, superdelivery.com 10870361",
+      "size": "约 W90 × D20 × H80 mm",
+      "members": [
+        {
+          "member": "Yeji",
+          "character": "HATT",
+          "filename": "wdzy_cable_mascot_hatt_2022.png",
+          "image": "img/wdzy_cable_mascot_hatt_2022.png",
+          "model": "WDZY-WCM-HT",
+          "jan": "4580586479484"
+        },
+        {
+          "member": "Lia",
+          "character": "LYA",
+          "filename": "wdzy_cable_mascot_lya_2022.png",
+          "image": "img/wdzy_cable_mascot_lya_2022.png",
+          "model": "WDZY-WCM-LY",
+          "jan": "4580586479453"
+        },
+        {
+          "member": "Ryujin",
+          "character": "TUK",
+          "filename": "wdzy_cable_mascot_tuk_2022.png",
+          "image": "img/wdzy_cable_mascot_tuk_2022.png",
+          "model": "WDZY-WCM-TK",
+          "jan": "4580586479477"
+        },
+        {
+          "member": "Chaeryeong",
+          "character": "CHUNG_EE",
+          "filename": "wdzy_cable_mascot_chung_ee_2022.png",
+          "image": "img/wdzy_cable_mascot_chung_ee_2022.png",
+          "model": null,
+          "jan": null
+        },
+        {
+          "member": "Yuna",
+          "character": "CABBIT",
+          "filename": "wdzy_cable_mascot_cabbit_2022.png",
+          "image": "img/wdzy_cable_mascot_cabbit_2022.png",
+          "model": "WDZY-WCM-CA",
+          "jan": "4580586479460"
         }
       ]
     }

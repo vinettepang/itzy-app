@@ -63,6 +63,8 @@ function buildMerchForMember(
           category: product.category,
           collection: product.collection,
           year: product.year,
+          model: member.model,
+          jan: member.jan,
         },
       ];
     });

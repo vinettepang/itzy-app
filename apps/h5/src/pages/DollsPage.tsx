@@ -380,6 +380,9 @@ export default function DollsPage() {
                   >
                     <img src={item.src} alt={item.label} draggable={false} />
                     <span className="unseen-merch__label">{item.label}</span>
+                    {item.model ? (
+                      <span className="unseen-merch__model">{item.model}</span>
+                    ) : null}
                   </button>
                 );
               })}
