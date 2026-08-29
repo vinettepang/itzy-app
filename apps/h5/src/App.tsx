@@ -1,6 +1,7 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import ScrollToTop from '@/components/ScrollToTop';
 import AppLayout from '@/layouts/AppLayout';
+import PeoplePage from '@/pages/people/PeoplePage';
 import GalleryHome from '@/pages/GalleryHome';
 import GalleryDetail from '@/pages/GalleryDetail';
 import SchedulesPage from '@/pages/SchedulesPage';
@@ -77,6 +78,7 @@ export default function App() {
       <Route path="/new_home" element={<NewHomePage />} />
       <Route path="/newnew" element={<Navigate to="/" replace />} />
       <Route path="/ui" element={<UiPage />} />
+      <Route path="/people" element={<PeoplePage />} />
       <Route path="/dolls" element={<DollsPage />} />
       <Route element={<NewNewLayout />}>
         <Route path="/poster" element={<PosterPage />} />
