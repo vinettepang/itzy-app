@@ -42,6 +42,18 @@ export default function SchedulesPage() {
   // 避免全局 CSS（html height:100% / overscroll-behavior 等）影响原生滚动
   useScrollDamping();
 
+  // 打包后的 CSS 里有全局 `body { overflow: hidden }`，会把 body 变成
+  // 不可用户滚动的滚动容器，导致触摸/手势滑动失效（Lenis 只接管 wheel）。
+  // 本页显式放开，卸载时还原。
+  useEffect(() => {
+    const body = document.body;
+    const prevOverflow = body.style.overflow;
+    body.style.overflow = 'visible';
+    return () => {
+      body.style.overflow = prevOverflow;
+    };
+  }, []);
+
   const [list, setList] = useState<Schedule[]>([]);
   const [loading, setLoading] = useState(true);
   const [err, setErr] = useState<string | null>(null);
