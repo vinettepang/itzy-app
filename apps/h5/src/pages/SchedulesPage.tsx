@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { request } from '@/services/request';
+import { useScrollDamping } from '@/hooks/useScrollDamping';
 import './SchedulesPage.css';
 
 type Tag = { id: string; name: string };
@@ -37,6 +38,10 @@ function scheduleTitle(s: Schedule): string {
 }
 
 export default function SchedulesPage() {
+  // 与 /setlist、/cheer 等二级页保持一致：用 Lenis 接管滚动，
+  // 避免全局 CSS（html height:100% / overscroll-behavior 等）影响原生滚动
+  useScrollDamping();
+
   const [list, setList] = useState<Schedule[]>([]);
   const [loading, setLoading] = useState(true);
   const [err, setErr] = useState<string | null>(null);
