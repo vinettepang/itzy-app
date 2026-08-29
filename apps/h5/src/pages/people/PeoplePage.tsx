@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { PEOPLE, type Person } from './peopleData';
+import PeopleFooter from './PeopleFooter';
 import { useParallaxScroll, useVisibilityReveal } from './useParallaxScroll';
 import './people.css';
 
@@ -93,6 +94,8 @@ export default function PeoplePage() {
             <PersonCard key={person.name} person={person} index={index} />
           ))}
         </section>
+
+        <PeopleFooter />
       </article>
     </div>
   );

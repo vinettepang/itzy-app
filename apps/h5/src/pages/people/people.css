@@ -191,6 +191,55 @@
   }
 }
 
+/* ---------- 底部：字母逐个点亮 ---------- */
+
+.people-footer {
+  max-width: 1134px;
+  margin: clamp(80px, 14vw, 180px) auto 0;
+  padding-top: clamp(40px, 6vw, 72px);
+  border-top: 1px solid rgba(40, 40, 42, 0.18);
+  text-align: center;
+}
+
+.people-footer__word {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 0.02em;
+  line-height: 0.9;
+  /* 字母上移时不要被裁掉 */
+  padding-top: 0.35em;
+}
+
+.people-footer__letter {
+  display: inline-block;
+  font-family: var(--font-serif);
+  font-size: clamp(3.5rem, 16vw, 11rem);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 0.9;
+  color: var(--grey);
+  will-change: transform, color;
+}
+
+.people-footer__mark {
+  display: inline-block;
+  margin-left: 0.12em;
+  font-family: var(--font-serif);
+  font-size: clamp(0.9rem, 3.2vw, 2rem);
+  line-height: 1;
+  color: rgba(40, 40, 42, 0.4);
+  transform: translateY(-0.15em);
+}
+
+.people-footer__note {
+  margin: clamp(20px, 3vw, 36px) 0 0;
+  font-family: var(--font-serif);
+  font-size: clamp(0.85rem, 1.6vw, 1.1rem);
+  letter-spacing: -0.01em;
+  color: rgba(40, 40, 42, 0.45);
+}
+
 /* 尊重「减少动态效果」偏好 */
 @media (prefers-reduced-motion: reduce) {
   .people-page [data-scroll-insider] {
