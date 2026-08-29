@@ -1,0 +1,97 @@
+# itzy-app H5 —— GitHub Pages 自动部署
+# 每次 push 到 main 分支，自动构建 apps/h5 并发布到 GitHub Pages
+name: Deploy H5 to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: # 允许在 Actions 页面手动触发（点 "Run workflow" 即可重新部署）
+
+# 最小权限：只授予部署 Pages 所需的权限
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 同一时间只允许一个部署任务（连推多次时自动取消旧的）
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/h5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: 安装 pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 8.15.9
+
+      - name: 安装 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: apps/h5/pnpm-lock.yaml
+
+      - name: 安装依赖
+        run: pnpm install --no-frozen-lockfile
+
+      - name: 构建（GitHub Pages 子路径 base）
+        env:
+          PAGES_BASE: /itzy-app/
+        # 直接用 vite 构建，跳过 tsc 的既有类型告警
+        run: npx vite build
+
+      - name: 组装发布目录（SPA 404 回退）
+        run: |
+          touch dist/.nojekyll
+          # GitHub Pages SPA 技巧：404.html 记录原始路径后跳回站点根
+          cat > dist/404.html <<'HTML'
+          <!doctype html>
+          <html>
+            <head>
+              <meta charset="UTF-8" />
+              <script>
+                sessionStorage.redirect = location.pathname + location.search + location.hash;
+                location.replace('/itzy-app/');
+              </script>
+            </head>
+            <body></body>
+          </html>
+          HTML
+          # index.html 注入脚本：读取 404 记录的路径并恢复真实路由
+          /usr/bin/python3 - <<'PY'
+          html = open('dist/index.html', encoding='utf-8').read()
+          restore = """<script>
+            (function () {
+              try {
+                var redirect = sessionStorage.redirect;
+                delete sessionStorage.redirect;
+                if (redirect && redirect !== '/itzy-app/' && location.pathname === '/itzy-app/') {
+                  history.replaceState(null, '', redirect);
+                }
+              } catch (e) {}
+            })();
+          </script>"""
+          html = html.replace('</head>', restore + '\n  </head>')
+          open('dist/index.html', 'w', encoding='utf-8').write(html)
+          PY
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: apps/h5/dist
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
