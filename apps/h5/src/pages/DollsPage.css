@@ -113,6 +113,64 @@
   grid-column: span 2;
 }
 
+/*
+ * 大屏：一排 5 个（默认 2+3 是给窄屏的），
+ * 并且让 WDZY + TWINZY 两排在同一屏内展示完。
+ * 短屏（高度不足）仍保留滚动，避免图片被压扁。
+ */
+@media (min-width: 1024px) {
+  .unseen-gallery__grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-rows: minmax(0, 1fr);
+  }
+
+  .unseen-gallery__item:nth-child(1),
+  .unseen-gallery__item:nth-child(2),
+  .unseen-gallery__item:nth-child(3),
+  .unseen-gallery__item:nth-child(4),
+  .unseen-gallery__item:nth-child(5) {
+    grid-column: span 1;
+    grid-row: 1;
+  }
+}
+
+@media (min-width: 1024px) and (min-height: 680px) {
+  .unseen-gate {
+    height: 100dvh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .unseen-gallery {
+    flex: 1 1 auto;
+    min-height: 0;
+    justify-content: center;
+    gap: clamp(18px, 3.4vh, 40px);
+  }
+
+  .unseen-gallery__section {
+    flex: 1 1 0;
+    min-height: 0;
+  }
+
+  .unseen-gallery__grid {
+    flex: 1 1 auto;
+    min-height: 0;
+  }
+
+  .unseen-gallery__item {
+    min-height: 0;
+  }
+
+  .unseen-gallery__img {
+    /* 让图片随可用高度收缩，aspect-ratio 放开由 flex 控制 */
+    flex: 1 1 auto;
+    min-height: 0;
+    aspect-ratio: auto;
+  }
+}
+
 .unseen-gallery__item:hover .unseen-gallery__img {
   transform: scale(1.02);
 }
