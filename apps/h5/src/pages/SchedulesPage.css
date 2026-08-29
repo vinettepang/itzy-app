@@ -80,7 +80,8 @@
 
 .schedules-title {
   color: #fff;
-  font-size: clamp(28px, 6vw, 60px);
+  /* 英文名比中文长，字号略收一档以容纳更多字符 */
+  font-size: clamp(24px, 5vw, 52px);
   font-weight: 800;
   letter-spacing: -0.02em;
   line-height: 1.05;
@@ -92,13 +93,30 @@
   white-space: nowrap;
 }
 
+/* 右侧信息区：日期 + 标签 */
+.schedules-meta {
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 2vw, 20px);
+  flex: 0 1 auto;
+  max-width: 55%;
+}
+
+.schedules-date {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  line-height: 1;
+}
+
 .schedules-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
   justify-content: flex-end;
-  flex: 0 1 auto;
-  max-width: 55%;
 }
 
 .schedules-tag {
@@ -119,11 +137,21 @@
   .schedules-page {
     padding: 18px 18px 64px;
   }
+  .schedules-row {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
   .schedules-title {
-    font-size: clamp(26px, 8.5vw, 44px);
+    font-size: clamp(24px, 7.5vw, 40px);
     /* 长标题允许换行，更利于移动端阅读 */
     white-space: normal;
     overflow: visible;
+  }
+  .schedules-meta {
+    width: 100%;
+    max-width: 100%;
+    justify-content: flex-start;
+    gap: 12px;
   }
   .schedules-tags {
     max-width: 100%;

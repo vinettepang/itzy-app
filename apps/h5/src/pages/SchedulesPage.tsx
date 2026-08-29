@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { request } from '@/services/request';
 import { useScrollDamping } from '@/hooks/useScrollDamping';
+import { cityEn, venueEn } from './scheduleNames';
 import './SchedulesPage.css';
 
 type Tag = { id: string; name: string };
@@ -25,16 +26,101 @@ type Schedule = {
   tags: ScheduleTagLink[];
 };
 
-/** 行标题：场馆名 · 城市名；缺场馆信息时退回地点 / 标题 */
-function scheduleTitle(s: Schedule): string {
-  const venue = s.venue?.posterDisplayName?.trim();
-  const city = s.venue?.city?.trim();
-  if (venue && city) return `${venue} · ${city}`;
-  if (venue) return venue;
-  const location = s.location?.trim();
-  if (location && city) return `${location} · ${city}`;
-  if (location) return location;
-  return s.title;
+const MONTHS = [
+  'JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN',
+  'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC',
+];
+
+/** 用 UTC 取日期，避免时区把演出日算偏一天（数据以 12:00Z 记录当天） */
+function utcDay(iso: string) {
+  const d = new Date(iso);
+  return {
+    y: d.getUTCFullYear(),
+    m: d.getUTCMonth(),
+    d: d.getUTCDate(),
+    t: Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate()),
+  };
+}
+
+const DAY_MS = 24 * 60 * 60 * 1000;
+
+function isConsecutive(a: { t: number }, b: { t: number }) {
+  return b.t - a.t === DAY_MS;
+}
+
+/** 单日 → "FEB 13"；连续多日 → "FEB 13–15"；跨月 → "FEB 28–MAR 02" */
+function formatDays(days: ReturnType<typeof utcDay>[]): string {
+  if (days.length === 0) return '';
+  const first = days[0];
+  const last = days[days.length - 1];
+  const pad = (n: number) => String(n).padStart(2, '0');
+
+  if (days.length === 1 || first.t === last.t) {
+    return `${MONTHS[first.m]} ${pad(first.d)}`;
+  }
+
+  // 连续：只显示首尾，用短横线连接
+  const allConsecutive = days.every((day, i) => i === 0 || isConsecutive(days[i - 1], day));
+  if (allConsecutive) {
+    if (first.m === last.m && first.y === last.y) {
+      return `${MONTHS[first.m]} ${pad(first.d)}–${pad(last.d)}`;
+    }
+    return `${MONTHS[first.m]} ${pad(first.d)} – ${MONTHS[last.m]} ${pad(last.d)}`;
+  }
+
+  // 不连续：逐日列出
+  return days.map((day) => `${MONTHS[day.m]} ${pad(day.d)}`).join(', ');
+}
+
+type ScheduleEntry = {
+  key: string;
+  venue: string;
+  city: string;
+  dateLabel: string;
+  tags: Tag[];
+  sortKey: number;
+};
+
+/** 同一场馆（连续或不同日期）合并为一条，日期合并成区间 */
+function buildEntries(list: Schedule[]): ScheduleEntry[] {
+  const groups = new Map<string, Schedule[]>();
+
+  for (const s of list) {
+    const key = s.venue?.id || `no-venue:${s.title}`;
+    const bucket = groups.get(key);
+    if (bucket) bucket.push(s);
+    else groups.set(key, [s]);
+  }
+
+  const entries: ScheduleEntry[] = [];
+
+  for (const [key, items] of groups) {
+    const first = items[0];
+    const days = [...new Set(items.map((s) => utcDay(s.startsAt).t))]
+      .sort((a, b) => a - b)
+      .map((t) => utcDay(new Date(t).toISOString()));
+
+    const tagMap = new Map<string, Tag>();
+    for (const s of items) {
+      for (const link of s.tags ?? []) {
+        if (link?.tag?.id) tagMap.set(link.tag.id, link.tag);
+      }
+    }
+
+    const venue = venueEn(first.venue?.posterDisplayName);
+    const city = cityEn(first.venue?.city);
+
+    entries.push({
+      key,
+      venue: venue || first.title,
+      city,
+      dateLabel: formatDays(days),
+      tags: [...tagMap.values()],
+      sortKey: days[0]?.t ?? 0,
+    });
+  }
+
+  return entries.sort((a, b) => a.sortKey - b.sortKey);
 }
 
 export default function SchedulesPage() {
@@ -84,37 +170,44 @@ export default function SchedulesPage() {
     };
   }, []);
 
+  const entries = useMemo(() => buildEntries(list), [list]);
+
   return (
     <div className="schedules-page">
       <header className="schedules-header">
-        <div className="schedules-header-title">全部行程</div>
-        <div className="schedules-header-sub">Schedules</div>
+        <div className="schedules-header-title">Tour Dates</div>
+        <div className="schedules-header-sub">{entries.length} shows</div>
       </header>
 
       {loading ? <div className="schedules-muted">加载中…</div> : null}
       {err ? <div className="schedules-err">{err}</div> : null}
 
-      {!loading && !err && list.length === 0 ? (
+      {!loading && !err && entries.length === 0 ? (
         <div className="schedules-muted">暂无已发布行程</div>
       ) : null}
 
       <div className="schedules-list">
-        {list.map((s) => {
-          const title = scheduleTitle(s);
+        {entries.map((entry) => {
+          const title = entry.city ? `${entry.venue} · ${entry.city}` : entry.venue;
           return (
-            <div key={s.id} className="schedules-row">
+            <div key={entry.key} className="schedules-row">
               <div className="schedules-title" title={title}>
                 {title}
               </div>
-              {s.tags.length > 0 ? (
-                <div className="schedules-tags" aria-label="Tags">
-                  {s.tags.map((x) => (
-                    <span key={x.tag.id} className="schedules-tag">
-                      {x.tag.name}
-                    </span>
-                  ))}
-                </div>
-              ) : null}
+              <div className="schedules-meta">
+                {entry.dateLabel ? (
+                  <span className="schedules-date">{entry.dateLabel}</span>
+                ) : null}
+                {entry.tags.length > 0 ? (
+                  <div className="schedules-tags" aria-label="Tags">
+                    {entry.tags.map((tag) => (
+                      <span key={tag.id} className="schedules-tag">
+                        {tag.name}
+                      </span>
+                    ))}
+                  </div>
+                ) : null}
+              </div>
             </div>
           );
         })}
