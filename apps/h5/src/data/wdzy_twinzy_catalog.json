@@ -62,7 +62,9 @@
         "Chaeryeong": "H21×W19.5 (cm)",
         "Ryujin": "H24.5×W18 (cm)",
         "Yeji": "H24×W15.5 (cm)"
-      }
+      },
+      "line": "KR",
+      "release": "2021-03-12 9am KST, 8H drop"
     },
     {
       "id": "wdzy_keyring_2021",
@@ -112,7 +114,16 @@
         "plush"
       ],
       "image": "img/wdzy_hatt_keyring_2021.png",
-      "officialSource": "LINE FRIENDS WDZY"
+      "officialSource": "LINE FRIENDS WDZY",
+      "line": "KR",
+      "release": "2021-03-12 9am KST, 8H drop",
+      "sizes": {
+        "Yeji": "H12×W10 (cm)",
+        "Lia": "H14×W10.5 (cm)",
+        "Ryujin": "H11.5×W10.5 (cm)",
+        "Chaeryeong": "H13.5×W10.5 (cm)",
+        "Yuna": "H12.5×W10.5 (cm)"
+      }
     },
     {
       "id": "wdzy_face_keyring_2021",
@@ -162,7 +173,9 @@
         "keyring"
       ],
       "image": "img/wdzy_hatt_face_keyring_2021.png",
-      "officialSource": "LINE FRIENDS WDZY"
+      "officialSource": "LINE FRIENDS WDZY",
+      "line": "KR",
+      "release": "2021-03-12 9am KST, 8H drop"
     },
     {
       "id": "wdzy_coin_pouch_2021",
@@ -211,7 +224,9 @@
         "pouch"
       ],
       "image": "img/wdzy_hatt_coin_pouch_2021.png",
-      "officialSource": "LINE FRIENDS WDZY"
+      "officialSource": "LINE FRIENDS WDZY",
+      "line": "KR",
+      "release": "2021-03-12 9am KST, 8H drop"
     },
     {
       "series": "WDZY",
@@ -261,7 +276,9 @@
           "filename": "wdzy_cabbit_plush_2021.png",
           "image": "img/wdzy_cabbit_plush_2021.png"
         }
-      ]
+      ],
+      "line": "KR",
+      "release": "2021-03-12 9am KST, 8H drop"
     },
     {
       "series": "WDZY",
@@ -311,7 +328,9 @@
           "filename": "wdzy_cabbit_plush_2021.png",
           "image": "img/wdzy_cabbit_plush_2021.png"
         }
-      ]
+      ],
+      "line": "JP",
+      "release": "2021-08-07 20:00 JST (Ajiya)"
     },
     {
       "series": "WDZY",
@@ -331,7 +350,7 @@
       "image": "",
       "officialSource": "SEGA UFO Catcher prize, 2022-11-11 CST drop",
       "id": "wdzy_sega_1_2022",
-      "size": "12×8×14 (cm)",
+      "size": "10×8×14 (cm)",
       "members": [
         {
           "member": "Yeji",
@@ -363,7 +382,9 @@
           "filename": "wdzy_cabbit_plush_2021.png",
           "image": "img/wdzy_cabbit_plush_2021.png"
         }
-      ]
+      ],
+      "line": "SEGA",
+      "release": "2022-11-11"
     },
     {
       "series": "WDZY",
@@ -415,7 +436,9 @@
           "filename": "wdzy_cabbit_plush_2021.png",
           "image": "img/wdzy_cabbit_plush_2021.png"
         }
-      ]
+      ],
+      "line": "SEGA",
+      "release": "2022-11-11"
     },
     {
       "series": "WDZY",
@@ -435,7 +458,7 @@
       "image": "",
       "officialSource": "SEGA UFO Catcher prize, 2022-11-11 CST drop",
       "id": "wdzy_sega_3_2022",
-      "size": "12×15×14 (cm)",
+      "size": "12×8×14 (cm)",
       "members": [
         {
           "member": "Yeji",
@@ -467,7 +490,9 @@
           "filename": "wdzy_cabbit_plush_2021.png",
           "image": "img/wdzy_cabbit_plush_2021.png"
         }
-      ]
+      ],
+      "line": "SEGA",
+      "release": "2022-11-11"
     },
     {
       "id": "wdzy_cable_mascot_2022",
@@ -528,6 +553,586 @@
           "image": "img/wdzy_cable_mascot_cabbit_2022.png",
           "model": "WDZY-WCM-CA",
           "jan": "4580586479460"
+        }
+      ],
+      "line": "JP",
+      "release": "2022"
+    },
+    {
+      "id": "wdzy_phone_case_2021",
+      "series": "WDZY",
+      "collection": "LINE FRIENDS Launch 2021",
+      "year": 2021,
+      "category": "Phone Case",
+      "productName": "Phone Case",
+      "region": [
+        "KR"
+      ],
+      "status": "coming_soon",
+      "tags": [
+        "kr",
+        "phone-case"
+      ],
+      "image": "",
+      "officialSource": "LINE FRIENDS WDZY, 2021-03-12 9am KST, 8H drop",
+      "line": "KR",
+      "release": "2021-03-12 9am KST, 8H drop",
+      "members": [
+        {
+          "member": "Yeji",
+          "character": "hatt",
+          "filename": "wdzy_hatt_plush_2021.png",
+          "image": "img/wdzy_hatt_plush_2021.png"
+        },
+        {
+          "member": "Lia",
+          "character": "lya",
+          "filename": "wdzy_lya_plush_2021.png",
+          "image": "img/wdzy_lya_plush_2021.png"
+        },
+        {
+          "member": "Ryujin",
+          "character": "tuk",
+          "filename": "wdzy_tuk_plush_2021.png",
+          "image": "img/wdzy_tuk_plush_2021.png"
+        },
+        {
+          "member": "Chaeryeong",
+          "character": "chung_ee",
+          "filename": "wdzy_chung_ee_plush_2021.png",
+          "image": "img/wdzy_chung_ee_plush_2021.png"
+        },
+        {
+          "member": "Yuna",
+          "character": "cabbit",
+          "filename": "wdzy_cabbit_plush_2021.png",
+          "image": "img/wdzy_cabbit_plush_2021.png"
+        }
+      ]
+    },
+    {
+      "id": "wdzy_jp_plush_2021",
+      "series": "WDZY",
+      "collection": "WDZY Japan (SK Japan) 2021",
+      "year": 2021,
+      "category": "Plush",
+      "productName": "JP Plush Doll",
+      "region": [
+        "JP"
+      ],
+      "status": "available",
+      "tags": [
+        "jp",
+        "plush"
+      ],
+      "image": "",
+      "officialSource": "SK Japan / Ajiya (JP)",
+      "line": "JP",
+      "release": "2021",
+      "members": [
+        {
+          "member": "Yeji",
+          "character": "hatt",
+          "filename": "wdzy_hatt_plush_2021.png",
+          "image": "img/wdzy_hatt_plush_2021.png"
+        },
+        {
+          "member": "Lia",
+          "character": "lya",
+          "filename": "wdzy_lya_plush_2021.png",
+          "image": "img/wdzy_lya_plush_2021.png"
+        },
+        {
+          "member": "Ryujin",
+          "character": "tuk",
+          "filename": "wdzy_tuk_plush_2021.png",
+          "image": "img/wdzy_tuk_plush_2021.png"
+        },
+        {
+          "member": "Chaeryeong",
+          "character": "chung_ee",
+          "filename": "wdzy_chung_ee_plush_2021.png",
+          "image": "img/wdzy_chung_ee_plush_2021.png"
+        },
+        {
+          "member": "Yuna",
+          "character": "cabbit",
+          "filename": "wdzy_cabbit_plush_2021.png",
+          "image": "img/wdzy_cabbit_plush_2021.png"
+        }
+      ]
+    },
+    {
+      "id": "wdzy_jp_keyring_2021",
+      "series": "WDZY",
+      "collection": "WDZY Japan (SK Japan) 2021",
+      "year": 2021,
+      "category": "Keyring",
+      "productName": "JP Plush Keyring",
+      "region": [
+        "JP"
+      ],
+      "status": "available",
+      "tags": [
+        "jp",
+        "keyring"
+      ],
+      "image": "",
+      "officialSource": "SK Japan / Ajiya (JP)",
+      "line": "JP",
+      "release": "2021",
+      "members": [
+        {
+          "member": "Yeji",
+          "character": "hatt",
+          "filename": "wdzy_hatt_plush_2021.png",
+          "image": "img/wdzy_hatt_plush_2021.png"
+        },
+        {
+          "member": "Lia",
+          "character": "lya",
+          "filename": "wdzy_lya_plush_2021.png",
+          "image": "img/wdzy_lya_plush_2021.png"
+        },
+        {
+          "member": "Ryujin",
+          "character": "tuk",
+          "filename": "wdzy_tuk_plush_2021.png",
+          "image": "img/wdzy_tuk_plush_2021.png"
+        },
+        {
+          "member": "Chaeryeong",
+          "character": "chung_ee",
+          "filename": "wdzy_chung_ee_plush_2021.png",
+          "image": "img/wdzy_chung_ee_plush_2021.png"
+        },
+        {
+          "member": "Yuna",
+          "character": "cabbit",
+          "filename": "wdzy_cabbit_plush_2021.png",
+          "image": "img/wdzy_cabbit_plush_2021.png"
+        }
+      ]
+    },
+    {
+      "id": "wdzy_jp_phone_stand_2021",
+      "series": "WDZY",
+      "collection": "WDZY Japan (SK Japan) 2021",
+      "year": 2021,
+      "category": "Stand",
+      "productName": "Phone Stand",
+      "region": [
+        "JP"
+      ],
+      "status": "available",
+      "tags": [
+        "jp",
+        "phone-stand"
+      ],
+      "image": "",
+      "officialSource": "SK Japan / Ajiya (JP)",
+      "line": "JP",
+      "release": "2021",
+      "size": "14×14×14 (cm)",
+      "members": [
+        {
+          "member": "Yeji",
+          "character": "hatt",
+          "filename": "wdzy_hatt_plush_2021.png",
+          "image": "img/wdzy_hatt_plush_2021.png"
+        },
+        {
+          "member": "Lia",
+          "character": "lya",
+          "filename": "wdzy_lya_plush_2021.png",
+          "image": "img/wdzy_lya_plush_2021.png"
+        },
+        {
+          "member": "Ryujin",
+          "character": "tuk",
+          "filename": "wdzy_tuk_plush_2021.png",
+          "image": "img/wdzy_tuk_plush_2021.png"
+        },
+        {
+          "member": "Chaeryeong",
+          "character": "chung_ee",
+          "filename": "wdzy_chung_ee_plush_2021.png",
+          "image": "img/wdzy_chung_ee_plush_2021.png"
+        },
+        {
+          "member": "Yuna",
+          "character": "cabbit",
+          "filename": "wdzy_cabbit_plush_2021.png",
+          "image": "img/wdzy_cabbit_plush_2021.png"
+        }
+      ]
+    },
+    {
+      "id": "wdzy_jp_cosmetic_pouch_2021",
+      "series": "WDZY",
+      "collection": "WDZY Japan (SK Japan) 2021",
+      "year": 2021,
+      "category": "Pouch",
+      "productName": "Plush Cosmetic Pouch",
+      "region": [
+        "JP"
+      ],
+      "status": "available",
+      "tags": [
+        "jp",
+        "cosmetic"
+      ],
+      "image": "",
+      "officialSource": "SK Japan / Ajiya (JP)",
+      "line": "JP",
+      "release": "2021",
+      "members": [
+        {
+          "member": "Yeji",
+          "character": "hatt",
+          "filename": "wdzy_hatt_plush_2021.png",
+          "image": "img/wdzy_hatt_plush_2021.png"
+        },
+        {
+          "member": "Lia",
+          "character": "lya",
+          "filename": "wdzy_lya_plush_2021.png",
+          "image": "img/wdzy_lya_plush_2021.png"
+        },
+        {
+          "member": "Ryujin",
+          "character": "tuk",
+          "filename": "wdzy_tuk_plush_2021.png",
+          "image": "img/wdzy_tuk_plush_2021.png"
+        },
+        {
+          "member": "Chaeryeong",
+          "character": "chung_ee",
+          "filename": "wdzy_chung_ee_plush_2021.png",
+          "image": "img/wdzy_chung_ee_plush_2021.png"
+        },
+        {
+          "member": "Yuna",
+          "character": "cabbit",
+          "filename": "wdzy_cabbit_plush_2021.png",
+          "image": "img/wdzy_cabbit_plush_2021.png"
+        }
+      ]
+    },
+    {
+      "id": "wdzy_jp_pass_case_2021",
+      "series": "WDZY",
+      "collection": "WDZY Japan (SK Japan) 2021",
+      "year": 2021,
+      "category": "Pass Case",
+      "productName": "Pass Case",
+      "region": [
+        "JP"
+      ],
+      "status": "available",
+      "tags": [
+        "jp",
+        "pass-case"
+      ],
+      "image": "",
+      "officialSource": "SK Japan / Ajiya (JP)",
+      "line": "JP",
+      "release": "2021",
+      "members": [
+        {
+          "member": "Yeji",
+          "character": "hatt",
+          "filename": "wdzy_hatt_plush_2021.png",
+          "image": "img/wdzy_hatt_plush_2021.png"
+        },
+        {
+          "member": "Lia",
+          "character": "lya",
+          "filename": "wdzy_lya_plush_2021.png",
+          "image": "img/wdzy_lya_plush_2021.png"
+        },
+        {
+          "member": "Ryujin",
+          "character": "tuk",
+          "filename": "wdzy_tuk_plush_2021.png",
+          "image": "img/wdzy_tuk_plush_2021.png"
+        },
+        {
+          "member": "Chaeryeong",
+          "character": "chung_ee",
+          "filename": "wdzy_chung_ee_plush_2021.png",
+          "image": "img/wdzy_chung_ee_plush_2021.png"
+        },
+        {
+          "member": "Yuna",
+          "character": "cabbit",
+          "filename": "wdzy_cabbit_plush_2021.png",
+          "image": "img/wdzy_cabbit_plush_2021.png"
+        }
+      ]
+    },
+    {
+      "id": "wdzy_jp_coin_purse_2021",
+      "series": "WDZY",
+      "collection": "WDZY Japan (SK Japan) 2021",
+      "year": 2021,
+      "category": "Pouch",
+      "productName": "Coin Purse",
+      "region": [
+        "JP"
+      ],
+      "status": "available",
+      "tags": [
+        "jp",
+        "purse"
+      ],
+      "image": "",
+      "officialSource": "SK Japan / Ajiya (JP)",
+      "line": "JP",
+      "release": "2021",
+      "size": "9×13 (cm)",
+      "members": [
+        {
+          "member": "Yeji",
+          "character": "hatt",
+          "filename": "wdzy_hatt_plush_2021.png",
+          "image": "img/wdzy_hatt_plush_2021.png"
+        },
+        {
+          "member": "Lia",
+          "character": "lya",
+          "filename": "wdzy_lya_plush_2021.png",
+          "image": "img/wdzy_lya_plush_2021.png"
+        },
+        {
+          "member": "Ryujin",
+          "character": "tuk",
+          "filename": "wdzy_tuk_plush_2021.png",
+          "image": "img/wdzy_tuk_plush_2021.png"
+        },
+        {
+          "member": "Chaeryeong",
+          "character": "chung_ee",
+          "filename": "wdzy_chung_ee_plush_2021.png",
+          "image": "img/wdzy_chung_ee_plush_2021.png"
+        },
+        {
+          "member": "Yuna",
+          "character": "cabbit",
+          "filename": "wdzy_cabbit_plush_2021.png",
+          "image": "img/wdzy_cabbit_plush_2021.png"
+        }
+      ]
+    },
+    {
+      "id": "wdzy_jp_drawstring_2021",
+      "series": "WDZY",
+      "collection": "WDZY Japan (SK Japan) 2021",
+      "year": 2021,
+      "category": "Bag",
+      "productName": "Drawstring Bag",
+      "region": [
+        "JP"
+      ],
+      "status": "available",
+      "tags": [
+        "jp",
+        "drawstring"
+      ],
+      "image": "",
+      "officialSource": "SK Japan / Ajiya (JP)",
+      "line": "JP",
+      "release": "2021",
+      "members": [
+        {
+          "member": "Yeji",
+          "character": "hatt",
+          "filename": "wdzy_hatt_plush_2021.png",
+          "image": "img/wdzy_hatt_plush_2021.png"
+        },
+        {
+          "member": "Lia",
+          "character": "lya",
+          "filename": "wdzy_lya_plush_2021.png",
+          "image": "img/wdzy_lya_plush_2021.png"
+        },
+        {
+          "member": "Ryujin",
+          "character": "tuk",
+          "filename": "wdzy_tuk_plush_2021.png",
+          "image": "img/wdzy_tuk_plush_2021.png"
+        },
+        {
+          "member": "Chaeryeong",
+          "character": "chung_ee",
+          "filename": "wdzy_chung_ee_plush_2021.png",
+          "image": "img/wdzy_chung_ee_plush_2021.png"
+        },
+        {
+          "member": "Yuna",
+          "character": "cabbit",
+          "filename": "wdzy_cabbit_plush_2021.png",
+          "image": "img/wdzy_cabbit_plush_2021.png"
+        }
+      ]
+    },
+    {
+      "id": "wdzy_jp_eco_bag_2021",
+      "series": "WDZY",
+      "collection": "WDZY Japan (SK Japan) 2021",
+      "year": 2021,
+      "category": "Bag",
+      "productName": "Eco Bag",
+      "region": [
+        "JP"
+      ],
+      "status": "available",
+      "tags": [
+        "jp",
+        "eco-bag"
+      ],
+      "image": "",
+      "officialSource": "SK Japan / Ajiya (JP)",
+      "line": "JP",
+      "release": "2021",
+      "members": [
+        {
+          "member": "Yeji",
+          "character": "hatt",
+          "filename": "wdzy_hatt_plush_2021.png",
+          "image": "img/wdzy_hatt_plush_2021.png"
+        },
+        {
+          "member": "Lia",
+          "character": "lya",
+          "filename": "wdzy_lya_plush_2021.png",
+          "image": "img/wdzy_lya_plush_2021.png"
+        },
+        {
+          "member": "Ryujin",
+          "character": "tuk",
+          "filename": "wdzy_tuk_plush_2021.png",
+          "image": "img/wdzy_tuk_plush_2021.png"
+        },
+        {
+          "member": "Chaeryeong",
+          "character": "chung_ee",
+          "filename": "wdzy_chung_ee_plush_2021.png",
+          "image": "img/wdzy_chung_ee_plush_2021.png"
+        },
+        {
+          "member": "Yuna",
+          "character": "cabbit",
+          "filename": "wdzy_cabbit_plush_2021.png",
+          "image": "img/wdzy_cabbit_plush_2021.png"
+        }
+      ]
+    },
+    {
+      "id": "wdzy_sega_pillow_2022",
+      "series": "WDZY",
+      "collection": "WDZY x SEGA UFO Catcher 2022",
+      "year": 2022,
+      "category": "Pillow",
+      "productName": "SEGA Plush Pillow",
+      "region": [
+        "JP"
+      ],
+      "status": "available",
+      "tags": [
+        "jp",
+        "sega",
+        "pillow"
+      ],
+      "image": "",
+      "officialSource": "SEGA UFO Catcher prize, 2022-11-11",
+      "line": "SEGA",
+      "release": "2022-11-11",
+      "size": "50×10×40 (cm)",
+      "members": [
+        {
+          "member": "Yeji",
+          "character": "hatt",
+          "filename": "wdzy_hatt_plush_2021.png",
+          "image": "img/wdzy_hatt_plush_2021.png"
+        },
+        {
+          "member": "Lia",
+          "character": "lya",
+          "filename": "wdzy_lya_plush_2021.png",
+          "image": "img/wdzy_lya_plush_2021.png"
+        },
+        {
+          "member": "Ryujin",
+          "character": "tuk",
+          "filename": "wdzy_tuk_plush_2021.png",
+          "image": "img/wdzy_tuk_plush_2021.png"
+        },
+        {
+          "member": "Chaeryeong",
+          "character": "chung_ee",
+          "filename": "wdzy_chung_ee_plush_2021.png",
+          "image": "img/wdzy_chung_ee_plush_2021.png"
+        },
+        {
+          "member": "Yuna",
+          "character": "cabbit",
+          "filename": "wdzy_cabbit_plush_2021.png",
+          "image": "img/wdzy_cabbit_plush_2021.png"
+        }
+      ]
+    },
+    {
+      "id": "wdzy_sega_cosmetic_2022",
+      "series": "WDZY",
+      "collection": "WDZY x SEGA UFO Catcher 2022",
+      "year": 2022,
+      "category": "Pouch",
+      "productName": "SEGA Cosmetic Pouch",
+      "region": [
+        "JP"
+      ],
+      "status": "available",
+      "tags": [
+        "jp",
+        "sega",
+        "cosmetic"
+      ],
+      "image": "",
+      "officialSource": "SEGA UFO Catcher prize, 2022-11-11",
+      "line": "SEGA",
+      "release": "2022-11-11",
+      "size": "16×5×10 (cm)",
+      "members": [
+        {
+          "member": "Yeji",
+          "character": "hatt",
+          "filename": "wdzy_hatt_plush_2021.png",
+          "image": "img/wdzy_hatt_plush_2021.png"
+        },
+        {
+          "member": "Lia",
+          "character": "lya",
+          "filename": "wdzy_lya_plush_2021.png",
+          "image": "img/wdzy_lya_plush_2021.png"
+        },
+        {
+          "member": "Ryujin",
+          "character": "tuk",
+          "filename": "wdzy_tuk_plush_2021.png",
+          "image": "img/wdzy_tuk_plush_2021.png"
+        },
+        {
+          "member": "Chaeryeong",
+          "character": "chung_ee",
+          "filename": "wdzy_chung_ee_plush_2021.png",
+          "image": "img/wdzy_chung_ee_plush_2021.png"
+        },
+        {
+          "member": "Yuna",
+          "character": "cabbit",
+          "filename": "wdzy_cabbit_plush_2021.png",
+          "image": "img/wdzy_cabbit_plush_2021.png"
         }
       ]
     }

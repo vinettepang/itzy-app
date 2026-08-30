@@ -4,6 +4,9 @@ export type CatalogMember = {
   twinzyName?: string;
   filename: string;
   image?: string;
+  model?: string;
+  jan?: string;
+  size?: string;
 };
 
 export type CatalogProduct = {
@@ -19,6 +22,10 @@ export type CatalogProduct = {
   tags: string[];
   image: string;
   officialSource: string;
+  line?: 'KR' | 'JP' | 'SEGA';
+  release?: string;
+  size?: string;
+  sizes?: Record<string, string>;
 };
 
 export type DollCatalog = {
@@ -43,6 +50,14 @@ export type DollMerch = {
   year: number;
   model?: string;
   jan?: string;
+  line?: 'KR' | 'JP' | 'SEGA';
+  size?: string;
+  release?: string;
+  region?: string[];
+  x?: number;
+  y?: number;
+  gridX?: number;
+  gridY?: number;
 };
 
 export type UnseenDoll = {

@@ -267,8 +267,8 @@
   transform: translateX(-50%);
   margin: 0;
   width: max-content;
-  max-width: 200px;
-  font-size: 11px;
+  max-width: clamp(140px, 22vw, 220px);
+  font-size: clamp(10px, 1.2vw, 13px);
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -334,12 +334,15 @@
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  width: 100px;
+  width: clamp(74px, 8.5vw, 116px);
   padding: 0;
   border: none;
   background: transparent;
   cursor: pointer;
   text-align: center;
+  /* 混乱(螺旋) ↔ 整齐(按系列分排) 的平滑移动过渡 */
+  transition: left 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+    top 0.85s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .unseen-merch:hover img {
@@ -348,8 +351,9 @@
 
 .unseen-merch img {
   display: block;
-  width: 100px;
-  height: 150px;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  height: auto;
   object-fit: cover;
   border: 1px solid rgba(244, 244, 239, 0.15);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
@@ -359,20 +363,57 @@
 .unseen-merch__label {
   display: block;
   margin-top: 6px;
-  font-size: 9px;
+  font-size: clamp(9px, 1.1vw, 11px);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--unseen-muted);
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .unseen-merch__model {
   display: block;
   margin-top: 2px;
-  font-size: 8px;
+  font-size: clamp(8px, 1vw, 10px);
   letter-spacing: 0.05em;
   font-variant-numeric: tabular-nums;
   color: rgba(244, 244, 239, 0.55);
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.unseen-merch__line {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  font-size: 8px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #0c0c0c;
+}
+
+.unseen-merch__line--kr {
+  background: #ff5a7a;
+}
+
+.unseen-merch__line--jp {
+  background: #5aa9ff;
+}
+
+.unseen-merch__line--sega {
+  background: #f4c430;
+}
+
+.unseen-merch__size {
+  display: block;
+  margin-top: 2px;
+  font-size: 8px;
+  letter-spacing: 0.02em;
+  color: var(--unseen-muted);
+  font-variant-numeric: tabular-nums;
 }
 
 .unseen-overview-btn {
@@ -401,6 +442,57 @@
   background: rgba(244, 244, 239, 0.12);
 }
 
+/* 按系列整齐排列 按钮（聚焦模式，右上角） */
+.unseen-arrange-btn {
+  position: fixed;
+  top: 20px;
+  right: clamp(16px, 4vw, 40px);
+  z-index: 30;
+  padding: 8px 18px;
+  border: 1px solid rgba(244, 244, 239, 0.35);
+  border-radius: 999px;
+  background: rgba(12, 12, 12, 0.72);
+  color: var(--unseen-ink);
+  font: inherit;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  pointer-events: auto;
+  backdrop-filter: blur(8px);
+}
+
+.unseen-arrange-btn:hover,
+.unseen-arrange-btn.is-active {
+  border-color: rgba(244, 244, 239, 0.6);
+  background: rgba(244, 244, 239, 0.12);
+}
+
+/* 整齐模式下每个系列分排的标题标签 */
+.unseen-line-label {
+  position: absolute;
+  transform: translateX(-50%);
+  margin: 0;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.unseen-line-label--kr {
+  color: #ff5a7a;
+}
+
+.unseen-line-label--jp {
+  color: #5aa9ff;
+}
+
+.unseen-line-label--sega {
+  color: #f4c430;
+}
+
 .unseen-modal {
   position: fixed;
   inset: 0;
@@ -408,7 +500,7 @@
   display: grid;
   align-content: start;
   justify-items: center;
-  padding: 16px 16px 32px;
+  padding: clamp(16px, 4vw, 28px) clamp(14px, 4vw, 28px) clamp(24px, 6vw, 40px);
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   background: rgba(0, 0, 0, 0.72);
@@ -417,12 +509,13 @@
 
 .unseen-modal__panel {
   position: relative;
-  width: min(420px, 100%);
-  max-height: none;
-  overflow: visible;
-  margin-top: 0;
-  padding: 24px;
+  width: min(440px, 92vw);
+  max-height: 88vh;
+  overflow-y: auto;
+  margin: 0 auto;
+  padding: clamp(18px, 4vw, 26px);
   border: 1px solid rgba(244, 244, 239, 0.15);
+  border-radius: 18px;
   background: #141414;
   color: var(--unseen-ink);
 }
@@ -445,6 +538,7 @@
 .unseen-modal__img {
   display: block;
   width: 100%;
+  max-height: clamp(180px, 38vh, 320px);
   aspect-ratio: 1;
   object-fit: cover;
   margin-bottom: 16px;
@@ -494,6 +588,26 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--unseen-muted);
+}
+
+/* 超窄屏：弹窗信息改单列，避免字段被压扁 */
+@media (max-width: 400px) {
+  .unseen-modal__meta {
+    grid-template-columns: 1fr;
+    gap: 10px 0;
+  }
+
+  .unseen-modal__title {
+    font-size: 16px;
+  }
+
+  .unseen-modal__close {
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+  }
 }
 
 .unseen-monolith {
@@ -601,13 +715,28 @@
 }
 
 @media (max-width: 900px) {
-  .unseen-gallery {
+  .unseen-gallery__grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  /* 取消大屏 2+3 的绝对列定位，让网格在小屏自然流式排列 */
+  .unseen-gallery__item:nth-child(1),
+  .unseen-gallery__item:nth-child(2),
+  .unseen-gallery__item:nth-child(3),
+  .unseen-gallery__item:nth-child(4),
+  .unseen-gallery__item:nth-child(5) {
+    grid-column: auto;
+    grid-row: auto;
   }
 }
 
 @media (max-width: 560px) {
-  .unseen-gallery {
+  .unseen-gallery__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px 10px;
+  }
+
+  .unseen-gallery__heading {
+    font-size: clamp(20px, 7vw, 28px);
   }
 }
