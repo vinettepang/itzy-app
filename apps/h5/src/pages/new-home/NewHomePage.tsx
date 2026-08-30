@@ -369,7 +369,7 @@ function XkmTicketCard({
   );
 }
 
-const INFO_MARQUEE_TEXT = "MIDZY · ITZY · MIDZY · ITZY";
+const INFO_MARQUEE_TEXT = "团综 DaDa-ITZY 热映 · ITZY 三巡巡演中";
 
 function ImageScroller({ images }: { images: typeof galleryImages }) {
   const loop = [...images, ...images];
@@ -527,6 +527,9 @@ export default function NewHomePage({
   const [fallReady, setFallReady] = useState(false);
   const onFallReady = useCallback(() => setFallReady(true), []);
 
+  // 顶部下滑菜单的开合状态
+  const [menuOpen, setMenuOpen] = useState(false);
+
   useEffect(() => {
     let cancelled = false;
     setLoading(true);
@@ -563,11 +566,16 @@ export default function NewHomePage({
   const tickets = useMemo(() => {
     const schedules = collectTicketSchedules(data);
     if (!schedules.length) return [];
-    const primary = buildTicketFromSchedule(schedules[0]);
-    return [
-      // { ticket: primary, variant: "hybrid" as const },
-      { ticket: primary, variant: "flat" as const },
-    ];
+    // 只展示未结束（今天或未来）的场次；已过去的场次不进入 NEXT COMING
+    const now = Date.now();
+    const upcoming = schedules.filter(
+      (s) => new Date(s.startsAt).getTime() >= now,
+    );
+    if (!upcoming.length) return [];
+    return upcoming.slice(0, 8).map((s) => ({
+      ticket: buildTicketFromSchedule(s),
+      variant: "flat" as const,
+    }));
   }, [data]);
 
   const {
@@ -703,11 +711,58 @@ export default function NewHomePage({
           <InfoMarquee />
           <button
             type="button"
-            className="xkm-coverNav__cell xkm-coverNav__cell--motto"
+            className={`xkm-coverNav__cell xkm-coverNav__cell--menu${
+              menuOpen ? " is-open" : ""
+            }`}
+            aria-expanded={menuOpen}
+            aria-label={menuOpen ? "关闭菜单" : "打开菜单"}
+            onClick={() => setMenuOpen((v) => !v)}
           >
-            MOTTO
+            <span className="xkm-coverNav__menuIcon" aria-hidden="true">
+              <span />
+              <span />
+              <span />
+            </span>
+            <span className="xkm-coverNav__menuLabel">
+              {menuOpen ? "CLOSE" : "MENU"}
+            </span>
           </button>
         </nav>
+
+        {/* 顶部下滑菜单 */}
+        <div
+          className={`xkm-menuPanel${menuOpen ? " xkm-menuPanel--open" : ""}`}
+          aria-hidden={!menuOpen}
+        >
+          <Link
+            to="/"
+            className="xkm-menuLink"
+            onClick={() => setMenuOpen(false)}
+          >
+            首页<span className="xkm-menuLink__en">Home</span>
+          </Link>
+          <Link
+            to="/setlist"
+            className="xkm-menuLink"
+            onClick={() => setMenuOpen(false)}
+          >
+            应援法<span className="xkm-menuLink__en">Fanchant</span>
+          </Link>
+          <Link
+            to="/dolls"
+            className="xkm-menuLink"
+            onClick={() => setMenuOpen(false)}
+          >
+            娃娃图鉴<span className="xkm-menuLink__en">Doll Guide</span>
+          </Link>
+          <Link
+            to="/schedules"
+            className="xkm-menuLink"
+            onClick={() => setMenuOpen(false)}
+          >
+            演唱会行程<span className="xkm-menuLink__en">Tour Dates</span>
+          </Link>
+        </div>
 
         <div className="xkm-section-container">
           {galleryImages.length > 0 ? (
@@ -723,11 +778,14 @@ export default function NewHomePage({
             {tickets.length > 0 ? (
               <div className="xkm-ticketList">
                 {overlayCacheKey === "newnew" ? (
-                  <NewNewArtworkTicket
-                    ticket={tickets[0].ticket}
-                    cycleTitle={data?.tourSpotlightCycleTitle}
-                    tone="blue"
-                  />
+                  tickets.map((item, index) => (
+                    <NewNewArtworkTicket
+                      key={`${item.ticket.title}-${index}`}
+                      ticket={item.ticket}
+                      cycleTitle={data?.tourSpotlightCycleTitle}
+                      tone="blue"
+                    />
+                  ))
                 ) : (
                   tickets.map((item, index) => (
                     <XkmTicketCard
@@ -840,11 +898,11 @@ export default function NewHomePage({
                 <div className="xkm-contactRow" aria-label="Contact">
                   <a
                     className="xkm-contactBtn"
-                    href="https://itzy.jype.com/"
+                    href="https://www.youtube.com/channel/UCDhM2k2Cua-JdobAh5moMFg"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    FANS
+                    YOUTUBE
                   </a>
                   <a
                     className="xkm-contactBtn"

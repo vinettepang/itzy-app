@@ -93,6 +93,27 @@
   white-space: nowrap;
 }
 
+/* 已结束场次：大标题改为灰色，不再用白色 */
+.schedules-row--ended .schedules-title {
+  color: #8a8a8a;
+}
+
+/* 右侧“已结束”标记 */
+.schedules-ended-tag {
+  flex: 0 0 auto;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.55);
+  background: transparent;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 999px;
+  white-space: nowrap;
+  line-height: 1;
+}
+
 /* 右侧信息区：日期 + 标签 */
 .schedules-meta {
   display: flex;
@@ -156,5 +177,9 @@
   .schedules-tags {
     max-width: 100%;
     justify-content: flex-start;
+  }
+  /* 小屏换行后，仍把“已结束”标记推到右侧 */
+  .schedules-ended-tag {
+    margin-left: auto;
   }
 }

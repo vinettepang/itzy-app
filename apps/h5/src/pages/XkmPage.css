@@ -446,8 +446,16 @@ html.lenis {
 
 .xkm-ticketList {
   display: grid;
-  gap: 10px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
   width: 100%;
+}
+
+/* 小屏：每行只显示一个票根 */
+@media (max-width: 640px) {
+  .xkm-ticketList {
+    grid-template-columns: 1fr;
+  }
 }
 
 .xkm-btnBlock {

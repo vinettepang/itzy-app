@@ -79,6 +79,8 @@ type ScheduleEntry = {
   dateLabel: string;
   tags: Tag[];
   sortKey: number;
+  /** 该场次（合并后同场馆的一组）是否已全部结束 */
+  ended: boolean;
 };
 
 /** 同一场馆（连续或不同日期）合并为一条，日期合并成区间 */
@@ -107,6 +109,17 @@ function buildEntries(list: Schedule[]): ScheduleEntry[] {
       }
     }
 
+    // 以该组最晚的结束时间（无 endsAt 则用 startsAt）判断是否已结束
+    const now = Date.now();
+    const latestEnd = items.reduce((max, s) => {
+      const end = s.endsAt
+        ? new Date(s.endsAt).getTime()
+        : new Date(s.startsAt).getTime();
+      const t = Number.isFinite(end) ? end : 0;
+      return t > max ? t : max;
+    }, 0);
+    const ended = latestEnd < now;
+
     const venue = venueEn(first.venue?.posterDisplayName);
     const city = cityEn(first.venue?.city);
 
@@ -117,6 +130,7 @@ function buildEntries(list: Schedule[]): ScheduleEntry[] {
       dateLabel: formatDays(days),
       tags: [...tagMap.values()],
       sortKey: days[0]?.t ?? 0,
+      ended,
     });
   }
 
@@ -190,7 +204,10 @@ export default function SchedulesPage() {
         {entries.map((entry) => {
           const title = entry.city ? `${entry.venue} · ${entry.city}` : entry.venue;
           return (
-            <div key={entry.key} className="schedules-row">
+            <div
+              key={entry.key}
+              className={`schedules-row${entry.ended ? " schedules-row--ended" : ""}`}
+            >
               <div className="schedules-title" title={title}>
                 {title}
               </div>
@@ -206,6 +223,11 @@ export default function SchedulesPage() {
                       </span>
                     ))}
                   </div>
+                ) : null}
+                {entry.ended ? (
+                  <span className="schedules-ended-tag" aria-label="已结束">
+                    已结束
+                  </span>
                 ) : null}
               </div>
             </div>

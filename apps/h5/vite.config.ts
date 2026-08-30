@@ -3,6 +3,7 @@ import path from 'node:path';
 import type { Connect } from 'vite';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import { VitePWA } from 'vite-plugin-pwa';
 
 const HAOQI_ASSET_PREFIXES = [
   '/haoqi-static/fonts/',
@@ -55,7 +56,53 @@ function haoqiSpaFallback(): import('vite').Plugin {
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), haoqiSpaFallback()],
+  plugins: [
+    react(),
+    haoqiSpaFallback(),
+    VitePWA({
+      // 自动注册 SW；新版本后台静默激活，无需用户手动刷新
+      registerType: 'autoUpdate',
+      // 由插件自动注入注册脚本到 index.html
+      injectRegister: 'auto',
+      // GitHub Pages 子路径部署；本地开发 base 为 '/'
+      base: process.env.PAGES_BASE || '/',
+      manifest: {
+        name: 'ITZY App',
+        short_name: 'ITZY',
+        description: 'ITZY 粉丝应援 App · 歌单 / 歌词 / 应援法',
+        theme_color: '#0e0e0e',
+        background_color: '#0e0e0e',
+        display: 'standalone',
+        start_url: process.env.PAGES_BASE || '/',
+        scope: process.env.PAGES_BASE || '/',
+        icons: [
+          {
+            src: 'favicon.svg',
+            sizes: 'any',
+            type: 'image/svg+xml',
+            purpose: 'any',
+          },
+        ],
+      },
+      workbox: {
+        // 预缓存构建产物（脚本/样式/页面壳/SVG）——歌词数据已打进 js 包，一并缓存。
+        // 只缓存文本/UI 所需资源（js/css/html/svg），不缓存 png/jpg/webp/mp4 等大媒体，
+        // 避免首次访问下载数十 MB；歌单/歌词页均为文本+CSS，离线完全可用。
+        globPatterns: ['**/*.{js,css,html,svg}'],
+        // SPA 离线导航回退：断网时任意路径都返回缓存的首页壳再由前端路由渲染
+        navigateFallback: `${process.env.PAGES_BASE || '/'}index.html`,
+        // 这些真实静态资源/代理路径不要走 SPA 回退
+        navigateFallbackDenylist: [/^\/haoqi-static\//, /^\/unseen-proxy\//],
+        cleanupOutdatedCaches: true,
+        clientsClaim: true,
+        skipWaiting: true,
+      },
+      // 开发环境不启用 SW，避免干扰 HMR
+      devOptions: {
+        enabled: false,
+      },
+    }),
+  ],
   // GitHub Pages 项目站点部署在 /itzy-app/ 子路径下；本地开发不设置时默认 '/'
   base: process.env.PAGES_BASE || '/',
   resolve: {

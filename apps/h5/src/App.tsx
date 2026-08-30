@@ -1,5 +1,6 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import ScrollToTop from '@/components/ScrollToTop';
+import OfflineBadge from '@/components/OfflineBadge';
 import AppLayout from '@/layouts/AppLayout';
 import PeoplePage from '@/pages/people/PeoplePage';
 import GalleryHome from '@/pages/GalleryHome';
@@ -68,6 +69,7 @@ export default function App() {
   return (
     <>
       <ScrollToTop />
+      <OfflineBadge />
       <Routes>
       
       <Route path="/" element={<NewNewPage />} />
