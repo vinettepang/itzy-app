@@ -284,6 +284,27 @@ function collectTicketSchedules(
 
 type TicketVariant = "hybrid" | "flat";
 
+const TICKET_NARROW_MQ = "(max-width: 640px)";
+
+function useHomeTicketLimit() {
+  const [limit, setLimit] = useState(() =>
+    typeof window !== "undefined" &&
+    window.matchMedia(TICKET_NARROW_MQ).matches
+      ? 1
+      : 2,
+  );
+
+  useEffect(() => {
+    const mq = window.matchMedia(TICKET_NARROW_MQ);
+    const sync = () => setLimit(mq.matches ? 1 : 2);
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
+  }, []);
+
+  return limit;
+}
+
 function XkmTicketCard({
   ticket,
   variant,
@@ -529,6 +550,7 @@ export default function NewHomePage({
 
   // 顶部下滑菜单的开合状态
   const [menuOpen, setMenuOpen] = useState(false);
+  const ticketLimit = useHomeTicketLimit();
 
   useEffect(() => {
     let cancelled = false;
@@ -568,15 +590,18 @@ export default function NewHomePage({
     if (!schedules.length) return [];
     // 只展示未结束（今天或未来）的场次；已过去的场次不进入 NEXT COMING
     const now = Date.now();
-    const upcoming = schedules.filter(
-      (s) => new Date(s.startsAt).getTime() >= now,
-    );
+    const upcoming = schedules
+      .filter((s) => new Date(s.startsAt).getTime() >= now)
+      .sort(
+        (a, b) =>
+          new Date(a.startsAt).getTime() - new Date(b.startsAt).getTime(),
+      );
     if (!upcoming.length) return [];
-    return upcoming.slice(0, 8).map((s) => ({
+    return upcoming.slice(0, ticketLimit).map((s) => ({
       ticket: buildTicketFromSchedule(s),
       variant: "flat" as const,
     }));
-  }, [data]);
+  }, [data, ticketLimit]);
 
   const {
     rootRef,
