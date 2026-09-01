@@ -172,7 +172,6 @@ body:has(.xkm--new-home) {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
   cursor: pointer;
   background: #1b1d22;
   border-color: #1b1d22;
@@ -208,13 +207,6 @@ body:has(.xkm--new-home) {
   transform: translateY(-5px) rotate(-45deg);
 }
 
-.xkm-coverNav__menuLabel {
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
 /* 从顶部滑下的全屏菜单面板 */
 .xkm-menuPanel {
   position: fixed;
@@ -234,12 +226,60 @@ body:has(.xkm--new-home) {
   transform: translateY(0);
 }
 
+/* 菜单内的关闭按钮（右上角 icon） */
+.xkm-menuClose {
+  position: absolute;
+  top: calc(var(--newnew-nav-h, 60px) + 14px);
+  right: clamp(16px, 5vw, 46px);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  opacity: 0;
+  transition: opacity 0.35s ease 0.1s;
+}
+.xkm-menuPanel--open .xkm-menuClose {
+  opacity: 1;
+}
+.xkm-menuClose__icon {
+  position: relative;
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+}
+.xkm-menuClose__icon span {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: background 0.3s ease;
+}
+.xkm-menuClose__icon span:nth-child(1) {
+  transform: translateY(-50%) rotate(45deg);
+}
+.xkm-menuClose__icon span:nth-child(2) {
+  transform: translateY(-50%) rotate(-45deg);
+}
+.xkm-menuClose:hover .xkm-menuClose__icon span,
+.xkm-menuClose:active .xkm-menuClose__icon span {
+  background: #9ec9e8;
+}
+
 .xkm-menuLink {
   display: flex;
   align-items: baseline;
   gap: 14px;
   padding: clamp(16px, 3.4vw, 22px) 4px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   color: #fff;
   text-decoration: none;
   font-size: clamp(28px, 8vw, 48px);
@@ -254,10 +294,10 @@ body:has(.xkm--new-home) {
   opacity: 1;
   transform: translateY(0);
 }
-.xkm-menuPanel--open .xkm-menuLink:nth-child(1) { transition-delay: 0.1s; }
-.xkm-menuPanel--open .xkm-menuLink:nth-child(2) { transition-delay: 0.16s; }
-.xkm-menuPanel--open .xkm-menuLink:nth-child(3) { transition-delay: 0.22s; }
-.xkm-menuPanel--open .xkm-menuLink:nth-child(4) { transition-delay: 0.28s; }
+.xkm-menuPanel--open .xkm-menuLink:nth-of-type(1) { transition-delay: 0.1s; }
+.xkm-menuPanel--open .xkm-menuLink:nth-of-type(2) { transition-delay: 0.16s; }
+.xkm-menuPanel--open .xkm-menuLink:nth-of-type(3) { transition-delay: 0.22s; }
+.xkm-menuPanel--open .xkm-menuLink:nth-of-type(4) { transition-delay: 0.28s; }
 
 .xkm-menuLink:hover,
 .xkm-menuLink:active {

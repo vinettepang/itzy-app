@@ -748,9 +748,6 @@ export default function NewHomePage({
               <span />
               <span />
             </span>
-            <span className="xkm-coverNav__menuLabel">
-              {menuOpen ? "CLOSE" : "MENU"}
-            </span>
           </button>
         </nav>
 
@@ -759,6 +756,17 @@ export default function NewHomePage({
           className={`xkm-menuPanel${menuOpen ? " xkm-menuPanel--open" : ""}`}
           aria-hidden={!menuOpen}
         >
+          <button
+            type="button"
+            className="xkm-menuClose"
+            aria-label="关闭菜单"
+            onClick={() => setMenuOpen(false)}
+          >
+            <span className="xkm-menuClose__icon" aria-hidden="true">
+              <span />
+              <span />
+            </span>
+          </button>
           <Link
             to="/"
             className="xkm-menuLink"
