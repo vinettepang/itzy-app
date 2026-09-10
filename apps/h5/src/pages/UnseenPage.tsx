@@ -35,10 +35,13 @@ export default function UnseenPage() {
   const stageRef = useRef<HTMLDivElement>(null);
   const transitionRef = useRef<gsap.core.Timeline | null>(null);
   const [worldSession, setWorldSession] = useState(0);
-  const { pan, resetPan } = useUnseenDrag(
+  const worldScaleRef = useRef(1);
+  worldScaleRef.current = worldScale;
+  const { resetPan, applyTransform } = useUnseenDrag(
     stageRef,
     phase === 'world' && !detailDoll,
     worldSession,
+    { dragOnInteractive: true, scaleRef: worldScaleRef, surfaceRef: worldRef },
   );
 
   const selectedDoll = selectedDollId ? getDollById(dolls, selectedDollId) : null;
@@ -66,6 +69,11 @@ export default function UnseenPage() {
       document.body.style.overflow = '';
     };
   }, []);
+
+  // 当 worldScale 变化时同步 transform
+  useEffect(() => {
+    applyTransform();
+  }, [worldScale, applyTransform]);
 
   useEffect(() => {
     let cancelled = false;
@@ -308,9 +316,6 @@ export default function UnseenPage() {
         <div
           className="unseen-world__stage"
           ref={stageRef}
-          style={{
-            transform: `translate3d(${pan.x}px, ${pan.y}px, 0) scale(${worldScale})`,
-          }}
         >
           {UNSEEN_MONOLITHS.map((mono, i) => (
             <div
@@ -343,7 +348,7 @@ export default function UnseenPage() {
                 <button
                   type="button"
                   className="unseen-doll-cluster__title unseen-doll-cluster__title--btn"
-                  data-no-drag
+                  data-no-drag="strict"
                   onClick={() => focusDollFromOverview(doll)}
                 >
                   {doll.characterName}
@@ -369,7 +374,6 @@ export default function UnseenPage() {
                     key={item.id}
                     type="button"
                     className="unseen-merch unseen-merch--float"
-                    data-no-drag
                     style={{
                       left: layout.x,
                       top: layout.y,

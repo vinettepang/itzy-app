@@ -70,6 +70,99 @@ function neatLayoutByLine(merch: DollMerch[]) {
   return result;
 }
 
+export type MerchLineLayout = {
+  positions: Record<string, { x: number; y: number }>;
+  labels: { line: string; x: number; y: number }[];
+  titleY: number;
+  overflows: boolean;
+  cardW: number;
+};
+
+const LINE_ORDER = ['KR', 'JP', 'SEGA'] as const;
+
+/** 按当前视口把系列行排进屏幕宽度；高度超出时顶部对齐，底部溢出靠下滑查看。 */
+export function layoutMerchByLineForViewport(
+  merch: DollMerch[],
+  viewportW: number,
+  viewportH: number,
+): MerchLineLayout {
+  const padXLeft = viewportW < 560 ? 16 : 40;
+  const padXRight = viewportW < 560 ? 108 : 64;
+  const padTop = 72;
+  const padBottom = 96;
+  const availW = Math.max(180, viewportW - padXLeft - padXRight);
+  const shiftX = (padXLeft - padXRight) / 2;
+  const availH = Math.max(180, viewportH - padTop - padBottom);
+
+  const minCard = 74;
+  const maxCard = 116;
+  const gap = viewportW < 560 ? 10 : 24;
+  const rowGap = 14;
+  const labelH = 22;
+  const groupGap = 22;
+  const titleH = 28;
+
+  const groups: Record<string, DollMerch[]> = {};
+  merch.forEach((item) => {
+    const key = item.line ?? 'KR';
+    (groups[key] ??= []).push(item);
+  });
+  const present = LINE_ORDER.filter((line) => (groups[line]?.length ?? 0) > 0);
+
+  const maxCols = Math.max(1, Math.floor((availW + gap) / (minCard + gap)));
+  const cardW = Math.min(maxCard, (availW - (maxCols - 1) * gap) / maxCols);
+  const cardH = cardW * 1.5 + 48;
+
+  const positions: Record<string, { x: number; y: number }> = {};
+  const labels: { line: string; x: number; y: number }[] = [];
+  let yCursor = titleH;
+
+  present.forEach((line, groupIndex) => {
+    const items = groups[line];
+    const cols = Math.min(maxCols, items.length);
+    const rows = Math.ceil(items.length / cols);
+
+    labels.push({ line, x: Math.round(shiftX), y: yCursor });
+    yCursor += labelH;
+
+    for (let row = 0; row < rows; row += 1) {
+      const rowItems = items.slice(row * cols, row * cols + cols);
+      const totalW = rowItems.length * cardW + (rowItems.length - 1) * gap;
+      const startLeft = -totalW / 2;
+      rowItems.forEach((item, i) => {
+        positions[item.id] = {
+          x: Math.round(startLeft + i * (cardW + gap) + shiftX),
+          y: Math.round(yCursor),
+        };
+      });
+      yCursor += cardH;
+      if (row < rows - 1) yCursor += rowGap;
+    }
+
+    if (groupIndex < present.length - 1) yCursor += groupGap;
+  });
+
+  const totalH = yCursor;
+  const overflows = totalH > availH;
+  const visibleTop = -viewportH / 2 + padTop;
+  const originY = overflows ? visibleTop : visibleTop + (availH - totalH) / 2;
+
+  labels.forEach((label) => {
+    label.y = Math.round(originY + label.y);
+  });
+  Object.values(positions).forEach((point) => {
+    point.y = Math.round(originY + point.y);
+  });
+
+  return {
+    positions,
+    labels,
+    titleY: Math.round(originY),
+    overflows,
+    cardW: Math.round(cardW),
+  };
+}
+
 function memberCharacter(member: CatalogMember) {
   return member.character ?? member.twinzyName ?? member.member;
 }

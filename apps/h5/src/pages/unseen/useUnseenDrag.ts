@@ -1,23 +1,43 @@
-import { type RefObject, useCallback, useEffect, useRef, useState } from 'react';
+import { type RefObject, useCallback, useEffect, useRef } from 'react';
 
 type Point = { x: number; y: number };
 
 const FRICTION = 0.9;
-const SMOOTHING = 0.14;
+const DRAG_SMOOTHING = 0.42;
+const RELEASE_SMOOTHING = 0.16;
 const STOP = 0.08;
 
 export function useUnseenDrag(
-  targetRef: RefObject<HTMLElement | null>,
+  stageRef: RefObject<HTMLElement | null>,
   enabled: boolean,
   sessionId = 0,
+  options?: {
+    dragOnInteractive?: boolean;
+    scaleRef?: RefObject<number>;
+    /** 接收拖拽事件的容器，默认与 stage 相同；传 world 可覆盖空白区域 */
+    surfaceRef?: RefObject<HTMLElement | null>;
+  },
 ) {
-  const [pan, setPan] = useState<Point>({ x: 0, y: 0 });
+  const surfaceRef = options?.surfaceRef ?? stageRef;
   const targetPanRef = useRef<Point>({ x: 0, y: 0 });
   const panRef = useRef<Point>({ x: 0, y: 0 });
   const velocityRef = useRef<Point>({ x: 0, y: 0 });
   const draggingRef = useRef(false);
   const lastPointerRef = useRef<Point | null>(null);
   const rafRef = useRef(0);
+  const dragOnInteractiveRef = useRef(options?.dragOnInteractive ?? false);
+  const scaleRef = options?.scaleRef;
+
+  dragOnInteractiveRef.current = options?.dragOnInteractive ?? false;
+
+  const applyTransform = useCallback(() => {
+    const el = stageRef.current;
+    if (!el) return;
+    const x = panRef.current.x;
+    const y = panRef.current.y;
+    const scale = scaleRef?.current ?? 1;
+    el.style.transform = `translate3d(${x}px, ${y}px, 0) scale(${scale})`;
+  }, [stageRef, scaleRef]);
 
   const resetPan = useCallback((x = 0, y = 0) => {
     targetPanRef.current = { x, y };
@@ -25,11 +45,11 @@ export function useUnseenDrag(
     velocityRef.current = { x: 0, y: 0 };
     draggingRef.current = false;
     lastPointerRef.current = null;
-    setPan({ x, y });
-  }, []);
+    applyTransform();
+  }, [applyTransform]);
 
   useEffect(() => {
-    const el = targetRef.current;
+    const el = surfaceRef.current;
     if (!enabled || !el) return undefined;
 
     const tick = () => {
@@ -42,10 +62,11 @@ export function useUnseenDrag(
 
       const dx = targetPanRef.current.x - panRef.current.x;
       const dy = targetPanRef.current.y - panRef.current.y;
-      panRef.current.x += dx * SMOOTHING + velocityRef.current.x * 0.08;
-      panRef.current.y += dy * SMOOTHING + velocityRef.current.y * 0.08;
+      const smoothing = draggingRef.current ? DRAG_SMOOTHING : RELEASE_SMOOTHING;
+      panRef.current.x += dx * smoothing + velocityRef.current.x * 0.08;
+      panRef.current.y += dy * smoothing + velocityRef.current.y * 0.08;
 
-      setPan({ x: panRef.current.x, y: panRef.current.y });
+      applyTransform();
 
       const moving =
         Math.abs(dx) > STOP ||
@@ -67,11 +88,18 @@ export function useUnseenDrag(
 
     const onPointerDown = (e: PointerEvent) => {
       const target = e.target as HTMLElement | null;
-      if (target?.closest('button, a, [data-no-drag]')) return;
+      if (!dragOnInteractiveRef.current && target?.closest('button, a, [data-no-drag]')) {
+        return;
+      }
+      if (dragOnInteractiveRef.current && target?.closest('[data-no-drag="strict"]')) {
+        return;
+      }
 
       draggingRef.current = true;
       lastPointerRef.current = { x: e.clientX, y: e.clientY };
+      velocityRef.current = { x: 0, y: 0 };
       el.setPointerCapture(e.pointerId);
+      startLoop();
     };
 
     const onPointerMove = (e: PointerEvent) => {
@@ -100,6 +128,8 @@ export function useUnseenDrag(
     el.addEventListener('pointerup', onPointerUp);
     el.addEventListener('pointercancel', onPointerUp);
 
+    applyTransform();
+
     return () => {
       draggingRef.current = false;
       lastPointerRef.current = null;
@@ -110,7 +140,7 @@ export function useUnseenDrag(
       el.removeEventListener('pointerup', onPointerUp);
       el.removeEventListener('pointercancel', onPointerUp);
     };
-  }, [enabled, targetRef, sessionId]);
+  }, [enabled, surfaceRef, sessionId, applyTransform]);
 
-  return { pan, resetPan };
+  return { panRef, resetPan, draggingRef, applyTransform };
 }

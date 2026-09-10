@@ -342,7 +342,12 @@
   text-align: center;
   /* 混乱(螺旋) ↔ 整齐(按系列分排) 的平滑移动过渡 */
   transition: left 0.85s cubic-bezier(0.22, 1, 0.36, 1),
-    top 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+    top 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+    width 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.unseen-doll-cluster.is-arranged .unseen-merch {
+  width: var(--unseen-merch-w, clamp(74px, 8.5vw, 116px));
 }
 
 .unseen-merch:hover img {
@@ -497,10 +502,10 @@
   position: fixed;
   inset: 0;
   z-index: 40;
-  display: grid;
-  align-content: start;
-  justify-items: center;
-  padding: clamp(16px, 4vw, 28px) clamp(14px, 4vw, 28px) clamp(24px, 6vw, 40px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(16px, 4vw, 28px);
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   background: rgba(0, 0, 0, 0.72);
@@ -510,9 +515,9 @@
 .unseen-modal__panel {
   position: relative;
   width: min(440px, 92vw);
-  max-height: 88vh;
+  max-height: min(88vh, calc(100% - 32px));
   overflow-y: auto;
-  margin: 0 auto;
+  margin: auto;
   padding: clamp(18px, 4vw, 26px);
   border: 1px solid rgba(244, 244, 239, 0.15);
   border-radius: 18px;
@@ -524,15 +529,26 @@
   position: absolute;
   top: 12px;
   right: 12px;
+  z-index: 1;
+  display: grid;
+  place-items: center;
   width: 32px;
   height: 32px;
-  border: none;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.45);
   border-radius: 50%;
-  background: rgba(244, 244, 239, 0.08);
-  color: var(--unseen-ink);
-  font-size: 20px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  font-size: 22px;
   line-height: 1;
   cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.unseen-modal__close:hover,
+.unseen-modal__close:active {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.75);
 }
 
 .unseen-modal__img {
@@ -606,7 +622,7 @@
     right: 10px;
     width: 30px;
     height: 30px;
-    font-size: 18px;
+    font-size: 20px;
   }
 }
 
@@ -697,6 +713,33 @@
   opacity: 0.55;
 }
 
+.unseen-hint--scroll {
+  bottom: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  letter-spacing: 0.14em;
+  text-transform: none;
+}
+
+.unseen-hint--scroll span {
+  font-size: 16px;
+  animation: unseen-scroll-hint 1.4s ease-in-out infinite;
+}
+
+@keyframes unseen-scroll-hint {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.45;
+  }
+  50% {
+    transform: translateY(6px);
+    opacity: 1;
+  }
+}
+
 .unseen-copy {
   position: fixed;
   right: clamp(16px, 4vw, 40px);
@@ -709,7 +752,8 @@
 
 @media (prefers-reduced-motion: reduce) {
   .unseen-merch--float,
-  .unseen-doll-cluster__title--float {
+  .unseen-doll-cluster__title--float,
+  .unseen-hint--scroll span {
     animation: none;
   }
 }

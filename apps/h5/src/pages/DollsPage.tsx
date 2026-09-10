@@ -1,7 +1,10 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { UNSEEN_LETTERS, UNSEEN_MONOLITHS } from '@/pages/unseen/unseenWorldData';
-import { UNSEEN_OVERVIEW_SCALE } from '@/pages/unseen/buildDollGallery';
+import {
+  layoutMerchByLineForViewport,
+  UNSEEN_OVERVIEW_SCALE,
+} from '@/pages/unseen/buildDollGallery';
 import { fetchDollGallery, getDollById } from '@/pages/unseen/fetchDollCatalog';
 import type { UnseenDoll, DollMerch } from '@/types/dollCatalog';
 import { useUnseenDrag } from '@/pages/unseen/useUnseenDrag';
@@ -34,14 +37,29 @@ export default function DollsPage() {
   const stageRef = useRef<HTMLDivElement>(null);
   const transitionRef = useRef<gsap.core.Timeline | null>(null);
   const [worldSession, setWorldSession] = useState(0);
-  const { pan, resetPan } = useUnseenDrag(
+  const worldScaleRef = useRef(1);
+  worldScaleRef.current = worldScale;
+  const { resetPan, applyTransform } = useUnseenDrag(
     stageRef,
     phase === 'world' && !detailDoll,
     worldSession,
+    { dragOnInteractive: true, scaleRef: worldScaleRef, surfaceRef: worldRef },
   );
+  const merchPointerRef = useRef<{ x: number; y: number } | null>(null);
+  const [viewport, setViewport] = useState(() => ({
+    w: typeof window === 'undefined' ? 390 : window.innerWidth,
+    h: typeof window === 'undefined' ? 844 : window.innerHeight,
+  }));
 
   const selectedDoll = selectedDollId ? getDollById(dolls, selectedDollId) : null;
   const visibleDolls = overviewMode ? dolls : selectedDoll ? [selectedDoll] : [];
+  const arrangedLayout = useMemo(
+    () =>
+      arranged && !overviewMode && selectedDoll
+        ? layoutMerchByLineForViewport(selectedDoll.merch, viewport.w, viewport.h)
+        : null,
+    [arranged, overviewMode, selectedDoll, viewport.w, viewport.h],
+  );
 
   const gallerySections = useMemo(() => {
     return GALLERY_SECTIONS.map((section) => ({
@@ -65,6 +83,19 @@ export default function DollsPage() {
       document.body.style.overflow = '';
     };
   }, []);
+
+  useEffect(() => {
+    const onResize = () => {
+      setViewport({ w: window.innerWidth, h: window.innerHeight });
+    };
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
+
+  // 当 worldScale 变化时同步 transform
+  useEffect(() => {
+    applyTransform();
+  }, [worldScale, applyTransform]);
 
   useEffect(() => {
     let cancelled = false;
@@ -236,7 +267,12 @@ export default function DollsPage() {
     resetPan(0, 0);
   }
 
-  function openDollDetail(doll: UnseenDoll, merch?: DollMerch) {
+  function openDollDetail(doll: UnseenDoll, merch?: DollMerch, pointer?: { x: number; y: number }) {
+    if (pointer && merchPointerRef.current) {
+      const dx = pointer.x - merchPointerRef.current.x;
+      const dy = pointer.y - merchPointerRef.current.y;
+      if (Math.hypot(dx, dy) > 8) return;
+    }
     setDetailDoll(doll);
     setDetailMerch(merch ?? null);
   }
@@ -258,22 +294,6 @@ export default function DollsPage() {
     // 排列时把镜头拉回该娃娃中心，确保看清整齐布局
     if (next) resetPan(-selectedDoll.worldX, -selectedDoll.worldY);
     setArranged(next);
-  }
-
-  // 当前选中娃娃按系列分组后的标签位置（仅整齐模式渲染）
-  function lineLabelPositions(doll: UnseenDoll) {
-    const groups: Record<string, { xs: number[]; y: number }> = {};
-    doll.merch.forEach((m) => {
-      const k = m.line ?? 'KR';
-      (groups[k] ??= { xs: [], y: 0 });
-      groups[k].xs.push(m.gridX ?? m.x ?? 0);
-      groups[k].y = m.gridY ?? m.y ?? 0;
-    });
-    return Object.entries(groups).map(([line, g]) => {
-      const minX = Math.min(...g.xs);
-      const maxX = Math.max(...g.xs);
-      return { line, x: Math.round((minX + maxX) / 2), y: g.y - 30 };
-    });
   }
 
   const gateInteractive = phase === 'loading' || phase === 'gallery';
@@ -339,9 +359,6 @@ export default function DollsPage() {
         <div
           className="unseen-world__stage"
           ref={stageRef}
-          style={{
-            transform: `translate3d(${pan.x}px, ${pan.y}px, 0) scale(${worldScale})`,
-          }}
         >
           {UNSEEN_MONOLITHS.map((mono, i) => (
             <div
@@ -364,28 +381,34 @@ export default function DollsPage() {
           {visibleDolls.map((doll) => (
             <div
               key={doll.id}
-              className="unseen-doll-cluster"
+              className={`unseen-doll-cluster${arrangedLayout ? ' is-arranged' : ''}`}
               data-doll-id={doll.id}
               style={{
                 left: `calc(50% + ${doll.worldX}px)`,
                 top: `calc(50% + ${doll.worldY}px)`,
+                ['--unseen-merch-w' as string]: arrangedLayout
+                  ? `${arrangedLayout.cardW}px`
+                  : undefined,
               }}
             >
               {overviewMode ? (
                 <button
                   type="button"
                   className="unseen-doll-cluster__title unseen-doll-cluster__title--btn"
-                  data-no-drag
+                  data-no-drag="strict"
                   onClick={() => focusDollFromOverview(doll)}
                 >
                   {doll.characterName}
                 </button>
               ) : (
                 <h3
-                  className="unseen-doll-cluster__title unseen-doll-cluster__title--float"
+                  className={`unseen-doll-cluster__title${
+                    arrangedLayout ? '' : ' unseen-doll-cluster__title--float'
+                  }`}
                   style={{
                     ['--float-duration' as string]: '7.4s',
                     ['--float-delay' as string]: `${doll.id.length * 0.06}s`,
+                    ...(arrangedLayout ? { top: arrangedLayout.titleY } : null),
                   }}
                 >
                   {doll.characterName}
@@ -395,22 +418,33 @@ export default function DollsPage() {
               {doll.merch.map((item, index) => {
                 const floatDuration = 6.2 + (index % 4) * 0.9;
                 const floatDelay = index * 0.55 + doll.id.length * 0.04;
+                const arrangedPos = arrangedLayout?.positions[item.id];
                 return (
                   <button
                     key={item.id}
                     type="button"
                     className={`unseen-merch ${arranged && !overviewMode ? '' : 'unseen-merch--float'}`}
-                    data-no-drag
                     data-doll-id={doll.id}
                     data-merch-index={index}
                     style={{
-                      left: arranged && !overviewMode ? item.gridX ?? item.x ?? 0 : item.x,
-                      top: arranged && !overviewMode ? item.gridY ?? item.y ?? 0 : item.y,
+                      left:
+                        arranged && !overviewMode
+                          ? arrangedPos?.x ?? item.gridX ?? item.x ?? 0
+                          : item.x,
+                      top:
+                        arranged && !overviewMode
+                          ? arrangedPos?.y ?? item.gridY ?? item.y ?? 0
+                          : item.y,
                       transitionDelay: arranged ? `${index * 0.04}s` : '0s',
                       ['--float-duration' as string]: `${floatDuration}s`,
                       ['--float-delay' as string]: `${floatDelay}s`,
                     }}
-                    onClick={() => openDollDetail(doll, item)}
+                    onPointerDown={(event) => {
+                      merchPointerRef.current = { x: event.clientX, y: event.clientY };
+                    }}
+                    onClick={(event) =>
+                      openDollDetail(doll, item, { x: event.clientX, y: event.clientY })
+                    }
                   >
                     <img src={item.src} alt={item.label} draggable={false} />
                     <span className="unseen-merch__label">{item.label}</span>
@@ -431,8 +465,8 @@ export default function DollsPage() {
                 );
               })}
 
-              {arranged && !overviewMode
-                ? lineLabelPositions(doll).map((g) => (
+              {arrangedLayout
+                ? arrangedLayout.labels.map((g) => (
                     <span
                       key={g.line}
                       className={`unseen-line-label unseen-line-label--${g.line.toLowerCase()}`}
@@ -478,10 +512,17 @@ export default function DollsPage() {
       ) : null}
 
       {phase === 'world' && !overviewMode ? (
-        <>
-          <p className="unseen-hint">Drag to explore merchandise</p>
-          <p className="unseen-hint unseen-hint--hold">Tap item for details</p>
-        </>
+        arrangedLayout?.overflows ? (
+          <p className="unseen-hint unseen-hint--scroll">
+            <span aria-hidden="true">↓</span>
+            向下滑动查看更多
+          </p>
+        ) : (
+          <>
+            <p className="unseen-hint">Drag to explore merchandise</p>
+            <p className="unseen-hint unseen-hint--hold">Tap item for details</p>
+          </>
+        )
       ) : null}
 
       {phase === 'world' && overviewMode ? (
