@@ -271,7 +271,7 @@ export default function DollsPage() {
     if (pointer && merchPointerRef.current) {
       const dx = pointer.x - merchPointerRef.current.x;
       const dy = pointer.y - merchPointerRef.current.y;
-      if (Math.hypot(dx, dy) > 8) return;
+      if (Math.hypot(dx, dy) > 18) return;
     }
     setDetailDoll(doll);
     setDetailMerch(merch ?? null);
@@ -329,7 +329,7 @@ export default function DollsPage() {
                       key={doll.id}
                       type="button"
                       className="unseen-gallery__item"
-                      onClick={() => enterWorld(doll.id)}
+                      onClick={() => openDollDetail(doll)}
                     >
                       <img
                         className="unseen-gallery__img"
@@ -401,18 +401,21 @@ export default function DollsPage() {
                   {doll.characterName}
                 </button>
               ) : (
-                <h3
-                  className={`unseen-doll-cluster__title${
+                <button
+                  type="button"
+                  className={`unseen-doll-cluster__title unseen-doll-cluster__title--btn${
                     arrangedLayout ? '' : ' unseen-doll-cluster__title--float'
                   }`}
+                  data-no-drag="strict"
                   style={{
                     ['--float-duration' as string]: '7.4s',
                     ['--float-delay' as string]: `${doll.id.length * 0.06}s`,
                     ...(arrangedLayout ? { top: arrangedLayout.titleY } : null),
                   }}
+                  onClick={() => openDollDetail(doll)}
                 >
                   {doll.characterName}
-                </h3>
+                </button>
               )}
 
               {doll.merch.map((item, index) => {
@@ -655,6 +658,34 @@ export default function DollsPage() {
             {!detailMerch ? (
               <p className="unseen-modal__desc">{detailDoll.description}</p>
             ) : null}
+
+            {phase === 'gallery' ? (
+              <button
+                type="button"
+                className="unseen-modal__action-btn"
+                onClick={() => {
+                  const id = detailDoll.id;
+                  setDetailDoll(null);
+                  setDetailMerch(null);
+                  enterWorld(id);
+                }}
+              >
+                进入 3D 玩偶世界 Explore in 3D →
+              </button>
+            ) : (
+              <button
+                type="button"
+                className="unseen-modal__action-btn"
+                onClick={() => {
+                  const doll = detailDoll;
+                  setDetailDoll(null);
+                  setDetailMerch(null);
+                  focusDollFromOverview(doll);
+                }}
+              >
+                定位视角 Focus on Doll →
+              </button>
+            )}
           </div>
         </div>
       ) : null}

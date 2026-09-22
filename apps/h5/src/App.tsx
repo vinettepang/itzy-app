@@ -55,6 +55,9 @@ import StagecrewBackstagePage from '@/pages/stagecrew/pages/BackstagePage';
 import StagecrewProjectPage from '@/pages/stagecrew/pages/ProjectPage';
 import YcPage from '@/pages/yc/YcPage';
 import YcDetailPage from '@/pages/yc/YcDetailPage';
+import HelioLayout from '@/pages/helioteles/HelioLayout';
+import HelioPage from '@/pages/helioteles/HelioPage';
+import FluoroPage from '@/pages/fluoro/FluoroPage';
 
 const HAOQI_PROJECT_SLUGS = [
   'reunimos',
@@ -81,8 +84,8 @@ export default function App() {
       <Route path="/newnew" element={<Navigate to="/" replace />} />
       <Route path="/ui" element={<UiPage />} />
       <Route path="/people" element={<PeoplePage />} />
-      <Route path="/dolls" element={<DollsPage />} />
       <Route element={<NewNewLayout />}>
+        <Route path="/dolls" element={<DollsPage />} />
         <Route path="/poster" element={<PosterPage />} />
         <Route path="/poster/preview" element={<PosterPreviewPage />} />
         <Route path="/game" element={<GamePage />} />
@@ -121,6 +124,12 @@ export default function App() {
       </Route>
       <Route path="/yc" element={<YcPage />} />
       <Route path="/yc/detail" element={<YcDetailPage />} />
+      <Route path="/helioteles" element={<HelioLayout />}>
+        <Route index element={<HelioPage />} />
+        <Route path=":slug" element={<HelioPage />} />
+      </Route>
+      <Route path="/union" element={<Navigate to="/helioteles/union" replace />} />
+      <Route path="/fluoro" element={<FluoroPage />} />
 
       <Route path="/facil" element={<FacilLayout />}>
         <Route index element={<FacilHomePage />} />

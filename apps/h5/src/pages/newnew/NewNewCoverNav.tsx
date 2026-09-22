@@ -48,8 +48,9 @@ export default function NewNewCoverNav() {
       <nav
         className={`xkm-coverNav xkm-coverNav--withHome newnew-shell__nav${
           pinned ? ` ${NAV_PINNED_CLASS}` : ''
-        }`}
+        }${menuOpen ? ' xkm-coverNav--menu-hidden' : ''}`}
         aria-label="Site navigation"
+        aria-hidden={menuOpen}
       >
         <Link
           to={HOME_HREF}
@@ -86,17 +87,19 @@ export default function NewNewCoverNav() {
         className={`xkm-menuPanel${menuOpen ? ' xkm-menuPanel--open' : ''}`}
         aria-hidden={!menuOpen}
       >
-        <button
-          type="button"
-          className="xkm-menuClose"
-          aria-label="关闭菜单"
-          onClick={() => setMenuOpen(false)}
-        >
-          <span className="xkm-menuClose__icon" aria-hidden="true">
-            <span />
-            <span />
-          </span>
-        </button>
+        <div className="xkm-menuPanel__navMirror">
+          <button
+            type="button"
+            className="xkm-menuClose"
+            aria-label="关闭菜单"
+            onClick={() => setMenuOpen(false)}
+          >
+            <span className="xkm-menuClose__icon" aria-hidden="true">
+              <span />
+              <span />
+            </span>
+          </button>
+        </div>
         <Link
           to="/"
           className="xkm-menuLink"

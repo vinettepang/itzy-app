@@ -158,6 +158,19 @@ body:has(.xkm--new-home) {
   background: #ff7eb8;
 }
 
+.xkm-caseCard__icon {
+  display: block;
+  flex-shrink: 0;
+  align-self: center;
+  justify-self: center;
+}
+
+.xkm--new-home a.xkm-caseCard--variety {
+  background: #fff;
+  border: 1px solid #fff;
+  color: #111;
+}
+
 @media (max-width: 720px) {
   .xkm-media__refraction {
     width: min(88vw, 360px);
@@ -165,6 +178,13 @@ body:has(.xkm--new-home) {
     transform: translate(-50%, -42%);
     border-radius: 0;
   }
+}
+
+/* 打开全屏菜单时隐藏顶栏（含 fixed pinned 状态） */
+.xkm-coverNav--menu-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
 }
 
 /* ===== 顶部下滑菜单 ===== */
@@ -226,33 +246,63 @@ body:has(.xkm--new-home) {
   transform: translateY(0);
 }
 
-/* 菜单内的关闭按钮（右上角 icon） */
+/* 与顶栏 grid 对齐，关闭按钮落在菜单格同一位置 */
+.xkm-menuPanel__navMirror {
+  position: fixed;
+  top: var(--newnew-nav-top, 0px);
+  left: 0;
+  right: 0;
+  z-index: 191;
+  box-sizing: border-box;
+  height: var(--newnew-nav-h, 60px);
+  padding: var(--xkm-nav-pad-y, 10px) var(--xkm-nav-pad-x, 10px);
+  gap: var(--xkm-nav-gap, 10px);
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto minmax(0, 2fr) minmax(0, 1fr);
+  pointer-events: none;
+}
+
+.xkm-menuPanel__navMirror--compact {
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+}
+
 .xkm-menuClose {
-  position: absolute;
-  top: calc(var(--newnew-nav-h, 60px) + 14px);
-  right: clamp(16px, 5vw, 46px);
-  width: 44px;
-  height: 44px;
+  grid-column: 3;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: var(--xkm-nav-cell-h, 40px);
+  min-height: var(--xkm-nav-cell-h, 40px);
   padding: 0;
-  background: transparent;
-  border: none;
+  margin: 0;
+  border: 1px solid rgb(236, 236, 236);
+  border-radius: 0;
+  background: #f4f4f4;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   opacity: 0;
+  pointer-events: auto;
   transition: opacity 0.35s ease 0.1s;
 }
+
+.xkm-menuPanel__navMirror--compact .xkm-menuClose {
+  grid-column: 2;
+}
+
 .xkm-menuPanel--open .xkm-menuClose {
   opacity: 1;
 }
+
 .xkm-menuClose__icon {
   position: relative;
   display: inline-block;
-  width: 22px;
-  height: 22px;
+  width: 16px;
+  height: 12px;
 }
+
 .xkm-menuClose__icon span {
   position: absolute;
   top: 50%;
@@ -260,7 +310,7 @@ body:has(.xkm--new-home) {
   display: block;
   width: 100%;
   height: 2px;
-  background: #fff;
+  background: #111;
   border-radius: 2px;
   transition: background 0.3s ease;
 }
@@ -273,6 +323,13 @@ body:has(.xkm--new-home) {
 .xkm-menuClose:hover .xkm-menuClose__icon span,
 .xkm-menuClose:active .xkm-menuClose__icon span {
   background: #9ec9e8;
+}
+
+/* 盖过全局 pill 链接样式（如 webgl-refraction 泄漏） */
+.xkm-menuPanel a.xkm-menuLink {
+  border: none;
+  border-radius: 0;
+  background: transparent;
 }
 
 .xkm-menuLink {

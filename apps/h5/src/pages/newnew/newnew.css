@@ -19,6 +19,10 @@
   --newnew-border: rgba(17, 17, 17, 0.1);
   --newnew-nav-top: 0px;
   --newnew-nav-h: 60px;
+  --xkm-nav-pad-y: 10px;
+  --xkm-nav-pad-x: 10px;
+  --xkm-nav-gap: 10px;
+  --xkm-nav-cell-h: 40px;
   min-height: 100vh;
   padding-top: calc(var(--newnew-nav-top) + var(--newnew-nav-h));
   box-sizing: border-box;
@@ -142,6 +146,11 @@ body:has(.newnew-page .xkm--new-home) {
 /* 上滑内容块：INFORMATION nav + 票根 + MIDZY PLAY */
 .newnew-page .xkm--new-home {
   --newnew-nav-top: 0px;
+  --newnew-nav-h: 60px;
+  --xkm-nav-pad-y: 10px;
+  --xkm-nav-pad-x: 10px;
+  --xkm-nav-gap: 10px;
+  --xkm-nav-cell-h: 40px;
   height: auto;
   min-height: calc(100vh + var(--xkm-fixed-h));
   overflow: visible;
@@ -163,6 +172,9 @@ body:has(.newnew-page .xkm--new-home) {
   position: relative;
   z-index: 12;
   width: 100%;
+  height: var(--newnew-nav-h);
+  padding: var(--xkm-nav-pad-y) var(--xkm-nav-pad-x);
+  gap: var(--xkm-nav-gap);
   box-sizing: border-box;
   background: #d9d9d9;
   color: #000;
@@ -232,6 +244,41 @@ body:has(.newnew-page .xkm--new-home) {
   background: rgba(255, 255, 255, 0.22);
 }
 
+.newnew-page .xkm--new-home a.xkm-caseCard--variety {
+  background: #fff;
+  border: 1px solid #fff;
+  color: #000;
+}
+
+.newnew-page .xkm--new-home a.xkm-caseCard--variety .xkm-caseCard__label,
+.newnew-page .xkm--new-home a.xkm-caseCard--variety .xkm-caseCard__meta {
+  color: #000;
+}
+
+.newnew-page .xkm--new-home a.xkm-caseCard--variety .xkm-caseCard__panel {
+  background: #000;
+  min-height: 220px;
+}
+
+.newnew-page .xkm--new-home a.xkm-caseCard--variety .xkm-caseCard__icon {
+  display: block;
+  width: auto;
+  height: min(42vw, 140px);
+  max-width: 55%;
+  margin: 0 auto;
+}
+
+.newnew-page .xkm--new-home a.xkm-caseCard--variety .xkm-caseCard__cta {
+  border: 2px solid #fff;
+  color: #fff;
+  background: transparent;
+}
+
+.newnew-page .xkm--new-home a.xkm-caseCard--variety:hover .xkm-caseCard__panel,
+.newnew-page .xkm--new-home a.xkm-caseCard--variety:active .xkm-caseCard__panel {
+  background: #111;
+}
+
 .newnew-page .xkm--new-home .xkm-projectsPanel {
   background: #d9d9d9;
   border: none;
@@ -245,8 +292,24 @@ body:has(.newnew-page .xkm--new-home) {
 }
 
 .newnew-page .xkm--new-home .xkm-coverNav__cell {
+  height: var(--xkm-nav-cell-h);
+  min-height: var(--xkm-nav-cell-h);
   border-color: var(--newnew-border);
   color: #000;
+}
+
+.newnew-page .xkm--new-home .xkm-coverNav__cell--menu {
+  background: #f4f4f4;
+  border-color: var(--newnew-border);
+  color: #111;
+}
+
+.newnew-page .xkm--new-home .xkm-coverNav__menuIcon span {
+  background: #111;
+}
+
+.newnew-page .xkm--new-home .xkm-infoMarquee__track {
+  animation-duration: 14s;
 }
 
 .newnew-page .xkm--new-home .xkm-coverNav--withHome {
@@ -539,12 +602,16 @@ body:has(.newnew-page .xkm--new-home) {
 @media (max-width: 1023px) {
   .newnew-shell {
     --newnew-nav-h: 48px;
+    --xkm-nav-pad-y: 6px;
+    --xkm-nav-pad-x: 8px;
+    --xkm-nav-gap: 6px;
+    --xkm-nav-cell-h: 34px;
   }
 
   .newnew-shell > .xkm-coverNav.newnew-shell__nav {
     height: var(--newnew-nav-h);
-    padding: 6px 8px;
-    gap: 6px;
+    padding: var(--xkm-nav-pad-y) var(--xkm-nav-pad-x);
+    gap: var(--xkm-nav-gap);
   }
 
   .newnew-shell .xkm-coverNav__cell {
@@ -567,16 +634,24 @@ body:has(.newnew-page .xkm--new-home) {
     min-height: 22px;
   }
 
+  .newnew-page .xkm--new-home {
+    --newnew-nav-h: 48px;
+    --xkm-nav-pad-y: 6px;
+    --xkm-nav-pad-x: 8px;
+    --xkm-nav-gap: 6px;
+    --xkm-nav-cell-h: 34px;
+  }
+
   .newnew-page .xkm--new-home .xkm-coverNav {
-    height: 48px;
-    padding: 6px 8px;
-    gap: 6px;
+    height: var(--newnew-nav-h);
+    padding: var(--xkm-nav-pad-y) var(--xkm-nav-pad-x);
+    gap: var(--xkm-nav-gap);
     flex-shrink: 0;
   }
 
   .newnew-page .xkm--new-home .xkm-coverNav__cell {
-    height: 34px;
-    min-height: 34px;
+    height: var(--xkm-nav-cell-h);
+    min-height: var(--xkm-nav-cell-h);
     padding: 4px 8px;
     font-size: 11px;
   }
@@ -635,10 +710,10 @@ body:has(.newnew-page .xkm--new-home) {
     margin-top: 28px;
   }
 
-  /* 行序：MIDZY's PLAY / FANCHANT card / 娃娃图鉴 card / 文案 / 底部 */
+  /* 行序：MIDZY's PLAY / FANCHANT card / 娃娃图鉴 card / 综艺合集 card / 文案 / 底部 */
   .newnew-page .xkm--new-home .xkm-btnBlock__inner {
     display: grid;
-    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto auto auto;
     gap: 4px;
   }
 
@@ -649,6 +724,10 @@ body:has(.newnew-page .xkm--new-home) {
   }
 
   .newnew-page .xkm--new-home a.xkm-caseCard--dollGuide .xkm-caseCard__panel {
+    min-height: 200px;
+  }
+
+  .newnew-page .xkm--new-home a.xkm-caseCard--variety .xkm-caseCard__panel {
     min-height: 200px;
   }
 
@@ -757,6 +836,15 @@ body:has(.newnew-page .xkm--new-home) {
   background: rgba(255, 255, 255, 0.92);
 }
 
+/* 打开全屏菜单时隐藏顶栏 */
+.xkm-coverNav--menu-hidden,
+.newnew-page .xkm--new-home .xkm-coverNav--menu-hidden,
+.newnew-shell > .xkm-coverNav.xkm-coverNav--menu-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
 /* ===== 顶部下滑菜单（二级页，跟随首页） ===== */
 .newnew-shell .xkm-coverNav__cell--menu {
   display: flex;
@@ -815,33 +903,63 @@ body:has(.newnew-page .xkm--new-home) {
   transform: translateY(0);
 }
 
-/* 菜单内的关闭按钮（右上角 icon） */
+/* 与顶栏 grid 对齐，关闭按钮落在菜单格同一位置 */
+.xkm-menuPanel__navMirror {
+  position: fixed;
+  top: var(--newnew-nav-top, 0px);
+  left: 0;
+  right: 0;
+  z-index: 191;
+  box-sizing: border-box;
+  height: var(--newnew-nav-h, 60px);
+  padding: var(--xkm-nav-pad-y, 10px) var(--xkm-nav-pad-x, 10px);
+  gap: var(--xkm-nav-gap, 10px);
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto minmax(0, 2fr) minmax(0, 1fr);
+  pointer-events: none;
+}
+
+.xkm-menuPanel__navMirror--compact {
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+}
+
 .xkm-menuClose {
-  position: absolute;
-  top: calc(var(--newnew-nav-h, 60px) + 14px);
-  right: clamp(16px, 5vw, 46px);
-  width: 44px;
-  height: 44px;
+  grid-column: 3;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: var(--xkm-nav-cell-h, 40px);
+  min-height: var(--xkm-nav-cell-h, 40px);
   padding: 0;
-  background: transparent;
-  border: none;
+  margin: 0;
+  border: 1px solid rgb(236, 236, 236);
+  border-radius: 0;
+  background: #f4f4f4;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   opacity: 0;
+  pointer-events: auto;
   transition: opacity 0.35s ease 0.1s;
 }
+
+.xkm-menuPanel__navMirror--compact .xkm-menuClose {
+  grid-column: 2;
+}
+
 .xkm-menuPanel--open .xkm-menuClose {
   opacity: 1;
 }
+
 .xkm-menuClose__icon {
   position: relative;
   display: inline-block;
-  width: 22px;
-  height: 22px;
+  width: 16px;
+  height: 12px;
 }
+
 .xkm-menuClose__icon span {
   position: absolute;
   top: 50%;
@@ -849,19 +967,35 @@ body:has(.newnew-page .xkm--new-home) {
   display: block;
   width: 100%;
   height: 2px;
-  background: #fff;
+  background: #111;
   border-radius: 2px;
   transition: background 0.3s ease;
 }
+
 .xkm-menuClose__icon span:nth-child(1) {
   transform: translateY(-50%) rotate(45deg);
 }
+
 .xkm-menuClose__icon span:nth-child(2) {
   transform: translateY(-50%) rotate(-45deg);
 }
+
 .xkm-menuClose:hover .xkm-menuClose__icon span,
 .xkm-menuClose:active .xkm-menuClose__icon span {
   background: #9ec9e8;
+}
+
+/* 菜单关闭按钮：与顶栏菜单格同 grid 槽位（此处补二级页配色） */
+.newnew-shell .xkm-menuClose,
+.newnew-page .xkm--new-home .xkm-menuClose {
+  border: none;
+  background: #f4f4f4;
+}
+
+.xkm-menuPanel a.xkm-menuLink {
+  border: none;
+  border-radius: 0;
+  background: transparent;
 }
 
 .newnew-shell .xkm-menuLink {

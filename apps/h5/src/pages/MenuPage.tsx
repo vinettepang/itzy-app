@@ -122,6 +122,25 @@ function buildMenuGroups(): MenuGroup[] {
       links: wakaProducts,
     },
     {
+      id: 'helioteles',
+      title: 'Hélio Teles',
+      links: [
+        { to: '/helioteles', label: 'Home', note: 'helioteles.com' },
+        { to: '/helioteles/about', label: 'Information' },
+        { to: '/helioteles/union', label: '001 UNION' },
+        { to: '/helioteles/péa', label: '002 Première équipe' },
+        { to: '/helioteles/plural', label: '003 Plural 2024' },
+        { to: '/union', label: '/union', note: '短链 → UNION' },
+      ],
+    },
+    {
+      id: 'fluoro',
+      title: 'FLUORO®',
+      links: [
+        { to: '/fluoro', label: 'Index', note: 'fluoro.london/index' },
+      ],
+    },
+    {
       id: 'unseen-studio',
       title: 'Unseen Studio',
       links: [

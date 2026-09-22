@@ -416,6 +416,29 @@ function ImageScroller({ images }: { images: typeof galleryImages }) {
   );
 }
 
+function VarietyCaseIcon() {
+  return (
+    <svg
+      className="xkm-caseCard__icon"
+      width="120"
+      height="120"
+      viewBox="0 0 120 120"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <circle cx="60" cy="60" r="38" stroke="#fff" strokeWidth="3" />
+      <circle cx="60" cy="60" r="14" fill="#fff" />
+      <path
+        d="M60 22V38M60 82V98M22 60H38M82 60H98M32 32L44 44M76 76L88 88M88 32L76 44M44 76L32 88"
+        stroke="#fff"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
 function InfoMarquee() {
   const items = [INFO_MARQUEE_TEXT, INFO_MARQUEE_TEXT];
 
@@ -710,8 +733,11 @@ export default function NewHomePage({
 
       <div className="xkm-scroll" aria-label="Scrollable content layer">
         <nav
-          className={`xkm-coverNav${homeHref ? " xkm-coverNav--withHome" : ""}`}
+          className={`xkm-coverNav${homeHref ? " xkm-coverNav--withHome" : ""}${
+            menuOpen ? " xkm-coverNav--menu-hidden" : ""
+          }`}
           aria-label="Site navigation"
+          aria-hidden={menuOpen}
         >
           {homeHref ? (
             <Link
@@ -756,17 +782,23 @@ export default function NewHomePage({
           className={`xkm-menuPanel${menuOpen ? " xkm-menuPanel--open" : ""}`}
           aria-hidden={!menuOpen}
         >
-          <button
-            type="button"
-            className="xkm-menuClose"
-            aria-label="关闭菜单"
-            onClick={() => setMenuOpen(false)}
+          <div
+            className={`xkm-menuPanel__navMirror${
+              homeHref ? "" : " xkm-menuPanel__navMirror--compact"
+            }`}
           >
-            <span className="xkm-menuClose__icon" aria-hidden="true">
-              <span />
-              <span />
-            </span>
-          </button>
+            <button
+              type="button"
+              className="xkm-menuClose"
+              aria-label="关闭菜单"
+              onClick={() => setMenuOpen(false)}
+            >
+              <span className="xkm-menuClose__icon" aria-hidden="true">
+                <span />
+                <span />
+              </span>
+            </button>
+          </div>
           <Link
             to="/"
             className="xkm-menuLink"
@@ -910,6 +942,25 @@ export default function NewHomePage({
                       decoding="async"
                       loading="lazy"
                     />
+                    <span className="xkm-caseCard__cta">view case →</span>
+                  </div>
+                </Link>
+              ) : null}
+
+              {overlayCacheKey === "newnew" ? (
+                <Link
+                  to="/gallery"
+                  className="xkm-caseCard xkm-caseCard--variety"
+                  aria-label="综艺合集"
+                >
+                  <div className="xkm-caseCard__label">
+                    <span>VARIETY</span>
+                    <span>SHOW</span>
+                    <span>COLLECTION</span>
+                  </div>
+                  <p className="xkm-caseCard__meta">video . variety . dada</p>
+                  <div className="xkm-caseCard__panel">
+                    <VarietyCaseIcon />
                     <span className="xkm-caseCard__cta">view case →</span>
                   </div>
                 </Link>

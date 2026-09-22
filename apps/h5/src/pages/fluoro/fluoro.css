@@ -1,0 +1,1020 @@
+@font-face {
+  font-display: swap;
+  font-family: "Chivo Mono Light";
+  font-style: normal;
+  font-weight: 300;
+  src: url("/fluoro/fonts/ChivoMono-Light.e3a898e2.woff2") format("woff2"),
+    url("/fluoro/fonts/ChivoMono-Light.6077e580.woff") format("woff");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Chivo Mono Medium";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/fluoro/fonts/ChivoMono-Medium.0fae729f.woff2") format("woff2"),
+    url("/fluoro/fonts/ChivoMono-Medium.421fa577.woff") format("woff");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Neue Brucke Regular";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fluoro/fonts/NeueBrucke-Regular.1fc53e57.woff2") format("woff2"),
+    url("/fluoro/fonts/NeueBrucke-Regular.ea1cc7b9.woff") format("woff");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "New Rail Alphabet Medium";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/fluoro/fonts/NewRailAlphabet-MediumWEB.c4623cfb.woff2") format("woff2"),
+    url("/fluoro/fonts/NewRailAlphabet-MediumWEB.cb94d6f7.woff") format("woff");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "New Rail Alphabet Black";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/fluoro/fonts/NewRailAlphabet-BlackWEB.4748ba79.woff2") format("woff2"),
+    url("/fluoro/fonts/NewRailAlphabet-BlackWEB.77ac4dda.woff") format("woff");
+}
+
+html.fluoro-html,
+html.fluoro-html body.fluoro-body {
+  --black: #000;
+  --white: #fff;
+  --blue: #0000f5;
+  --green: #75fb4c;
+  --pink: #ea33f7;
+  --slide-transition: cubic-bezier(0.77, 0, 0.18, 1);
+  margin: 0;
+  padding: 0;
+  width: auto !important;
+  height: auto !important;
+  min-height: calc(100vh + 1px);
+  background: var(--black) !important;
+  color: var(--white);
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  font: 16px / 1.2 sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html.fluoro-html #root {
+  min-height: 100%;
+  background: transparent;
+  text-align: left;
+}
+
+html.fluoro-html.lenis,
+html.fluoro-html.lenis body.fluoro-body {
+  height: auto;
+}
+
+html.fluoro-html.lenis,
+html.fluoro-html.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+html.fluoro-html ::selection,
+.fluoro-root ::selection {
+  background: var(--pink);
+  color: var(--black);
+}
+
+.fluoro-root {
+  --black: #000;
+  --white: #fff;
+  --blue: #0000f5;
+  --green: #75fb4c;
+  --pink: #ea33f7;
+  --slide-transition: cubic-bezier(0.77, 0, 0.18, 1);
+  --fluoro-footer-h: 259px;
+  position: relative;
+  background: transparent;
+  color: var(--white);
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.fluoro-root *,
+.fluoro-root *::before,
+.fluoro-root *::after {
+  box-sizing: border-box;
+}
+
+.fluoro-root a,
+.fluoro-root a:not(.default-link) {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  color: inherit;
+  display: inline;
+  padding: 0;
+  pointer-events: auto;
+  text-decoration: none;
+  transition: none;
+}
+
+.fluoro-root button {
+  font: inherit;
+  color: inherit;
+}
+
+.fluoro-root img {
+  max-width: none;
+  border: 0;
+  display: block;
+}
+
+.fluoro-root ul {
+  margin: 0;
+  padding: 0;
+}
+
+.fluoro-container {
+  column-gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  padding: 0 10px;
+  position: relative;
+  width: 100%;
+}
+
+.fluoro-wrapper {
+  background-color: var(--black);
+  color: var(--white);
+  margin-bottom: var(--fluoro-footer-h);
+  min-height: 100vh;
+  padding-top: 70px;
+  position: relative;
+  z-index: 1;
+}
+
+.fluoro-project-index {
+  min-height: calc(100dvh - 70px);
+}
+
+.fluoro-project-index .fluoro-container > * {
+  grid-column: 1 / 13;
+}
+
+.fluoro-header {
+  color: var(--white);
+  left: 0;
+  mix-blend-mode: difference;
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+}
+
+.fluoro-header.is-menu-active {
+  mix-blend-mode: normal;
+}
+
+.fluoro-header a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.fluoro-root a.fluoro-header__logo,
+.fluoro-header__logo {
+  display: block;
+  height: 26px;
+  left: 10px;
+  position: absolute;
+  top: 0;
+  width: 140px;
+  z-index: 2;
+}
+
+.fluoro-header__logo img {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.fluoro-header__tagline {
+  display: flex;
+  flex-direction: column;
+  grid-column: 6 / 12;
+  padding-right: 18px;
+}
+
+.fluoro-header__tagline > span {
+  display: block;
+  font-family: "Chivo Mono Light", monospace;
+  font-size: 9px;
+  font-weight: 300;
+  line-height: 1.1;
+  margin-bottom: 25px;
+  max-width: 200px;
+  text-transform: uppercase;
+}
+
+.fluoro-header__nav {
+  align-items: flex-end;
+  background-color: var(--pink);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 12px 10px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transform: translateY(-100%);
+  transition: transform 0.45s var(--slide-transition);
+  width: 100%;
+  z-index: 1;
+}
+
+.fluoro-root.is-menu-active .fluoro-header__nav {
+  transform: translateY(0);
+}
+
+.fluoro-header__nav ul {
+  align-items: flex-start;
+  column-gap: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  list-style: none;
+  margin-bottom: 85px;
+  padding-left: 0;
+  padding-top: 3px;
+  row-gap: 10px;
+  width: 50%;
+}
+
+.fluoro-header__nav ul > li {
+  font-family: "New Rail Alphabet Black", sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.fluoro-root .fluoro-header__nav ul > li a,
+.fluoro-header__nav ul > li a {
+  color: var(--blue);
+  display: inline;
+  padding: 0;
+  position: relative;
+}
+
+.fluoro-header__nav ul > li a::after {
+  background-color: var(--blue);
+  bottom: 2px;
+  content: "";
+  display: block;
+  height: 1px;
+  left: 0;
+  max-width: 0;
+  position: absolute;
+  transition: max-width 0.2s;
+  width: 100%;
+}
+
+.fluoro-header__nav ul > li.is-current a::after,
+.fluoro-header__nav ul li a:hover::after {
+  max-width: 100%;
+}
+
+.fluoro-header__contact {
+  align-items: center;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.fluoro-header__contact > :not(.fluoro-header__close) {
+  align-items: flex-start;
+  display: flex;
+  flex: 50%;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.fluoro-root a.fluoro-header__email,
+.fluoro-header__email {
+  align-items: center;
+  color: var(--blue) !important;
+  column-gap: 5px;
+  display: flex;
+  font-family: "Chivo Mono Light", monospace;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.fluoro-header__email svg {
+  display: none;
+}
+
+.fluoro-header__phone {
+  color: var(--blue) !important;
+  display: block;
+  font-family: "Chivo Mono Light", monospace;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.fluoro-header__menu-btn {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: var(--white);
+  cursor: pointer;
+  display: block;
+  font-family: "New Rail Alphabet Black", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 0.9;
+  outline: none;
+  padding: 10px;
+  position: absolute;
+  right: 0;
+  text-transform: uppercase;
+  top: -8px;
+}
+
+.fluoro-header__close {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+}
+
+.fluoro-root a.fluoro-btn-pill,
+.fluoro-root button.fluoro-btn-pill,
+.fluoro-btn-pill {
+  appearance: none;
+  background: transparent;
+  border: 1px solid;
+  border-radius: 30px;
+  color: var(--white);
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Chivo Mono Light", monospace;
+  font-size: 10px;
+  font-weight: 300;
+  height: 22px;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  overflow: hidden;
+  padding: 5px 10px;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.fluoro-root a.fluoro-btn-pill:hover,
+.fluoro-root button.fluoro-btn-pill:hover,
+.fluoro-btn-pill:hover {
+  background-color: var(--blue);
+  border-color: var(--blue);
+  color: var(--white);
+}
+
+.fluoro-root a.fluoro-btn-pill.is-active,
+.fluoro-root button.fluoro-btn-pill.is-active,
+.fluoro-btn-pill.is-active {
+  background-color: var(--white);
+  border-color: var(--white);
+  color: var(--black);
+}
+
+.fluoro-filters ul {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  margin-bottom: 18px;
+  padding-left: 0;
+}
+
+.fluoro-filters ul li {
+  height: 25px;
+}
+
+.fluoro-filters ul li a,
+.fluoro-filters ul li button {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.fluoro-accordion {
+  color: var(--white);
+  padding-bottom: 45px;
+}
+
+.fluoro-accordion__section {
+  position: relative;
+}
+
+.fluoro-accordion__section:first-of-type::before,
+.fluoro-accordion__section::after {
+  background-color: hsla(0, 0%, 100%, 0.5);
+  content: "";
+  height: 1px;
+  left: 10px;
+  position: absolute;
+  width: calc(100% - 20px);
+}
+
+.fluoro-accordion__section:first-of-type::before {
+  top: 0;
+}
+
+.fluoro-accordion__section::after {
+  bottom: 0;
+}
+
+.fluoro-accordion__tab {
+  align-items: flex-start;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-name: fluoro-blur-in;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-between;
+  margin: 0 10px;
+  opacity: 0;
+  overflow: hidden;
+  padding: 2px 0 14px;
+  pointer-events: all;
+  position: relative;
+}
+
+.fluoro-accordion__tab > span {
+  display: block;
+  font-family: "Neue Brucke Regular", sans-serif;
+  font-size: 45px;
+  font-weight: 400;
+  line-height: 1.05;
+  position: relative;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-transform: uppercase;
+  text-underline-offset: 7px;
+  top: 8px;
+}
+
+.fluoro-accordion__tab.is-active > span {
+  color: var(--blue);
+}
+
+.fluoro-accordion__tab-label {
+  display: none;
+  font-family: "New Rail Alphabet Black", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.fluoro-project-tags {
+  align-items: center;
+  display: flex;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  padding-left: 0;
+  padding-top: 5px;
+}
+
+.fluoro-root .fluoro-project-tags a,
+.fluoro-project-tags a {
+  display: block;
+  pointer-events: none;
+}
+
+.fluoro-accordion__tab.is-active .fluoro-project-tags {
+  display: flex;
+}
+
+.fluoro-accordion__tab.is-active .fluoro-accordion__tab-label {
+  display: none;
+}
+
+.fluoro-accordion__content {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.4s var(--slide-transition);
+}
+
+.fluoro-accordion__tab.is-closed + .fluoro-accordion__content {
+  max-height: 0 !important;
+}
+
+.fluoro-root a.fluoro-gallery,
+.fluoro-gallery {
+  column-gap: 10px;
+  display: flex;
+  flex-wrap: nowrap;
+  list-style: none;
+  margin-bottom: 10px;
+  overflow-x: auto;
+  padding: 0 10px;
+  position: relative;
+  scrollbar-width: none;
+  text-decoration: none;
+}
+
+.fluoro-gallery::-webkit-scrollbar {
+  display: none;
+}
+
+.fluoro-lazy {
+  display: inline-block;
+  flex-shrink: 0;
+  height: 110px;
+  width: auto;
+}
+
+.fluoro-lazy img {
+  height: 100%;
+  width: auto;
+}
+
+.fluoro-gallery + span {
+  display: block;
+  font-family: "New Rail Alphabet Black", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  padding: 0 10px;
+  text-transform: uppercase;
+}
+
+.fluoro-footer {
+  background-color: var(--blue);
+  bottom: 0;
+  color: var(--white);
+  left: 0;
+  padding: 14px 0 12px;
+  position: fixed;
+  width: 100%;
+  z-index: 0;
+}
+
+.fluoro-footer a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.fluoro-footer .fluoro-container {
+  row-gap: 30px;
+}
+
+.fluoro-footer__lede {
+  font-family: "Neue Brucke Regular", sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  grid-column: 1 / 13;
+  grid-row: 1;
+  line-height: 0.9;
+  margin-bottom: 85px;
+  text-transform: uppercase;
+}
+
+.fluoro-footer__lede p {
+  margin: 0;
+}
+
+.fluoro-footer__contact {
+  grid-column: 1 / 13;
+  grid-row: 2;
+  list-style: none;
+  margin-bottom: 85px;
+  padding-left: 0;
+}
+
+.fluoro-footer__contact li {
+  font-family: "Chivo Mono Light", monospace;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.fluoro-footer__logo {
+  align-items: flex-start;
+  display: flex;
+  grid-column: 1 / 13;
+  grid-row: 3;
+  padding-right: 5px;
+}
+
+.fluoro-footer__logo svg {
+  height: auto;
+  max-width: 230px;
+  width: 100%;
+}
+
+.fluoro-footer__logo span {
+  font-family: sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.fluoro-footer__copyright {
+  font-family: "Chivo Mono Light", monospace;
+  font-size: 10px;
+  font-weight: 300;
+  grid-column: 1 / 7;
+  grid-row: 4;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.fluoro-root a.fluoro-footer__terms,
+.fluoro-footer__terms {
+  display: flex;
+  font-family: "Chivo Mono Light", monospace;
+  font-size: 10px;
+  font-weight: 300;
+  grid-column: 7 / 13;
+  grid-row: 4;
+  justify-content: flex-end;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.fluoro-grid-overlay {
+  bottom: 0;
+  column-gap: 10px;
+  display: none;
+  grid-template-columns: repeat(12, 1fr);
+  height: 100%;
+  left: 0;
+  padding: 0 10px;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 998;
+}
+
+.fluoro-grid-overlay.is-active {
+  display: grid;
+}
+
+.fluoro-grid-overlay > span {
+  border-left: 1px solid var(--green);
+  border-right: 1px solid var(--green);
+  height: 100dvh;
+  pointer-events: none;
+}
+
+.fluoro-grid-toggle {
+  appearance: none;
+  background: transparent;
+  border: 1px solid var(--white);
+  bottom: 10px;
+  cursor: pointer;
+  display: inline-block;
+  mix-blend-mode: difference;
+  outline: none;
+  position: fixed;
+  right: 10px;
+  width: 71px;
+  z-index: 2;
+}
+
+.fluoro-model {
+  align-items: center;
+  display: none;
+  height: 238px;
+  justify-content: center;
+  left: 0;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  transform: translate(-50%, -50%) scale(0);
+  transition: opacity 0.35s var(--slide-transition),
+    transform 0.45s var(--slide-transition);
+  width: 190px;
+  z-index: 20;
+}
+
+.fluoro-model.is-on {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.fluoro-model img {
+  height: 100%;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.fluoro-view-project {
+  color: var(--white);
+  display: none;
+  font-family: "New Rail Alphabet Black", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  left: 0;
+  line-height: 1;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  text-transform: uppercase;
+  top: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.25s var(--slide-transition);
+  z-index: 20;
+}
+
+.fluoro-view-project.is-on {
+  opacity: 1;
+}
+
+@keyframes fluoro-blur-in {
+  0% {
+    filter: blur(30px);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  to {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+@media only screen and (min-width: 320px) {
+  .fluoro-accordion__tab > span {
+    font-size: calc(34.71429px + 3.21429vw);
+  }
+
+  .fluoro-accordion__tab-label,
+  .fluoro-gallery + span,
+  .fluoro-view-project {
+    font-size: calc(18.85714px + 0.35714vw);
+  }
+
+  .fluoro-header__menu-btn,
+  .fluoro-header__email,
+  .fluoro-header__phone {
+    font-size: calc(11.31429px + 0.21429vw);
+  }
+
+  .fluoro-footer__lede {
+    font-size: calc(28.85714px + 0.35714vw);
+  }
+}
+
+@media (min-width: 769px) {
+  .fluoro-container {
+    column-gap: 15px;
+    grid-template-columns: repeat(18, 1fr);
+    grid-template-rows: 1fr;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  .fluoro-wrapper {
+    padding-top: 120px;
+  }
+
+  .fluoro-project-index .fluoro-container > * {
+    grid-column: 1 / 19;
+  }
+
+  .fluoro-header {
+    padding: 12px 0;
+  }
+
+  .fluoro-header__logo {
+    height: 42px;
+    left: 15px;
+    width: 225px;
+  }
+
+  .fluoro-header__tagline {
+    grid-column: 8 / 12;
+    padding-right: 0;
+  }
+
+  .fluoro-header__nav {
+    background-color: transparent;
+    height: 100%;
+    padding: 0;
+    position: absolute;
+    right: 15px;
+    top: 2px;
+    transform: translateY(0);
+    transition: none;
+    width: auto;
+  }
+
+  .fluoro-header__nav ul {
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 25px;
+    padding-top: 0;
+    width: auto;
+  }
+
+  .fluoro-header__nav ul > li a {
+    color: inherit;
+  }
+
+  .fluoro-header__nav ul > li a::after {
+    background-color: var(--white);
+  }
+
+  .fluoro-header__contact {
+    flex-direction: row;
+  }
+
+  .fluoro-header__contact > :not(.fluoro-header__close) {
+    flex: none;
+  }
+
+  .fluoro-header__email {
+    color: var(--white) !important;
+    font-size: 15px;
+  }
+
+  .fluoro-header__email svg {
+    display: block;
+  }
+
+  .fluoro-root a.fluoro-header__phone,
+  .fluoro-header__phone,
+  .fluoro-header__menu-btn,
+  .fluoro-header__close {
+    display: none;
+  }
+
+  .fluoro-filters ul {
+    margin-bottom: 20px;
+  }
+
+  .fluoro-accordion {
+    padding-bottom: 70px;
+  }
+
+  .fluoro-accordion__section:first-of-type::before,
+  .fluoro-accordion__section::after {
+    left: 15px;
+    width: calc(100% - 30px);
+  }
+
+  .fluoro-accordion__tab {
+    align-items: center;
+    flex-direction: row;
+    margin: 0 15px;
+    padding: 0;
+  }
+
+  .fluoro-accordion__tab > span {
+    text-decoration: none;
+  }
+
+  .fluoro-project-tags {
+    padding-top: 0;
+  }
+
+  .fluoro-gallery {
+    column-gap: 15px;
+    margin-bottom: 15px;
+    padding: 0 15px;
+  }
+
+  .fluoro-lazy {
+    height: 190px;
+  }
+
+  .fluoro-gallery + span {
+    padding: 0 15px;
+  }
+
+  .fluoro-footer {
+    padding: 20px 0 12px;
+  }
+
+  .fluoro-footer .fluoro-container {
+    row-gap: clamp(30px, 8vw, 180px);
+  }
+
+  .fluoro-footer__lede {
+    font-size: 35px;
+    grid-column: 1 / 9;
+    margin-bottom: 0;
+  }
+
+  .fluoro-footer__contact {
+    grid-column: 10 / 15;
+    grid-row: 1;
+    margin-bottom: 0;
+  }
+
+  .fluoro-footer__logo {
+    grid-column: 16 / 19;
+    grid-row: 1;
+    justify-content: flex-end;
+  }
+
+  .fluoro-footer__copyright {
+    grid-column: 1 / 8;
+    grid-row: 2;
+  }
+
+  .fluoro-root a.fluoro-footer__terms,
+  .fluoro-footer__terms {
+    display: block;
+    grid-column: 10 / 16;
+    grid-row: 2;
+  }
+
+  .fluoro-grid-overlay {
+    column-gap: 15px;
+    grid-template-columns: repeat(18, 1fr);
+    left: 50%;
+    padding: 0 15px;
+    transform: translateX(-50%);
+    width: 100%;
+  }
+
+  .fluoro-grid-toggle {
+    bottom: 15px;
+    right: 15px;
+  }
+
+  .fluoro-model,
+  .fluoro-view-project {
+    display: block;
+  }
+
+  .fluoro-model {
+    display: flex;
+  }
+}
+
+@media (hover: hover) {
+  .fluoro-accordion__tab:hover > span {
+    color: var(--blue);
+  }
+
+  .fluoro-accordion__tab:hover .fluoro-accordion__tab-label {
+    display: block;
+  }
+}
+
+@media (hover: hover) and (min-width: 769px) {
+  .fluoro-accordion__tab:hover .fluoro-project-tags {
+    display: none;
+  }
+
+  .fluoro-accordion__tab.is-active .fluoro-project-tags {
+    display: flex;
+  }
+
+  .fluoro-accordion__tab.is-active .fluoro-accordion__tab-label {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1720px) {
+  .fluoro-accordion__tab > span {
+    font-size: 90px;
+  }
+
+  .fluoro-accordion__tab-label,
+  .fluoro-gallery + span,
+  .fluoro-view-project {
+    font-size: 25px;
+  }
+
+  .fluoro-header__menu-btn {
+    font-size: 15px;
+  }
+}
