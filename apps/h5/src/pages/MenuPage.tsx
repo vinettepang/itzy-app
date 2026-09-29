@@ -52,6 +52,7 @@ function buildMenuGroups(): MenuGroup[] {
         { to: '/home', label: 'Home' },
         { to: '/new_home', label: 'New Home', note: 'XKM + haoqi 下落' },
         { to: '/ui', label: 'UI', note: 'Mesh 票根' },
+        { to: '/people', label: 'People', note: '人物名录' },
       ],
     },
     {

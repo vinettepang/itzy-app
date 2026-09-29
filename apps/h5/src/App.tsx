@@ -58,6 +58,7 @@ import YcDetailPage from '@/pages/yc/YcDetailPage';
 import HelioLayout from '@/pages/helioteles/HelioLayout';
 import HelioPage from '@/pages/helioteles/HelioPage';
 import FluoroPage from '@/pages/fluoro/FluoroPage';
+import FluStudioPage from '@/pages/flustudio/FluStudioPage';
 
 const HAOQI_PROJECT_SLUGS = [
   'reunimos',
@@ -130,6 +131,7 @@ export default function App() {
       </Route>
       <Route path="/union" element={<Navigate to="/helioteles/union" replace />} />
       <Route path="/fluoro" element={<FluoroPage />} />
+      <Route path="/flustudio" element={<FluStudioPage />} />
 
       <Route path="/facil" element={<FacilLayout />}>
         <Route index element={<FacilHomePage />} />

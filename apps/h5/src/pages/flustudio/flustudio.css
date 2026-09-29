@@ -1,0 +1,542 @@
+@font-face {
+  font-display: swap;
+  font-family: "Chivo Mono Light";
+  font-style: normal;
+  font-weight: 300;
+  src: url("/fluoro/fonts/ChivoMono-Light.e3a898e2.woff2") format("woff2"),
+    url("/fluoro/fonts/ChivoMono-Light.6077e580.woff") format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Chivo Mono Medium";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/fluoro/fonts/ChivoMono-Medium.0fae729f.woff2") format("woff2"),
+    url("/fluoro/fonts/ChivoMono-Medium.421fa577.woff") format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Neue Brucke Regular";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fluoro/fonts/NeueBrucke-Regular.1fc53e57.woff2") format("woff2"),
+    url("/fluoro/fonts/NeueBrucke-Regular.ea1cc7b9.woff") format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: "New Rail Alphabet Medium";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/fluoro/fonts/NewRailAlphabet-MediumWEB.c4623cfb.woff2") format("woff2"),
+    url("/fluoro/fonts/NewRailAlphabet-MediumWEB.cb94d6f7.woff") format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: "New Rail Alphabet Black";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/fluoro/fonts/NewRailAlphabet-BlackWEB.4748ba79.woff2") format("woff2"),
+    url("/fluoro/fonts/NewRailAlphabet-BlackWEB.77ac4dda.woff") format("woff");
+}
+
+.flustudio-root {
+  --black: #000;
+  --white: #fff;
+  --blue: #0000f5;
+  --green: #75fb4c;
+  --pink: #ea33f7;
+  --font-display: "Neue Brucke Regular", sans-serif;
+  --font-black: "New Rail Alphabet Black", sans-serif;
+  --font-medium: "New Rail Alphabet Medium", sans-serif;
+  --font-mono: "Chivo Mono Light", monospace;
+  --slide-transition: cubic-bezier(0.77, 0, 0.18, 1);
+  position: relative;
+  background: var(--black);
+  color: var(--white);
+  min-height: 100vh;
+  font-family: var(--font-display);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.flustudio-root *,
+.flustudio-root *::before,
+.flustudio-root *::after {
+  box-sizing: border-box;
+}
+.flustudio-root ::selection {
+  background: var(--pink);
+  color: var(--black);
+}
+.flustudio-root a {
+  color: inherit;
+  text-decoration: none;
+}
+.span-blue {
+  color: var(--blue);
+}
+
+/* ---------- container / header ---------- */
+.flustudio-container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 80px);
+}
+.flustudio-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px clamp(20px, 5vw, 80px);
+  mix-blend-mode: difference;
+  background: transparent;
+}
+.flustudio-header__logo {
+  font-family: var(--font-black);
+  font-size: 20px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.flustudio-header__nav {
+  display: flex;
+  gap: clamp(14px, 2vw, 34px);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.flustudio-header__nav a {
+  opacity: 0.7;
+  transition: opacity 0.25s ease;
+}
+.flustudio-header__nav a:hover,
+.flustudio-header__nav a.is-current {
+  opacity: 1;
+}
+
+/* ---------- hero / studio-lede ---------- */
+.flustudio-lede {
+  padding: clamp(80px, 14vh, 200px) 0 clamp(60px, 10vh, 140px);
+}
+.flustudio-lede__title {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-weight: 400;
+  line-height: 0.92;
+  letter-spacing: -0.01em;
+  font-size: clamp(2.6rem, 8.2vw, 8rem);
+  margin: 0;
+  max-width: 16ch;
+}
+.flustudio-lede__footnote {
+  margin-top: clamp(40px, 7vh, 96px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 18px;
+  max-width: 720px;
+}
+.flustudio-lede__footnote .q {
+  font-family: var(--font-medium);
+  font-size: clamp(1.1rem, 2vw, 1.6rem);
+  text-transform: uppercase;
+  color: var(--blue);
+}
+.flustudio-lede__footnote p {
+  font-family: var(--font-mono);
+  font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+  line-height: 1.5;
+  opacity: 0.85;
+  margin: 0;
+}
+
+/* ---------- services ---------- */
+.flustudio-services {
+  padding: clamp(70px, 12vh, 160px) 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 1.6vh, 20px);
+}
+.flustudio-service {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-size: clamp(2.2rem, 7vw, 6.4rem);
+  line-height: 1;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.3em;
+}
+.flustudio-service__lead {
+  opacity: 0.92;
+}
+.flustudio-service__words {
+  position: relative;
+  display: inline-block;
+  min-width: 4ch;
+  height: 1.1em;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+.flustudio-service__word {
+  display: inline-block;
+  color: var(--blue);
+  will-change: transform, opacity;
+}
+
+/* ---------- fullscreen video ---------- */
+.flustudio-video {
+  position: relative;
+  width: 100%;
+  height: clamp(360px, 80vh, 900px);
+  overflow: hidden;
+  background: #04040f;
+}
+.flustudio-video__fallback {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(120% 120% at 30% 20%, #1b1bff33 0%, transparent 55%),
+    radial-gradient(120% 120% at 80% 90%, #75fb4c22 0%, transparent 55%), #04040f;
+  animation: flustudio-pulse 9s ease-in-out infinite alternate;
+}
+@keyframes flustudio-pulse {
+  from {
+    filter: hue-rotate(0deg) brightness(1);
+  }
+  to {
+    filter: hue-rotate(40deg) brightness(1.18);
+  }
+}
+.flustudio-video video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+.flustudio-video video.is-ready {
+  opacity: 1;
+}
+
+/* ---------- green text block ---------- */
+.flustudio-textblock--green {
+  background: var(--green);
+  color: var(--black);
+}
+.flustudio-textblock--pink {
+  background: var(--pink);
+  color: var(--black);
+}
+.flustudio-textblock {
+  padding: 17px 0 15px;
+  position: relative;
+}
+/* the big static statement (was .block-text__content in the original) */
+.flustudio-textblock__statement {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-size: clamp(2.2rem, 6vw, 5.6rem);
+  line-height: 1.02;
+  margin: 0 0 clamp(120px, 15vw, 300px);
+  max-width: 18ch;
+}
+.flustudio-textblock__eyebrow {
+  font-family: var(--font-black);
+  text-transform: uppercase;
+  font-size: clamp(0.9rem, 1.4vw, 1.1rem);
+  letter-spacing: 0.06em;
+  margin: 0 0 38px;
+  opacity: 0.7;
+}
+.flustudio-slider {
+  position: relative;
+  min-height: 3.4em;
+}
+.flustudio-slider p {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-size: clamp(1.8rem, 5vw, 4.4rem);
+  line-height: 1.02;
+  margin: 0;
+  max-width: 18ch;
+}
+.flustudio-gif {
+  margin-top: clamp(40px, 6vh, 80px);
+}
+.flustudio-gif img {
+  height: clamp(120px, 18vh, 200px);
+  width: auto;
+  border-radius: 4px;
+  background: #00000022;
+}
+
+/* ---------- lottie (original is a Vimeo video, full-bleed) ---------- */
+.flustudio-lottie {
+  width: 100%;
+  padding: 0;
+}
+.flustudio-lottie__video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #000;
+}
+@media (max-width: 529px) {
+  .flustudio-lottie__video {
+    aspect-ratio: 100 / 178;
+  }
+}
+
+/* ---------- partners ---------- */
+.flustudio-partners {
+  padding: clamp(70px, 12vh, 160px) 0;
+}
+.flustudio-partners__heading {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-size: clamp(2rem, 6vw, 5rem);
+  margin: 0 0 56px;
+}
+.flustudio-partners__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.flustudio-partner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  padding: clamp(10px, 1.4vh, 18px) 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+.flustudio-partner:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+@media (min-width: 769px) {
+  .flustudio-partner {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+.flustudio-partner__name {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-size: clamp(2rem, 6vw, 5.6rem);
+  line-height: 1;
+  flex: 1;
+}
+.flustudio-partner__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+.flustudio-pill {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 999px;
+  padding: 6px 12px;
+  white-space: nowrap;
+}
+
+/* ---------- contact strip (matches fluoro.london: blue heading left, email right) ---------- */
+.flustudio-contact {
+  padding-top: 15px;
+  padding-bottom: 50px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  align-items: end;
+  gap: 20px;
+}
+@media (min-width: 769px) {
+  .flustudio-contact {
+    grid-template-columns: repeat(18, 1fr);
+    padding-bottom: 80px;
+  }
+}
+.flustudio-contact__title {
+  grid-column: 1 / 11;
+  font-family: var(--font-black);
+  color: var(--blue);
+  text-transform: uppercase;
+  font-size: clamp(1.6rem, 3.4vw, 3.1rem);
+  line-height: 1;
+  margin: 0;
+}
+.flustudio-contact__email {
+  grid-column: 11 / 19;
+  justify-self: end;
+  text-align: right;
+  font-family: var(--font-black);
+  color: var(--white);
+  font-size: clamp(1rem, 1.4vw, 1.25rem);
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  padding-bottom: 4px;
+  transition: color 0.25s ease;
+}
+.flustudio-contact__email:hover {
+  color: var(--blue);
+}
+
+/* ---------- footer (reveal parallax — matches fluoro.london) ---------- */
+/* The footer is pinned to the bottom of the viewport, behind the content.
+   IMPORTANT: it must NOT use a negative z-index. The body has an opaque
+   background (#eaf7ff in index.css) and, per CSS paint order, a z-index:-1
+   element is painted BEFORE the body background — so the footer would be hidden
+   behind it. We use z-index:0 (painted after the body bg, still behind
+   <main> z-index:1) and isolate the page root so the footer can never escape
+   behind an ancestor background. <main> gets a margin-bottom equal to the
+   footer height (set in JS); scrolling to the end lifts the content away and
+   reveals the fixed footer underneath. */
+.flustudio-root {
+  position: relative;
+  z-index: 0;
+  isolation: isolate;
+}
+.flustudio-footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 0;
+  background: var(--blue);
+  color: var(--white);
+  padding: 20px 0 12px;
+}
+.flustudio-footer .flustudio-container {
+  display: grid;
+  grid-template-columns: repeat(18, 1fr);
+  row-gap: clamp(30px, 8vw, 180px);
+}
+/* content sits above the fixed footer so it stays hidden until revealed */
+.flustudio-root > main {
+  position: relative;
+  z-index: 1;
+  background: var(--black);
+}
+/* rose→white veil: the last band of content. It paints over the fixed blue
+   footer while scrolling (covering it), and the footer parallax lifts it away
+   at the very end to reveal the blue. Height is set in JS (= footer height). */
+.flustudio-footer-veil {
+  width: 100%;
+  background: linear-gradient(to bottom, #ea33f7 0%, #ffffff 100%);
+}
+@media (max-width: 1024px) {
+  .flustudio-footer-veil {
+    display: none;
+  }
+  .flustudio-footer {
+    position: relative;
+    z-index: auto;
+  }
+  .flustudio-footer .flustudio-container {
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+  }
+  .flustudio-footer__lede,
+  .flustudio-footer__contact,
+  .flustudio-footer__wordmark,
+  .flustudio-footer__copyright,
+  .flustudio-footer__terms {
+    grid-column: 1 / -1 !important;
+    grid-row: auto !important;
+    justify-self: start;
+  }
+}
+.flustudio-footer__lede {
+  grid-column: 1 / 13;
+  grid-row: 1;
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-size: clamp(1.6rem, 4vw, 3rem);
+  line-height: 1.05;
+  margin: 0;
+  max-width: 18ch;
+}
+.flustudio-footer__contact {
+  grid-column: 10 / 15;
+  grid-row: 1;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+.flustudio-footer__contact a:hover {
+  color: var(--black);
+}
+.flustudio-footer__wordmark {
+  grid-column: 16 / 19;
+  grid-row: 1;
+  justify-self: end;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-family: var(--font-black);
+  font-size: clamp(2rem, 6vw, 4rem);
+  text-transform: uppercase;
+}
+.flustudio-footer__wordmark svg {
+  height: auto;
+  width: clamp(120px, 14vw, 220px);
+}
+.flustudio-footer__wordmark span {
+  font-family: sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+}
+.flustudio-footer__copyright {
+  grid-column: 1 / 8;
+  grid-row: 2;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+.flustudio-footer__terms {
+  grid-column: 10 / 16;
+  grid-row: 2;
+  justify-self: end;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flustudio-video__fallback {
+    animation: none;
+  }
+}
+
+/* ---------- breathe: full-screen fixed canvas (matches fluoro.london) ---------- */
+.fs-breathe {
+  position: relative;
+  height: 100vh;
+}
+.fs-breathe__canvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  display: block;
+  pointer-events: none;
+}

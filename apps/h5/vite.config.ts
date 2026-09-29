@@ -54,11 +54,79 @@ function haoqiSpaFallback(): import('vite').Plugin {
   };
 }
 
+const FLUORO_STATIC_PREFIXES = ['/fluoro/assets/', '/fluoro/fonts/', '/fluoro/raw/'];
+
+function isFluoroStaticAsset(url: string) {
+  const pathname = url.split('?')[0] ?? '';
+  return FLUORO_STATIC_PREFIXES.some((p) => pathname.startsWith(p));
+}
+
+function applyFluoroSpaFallback(url: string) {
+  const pathname = url.split('?')[0] ?? '';
+  if (pathname === '/fluoro' || pathname === '/fluoro/') return '/index.html';
+  if (pathname.startsWith('/fluoro/') && !isFluoroStaticAsset(url)) return '/index.html';
+  return null;
+}
+
+/** public/fluoro 与 React 路由 /fluoro 冲突时，将页面请求回退到 SPA（静态资源仍直出） */
+function fluoroSpaFallback(): import('vite').Plugin {
+  const middleware = (req: Connect.IncomingMessage, _res: unknown, next: () => void) => {
+    const url = req.url ?? '';
+    const fallback = applyFluoroSpaFallback(url);
+    if (fallback) req.url = fallback;
+    next();
+  };
+  return {
+    name: 'fluoro-spa-fallback',
+    configureServer(server) {
+      server.middlewares.use(middleware);
+    },
+    configurePreviewServer(server) {
+      server.middlewares.use(middleware);
+    },
+  };
+}
+
+const FLUSTUDIO_STATIC_PREFIXES = ['/flustudio/breathe/', '/flustudio/fonts/'];
+
+function isFlustudioStaticAsset(url: string) {
+  const pathname = url.split('?')[0] ?? '';
+  return FLUSTUDIO_STATIC_PREFIXES.some((p) => pathname.startsWith(p));
+}
+
+function applyFlustudioSpaFallback(url: string) {
+  const pathname = url.split('?')[0] ?? '';
+  if (pathname === '/flustudio' || pathname === '/flustudio/') return '/index.html';
+  if (pathname.startsWith('/flustudio/') && !isFlustudioStaticAsset(url)) return '/index.html';
+  return null;
+}
+
+/** public/flustudio 与 React 路由 /flustudio 冲突时，将页面请求回退到 SPA（breathe 序列帧仍直出） */
+function flustudioSpaFallback(): import('vite').Plugin {
+  const middleware = (req: Connect.IncomingMessage, _res: unknown, next: () => void) => {
+    const url = req.url ?? '';
+    const fallback = applyFlustudioSpaFallback(url);
+    if (fallback) req.url = fallback;
+    next();
+  };
+  return {
+    name: 'flustudio-spa-fallback',
+    configureServer(server) {
+      server.middlewares.use(middleware);
+    },
+    configurePreviewServer(server) {
+      server.middlewares.use(middleware);
+    },
+  };
+}
+
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
     react(),
     haoqiSpaFallback(),
+    fluoroSpaFallback(),
+    flustudioSpaFallback(),
     VitePWA({
       // 自动注册 SW；新版本后台静默激活，无需用户手动刷新
       registerType: 'autoUpdate',
