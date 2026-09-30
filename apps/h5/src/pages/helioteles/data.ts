@@ -1,4 +1,5 @@
 import site from './data/site.json';
+import { VARIETY_INDEX_HTML } from '../variety/varietyIndex';
 
 export type HelioMedia = {
   id?: number;
@@ -93,6 +94,18 @@ for (const page of Object.values(pages)) {
 for (const [hash, rec] of Object.entries(mediaIndex)) {
   if (!mediaByHashMap.has(hash)) mediaByHashMap.set(hash, resolveMediaSrc(hash, rec));
 }
+
+// /variety 路由复用 helioteles 渲染管线，仅左侧列表数据替换为 ITZY 综艺（纯文案，无样式变更）
+byPurl.set('index-variety', {
+  id: 'index-variety',
+  title: 'Variety Index',
+  purl: 'index-variety',
+  content: VARIETY_INDEX_HTML,
+  local_css: '',
+  display: true,
+  pin: true,
+  media: [],
+});
 
 export const helioMedia = Object.fromEntries(mediaByHashMap);
 

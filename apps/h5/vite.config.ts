@@ -120,6 +120,39 @@ function flustudioSpaFallback(): import('vite').Plugin {
   };
 }
 
+const HELIOTELES_STATIC_PREFIXES = ['/helioteles/fonts/', '/helioteles/raw/', '/helioteles/media/'];
+
+function isHeliotelesStaticAsset(url: string) {
+  const pathname = url.split('?')[0] ?? '';
+  return HELIOTELES_STATIC_PREFIXES.some((p) => pathname.startsWith(p));
+}
+
+function applyHeliotelesSpaFallback(url: string) {
+  const pathname = url.split('?')[0] ?? '';
+  if (pathname === '/helioteles' || pathname === '/helioteles/') return '/index.html';
+  if (pathname.startsWith('/helioteles/') && !isHeliotelesStaticAsset(url)) return '/index.html';
+  return null;
+}
+
+/** public/helioteles 与 React 路由 /helioteles 冲突时，将页面请求回退到 SPA（字体/原始HTML/媒体仍直出） */
+function heliotelesSpaFallback(): import('vite').Plugin {
+  const middleware = (req: Connect.IncomingMessage, _res: unknown, next: () => void) => {
+    const url = req.url ?? '';
+    const fallback = applyHeliotelesSpaFallback(url);
+    if (fallback) req.url = fallback;
+    next();
+  };
+  return {
+    name: 'helioteles-spa-fallback',
+    configureServer(server) {
+      server.middlewares.use(middleware);
+    },
+    configurePreviewServer(server) {
+      server.middlewares.use(middleware);
+    },
+  };
+}
+
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
@@ -127,6 +160,7 @@ export default defineConfig({
     haoqiSpaFallback(),
     fluoroSpaFallback(),
     flustudioSpaFallback(),
+    heliotelesSpaFallback(),
     VitePWA({
       // 自动注册 SW；新版本后台静默激活，无需用户手动刷新
       registerType: 'autoUpdate',

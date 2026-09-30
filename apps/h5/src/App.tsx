@@ -132,6 +132,10 @@ export default function App() {
       <Route path="/union" element={<Navigate to="/helioteles/union" replace />} />
       <Route path="/fluoro" element={<FluoroPage />} />
       <Route path="/flustudio" element={<FluStudioPage />} />
+      <Route path="/variety" element={<HelioLayout />}>
+        <Route index element={<HelioPage />} />
+        <Route path=":slug" element={<HelioPage />} />
+      </Route>
 
       <Route path="/facil" element={<FacilLayout />}>
         <Route index element={<FacilHomePage />} />

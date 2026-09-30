@@ -52,9 +52,11 @@ export default function HelioLayout() {
 
   const header = pageByPurl('header');
   const headerMobile = pageByPurl('header-mobile');
-  const index = pageByPurl('index-desktop');
-  const indexMobile = pageByPurl('index-mobile') || index;
-  const slug = location.pathname.slice(HELIO_BASE.length).replace(/^\//, '') || undefined;
+  const isVariety = location.pathname.startsWith('/variety');
+  const index = pageByPurl(isVariety ? 'index-variety' : 'index-desktop');
+  const indexMobile = pageByPurl(isVariety ? 'index-variety' : 'index-mobile') || index;
+  const basePath = location.pathname.startsWith(HELIO_BASE) ? HELIO_BASE : '/variety';
+  const slug = location.pathname.slice(basePath.length).replace(/^\//, '') || undefined;
   const pageBg = pageBackground(pageByPurl(slugToPurl(slug)));
 
   useEffect(() => {

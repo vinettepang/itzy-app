@@ -949,7 +949,7 @@ export default function NewHomePage({
 
               {overlayCacheKey === "newnew" ? (
                 <Link
-                  to="/gallery"
+                  to="/variety"
                   className="xkm-caseCard xkm-caseCard--variety"
                   aria-label="综艺合集"
                 >
