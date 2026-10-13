@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Privacy Policy — NOTHIN'</title>
+<meta name="description" content="How NOTHIN' handles data on noth.in and in its internal reporting tools.">
+<style>
+@font-face{
+  font-family:'PP Neue Montreal';
+  src:url('fonts/PPNeueMontreal-Book.woff2') format('woff2'),url('fonts/PPNeueMontreal-Book.woff') format('woff');
+  font-weight:400;font-style:normal;font-display:swap;
+}
+@font-face{
+  font-family:'PP Neue Montreal';
+  src:url('fonts/PPNeueMontreal-Medium.woff2') format('woff2'),url('fonts/PPNeueMontreal-Medium.woff') format('woff');
+  font-weight:500;font-style:normal;font-display:swap;
+}
+:root{color-scheme:light}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:#fff;color:#000;
+  font-family:'PP Neue Montreal',-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  font-weight:400;font-size:14px;line-height:1.4; /* H7 Book 14px / 140% */
+}
+.w{max-width:840px;margin:0 auto;padding:56px 24px 96px}
+header{display:flex;justify-content:space-between;align-items:center;padding-bottom:32px;border-bottom:1px solid #000}
+.logo img{height:26px;display:block}
+.logo span{font-weight:500;font-size:26px;letter-spacing:-.01em}
+.cat{
+  font-family:'IBM Plex Mono',ui-monospace,'SF Mono',Menlo,monospace;
+  font-weight:500;font-size:12px;line-height:1;letter-spacing:.03em;text-transform:uppercase; /* categorie 12px / 3% */
+}
+h1{
+  font-weight:500;font-size:60px;line-height:1;letter-spacing:-.01em; /* H2 60px Medium / 100% / -1% */
+  margin:64px 0 16px;
+}
+.maj{margin-bottom:72px}
+section{margin-top:56px}
+h2{
+  font-weight:500;font-size:25px;line-height:1.2;letter-spacing:0; /* H4 25px Medium / 120% */
+  margin-bottom:16px;padding-top:24px;border-top:1px solid #000;
+}
+h2 .cat{display:block;margin-bottom:12px}
+p{margin-bottom:12px;max-width:640px}
+strong{font-weight:500}
+a{color:#000}
+footer{margin-top:96px;padding-top:24px;border-top:1px solid #000;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media(max-width:600px){h1{font-size:40px}h2{font-size:20px}}
+</style>
+</head>
+<body>
+<div class="w">
+
+<header>
+  <div class="logo">
+    <img src="logo-nothin.svg" alt="NOTHIN'">
+  </div>
+  <div class="cat">Legal</div>
+</header>
+
+<h1>Privacy Policy</h1>
+<div class="maj cat">Last updated — October 6, 2026</div>
+
+<p>The website <strong>noth.in</strong> and the <strong>Nothin Dashboard</strong> application are operated by Nothin', an independent studio represented by Sara Guedj. Contact&nbsp;: <a href="mailto:hello@noth.in">hello@noth.in</a>, <a href="tel:+33189480299">+33&nbsp;1&nbsp;89&nbsp;48&nbsp;02&nbsp;99</a>.</p>
+
+<section>
+<h2><span class="cat">01 / Website</span>Data collected on this website</h2>
+<p>With your consent only, noth.in measures its audience through Google Analytics&nbsp;4 and Metricool (pages viewed, traffic source, device type), and loads the LinkedIn Insight Tag and the Brevo tracker to measure the effect of our campaigns and emails. Nothing is loaded before you click &laquo;&nbsp;Accept&nbsp;&raquo;. If you contact us by email, your address and the content of your message are kept only as long as needed to handle your request.</p>
+<p>The AI assistant on noth.in (the &laquo;&nbsp;Ask&nbsp;&raquo; button) answers questions about the studio. Your messages are sent to Anthropic (Claude) to generate the answers, through our own server, and are kept in our records for 12 months to improve the assistant's knowledge base. Please do not share sensitive personal data in the chat. Booking a call goes through Calendly, under Calendly's own privacy policy.</p>
+</section>
+
+<section>
+<h2><span class="cat">02 / Application</span>Nothin Dashboard</h2>
+<p>Nothin Dashboard is a strictly internal reporting tool. It connects, through official APIs, to accounts owned by Nothin' on third-party services (including LinkedIn and Meta) to aggregate performance statistics&nbsp;: page audience, post reach, and advertising campaign metrics.</p>
+<p>The application only accesses data from Nothin''s own accounts. It does not collect, store, or process any third-party personal data&nbsp;: no follower lists, no individual profiles, no private messages. Aggregated data is displayed on a private dashboard hosted on infrastructure controlled by Nothin', and is never sold, shared, or used for any purpose other than internal business monitoring.</p>
+</section>
+
+<section>
+<h2><span class="cat">03 / GDPR</span>Legal basis and data retention</h2>
+<p>This processing is based on Nothin''s legitimate interest in measuring and managing its activity (art.&nbsp;6.1.f GDPR). Aggregated statistics are kept for a maximum of 25&nbsp;months. API access tokens are stored encrypted and can be revoked at any time from the relevant services.</p>
+</section>
+
+<section>
+<h2><span class="cat">04 / Cookies</span>Cookies</h2>
+<p>This website asks for your consent before setting any measurement or advertising cookie (Google Analytics&nbsp;4, Metricool, LinkedIn, Brevo). Declining is as easy as accepting, and your choice is kept for 6 months. You can change it at any time at <a href="https://www.noth.in/#cookies">noth.in/#cookies</a>. The AI assistant only keeps your conversation in your browser tab (session storage) and sets no cookie.</p>
+</section>
+
+<section>
+<h2><span class="cat">05 / Rights</span>Your rights</h2>
+<p>Under the GDPR, you have the right to access, rectify, erase, object to, and port the data concerning you. To exercise these rights, write to <a href="mailto:hello@noth.in">hello@noth.in</a>. You may also file a complaint with the CNIL (<a href="https://www.cnil.fr">cnil.fr</a>), the French data protection authority.</p>
+</section>
+
+<section>
+<h2><span class="cat">06 / Changes</span>Changes</h2>
+<p>This policy may be updated to reflect changes in our tools. The date of the last update appears at the top of this page.</p>
+</section>
+
+<footer>
+  <div class="cat">NOTHIN' — noth.in</div>
+  <div class="cat"><a href="mailto:hello@noth.in" style="text-decoration:none">hello@noth.in</a></div>
+</footer>
+
+</div>
+</body>
+</html>

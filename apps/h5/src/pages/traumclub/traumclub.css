@@ -1,0 +1,17 @@
+.traumclub-shell {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  margin: 0;
+  padding: 0;
+  background: #000;
+}
+
+.traumclub-shell--redirect {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background: #000;
+  color: #fff;
+  font-family: system-ui, sans-serif;
+}

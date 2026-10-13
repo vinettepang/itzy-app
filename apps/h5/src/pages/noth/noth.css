@@ -1,0 +1,16 @@
+.noth-shell--redirect,
+.noth-shell--hint {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: #fff;
+  color: #111;
+  font-family: system-ui, sans-serif;
+  text-align: center;
+}
+
+.noth-shell--hint a {
+  color: inherit;
+  text-decoration: underline;
+}

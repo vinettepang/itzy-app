@@ -194,7 +194,12 @@ export default defineConfig({
         // SPA 离线导航回退：断网时任意路径都返回缓存的首页壳再由前端路由渲染
         navigateFallback: `${process.env.PAGES_BASE || '/'}index.html`,
         // 这些真实静态资源/代理路径不要走 SPA 回退
-        navigateFallbackDenylist: [/^\/haoqi-static\//, /^\/unseen-proxy\//],
+        navigateFallbackDenylist: [
+          /^\/haoqi-static\//,
+          /^\/unseen-proxy\//,
+          /^\/traumclub\//,
+          /^\/thefutureinblack\//,
+        ],
         cleanupOutdatedCaches: true,
         clientsClaim: true,
         skipWaiting: true,

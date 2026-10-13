@@ -1,0 +1,162 @@
+/* What We Shift — copied from thefutureinblack snapshots/home/site-inner.html */
+
+.uicoms-ss-wws-root {
+  --body-font-font-family: 'Inter Tight', sans-serif;
+  --heading-font-font-family: 'Million', 'Arial Black', sans-serif;
+  width: 100%;
+  overflow: visible;
+}
+
+.uicoms-ss-wws-root .ss-wws-section {
+  position: relative;
+  height: 650vh;
+  width: 100%;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+.uicoms-ss-wws-root .ss-wws-sticky {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #fff;
+}
+
+.uicoms-ss-wws-root .ss-wws-gif {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+}
+
+.uicoms-ss-wws-root .ss-wws-mask-wrap {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  transform-origin: 50% 50%;
+}
+
+.uicoms-ss-wws-root .ss-wws-mask-wrap svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: visible;
+}
+
+.uicoms-ss-wws-root .ss-wws-notes {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.uicoms-ss-wws-root .ss-wws-note {
+  position: absolute;
+  background: #f2e6c9;
+  color: #111;
+  padding: 1.4rem 1.4rem 1.6rem;
+  width: clamp(190px, 15vw, 250px);
+  min-height: clamp(240px, 19vw, 320px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22);
+  font-family: 'Inter Tight', var(--body-font-font-family, sans-serif);
+  font-weight: 600;
+  font-size: clamp(1.15rem, 1.4vw, 1.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  opacity: 0;
+  transform: translateX(80px);
+  backface-visibility: hidden;
+}
+
+.uicoms-ss-wws-root .ss-wws-note::before {
+  content: '';
+  position: absolute;
+  top: 1.1rem;
+  left: 1.1rem;
+  width: 11px;
+  height: 11px;
+  background: #1f3d2b;
+}
+
+.uicoms-ss-wws-root .ss-wws-note p {
+  margin: 0;
+}
+
+.uicoms-ss-wws-root .ss-wws-hint {
+  position: absolute;
+  top: 62%;
+  bottom: auto;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  pointer-events: none;
+  z-index: 10;
+  transition: opacity 0.3s ease;
+}
+
+.uicoms-ss-wws-root .ss-wws-hint span {
+  font-family: 'Inter Tight', var(--body-font-font-family, sans-serif);
+  font-weight: 600;
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #000;
+}
+
+.uicoms-ss-wws-root .ss-wws-hint-line {
+  width: 1px;
+  height: 2rem;
+  background: #000;
+  animation: ss-wws-drop 1.6s ease-in-out infinite;
+}
+
+@keyframes ss-wws-drop {
+  0% {
+    transform: scaleY(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scaleY(0.3);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(1);
+    opacity: 0.4;
+  }
+}
+
+@media (max-width: 768px) {
+  .uicoms-ss-wws-root .ss-wws-note {
+    width: 40vw;
+    min-height: 40vw;
+    font-size: 0.78rem;
+    padding: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .uicoms-ss-wws-root .ss-wws-mask-wrap,
+  .uicoms-ss-wws-root .ss-wws-note {
+    transition: none !important;
+  }
+  .uicoms-ss-wws-root .ss-wws-hint-line {
+    animation: none !important;
+  }
+}

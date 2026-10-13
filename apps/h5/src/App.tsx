@@ -34,6 +34,7 @@ import FacilProjectPage from '@/pages/facil/pages/FacilProjectPage';
 import FacilLegalPage from '@/pages/facil/pages/FacilLegalPage';
 import NewHomePage from '@/pages/new-home/NewHomePage';
 import NewNewPage from '@/pages/newnew/NewNewPage';
+import NewNewExhibitPage from '@/pages/newnew/NewNewExhibitPage';
 import UiPage from '@/pages/ui/UiPage';
 import NewNewLayout from '@/pages/newnew/NewNewLayout';
 import MenuPage from '@/pages/MenuPage';
@@ -59,6 +60,11 @@ import HelioLayout from '@/pages/helioteles/HelioLayout';
 import HelioPage from '@/pages/helioteles/HelioPage';
 import FluoroPage from '@/pages/fluoro/FluoroPage';
 import FluStudioPage from '@/pages/flustudio/FluStudioPage';
+import TraumclubPage from '@/pages/traumclub/TraumclubPage';
+import NothPage from '@/pages/noth/NothPage';
+import TheFutureInBlackPage from '@/pages/thefutureinblack/TheFutureInBlackPage';
+import TfibFormsPage from '@/pages/thefutureinblack/TfibFormsPage';
+import UicomsPage from '@/pages/uicoms/UicomsPage';
 
 const HAOQI_PROJECT_SLUGS = [
   'reunimos',
@@ -82,8 +88,10 @@ export default function App() {
       <Route path="/xkm" element={<XkmPage />} />
       <Route path="/old-home" element={<XkmPage />} />
       <Route path="/new_home" element={<NewHomePage />} />
+      <Route path="/newnew-exhibit" element={<NewNewExhibitPage />} />
       <Route path="/newnew" element={<Navigate to="/" replace />} />
       <Route path="/ui" element={<UiPage />} />
+      <Route path="/uicoms" element={<UicomsPage />} />
       <Route path="/people" element={<PeoplePage />} />
       <Route element={<NewNewLayout />}>
         <Route path="/dolls" element={<DollsPage />} />
@@ -136,6 +144,10 @@ export default function App() {
         <Route index element={<HelioPage />} />
         <Route path=":slug" element={<HelioPage />} />
       </Route>
+      <Route path="/traumclub" element={<TraumclubPage />} />
+      <Route path="/noth" element={<NothPage />} />
+      <Route path="/thefutureinblack" element={<TheFutureInBlackPage />} />
+      <Route path="/thefutureinblack/forms" element={<TfibFormsPage />} />
 
       <Route path="/facil" element={<FacilLayout />}>
         <Route index element={<FacilHomePage />} />

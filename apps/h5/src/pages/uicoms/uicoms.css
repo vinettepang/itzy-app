@@ -1,0 +1,97 @@
+/* 勿在 html / .uicoms-page 设 overflow-x:hidden（会令 overflow-y 变为 auto，sticky 失效） */
+
+.uicoms-page {
+  min-height: 100vh;
+  background: #0e0e0e;
+  color: #f4f4f4;
+  font-family: system-ui, sans-serif;
+  overflow: visible;
+}
+
+.uicoms-header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 1.25rem;
+  background: rgba(14, 14, 14, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.uicoms-header h1 {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.uicoms-header a {
+  color: #aaa;
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+.uicoms-header a:hover {
+  color: #fff;
+}
+
+.uicoms-intro {
+  max-width: 42rem;
+  padding: 2rem 1.25rem 1rem;
+}
+
+.uicoms-intro h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+.uicoms-intro p {
+  margin: 0;
+  color: #9a9a9a;
+  line-height: 1.55;
+  font-size: 0.92rem;
+}
+
+.uicoms-catalog {
+  padding: 0 1.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.uicoms-card {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 1rem 1.1rem;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.uicoms-card h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+}
+
+.uicoms-card code {
+  font-size: 0.78rem;
+  color: #7dd3a8;
+}
+
+.uicoms-card p {
+  margin: 0.35rem 0 0;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.uicoms-demo {
+  margin-top: 1.5rem;
+  background: #fff;
+}
+
+.uicoms-demo--wws {
+  overflow: visible;
+}

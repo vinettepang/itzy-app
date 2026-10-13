@@ -364,12 +364,7 @@ body:has(.newnew-page .xkm--new-home) {
   color: var(--newnew-ink);
 }
 
-.newnew-page .xkm--new-home .xkm-ticketBlock__title {
-  color: #000;
-  font-family: fantasy;
-  font-size: 18px;
-  mix-blend-mode: normal;
-}
+/* 区块标题字号见 newnew-type.css */
 
 .newnew-page .xkm--new-home .xkm-flat-ticket,
 .newnew-page .xkm--new-home .xkm-hybrid-ticket {
@@ -693,10 +688,6 @@ body:has(.newnew-page .xkm--new-home) {
     min-height: 0;
   }
 
-  .newnew-page .xkm--new-home .xkm-ticketBlock__title {
-    font-size: 18px;
-  }
-
   .newnew-page .xkm--new-home .xkm-flat-ticket,
   .newnew-page .xkm--new-home .xkm-hybrid-ticket {
     height: 90px;
@@ -776,7 +767,7 @@ body:has(.newnew-page .xkm--new-home) {
   }
 
   .newnew-page .xkm--new-home .xkm-projectsPanel__line {
-    font-size: clamp(12px, 3.4vw, 16px);
+    font-size: clamp(12px, 3.4vw, 14px);
   }
 
   .newnew-page .xkm--new-home .xkm-btnBlock__bottom {
@@ -790,13 +781,13 @@ body:has(.newnew-page .xkm--new-home) {
   }
 
   .newnew-page .xkm--new-home .xkm-contactBtn {
-    min-height: 30px;
-    padding: 0 6px;
-    font-size: 7px;
+    min-height: 34px;
+    padding: 0 8px;
+    font-size: 9px;
     display: flex;
     align-items: center;
     justify-content: center;
-    line-height: 1;
+    line-height: 1.1;
   }
 
   .newnew-page .xkm--new-home .xkm-siteFooter {

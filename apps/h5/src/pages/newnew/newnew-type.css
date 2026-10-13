@@ -1,0 +1,227 @@
+/**
+ * newnew 首页排版：字号阶梯、字距、区块间距（仅 .newnew-page .xkm--new-home）
+ */
+.newnew-page .xkm--new-home {
+  --nn-font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
+  --nn-font-mono: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas,
+    monospace;
+  --nn-text-2xs: 9px;
+  --nn-text-xs: 10px;
+  --nn-text-sm: 11px;
+  --nn-text-base: 12px;
+  --nn-text-md: 13px;
+  --nn-text-lg: 15px;
+  --nn-leading-tight: 1.2;
+  --nn-leading-normal: 1.45;
+  --nn-leading-relaxed: 1.55;
+  --nn-tracking-caps: 0.16em;
+  --nn-tracking-meta: 0.08em;
+  --nn-space-xs: 6px;
+  --nn-space-sm: 10px;
+  --nn-space-md: 14px;
+  --nn-space-lg: 18px;
+  font-family: var(--nn-font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* —— 顶栏信息条 —— */
+.newnew-page .xkm--new-home .xkm-infoMarquee__item {
+  font-family: var(--nn-font-mono);
+  font-size: var(--nn-text-xs);
+  font-weight: 500;
+  letter-spacing: var(--nn-tracking-meta);
+  line-height: var(--nn-leading-tight);
+  color: rgba(0, 0, 0, 0.52);
+  padding: 0 1rem;
+}
+
+.newnew-page .xkm--new-home .xkm-infoMarquee__label {
+  font-family: var(--nn-font-mono);
+  font-size: var(--nn-text-2xs);
+  font-weight: 600;
+  letter-spacing: var(--nn-tracking-caps);
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.38);
+}
+
+.newnew-page .xkm--new-home .xkm-coverNav__cell--marquee {
+  gap: 2px;
+  padding: 5px 8px 4px;
+}
+
+/* —— 区块标题（NEXT COMING / MIDZY's PLAY）—— */
+.newnew-page .xkm--new-home .xkm-ticketBlock__title {
+  font-family: var(--nn-font-mono);
+  font-size: var(--nn-text-sm);
+  font-weight: 600;
+  letter-spacing: var(--nn-tracking-caps);
+  line-height: var(--nn-leading-tight);
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.72);
+  mix-blend-mode: normal;
+  margin: 0;
+  padding: 0 2px;
+}
+
+.newnew-page .xkm--new-home .xkm-ticketBlock {
+  gap: var(--nn-space-sm);
+  padding: var(--nn-space-md) var(--nn-space-md) var(--nn-space-sm);
+}
+
+.newnew-page .xkm--new-home .xkm-btnBlock .xkm-ticketBlock__title {
+  padding-top: 2px;
+}
+
+.newnew-page .xkm--new-home .xkm-muted {
+  font-size: var(--nn-text-md);
+  font-weight: 400;
+  line-height: var(--nn-leading-relaxed);
+  letter-spacing: 0.02em;
+  color: var(--newnew-ink-soft, rgba(17, 17, 17, 0.55));
+  margin: 0;
+  padding: 0 2px;
+}
+
+.newnew-page .xkm--new-home .xkm-err {
+  font-size: var(--nn-text-sm);
+  line-height: var(--nn-leading-normal);
+}
+
+/* —— 横条图廊 —— */
+.newnew-page .xkm--new-home .xkm-imageScroller {
+  margin-top: var(--nn-space-xs);
+  margin-bottom: var(--nn-space-xs);
+}
+
+.newnew-page .xkm--new-home .xkm-imageScroller__track {
+  gap: 3px;
+}
+
+/* —— Case 卡片文案 —— */
+.newnew-page .xkm--new-home a.xkm-caseCard {
+  gap: var(--nn-space-xs);
+  padding: var(--nn-space-sm) var(--nn-space-sm) var(--nn-space-xs);
+  margin: 6px 10px;
+}
+
+.newnew-page .xkm--new-home .xkm-caseCard__label {
+  font-family: var(--nn-font-mono);
+  font-size: var(--nn-text-base);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: var(--nn-leading-tight);
+  gap: 1px;
+}
+
+.newnew-page .xkm--new-home .xkm-caseCard__meta {
+  font-family: var(--nn-font-mono);
+  font-size: var(--nn-text-xs);
+  font-weight: 400;
+  letter-spacing: var(--nn-tracking-meta);
+  line-height: var(--nn-leading-normal);
+}
+
+.newnew-page .xkm--new-home .xkm-caseCard__cta {
+  font-size: var(--nn-text-xs);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  min-height: 36px;
+}
+
+/* —— 歌词条 —— */
+.newnew-page .xkm--new-home .xkm-projectsPanel {
+  padding: var(--nn-space-md) var(--nn-space-sm);
+  min-height: 96px;
+}
+
+.newnew-page .xkm--new-home .xkm-projectsPanel__line {
+  font-family: var(--nn-font-sans);
+  font-size: var(--nn-text-lg);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: var(--nn-leading-normal);
+  text-transform: none;
+  text-align: center;
+  mix-blend-mode: normal;
+  -webkit-text-stroke: 0;
+  color: rgba(0, 0, 0, 0.78);
+}
+
+/* —— 底部 —— */
+.newnew-page .xkm--new-home .xkm-contactBtn {
+  font-family: var(--nn-font-mono);
+  font-size: var(--nn-text-xs);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+.newnew-page .xkm--new-home .xkm-siteFooter {
+  font-family: var(--nn-font-mono);
+  font-size: var(--nn-text-2xs);
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.newnew-page .xkm--new-home .xkm-btnBlock__inner {
+  gap: var(--nn-space-sm);
+}
+
+.newnew-page .xkm--new-home .xkm-btnBlock {
+  padding: var(--nn-space-sm) var(--nn-space-md);
+  margin-top: var(--nn-space-lg);
+}
+
+.newnew-page .xkm--new-home .xkm-ticketList {
+  gap: var(--nn-space-sm);
+}
+
+/* —— 全屏菜单 —— */
+.newnew-page .xkm-menuPanel a.xkm-menuLink {
+  font-family: var(--nn-font-sans);
+  font-size: clamp(26px, 7.2vw, 42px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+.newnew-page .xkm-menuLink__en {
+  font-family: var(--nn-font-mono);
+  font-size: var(--nn-text-xs);
+  letter-spacing: var(--nn-tracking-caps);
+}
+
+@media (max-width: 1023px) {
+  .newnew-page .xkm--new-home .xkm-ticketBlock {
+    padding: var(--nn-space-sm) var(--nn-space-sm) var(--nn-space-xs);
+    gap: var(--nn-space-xs);
+  }
+
+  .newnew-page .xkm--new-home .xkm-ticketBlock__title {
+    font-size: var(--nn-text-sm);
+  }
+
+  .newnew-page .xkm--new-home .xkm-btnBlock__inner {
+    gap: var(--nn-space-xs);
+  }
+
+  .newnew-page .xkm--new-home a.xkm-caseCard {
+    margin: 4px 8px;
+    padding: 8px 8px 6px;
+  }
+
+  .newnew-page .xkm--new-home .xkm-caseCard__label {
+    font-size: var(--nn-text-sm);
+  }
+
+  .newnew-page .xkm--new-home .xkm-projectsPanel__line {
+    font-size: var(--nn-text-md);
+    line-height: var(--nn-leading-relaxed);
+  }
+
+  .newnew-page .xkm--new-home .xkm-contactBtn {
+    min-height: 34px;
+    font-size: var(--nn-text-2xs);
+  }
+}

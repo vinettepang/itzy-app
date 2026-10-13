@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600&display=swap');
+
+@font-face {
+  font-family: 'Million';
+  src: url('/thefutureinblack/assets/content/v2/namespaces/fonts/libraries/69f3f6e86bfa6f4418b84f0e/assets/6cc4fe63-6e66-4fc7-9b32-c373424983fe/font.woff2')
+    format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
