@@ -1,0 +1,31 @@
+.uicom-panter-vision {
+  position: relative;
+  width: 100%;
+  min-height: min(100vh, 900px);
+  background: #000;
+  overflow: hidden;
+}
+
+.uicom-panter-vision__stage {
+  position: absolute;
+  inset: 0;
+  touch-action: none;
+}
+
+.uicom-panter-vision__stage canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.uicom-panter-vision__sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

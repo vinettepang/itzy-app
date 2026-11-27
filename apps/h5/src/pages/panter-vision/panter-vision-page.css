@@ -1,0 +1,278 @@
+.panter-vision-page {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  height: 100dvh;
+  background: #000;
+  overflow: hidden;
+}
+
+.panter-vision-page__hero.uicom-panter-vision {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+}
+
+.panter-vision-page__menu-toggle {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  z-index: 30;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(20, 20, 20, 0.85);
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.panter-vision-page__menu-toggle:hover {
+  transform: scale(1.04);
+  background: rgba(40, 40, 40, 0.92);
+}
+
+.panter-vision-page__menu-icon {
+  width: 22px;
+  height: 22px;
+}
+
+/* Nav 玻璃网格：单层 opacity 淡入淡出（避免与 blur / 位移动画叠加重排） */
+.panter-vision-page__nav.navy {
+  --pv-nav-open-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  min-height: 0;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  isolation: isolate;
+  opacity: 0;
+  pointer-events: none;
+  background: transparent;
+  will-change: opacity;
+  transition: opacity 0.36s var(--pv-nav-open-ease);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .panter-vision-page__nav.navy {
+    will-change: auto;
+  }
+}
+
+/* blur 常驻，只过渡透明度，避免打开瞬间才创建模糊层 */
+.panter-vision-page__nav.navy::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: rgba(0, 0, 0, 0.97);
+  backdrop-filter: blur(36px) saturate(1.02);
+  -webkit-backdrop-filter: blur(36px) saturate(1.02);
+  transform: translateZ(0);
+}
+
+.panter-vision-page__nav .navy__grid {
+  position: relative;
+  z-index: 1;
+}
+
+.panter-vision-page__nav--open.navy {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.panter-vision-page__nav .navy__back {
+  top: 12px;
+  left: 12px;
+  z-index: 22;
+  background: rgba(20, 20, 20, 0.45);
+}
+
+/* 菜单卡片半透明 + 局部毛玻璃（与 /nav 同款灰卡 / 彩 pill，叠在场景上） */
+.panter-vision-page__nav .navy-card {
+  --pv-nav-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow:
+    inset 0 0 18px 10px rgba(255, 255, 255, 0.14),
+    inset 0 0 48px 20px rgba(255, 255, 255, 0.04),
+    0 6px 28px rgba(0, 0, 0, 0.08);
+  transform: none;
+  filter: none;
+  transition:
+    background 1.05s var(--pv-nav-ease),
+    box-shadow 1.05s var(--pv-nav-ease);
+}
+
+/* 覆盖 nav.css 的位移 / 亮度 hover */
+.panter-vision-page__nav a.navy-card:hover,
+.panter-vision-page__nav button.navy-card:hover,
+.panter-vision-page__nav .navy-icon:hover {
+  transform: none;
+  filter: none;
+}
+
+.panter-vision-page__nav .navy-card .navy-bloom,
+.panter-vision-page__nav .navy-card .navy-fill,
+.panter-vision-page__nav .navy-card .navy-sheen {
+  transition: opacity 1.05s var(--pv-nav-ease), box-shadow 1.05s var(--pv-nav-ease);
+}
+
+.panter-vision-page__nav .navy-card .navy-bloom {
+  opacity: 0;
+}
+
+.panter-vision-page__nav a.navy-card:not(.navy-pill):not(.navy-icon):not(.navy-hero):not(.navy-facts):not(.navy-readme):not(.navy-download):hover,
+.panter-vision-page__nav button.navy-card:not(.navy-icon):hover {
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow:
+    inset 0 0 18px 10px rgba(255, 255, 255, 0.16),
+    inset 0 0 48px 20px rgba(255, 255, 255, 0.05),
+    0 0 0 1px rgba(255, 255, 255, 0.22),
+    0 0 24px rgba(255, 255, 255, 0.22),
+    0 0 56px rgba(255, 255, 255, 0.14),
+    0 0 96px rgba(255, 255, 255, 0.08);
+}
+
+.panter-vision-page__nav a.navy-card:not(.navy-pill):not(.navy-icon):not(.navy-hero):not(.navy-facts):not(.navy-readme):not(.navy-download):hover .navy-bloom {
+  opacity: 0.45;
+  background: radial-gradient(ellipse 80% 75% at 50% 50%, rgba(255, 255, 255, 0.55) 0%, transparent 72%);
+  filter: blur(10px);
+}
+
+.panter-vision-page__nav a.navy-card:hover .navy-sheen {
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.52),
+    inset 0 0 28px rgba(255, 255, 255, 0.12);
+}
+
+.panter-vision-page__nav .navy-pill,
+.panter-vision-page__nav .navy-hero,
+.panter-vision-page__nav .navy-facts,
+.panter-vision-page__nav .navy-readme,
+.panter-vision-page__nav .navy-download {
+  background: color-mix(in srgb, var(--edge) 34%, transparent);
+  box-shadow:
+    inset 0 0 14px 4px rgba(255, 255, 255, 0.16),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.22);
+}
+
+/* 应援法 · 外 #7EA4F2 / 心 #D687A1 */
+.panter-vision-page__nav .navy-hero {
+  --edge: #7ea4f2;
+  --core: #d687a1;
+}
+
+/* 行程 · 外 #7FB1E8 / 心 #C076A8 */
+.panter-vision-page__nav .navy-facts {
+  --edge: #7fb1e8;
+  --core: #c076a8;
+}
+
+/* 金色记忆球 · 外 #F3C5E2 / 心 #B988C7 */
+.panter-vision-page__nav .navy-readme {
+  --edge: #f3c5e2;
+  --core: #b988c7;
+}
+
+/* 全部入口 · #9BD1CC 薄荷径向 */
+.panter-vision-page__nav .navy-download {
+  --edge: #9bd1cc;
+  --core: #e8f7f4;
+  background: radial-gradient(
+    ellipse 96% 108% at 50% 38%,
+    color-mix(in srgb, #e8f7f4 55%, transparent) 0%,
+    color-mix(in srgb, #b8e4de 42%, transparent) 42%,
+    color-mix(in srgb, #9bd1cc 38%, transparent) 100%
+  );
+}
+
+.panter-vision-page__nav .navy-hero .navy-fill,
+.panter-vision-page__nav .navy-facts .navy-fill,
+.panter-vision-page__nav .navy-readme .navy-fill,
+.panter-vision-page__nav .navy-download .navy-fill {
+  inset: 10% 24% 8%;
+  border-radius: 999px;
+  background: radial-gradient(ellipse 50% 50% at 50% 50%, var(--core) 0%, var(--core) 38%, transparent 100%);
+  filter: blur(14px);
+}
+
+.panter-vision-page__nav .navy-hero .navy-bloom,
+.panter-vision-page__nav .navy-facts .navy-bloom,
+.panter-vision-page__nav .navy-readme .navy-bloom,
+.panter-vision-page__nav .navy-download .navy-bloom {
+  inset: 0;
+  background: radial-gradient(ellipse 55% 60% at 50% 52%, color-mix(in srgb, var(--core) 55%, transparent) 0%, transparent 78%);
+  filter: blur(18px);
+}
+
+.panter-vision-page__nav a.navy-pill:hover,
+.panter-vision-page__nav a.navy-hero:hover,
+.panter-vision-page__nav a.navy-facts:hover,
+.panter-vision-page__nav a.navy-readme:hover,
+.panter-vision-page__nav a.navy-download:hover {
+  background: color-mix(in srgb, var(--edge) 38%, transparent);
+  box-shadow:
+    inset 0 0 14px 4px rgba(255, 255, 255, 0.18),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.28),
+    0 0 22px color-mix(in srgb, var(--core) 55%, transparent),
+    0 0 58px color-mix(in srgb, var(--core) 32%, transparent),
+    0 0 92px color-mix(in srgb, var(--core) 18%, transparent);
+}
+
+.panter-vision-page__nav a.navy-pill:hover .navy-bloom,
+.panter-vision-page__nav a.navy-hero:hover .navy-bloom,
+.panter-vision-page__nav a.navy-facts:hover .navy-bloom,
+.panter-vision-page__nav a.navy-readme:hover .navy-bloom,
+.panter-vision-page__nav a.navy-download:hover .navy-bloom {
+  opacity: 1;
+}
+
+.panter-vision-page__nav .navy-icon {
+  background: rgba(255, 255, 255, 0.14);
+  box-shadow:
+    inset 0 0 10px 5px rgba(255, 255, 255, 0.22),
+    0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+.panter-vision-page__nav .navy-icon:hover {
+  background: rgba(255, 255, 255, 0.14);
+  box-shadow:
+    inset 0 0 10px 5px rgba(255, 255, 255, 0.24),
+    0 0 18px rgba(255, 255, 255, 0.26),
+    0 0 44px rgba(255, 255, 255, 0.14);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .panter-vision-page__nav.navy {
+    transition-duration: 0.15s;
+  }
+
+  .panter-vision-page__nav .navy-card,
+  .panter-vision-page__nav .navy-card .navy-bloom,
+  .panter-vision-page__nav .navy-card .navy-fill,
+  .panter-vision-page__nav .navy-card .navy-sheen {
+    transition-duration: 0.25s;
+    transition-timing-function: ease;
+  }
+}
+
+.panter-vision-page__nav .navy-frost {
+  opacity: 0.12;
+}
+
+.panter-vision-page__nav .navy-sheen {
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.38);
+}

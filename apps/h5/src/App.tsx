@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes } from 'react-router-dom';
+﻿import { Navigate, Route, Routes } from 'react-router-dom';
 import ScrollToTop from '@/components/ScrollToTop';
 import OfflineBadge from '@/components/OfflineBadge';
 import AppLayout from '@/layouts/AppLayout';
@@ -69,6 +69,15 @@ import NothWorkCasePage from '@/pages/noth/pages/NothWorkCasePage';
 import TheFutureInBlackPage from '@/pages/thefutureinblack/TheFutureInBlackPage';
 import TfibFormsPage from '@/pages/thefutureinblack/TfibFormsPage';
 import UicomsPage from '@/pages/uicoms/UicomsPage';
+import PanterVisionPage from '@/pages/panter-vision/PanterVisionPage';
+import PvCheerGuidePage from '@/pages/panter-vision/entries/pv-cheer/PvCheerGuidePage';
+import PvSchedulesPage from '@/pages/panter-vision/entries/pv-schedules/PvSchedulesPage';
+import PvDollsPage from '@/pages/panter-vision/entries/pv-dolls/PvDollsPage';
+import PvAlbumsPage from '@/pages/panter-vision/entries/pv-albums/PvAlbumsPage';
+import PvJarPage from '@/pages/panter-vision/entries/pv-jar/PvJarPage';
+import PvHelioLayout from '@/pages/panter-vision/entries/pv-variety/PvHelioLayout';
+import PvHelioPage from '@/pages/panter-vision/entries/pv-variety/PvHelioPage';
+import NavPage from '@/pages/nav/NavPage';
 
 const HAOQI_PROJECT_SLUGS = [
   'reunimos',
@@ -96,6 +105,17 @@ export default function App() {
       <Route path="/newnew" element={<Navigate to="/" replace />} />
       <Route path="/ui" element={<UiPage />} />
       <Route path="/uicoms" element={<UicomsPage />} />
+      <Route path="/panter-vision" element={<PanterVisionPage />} />
+      <Route path="/pv/cheer/:slug" element={<PvCheerGuidePage />} />
+      <Route path="/pv/schedules" element={<PvSchedulesPage />} />
+      <Route path="/pv/dolls" element={<PvDollsPage />} />
+      <Route path="/pv/albums" element={<PvAlbumsPage />} />
+      <Route path="/pv/jar" element={<PvJarPage />} />
+      <Route path="/pv/variety" element={<PvHelioLayout />}>
+        <Route index element={<PvHelioPage />} />
+        <Route path=":slug" element={<PvHelioPage />} />
+      </Route>
+      <Route path="/nav" element={<NavPage />} />
       <Route path="/people" element={<PeoplePage />} />
       <Route element={<NewNewLayout />}>
         <Route path="/dolls" element={<DollsPage />} />

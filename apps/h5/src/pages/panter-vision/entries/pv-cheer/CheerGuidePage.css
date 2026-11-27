@@ -1,0 +1,219 @@
+.cheer-page {
+  --cheer-bg: #f0f5f2;
+  --cheer-lyric: #050a07;
+  --cheer-cheer: #ff4d00;
+  --cheer-echo: #8a6a3a;
+  --cheer-muted: rgba(5, 10, 7, 0.42);
+
+  min-height: 100vh;
+  margin: 0 calc(50% - 50vw);
+  width: 100vw;
+  box-sizing: border-box;
+  padding: 20px 16px 120px;
+  background: var(--cheer-bg);
+  color: var(--cheer-lyric);
+}
+
+.cheer-page--empty {
+  display: grid;
+  place-content: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.cheer-empty {
+  margin: 0;
+  color: var(--cheer-muted);
+}
+
+.cheer-header {
+  max-width: 920px;
+  margin: 0 auto 28px;
+}
+
+.cheer-back {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: var(--cheer-muted);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.cheer-back:hover {
+  color: var(--cheer-lyric);
+}
+
+/*
+ * 挂在歌词页内的 fixed（非 portal）。
+ * 静止时父级清除 transform → 贴视口；返回时父级 transform → 随页滑走。
+ */
+.cheer-floatDock {
+  position: fixed;
+  right: max(16px, env(safe-area-inset-right));
+  bottom: max(72px, calc(20px + env(safe-area-inset-bottom) + 52px));
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.cheer-back--float {
+  position: fixed;
+  left: 50%;
+  bottom: max(20px, calc(12px + env(safe-area-inset-bottom)));
+  z-index: 50;
+  transform: translateX(-50%);
+  margin: 0;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(240, 245, 242, 0.92);
+  border: 1px solid rgba(5, 10, 7, 0.12);
+  color: var(--cheer-lyric);
+  box-shadow: 0 8px 24px rgba(5, 10, 7, 0.12);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+.cheer-back--float:hover {
+  color: var(--cheer-lyric);
+  background: #fff;
+}
+
+.cheer-title {
+  margin: 0;
+  font-size: clamp(22px, 5vw, 30px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  color: var(--cheer-lyric);
+}
+
+.cheer-credit {
+  margin: 8px 0 0;
+  font-size: 12px;
+  color: var(--cheer-muted);
+  letter-spacing: 0.02em;
+}
+
+.cheer-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.cheer-legend--float {
+  margin-top: 0;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  padding: 8px;
+  border-radius: 16px;
+  background: rgba(240, 245, 242, 0.92);
+  border: 1px solid rgba(5, 10, 7, 0.12);
+  box-shadow: 0 8px 24px rgba(5, 10, 7, 0.12);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+.cheer-legend__item {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(5, 10, 7, 0.12);
+}
+
+.cheer-legend__item--lyric {
+  color: var(--cheer-lyric);
+}
+
+.cheer-legend__item--cheer {
+  color: var(--cheer-cheer);
+  border-color: rgba(255, 77, 0, 0.35);
+}
+
+.cheer-legend__item--echo {
+  color: var(--cheer-echo);
+  border-color: rgba(138, 106, 58, 0.4);
+}
+
+.cheer-page--cyan,
+.cheer-page--pink,
+.cheer-page--red,
+.cheer-page--orange,
+.cheer-page--blue {
+  --cheer-cheer: #ff4d00;
+  background: var(--cheer-bg);
+}
+
+.cheer-page--cyan .cheer-legend__item--cheer,
+.cheer-page--pink .cheer-legend__item--cheer,
+.cheer-page--red .cheer-legend__item--cheer,
+.cheer-page--orange .cheer-legend__item--cheer,
+.cheer-page--blue .cheer-legend__item--cheer {
+  border-color: rgba(255, 77, 0, 0.35);
+}
+
+.cheer-columns {
+  max-width: 920px;
+  margin: 0 auto;
+  display: grid;
+  gap: 28px 40px;
+}
+
+.cheer-column {
+  display: grid;
+  gap: 2px;
+  align-content: start;
+}
+
+.cheer-line {
+  margin: 0;
+  font-size: clamp(14px, 3.4vw, 16px);
+  line-height: 1.55;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  word-break: keep-all;
+}
+
+.cheer-span--lyric {
+  color: var(--cheer-lyric);
+  font-weight: 800;
+}
+
+.cheer-span--cheer {
+  color: var(--cheer-cheer);
+  font-weight: 700;
+}
+
+.cheer-span--echo {
+  color: var(--cheer-echo);
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  .cheer-page {
+    padding: 28px 28px 132px;
+  }
+
+  .cheer-floatDock {
+    right: 28px;
+    bottom: max(80px, calc(28px + env(safe-area-inset-bottom) + 52px));
+  }
+
+  .cheer-back--float {
+    bottom: max(28px, calc(20px + env(safe-area-inset-bottom)));
+  }
+
+  .cheer-columns {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cheer-line {
+    line-height: 1.6;
+  }
+}

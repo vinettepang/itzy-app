@@ -1,4 +1,4 @@
-import './vite-node-polyfills';
+﻿import './vite-node-polyfills';
 import path from 'node:path';
 import type { Connect } from 'vite';
 import { defineConfig } from 'vite';
@@ -35,7 +35,7 @@ function applyHaoqiSpaFallback(url: string) {
   return null;
 }
 
-/** public/haoqi 与 React 路由 /haoqi 冲突时，将页面请求回退到 SPA */
+/** public/haoqi 涓?React 璺敱 /haoqi 鍐茬獊鏃讹紝灏嗛〉闈㈣姹傚洖閫€鍒?SPA */
 function haoqiSpaFallback(): import('vite').Plugin {
   const middleware = (req: Connect.IncomingMessage, _res: unknown, next: () => void) => {
     const url = req.url ?? '';
@@ -68,7 +68,7 @@ function applyFluoroSpaFallback(url: string) {
   return null;
 }
 
-/** public/fluoro 与 React 路由 /fluoro 冲突时，将页面请求回退到 SPA（静态资源仍直出） */
+/** public/fluoro 涓?React 璺敱 /fluoro 鍐茬獊鏃讹紝灏嗛〉闈㈣姹傚洖閫€鍒?SPA锛堥潤鎬佽祫婧愪粛鐩村嚭锛?*/
 function fluoroSpaFallback(): import('vite').Plugin {
   const middleware = (req: Connect.IncomingMessage, _res: unknown, next: () => void) => {
     const url = req.url ?? '';
@@ -101,7 +101,7 @@ function applyFlustudioSpaFallback(url: string) {
   return null;
 }
 
-/** public/flustudio 与 React 路由 /flustudio 冲突时，将页面请求回退到 SPA（breathe 序列帧仍直出） */
+/** public/flustudio 涓?React 璺敱 /flustudio 鍐茬獊鏃讹紝灏嗛〉闈㈣姹傚洖閫€鍒?SPA锛坆reathe 搴忓垪甯т粛鐩村嚭锛?*/
 function flustudioSpaFallback(): import('vite').Plugin {
   const middleware = (req: Connect.IncomingMessage, _res: unknown, next: () => void) => {
     const url = req.url ?? '';
@@ -131,10 +131,12 @@ function applyHeliotelesSpaFallback(url: string) {
   const pathname = url.split('?')[0] ?? '';
   if (pathname === '/helioteles' || pathname === '/helioteles/') return '/index.html';
   if (pathname.startsWith('/helioteles/') && !isHeliotelesStaticAsset(url)) return '/index.html';
+  if (pathname === '/pv/variety' || pathname === '/pv/variety/') return '/index.html';
+  if (pathname.startsWith('/pv/variety/')) return '/index.html';
   return null;
 }
 
-/** public/helioteles 与 React 路由 /helioteles 冲突时，将页面请求回退到 SPA（字体/原始HTML/媒体仍直出） */
+/** public/helioteles 涓?React 璺敱 /helioteles 鍐茬獊鏃讹紝灏嗛〉闈㈣姹傚洖閫€鍒?SPA锛堝瓧浣?鍘熷HTML/濯掍綋浠嶇洿鍑猴級 */
 function heliotelesSpaFallback(): import('vite').Plugin {
   const middleware = (req: Connect.IncomingMessage, _res: unknown, next: () => void) => {
     const url = req.url ?? '';
@@ -162,16 +164,16 @@ export default defineConfig({
     flustudioSpaFallback(),
     heliotelesSpaFallback(),
     VitePWA({
-      // 自动注册 SW；新版本后台静默激活，无需用户手动刷新
+      // 鑷姩娉ㄥ唽 SW锛涙柊鐗堟湰鍚庡彴闈欓粯婵€娲伙紝鏃犻渶鐢ㄦ埛鎵嬪姩鍒锋柊
       registerType: 'autoUpdate',
-      // 由插件自动注入注册脚本到 index.html
+      // 鐢辨彃浠惰嚜鍔ㄦ敞鍏ユ敞鍐岃剼鏈埌 index.html
       injectRegister: 'auto',
-      // GitHub Pages 子路径部署；本地开发 base 为 '/'
+      // GitHub Pages 瀛愯矾寰勯儴缃诧紱鏈湴寮€鍙?base 涓?'/'
       base: process.env.PAGES_BASE || '/',
       manifest: {
         name: 'ITZY App',
         short_name: 'ITZY',
-        description: 'ITZY 粉丝应援 App · 歌单 / 歌词 / 应援法',
+        description: 'ITZY 绮変笣搴旀彺 App 路 姝屽崟 / 姝岃瘝 / 搴旀彺娉?,
         theme_color: '#0e0e0e',
         background_color: '#0e0e0e',
         display: 'standalone',
@@ -187,13 +189,9 @@ export default defineConfig({
         ],
       },
       workbox: {
-        // 预缓存构建产物（脚本/样式/页面壳/SVG）——歌词数据已打进 js 包，一并缓存。
-        // 只缓存文本/UI 所需资源（js/css/html/svg），不缓存 png/jpg/webp/mp4 等大媒体，
-        // 避免首次访问下载数十 MB；歌单/歌词页均为文本+CSS，离线完全可用。
-        globPatterns: ['**/*.{js,css,html,svg}'],
-        // SPA 离线导航回退：断网时任意路径都返回缓存的首页壳再由前端路由渲染
-        navigateFallback: `${process.env.PAGES_BASE || '/'}index.html`,
-        // 这些真实静态资源/代理路径不要走 SPA 回退
+        // 棰勭紦瀛樻瀯寤轰骇鐗╋紙鑴氭湰/鏍峰紡/椤甸潰澹?SVG锛夆€斺€旀瓕璇嶆暟鎹凡鎵撹繘 js 鍖咃紝涓€骞剁紦瀛樸€?        // 鍙紦瀛樻枃鏈?UI 鎵€闇€璧勬簮锛坖s/css/html/svg锛夛紝涓嶇紦瀛?png/jpg/webp/mp4 绛夊ぇ濯掍綋锛?        // 閬垮厤棣栨璁块棶涓嬭浇鏁板崄 MB锛涙瓕鍗?姝岃瘝椤靛潎涓烘枃鏈?CSS锛岀绾垮畬鍏ㄥ彲鐢ㄣ€?        globPatterns: ['**/*.{js,css,html,svg}'],
+        // SPA 绂荤嚎瀵艰埅鍥為€€锛氭柇缃戞椂浠绘剰璺緞閮借繑鍥炵紦瀛樼殑棣栭〉澹冲啀鐢卞墠绔矾鐢辨覆鏌?        navigateFallback: `${process.env.PAGES_BASE || '/'}index.html`,
+        // 杩欎簺鐪熷疄闈欐€佽祫婧?浠ｇ悊璺緞涓嶈璧?SPA 鍥為€€
         navigateFallbackDenylist: [
           /^\/haoqi-static\//,
           /^\/unseen-proxy\//,
@@ -204,13 +202,13 @@ export default defineConfig({
         clientsClaim: true,
         skipWaiting: true,
       },
-      // 开发环境不启用 SW，避免干扰 HMR
+      // 寮€鍙戠幆澧冧笉鍚敤 SW锛岄伩鍏嶅共鎵?HMR
       devOptions: {
         enabled: false,
       },
     }),
   ],
-  // GitHub Pages 项目站点部署在 /itzy-app/ 子路径下；本地开发不设置时默认 '/'
+  // GitHub Pages 椤圭洰绔欑偣閮ㄧ讲鍦?/itzy-app/ 瀛愯矾寰勪笅锛涙湰鍦板紑鍙戜笉璁剧疆鏃堕粯璁?'/'
   base: process.env.PAGES_BASE || '/',
   resolve: {
     alias: { '@': path.resolve(__dirname, 'src') },
@@ -219,7 +217,7 @@ export default defineConfig({
     port: 3002,
     host: true,
     proxy: {
-      // World / project media → production CDN without browser CORS (WebGL textures)
+      // World / project media 鈫?production CDN without browser CORS (WebGL textures)
       '/unseen-proxy': {
         target: 'https://unseen.co',
         changeOrigin: true,
