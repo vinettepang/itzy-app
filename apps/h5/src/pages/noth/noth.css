@@ -1,16 +1,47 @@
-.noth-shell--redirect,
-.noth-shell--hint {
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  padding: 24px;
-  background: #fff;
-  color: #111;
-  font-family: system-ui, sans-serif;
-  text-align: center;
+/* 与主站 index.css 隔离 */
+html.noth-html {
+  color-scheme: light;
+  background: #fff !important;
+  background-image: none !important;
 }
 
-.noth-shell--hint a {
+html.noth-html body.noth-body {
+  margin: 0;
+  background: #fff !important;
+  color: #000 !important;
+  font-family: Ppneuemontreal, 'PP Neue Montreal', Arial, sans-serif !important;
+}
+
+html.noth-html #root {
+  max-width: none !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: left !important;
+  background: transparent !important;
+}
+
+html.noth-html .noth-root {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+html.noth-html .noth-root .page-wrapper {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+html.noth-html .noth-root a {
   color: inherit;
-  text-decoration: underline;
+  text-decoration: none;
+}
+
+html.noth-html .noth-root .nav-logo-img {
+  height: 1.75rem;
+  width: auto;
+}
+
+html.noth-html .noth-root .nav-links-w {
+  display: flex;
+  gap: 1.5rem;
 }

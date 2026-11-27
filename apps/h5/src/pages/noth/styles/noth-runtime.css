@@ -1,0 +1,26 @@
+/* 由原站 main 包注入样式提取，供 React 动效初始状态 */
+[line],
+[letter],
+[opacity] {
+  opacity: 0;
+}
+
+[scale] {
+  transform: scale(0);
+  transform-origin: 50% 50%;
+}
+
+.line-child,
+.letter-child {
+  padding-bottom: 0.15em;
+}
+
+.line-mask-child-mask,
+.letter-mask-child-mask {
+  margin-bottom: -0.15em;
+}
+
+.section-w {
+  position: relative;
+  overflow: hidden;
+}

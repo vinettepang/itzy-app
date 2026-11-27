@@ -61,7 +61,11 @@ import HelioPage from '@/pages/helioteles/HelioPage';
 import FluoroPage from '@/pages/fluoro/FluoroPage';
 import FluStudioPage from '@/pages/flustudio/FluStudioPage';
 import TraumclubPage from '@/pages/traumclub/TraumclubPage';
-import NothPage from '@/pages/noth/NothPage';
+import NothLayout from '@/pages/noth/NothLayout';
+import NothHomePage from '@/pages/noth/pages/NothHomePage';
+import NothWorksPage from '@/pages/noth/pages/NothWorksPage';
+import NothPlaceholderPage from '@/pages/noth/pages/NothPlaceholderPage';
+import NothWorkCasePage from '@/pages/noth/pages/NothWorkCasePage';
 import TheFutureInBlackPage from '@/pages/thefutureinblack/TheFutureInBlackPage';
 import TfibFormsPage from '@/pages/thefutureinblack/TfibFormsPage';
 import UicomsPage from '@/pages/uicoms/UicomsPage';
@@ -145,7 +149,13 @@ export default function App() {
         <Route path=":slug" element={<HelioPage />} />
       </Route>
       <Route path="/traumclub" element={<TraumclubPage />} />
-      <Route path="/noth" element={<NothPage />} />
+      <Route path="/noth" element={<NothLayout />}>
+        <Route index element={<NothHomePage />} />
+        <Route path="works" element={<NothWorksPage />} />
+        <Route path="studio" element={<NothPlaceholderPage title="Studio" />} />
+        <Route path="contact" element={<NothPlaceholderPage title="Contact" />} />
+        <Route path="works/:slug" element={<NothWorkCasePage />} />
+      </Route>
       <Route path="/thefutureinblack" element={<TheFutureInBlackPage />} />
       <Route path="/thefutureinblack/forms" element={<TfibFormsPage />} />
 
