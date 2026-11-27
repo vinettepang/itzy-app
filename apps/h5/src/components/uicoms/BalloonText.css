@@ -1,0 +1,18 @@
+.uicom-balloon-text {
+  position: relative;
+  width: 100%;
+  height: min(60vh, 560px);
+  background: #000;
+  overflow: hidden;
+}
+
+.uicom-balloon-text__canvas {
+  position: absolute;
+  inset: 0;
+}
+
+.uicom-balloon-text__canvas canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}

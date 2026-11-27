@@ -1,0 +1,358 @@
+.mis {
+  --mis-ink: #161616;
+  --mis-muted: #6b6b6b;
+  --mis-line: rgba(22, 22, 22, 0.55);
+  position: relative;
+  min-height: 100vh;
+  box-sizing: border-box;
+  overflow: hidden;
+  color: var(--mis-ink);
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background: linear-gradient(180deg, #e9e9e9 0%, #e9e9e9 72%, #e2e2e2 100%);
+}
+
+.mis a.default-link {
+  border: 0;
+  color: inherit;
+  text-decoration: none;
+}
+
+.mis button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.mis__back {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 20;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.mis__head {
+  position: absolute;
+  top: 28px;
+  left: 50%;
+  z-index: 3;
+  transform: translateX(-50%);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.mis__head span {
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  color: var(--mis-muted);
+}
+
+.mis__head h1 {
+  margin: 4px 0 0;
+  font-size: clamp(16px, 1.6vw, 22px);
+  font-weight: 400;
+  letter-spacing: 0.32em;
+}
+
+/* 左侧编号索引：短横线 + 序号 + 标签 */
+.mis__index {
+  position: absolute;
+  top: 50%;
+  left: clamp(16px, 2.4vw, 36px);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(48px, 11vh, 110px);
+  transform: translateY(-50%);
+}
+
+.mis .mis__index-item {
+  display: grid;
+  grid-template-columns: 14px auto;
+  grid-template-rows: auto auto;
+  column-gap: 4px;
+  align-items: center;
+  text-align: left;
+  font-size: 9px;
+  letter-spacing: 0.04em;
+  opacity: 0.55;
+  transition: opacity 0.25s ease;
+}
+
+.mis__index-item i {
+  grid-row: 1 / 3;
+  width: 12px;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.25s ease;
+}
+
+.mis__index-item b {
+  font-weight: 400;
+  font-size: 7px;
+}
+
+.mis__index-item span {
+  grid-column: 2;
+}
+
+.mis__index-item:hover,
+.mis__index-item.is-active {
+  opacity: 1;
+}
+
+.mis__index-item.is-active i {
+  width: 14px;
+  height: 1.5px;
+}
+
+/* 视频只取中间一段，避开原片自带的左侧标注和右下角卡片 */
+.mis__stage {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mis__video {
+  position: relative;
+  width: min(64vw, calc(86vh * 1.1));
+  aspect-ratio: 1.1;
+  overflow: hidden;
+  cursor: grab;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-mask-image: radial-gradient(ellipse 58% 62% at 50% 50%, #000 70%, transparent 100%);
+  mask-image: radial-gradient(ellipse 58% 62% at 50% 50%, #000 70%, transparent 100%);
+}
+
+.mis__video.is-dragging {
+  cursor: grabbing;
+}
+
+.mis__video video {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  width: auto;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.mis__hint {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-top: 4px;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--mis-muted);
+}
+
+.mis .mis__hint button {
+  padding: 3px 8px;
+  border: 1px solid var(--mis-line);
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.mis__copy {
+  position: absolute;
+  left: clamp(84px, 9vw, 140px);
+  bottom: clamp(24px, 5vh, 48px);
+  z-index: 3;
+  max-width: 260px;
+  animation: mis-in 0.5s ease both;
+}
+
+.mis__copy-num {
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--mis-muted);
+}
+
+.mis__copy h2 {
+  margin: 8px 0 6px;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.mis__copy p {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.5;
+  color: #3a3a3a;
+}
+
+.mis__palette {
+  display: flex;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.mis__palette span {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12);
+}
+
+.mis__items {
+  position: absolute;
+  top: 28px;
+  right: clamp(16px, 2.4vw, 36px);
+  z-index: 3;
+  width: 190px;
+  font-size: 10px;
+}
+
+.mis__items h3 {
+  margin: 0 0 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--mis-line);
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.mis__items em {
+  font-style: normal;
+  color: var(--mis-muted);
+}
+
+.mis__items ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mis__items li {
+  display: grid;
+  grid-template-columns: 10px 1fr auto;
+  gap: 8px;
+  align-items: center;
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(22, 22, 22, 0.1);
+}
+
+.mis__items li i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.18);
+}
+
+/* 右下角信息卡，对应原片里的小卡片 */
+.mis-card {
+  position: absolute;
+  right: clamp(16px, 2.4vw, 36px);
+  bottom: clamp(16px, 3vh, 32px);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 150px;
+  padding: 12px 10px;
+  border: 1px solid var(--mis-line);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.mis-card p {
+  margin: 0;
+  font-size: 7.5px;
+  letter-spacing: 0.08em;
+  line-height: 1.35;
+}
+
+.mis-card__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 9px;
+}
+
+.mis-card__globes {
+  width: 60px;
+  height: 20px;
+}
+
+@keyframes mis-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+@media (max-width: 760px) {
+  .mis {
+    display: flex;
+    flex-direction: column;
+    overflow: visible;
+    padding: 40px 16px 24px;
+  }
+
+  .mis__head {
+    position: relative;
+    top: auto;
+    left: auto;
+    order: -2;
+    margin-bottom: 28px;
+    transform: none;
+  }
+
+  .mis__head h1 {
+    font-size: 15px;
+    letter-spacing: 0.24em;
+  }
+
+  .mis__stage {
+    position: relative;
+    inset: auto;
+  }
+
+  .mis__video {
+    width: 100%;
+  }
+
+  .mis__index {
+    position: relative;
+    top: auto;
+    left: auto;
+    order: -1;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 8px;
+    transform: none;
+  }
+
+  .mis__copy,
+  .mis__items,
+  .mis-card {
+    position: relative;
+    inset: auto;
+    margin-top: 24px;
+    max-width: none;
+    width: auto;
+  }
+
+  .mis-card {
+    align-self: flex-end;
+    width: 150px;
+  }
+}

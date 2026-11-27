@@ -1,0 +1,50 @@
+.uicom-glass-donut {
+  position: relative;
+  width: 100%;
+  min-height: min(78vh, 720px);
+  background: radial-gradient(ellipse 90% 70% at 50% 40%, #1a1030 0%, #050508 55%, #000 100%);
+  overflow: hidden;
+}
+
+.uicom-glass-donut__canvas {
+  position: absolute;
+  inset: 0;
+  touch-action: none;
+}
+
+.uicom-glass-donut__canvas canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.uicom-glass-donut__overlay {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: inherit;
+  padding: 2.5rem 1.25rem 2rem;
+  pointer-events: none;
+  text-align: center;
+}
+
+.uicom-glass-donut__title {
+  margin: 0;
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #f8f4ff;
+  text-shadow: 0 0 32px rgba(180, 120, 255, 0.45);
+}
+
+.uicom-glass-donut__subtitle {
+  margin: 0.65rem 0 0;
+  max-width: 30rem;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.5);
+}

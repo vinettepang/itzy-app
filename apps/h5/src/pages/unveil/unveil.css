@@ -1,0 +1,996 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@property --uv-dot {
+  syntax: '<length>';
+  inherits: false;
+  initial-value: 7px;
+}
+
+.uv {
+  --uv-ink: #111;
+  --uv-muted: #9a9a9a;
+  --uv-serif: 'Instrument Serif', 'Times New Roman', serif;
+  --uv-mono: 'JetBrains Mono', ui-monospace, monospace;
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background: #f6f6f4;
+  color: var(--uv-ink);
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+.uv a.default-link {
+  border: 0;
+  color: inherit;
+  text-decoration: none;
+}
+
+.uv button {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* 左上角玻璃标签 */
+.uv-tabs {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 20;
+  display: flex;
+  gap: 4px;
+}
+
+.uv .uv-tabs button {
+  min-width: 74px;
+  padding: 9px 14px 18px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 3px;
+  background: rgba(240, 240, 238, 0.72);
+  backdrop-filter: blur(12px);
+  color: var(--uv-muted);
+  font-size: 8px;
+  letter-spacing: 0.04em;
+  text-align: left;
+  text-transform: uppercase;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.uv .uv-tabs button:first-child {
+  min-width: 128px;
+}
+
+.uv .uv-tabs button.is-on,
+.uv .uv-tabs button:hover {
+  color: var(--uv-ink);
+  background: rgba(255, 255, 255, 0.86);
+}
+
+.uv-logo {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 20;
+  width: 30px;
+  height: 30px;
+}
+
+.uv-logo svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* —— 项目：斜向 3D 堆叠 —— */
+.uv-stage {
+  position: absolute;
+  inset: 0;
+  perspective: 2200px;
+  perspective-origin: 30% -60%;
+}
+
+.uv-stack {
+  position: absolute;
+  left: 40%;
+  top: 64%;
+  width: 0;
+  height: 0;
+  transform-style: preserve-3d;
+  transition: opacity 0.5s ease, filter 0.5s ease;
+}
+
+.uv.is-focus .uv-stack {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.uv-card {
+  position: absolute;
+  top: calc(var(--uv-card) * -0.31);
+  left: calc(var(--uv-card) * -0.5);
+  width: var(--uv-card);
+  aspect-ratio: 16 / 10;
+  --uv-card: clamp(220px, 28vw, 540px);
+  --uv-thick: calc(var(--uv-card) * 0.034);
+  transform-origin: 50% 50%;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* 透明度和灰度放到各个面上：加在 3D 容器上会把厚度压扁 */
+.uv-card__body {
+  position: absolute;
+  inset: 0;
+  display: block;
+  transform-style: preserve-3d;
+}
+
+.uv-card__face,
+.uv-card__edge {
+  position: absolute;
+  display: block;
+  opacity: var(--fade, 1);
+  filter: var(--tone, none);
+}
+
+.uv-card__face {
+  inset: 0;
+}
+
+.uv-card__face::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  transition: box-shadow 0.6s cubic-bezier(0.33, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+/* 悬停特效：外描边 + 投影加深抬起 + 一道斜向高光扫过 + 侧边提亮 */
+.uv .uv-card.is-hot .uv-card__face::after {
+  box-shadow:
+    0 0 0 1.5px var(--uv-ink),
+    0 0 0 6px rgba(255, 255, 255, 0.55);
+}
+
+.uv-card__face .uv-site {
+  transition: box-shadow 0.7s cubic-bezier(0.33, 0, 0.2, 1);
+}
+
+.uv-card.is-hot .uv-card__face .uv-site {
+  box-shadow:
+    0 46px 80px rgba(0, 0, 0, 0.26),
+    0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.uv-card__face::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(
+    105deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.08) 40%,
+    rgba(255, 255, 255, 0.55) 48%,
+    rgba(255, 255, 255, 0.08) 56%,
+    transparent 66%
+  );
+  background-size: 260% 100%;
+  background-position: 140% 0;
+  mix-blend-mode: screen;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.uv-card.is-hot .uv-card__face::before {
+  animation: uv-shine 0.9s cubic-bezier(0.3, 0.6, 0.3, 1) both;
+}
+
+@keyframes uv-shine {
+  0% {
+    opacity: 1;
+    background-position: 140% 0;
+  }
+  100% {
+    opacity: 1;
+    background-position: -40% 0;
+  }
+}
+
+.uv-card__edge {
+  transition: filter 0.6s cubic-bezier(0.33, 0, 0.2, 1);
+}
+
+.uv-card.is-hot .uv-card__edge {
+  filter: brightness(1.12);
+}
+
+.uv-card__edge--top {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--uv-thick);
+  transform-origin: 50% 0;
+  transform: rotateX(-90deg);
+  background: linear-gradient(90deg, #dcdcd8, #f4f4f1 60%, #e4e4e0);
+  box-shadow: inset 0 0 0 0.5px rgba(0, 0, 0, 0.1);
+}
+
+.uv-card__edge--right {
+  top: 0;
+  left: 100%;
+  width: var(--uv-thick);
+  height: 100%;
+  transform-origin: 0 50%;
+  transform: rotateY(90deg);
+  background: repeating-linear-gradient(90deg, #b9b9b4 0 1px, #d2d2cd 1px 3px);
+  box-shadow: inset 0 0 0 0.5px rgba(0, 0, 0, 0.12);
+}
+
+/* 网站截图卡片 */
+.uv-site {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.14);
+  text-align: left;
+}
+
+.uv-site__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.uv-site--panel .uv-site__paper {
+  position: absolute;
+  top: 12%;
+  left: 36%;
+  width: 28%;
+  height: 76%;
+  padding: 4% 3%;
+  box-sizing: border-box;
+  background: #fff;
+  color: #111;
+}
+
+.uv-site__paper h3 {
+  margin: 0;
+  font-family: var(--uv-serif);
+  font-size: clamp(16px, 2.2vw, 32px);
+  font-weight: 400;
+  line-height: 0.95;
+}
+
+.uv-site__paper span {
+  display: block;
+  margin-top: 10%;
+  font-family: var(--uv-mono);
+  font-size: clamp(6px, 0.6vw, 9px);
+  color: #666;
+}
+
+.uv-site--dark {
+  background: #0c0c12;
+  color: #cfd3ff;
+}
+
+.uv-site__bar {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  height: 9%;
+  padding: 0 3%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: var(--uv-mono);
+  font-size: clamp(6px, 0.55vw, 9px);
+}
+
+.uv-site__bar i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.uv-site__bar span {
+  margin-left: 8px;
+  opacity: 0.6;
+}
+
+.uv-site__split {
+  display: flex;
+  gap: 5%;
+  height: 91%;
+  padding: 5%;
+  box-sizing: border-box;
+}
+
+.uv-site__thumb {
+  flex: none;
+  width: 44%;
+  height: 100%;
+}
+
+.uv-site__split ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--uv-mono);
+  font-size: clamp(6px, 0.62vw, 10px);
+  line-height: 1.9;
+}
+
+.uv-site__split li:first-child {
+  color: #5a6bff;
+}
+
+.uv-site--poster h3 {
+  position: absolute;
+  left: 5%;
+  bottom: 10%;
+  margin: 0;
+  color: #fff;
+  font-family: var(--uv-serif);
+  font-size: clamp(22px, 3.6vw, 56px);
+  font-weight: 400;
+  line-height: 0.9;
+  mix-blend-mode: difference;
+}
+
+.uv-site--poster span {
+  position: absolute;
+  top: 6%;
+  right: 5%;
+  color: #fff;
+  font-family: var(--uv-mono);
+  font-size: clamp(6px, 0.6vw, 9px);
+  mix-blend-mode: difference;
+}
+
+/* —— 单张聚焦 + 转场特效 —— */
+.uv-focus {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: grid;
+  place-items: center;
+}
+
+/* 宽度需与 UnveilPage.tsx 中 frameSize() 一致，卡片飞入的终点靠它计算 */
+.uv-focus__frame {
+  position: relative;
+  width: min(44vh, 34vw);
+  aspect-ratio: 1;
+  transform: perspective(1100px) rotateY(calc(var(--tilt-x, 0) * 1deg)) rotateX(calc(var(--tilt-y, 0) * 1deg));
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.uv-focus.is-big .uv-focus__frame {
+  width: min(70vh, 46vw);
+}
+
+/* 放大切换：先提亮褪成白色离场 */
+.uv-focus__frame.is-wash-out {
+  animation: uv-wash 0.36s ease-in forwards;
+}
+
+@keyframes uv-wash {
+  to {
+    opacity: 0;
+    filter: brightness(1.9) saturate(0.3) contrast(0.7);
+  }
+}
+
+/*
+ * 3D 轮播（--dir: 1 下一张 / -1 上一张，方向镜像）：
+ * 旧专辑先向反方向蓄力小移，再转成近乎侧面甩出屏幕；
+ * 新专辑从另一侧带着偏转和轻微倾斜滑入，过冲一点后摆正
+ */
+.uv-fx--slide-out {
+  animation: uv-slide-out 0.62s cubic-bezier(0.5, 0, 0.75, 0.2) both;
+}
+
+@keyframes uv-slide-out {
+  30% {
+    transform: perspective(1200px) translateX(calc(var(--dir, 1) * -9%)) rotateY(calc(var(--dir, 1) * 6deg));
+  }
+  to {
+    transform: perspective(1200px) translateX(calc(var(--dir, 1) * -80vw)) rotateY(calc(var(--dir, 1) * 70deg))
+      scale(0.9);
+  }
+}
+
+.uv-focus__current.is-in-slide {
+  animation: uv-slide-in 0.62s cubic-bezier(0.2, 0.7, 0.25, 1) 0.3s both;
+}
+
+@keyframes uv-slide-in {
+  from {
+    transform: perspective(1200px) translateX(calc(var(--dir, 1) * 62vw)) rotateY(calc(var(--dir, 1) * 28deg))
+      rotateZ(calc(var(--dir, 1) * 5deg)) scale(0.94);
+  }
+  65% {
+    transform: perspective(1200px) translateX(calc(var(--dir, 1) * -1.5%)) rotateY(calc(var(--dir, 1) * -3deg))
+      rotateZ(calc(var(--dir, 1) * -0.6deg));
+  }
+}
+
+.uv-fx__cover {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.uv-focus__current {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+/* 飞到中央的卡片是 16:10，封面从同样的横条展开成正方形 */
+.uv-focus__current.is-open {
+  animation: uv-open 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@keyframes uv-open {
+  from {
+    clip-path: inset(18.75% 0);
+    opacity: 0;
+  }
+  35% {
+    opacity: 1;
+  }
+  to {
+    clip-path: inset(0);
+  }
+}
+
+/* 放射状运动模糊：多层放大副本向中心收拢 */
+.uv-zoomblur {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.uv-zoomblur__copy {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  animation: uv-zoomblur 1s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@keyframes uv-zoomblur {
+  from {
+    opacity: 0.26;
+    transform: scale(calc(1 + var(--k) * 0.09));
+  }
+  to {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+.uv-fx {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.uv-fx--zoom-out {
+  animation: uv-zoom-out 0.8s cubic-bezier(0.5, 0, 0.8, 0.4) both;
+}
+
+@keyframes uv-zoom-out {
+  to {
+    transform: scale(2.1);
+    filter: blur(18px);
+    opacity: 0;
+  }
+}
+
+.uv-focus__current.is-in-zoom {
+  animation: uv-zoom-in 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@keyframes uv-zoom-in {
+  from {
+    transform: scale(0.7);
+    filter: blur(10px);
+  }
+}
+
+/* 玻璃碎裂：先出现裂纹，再碎片四散下落 */
+.uv-shard {
+  position: absolute;
+  inset: 0;
+  animation: uv-shard 0.95s cubic-bezier(0.4, 0, 0.9, 0.5) var(--delay) both;
+}
+
+@keyframes uv-shard {
+  to {
+    transform: translate(var(--dx), var(--dy)) rotate(var(--rot)) scale(0.92);
+    opacity: 0;
+  }
+}
+
+.uv-cracks {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  animation: uv-cracks 0.5s ease both;
+}
+
+.uv-cracks polygon {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.95);
+  stroke-width: 0.35;
+  vector-effect: non-scaling-stroke;
+}
+
+@keyframes uv-cracks {
+  0% {
+    opacity: 0;
+  }
+  15%,
+  55% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.uv-focus__current.is-in-shatter {
+  animation: uv-reveal 0.6s ease 0.2s both;
+}
+
+@keyframes uv-reveal {
+  from {
+    filter: brightness(1.4) blur(3px);
+  }
+}
+
+/* 虚化溶解 */
+.uv-fx--dissolve {
+  animation: uv-dissolve 1s ease both;
+}
+
+@keyframes uv-dissolve {
+  to {
+    transform: scale(1.08);
+    filter: blur(26px);
+    opacity: 0;
+  }
+}
+
+.uv-focus__current.is-in-dissolve {
+  animation: uv-undissolve 1s ease both;
+}
+
+@keyframes uv-undissolve {
+  from {
+    filter: blur(26px);
+    opacity: 0;
+  }
+}
+
+/* 半调网点溶解：网点逐渐缩小消失 */
+.uv-fx--dither {
+  -webkit-mask-image: radial-gradient(circle, #000 var(--uv-dot), transparent calc(var(--uv-dot) + 0.6px));
+  mask-image: radial-gradient(circle, #000 var(--uv-dot), transparent calc(var(--uv-dot) + 0.6px));
+  -webkit-mask-size: 10px 10px;
+  mask-size: 10px 10px;
+  filter: grayscale(1) contrast(1.6);
+  animation: uv-dither 1.1s ease-in both;
+}
+
+@keyframes uv-dither {
+  from {
+    --uv-dot: 7.5px;
+  }
+  to {
+    --uv-dot: 0px;
+  }
+}
+
+.uv-focus__current.is-in-dither {
+  animation: uv-undither 1.1s ease both;
+}
+
+@keyframes uv-undither {
+  from {
+    filter: grayscale(1) contrast(1.4);
+  }
+}
+
+.uv-focus__meta {
+  position: absolute;
+  left: 22px;
+  bottom: 64px;
+  width: min(260px, 30vw);
+}
+
+.uv-focus__meta > span {
+  font-family: var(--uv-mono);
+  color: var(--uv-muted);
+}
+
+.uv .uv-focus__meta h2 {
+  margin: 4px 0;
+  color: var(--uv-ink);
+  font-family: var(--uv-serif);
+  font-size: clamp(26px, 3vw, 44px);
+  font-weight: 400;
+  line-height: 0.95;
+}
+
+.uv-focus__meta p {
+  margin: 0 0 10px;
+  color: var(--uv-muted);
+}
+
+.uv-focus__meta ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--uv-mono);
+  font-size: 9.5px;
+  line-height: 1.7;
+  color: #555;
+}
+
+.uv-focus__meta li.is-title {
+  color: var(--uv-ink);
+}
+
+.uv-focus__meta li.is-title::before {
+  content: '→ ';
+}
+
+.uv-focus__nav {
+  position: absolute;
+  right: 22px;
+  bottom: 64px;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  font-family: var(--uv-mono);
+  text-transform: uppercase;
+}
+
+.uv-focus__count {
+  min-width: 54px;
+  color: var(--uv-ink);
+  text-align: center;
+}
+
+.uv .uv-focus__step {
+  width: 22px;
+  height: 22px;
+  line-height: 1;
+}
+
+.uv .uv-focus__step:hover {
+  transform: translateX(var(--nudge, 0));
+}
+
+.uv .uv-focus__step[aria-label='previous'] {
+  --nudge: -2px;
+}
+
+.uv .uv-focus__step[aria-label='next'] {
+  --nudge: 2px;
+}
+
+.uv .uv-focus__expand {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.05);
+  line-height: 1;
+  transition: background 0.2s ease;
+}
+
+.uv .uv-focus__expand svg {
+  width: 12px;
+  height: 12px;
+}
+
+.uv .uv-focus__expand:hover,
+.uv .uv-focus__expand.is-on {
+  background: var(--uv-ink);
+  color: #fff;
+}
+
+.uv .uv-focus__close {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  margin-left: 10px;
+  padding: 5px 12px 5px 10px;
+  border: 1px solid var(--uv-ink);
+  border-radius: 999px;
+  line-height: 1;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.uv .uv-focus__close svg {
+  width: 9px;
+  height: 9px;
+}
+
+.uv .uv-focus__close:hover {
+  background: var(--uv-ink);
+  color: #fff;
+}
+
+/* —— 工作室 —— */
+.uv-studio {
+  position: absolute;
+  inset: 0;
+  overflow: auto;
+}
+
+.uv-halftone {
+  position: absolute;
+  top: 14px;
+  right: 54px;
+  width: min(28vw, 380px);
+  aspect-ratio: 3 / 2;
+}
+
+.uv-halftone canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.uv-halftone video {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.uv-studio__copy {
+  position: absolute;
+  left: 22px;
+  top: 46%;
+  width: min(330px, 80vw);
+  padding-bottom: 80px;
+}
+
+.uv-studio__intro {
+  margin: 0 0 26px;
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.uv-studio__copy dl {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 18px 8px;
+  margin: 0;
+}
+
+.uv-studio__copy dt {
+  color: #c4c4c4;
+  font-size: 8px;
+  text-transform: uppercase;
+}
+
+.uv-studio__copy dd {
+  margin: 0;
+}
+
+.uv-studio__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 8px;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.uv-studio__pills {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.uv-studio__pills span {
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.05);
+  color: #8a8a8a;
+  font-size: 8px;
+  text-transform: uppercase;
+}
+
+.uv-studio__pills sup {
+  margin-left: 3px;
+  font-size: 6px;
+}
+
+/* —— 联系 —— */
+.uv-contact {
+  position: absolute;
+  left: 22px;
+  bottom: 90px;
+}
+
+.uv-contact p {
+  margin: 0 0 6px;
+  color: var(--uv-muted);
+}
+
+.uv-contact > a {
+  display: block;
+  font-family: var(--uv-serif);
+  font-size: clamp(32px, 6vw, 96px);
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+.uv-contact > a:hover {
+  font-style: italic;
+}
+
+.uv-contact ul {
+  display: flex;
+  gap: 18px;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+  text-transform: uppercase;
+}
+
+/* 底部 */
+.uv .uv-reel-btn {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  z-index: 20;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 7px 12px 7px 8px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 3px;
+  background: rgba(240, 240, 238, 0.8);
+  backdrop-filter: blur(10px);
+  font-size: 8px;
+  text-transform: uppercase;
+}
+
+.uv-reel-btn i {
+  width: 0;
+  height: 0;
+  border-left: 6px solid var(--uv-ink);
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+}
+
+.uv-corner {
+  position: absolute;
+  right: 14px;
+  bottom: 18px;
+  z-index: 20;
+  display: flex;
+  gap: 18px;
+  font-family: var(--uv-mono);
+  font-size: 9px;
+  color: var(--uv-muted);
+  text-transform: uppercase;
+}
+
+.uv-reel {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  background: rgba(246, 246, 244, 0.86);
+  backdrop-filter: blur(16px);
+  animation: uv-fade 0.3s ease both;
+}
+
+.uv-reel video {
+  width: min(92vw, 1100px);
+  max-height: 80vh;
+  background: #000;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
+}
+
+.uv .uv-reel button {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  padding: 4px 12px;
+  border: 1px solid var(--uv-ink);
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+
+@keyframes uv-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .uv-stack {
+    left: 38%;
+    top: 62%;
+  }
+
+  .uv-card {
+    --uv-card: 62vw;
+  }
+
+  .uv-focus__frame {
+    width: 70vw;
+    margin-top: -18vh;
+  }
+
+  .uv-focus.is-big .uv-focus__frame {
+    width: 90vw;
+  }
+
+  .uv-focus__meta {
+    width: auto;
+    right: 22px;
+    bottom: 96px;
+  }
+
+  .uv-focus__meta ol {
+    display: none;
+  }
+
+  .uv-focus__nav {
+    left: 22px;
+    right: 22px;
+    bottom: 56px;
+    justify-content: space-between;
+  }
+
+  .uv-halftone {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: auto;
+    margin: 70px 16px 0;
+  }
+
+  .uv-studio__copy {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin: 24px 16px 0;
+    width: auto;
+  }
+}

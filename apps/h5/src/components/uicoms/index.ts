@@ -4,6 +4,10 @@ export { default as WhatWeShiftTfibSection } from './what-we-shift/WhatWeShiftTf
 export type { WhatWeShiftTfibSectionProps } from './what-we-shift/WhatWeShiftTfibSection';
 export { default as CrystalHero } from './CrystalHero';
 export type { CrystalHeroProps } from './CrystalHero';
+export { default as BalloonText } from './BalloonText';
+export type { BalloonTextProps } from './BalloonText';
+export { default as GlassDonutHero } from './GlassDonutHero';
+export type { GlassDonutHeroProps } from './GlassDonutHero';
 export { default as PanterVisionHero } from './PanterVisionHero';
 export type { PanterVisionHeroProps } from './PanterVisionHero';
 export type { PosterCanvasLayout, PosterDrawOptions } from './panter-vision/drawPosterCanvas';

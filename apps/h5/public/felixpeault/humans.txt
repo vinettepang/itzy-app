@@ -1,0 +1,18 @@
+/* MADE BY */
+Site: https://flayks.com
+Contact: hello@flayks.com
+Twitter: https://twitter.com/flayks
+Location: France
+
+/* COLLABORATORS */
+Name: Félix Péault (https://flayks.com) - Art Direction, Design, Development
+Name: Shelby Kay (https://shelbykay.dev) - Front-End Development
+
+/* SITE */
+Launched: December 2025
+Standards: HTML5, CSS3, Javascript
+Front-End: Svelte, SvelteKit, Anime.js
+Content management: Sanity
+Hosting: Cloudflare
+Softwares: VSCode
+Creative tools: Figma

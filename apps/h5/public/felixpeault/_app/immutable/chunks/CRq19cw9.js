@@ -1,0 +1,1 @@
+import{X as e}from"./BCWGYF31.js";import"./B3AEFeHi.js";import{t}from"./qQ3mVfhX.js";var n={PAGE_IN:800,PAGE_OUT:400},r={PAGE_LOADING:600,PAGE_IN:n.PAGE_OUT+1},i=(n=200)=>e(()=>t.from)?r.PAGE_IN:n,a=(e,{name:t,on:n=!0,duration:r})=>(requestAnimationFrame(()=>e.classList.toggle(t,n)),{duration:r});export{n as i,i as n,r,a as t};

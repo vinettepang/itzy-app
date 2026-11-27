@@ -1,5 +1,11 @@
 /* Rebuild overlays — prod CSS is imported as wakawaka.prod.css */
 
+/* wakawaka.prod.css hides every `.page-wrapper` until Waka JS runs — undo outside Waka routes */
+html:not(.is-wakawaka) .page-wrapper {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
 /*
  * Global h5 `:root { font: 18px }` beats prod `html { font-size: 62.5% }`
  * (:root specificity > html). Force the Waka rem base while this route is mounted.

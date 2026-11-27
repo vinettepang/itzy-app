@@ -1,0 +1,133 @@
+{
+  "seo": {
+    "title": "Félix Péault • Photographer uncovering the unordinary",
+    "description": "Observations of a world in motion and a quest for unordinary moments within the ordinary."
+  },
+  "heroText": "Observations of a world in motion and a quest for unordinary moments within the ordinary, captured by Félix Péault",
+  "bio": "Félix Péault is an art director, designer and photographer by heart based in France, working worldwide. Drawn to human stories, unique light and graphic details in everyday scenes.",
+  "infoBlocks": [
+    {
+      "title": "Mediums",
+      "text": "Street photography\nLifestyle\nGraphic\nNature"
+    },
+    {
+      "title": "Available for",
+      "text": "Reportage, editorial, travel, architecture, commissions and collaborations"
+    }
+  ],
+  "contact": {
+    "email": {
+      "label": "Email",
+      "address": "snap@felixpeault.com"
+    },
+    "instagram": {
+      "label": "Instagram",
+      "handle": "@felixpeault",
+      "url": "https://www.instagram.com/felixpeault"
+    }
+  },
+  "shortBio": "Photographer, art director and designer working worldwide.",
+  "series": [
+    {
+      "name": "Outskirts of Eden",
+      "slug": "outskirts-of-eden",
+      "year": "2025",
+      "gradient": {
+        "start": "54 226 174",
+        "end": "19 166 240"
+      },
+      "thumbnail": "https://cdn.sanity.io/images/njs3gbw1/production/2eceaca6a868918a95876ddf827b23b5ebc3bc79-2500x1667.jpg?auto=format&fit=max&q=85&w=1200"
+    },
+    {
+      "name": "Ordinary Oddities",
+      "slug": "ordinary-oddities",
+      "year": "2025",
+      "gradient": {
+        "start": "225 208 191",
+        "end": "90 202 246"
+      },
+      "thumbnail": "https://cdn.sanity.io/images/njs3gbw1/production/a56d3b52bec0abf4a65fe45705e153f4941a8fa7-2500x1667.jpg?auto=format&fit=max&q=85&w=1200"
+    },
+    {
+      "name": "Angles of Incident",
+      "slug": "angles-of-incident",
+      "year": "2025",
+      "gradient": {
+        "start": "205 183 162",
+        "end": "215 134 105"
+      },
+      "thumbnail": "https://cdn.sanity.io/images/njs3gbw1/production/6c945fd34e678945721f47f4b544f15312f32692-2500x1667.jpg?auto=format&fit=max&q=85&w=1200"
+    },
+    {
+      "name": "Graphic Matter",
+      "slug": "graphic-matter",
+      "year": "2012-25",
+      "gradient": {
+        "start": "209 188 141",
+        "end": "94 178 206"
+      },
+      "thumbnail": "https://cdn.sanity.io/images/njs3gbw1/production/caf05d40b6308cfcac055f650a29a264d5e718ee-2500x1667.jpg?auto=format&fit=max&q=85&w=1200"
+    },
+    {
+      "name": "Slow Structures",
+      "slug": "slow-structures",
+      "year": "2011-25",
+      "gradient": {
+        "start": "146 186 192",
+        "end": "216 127 69"
+      },
+      "thumbnail": "https://cdn.sanity.io/images/njs3gbw1/production/2f27176e6a85f66f3da41b66346a38d53e5e4967-2500x1660.jpg?auto=format&fit=max&q=85&w=1200"
+    }
+  ],
+  "homepagePhotos": [
+    {
+      "src": "https://cdn.sanity.io/images/njs3gbw1/production/7d32fb630d365e88a6a7a8777eeabb10ada32144-2500x1667.jpg?auto=format&fit=max&q=85&w=500",
+      "alt": "Photo 1"
+    },
+    {
+      "src": "https://cdn.sanity.io/images/njs3gbw1/production/2f27176e6a85f66f3da41b66346a38d53e5e4967-2500x1660.jpg?auto=format&fit=max&q=85&w=500",
+      "alt": "Photo 2"
+    },
+    {
+      "src": "https://cdn.sanity.io/images/njs3gbw1/production/151c662f3b04eb57ac548269d84227918336f242-2500x1667.jpg?auto=format&fit=max&q=85&w=500",
+      "alt": "Photo 3"
+    },
+    {
+      "src": "https://cdn.sanity.io/images/njs3gbw1/production/ad0c0c693a61c828beac49ec455ce0765f61f803-2500x1660.jpg?auto=format&fit=max&q=85&w=500",
+      "alt": "Photo 4"
+    },
+    {
+      "src": "https://cdn.sanity.io/images/njs3gbw1/production/490514662cfa68315a6a793b9b2e5922c999260e-2500x1661.jpg?auto=format&fit=max&q=85&w=500",
+      "alt": "Photo 5"
+    },
+    {
+      "src": "https://cdn.sanity.io/images/njs3gbw1/production/1f6772c7cd8525e8eae9cd75862cfeedf3a6543b-2500x1667.jpg?auto=format&fit=max&q=85&w=500",
+      "alt": "Photo 6"
+    },
+    {
+      "src": "https://cdn.sanity.io/images/njs3gbw1/production/ead69dbe166448cfa0f780f0241b60cbc00fae69-2500x1667.jpg?auto=format&fit=max&q=85&w=500",
+      "alt": "Photo 7"
+    },
+    {
+      "src": "https://cdn.sanity.io/images/njs3gbw1/production/4dd1c51cae3ff7862069dfe418d10308e9468306-2500x1660.jpg?auto=format&fit=max&q=85&w=500",
+      "alt": "Photo 8"
+    },
+    {
+      "src": "https://cdn.sanity.io/images/njs3gbw1/production/995beac5ed4d732d5443465b3ea8e46363e60e14-1667x2500.jpg?auto=format&fit=max&q=85&w=500",
+      "alt": "Photo 9"
+    },
+    {
+      "src": "https://cdn.sanity.io/images/njs3gbw1/production/a3f32382e7c580ee04ca51afd9dd5cece842ed6f-1667x2500.jpg?auto=format&fit=max&q=85&w=500",
+      "alt": "Photo 10"
+    },
+    {
+      "src": "https://cdn.sanity.io/images/njs3gbw1/production/1fcbc34a9051a749d792389ff7114820d892af1f-1667x2500.jpg?auto=format&fit=max&q=85&w=500",
+      "alt": "Photo 11"
+    },
+    {
+      "src": "https://cdn.sanity.io/images/njs3gbw1/production/e20fd560a2d4071402958d9de748e13cb7067836-2500x1667.jpg?auto=format&fit=max&q=85&w=500",
+      "alt": "Photo 12"
+    }
+  ],
+  "journeysNote": "Journeys grid uses the same Sanity CDN as the mirror; replace URLs in content.json for full offline."
+}

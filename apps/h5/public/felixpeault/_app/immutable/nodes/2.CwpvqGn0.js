@@ -1,0 +1,1 @@
+import{L as e,R as t,j as n,rt as r}from"../chunks/BCWGYF31.js";function i(i,a){var o=t(),s=r(o);n(s,()=>a.children),e(i,o)}export{i as component};

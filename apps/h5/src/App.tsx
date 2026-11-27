@@ -1,4 +1,4 @@
-﻿import { Navigate, Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import ScrollToTop from '@/components/ScrollToTop';
 import OfflineBadge from '@/components/OfflineBadge';
 import AppLayout from '@/layouts/AppLayout';
@@ -77,7 +77,16 @@ import PvAlbumsPage from '@/pages/panter-vision/entries/pv-albums/PvAlbumsPage';
 import PvJarPage from '@/pages/panter-vision/entries/pv-jar/PvJarPage';
 import PvHelioLayout from '@/pages/panter-vision/entries/pv-variety/PvHelioLayout';
 import PvHelioPage from '@/pages/panter-vision/entries/pv-variety/PvHelioPage';
+import CubePage from '@/pages/cube/CubePage';
+import FolderPage from '@/pages/folder/FolderPage';
+import JarPage from '@/pages/jar/JarPage';
+import AlbumsPage from '@/pages/albums/AlbumsPage';
 import NavPage from '@/pages/nav/NavPage';
+import MisplacedPage from '@/pages/misplaced/MisplacedPage';
+import ExperimentPage from '@/pages/experiment/ExperimentPage';
+import CapslockPage from '@/pages/capslock/CapslockPage';
+import WorksPage from '@/pages/works/WorksPage';
+import UnveilPage from '@/pages/unveil/UnveilPage';
 
 const HAOQI_PROJECT_SLUGS = [
   'reunimos',
@@ -115,7 +124,16 @@ export default function App() {
         <Route index element={<PvHelioPage />} />
         <Route path=":slug" element={<PvHelioPage />} />
       </Route>
-      <Route path="/nav" element={<NavPage />} />
+      <Route path="/cube" element={<CubePage />} />
+        <Route path="/folder" element={<FolderPage />} />
+        <Route path="/jar" element={<JarPage />} />
+        <Route path="/albums" element={<AlbumsPage />} />
+        <Route path="/nav" element={<NavPage />} />
+        <Route path="/misplaced" element={<MisplacedPage />} />
+        <Route path="/experiment" element={<ExperimentPage />} />
+        <Route path="/capslock" element={<CapslockPage />} />
+        <Route path="/works" element={<WorksPage />} />
+        <Route path="/unveil" element={<UnveilPage />} />
       <Route path="/people" element={<PeoplePage />} />
       <Route element={<NewNewLayout />}>
         <Route path="/dolls" element={<DollsPage />} />

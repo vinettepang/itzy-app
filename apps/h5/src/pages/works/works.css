@@ -1,0 +1,330 @@
+.wk {
+  --wk-ink: #111;
+  --wk-muted: #8a8a8a;
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background: #e7e7e7;
+  color: var(--wk-ink);
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  line-height: 1.35;
+  user-select: none;
+}
+
+.wk a.default-link {
+  border: 0;
+  color: inherit;
+  text-decoration: none;
+}
+
+.wk button {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.wk__back {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  z-index: 30;
+  transform: translateX(-50%);
+  font-size: 11px;
+  color: var(--wk-muted) !important;
+}
+
+.wk__head {
+  position: absolute;
+  top: 28px;
+  left: 34px;
+  right: 34px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.wk__head h1 {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.wk__modes {
+  display: flex;
+  gap: 10px;
+  pointer-events: auto;
+}
+
+.wk .wk__modes button {
+  min-width: 58px;
+  padding: 4px 14px;
+  border: 1px solid var(--wk-ink);
+  border-radius: 999px;
+  font-size: 11px;
+  text-transform: capitalize;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.wk .wk__modes button:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.wk .wk__modes button.is-on {
+  background: var(--wk-ink);
+  color: #fff;
+}
+
+/* 舞台：卡片在 3D 空间里按模式排布 */
+.wk__stage {
+  position: absolute;
+  inset: 0;
+  cursor: grab;
+  touch-action: none;
+}
+
+.wk__stage:active {
+  cursor: grabbing;
+}
+
+.wk__world {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  transform-style: preserve-3d;
+}
+
+.wk__card {
+  --wk-card: clamp(40px, 5vw, 74px);
+  position: absolute;
+  top: calc(var(--wk-card) * -0.62);
+  left: calc(var(--wk-card) * -0.5);
+  width: var(--wk-card);
+  aspect-ratio: 0.8;
+  will-change: transform;
+  backface-visibility: visible;
+}
+
+.wk__stage--gallery .wk__card {
+  will-change: auto;
+}
+
+.wk__cover,
+.wk__reel {
+  display: block;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+  transition: box-shadow 0.25s ease;
+}
+
+.wk .wk__card:hover .wk__cover,
+.wk .wk__card:hover .wk__reel {
+  box-shadow:
+    0 0 0 1.5px #111,
+    0 12px 24px rgba(0, 0, 0, 0.18);
+}
+
+.wk__cover .acover__name {
+  font-size: 7cqw;
+}
+
+/* 原视频作为其中一张卡，实时播放 */
+.wk__reel {
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+}
+
+.wk__reel video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.wk__reel i {
+  position: absolute;
+  right: 6%;
+  bottom: 6%;
+  display: grid;
+  place-items: center;
+  width: 28%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #111;
+  color: #fff;
+}
+
+.wk__reel i svg {
+  width: 56%;
+  height: 56%;
+}
+
+.wk__foot {
+  position: absolute;
+  left: 34px;
+  right: 34px;
+  bottom: 26px;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: end;
+  font-size: 11px;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+.wk__caption {
+  color: var(--wk-muted);
+  letter-spacing: 0.04em;
+}
+
+.wk__count {
+  justify-self: end;
+  font-variant-numeric: tabular-nums;
+}
+
+/* 点开：大图 + 曲目 / 原视频 */
+.wk__box {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  background: rgba(231, 231, 231, 0.82);
+  backdrop-filter: blur(14px);
+  animation: wk-fade 0.3s ease both;
+}
+
+.wk__box-body {
+  position: relative;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  max-width: min(900px, 92vw);
+  animation: wk-pop 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.1) both;
+}
+
+.wk__box-cover {
+  flex: none;
+  width: min(320px, 38vw);
+  aspect-ratio: 0.8;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.2);
+}
+
+.wk__box-video {
+  display: block;
+  width: min(72vh, 86vw);
+  aspect-ratio: 1;
+  background: #000;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.2);
+}
+
+.wk__box-info span {
+  font-size: 11px;
+  color: var(--wk-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.wk .wk__box-info h2 {
+  margin: 6px 0 16px;
+  color: var(--wk-ink);
+  font-size: clamp(26px, 3vw, 40px);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.wk__box-info ol {
+  max-height: 40vh;
+  margin: 0;
+  padding: 0 0 0 1.4em;
+  overflow: auto;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #444;
+}
+
+.wk__box-info li.is-title {
+  color: var(--wk-ink);
+  font-weight: 600;
+}
+
+.wk .wk__box-close {
+  position: absolute;
+  top: -34px;
+  right: 0;
+  padding: 4px 14px;
+  border: 1px solid var(--wk-ink);
+  border-radius: 999px;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+@keyframes wk-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes wk-pop {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.96);
+  }
+}
+
+@media (max-width: 760px) {
+  .wk__head {
+    top: 34px;
+    left: 16px;
+    right: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .wk__modes {
+    gap: 6px;
+  }
+
+  .wk .wk__modes button {
+    min-width: 0;
+    padding: 4px 10px;
+  }
+
+  .wk__foot {
+    left: 16px;
+    right: 16px;
+    grid-template-columns: 1fr auto;
+  }
+
+  .wk__caption {
+    display: none;
+  }
+
+  .wk__box-body {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .wk__box-cover {
+    width: 56vw;
+  }
+
+  .wk__box-info ol {
+    padding: 0;
+    list-style: none;
+  }
+}

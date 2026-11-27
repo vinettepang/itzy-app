@@ -17,8 +17,8 @@ export type CrystalSceneHandle = {
 /** 拼字目标：中心 (x, y)、长度、z 轴角度 */
 type BarTarget = { x: number; y: number; length: number; angle: number };
 
-const BAR_W = 0.24;
-const BAR_D = 0.24;
+const BAR_W = 0.32;
+const BAR_D = 0.28;
 const LETTER_H = 1.6;
 const DEG = Math.PI / 180;
 
@@ -156,26 +156,42 @@ const fragmentShader = /* glsl */ `
     if (an.y < 0.5) d = min(d, halfSize.y - abs(q.y));
     if (an.z < 0.5) d = min(d, halfSize.z - abs(q.z));
 
-    // 沿长轴拉伸的波纹折射纹理
-    vec3 rp = vec3(q.x * 3.0, q.y * 18.0, q.z * 18.0) + vec3(uSeed, uSeed * 1.7, uTime * 0.15);
-    float ripple = fbm(rp + fbm(rp * 0.5) * 1.6);
-    float frost = fbm(q * 40.0 + uSeed);
+    // 沿长轴的霜纹 + 面内颗粒，接近磨砂玻璃
+    vec3 nseed = vec3(uSeed, uSeed * 1.7, uSeed * 0.37);
+    float stretch = fbm(vec3(q.x * 5.5, q.y * 32.0, q.z * 32.0) + nseed + uTime * 0.04);
+    float blotch = fbm(vec3(q.x * 1.6, q.y * 3.2, q.z * 3.2) + nseed * 2.1);
+    float grit = fbm(q * 78.0 + nseed);
+    float frost = stretch * 0.62 + blotch * 0.38;
 
-    // 外沿亮边 → 内侧半透明过渡 → 中心暗槽
-    float rim = 1.0 - smoothstep(uEdge * 0.6, uEdge, d);
-    float band = 1.0 - smoothstep(uEdge, uEdge * 2.2, d);
-    float rp2 = pow(ripple, 1.6);
-    float core = 0.008 + rp2 * 0.16;
+    // 宽面上的暗槽：中心更透、更暗，靠近棱更亮
+    vec2 face = q.yz;
+    vec2 faceHalf = halfSize.yz;
+    if (an.y > 0.5) {
+      face = q.xz;
+      faceHalf = halfSize.xz;
+    } else if (an.x > 0.5) {
+      face = q.yz;
+      faceHalf = halfSize.yz;
+    }
+    float insetA = smoothstep(0.06, 0.28, (faceHalf.x - abs(face.x)) / max(faceHalf.x, 0.001));
+    float insetB = smoothstep(0.1, 0.42, (faceHalf.y - abs(face.y)) / max(faceHalf.y, 0.001));
+    float cavity = insetA * insetB;
 
-    float b = mix(core, 0.14 + ripple * 0.12, band);
-    b = mix(b, 0.62 + frost * 0.18, rim);
+    float body = 0.1 + pow(frost, 1.35) * 0.62 + grit * 0.08;
+    body *= mix(1.0, 0.55, cavity);
 
-    // 掠射角菲涅尔，增加玻璃感
+    float rim = 1.0 - smoothstep(0.0, uEdge * 0.85, d);
+    float lip = 1.0 - smoothstep(uEdge, uEdge * 3.2, d);
+    float glow = exp(-d * d / max(uEdge * uEdge * 6.0, 1e-4));
+    float b = mix(body, 0.55 + frost * 0.2, lip);
+    b = mix(b, 1.2 + grit * 0.25, pow(rim, 1.1));
+    b += glow * 0.18;
+
     vec3 V = normalize(-vViewPos);
-    float fres = pow(1.0 - abs(dot(normalize(vViewNormal), V)), 4.0);
-    b += fres * 0.08;
+    float fres = pow(1.0 - abs(dot(normalize(vViewNormal), V)), 3.2);
+    b += fres * 0.06;
 
-    vec3 col = vec3(b) * vec3(0.94, 0.97, 1.0);
+    vec3 col = vec3(b) * vec3(0.96, 0.98, 1.0);
     gl_FragColor = vec4(col, 1.0);
   }
 `;
@@ -218,23 +234,28 @@ export function createCrystalScene({ container, dprCap = 2 }: CrystalSceneOption
       uniforms: {
         uSize: { value: new THREE.Vector3(...size) },
         uTime: timeUniform,
-        uEdge: { value: 0.055 },
+        uEdge: { value: 0.07 },
         uSeed: { value: i * 13.37 },
       },
-      transparent: true,
-      depthWrite: false,
-      side: THREE.DoubleSide,
-      blending: THREE.AdditiveBlending,
+      transparent: false,
+      depthWrite: true,
+      depthTest: true,
+      side: THREE.FrontSide,
+      blending: THREE.NormalBlending,
+      polygonOffset: true,
+      polygonOffsetFactor: (i + 1) * 2,
+      polygonOffsetUnits: (i + 1) * 4,
     });
     materials.push(material);
 
     const mesh = new THREE.Mesh(geometry, material);
     mesh.scale.set(...size);
+    mesh.renderOrder = i;
     crystal.add(mesh);
 
     bars.push({
       mesh,
-      targetPos: new THREE.Vector3(bar.x, bar.y, 0),
+      targetPos: new THREE.Vector3(bar.x, bar.y, (i - (ITZY_BARS.length - 1) / 2) * 0.02),
       targetQuat: new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 0, 1), bar.angle),
       tumble: randomTumble(),
     });
@@ -265,7 +286,7 @@ export function createCrystalScene({ container, dprCap = 2 }: CrystalSceneOption
   composer.setPixelRatio(dpr());
   composer.setSize(width, height);
   composer.addPass(new RenderPass(scene, camera));
-  const bloom = new UnrealBloomPass(new THREE.Vector2(width, height), 0.28, 0.18, 0.85);
+  const bloom = new UnrealBloomPass(new THREE.Vector2(width, height), 0.18, 0.12, 0.92);
   composer.addPass(bloom);
   composer.addPass(new OutputPass());
 

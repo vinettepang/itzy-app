@@ -1,0 +1,137 @@
+/* 隔离主站 index.css；版式与动效样式来自 public/felixpeault/_app/immutable/assets/*.css */
+
+html.fp-html {
+  --color-dark: #222;
+  --color-gray: #f7eeec;
+  --color-primary: #007cba;
+  --color-secondary: #00ba82;
+  --font-title: 'Suisse Intl Cond', helvetica, arial, sans-serif;
+  --font-text: Archivo, helvetica, arial, sans-serif;
+  --screen: var(--vh, 100dvh);
+  --ease-quart-inout: cubic-bezier(0.76, 0, 0.24, 1);
+
+  color-scheme: light;
+  color: var(--color-dark) !important;
+  background-color: var(--color-gray) !important;
+  background-image: none !important;
+}
+
+html.fp-html.lenis,
+html.fp-html.lenis body.fp-body {
+  height: auto;
+}
+
+html.fp-html.lenis {
+  scroll-behavior: auto !important;
+}
+
+html.fp-html #root {
+  max-width: none !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  text-align: left !important;
+  background: transparent !important;
+  min-height: 100svh;
+  display: block !important;
+}
+
+html.fp-html body.fp-body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  overscroll-behavior: none;
+  background-color: var(--color-gray) !important;
+  background-image: none !important;
+  color: var(--color-dark) !important;
+  font: 1rem/1.2 var(--font-text) !important;
+}
+
+html.fp-html .fp-root a,
+html.fp-html .fp-root button {
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  color: inherit;
+  font: inherit;
+}
+
+html.fp-html .fp-root button.info-backdrop {
+  background: transparent !important;
+}
+
+html.fp-html .fp-root h1,
+html.fp-html .fp-root h2,
+html.fp-html .fp-root h3,
+html.fp-html .fp-root p,
+html.fp-html .fp-root ul,
+html.fp-html .fp-root li {
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+  font-weight: inherit;
+}
+
+html.fp-html .fp-root nav a {
+  background: transparent !important;
+  text-decoration: none;
+}
+
+.fp-root {
+  min-height: var(--screen, 100dvh);
+  position: relative;
+  z-index: 1;
+  background: transparent;
+  color: var(--color-dark, #222);
+}
+
+/* Series 渐变：独立于 sticky slide，避免 overflow 与多层 fixed 叠在一起 */
+html.fp-html .fp-series-gradient-layer {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
+html.fp-html .fp-series-gradient-layer .gradient.svelte-f64fwf {
+  opacity: 0;
+  z-index: 0;
+}
+
+html.fp-html .fp-home-gradient.background.svelte-c5vyf9 {
+  position: fixed;
+  inset: -1px 0 0;
+  z-index: 0;
+  pointer-events: none;
+  transform-origin: 50% 0;
+  background: linear-gradient(
+    180deg,
+    var(--color-primary) 0%,
+    var(--color-secondary) 25%,
+    transparent 66%
+  );
+  opacity: 1;
+}
+
+html.fp-html .info-overlay:not(.is-open) {
+  pointer-events: none;
+  clip-path: inset(0 100% 0 0);
+}
+
+html.fp-html .info-overlay.is-open {
+  clip-path: none;
+}
+
+.fp-sr-only {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  white-space: nowrap;
+}

@@ -1,0 +1,1 @@
+import{C as e,S as t,x as n}from"./B3AEFeHi.js";import{t as r}from"./Dvg8qDmJ.js";var i=r({projectId:t,dataset:n,apiVersion:`2025-12-07`,useCdn:!0,stega:{enabled:!0,studioUrl:e}});export{i as t};

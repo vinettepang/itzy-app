@@ -87,6 +87,18 @@
   color: #888;
 }
 
+.uicoms-card-link {
+  display: inline-block;
+  margin-top: 0.65rem;
+  color: #c8c8c8;
+  font-size: 0.82rem;
+  text-decoration: none;
+}
+
+.uicoms-card-link:hover {
+  color: #fff;
+}
+
 .uicoms-demo {
   margin-top: 1.5rem;
   background: #fff;

@@ -1,0 +1,1 @@
+var e=e=>(`0`+Number(e)).slice(-2),t=(e,t)=>e.length>t?`${e.slice(0,t-3)}…`:e;export{t as n,e as t};

@@ -1,0 +1,443 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,800;125,900&display=swap');
+
+.cube-page {
+  --cube-bg: #e4e4e4;
+  --cube-ink: #1c1c1c;
+  --cube-pink: #f49ac1;
+  --cube-pink-deep: #ec6fa6;
+  --cube-heavy: 'Archivo', 'Arial Black', 'Helvetica Neue', Arial, sans-serif;
+  --cube-sans: 'Helvetica Neue', Helvetica, Arial, 'PingFang SC', sans-serif;
+
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 48px;
+  background: #d9d9d9;
+  color: var(--cube-ink);
+  font-family: var(--cube-sans);
+}
+
+.cube-back {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 10;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(28, 28, 28, 0.85);
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+}
+
+/* 竖版海报（9:16），所有尺寸以海报宽度 cqw 为基准 */
+.cube-poster {
+  position: relative;
+  container-type: inline-size;
+  width: min(100vw, calc(min(100svh, 1100px) * 9 / 16));
+  aspect-ratio: 9 / 16;
+  margin: 0 auto;
+  overflow: hidden;
+  background:
+    radial-gradient(120% 70% at 50% 45%, #efefef 0%, var(--cube-bg) 60%, #d6d6d6 100%);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.12);
+}
+
+.cube-poster__stage {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  cursor: grab;
+  touch-action: none;
+}
+
+.cube-poster__stage:active {
+  cursor: grabbing;
+}
+
+.cube-poster__stage canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.cube-poster__bar {
+  position: absolute;
+  top: 3cqw;
+  left: 4.5cqw;
+  right: 4.5cqw;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: 1.15fr 1.3fr 0.85fr;
+  height: 11cqw;
+  border: 0.6cqw solid var(--cube-ink);
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.cube-poster__bar-cell {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 2.4cqw;
+  min-width: 0;
+}
+
+.cube-poster__bar-cell + .cube-poster__bar-cell {
+  border-left: 0.6cqw solid var(--cube-ink);
+}
+
+.cube-poster__bar-title {
+  font-family: var(--cube-heavy);
+  font-size: 3.6cqw;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.cube-poster__bar-info strong {
+  font-family: var(--cube-heavy);
+  font-size: 2.9cqw;
+  line-height: 1;
+}
+
+.cube-poster__bar-info em {
+  font-family: var(--cube-sans);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.3cqw;
+  vertical-align: super;
+}
+
+.cube-poster__bar-info span {
+  font-weight: 800;
+  font-size: 1.7cqw;
+  letter-spacing: 0.04em;
+}
+
+.cube-poster__bar-info small {
+  font-size: 0.95cqw;
+  line-height: 1.2;
+  opacity: 0.7;
+}
+
+.cube-poster__bar-logo {
+  flex-direction: row;
+  align-items: center;
+  gap: 1.6cqw;
+  background: var(--cube-ink);
+  color: #fff;
+}
+
+.cube-poster__bar-heart {
+  width: 5cqw;
+  fill: var(--cube-pink);
+}
+
+.cube-poster__bar-logo span {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--cube-sans);
+  font-weight: 700;
+  font-size: 4cqw;
+  line-height: 0.9;
+}
+
+.cube-poster__bar-logo small {
+  font-size: 1cqw;
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+.cube-poster__heart {
+  position: absolute;
+  top: 18cqw;
+  left: 5cqw;
+  z-index: 1;
+  width: 7cqw;
+  fill: var(--cube-pink);
+}
+
+.cube-poster__hook {
+  position: absolute;
+  top: 18.5cqw;
+  right: 5cqw;
+  z-index: 1;
+  width: 10cqw;
+  stroke: var(--cube-ink);
+}
+
+.cube-poster__kicker {
+  position: absolute;
+  top: 37cqw;
+  left: 9cqw;
+  z-index: 1;
+  margin: 0;
+  font-family: var(--cube-heavy);
+  font-size: 3.4cqw;
+  line-height: 0.95;
+  color: var(--cube-pink);
+  font-stretch: 125%;
+  transform-origin: left;
+}
+
+.cube-poster__headline {
+  position: absolute;
+  top: 46cqw;
+  left: 9cqw;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  font-family: var(--cube-heavy);
+  font-size: 19cqw;
+  font-weight: 900;
+  line-height: 0.82;
+  letter-spacing: -0.02em;
+  color: var(--cube-ink);
+  font-stretch: 125%;
+  transform-origin: left;
+}
+
+.cube-poster__bottom-title {
+  position: absolute;
+  top: 110cqw;
+  left: 9cqw;
+  right: 6cqw;
+  z-index: 1;
+}
+
+.cube-poster__brand {
+  margin: 0;
+  font-family: var(--cube-heavy);
+  font-size: 22cqw;
+  line-height: 0.82;
+  letter-spacing: -0.02em;
+  font-stretch: 125%;
+  transform-origin: left;
+}
+
+.cube-poster__year {
+  display: flex;
+  align-items: center;
+  gap: 2.4cqw;
+  margin-top: 3cqw;
+}
+
+.cube-poster__year strong {
+  font-family: var(--cube-heavy);
+  font-size: 9cqw;
+  line-height: 0.9;
+  font-stretch: 125%;
+  transform-origin: left;
+}
+
+.cube-poster__year span {
+  margin-left: 2.6cqw;
+  font-family: var(--cube-heavy);
+  font-size: 2.8cqw;
+  line-height: 0.95;
+}
+
+.cube-poster__tagline {
+  margin: 2.2cqw 0 0;
+  font-weight: 700;
+  font-size: 1.9cqw;
+  letter-spacing: 0.02em;
+}
+
+.cube-poster__tagline-cn {
+  margin: 1.2cqw 0 0;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 3.2cqw;
+  letter-spacing: 0.04em;
+}
+
+.cube-poster__footer {
+  position: absolute;
+  left: 5cqw;
+  right: 5cqw;
+  bottom: 5cqw;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 3cqw;
+}
+
+.cube-poster__footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2cqw;
+}
+
+.cube-poster__footer-hook {
+  width: 11cqw;
+  stroke: var(--cube-pink);
+}
+
+.cube-poster__footer-left strong {
+  font-family: var(--cube-heavy);
+  font-size: 3.6cqw;
+  line-height: 0.95;
+}
+
+.cube-poster__footer-fine {
+  flex: 1;
+  max-width: 26cqw;
+  font-size: 0.95cqw;
+  line-height: 1.3;
+  opacity: 0.55;
+}
+
+.cube-poster__footer-right {
+  display: flex;
+  align-items: flex-end;
+  gap: 3cqw;
+}
+
+.cube-poster__footer-cn {
+  font-weight: 900;
+  font-style: italic;
+  font-size: 3cqw;
+  color: var(--cube-pink-deep);
+}
+
+.cube-poster__footer-cube {
+  width: 9cqw;
+  stroke: var(--cube-ink);
+}
+
+/* 控制条：海报下方，同色系 */
+.cube-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: min(720px, calc(100% - 24px));
+  margin: 20px auto 0;
+  padding: 10px 12px;
+  border: 2px solid var(--cube-ink);
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.cube-controls button {
+  min-height: 36px;
+  padding: 0 16px;
+  border: 2px solid var(--cube-ink);
+  border-radius: 0;
+  background: #fff;
+  color: var(--cube-ink);
+  font: inherit;
+  font-weight: 800;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.cube-controls button:hover:not(:disabled) {
+  background: var(--cube-ink);
+  color: #fff;
+}
+
+.cube-controls button.is-on {
+  background: var(--cube-pink);
+  color: var(--cube-ink);
+}
+
+.cube-controls button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.cube-controls__speed {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 6px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.cube-controls__speed input {
+  width: 90px;
+  accent-color: var(--cube-pink-deep);
+}
+
+.cube-controls__speed span {
+  min-width: 3.2em;
+  font-variant-numeric: tabular-nums;
+}
+
+.cube-controls__count {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--cube-pink-deep);
+  font-variant-numeric: tabular-nums;
+}
+
+/* 参考视频 */
+.cube-ref {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(24px, 5vw, 64px);
+  align-items: start;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: clamp(40px, 8vw, 80px) clamp(16px, 4vw, 40px) 0;
+}
+
+.cube-ref__text h2 {
+  margin: 0 0 10px;
+  font-family: var(--cube-heavy);
+  font-size: clamp(22px, 3vw, 32px);
+  color: var(--cube-ink);
+}
+
+.cube-ref__text p {
+  margin: 0 0 16px;
+  max-width: 32rem;
+  color: rgba(28, 28, 28, 0.6);
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.cube-ref__text a {
+  color: var(--cube-pink-deep);
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.cube-ref__text a:hover {
+  text-decoration: underline;
+}
+
+.cube-ref__embed {
+  width: 345px;
+  max-width: 100%;
+  overflow: hidden;
+  border: 2px solid var(--cube-ink);
+  background: #fff;
+}
+
+.cube-ref__embed iframe {
+  display: block;
+  width: 100%;
+  height: 720px;
+  border: 0;
+}
+
+@media (max-width: 720px) {
+  .cube-ref {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .cube-ref__text p {
+    margin-inline: auto;
+  }
+}

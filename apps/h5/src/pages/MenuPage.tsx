@@ -1,224 +1,22 @@
 import { useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { HOME_PROJECTS } from './facil/data/siteData';
-import furniture from './wakawaka/data/furniture.json';
-import products from './wakawaka/data/products.json';
+import {
+  MENU_UI_FAMILIES,
+  buildMenuGroups,
+  getMenuInventory,
+} from './menu/menuCatalog';
 import './MenuPage.css';
 
-type MenuLink = { to: string; label: string; note?: string };
-type MenuGroup = { id: string; title: string; links: MenuLink[] };
-
-const HAOQI_PROJECTS = [
-  { slug: 'reunimos', label: 'Reunimos' },
-  { slug: 'inspire_mono', label: 'Inspire Mono' },
-  { slug: 'wasm_design_utils', label: 'WASM Design Utils' },
-  { slug: 'adrive', label: 'ADrive' },
-  { slug: 'shore_icon', label: 'Shore Icon' },
-  { slug: 'teambition', label: 'Teambition' },
-] as const;
-
-function buildMenuGroups(): MenuGroup[] {
-  const wakaCategories = furniture.filters.map((f) => ({
-    to: `/wakawaka/furniture/${f.slug}`,
-    label: f.title,
-    note: `${f.count} items`,
-  }));
-
-  const wakaProducts = Object.values(products).map((p) => ({
-    to: `/wakawaka/${p.slug}`,
-    label: p.name,
-    note: 'product',
-  }));
-
-  const facilProjectsEs = HOME_PROJECTS.map((p) => ({
-    to: `/facil/projects/${p.slug}`,
-    label: `${p.client} · ${p.slug}`,
-  }));
-
-  const facilProjectsEn = HOME_PROJECTS.map((p) => ({
-    to: `/facil/en/projects/${p.slug}`,
-    label: `${p.client} · ${p.slug}`,
-  }));
-
-  return [
-    {
-      id: 'entry',
-      title: '入口 / Core',
-      links: [
-        { to: '/menu', label: 'Menu（本页）' },
-        { to: '/', label: 'NewNew', note: '默认首页（Oh Ira 配色版）' },
-        { to: '/old-home', label: 'Old Home', note: '原首页（XKM）' },
-        { to: '/xkm', label: 'XKM（别名）' },
-        { to: '/home', label: 'Home' },
-        { to: '/new_home', label: 'New Home', note: 'XKM + haoqi 下落' },
-        { to: '/ui', label: 'UI', note: 'Mesh 票根' },
-        { to: '/people', label: 'People', note: '人物名录' },
-        { to: '/variety', label: 'Variety', note: '综艺列表' },
-      ],
-    },
-    {
-      id: 'app-shell',
-      title: 'ITZY · App Shell',
-      links: [
-        { to: '/gallery', label: 'Gallery' },
-        { to: '/gallery/local-demo-album', label: 'Gallery Detail', note: '示例相册' },
-        { to: '/schedules', label: 'Schedules' },
-        { to: '/poster', label: 'Poster' },
-        { to: '/poster/preview', label: 'Poster Preview' },
-        { to: '/lab-style', label: 'Lab Style' },
-        { to: '/portfolio', label: 'Portfolio' },
-        { to: '/game', label: 'Game' },
-      ],
-    },
-    {
-      id: 'experiments',
-      title: 'Experiments / Labs',
-      links: [
-        { to: '/songs', label: 'Songs' },
-        { to: '/setlist', label: '三巡歌单', note: 'TUNNEL VISION' },
-        { to: '/cheer/tunnel-vision', label: 'Tunnel Vision 应援法' },
-        { to: '/cheer/gold', label: 'GOLD 应援法' },
-        { to: '/cheer/wannabe', label: 'WANNABE 应援法' },
-        { to: '/unseen', label: 'Unseen', note: '本地玩偶页' },
-        { to: '/dolls', label: 'Dolls', note: 'newnew 娃娃图鉴' },
-        { to: '/balls', label: 'Balls' },
-        { to: '/labs/webgl-refraction', label: 'WebGL Refraction' },
-      ],
-    },
-    {
-      id: 'stagecrew',
-      title: 'Stagecrew',
-      links: [
-        { to: '/stagecrew', label: 'Work', note: 'stagecrew.studio' },
-        { to: '/stagecrew/info', label: 'Info' },
-        { to: '/stagecrew/backstage', label: 'Backstage' },
-        { to: '/stagecrew/work/aura', label: 'Project · AURA' },
-        { to: '/stagecrew/work/hall-gad-architects', label: 'Project · Hall Gad' },
-        { to: '/stagecrew/work/the-hall', label: 'Project · The Hall' },
-        { to: '/stagecrew/work/innerstate', label: 'Project · INNERSTATE' },
-      ],
-    },
-    {
-      id: 'anthnyung-yc',
-      title: 'YC Ticket',
-      links: [
-        { to: '/yc', label: 'Startup School 2026', note: 'anthnyung.com/yc' },
-        { to: '/yc/detail', label: 'Ticket detail', note: '最终票根' },
-      ],
-    },
-
-    {
-      id: 'wakawaka',
-      title: 'Waka Waka',
-      links: [
-        { to: '/wakawaka', label: 'Home', note: 'wakawaka.world' },
-        { to: '/wakawaka/studio', label: 'Studio' },
-        { to: '/wakawaka/catalogue', label: 'Catalogue / Index' },
-        { to: '/wakawaka/furniture', label: 'Furniture' },
-        ...wakaCategories,
-      ],
-    },
-    {
-      id: 'wakawaka-products',
-      title: 'Waka Waka · Products',
-      links: wakaProducts,
-    },
-    {
-      id: 'helioteles',
-      title: 'Hélio Teles',
-      links: [
-        { to: '/helioteles', label: 'Home', note: 'helioteles.com' },
-        { to: '/helioteles/about', label: 'Information' },
-        { to: '/helioteles/union', label: '001 UNION' },
-        { to: '/helioteles/péa', label: '002 Première équipe' },
-        { to: '/helioteles/plural', label: '003 Plural 2024' },
-        { to: '/union', label: '/union', note: '短链 → UNION' },
-      ],
-    },
-    {
-      id: 'fluoro',
-      title: 'FLUORO®',
-      links: [
-        { to: '/fluoro', label: 'Index', note: 'fluoro.london/index' },
-      ],
-    },
-    {
-      id: 'unseen-studio',
-      title: 'Unseen Studio',
-      links: [
-        { to: '/unseen-studio', label: 'Index / Home', note: 'unseen.co' },
-        { to: '/unseen-studio/projects', label: 'Projects' },
-        { to: '/unseen-studio/contact', label: 'Contact' },
-        { to: '/unseen-studio/world', label: 'World' },
-      ],
-    },
-    {
-      id: 'haoqi',
-      title: 'Haoqi',
-      links: [
-        { to: '/haoqi', label: 'Haoqi Home' },
-        ...HAOQI_PROJECTS.map((p) => ({
-          to: `/haoqi/${p.slug}`,
-          label: p.label,
-          note: `/haoqi/${p.slug}`,
-        })),
-        ...HAOQI_PROJECTS.map((p) => ({
-          to: `/${p.slug}`,
-          label: `${p.label}（短链）`,
-          note: `/${p.slug}`,
-        })),
-      ],
-    },
-    {
-      id: 'virgil',
-      title: 'Virgil',
-      links: [
-        { to: '/virgil', label: 'Virgil' },
-        { to: '/virgil/privacy-policy', label: 'Privacy Policy' },
-        { to: '/virgil/terms', label: 'Terms' },
-      ],
-    },
-    {
-      id: 'facil-es',
-      title: 'Fácil · ES',
-      links: [
-        { to: '/facil', label: 'Home' },
-        { to: '/facil/trabajos', label: 'Trabajos' },
-        { to: '/facil/filosofia', label: 'Filosofía' },
-        { to: '/facil/people', label: 'People' },
-        { to: '/facil/contact', label: 'Contact' },
-        { to: '/facil/politica-de-privacidad', label: 'Política de privacidad' },
-        { to: '/facil/aviso-legal', label: 'Aviso legal' },
-        { to: '/facil/politica-de-cookies', label: 'Política de cookies' },
-        { to: '/facil/declaracion-de-accesibilidad', label: 'Accesibilidad' },
-        ...facilProjectsEs,
-      ],
-    },
-    {
-      id: 'facil-en',
-      title: 'Fácil · EN',
-      links: [
-        { to: '/facil/en', label: 'Home' },
-        { to: '/facil/en/works', label: 'Works' },
-        { to: '/facil/en/philosophy', label: 'Philosophy' },
-        { to: '/facil/en/people', label: 'People' },
-        { to: '/facil/en/contact', label: 'Contact' },
-        { to: '/facil/en/privacy-policy', label: 'Privacy Policy' },
-        { to: '/facil/en/legal-notice', label: 'Legal Notice' },
-        { to: '/facil/en/cookie-policy', label: 'Cookie Policy' },
-        { to: '/facil/en/accessibility-statement', label: 'Accessibility' },
-        ...facilProjectsEn,
-      ],
-    },
-  ];
-}
+const UI_TAG_LABEL: Record<string, string> = {
+  meta: '索引',
+  itzy: 'ITZY',
+  lab: '实验',
+  mirror: '站点镜像',
+};
 
 export default function MenuPage() {
   const groups = useMemo(() => buildMenuGroups(), []);
-  const totalRoutes = useMemo(
-    () => groups.reduce((n, g) => n + g.links.length, 0),
-    [groups],
-  );
+  const inventory = useMemo(() => getMenuInventory(groups), [groups]);
 
   useEffect(() => {
     const html = document.documentElement;
@@ -254,8 +52,50 @@ export default function MenuPage() {
         <p className="menu-page__eyebrow">itzy-app / h5</p>
         <h1 className="menu-page__title">Menu</h1>
         <p className="menu-page__desc">
-          全部路由入口，按站点 / 模块分组。共 {groups.length} 组 · {totalRoutes} 条。
+          h5 全部可点入口与 UI 体系一览。动态路由（如{' '}
+          <code className="menu-page__inline-code">/cheer/:slug</code>、
+          <code className="menu-page__inline-code">/gallery/:id</code>）在下列样本链接中体现。
         </p>
+
+        <dl className="menu-page__stats" aria-label="Inventory">
+          <div className="menu-page__stat">
+            <dt>页面入口</dt>
+            <dd>{inventory.linkCount}</dd>
+            <dd className="menu-page__stat-note">{inventory.uniquePathCount} 条唯一路径</dd>
+          </div>
+          <div className="menu-page__stat">
+            <dt>UI 体系</dt>
+            <dd>{inventory.uiFamilyCount}</dd>
+            <dd className="menu-page__stat-note">
+              ITZY {inventory.uiByTag.itzy} · 镜像 {inventory.uiByTag.mirror} · 实验{' '}
+              {inventory.uiByTag.lab}
+            </dd>
+          </div>
+          <div className="menu-page__stat">
+            <dt>路由分组</dt>
+            <dd>{inventory.groupCount}</dd>
+            <dd className="menu-page__stat-note">按站点 / 模块</dd>
+          </div>
+        </dl>
+
+        <section className="menu-page__ui" aria-labelledby="menu-ui-heading">
+          <h2 id="menu-ui-heading" className="menu-page__ui-heading">
+            UI 体系
+            <span className="menu-page__group-count">{MENU_UI_FAMILIES.length}</span>
+          </h2>
+          <ul className="menu-page__ui-grid">
+            {MENU_UI_FAMILIES.map((family) => (
+              <li key={family.id}>
+                <Link to={family.entry} className="menu-page__ui-card">
+                  <span className="menu-page__ui-card-tag">{UI_TAG_LABEL[family.tag]}</span>
+                  <span className="menu-page__ui-card-title">{family.title}</span>
+                  <span className="menu-page__ui-card-desc">{family.description}</span>
+                  <span className="menu-page__ui-card-path">{family.entry}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
 
         <nav className="menu-page__toc" aria-label="Groups">
           {groups.map((group) => (

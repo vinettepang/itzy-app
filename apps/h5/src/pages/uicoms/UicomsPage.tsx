@@ -1,6 +1,12 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { CrystalHero, WhatWeShiftTfibSection } from '@/components/uicoms';
+import {
+  BalloonText,
+  CrystalHero,
+  GlassDonutHero,
+  PanterVisionHero,
+  WhatWeShiftTfibSection,
+} from '@/components/uicoms';
 import './uicoms.css';
 
 export default function UicomsPage() {
@@ -44,7 +50,29 @@ export default function UicomsPage() {
         <article className="uicoms-card">
           <h3>CrystalHero</h3>
           <code>@/components/uicoms/CrystalHero</code>
-          <p>玻璃板条随机翻滚后拼成 ITZY，停留后散开循环；亮边 + 波纹暗芯 + Bloom 辉光。</p>
+          <p>厚玻璃板：磨砂霜纹、亮棱、交叠爆白；随机翻滚后拼成 ITZY。</p>
+        </article>
+        <article className="uicoms-card">
+          <h3>BalloonText</h3>
+          <code>@/components/uicoms/BalloonText</code>
+          <p>蓝色箔膜充气字：每个字母边缘褶皱各不相同，弹簧式左右晃动回弹，鼠标划过可拨动。</p>
+        </article>
+        <article className="uicoms-card">
+          <h3>GlassDonutHero</h3>
+          <code>@/components/uicoms/GlassDonutHero</code>
+          <p>
+            旋转玻璃甜甜圈：透射 + 彩虹环境折射、色散后处理与环绕彩光，鼠标/触摸可轻微倾斜视角（类 C4D prism donut 教程）。
+          </p>
+        </article>
+        <article className="uicoms-card">
+          <h3>PanterVisionHero</h3>
+          <code>@/components/uicoms/PanterVisionHero</code>
+          <p>
+            Panter Vision 风黑白海报：顶栏元数据、超大标题、描边副标、斜纹与笑脸；中央 3D 玻璃字 ITZY 逐字错相摆动，折射扭曲背景并带棱镜色散。
+          </p>
+          <Link to="/panter-vision" className="uicoms-card-link">
+            全屏预览 →
+          </Link>
         </article>
         <article className="uicoms-card">
           <h3>WhatWeShiftTfibSection</h3>
@@ -58,6 +86,16 @@ export default function UicomsPage() {
         subtitle="Glass slabs · rim glow + ripple refraction"
         dprCap={1.75}
       />
+
+      <GlassDonutHero
+        title="Prism Donut"
+        subtitle="Spinning glass torus · transmission & chromatic dispersion"
+        dprCap={1.75}
+      />
+
+      <PanterVisionHero dprCap={1.75} />
+
+      <BalloonText text="allinus" dprCap={1.75} />
 
       <div className="uicoms-demo uicoms-demo--wws">
         <WhatWeShiftTfibSection />
